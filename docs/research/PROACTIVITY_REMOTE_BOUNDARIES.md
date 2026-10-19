@@ -32,3 +32,7 @@ An independent implementation may reproduce the **observed local contract**: iso
 ## Artifact integrity and analysis boundaries
 
 The app ASAR SHA-256 is `055b087a9bacc3be4e5f80c468edf2fd031dd5b928ab2e7da7e01dd10de0e860`. REA retained analysis Evidence `ev_1981b380e5d525877426762c8b140f26468c2115708016bb391d4fd68249d2e1`; its graph and semantic coverage are partial and include extensive unresolved items. Its literal trace `ev_7f7a6731a599ea8eda1ff6a0ee3b9f96275b3db6fb632e6854d5f1a82f92091e` did not match a graph entity for `proactivity`; REA explicitly warns that this does not establish absence. Six unpacked native artifacts had ASAR integrity contradictions and were marked untrusted. The extracted Sand Host file is a separate path and digest (`d9dcf2550d6e033fc752852dffc044d34622edfbe9a7421476199761c0ce0946`); it has not been proven to match the app's packaged files byte-for-byte. Focused REA analysis of that source directory returned `ev_b6b3716088eccd687d808507ce2647cf0c420619852c1a482797f3ac0e943d14` but exhausted heap while parsing `host-main.cjs`, leaving the source statements unvalidated by REA.
+
+## 2026-10-19 reconstruction distinction
+
+The local project now implements a separate opt-in workflow, described in [PROACTIVITY_ARCHITECTURE](PROACTIVITY_ARCHITECTURE.md). This is not evidence about the original algorithm. Local thresholds, evidence window, cooldown and scheduling were selected for the reconstructed app and must not be described as Grok Bot behavior. End-to-end original dispatch, eligibility, scoring and delivery remain unknown.

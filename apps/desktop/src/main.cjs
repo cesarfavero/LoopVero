@@ -7,12 +7,24 @@ const { createStore } = require('./persistence/json-store.cjs');
 const { runTurn } = require('./harness/agent-runtime.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
+const { createProactivityEngine } = require('./harness/proactivity-engine.cjs');
 
 let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
 const activeRuns = new Map();
 const scheduler = new RunScheduler();
+const proactivity = createProactivityEngine({
+  store,
+  scheduler,
+  notify: () => {
+    if (!electron.Notification?.isSupported?.() || mainWindow?.isFocused()) return;
+    const notification = new electron.Notification({ title: 'TheGrok', body: 'A saved objective has a suggestion ready for your review.' });
+    notification.on('click', () => { if (mainWindow && !mainWindow.isDestroyed()) { if (mainWindow.isMinimized()) mainWindow.restore(); mainWindow.show(); mainWindow.focus(); } });
+    notification.show();
+  },
+  onEvent: event => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('proactivity:event', event); },
+});
 
 function createWindow() {
   if (!app.isPackaged && (!electron.app || !process.versions.electron || !process.execPath.includes('Electron.app/Contents/MacOS/Electron'))) {
@@ -55,6 +67,43 @@ function assertSender(event) {
 ipcMain.handle('state:load', event => { assertSender(event); return store.load(); });
 ipcMain.handle('bot:save', (event, bot) => { assertSender(event); return store.saveBotProfile(bot); });
 ipcMain.handle('provider:status', event => { assertSender(event); return providerStatus(); });
+ipcMain.handle('proactivity:update', (event, update) => {
+  assertSender(event);
+  if (!update || typeof update !== 'object') throw new Error('Atualização de proatividade inválida.');
+  if (update.settings) return proactivity.setSettings(update.settings);
+  if (!update.objective || typeof update.objective !== 'object') throw new Error('Objetivo de proatividade inválido.');
+  const current = store.load();
+  const botId = typeof update.objective.botId === 'string' ? update.objective.botId : 'primary';
+  if (!current.bots.some(bot => bot.id === botId)) throw new Error('Agente do objetivo não existe.');
+  const existing = current.objectives.find(item => item.id === update.objective.id);
+  if (existing && typeof update.objective.text === 'undefined') update.objective.text = existing.text;
+  const changedText = Boolean(existing && typeof update.objective.text === 'string' && update.objective.text !== existing.text);
+  const resumed = Boolean(existing && existing.status !== 'active' && update.objective.status === 'active');
+  const objective = {
+    ...update.objective,
+    botId,
+    status: existing ? (['completed', 'active'].includes(update.objective.status) ? update.objective.status : existing.status) : 'active',
+    ...(!changedText && !resumed && existing?.lastEvaluatedAt ? { lastEvaluatedAt: existing.lastEvaluatedAt } : {}),
+  };
+  const updated = store.updateProactiveState({ objective });
+  if (objective.status === 'completed') {
+    return proactivity.completeObjective(objective.id, 'completed');
+  }
+  if (resumed) return proactivity.completeObjective(objective.id, 'active');
+  if (objective.status === 'active' && updated.proactiveSettings.enabled) void proactivity.tick();
+  return updated;
+});
+ipcMain.handle('proactivity:approve', async (event, eventId) => { assertSender(event); return proactivity.approve(eventId); });
+ipcMain.handle('proactivity:dismiss', (event, eventId) => { assertSender(event); return proactivity.dismiss(eventId); });
+ipcMain.handle('proactivity:objective-status', (event, payload) => {
+  assertSender(event);
+  const objectiveId = typeof payload?.objectiveId === 'string' ? payload.objectiveId : '';
+  const status = payload?.status;
+  if (!objectiveId || !['active', 'completed'].includes(status)) throw new Error('Atualização de objetivo inválida.');
+  return proactivity.completeObjective(objectiveId, status);
+});
+ipcMain.handle('proactivity:cancel', (event, eventId) => { assertSender(event); return { cancelled: proactivity.cancel(eventId) }; });
+ipcMain.handle('proactivity:check', async event => { assertSender(event); await proactivity.tick({ force: true }); return store.load(); });
 ipcMain.handle('agent:cancel', (event, taskId) => {
   assertSender(event);
   const run = activeRuns.get(taskId);
@@ -68,6 +117,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
   const model = typeof payload?.model === 'string' ? payload.model.slice(0, 120) : 'codexrouter/gateway';
   const runId = require('node:crypto').randomUUID();
   if (!botId || !text) throw new Error('Mensagem ou agente inválido.');
+  proactivity.cancelForBot(botId);
   const controller = new AbortController();
   activeRuns.set(runId, controller);
   const emit = data => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('agent:event', { ...data, runId }); };
@@ -85,6 +135,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         const history = currentBot.messages;
         currentBot.messages = [...history, { id: runId, role: 'user', text, createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
+        if (store.load().proactiveSettings.enabled) void proactivity.tick();
         result = await runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, onEvent: event => {
           emit({ ...event, runId, botId });
           if (event.type === 'assistant-final' && typeof event.text === 'string') {
@@ -126,5 +177,6 @@ ipcMain.handle('agent:turn', async (event, payload) => {
   }
 });
 
-app.whenReady().then(() => { createWindow(); app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); }); });
-app.on('window-all-closed', () => { for (const run of activeRuns.values()) run.abort(); scheduler.dispose(); if (process.platform !== 'darwin') app.quit(); });
+app.whenReady().then(() => { createWindow(); proactivity.reschedule(); app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); }); });
+app.on('before-quit', () => { for (const run of activeRuns.values()) run.abort(); proactivity.dispose(); });
+app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });

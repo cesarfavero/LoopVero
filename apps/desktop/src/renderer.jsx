@@ -24,6 +24,8 @@ function App() {
   const [busy, setBusy] = useState(false);
   const [liveText, setLiveText] = useState('');
   const [liveTools, setLiveTools] = useState([]);
+  const [objectiveDraft, setObjectiveDraft] = useState('');
+  const [proactiveSettingsDraft, setProactiveSettingsDraft] = useState({ enabled: false, intervalMinutes: 60, cooldownMinutes: 1440 });
   const bodyRef = useRef(null);
   const bots = state?.bots || [];
   const activeBot = bots.find(bot => bot.id === activeId) || bots[0];
@@ -36,6 +38,7 @@ function App() {
     window.grok.providerStatus().then(value => { if (alive) { setProvider(value); if (value.models[0]) setModel(value.models.find(item => item.id === 'codexrouter/gateway')?.id || value.models[0].id); } });
     return () => { alive = false; };
   }, []);
+  useEffect(() => { if (state?.proactiveSettings) setProactiveSettingsDraft(state.proactiveSettings); }, [state?.proactiveSettings]);
   useEffect(() => window.grok.onRunEvent(event => {
     if (event.type === 'text-delta') setLiveText(value => value + event.delta);
     if ((event.type === 'tool-start' || event.type === 'tool-finish') && event.tool) {
@@ -72,6 +75,10 @@ function App() {
     }
     if (event.type === 'completed') setNotice('');
   }), []);
+  useEffect(() => window.grok.onProactivityEvent(event => {
+    if (event.type === 'proactivity-proposal') setNotice(`A new suggestion is ready for review: ${event.proposal?.title || 'Proactive suggestion'}`);
+    window.grok.loadState().then(setState).catch(() => {});
+  }), []);
   useEffect(() => { if (bodyRef.current) bodyRef.current.scrollTop = bodyRef.current.scrollHeight; }, [activeBot?.messages.length, liveText]);
 
   async function saveBot(bot) {
@@ -92,6 +99,36 @@ function App() {
     finally { setBusy(false); setLiveText(''); }
   }
   async function renameBot(name) { if (activeBot && name.trim()) await saveBot({ ...activeBot, name: name.trim() }); }
+  async function updateProactivity(update) {
+    try { setState(await window.grok.updateProactivity(update)); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
+  function commitProactiveSettings() {
+    void updateProactivity({ settings: { ...proactiveSettingsDraft, intervalMinutes: Number(proactiveSettingsDraft.intervalMinutes), cooldownMinutes: Number(proactiveSettingsDraft.cooldownMinutes) } });
+  }
+  async function addObjective(event) {
+    event.preventDefault();
+    const text = objectiveDraft.trim();
+    if (!text) return;
+    await updateProactivity({ objective: { id: crypto.randomUUID(), text, botId: activeBot?.id || 'primary', status: 'active' } });
+    setObjectiveDraft('');
+  }
+  async function reviewNow() {
+    try { setState(await window.grok.checkProactivity()); setNotice('Objective review finished.'); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
+  async function approveProposal(eventId) {
+    try { setState(await window.grok.approveProactivity(eventId)); setNotice('Proposal handed to the primary agent.'); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
+  async function dismissProposal(eventId) {
+    try { setState(await window.grok.dismissProactivity(eventId)); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
+  async function setObjectiveStatus(objectiveId, status) {
+    try { setState(await window.grok.setProactiveObjectiveStatus(objectiveId, status)); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
 
   if (!state) return <main className="boot"><Mark/><span>Starting TheGrok…</span></main>;
   return <div className="app-shell">
@@ -107,7 +144,7 @@ function App() {
       {notice && <div className="notice" role="status"><span>{notice}</span><button aria-label="Dismiss" onClick={() => setNotice('')}><Icon name="close"/></button></div>}
       <footer className="composer-area"><form className="composer" onSubmit={submit}><textarea aria-label="Message" placeholder={`Message ${activeBot?.name || 'Grok Bot'}`} rows="1" value={draft} onChange={event => setDraft(event.target.value)} onKeyDown={event => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); submit(); } }}/><div className="composer-bar"><button type="button" aria-label="Attach" onClick={() => setNotice('File attachments are not wired yet.')}><Icon name="attach"/></button><span className="grow"/><button type="submit" className="send" aria-label="Send message" disabled={!draft.trim() || busy}><Icon name="send"/></button></div></form><small className="provider-caption">Responses are sent to CodexRouter on this Mac.</small></footer>
     </main>
-    {details && <aside className="details"><div className="details-header"><span>Conversation details</span><button className="icon-button" aria-label="Close details" onClick={() => setDetails(false)}><Icon name="close"/></button></div><div className="details-profile"><div className="profile-mark"><Mark/></div><input aria-label="Bot name" value={activeBot?.name || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, name: event.target.value } : bot) }))} onBlur={event => renameBot(event.target.value)}/><small>Bot</small></div><div className="detail-tabs" role="tablist">{['Details', 'Library', 'Computer'].map(tab => <button key={tab} role="tab" aria-selected={detailTab === tab} className={detailTab === tab ? 'selected' : ''} onClick={() => setDetailTab(tab)}>{tab}</button>)}</div>{detailTab === 'Details' ? <div className="detail-content"><label>Bot description<input value={activeBot?.description || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, description: event.target.value } : bot) }))} onBlur={() => saveBot(activeBot)}/></label><label>Instructions<textarea placeholder="Add instructions for this agent" value={activeBot?.instructions || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, instructions: event.target.value } : bot) }))} onBlur={() => saveBot(activeBot)}/></label><button className="settings-row" onClick={() => setNotice('Tool permissions are under development.')}><Icon name="settings"/>Tool permissions</button></div> : detailTab === 'Library' ? <div className="detail-empty"><b>Library</b><p>Files and saved items for this bot.</p><button onClick={() => setNotice('Library storage is under development.')}>Add files</button></div> : <div className="computer-card"><div className="computer-preview"><Icon name="computer"/><span>Computer session</span></div><p>No computer session is active.</p><button disabled>Connect computer</button></div>}</aside>}
+    {details && <aside className="details"><div className="details-header"><span>Conversation details</span><button className="icon-button" aria-label="Close details" onClick={() => setDetails(false)}><Icon name="close"/></button></div><div className="details-profile"><div className="profile-mark"><Mark/></div><input aria-label="Bot name" value={activeBot?.name || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, name: event.target.value } : bot) }))} onBlur={event => renameBot(event.target.value)}/><small>Bot</small></div><div className="detail-tabs" role="tablist">{['Details', 'Library', 'Computer', 'Objectives'].map(tab => <button key={tab} role="tab" aria-selected={detailTab === tab} className={detailTab === tab ? 'selected' : ''} onClick={() => setDetailTab(tab)}>{tab}</button>)}</div>{detailTab === 'Details' ? <div className="detail-content"><label>Bot description<input value={activeBot?.description || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, description: event.target.value } : bot) }))} onBlur={() => saveBot(activeBot)}/></label><label>Instructions<textarea placeholder="Add instructions for this agent" value={activeBot?.instructions || ''} onChange={event => setState(current => ({ ...current, bots: current.bots.map(bot => bot.id === activeId ? { ...bot, instructions: event.target.value } : bot) }))} onBlur={() => saveBot(activeBot)}/></label><button className="settings-row" onClick={() => setNotice('Tool permissions are under development.')}><Icon name="settings"/>Tool permissions</button></div> : detailTab === 'Library' ? <div className="detail-empty"><b>Library</b><p>Files and saved items for this bot.</p><button onClick={() => setNotice('Library storage is under development.')}>Add files</button></div> : detailTab === 'Computer' ? <div className="computer-card"><div className="computer-preview"><Icon name="computer"/><span>Computer session</span></div><p>No computer session is active.</p><button disabled>Connect computer</button></div> : <div className="detail-content proactivity-panel"><div className="proactivity-controls"><label className="proactivity-toggle"><input type="checkbox" checked={proactiveSettingsDraft.enabled} onChange={event => { const settings = { ...proactiveSettingsDraft, enabled: event.target.checked }; setProactiveSettingsDraft(settings); void updateProactivity({ settings: { ...settings, intervalMinutes: Number(settings.intervalMinutes), cooldownMinutes: Number(settings.cooldownMinutes) } }); }}/>Enable objective follow-up</label><label>Review interval (minutes)<input type="number" min="15" max="10080" value={proactiveSettingsDraft.intervalMinutes} onChange={event => setProactiveSettingsDraft(value => ({ ...value, intervalMinutes: event.target.value }))} onBlur={commitProactiveSettings}/></label><label>Cooldown (minutes)<input type="number" min="60" max="43200" value={proactiveSettingsDraft.cooldownMinutes} onChange={event => setProactiveSettingsDraft(value => ({ ...value, cooldownMinutes: event.target.value }))} onBlur={commitProactiveSettings}/></label><small>Periodic reviews use only saved user messages, stay silent without a grounded next step, and ask before continuing with the primary agent.</small></div><form className="objective-form" onSubmit={addObjective}><label>Saved objective for {activeBot?.name || 'Grok Bot'}<textarea value={objectiveDraft} onChange={event => setObjectiveDraft(event.target.value)} maxLength={1000} placeholder="What should the agent follow up on?"/></label><button type="submit" disabled={!objectiveDraft.trim()}>Add objective</button></form><button className="settings-row" onClick={reviewNow} disabled={!state.proactiveSettings?.enabled}>Review objectives now</button><div className="objective-list">{(state.objectives || []).map(objective => <article className="objective-item" key={objective.id}><b>{objective.text}</b><small>{objective.status} · {objective.lastEvaluatedAt ? `reviewed ${new Date(objective.lastEvaluatedAt).toLocaleString()}` : 'not reviewed yet'}</small><button className="objective-status" onClick={() => setObjectiveStatus(objective.id, objective.status === 'active' ? 'completed' : 'active')}>{objective.status === 'active' ? 'Mark complete' : 'Resume objective'}</button></article>)}</div><div className="proposal-list">{(state.proactiveEvents || []).filter(item => ['awaiting_approval', 'investigating', 'failed'].includes(item.status)).map(item => <article className="proposal-card" key={item.id}><b>{item.title || 'Objective review'}</b><p>{item.summary}</p>{item.evidenceQuote && <blockquote>“{item.evidenceQuote}”</blockquote>}{item.status === 'awaiting_approval' && <div className="proposal-actions"><button onClick={() => approveProposal(item.id)}>Approve and continue</button><button onClick={() => dismissProposal(item.id)}>Dismiss</button></div>}{item.status === 'investigating' && <button onClick={() => window.grok.cancelProactivity(item.id)}>Cancel review</button>}</article>)}</div></div>}</aside>}
   </div>;
 }
 
