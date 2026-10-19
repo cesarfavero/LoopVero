@@ -55,6 +55,16 @@ O stylesheet contém regras media-query e referências a variáveis dinâmicas p
 
 `apps/desktop/src/styles.css` usa tokens de cor, escala tipográfica, line heights, pesos, radius do item de agente e fonte de foco recuperados. É uma aplicação própria dos valores, não uma cópia do CSS original nem uma alegação de paridade. As fontes e assets licenciados autorizados estão copiados para uso no app privado de teste. A geometria da shell local permanece provisória porque não foi mapeada até os callsites React e comparada em viewport controlado. Consulte o [inventário dos assets do renderer](../research/RENDERER_ASSET_INVENTORY.md).
 
+### Comparação visual observada em 2026-10-19
+
+Foram capturadas as duas janelas no mesmo monitor e tamanho de imagem (1966×1096): a referência instalada Grok Bot 0.71.2 e o TheGrok local aberto pelo Electron do próprio workspace. As capturas foram de estados diferentes: a referência mostrava uma conversa existente com painel Computer; o app local mostrava New Bot vazio com painel Details. Portanto, servem para constatar diferenças de apresentação, não para concluir paridade de tela/estado. As capturas brutas não foram adicionadas ao repositório porque a conversa original continha dados de conta.
+
+O que ficou alinhado: a sidebar mede aproximadamente 280 px e o painel direito aproximadamente 320 px nas duas capturas. Isso é evidência visual daquele par de janelas, não prova de dimensões gerais. O código local usa colunas fixas de 280/380/320 px; o original compõe sidebar de fallback 280 px, chat flexível com mínimo 424 px e área lateral automática. A largura semelhante da captura não torna os contratos de layout iguais.
+
+O que divergiu: a referência estava em tema escuro, enquanto o CSS estático atual do app local declara tema claro; isso registra o estado observado, sem determinar ainda a preferência inicial ou persistida do original. A referência tinha transcript em bolhas e composer em forma de pill; o app local tinha empty state de New Bot, linhas de mensagem próprias e textarea retangular. Cabeçalho/controles do composer e painel direito também tinham conteúdo e composição diferentes. Objectives é uma capacidade local independente e não evidencia paridade com o painel Computer observado.
+
+Conclusão desta observação: o design atual não está igual ao original. Antes de novas alterações visuais, mapear via código e runtime estados equivalentes (mesma rota/conversa, pane, tema, conteúdo, tamanho e escala), registrar as diferenças componente a componente e então repetir a captura controlada. Ver também a linha UI-01/UI-02 na [matriz de paridade](../PARITY_MATRIX.md).
+
 ## Limites e próximos passos
 
 Esta é uma base do design system recuperado do código, não um guia de paridade visual concluído. Faltam relacionar tokens a componentes React específicos, observar tema e escala efetivos, mapear ícones/overlays/estados e produzir screenshots pareados com viewport, conteúdo e escala iguais. As cópias autorizadas servem ao app privado de teste; sua inclusão no build não equivale à distribuição do produto.
