@@ -2,7 +2,13 @@ const electron = require('electron');
 const { app, BrowserWindow, ipcMain } = electron;
 const path = require('node:path');
 app.setName('Grok Bot');
-if (process.platform === 'darwin') app.setPath('userData', path.join(app.getPath('appData'), 'TheGrok'));
+const userDataOverride = app.commandLine.getSwitchValue('user-data-dir');
+if (userDataOverride) {
+  if (!path.isAbsolute(userDataOverride)) throw new Error('O argumento --user-data-dir deve usar um caminho absoluto.');
+  app.setPath('userData', path.resolve(userDataOverride));
+} else if (process.platform === 'darwin') {
+  app.setPath('userData', path.join(app.getPath('appData'), 'TheGrok'));
+}
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
@@ -141,18 +147,49 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         currentBot.messages = [...history, { id: runId, role: 'user', text, createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
         if (store.load().proactiveSettings.enabled) void proactivity.tick();
-        result = await executionHost.runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, onEvent: event => {
-          emit({ ...event, runId, botId });
+        const availableAgents = store.load().bots.filter(agent => agent.id !== botId && agent.name !== 'New Bot').map(agent => ({ id: agent.id, name: agent.name, instructions: agent.instructions }));
+        result = await executionHost.runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, agents: availableAgents, onEvent: event => {
+          const eventBotId = typeof event.botId === 'string' ? event.botId : botId;
+          emit({ ...event, runId, botId: eventBotId });
+          if (event.type === 'subagent-start') {
+            const subagent = store.load().bots.find(item => item.id === event.botId);
+            if (subagent && !subagent.messages.some(message => message.taskId === event.taskId && message.role === 'user')) {
+              subagent.messages.push({ id: require('node:crypto').randomUUID(), taskId: event.taskId, parentTaskId: event.parentTaskId, role: 'user', text: event.text, createdAt: new Date().toISOString() });
+              store.saveBot(subagent);
+            }
+          }
+          if (event.type === 'subagent-start' || event.type === 'subagent-finish') {
+            const parentId = typeof event.parentBotId === 'string' ? event.parentBotId : botId;
+            const parent = store.load().bots.find(item => item.id === parentId);
+            if (parent) {
+              const runs = parent.subagentRuns || [];
+              const previous = runs.find(item => item.id === event.taskId);
+              const next = {
+                id: event.taskId,
+                parentTaskId: event.parentTaskId,
+                agentId: event.botId,
+                agentName: event.agentName,
+                task: event.text || previous?.task || '',
+                status: event.type === 'subagent-start' ? 'running' : event.status,
+                ...(typeof event.result === 'string' ? { result: event.result } : {}),
+                ...(typeof event.error === 'string' ? { error: event.error } : {}),
+                createdAt: previous?.createdAt || new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+              };
+              store.saveBot({ ...parent, subagentRuns: previous ? runs.map(item => item.id === next.id ? next : item) : [...runs, next] });
+            }
+            if (event.type === 'subagent-start') return;
+          }
           if (event.type === 'assistant-final' && typeof event.text === 'string') {
-            const current = store.load().bots.find(item => item.id === botId);
+            const current = store.load().bots.find(item => item.id === eventBotId);
             if (current && !current.messages.some(message => message.taskId === event.taskId && message.role === 'assistant')) {
-              current.messages.push({ id: event.taskId, role: 'assistant', text: event.text, createdAt: new Date().toISOString(), taskId: event.taskId });
+              current.messages.push({ id: event.taskId, role: 'assistant', text: event.text, createdAt: new Date().toISOString(), taskId: event.taskId, ...(event.parentTaskId ? { parentTaskId: event.parentTaskId } : {}) });
               store.saveBot(current);
             }
             return;
           }
           if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) return;
-          const current = store.load().bots.find(item => item.id === botId);
+          const current = store.load().bots.find(item => item.id === eventBotId);
           if (!current) return;
           current.messages = current.messages.filter(message => message.role !== 'tool');
           const currentToolCalls = current.toolCalls || [];
@@ -164,6 +201,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
             summary: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '',
             createdAt: existing?.createdAt || new Date().toISOString(),
             taskId: event.taskId,
+            ...(event.parentTaskId ? { parentTaskId: event.parentTaskId } : {}),
           };
           if (existing) current.toolCalls = currentToolCalls.map(item => item.id === toolCall.id ? toolCall : item);
           else current.toolCalls = [...currentToolCalls, toolCall];

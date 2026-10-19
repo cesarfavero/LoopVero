@@ -20,11 +20,11 @@ test('execution host client forwards typed events and resolves the matching run'
   const context = fixture();
   const events = [];
   try {
-    const pending = context.client.runTurn({ botId: 'primary', text: 'hello', onEvent: event => events.push(event) });
+    const pending = context.client.runTurn({ botId: 'primary', text: 'hello', agents: [{ id: 'researcher', name: 'Researcher', instructions: 'Trace renderer.' }], onEvent: event => events.push(event) });
     await new Promise(resolve => setImmediate(resolve));
     const request = context.sent.find(message => message.type === 'run');
     assert.ok(request?.requestId);
-    assert.deepEqual(request.payload, { botId: 'primary', text: 'hello', history: [], instructions: '', model: 'codexrouter/gateway' });
+    assert.deepEqual(request.payload, { botId: 'primary', text: 'hello', history: [], instructions: '', model: 'codexrouter/gateway', agents: [{ id: 'researcher', name: 'Researcher', instructions: 'Trace renderer.' }] });
     assert.equal(context.forkOptions.env.ELECTRON_RUN_AS_NODE, '1');
     assert.equal(context.forkOptions.env.ROUTER_SECRET, undefined);
     context.child.emit('message', { type: 'event', requestId: request.requestId, event: { type: 'text-delta', delta: 'hi' } });
@@ -64,6 +64,25 @@ test('execution host cancellation forwards an abort and rejects the matching run
     context.child.emit('message', { type: 'error', requestId: request.requestId, error: 'cancelled' });
     await assert.rejects(pending, /cancelada/);
   } finally { context.client.dispose(); }
+});
+
+test('cancellation while the execution host is starting rejects without sending an orphan cancel', async () => {
+  const sent = [];
+  const child = new EventEmitter();
+  child.connected = true;
+  child.exitCode = null;
+  child.send = message => { sent.push(message); return true; };
+  child.disconnect = () => { child.connected = false; };
+  child.kill = () => { child.exitCode = 0; };
+  const client = createExecutionHostClient({ forkProcess: () => child, env: { PATH: '/usr/bin', HOME: '/tmp' } });
+  const controller = new AbortController();
+  try {
+    const pending = client.runTurn({ botId: 'primary', text: 'wait for startup', signal: controller.signal });
+    controller.abort();
+    child.emit('message', { type: 'ready', pid: 1234, instanceId: 'test' });
+    await assert.rejects(pending, /Execução cancelada/);
+    assert.equal(sent.some(message => message.type === 'run' || message.type === 'cancel'), false);
+  } finally { client.dispose(); }
 });
 
 test('execution host exit rejects in-flight runs so callers can recover', async () => {

@@ -6,6 +6,7 @@ const MAX_STATE_BYTES = 8 * 1024 * 1024;
 const MAX_BOTS = 200;
 const MAX_MESSAGES_PER_BOT = 2000;
 const MAX_TOOL_CALLS_PER_BOT = 2000;
+const MAX_SUBAGENT_RUNS_PER_BOT = 500;
 const MAX_MESSAGE_CHARS = 24000;
 const MAX_OBJECTIVES = 200;
 const MAX_PROACTIVE_EVENTS = 500;
@@ -50,6 +51,7 @@ function sanitizeBot(input) {
       text: safeText.slice(0, MAX_MESSAGE_CHARS),
       createdAt: typeof message.createdAt === 'string' ? message.createdAt.slice(0, 40) : new Date().toISOString(),
       ...(typeof message.taskId === 'string' ? { taskId: message.taskId.slice(0, 100) } : {}),
+      ...(typeof message.parentTaskId === 'string' ? { parentTaskId: message.parentTaskId.slice(0, 100) } : {}),
       ...(typeof message.error === 'boolean' ? { error: message.error } : {}),
     };
   }).filter(Boolean);
@@ -62,12 +64,28 @@ function sanitizeBot(input) {
       summary: typeof call.summary === 'string' ? call.summary.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, MAX_MESSAGE_CHARS) : '',
       createdAt: typeof call.createdAt === 'string' ? call.createdAt.slice(0, 40) : new Date().toISOString(),
       ...(typeof call.taskId === 'string' ? { taskId: call.taskId.slice(0, 100) } : {}),
+      ...(typeof call.parentTaskId === 'string' ? { parentTaskId: call.parentTaskId.slice(0, 100) } : {}),
     };
   }).filter(Boolean) : [];
   const instructions = typeof input.instructions === 'string'
     ? input.instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 12000)
     : '';
-  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', instructions, messages, toolCalls };
+  const subagentRuns = Array.isArray(input.subagentRuns) ? input.subagentRuns.slice(-MAX_SUBAGENT_RUNS_PER_BOT).map(run => {
+    if (!run || typeof run !== 'object' || typeof run.id !== 'string' || typeof run.agentId !== 'string' || !['running', 'completed', 'failed', 'cancelled'].includes(run.status)) return null;
+    return {
+      id: run.id.slice(0, 100),
+      parentTaskId: typeof run.parentTaskId === 'string' ? run.parentTaskId.slice(0, 100) : '',
+      agentId: run.agentId.slice(0, 100),
+      agentName: typeof run.agentName === 'string' ? run.agentName.slice(0, 100) : '',
+      task: typeof run.task === 'string' ? run.task.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 6000) : '',
+      status: run.status,
+      ...(typeof run.result === 'string' ? { result: run.result.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, MAX_MESSAGE_CHARS) } : {}),
+      ...(typeof run.error === 'string' ? { error: run.error.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 700) } : {}),
+      createdAt: typeof run.createdAt === 'string' ? run.createdAt.slice(0, 40) : new Date().toISOString(),
+      updatedAt: typeof run.updatedAt === 'string' ? run.updatedAt.slice(0, 40) : new Date().toISOString(),
+    };
+  }).filter(Boolean) : [];
+  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', instructions, messages, toolCalls, subagentRuns };
 }
 
 function createStore(getUserDataPath) {
@@ -103,6 +121,9 @@ function createStore(getUserDataPath) {
       const toolCalls = new Map((existing.toolCalls || []).map(call => [call.id, call]));
       for (const call of bot.toolCalls) toolCalls.set(call.id, call);
       bot.toolCalls = [...toolCalls.values()].slice(-MAX_TOOL_CALLS_PER_BOT);
+      const subagentRuns = new Map((existing.subagentRuns || []).map(run => [run.id, run]));
+      for (const run of bot.subagentRuns) subagentRuns.set(run.id, run);
+      bot.subagentRuns = [...subagentRuns.values()].slice(-MAX_SUBAGENT_RUNS_PER_BOT);
       state.bots[index] = bot;
     }
     const destination = filePath();
@@ -125,6 +146,7 @@ function createStore(getUserDataPath) {
       instructions: input.instructions ?? existing?.instructions,
       messages: existing?.messages || [],
       toolCalls: existing?.toolCalls || [],
+      subagentRuns: existing?.subagentRuns || [],
     });
   }
   function updateProactiveState(update) {

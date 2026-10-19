@@ -86,12 +86,24 @@ function createExecutionHostClient({ forkProcess = fork, execPath = process.exec
       history: Array.isArray(options.history) ? options.history : [],
       instructions: typeof options.instructions === 'string' ? options.instructions : '',
       model: typeof options.model === 'string' ? options.model : 'codexrouter/gateway',
+      agents: Array.isArray(options.agents) ? options.agents.slice(0, 20).map(agent => ({
+        id: typeof agent?.id === 'string' ? agent.id.slice(0, 100) : '',
+        name: typeof agent?.name === 'string' ? agent.name.slice(0, 100) : '',
+        instructions: typeof agent?.instructions === 'string' ? agent.instructions.slice(0, 12000) : '',
+      })).filter(agent => agent.id && agent.name) : [],
     };
     return new Promise((resolve, reject) => {
       const entry = { resolve, reject, onEvent: options.onEvent, signal: options.signal, abortListener: null, abortRequested: false };
+      const rejectAsAborted = () => {
+        if (pending.get(requestId) !== entry) return;
+        pending.delete(requestId);
+        options.signal?.removeEventListener('abort', abortListener);
+        reject(new Error('Execução cancelada.'));
+      };
       const abortListener = () => {
         if (entry.abortRequested) return;
         entry.abortRequested = true;
+        if (options.signal?.aborted && !child?.connected) { rejectAsAborted(); return; }
         try { child?.send({ type: 'cancel', requestId }); }
         catch (error) {
           pending.delete(requestId);
@@ -102,7 +114,7 @@ function createExecutionHostClient({ forkProcess = fork, execPath = process.exec
       entry.abortListener = abortListener;
       pending.set(requestId, entry);
       options.signal?.addEventListener('abort', abortListener, { once: true });
-      if (options.signal?.aborted) { abortListener(); return; }
+      if (options.signal?.aborted) { rejectAsAborted(); return; }
       try { child.send({ type: 'run', requestId, payload }); }
       catch (error) {
         pending.delete(requestId);

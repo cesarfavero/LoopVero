@@ -68,6 +68,40 @@ test('persists sanitized tool outline entries separately from conversation messa
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
+test('persists subagent parent task identity on its transcript entries', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-subagent-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBot({
+      id: 'researcher', name: 'Researcher',
+      messages: [
+        { id: 'child-task', taskId: 'child-task', parentTaskId: 'parent-task', role: 'user', text: 'Inspect the renderer.' },
+        { id: 'child-result', taskId: 'child-task', parentTaskId: 'parent-task', role: 'assistant', text: 'The editor is managed.' },
+      ],
+    });
+    assert.deepEqual(store.load().bots.find(bot => bot.id === 'researcher').messages.map(message => message.parentTaskId), ['parent-task', 'parent-task']);
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
+test('keeps the delegated task and its answer as separate transcript entries under one task ID', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-subagent-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBot({
+      id: 'researcher', name: 'Researcher',
+      messages: [
+        { id: 'message-user', taskId: 'child-task', parentTaskId: 'parent-task', role: 'user', text: 'Investigate this.' },
+        { id: 'message-assistant', taskId: 'child-task', parentTaskId: 'parent-task', role: 'assistant', text: 'Found it.' },
+      ],
+    });
+    const messages = store.load().bots.find(bot => bot.id === 'researcher').messages;
+    assert.deepEqual(messages.map(message => [message.id, message.role, message.taskId]), [
+      ['message-user', 'user', 'child-task'],
+      ['message-assistant', 'assistant', 'child-task'],
+    ]);
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
 test('merges transcript entries by id so concurrent run updates are not lost', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
   try {
