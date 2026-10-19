@@ -19,7 +19,7 @@ function App() {
   const [activeId, setActiveId] = useState('primary');
   const [draft, setDraft] = useState('');
   const [query, setQuery] = useState('');
-  const [details, setDetails] = useState(true);
+  const [details, setDetails] = useState(false);
   const [detailTab, setDetailTab] = useState('Details');
   const [notice, setNotice] = useState('');
   const [busy, setBusy] = useState(false);
