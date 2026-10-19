@@ -1,0 +1,40 @@
+# Proactivity trace update
+
+## Scope and evidence method
+
+This pass followed the local Sand Host harness from the `platformProactivity` wake marker through turn setup, `WakeParent`, subagent completion, and parent-turn inbox construction. It used static source only. No original program was launched and no screenshots or captured UI were used as a behavioral specification.
+
+The research host files are separate from the packaged app and have not been proven byte-identical to its ASAR. Their current SHA-256 identities are:
+
+- `GrokBotResearch/sand/sand-host/sand-eval-runner.cjs`: `5d951bc76d9747e0c37c494c4bfd82d787f2d81742ead2627e26d36e3b0ef54c`
+- `GrokBotResearch/sand/sand-host/host-main.cjs`: `d9dcf2550d6e033fc752852dffc044d34622edfbe9a7421476199761c0ce0946`
+
+The 8,361-byte focused source excerpt assembled from exact `sand-eval-runner.cjs` line ranges was parsed as inert JavaScript by REA: parent analysis `ev_26e89b7790a7cf8f6f60b8e17cb69eb4bb2a2d5d98bf96bfb636519b15fc4a29`, summary projection `ev_bfd1b391df2f37a4a65f4861f81eaa3d6e1bf696a7b4598e60f45e8b17afa49c`, and property trace `ev_8a4325c66a3ed9ae76a9ed42bf8782aa254b73072a445c3eb1ec22f6ecbad2cf`. REA reported one parsed file, 831 visited AST nodes, zero parse failures, and 182 semantic graph unknowns. The excerpt is a focused analysis input, not an independently authenticated shipped artifact; REA's trace also reports two ambiguous `platformProactivity` property matches and unknown object-flow edges. A full-file REA pass against `sand-eval-runner.cjs` exceeded the MCP call's 300-second ceiling despite requesting 900 seconds. This is a tool limit, not evidence that the remaining source is absent.
+
+## Source-backed path
+
+1. **A platform-specific wake flag is consumed by local turn plumbing.** `automationWakeTrustMarker` returns an empty trusted-automation marker when `wake.platformProactivity === true` (`sand-eval-runner.cjs:526080-526085`). Hidden prompts are assembled with the hidden marker and that trust marker at `533946`. Thus the inspected code distinguishes a platform wake from the trusted marker used for ordinary local automation prompts. This is a prompt-origin distinction; it does not establish who created the flag.
+
+2. **The flag affects classification and request context.** `automationRunTrigger` maps `platformProactivity === true` to the label `platform`; otherwise it classifies `untrusted` as `event` and the remaining case as `schedule` (`589677-589700`). The turn setup also installs `callerRoutingReasonKey = "sand-proactivity-wake"` when the flag is true (`591706-591707`). These are classification/routing metadata observations; they do not implement eligibility or scheduling.
+
+3. **The ordinary automation dispatcher is a distinct path.** `createAutomationSubagentDispatch` constructs an executor subagent, sets `requestSource: "automation"`, and runs it hidden, silence-allowed, and quiet (`584012-584060`). Its `automationWake` object carries `id` and `name`, with an optional `untrusted` bit; the inspected construction does not set `platformProactivity`. Do not treat this ordinary automation dispatch as proof of the platform-proactivity dispatch path.
+
+4. **`WakeParent` hands a message into a parent-mediated run and terminates that run.** `createWakeParentTool` requires a non-empty trimmed message, calls `requestAutomationParentWake({ message, wakeParentToolCallId })`, and returns its terminal handoff text (`564143-564161`). The callback is installed only for `host.isParentMediatedAutomationSubagent`; the first wake stores its message and aborts the active run with an intentional `automation requested parent mediation` error tagged with the tool-call id (`554079-554085`, `591766-591774`). A normal final assistant result is therefore not the wake payload.
+
+5. **The wake is converted into a parent-subagent completion.** Turn settlement sets `aborted` false when `automationParentWake` exists and includes the captured text in the result (`592533-592544`). The background-subagent dispatcher prefers that text to normal final text, marks the completion `parentWakeRequested: true`, and calls its settle handler with the parent id, result text, and flag (`535300-535324`, `535348-535490`). This establishes a local handoff/completion contract, not the external trigger that started the run.
+
+6. **Parent processing is an inbox/prompt continuation, not direct renderer output.** Completion classification treats `parentWakeRequested` as an automation-parent-wake case (`583924-583947`); the parent instruction says to act on the handoff now and communicate outward in the parent's own turn (`583873-583876`). Separately, `AutomationCompletionMiddleware` drains queued completions, converts an `automation-handoff:` completion into a hidden-marker user-role prompt message, and appends it to the model conversation before streaming (`586327-586349`, `586354-586418`). These lines show parent-turn input construction. They do not show the renderer event or prove a message was displayed to the user.
+
+7. **The proactivity closing is intent text, not a located dispatch path.** `PLATFORM_PROACTIVITY_SUBAGENT_CLOSING` says remain quiet, use `WakeParent` for outward communication, and keep a normal final response private (`528641-528648`; also `host-main.cjs:733924-733930`). In the inspected `sand-eval-runner.cjs` and `host-main.cjs`, exact identifier search found its declaration but no code reference to that constant. Likewise, `GROK_BOT_PROACTIVITY_SUBAGENT` appears in the inference-reason enum declaration (`sand-eval-runner.cjs:491436`), but the bounded exact-name search found no assignment/use beyond that declaration. The statements describe intended policy; their runtime activation is unresolved.
+
+## What is resolved, inferred, and still unknown
+
+**Resolved from local source:** a wake object carrying `platformProactivity` is treated as a distinct platform trigger for labeling and caller-routing metadata; platform-origin prompts do not receive the trusted ordinary-automation prompt marker; a parent-mediated `WakeParent` captures one message, ends the worker turn, and surfaces the message as a parent-owned completion; completion middleware can inject such a completion into a later parent model turn as hidden prompt context.
+
+**Inference, not a recovered end-to-end path:** a service outside the inspected local worker code supplies or causes a wake with this flag. `host-main.cjs:215113-215124` explicitly says changelog campaign writes do not enroll users, arm the proactivity due set, or dispatch wakes. This excludes that campaign-write API from the due-set dispatcher, but does not identify the dispatcher or prove that it is remote.
+
+**Still unknown:** enrollment and due-set schema; opportunity sources, scoring, eligibility, timing, suppression, dedupe, retry and feedback; the exact RPC/message that creates a `platformProactivity` wake; worker factory, tool allowlist and insertion of `PLATFORM_PROACTIVITY_SUBAGENT_CLOSING`; whether `GROK_BOT_PROACTIVITY_SUBAGENT` is assigned in another component; how the background settle handler queues parent completions for the specific platform path; parent-turn scheduling when idle; and the final parent-to-renderer/user-delivery mechanism. The user-facing result is not proven merely because the worker completion is labeled `parentWakeRequested`.
+
+## REA coverage limits
+
+The full 30 MB class source could not be analyzed in one REA MCP call because the tool call timed out after 300 seconds. REA successfully parsed only the focused 8,361-byte excerpt assembled from the cited source ranges. Its semantic trace was partial and ambiguous, with dynamic/unknown relationships. The original research files were read as code but were not proven to match the package's ASAR entries. No runtime behavior, server request, scheduling decision, coordinator-to-renderer event, or UI delivery was observed. These limits keep the trace useful without turning a local contract into a claim about the unobserved platform algorithm.
