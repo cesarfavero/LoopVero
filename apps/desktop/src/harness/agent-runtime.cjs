@@ -22,6 +22,7 @@ async function runTurn({ botId, text, history = [], model = 'codexrouter/gateway
     input.push(...(response.output || []));
     if (!calls.length) {
       const answer = textFrom(response) || response.__streamed_text || '(o modelo devolveu uma resposta vazia)';
+      onEvent({ taskId, botId, type: 'assistant-final', text: answer, model });
       onEvent({ taskId, botId, type: 'completed' });
       return { taskId, botId, status: 'completed', text: answer, model, tools: toolRuns };
     }

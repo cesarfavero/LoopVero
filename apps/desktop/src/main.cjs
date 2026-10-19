@@ -28,7 +28,12 @@ function createWindow() {
   });
   mainWindow = window;
   if (process.argv.includes('--dev')) {
-    trustedUrl = 'http://127.0.0.1:4180/';
+    const devUrl = process.env.THEGROK_DEV_SERVER_URL || 'http://127.0.0.1:4180/';
+    const parsedDevUrl = new URL(devUrl);
+    if (parsedDevUrl.protocol !== 'http:' || !['127.0.0.1', 'localhost'].includes(parsedDevUrl.hostname)) {
+      throw new Error('THEGROK_DEV_SERVER_URL deve apontar para um servidor HTTP local.');
+    }
+    trustedUrl = parsedDevUrl.href;
     void window.loadURL(trustedUrl);
   } else {
     const file = path.join(__dirname, '../dist/index.html');
@@ -82,6 +87,14 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         store.saveBot(currentBot);
         result = await runTurn({ botId, text, history, model, signal: controller.signal, onEvent: event => {
           emit({ ...event, runId, botId });
+          if (event.type === 'assistant-final' && typeof event.text === 'string') {
+            const current = store.load().bots.find(item => item.id === botId);
+            if (current && !current.messages.some(message => message.taskId === event.taskId && message.role === 'assistant')) {
+              current.messages.push({ id: event.taskId, role: 'assistant', text: event.text, createdAt: new Date().toISOString(), taskId: event.taskId });
+              store.saveBot(current);
+            }
+            return;
+          }
           if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) return;
           const current = store.load().bots.find(item => item.id === botId);
           if (!current) return;
@@ -100,8 +113,6 @@ ipcMain.handle('agent:turn', async (event, payload) => {
           else current.toolCalls = [...currentToolCalls, toolCall];
           store.saveBot(current);
         } });
-        const current = store.load().bots.find(item => item.id === botId);
-        if (current) { current.messages.push({ id: result.taskId, role: 'assistant', text: result.text, createdAt: new Date().toISOString(), taskId: result.taskId }); store.saveBot(current); }
         return result;
       } catch (error) {
         const current = store.load().bots.find(item => item.id === botId);

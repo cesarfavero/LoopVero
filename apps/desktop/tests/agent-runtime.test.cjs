@@ -41,4 +41,5 @@ test('executes a provider function call, reports tool lifecycle, and feeds resul
   ]);
   assert.equal(events[0].botId, 'primary');
   assert.equal(result.tools.length, 1);
+  assert.ok(events.some(event => event.type === 'assistant-final' && event.text === result.text));
 });
