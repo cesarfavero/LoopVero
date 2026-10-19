@@ -31,10 +31,11 @@ flowchart LR
   C -->|coordinator-control RPC: resolveGatewayConnection| M
   M -->|connector.connect("gateway")| G[SandBox connector / broker]
   C -->|HTTP POST /api/{method}; GET /events| G2[Gateway URL retornada]
-  G2 -. host físico/processo não provado .-> H[Sand Host / agent runtime]
+  G2 -->|gateway server HTTP dispatch| H[Sand Host process]
+  H -. vínculo de implantação/box não provado .-> B[SandBox / VM]
 ```
 
-As setas sólidas mostram relações estáticas confirmadas: C→M resolve a conexão via RPC Main, M→G delega ao connector, e C→G2 representa o uso HTTP do endereço retornado. A seta pontilhada marca a fronteira gateway→host ainda não provada. O handoff explícito e as mensagens foram recuperados nos códigos correspondentes de preload e Main; a alcançabilidade do ciclo de vida não foi provada aqui.
+As setas sólidas representam relações confirmadas nos bundles: C→M resolve a conexão via RPC Main, M→G delega ao connector, C→G2 usa HTTP a URL retornada e o servidor no Sand Host despacha `/api/{method}` para seus handlers. A seta pontilhada marca somente o vínculo de implantação entre processo/host e box/VM, que o código disponível não estabelece. O handoff explícito e as mensagens foram recuperados nos códigos correspondentes de preload e Main; a alcançabilidade do ciclo de vida não foi provada aqui.
 
 ## Snapshot de inicialização e IPC direto
 
@@ -88,33 +89,34 @@ sequenceDiagram
 
 ## Protocolo de conversa pelo gateway
 
-O schema `gateway` declara `sendPrompt`, `promptAcceptanceStatus`, `getAgentTranscript*`, `openAgentTail` e outros métodos, enquanto o Coordinator associa `sendPrompt` à demanda `person` e leituras de transcript a `background` ou `person`, conforme o método. `sendPrompt` está no edge HTTP do gateway; o método que o renderer chama pelo `data` port tem nome ainda não confirmado. A resolução do gateway retorna `baseUrl`, token e header de rede descritos a seguir.
+O schema `gateway` declara `sendPrompt`, `promptAcceptanceStatus`, `getAgentTranscript*`, `openAgentTail` e outros métodos, enquanto o Coordinator associa `sendPrompt` à demanda `person` e leituras de transcript a `background` ou `person`, conforme o método. `sendPrompt` está no edge HTTP do gateway; o método que o renderer chama pelo `data` port tem nome ainda não confirmado. A resolução do gateway retorna `baseUrl`, token e header de rede. O código correspondente no Sand Host cria um servidor HTTP(S), publica `{port,pid,startedAt,scheme,host,token}` em `~/.cursor/sand/gateway.json`, e o Main connector projeta a resposta do broker (`gateway_url`, `gateway_token`, `network_token`) em `{baseUrl,token,headers}`; o caminho do wire entre arquivo de descoberta e broker continua específico do ambiente e não é inferido aqui.
 
-O método gateway `sendPrompt` envia seu objeto por `POST {baseUrl}/api/sendPrompt`, com cabeçalhos de autenticação e `traceparent` quando existe; a resposta JSON passa pelo decoder `sendPrompt`. Os pedidos RPC do data port são validados e encaminhados pela policy do Coordinator, que usa o cliente HTTP do gateway (`POST {baseUrl}/api/{method}`); o Coordinator valida o método e os argumentos em seu registry e, para pedidos classificados como demanda de usuário, cuida de box intent e retry em estados de hibernação antes de encaminhar ao gateway. O fluxo de envio guarda nonce/traceparent para deduplicação/telemetria.
+O método gateway `sendPrompt` envia seu objeto por `POST {baseUrl}/api/sendPrompt`, com cabeçalhos de autenticação e `traceparent` quando existe; a resposta JSON passa pelo decoder `sendPrompt`. Os pedidos RPC do data port são validados e encaminhados pela policy do Coordinator, que usa o cliente HTTP do gateway (`POST {baseUrl}/api/{method}`); o Coordinator valida o método e os argumentos em seu registry e, para pedidos classificados como demanda de usuário, cuida de box intent e retry em estados de hibernação antes de encaminhar ao gateway. No Sand Host, o servidor extrai `{method}` do path, valida o body contra o schema registrado e chama `api[method](args)`. Para `sendPrompt`, o gateway handler chama `manager.sendPrompt(prompt, {agentId, directAddressedAcceptance, attachmentPaths})` e retorna `{accepted:true}` após sucesso. O dispatcher do host protege ações de agentes proxied: usa o server-agent-proxy; o caminho local do `SendPipeline` recusa agents server-hosted e turnos de box aposentados, portanto a presença de `send-pipeline` no host não prova que um pedido comum de gateway vire uma run local. O fluxo de envio também guarda nonce/traceparent para deduplicação/telemetria.
 
-O Coordinator conecta separadamente a `GET {baseUrl}/events` com `Accept: text/event-stream`. O parser reúne linhas `data:`, decodifica JSON no envelope `{channel, payload}` e encaminha evento `transcript` ao pipeline `gatewayTranscript` e depois ao port server→renderer como evento `transcript`. Leituras de transcript podem ser servidas pelo gateway ou por transcript server conforme harness/estado; a composição compara e escolhe fontes, mas isso não demonstra que esse transcript server seja o Sand Host do bundle extraído.
+O Coordinator conecta separadamente a `GET {baseUrl}/events` com `Accept: text/event-stream`. O parser reúne linhas `data:`, decodifica JSON no envelope `{channel, payload}` e encaminha evento `transcript` ao pipeline `gatewayTranscript` e depois ao port server→renderer como evento `transcript`. O servidor do Sand Host fornece `/events` por `host.subscribe` e eventos incluem os produzidos pelo transcript manager. A leitura de transcript ainda arbitra gateway e fonte server-side conforme harness/estado; esta fonte pode pertencer ao backend de agentes, não ao Sand Host, e não deve ser confundida com SSE do gateway.
 
 ```mermaid
 sequenceDiagram
   participant R as Renderer
   participant C as Coordinator
   participant G as SandBox gateway
-  participant S as Transcript server (identidade não resolvida)
+  participant H as Sand Host gateway server
+  participant S as Transcript server de agentes (identidade não resolvida)
   R->>C: data port request (método e schema completos pendentes)
   Note over R,C: sendPrompt não é o nome confirmado do RPC da UI
   C->>G: POST /api/{método validado} (JSON + auth)
   Note over C,G: sendPrompt é um dos métodos do registry gateway
-  C->>G: GET /events (Accept: text/event-stream)
   G-->>C: JSON response do POST (shape completo pendente)
-  G-->>C: SSE event {channel, payload}
+  C->>H: GET /events (Accept: text/event-stream)
+  H-->>C: SSE event {channel, payload}
   alt channel transcript
     C->>C: normalize gateway transcript / source arbitration
     C-->>R: data port event transcript
-    Note over G,S: composição/arbitragem de fontes; identidade do server e ligação ao host não provadas
+    Note over H,S: SSE do gateway e fonte server-side de transcript são caminhos distintos; identidade de S não resolvida
   end
 ```
 
-Os caminhos de código são identificáveis e mapeiam envio, aceitação e eventos de transcript na borda Coordinator↔gateway↔renderer; isso não revela o protocolo interno de geração do Sand Host, seu RPC de inferência ou todos os campos/variantes de cada transcript. Os endpoints são literais locais do bundle, não foram chamados durante esta análise estática. A instância física e a relação de processo/container entre gateway e Sand Host continuam desconhecidas.
+Os caminhos de código mapeiam o despacho de envio e SSE do processo Sand Host até o handler do transcript manager; o worker pool e a fronteira de inferência ainda precisam de tracing até o executor de turnos. Os endpoints são literais locais dos bundles, não foram chamados durante esta análise estática. A instância física e a relação de processo/container entre gateway e Sand Host continuam desconhecidas.
 
 ## Resolução do gateway da sandbox pelo Coordinator
 
@@ -136,7 +138,7 @@ sequenceDiagram
   C->>G: protocolo de dados para serviços da sandbox
 ```
 
-Isso fecha a fronteira de resolução de conexão Main↔Coordinator e comprova que a conexão do Coordinator usa a API do gateway da sandbox. O contrato e os nomes de campos são estáticos e vieram do ASAR validado por hash. **Ainda não prova** o endereço físico do gateway, em qual VM cada processo executa, se o Sand Host está no mesmo container/processo do gateway, o wire completo dos serviços de transcript/agentes, nem que todo fluxo de conversa use exatamente esse transporte. A análise REA focada dos métodos de send/SSE/port processou 4.407 nós sem erro de parse, reteve 74 relações de chamada, 1.570 de fluxo de dados e 16 de requisição, mas manteve cobertura semântica desconhecida e 962 incógnitas; o recorte conserva hash e offsets da origem e não prova relações através dos trechos omitidos. O recorte exato tem SHA-256 `3b1a85c7ba806d077721d883661a2190201d7b0f7596984119aa2c542061d9d1` e declara bytes de origem para rechecagem. O Coordinator integral foi reanalisado por REA (209.594 nós, zero falhas de parse), mas sua semântica também truncou por orçamento.
+Isso fecha a resolução Main↔Coordinator e conecta estaticamente a URL gateway ao servidor HTTP implementado no bundle Sand Host, que despacha `/api/{method}` e SSE `/events`. O código host completo foi lido estaticamente e seus hashes conferidos; ele não foi executado. **Ainda não prova** o endereço físico, em qual VM cada processo executa, se o Sand Host está no mesmo container/processo da box, o wire de `server-agent-proxy` até backend, ou que todo fluxo de conversa usa o mesmo transporte. A análise REA focada de Coordinator send/SSE/port processou 4.407 nós sem erro de parse, reteve 74 relações de chamada, 1.570 de fluxo de dados e 16 de requisição, mas manteve cobertura semântica desconhecida e 962 incógnitas; o recorte conserva hash e offsets de origem e não prova relações através dos trechos omitidos. O recorte exato tem SHA-256 `3b1a85c7ba806d077721d883661a2190201d7b0f7596984119aa2c542061d9d1`. O Coordinator integral foi reanalisado por REA (209.594 nós, zero falhas de parse), mas sua semântica também truncou por orçamento.
 
 ## Contrato do renderer e relação com chat
 
