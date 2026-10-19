@@ -124,7 +124,9 @@ ipcMain.handle('agent:cancel', (event, taskId) => {
 ipcMain.handle('agent:turn', async (event, payload) => {
   assertSender(event);
   const botId = typeof payload?.botId === 'string' ? payload.botId.slice(0, 100) : '';
-  const text = typeof payload?.text === 'string' ? payload.text.trim().slice(0, 12000) : '';
+  const composer = await import('./composer-document.mjs');
+  const richText = composer.sanitizeComposerDocument(payload?.richText);
+  const text = (richText ? composer.serializeComposerDocument(richText) : typeof payload?.text === 'string' ? payload.text : '').trim().slice(0, 12000);
   const model = typeof payload?.model === 'string' ? payload.model.slice(0, 120) : 'codexrouter/gateway';
   const runId = require('node:crypto').randomUUID();
   if (!botId || !text) throw new Error('Mensagem ou agente inválido.');
@@ -144,7 +146,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         const currentBot = store.load().bots.find(item => item.id === botId);
         if (!currentBot) throw new Error('Agente não encontrado.');
         const history = currentBot.messages;
-        currentBot.messages = [...history, { id: runId, role: 'user', text, createdAt: new Date().toISOString() }];
+        currentBot.messages = [...history, { id: runId, role: 'user', text, ...(richText ? { richText } : {}), createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
         if (store.load().proactiveSettings.enabled) void proactivity.tick();
         const availableAgents = store.load().bots.filter(agent => agent.id !== botId && agent.name !== 'New Bot').map(agent => ({ id: agent.id, name: agent.name, instructions: agent.instructions }));

@@ -36,6 +36,37 @@ function sanitizeSettings(input) {
   return { enabled: input?.enabled === true, intervalMinutes: numberInRange(input?.intervalMinutes, 60, 15, 10080), cooldownMinutes: numberInRange(input?.cooldownMinutes, 1440, 60, 43200) };
 }
 
+function sanitizeRichText(input) {
+  let nodes = 0;
+  let textLength = 0;
+  const allowed = new Set(['doc', 'paragraph', 'heading', 'blockquote', 'codeBlock', 'bulletList', 'orderedList', 'listItem', 'hardBreak', 'horizontalRule']);
+  function visit(node, depth = 0) {
+    if (!node || typeof node !== 'object' || Array.isArray(node) || depth > 24 || ++nodes > 2000) return null;
+    if (node.type === 'text') {
+      if (typeof node.text !== 'string') return null;
+      const text = node.text.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, Math.max(0, 12000 - textLength));
+      textLength += text.length;
+      if (!text) return null;
+      const marks = Array.isArray(node.marks) ? node.marks.slice(0, 8).flatMap(mark => {
+        if (!mark || !['bold', 'italic', 'strike', 'code', 'link'].includes(mark.type)) return [];
+        if (mark.type !== 'link') return [{ type: mark.type }];
+        try {
+          const url = new URL(mark.attrs?.href);
+          return ['http:', 'https:', 'mailto:'].includes(url.protocol) && url.href.length < 2048 ? [{ type: 'link', attrs: { href: url.href } }] : [];
+        } catch { return []; }
+      }) : [];
+      return { type: 'text', text, ...(marks.length ? { marks } : {}) };
+    }
+    if (!allowed.has(node.type)) return null;
+    const attrs = node.type === 'heading' ? { level: Math.max(1, Math.min(6, Number(node.attrs?.level) || 1)) } :
+      node.type === 'orderedList' ? { start: Math.max(1, Math.min(100000, Number(node.attrs?.start) || 1)) } : undefined;
+    const content = Array.isArray(node.content) ? node.content.map(child => visit(child, depth + 1)).filter(Boolean) : [];
+    return { type: node.type, ...(attrs ? { attrs } : {}), ...(content.length ? { content } : {}) };
+  }
+  const clean = visit(input);
+  return clean?.type === 'doc' ? clean : null;
+}
+
 function sanitizeBot(input) {
   if (!input || typeof input !== 'object') throw new Error('Agente inválido.');
   const id = typeof input.id === 'string' ? input.id.slice(0, 100) : '';
@@ -49,6 +80,7 @@ function sanitizeBot(input) {
       id: typeof message.id === 'string' ? message.id.slice(0, 100) : randomUUID(),
       role: message.role,
       text: safeText.slice(0, MAX_MESSAGE_CHARS),
+      ...(message.role === 'user' && message.richText ? { richText: sanitizeRichText(message.richText) } : {}),
       createdAt: typeof message.createdAt === 'string' ? message.createdAt.slice(0, 40) : new Date().toISOString(),
       ...(typeof message.taskId === 'string' ? { taskId: message.taskId.slice(0, 100) } : {}),
       ...(typeof message.parentTaskId === 'string' ? { parentTaskId: message.parentTaskId.slice(0, 100) } : {}),

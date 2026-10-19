@@ -19,6 +19,23 @@ test('creates and updates a bot without losing its messages', () => {
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
+test('persists safe structured rich text alongside its model-readable transcript', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-rich-message-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{
+      id: 'rich-user-1', role: 'user', text: '**hello**',
+      richText: { type: 'doc', content: [{ type: 'paragraph', content: [
+        { type: 'text', text: 'hello Bearer secret', marks: [{ type: 'bold' }, { type: 'link', attrs: { href: 'javascript:alert(1)' } }] },
+      ] }] },
+    }] });
+    const message = store.load().bots[0].messages[0];
+    assert.equal(message.text, '**hello**');
+    assert.deepEqual(message.richText.content[0].content[0].marks, [{ type: 'bold' }]);
+    assert.equal(message.richText.content[0].content[0].text, 'hello Bearer [redacted]');
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
 test('rejects invalid bot records', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
   try { assert.throws(() => createStore(() => directory).saveBot({ id: '', name: '' }), /inválido/); }
