@@ -36,12 +36,15 @@ test('profile updates preserve the latest transcript even with stale renderer da
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
-test('persists sanitized tool transcript entries', () => {
+test('persists sanitized tool outline entries separately from conversation messages', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
   try {
     const store = createStore(() => directory);
-    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'call-1', role: 'tool', toolName: 'get_local_time', status: 'completed', text: 'Bearer hidden' }] });
-    assert.deepEqual(store.load().bots[0].messages[0], { id: 'call-1', role: 'tool', toolName: 'get_local_time', status: 'completed', text: 'Bearer [redacted]', createdAt: store.load().bots[0].messages[0].createdAt });
+    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'user-1', role: 'user', text: 'hora?' }], toolCalls: [{ id: 'call-1', name: 'get_local_time', status: 'completed', summary: 'Bearer hidden' }] });
+    const bot = store.load().bots[0];
+    assert.equal(bot.messages.length, 1);
+    assert.equal(bot.messages[0].id, 'user-1');
+    assert.deepEqual(bot.toolCalls[0], { id: 'call-1', name: 'get_local_time', status: 'completed', summary: 'Bearer [redacted]', createdAt: bot.toolCalls[0].createdAt });
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
@@ -50,9 +53,9 @@ test('merges transcript entries by id so concurrent run updates are not lost', (
   try {
     const store = createStore(() => directory);
     store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'user-1', role: 'user', text: 'Question' }] });
-    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'tool-1', role: 'tool', toolName: 'get_local_time', status: 'running', text: 'Em execução' }] });
-    assert.deepEqual(store.load().bots[0].messages.map(message => message.id), ['user-1', 'tool-1']);
-    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'tool-1', role: 'tool', toolName: 'get_local_time', status: 'completed', text: 'hora' }] });
-    assert.equal(store.load().bots[0].messages.find(message => message.id === 'tool-1').status, 'completed');
+    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'user-1', role: 'user', text: 'Question' }], toolCalls: [{ id: 'tool-1', name: 'get_local_time', status: 'pending', summary: 'Em execução' }] });
+    assert.deepEqual(store.load().bots[0].messages.map(message => message.id), ['user-1']);
+    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [], toolCalls: [{ id: 'tool-1', name: 'get_local_time', status: 'completed', summary: 'hora' }] });
+    assert.equal(store.load().bots[0].toolCalls.find(call => call.id === 'tool-1').status, 'completed');
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });

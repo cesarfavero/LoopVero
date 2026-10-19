@@ -85,17 +85,19 @@ ipcMain.handle('agent:turn', async (event, payload) => {
           if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) return;
           const current = store.load().bots.find(item => item.id === botId);
           if (!current) return;
-          const existing = current.messages.find(item => item.id === event.tool.id);
-          const toolMessage = {
+          current.messages = current.messages.filter(message => message.role !== 'tool');
+          const currentToolCalls = current.toolCalls || [];
+          const existing = currentToolCalls.find(item => item.id === event.tool.id);
+          const toolCall = {
             id: event.tool.id,
-            role: 'tool',
-            toolName: event.tool.name,
-            status: event.tool.status,
-            text: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '',
+            name: event.tool.name,
+            status: event.tool.status === 'running' ? 'pending' : event.tool.status,
+            summary: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '',
             createdAt: existing?.createdAt || new Date().toISOString(),
+            taskId: event.taskId,
           };
-          if (existing) current.messages = current.messages.map(item => item.id === toolMessage.id ? toolMessage : item);
-          else current.messages.push(toolMessage);
+          if (existing) current.toolCalls = currentToolCalls.map(item => item.id === toolCall.id ? toolCall : item);
+          else current.toolCalls = [...currentToolCalls, toolCall];
           store.saveBot(current);
         } });
         const current = store.load().bots.find(item => item.id === botId);

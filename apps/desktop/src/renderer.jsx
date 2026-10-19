@@ -27,6 +27,7 @@ function App() {
   const bodyRef = useRef(null);
   const bots = state?.bots || [];
   const activeBot = bots.find(bot => bot.id === activeId) || bots[0];
+  const taskCalls = activeBot?.toolCalls || [];
   const filteredBots = useMemo(() => bots.filter(bot => `${bot.name} ${bot.description}`.toLowerCase().includes(query.toLowerCase())), [bots, query]);
 
   useEffect(() => {
@@ -47,20 +48,23 @@ function App() {
           ...current,
           bots: current.bots.map(bot => {
             if (bot.id !== event.botId) return bot;
-            const existing = bot.messages.find(message => message.id === event.tool.id);
-            const message = {
+            const botToolCalls = bot.toolCalls || [];
+            const existing = botToolCalls.find(call => call.id === event.tool.id);
+            const toolCall = {
               id: event.tool.id,
-              role: 'tool',
-              toolName: event.tool.name,
-              status: event.tool.status,
-              text: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '',
+              name: event.tool.name,
+              status: event.tool.status === 'running' ? 'pending' : event.tool.status,
+              summary: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '',
               createdAt: existing?.createdAt || new Date().toISOString(),
+              taskId: event.taskId,
             };
+            const messages = bot.messages.map(message => message.role === 'tool' ? null : message).filter(Boolean);
             return {
               ...bot,
-              messages: existing
-                ? bot.messages.map(item => item.id === message.id ? message : item)
-                : [...bot.messages, message],
+              messages,
+              toolCalls: existing
+                ? botToolCalls.map(item => item.id === toolCall.id ? toolCall : item)
+                : [...botToolCalls, toolCall],
             };
           }),
         };
@@ -99,7 +103,7 @@ function App() {
     </aside>
     <main className="conversation">
       <header className="conversation-header"><div className="active-agent"><span className="agent-mark"><Mark small/></span><span><b>{activeBot?.name || 'Grok Bot'}</b><small>{provider.connected ? 'CodexRouter connected' : 'CodexRouter unavailable'}</small></span></div><div className="header-actions"><label className="model-select"><span>Model</span><select value={model} onChange={event => setModel(event.target.value)} disabled={busy}>{provider.models.length ? provider.models.map(item => <option value={item.id} key={item.id}>{item.name}</option>) : <option value="codexrouter/gateway">Unavailable</option>}</select></label><button className="icon-button" aria-label="Toggle details" onClick={() => setDetails(value => !value)}><Icon name="info"/></button><button className="icon-button" aria-label="More options" onClick={() => setNotice('Conversation actions')}><Icon name="dots"/></button></div></header>
-      <section className="transcript" ref={bodyRef} aria-live="polite">{activeBot?.messages.length || busy ? <div className="message-list">{activeBot?.messages.map(message => message.role === 'tool' ? <article className={`tool-row ${message.status || ''}`} key={message.id}><Icon name="activity"/><div><b>{message.toolName}</b><small>{message.text}</small></div></article> : <article className={`message ${message.role} ${message.error ? 'error' : ''}`} key={message.id}><div className="message-avatar">{message.role === 'user' ? 'C' : <Mark small/>}</div><div className="message-body"><div className="message-meta"><b>{message.role === 'user' ? 'You' : activeBot.name}</b><time>{new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</time></div><p>{message.text}</p></div></article>)}{busy && liveTools.map(tool => <article className={`tool-row ${tool.status}`} key={tool.id}><Icon name="activity"/><div><b>{tool.name}</b><small>{tool.status === 'running' ? 'Em execução' : tool.output}</small></div></article>)}{busy && <article className="message assistant"><div className="message-avatar"><Mark small/></div><div className="message-body"><div className="message-meta"><b>{activeBot.name}</b><span className="working"><i/>Working</span></div><p>{liveText || 'Thinking…'}</p></div></article>}</div> : <div className="empty-chat"><div className="empty-symbol"><Mark/></div><h1>{activeBot?.name || 'Grok Bot'}</h1><p>How can I help?</p></div>}</section>
+      <section className="transcript" ref={bodyRef} aria-live="polite">{activeBot?.messages.length || taskCalls.length || busy ? <div className="message-list">{activeBot?.messages.map(message => <article className={`message ${message.role} ${message.error ? 'error' : ''}`} key={message.id}><div className="message-avatar">{message.role === 'user' ? 'C' : <Mark small/>}</div><div className="message-body"><div className="message-meta"><b>{message.role === 'user' ? 'You' : activeBot.name}</b><time>{new Date(message.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</time></div><p>{message.text}</p></div></article>)}{taskCalls.length > 0 && <section className="task-outline" aria-label="Task outline"><div className="task-outline-title">Activity</div>{taskCalls.map(call => <details className={`tool-row ${call.status}`} key={call.id} open={call.status === 'pending'}><summary><Icon name="activity"/><b>{call.name.replaceAll('_', ' ')}</b><span>{call.status === 'pending' ? 'Running' : call.status}</span></summary><small>{call.summary}</small></details>)}</section>}{busy && liveTools.filter(tool => !taskCalls.some(call => call.id === tool.id)).map(tool => <article className={`tool-row ${tool.status === 'running' ? 'pending' : tool.status}`} key={tool.id}><Icon name="activity"/><div><b>{tool.name.replaceAll('_', ' ')}</b><small>{tool.status === 'running' ? 'Em execução' : tool.output}</small></div></article>)}{busy && <article className="message assistant"><div className="message-avatar"><Mark small/></div><div className="message-body"><div className="message-meta"><b>{activeBot.name}</b><span className="working"><i/>Working</span></div><p>{liveText || 'Thinking…'}</p></div></article>}</div> : <div className="empty-chat"><div className="empty-symbol"><Mark/></div><h1>{activeBot?.name || 'Grok Bot'}</h1><p>How can I help?</p></div>}</section>
       {notice && <div className="notice" role="status"><span>{notice}</span><button aria-label="Dismiss" onClick={() => setNotice('')}><Icon name="close"/></button></div>}
       <footer className="composer-area"><form className="composer" onSubmit={submit}><textarea aria-label="Message" placeholder={`Message ${activeBot?.name || 'Grok Bot'}`} rows="1" value={draft} onChange={event => setDraft(event.target.value)} onKeyDown={event => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); submit(); } }}/><div className="composer-bar"><button type="button" aria-label="Attach" onClick={() => setNotice('File attachments are not wired yet.')}><Icon name="attach"/></button><span className="grow"/><button type="submit" className="send" aria-label="Send message" disabled={!draft.trim() || busy}><Icon name="send"/></button></div></form><small className="provider-caption">Responses are sent to CodexRouter on this Mac.</small></footer>
     </main>
