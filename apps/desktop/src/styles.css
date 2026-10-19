@@ -55,58 +55,28 @@
 @media(max-width:900px){.app-shell{grid-template-columns:280px minmax(0,1fr)}.app-shell:has(>.details){grid-template-columns:280px minmax(0,1fr)}}
 @media(max-width:620px){.app-shell{grid-template-columns:58px minmax(0,1fr)}.app-shell:has(>.details){grid-template-columns:58px minmax(0,1fr)}.sidebar{padding:0 5px 8px}.sidebar-tools{height:46px;min-height:46px}.sidebar-shortcut{width:36px}.sidebar-account-row{justify-content:center;padding:0}.account-name,.account-menu{display:none}.connect{display:none}.agent-list{padding-top:10px}.agent-item{min-height:54px}.conversation-header{height:46px;min-height:46px;padding:0 8px 0 4px}.window-drag-region{inset:-12px -8px 0 -68px}}
 
-/* Match the captured original shell and composer state more closely. */
-.message-list{width:min(680px,calc(100% - 48px));gap:8px;padding:18px 0 24px}
-.message.assistant{position:relative;justify-content:flex-start;padding-left:28px}
-.message.assistant .message-avatar{position:absolute;left:0;top:0;width:24px;height:24px;border:0;background:transparent}
-.message.assistant .message-avatar .mark{width:22px;height:22px}
-.message.assistant .message-body{max-width:min(560px,100%);padding:8px 12px 9px;border-radius:0 15px 15px 0}
-.message.assistant+.message.assistant .message-body{border-radius:0 0 15px 15px}
-.message.assistant:first-child .message-body{border-radius:15px}
-.message.user .message-body{max-width:min(560px,90%);padding:8px 12px 9px;border-radius:18px}
-.composer-area{width:min(680px,calc(100% - 48px));margin-bottom:12px}
+/* Transcript alignment, bubbles, and spacing follow the shipped Grok Bot CSS contract. */
+.message-list{width:min(960px,calc(100% - 48px));gap:8px;padding:12px 0 20px}
+.message{position:relative;display:flex;justify-content:flex-start;min-height:0}
+.message.assistant{justify-content:flex-start;padding:0}
+.message.assistant .message-avatar,.message.user .message-avatar{display:none}
+.message.assistant .message-body{width:max-content;max-width:min(560px,100%);padding:7px 12px;border-radius:15px;background:var(--sand-transcript-bubble-agent-fill,var(--sand-fill-bubble-agent));color:var(--sand-text-primary)}
+.message.user{justify-content:flex-end;padding:0}
+.message.user .message-body{width:max-content;max-width:min(560px,90%);padding:7px 12px;border-radius:18px;background:var(--sand-transcript-bubble-user-fill,var(--sand-fill-bubble-user));color:var(--sand-transcript-bubble-user-text,var(--sand-text-on-primary,#fff))}
+.message-body{min-width:0}
+.message-markdown{font-size:14px;line-height:var(--sand-transcript-prose-line-height,22px)}
+.message-markdown p{margin:0;color:inherit;font-size:inherit;line-height:inherit}
+.message.assistant+.message.assistant .message-body,.message.user+.message.user .message-body{border-radius:0 0 15px 15px}
+.message.user+.message.assistant .message-body,.message.assistant+.message.user .message-body{border-radius:15px}
+.composer-area{width:min(960px,calc(100% - 48px));margin-bottom:12px}
 .composer{gap:8px;padding-left:8px}
 .attach-action{width:30px!important;height:30px!important;flex:none;border:0!important;border-radius:50%!important;background:#242424!important;color:#aaa!important}
 .attach-action svg{width:17px;height:17px}
 .composer-bar{gap:5px}
-.message-list{width:min(680px,calc(100% - 48px));gap:8px;padding:18px 0 24px}
-.message.assistant{position:relative;justify-content:flex-start;padding-left:28px}
-.message.assistant .message-avatar{position:absolute;left:0;top:0;width:24px;height:24px;border:0;background:transparent}
-.message.assistant .message-avatar .mark{width:22px;height:22px}
-.message.assistant .message-body{max-width:min(560px,100%);padding:8px 12px 9px;border-radius:0 15px 15px 0}
-.message.assistant+.message.assistant .message-body{border-radius:0 0 15px 15px}
-.message.user{justify-content:flex-end;padding-right:0}
-.message.user .message-body{max-width:min(560px,90%);padding:8px 12px 9px;border-radius:18px}
-.message-list{width:min(560px,calc(100% - 48px));gap:8px;padding:12px 0 20px}
-.message{position:relative;display:flex;justify-content:flex-start;min-height:0}
-.message.user{justify-content:flex-start;padding:0}
-.message.user .message-body{width:max-content;max-width:min(560px,90%);padding:8px 12px 9px;border-radius:0 0 15px 15px;background:var(--sand-fill-bubble-agent);color:var(--sand-text-primary)}
-.message.assistant{padding-left:28px}
-.message.assistant .message-avatar{position:absolute;left:0;top:0;width:24px;height:24px;border:0;background:transparent}
-.message.assistant .message-body{max-width:min(560px,100%);border-radius:0 15px 15px 0}
-.message.assistant+.message.assistant .message-body,.message.user+.message.user .message-body{border-radius:0 0 15px 15px}
-.message.user+.message.assistant .message-body,.message.assistant+.message.user .message-body{border-radius:15px}
-/* Transcript role mapping follows the reference renderer: user bubbles right, assistant prose left. */
-.message-list{width:min(960px,calc(100% - 48px));gap:8px;padding:12px 0 20px}
-.message{position:relative;display:flex;justify-content:flex-start;min-height:0}
-.message.assistant{justify-content:flex-start;padding:0 28px 0 28px}
-.message.assistant .message-avatar{position:absolute;left:0;top:0;width:24px;height:24px;display:block;border:0;background:transparent}
-.message.assistant .message-avatar .mark{width:22px;height:22px}
-.message.assistant .message-body{width:max-content;max-width:min(560px,100%);padding:8px 12px 9px;border-radius:0 15px 15px 0;background:var(--sand-fill-bubble-agent);color:var(--sand-text-primary)}
-.message.assistant:first-child .message-body,.message.user+.message.assistant .message-body{border-radius:15px}
-.message.assistant+.message.assistant .message-body{border-radius:0 0 15px 15px}
-.message.user{justify-content:flex-end;padding:0}
-.message.user .message-avatar{display:none}
-.message.user .message-body{width:max-content;max-width:min(560px,90%);padding:8px 12px 9px;border-radius:18px;background:var(--sand-fill-bubble-user);color:var(--sand-transcript-bubble-user-text,#fff)}
-.message.user+.message.user .message-body{border-radius:0 0 15px 15px}
-.message.assistant+.message.user .message-body{border-radius:15px}
-.composer-area{width:min(960px,calc(100% - 48px));margin-bottom:12px}
-.conversation-header{height:38px;min-height:38px;padding:0 20px 0 12px;border:0;background:transparent}
+.conversation-header{height:38px;min-height:38px;padding:0 20px 0 12px;background:transparent}
 .window-drag-region{inset:-12px -20px 0 -84px}
 .active-agent,.header-actions{display:flex}
 .active-agent{gap:0}.active-agent>span:last-child{display:block}.active-agent b{font-size:13px;font-weight:500}
 .active-agent small,.model-select{display:none}
 .icon-button{width:30px;height:30px}
-.conversation-header{height:38px;min-height:38px;padding:0 20px 0 12px;background:transparent}
-.active-agent b{font-weight:500}
 .sidebar-shortcut{background:#625cf0}
