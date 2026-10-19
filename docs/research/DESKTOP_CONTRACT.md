@@ -41,6 +41,12 @@ As setas sólidas representam relações confirmadas nos bundles: C→M resolve 
 
 ## Snapshot de inicialização e IPC direto
 
+### Janela e chrome nativo no macOS
+
+O Electron Main original cria a janela principal pelo construtor `BrowserWindow` e compõe `windowOptions` a partir do helper `zF`. No macOS, o helper retorna `{frame:true,titleBarStyle:"hiddenInset",trafficLightPosition:VF}`; em Windows usa frame sem borda com `titleBarStyle:"hidden"` e overlay de titlebar; outros sistemas ficam no default. A construção injeta o nome da aplicação como título, ícone e cor de fundo e espalha o objeto de opções na janela. REA selecionado no bundle Main App parseou 669.725 nós sem falhas e reportou 3 declarações BrowserWindow, mas o grafo semântico ficou parcial/truncado; o helper e seu callsite foram confirmados por leitura estática do bundle extraído, sem execução do original. O valor de `VF` e a coordenada exata dos traffic lights não estão associados com segurança nesta leitura, então não são copiados como contrato fechado.
+
+TheGrok agora usa `hiddenInset` e a posição recuperada dos traffic lights no macOS, mantendo o nome próprio do app. O renderer local precisa continuar a tratar a faixa de titlebar/drag conforme estado; o comportamento de janela nos demais sistemas ainda deve seguir um trace dedicado.
+
 O preload chama sincronamente `ipcRenderer.sendSync("sand:boot-snapshot-sync")`. Main Core registra o `ipcMain.on` correspondente e devolve um snapshot com `experiments`, `theme`, `language`, estado de tecnologia assistiva, estado/status do túnel de egresso, estado do proxy WebAuthn, e configuração de cor do bot, além do estado `mainEdge`. O valor `mainEdge` condiciona as chamadas RPC do preload até Main sinalizar `sand:main-edge-served`; o adaptador preload mantém chamadas e assinaturas de eventos pendentes até esse sinal.
 
 Outros canais IPC literais identificados estaticamente:

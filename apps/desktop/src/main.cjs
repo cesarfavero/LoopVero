@@ -1,7 +1,8 @@
 const electron = require('electron');
 const { app, BrowserWindow, ipcMain } = electron;
-app.setName('TheGrok');
 const path = require('node:path');
+app.setName('Grok Bot');
+if (process.platform === 'darwin') app.setPath('userData', path.join(app.getPath('appData'), 'TheGrok'));
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
@@ -32,9 +33,11 @@ function createWindow() {
   if (!app.isPackaged && (!electron.app || !process.versions.electron || !process.execPath.includes('Electron.app/Contents/MacOS/Electron'))) {
     throw new Error('TheGrok deve ser iniciado pelo executável Electron instalado, não como script Node.');
   }
+  const isMac = process.platform === 'darwin';
   const window = new BrowserWindow({
-    width: 1440, height: 930, minWidth: 900, minHeight: 620,
-    backgroundColor: '#fcfcfc', title: 'TheGrok',
+    width: 1920, height: 1050, minWidth: 900, minHeight: 620,
+    backgroundColor: '#0a0a0a', title: 'Grok Bot',
+    ...(isMac ? { titleBarStyle: 'hiddenInset' } : {}),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true, nodeIntegration: false, sandbox: true,

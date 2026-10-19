@@ -83,3 +83,11 @@ Classes atomizadas foram relacionadas com os seletores exatos em `index-DkV65EBE
 4. Mapear condições do feature gate e dos estados de privacidade, unavailable, waking e recovery até os componentes apresentados.
 5. Depois de fechar o mapa de código e CSS, reconstruir a superfície e comparar uma execução controlada; ainda não declarar paridade visual.
 
+## Iteração local em 2026-10-19
+
+Uma análise REA selecionada de `index.eager-app-DSuGVQNC.js` (parent `ev_02013c39590360578ae0070cbddbf1fc21b89cc1fda5d8f9fdb657da7906b518`) parseou 450.196 nós AST sem falhas. A seleção cobriu um dos 612 arquivos inventariados; o grafo semântico excedeu o orçamento e permaneceu parcial. Essa análise foi usada como evidência de identidade/parse, não como prova de execução nem como confirmação de que os componentes de roster ficam nesse chunk.
+
+Na implementação local, a linha de agente agora usa a última mensagem como preview, omite a descrição local genérica quando não há mensagem, e marca `id === "primary"` com o rótulo `Main Bot`. O rodapé foi reorganizado para perfil e `Connect apps` na mesma linha. A largura base continua fixa em 280 px nesta iteração: o contrato original também tem 240–400 px de resize, estado persistido, colapso para 88 px, pins, seções, seleção, recovery e layout adaptável; essas partes ainda não foram portadas. Os botões de computer, connector, dictation e voice chat mostram mensagens de indisponibilidade porque os respectivos fluxos locais ainda não estão ligados.
+
+A inspeção do bundle Main localizou o helper `zF`: no macOS o original define `frame:true`, `titleBarStyle:"hiddenInset"` e `trafficLightPosition:VF`; veja [contrato desktop](DESKTOP_CONTRACT.md#janela-e-chrome-nativo-no-macos). A réplica preserva `hiddenInset`, mas o valor dinâmico `VF` ainda não foi recuperado com confiança; a captura nativa atual mostra traffic lights que não aparecem na janela original, portanto a paridade desse detalhe segue aberta. A tela vazia local e os itens locais `New Bot` ainda não representam o roster e o estado de conversa do original. Nenhuma paridade foi reivindicada.
+
