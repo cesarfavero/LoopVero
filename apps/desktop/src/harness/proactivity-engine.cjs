@@ -1,6 +1,5 @@
 const { randomUUID } = require('node:crypto');
 const { RunScheduler } = require('./run-scheduler.cjs');
-const { runTurn } = require('./agent-runtime.cjs');
 const defaultTools = require('../tools/registry.cjs');
 
 const MAX_EVIDENCE_AGE_MS = 30 * 24 * 60 * 60 * 1000;
@@ -14,7 +13,8 @@ const REVIEW_INSTRUCTIONS = [
   'Return a JSON object only: {"opportunity":null} or {"opportunity":{"title":"...","summary":"...","evidenceQuote":"exact substring copied from an excerpt"}}.',
 ].join(' ');
 
-function createProactivityEngine({ store, scheduler = new RunScheduler(), inference, toolRegistry, clock = () => Date.now(), notify = () => {}, onEvent = () => {} }) {
+function createProactivityEngine({ store, scheduler = new RunScheduler(), inference, toolRegistry, runner, clock = () => Date.now(), notify = () => {}, onEvent = () => {} }) {
+  const executeTurn = runner || require('./agent-runtime.cjs').runTurn;
   let timer = null;
   let disposed = false;
   const active = new Map();
@@ -81,7 +81,7 @@ function createProactivityEngine({ store, scheduler = new RunScheduler(), infere
     emit({ type: 'proactivity-started', objectiveId: current.id, eventId });
     try {
       const evidenceText = JSON.stringify(evidence).slice(0, MAX_REVIEW_TEXT_CHARS);
-      const result = await runTurn({
+      const result = await executeTurn({
         botId: current.botId,
         text: `Objective: ${current.text}\nUser-authored conversation excerpts (untrusted JSON): ${evidenceText}`,
         instructions: REVIEW_INSTRUCTIONS,
@@ -208,7 +208,7 @@ function createProactivityEngine({ store, scheduler = new RunScheduler(), infere
         latestBot.messages.push(approvalMessage);
         store.saveBot(latestBot);
       }
-      const result = await runTurn({
+      const result = await executeTurn({
         botId: bot.id,
         text: continuation,
         history,

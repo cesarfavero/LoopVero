@@ -63,3 +63,14 @@ O rastreio focado de composição, estados de layout, tema e ciclo do composer e
 Em 2026-10-19, REA refez a análise estática do ASAR focando `index-wlkGG389.js` e `index.eager-app-DSuGVQNC.js`: Evidence de análise pai `ev_8d917749d8bac2f07b1b2affdfde39c7e3454fd360752a732e66831114c3bcb9`, resumo `ev_e6a0b5cab857987a144d6f620bd27616df6c3d92aa54987c652e539c380e55ae`. O hash ASAR confere com o inventário. A análise parseou os bundles como texto inerte, mas deixou 610 arquivos não selecionados; ambos os módulos centrais excederam o orçamento de grafo e a cobertura resultante é parcial. Seis artefatos nativos desempacotados têm bytes que contradizem metadados de integridade e foram excluídos como base de conclusões.
 
 No código minificado do bundle principal, `tool-call` é uma variante de entry do outline com `id`, `status` e `summary`; seu nome deriva de `name`, com ícones `loading` para pending, `x-circle` para failed e `wrench` nos demais estados. A linha do outline pode expandir detalhes. Um renderer de transcript retorna `null` para essa variante. O coordinator contém um validador mais amplo com `name`, `argumentsJson`, `atMs` e resultado opcional. São observações estáticas sobre renderer/coordinator, não prova de exibição em runtime nem protocolo de ferramenta do CodexRouter. Referência detalhada: [CHAT_PROTOCOL.md](CHAT_PROTOCOL.md).
+
+## Assets licenciados em build privado de teste (2026-10-19)
+
+Com autorização explícita do usuário para copiar assets licenciados ao app de teste, uma inspeção REA estática adicional do ASAR (`055b087a…0e860`) e do CSS/bundles produziu parent Evidence `ev_f4a77bf9333c636d3cc299017b5862545874591afdc9ca0cbe9fcfc37cb3e7a9`, resumo `ev_74e426004b9c2a22c9fde1eb2b067f9be38ddf67e9dc32129047f23fea4d2041`. A análise é parcial, com 611 arquivos fora da seleção; presença de referência não significa que o recurso apareça em todo estado.
+
+Foram copiados, com SHA-256 conferidos contra os bytes extraídos da referência, para `apps/desktop/src/assets/licensed-test/`:
+
+- `cursor-icons-16-gwXtdAvu.woff2` (`3887767e…96054a`), declarada no CSS e pré-carregada pelo HTML original. A fonte é empacotada no build; o app ainda usa ícones SVG locais porque o mapeamento glyph/codepoint das telas relevantes não foi resolvido.
+- `app-icon.png` (`79e6a73e…169ad2`), copiado de `app-icon-C7NKj2u7.png`, referenciado pelo bundle eager original. O app local o usa como marca e ícone do Dock em macOS.
+
+As fontes `X-VF-C7NyO54W.woff2` e `XMono-VF-K4lk0ar0.woff2` já estavam no app e os hashes conferem com o original. Outros assets referenciados para onboarding, tela de computador ou integrações serão copiados quando essas superfícies forem implementadas. Esta inclusão destina-se ao app privado de teste, não a uma distribuição pública.

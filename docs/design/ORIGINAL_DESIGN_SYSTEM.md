@@ -50,8 +50,8 @@ O stylesheet contém regras media-query e referências a variáveis dinâmicas p
 
 ## Aplicação local dos tokens recuperados
 
-`apps/desktop/src/styles.css` usa agora tokens de cor, escala tipográfica, line heights, pesos, radius do item de agente e fonte de foco no vocabulário recuperado. É uma aplicação própria dos valores, não uma cópia do CSS original nem uma alegação de paridade. O `--cursor-font-family-sans` conserva o encadeamento de fallback observado; as cópias locais das fontes XVF continuam idênticas à referência. A geometria da shell local permanece provisória porque ainda não foi comparada com a composição React em viewport controlado.
+`apps/desktop/src/styles.css` usa tokens de cor, escala tipográfica, line heights, pesos, radius do item de agente e fonte de foco recuperados. É uma aplicação própria dos valores, não uma cópia do CSS original nem uma alegação de paridade. As fontes e assets licenciados autorizados estão copiados para uso no app privado de teste. A geometria da shell local permanece provisória porque não foi mapeada até os callsites React e comparada em viewport controlado. Consulte o [inventário dos assets do renderer](../research/RENDERER_ASSET_INVENTORY.md).
 
 ## Limites e próximos passos
 
-Esta é uma base do design system recuperado do código, não um guia de paridade visual concluído. Faltam relacionar tokens a componentes React específicos, observar tema e escala efetivos, mapear ícones/overlays/estados e produzir screenshots pareados com viewport, conteúdo e escala iguais. A autorização vigente permite cópias de assets licenciados somente para build privado de teste; por isso esta documentação referencia os assets de pesquisa sem adicioná-los ao build nem a uma distribuição.
+Esta é uma base do design system recuperado do código, não um guia de paridade visual concluído. Faltam relacionar tokens a componentes React específicos, observar tema e escala efetivos, mapear ícones/overlays/estados e produzir screenshots pareados com viewport, conteúdo e escala iguais. As cópias autorizadas servem ao app privado de teste; sua inclusão no build não equivale à distribuição do produto.

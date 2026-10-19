@@ -4,19 +4,21 @@ app.setName('TheGrok');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
-const { runTurn } = require('./harness/agent-runtime.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
 const { createProactivityEngine } = require('./harness/proactivity-engine.cjs');
+const { createExecutionHostClient } = require('./harness/execution-host-client.cjs');
 
 let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
 const activeRuns = new Map();
 const scheduler = new RunScheduler();
+const executionHost = createExecutionHostClient();
 const proactivity = createProactivityEngine({
   store,
   scheduler,
+  runner: executionHost.runTurn,
   notify: () => {
     if (!electron.Notification?.isSupported?.() || mainWindow?.isFocused()) return;
     const notification = new electron.Notification({ title: 'TheGrok', body: 'A saved objective has a suggestion ready for your review.' });
@@ -136,7 +138,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         currentBot.messages = [...history, { id: runId, role: 'user', text, createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
         if (store.load().proactiveSettings.enabled) void proactivity.tick();
-        result = await runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, onEvent: event => {
+        result = await executionHost.runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, onEvent: event => {
           emit({ ...event, runId, botId });
           if (event.type === 'assistant-final' && typeof event.text === 'string') {
             const current = store.load().bots.find(item => item.id === botId);
@@ -177,6 +179,13 @@ ipcMain.handle('agent:turn', async (event, payload) => {
   }
 });
 
-app.whenReady().then(() => { createWindow(); proactivity.reschedule(); app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); }); });
-app.on('before-quit', () => { for (const run of activeRuns.values()) run.abort(); proactivity.dispose(); });
+app.whenReady().then(() => {
+  if (process.platform === 'darwin' && app.dock && electron.nativeImage) {
+    app.dock.setIcon(electron.nativeImage.createFromPath(path.join(__dirname, 'assets/licensed-test/app-icon.png')));
+  }
+  createWindow();
+  proactivity.reschedule();
+  app.on('activate', () => { if (BrowserWindow.getAllWindows().length === 0) createWindow(); });
+});
+app.on('before-quit', () => { for (const run of activeRuns.values()) run.abort(); proactivity.dispose(); executionHost.dispose(); });
 app.on('window-all-closed', () => { if (process.platform !== 'darwin') app.quit(); });
