@@ -82,3 +82,30 @@
 .active-agent small,.model-select{display:none}
 .icon-button{width:30px;height:30px}
 .sidebar-shortcut{background:#625cf0}
+
+/* Sidebar collapse control and 88px desktop rail follow the recovered ED/yq shell states. */
+@media(min-width:621px){
+  .app-shell{grid-template-columns:var(--sidebar-width,280px) minmax(424px,1fr)}
+  .app-shell:has(>.details){grid-template-columns:var(--sidebar-width,280px) minmax(424px,1fr) 320px}
+  .app-shell.sidebar-collapsed{grid-template-columns:var(--sidebar-width,88px) minmax(424px,1fr)}
+  .app-shell.sidebar-collapsed:has(>.details){grid-template-columns:var(--sidebar-width,88px) minmax(424px,1fr) 320px}
+  .sidebar{position:relative}
+  .sidebar-resize-handle{position:absolute;z-index:5;top:0;right:-6px;bottom:0;width:12px;touch-action:none;cursor:col-resize;-webkit-app-region:no-drag}
+  .sidebar-resize-handle:focus-visible{outline:2px solid var(--sand-border-focus-primary);outline-offset:-2px}
+  .sidebar-collapsed .sidebar{padding-right:10px;padding-left:10px}
+  .sidebar-collapsed .sidebar-tools{height:auto;min-height:0;flex-direction:column;align-items:center;gap:4px;padding-top:10px}
+  .sidebar-collapsed .sidebar-spacer,.sidebar-collapsed .sidebar-search-control,.sidebar-collapsed .sidebar-search{display:none}
+  .sidebar-collapsed .agent-list{padding-top:10px}
+  .sidebar-collapsed .agent-item{min-height:54px;grid-template-columns:1fr;justify-items:center;gap:0;padding:8px 0}
+  .sidebar-collapsed .agent-copy{display:none}
+  .sidebar-collapsed .sidebar-bottom{justify-content:center;padding:0}
+  .sidebar-collapsed .sidebar-account-row{justify-content:center;padding:0;border:0}
+  .sidebar-collapsed .connect{display:none}
+}
+@media(min-width:621px) and (max-width:900px){
+  .app-shell{grid-template-columns:var(--sidebar-width,280px) minmax(0,1fr)}
+  .app-shell:has(>.details){grid-template-columns:var(--sidebar-width,280px) minmax(0,1fr)}
+  .app-shell.sidebar-collapsed{grid-template-columns:var(--sidebar-width,88px) minmax(0,1fr)}
+  .app-shell.sidebar-collapsed:has(>.details){grid-template-columns:var(--sidebar-width,88px) minmax(0,1fr)}
+}
+@media(max-width:620px){.sidebar-resize-handle{display:none}}
