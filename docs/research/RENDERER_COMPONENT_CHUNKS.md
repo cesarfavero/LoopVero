@@ -30,7 +30,7 @@ Depois, REA analisou seleções unitárias do diretório `dist/renderer` para os
 
 ## Próximo elo necessário
 
-`NewChatBar` e seu pai `HZ` no entry foram localizados estaticamente; o callsite passa `groupChat`, destinatários e callbacks, mas a análise REA do entry reteve grafo parcial. Seguir os callbacks `onCommit`, `onAddRecipient`, `onEnterGroupMode`, `onCreateTeamBot` e `onClose` até ações, stores e persistência para recuperar o ciclo completo da conversa em grupo. Não portar esse elemento para o modelo atual de bots individuais até definir a entidade e o lifecycle correspondentes. A árvore global de import/uso continua incompleta; estado de tema, largura real e tela ativa também não são provados por CSS ou JSX isolados.
+O contrato do `NewChatBar`, da transação de criação `wze`, do wrapper de roster e da entidade no Sand Host está consolidado em [GROUP_CHAT_CONTRACT.md](GROUP_CHAT_CONTRACT.md). O trace confirma que grupo é um lifecycle de primeira classe, e não somente uma seleção visual sobre bots individuais. Permanecem pendentes o caminho completo pelo Coordinator/protocolo remoto, callsite e gate em runtime, telas de transcript/membros e estados de falha. A árvore global de import/uso continua incompleta; estado de tema, largura real e tela ativa também não são provados por CSS ou JSX isolados.
 
 ## Nova análise REA e comparação runtime (2026-10-19)
 
