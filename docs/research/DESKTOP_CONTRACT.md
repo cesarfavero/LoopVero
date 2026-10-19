@@ -28,10 +28,13 @@ flowchart LR
   C -->|data/control framed messages| R
   M <-->|main-data MessagePort| C
   M -->|fork e bootstrap processConfig| C
-  C --> H[Sand Host / agent runtime boundary]
+  C -->|coordinator-control RPC: resolveGatewayConnection| M
+  M -->|connector.connect("gateway")| G[SandBox connector / broker]
+  C -->|HTTP POST /api/{method}; GET /events| G2[Gateway URL retornada]
+  G2 -. host físico/processo não provado .-> H[Sand Host / agent runtime]
 ```
 
-As setas mostram relações estáticas do código, não prova de execução. O handoff explícito e as mensagens foram recuperados nos códigos correspondentes de preload e Main; a alcançabilidade do ciclo de vida não foi provada aqui.
+As setas sólidas mostram relações estáticas confirmadas: C→M resolve a conexão via RPC Main, M→G delega ao connector, e C→G2 representa o uso HTTP do endereço retornado. A seta pontilhada marca a fronteira gateway→host ainda não provada. O handoff explícito e as mensagens foram recuperados nos códigos correspondentes de preload e Main; a alcançabilidade do ciclo de vida não foi provada aqui.
 
 ## Snapshot de inicialização e IPC direto
 
@@ -62,7 +65,7 @@ Main App declara a edge correspondente `Ko("main", {methods})`; compõe handlers
 
 ## Handoff e ciclo de vida do Coordinator
 
-O Main App resolve `dist/node-agent-coordinator/main.cjs` em relação ao bundle Main e inicia o processo por `fork` com nome de serviço. Cria três canais/MessagePorts, envia bootstrap contendo `processConfig` e transfere as três portas. Os papéis são `control`, `data` e `mainData`. O Coordinator aceita handoff por parent-port (valida o envelope bootstrap e exige três portas transferidas) ou argumento bootstrap via fork IPC; identifica frames como `coordinator-control` e `coordinator-main-data`, deixando frames normais no canal data. Frames recebidos seguem para handlers de control/data/mainData; fechamento das portas e desconexão são propagados ao dono do transporte.
+O Main App resolve `dist/node-agent-coordinator/main.cjs` em relação ao bundle Main e inicia o processo por `fork` com nome de serviço. Cria três canais/MessagePorts, envia bootstrap contendo `processConfig` e transfere as três portas. O Coordinator solicita ao Main o gateway de sandbox por `resolveGatewayConnection({path: "gateway"})`; a composição do connector e os limites dessa evidência estão na seção [Resolução do gateway da sandbox](#resolução-do-gateway-da-sandbox-pelo-coordinator). Os papéis são `control`, `data` e `mainData`. O Coordinator aceita handoff por parent-port (valida o envelope bootstrap e exige três portas transferidas) ou argumento bootstrap via fork IPC; identifica frames como `coordinator-control` e `coordinator-main-data`, deixando frames normais no canal data. Frames recebidos seguem para handlers de control/data/mainData; fechamento das portas e desconexão são propagados ao dono do transporte.
 
 A implementação Main cria uma ponte do coordinator, recebe frames de saída e encaminha a porta de dados do renderer apenas depois de um pedido do preload. Se o processo filho termina, Main encerra aquela instância, registra o ciclo de vida e agenda nova inicialização com backoff; reinicialização ou descarte fecha canais e encerra o processo filho. Uma proteção por geração impede notificações antigas `transport-connected` / `transport-down` de substituir gerações recentes. Preload expõe `window.coordinatorPort` com `claim({onPort})`, `request` e `release`; o renderer cria um adaptador para o MessagePort transferido, trata substituição da porta e mudanças de identidade, e marca o estado da ponte como `pending` ou `coordinator`.
 
@@ -83,6 +86,58 @@ sequenceDiagram
   C-->>R: resultados/eventos pela MessagePort data
 ```
 
+## Protocolo de conversa pelo gateway
+
+O schema `gateway` declara `sendPrompt`, `promptAcceptanceStatus`, `getAgentTranscript*`, `openAgentTail` e outros métodos, enquanto o Coordinator associa `sendPrompt` à demanda `person` e leituras de transcript a `background` ou `person`, conforme o método. `sendPrompt` está no edge HTTP do gateway; o método que o renderer chama pelo `data` port tem nome ainda não confirmado. A resolução do gateway retorna `baseUrl`, token e header de rede descritos a seguir.
+
+O método gateway `sendPrompt` envia seu objeto por `POST {baseUrl}/api/sendPrompt`, com cabeçalhos de autenticação e `traceparent` quando existe; a resposta JSON passa pelo decoder `sendPrompt`. Os pedidos RPC do data port são validados e encaminhados pela policy do Coordinator, que usa o cliente HTTP do gateway (`POST {baseUrl}/api/{method}`); o Coordinator valida o método e os argumentos em seu registry e, para pedidos classificados como demanda de usuário, cuida de box intent e retry em estados de hibernação antes de encaminhar ao gateway. O fluxo de envio guarda nonce/traceparent para deduplicação/telemetria.
+
+O Coordinator conecta separadamente a `GET {baseUrl}/events` com `Accept: text/event-stream`. O parser reúne linhas `data:`, decodifica JSON no envelope `{channel, payload}` e encaminha evento `transcript` ao pipeline `gatewayTranscript` e depois ao port server→renderer como evento `transcript`. Leituras de transcript podem ser servidas pelo gateway ou por transcript server conforme harness/estado; a composição compara e escolhe fontes, mas isso não demonstra que esse transcript server seja o Sand Host do bundle extraído.
+
+```mermaid
+sequenceDiagram
+  participant R as Renderer
+  participant C as Coordinator
+  participant G as SandBox gateway
+  participant S as Transcript server (identidade não resolvida)
+  R->>C: data port request (método e schema completos pendentes)
+  Note over R,C: sendPrompt não é o nome confirmado do RPC da UI
+  C->>G: POST /api/{método validado} (JSON + auth)
+  Note over C,G: sendPrompt é um dos métodos do registry gateway
+  C->>G: GET /events (Accept: text/event-stream)
+  G-->>C: JSON response do POST (shape completo pendente)
+  G-->>C: SSE event {channel, payload}
+  alt channel transcript
+    C->>C: normalize gateway transcript / source arbitration
+    C-->>R: data port event transcript
+    Note over G,S: composição/arbitragem de fontes; identidade do server e ligação ao host não provadas
+  end
+```
+
+Os caminhos de código são identificáveis e mapeiam envio, aceitação e eventos de transcript na borda Coordinator↔gateway↔renderer; isso não revela o protocolo interno de geração do Sand Host, seu RPC de inferência ou todos os campos/variantes de cada transcript. Os endpoints são literais locais do bundle, não foram chamados durante esta análise estática. A instância física e a relação de processo/container entre gateway e Sand Host continuam desconhecidas.
+
+## Resolução do gateway da sandbox pelo Coordinator
+
+
+O Coordinator não constrói o Sand Host por import local: o Coordinator empacotado descreve uma RPC Main→Coordinator `resolveGatewayConnection({ path })` no canal `coordinator-control` e, na composição inicial, o chama com `{ path: "gateway" }` antes de inicializar os serviços de gateway (offset ASAR extraído ~878.5k; módulo integral SHA-256 `b91b7a4e…3b182c`). O contrato da chamada valida o campo `path` como caminho da sandbox.
+
+No Main App, o handler `resolveGatewayConnection` delega a `connector.connect(path)` (offset do bundle ~384k). Na composição de conexão da janela, o connector é embrulhado com guard de acesso e um SandBox connector, e o `connectForPerson` envolve a conexão com o fluxo de presença/box (`~2.617M`). O caminho `gateway` do SandBox connector exige `gatewayUrl` e projeta `gatewayUrl`, `gatewayToken` e `networkToken` em `baseUrl`, token e header; ausência de `gateway_url` é tratada como falha do broker/backend (`~1.887M`). O Coordinator também possui contrato de bootstrap explícito com versão do app, estado packaged e `dataDir`, e aceita os três canais por MessagePort transferidos ou envelope fork IPC.
+
+```mermaid
+sequenceDiagram
+  participant C as Node Agent Coordinator (cliente local)
+  participant M as Electron Main App
+  participant B as SandBox connector / broker
+  participant G as Sand gateway da box
+  C->>M: coordinator-control.resolveGatewayConnection({path: "gateway"})
+  M->>B: connector.connect("gateway") + guard/presença
+  B-->>M: gatewayUrl, gatewayToken, networkToken
+  M-->>C: baseUrl, token e header de rede
+  C->>G: protocolo de dados para serviços da sandbox
+```
+
+Isso fecha a fronteira de resolução de conexão Main↔Coordinator e comprova que a conexão do Coordinator usa a API do gateway da sandbox. O contrato e os nomes de campos são estáticos e vieram do ASAR validado por hash. **Ainda não prova** o endereço físico do gateway, em qual VM cada processo executa, se o Sand Host está no mesmo container/processo do gateway, o wire completo dos serviços de transcript/agentes, nem que todo fluxo de conversa use exatamente esse transporte. A análise REA focada dos métodos de send/SSE/port processou 4.407 nós sem erro de parse, reteve 74 relações de chamada, 1.570 de fluxo de dados e 16 de requisição, mas manteve cobertura semântica desconhecida e 962 incógnitas; o recorte conserva hash e offsets da origem e não prova relações através dos trechos omitidos. O recorte exato tem SHA-256 `3b1a85c7ba806d077721d883661a2190201d7b0f7596984119aa2c542061d9d1` e declara bytes de origem para rechecagem. O Coordinator integral foi reanalisado por REA (209.594 nós, zero falhas de parse), mas sua semântica também truncou por orçamento.
+
 ## Contrato do renderer e relação com chat
 
 O bundle principal do renderer (`index-wlkGG389.js`) importa os chunks eager-app, eager-platform e eager-vendor. `index.eager-app-DSuGVQNC.js` usa diretamente 110 membros `desktop.*`; 98 nomes correspondem a métodos declarados pela Main no preload, e 12 são estado inicial, assinaturas de eventos ou outros métodos da superfície. O código do renderer reivindica a porta do coordinator, cria um transporte sobre a porta, troca conexões quando ela é substituída, suspende durante mudança de identidade e conecta fontes de transcript e cliente. O renderer chama `desktop.setViewingAgent({agentId})` para manter a presença do agente visualizado, `desktop.setComposingAgent({agentId, composing})` quando o rascunho muda entre vazio e preenchido (com debounce), e `desktop.getWindowState()` para inicializar o estado da janela nativa. O estado da sidebar usa agentes fixados e seções; fontes de transcript são assinadas pela ponte do coordinator. Essas observações de código não estabelecem o schema completo de pedido/resposta para mensagens de chat, deltas de streaming, cartões de ferramenta ou persistência do transcript: esses tipos de wire e o fluxo interno Coordinator↔Sand Host ainda precisam ser mapeados nos módulos de protocolo do coordinator e do host.
@@ -101,7 +156,7 @@ Limitações REA incluem canais dinâmicos, referências entre arquivos não sel
 
 ## Lacunas para continuar
 
-1. Recupere e pagine a Evidence REA retida para consultar resumos estáveis e relações entre módulos; resolva o vínculo provisório entre as análises de Main Core e Coordinator.
-2. Analise os módulos de transcript/chat do renderer e os chunks eager restantes para recuperar schemas de mensagens/eventos, streaming, estados de ações, resultados de ferramentas e atualizações otimistas.
-3. Rastreie o protocolo de entrada/saída do coordinator pelos serviços de transcript e agente, depois relacione-o ao harness completo do Sand Host em `GrokBotResearch`, em especial envio de chat, execução de turnos, streaming, persistência, ferramentas, subagentes e recuperação.
+1. Use tracing semântico REA em escopos menores e Evidence da mesma sessão para ligar a resolução do gateway, os serviços do Coordinator e handlers de evento; providers nativos não estão configurados neste ambiente.
+2. Analise o dispatch do RPC de composer no data port, os schemas de entrada/saída e os estados de transcript do renderer; separe o nome da UI do `sendPrompt` HTTP da edge gateway.
+3. Relacione POST/SSE e eventos `transcript` ao harness completo do Sand Host em `GrokBotResearch`, em especial `send-pipeline`, execução de turnos, streaming, persistência, ferramentas, subagentes e recuperação. A presença desses módulos não estabelece ainda sua chamada pelo backend.
 4. Continue sem alterar as referências originais; mantenha caminhos de Evidence, hashes, confiança e lacunas junto de cada contrato recuperado.

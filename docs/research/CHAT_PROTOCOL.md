@@ -63,11 +63,11 @@ Isto recupera um contrato estrutural e de apresentação estática. Não comprov
 
 ## O que permanece incógnito
 
-- O nome exato do método/edge RPC que submete prompt de chat e o schema integral do request/response.
-- A origem canônica de cada chunk de texto, seus campos (IDs, sequence/epoch, delta vs snapshot), ordenação, deduplicação e condição de terminal.
-- Ligação dinâmica renderer → coordinator port → serviço no coordinator para o fluxo comum de texto. Bundle grande, muitos closures e cobertura semântica parcial impedem alegar pareamento completo.
+- O Coordinator recebe RPC pelo data port do renderer, valida e encaminha o método autorizado ao endpoint HTTP correspondente `/api/{method}`. O método gateway `sendPrompt` usa `POST {baseUrl}/api/sendPrompt`; a resposta passa pelo decoder do mesmo método. **Permanecem incógnitos** o nome/schema integral do RPC da UI e como o endpoint HTTP despacha para o turno no Sand Host. O detalhe está em [DESKTOP_CONTRACT.md](DESKTOP_CONTRACT.md).
+- A origem e a integração de cada chunk de texto seguem incompletas: campos (IDs, sequence/epoch, delta vs snapshot), ordenação, deduplicação e condição terminal do transcript completo.
+- O Coordinator converte `channel: transcript` do SSE `/events` e publica pelo data port; **permanece incógnita** a correspondência completa do fluxo de texto comum no renderer (updates otimistas, deltas, snapshots e estados terminais), pois o bundle grande e a cobertura semântica REA parcial impedem alegar pareamento integral.
 - Payloads completos de eventos de realtime/voz, política de reconnect/resume e como eventos de voz eventualmente viram linhas do transcript.
 - Se todos os dados `seq`, `timestampMs`, `attachments` e `cloudAgentWake` sempre existem ou em quais caminhos.
 - Lógica remota de inferência/execução no Sand Host. O coordinator local é um intermediário; leitura local não revela decisões remotas nem autoriza inferir endpoint privado.
 
-A próxima coleta de evidência com maior valor é fazer REA em arquivos/trechos selecionados do renderer e coordinator voltados a `submitPrompt`, store do transcript, streams/event dispatcher, e mapear exports/imports exatos entre eles. Para fechar comportamento temporal (ordem e payloads reais), é necessária captura/replay controlado autorizado do app/host; não se deduz isso de screenshots.
+A próxima coleta de evidência com maior valor é fazer REA em arquivos/trechos selecionados do renderer e coordinator voltados ao RPC de composer, store do transcript, streams/event dispatcher, e mapear exports/imports exatos entre eles. Para fechar comportamento temporal (ordem e payloads reais), é necessária captura/replay controlado autorizado do app/host; não se deduz isso de screenshots.
