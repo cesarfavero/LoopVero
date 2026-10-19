@@ -37,10 +37,12 @@ Sombras nomeadas no CSS incluem controle `#1c1c1c1f`, card `#1c1c1c09`, popover 
 | Menu | row gap 4 px; altura 30 px; line-height 18 px; radius 12 px; row radius 6 px | Recuperada |
 | Menu de novo chat | radius 14 px; row radius 8 px | Recuperada |
 | Toolbar | `--sand-titlebar-block`, fallback 38 px | Recuperada com valor dinâmico/fallback |
-| Sidebar | `--x---sand-sidebar-width` | Recuperada como alias dinâmico; dimensão final não resolvida |
+| Sidebar | fallback expandido 280 px; resize 240–400 px; colapsado 88 px; `--x---sand-sidebar-width` | Recuperado do app chunk e dos setters de layout; largura efetiva pode vir do estado persistido e da disponibilidade da janela/info pane |
 | Glyph | nudge vertical 1.5 px | Recuperado |
 
 CSS global bloqueia seleção de texto, reabilitando seleção em inputs, textareas e contenteditable. Foco visível usa outline de 2 px com token azul; há tratamento de forced-colors e reduced-motion. Transições observadas incluem 120 ms/ease-out em seletores gerados; não generalizar para todas as animações. O stylesheet também define marcação de transcript, busca, menus, overlays, botões e controles, porém seus estados precisam ser relacionados aos módulos/componentes antes de especificar uma tela.
+
+O mapa de código da sidebar e do roster relaciona os valores acima aos componentes e propriedades atomizadas: [SIDEBAR_RENDERER_MAP.md](../research/SIDEBAR_RENDERER_MAP.md). Esse mapa também recupera a container query `sand-sidebar (max-width: 130px)` usada pela linha de agente e os estados base `expanded`, `collapsed` e `pinned`. Os valores são contratos estáticos de CSS/layout, não dimensões medidas de uma sessão original nem prova do tema ou preferência efetiva de uma conta.
 
 ### Assets, camadas e responsividade
 
