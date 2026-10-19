@@ -51,6 +51,16 @@ O conjunto de tipos de entrada inclui `message`, `tool-call`, `send-message`, `u
 
 Outros campos variam por subtype e são validados em funções específicas. Não trate esta lista como schema integral. `send-message` é um envelope de transcript; `message.type` pode representar texto e outras formas interativas (permissão local, widget, solicitações, etc.). Há estado `streaming` no envelope de envio, enquanto conteúdo textual inclui `content`.
 
+### Apresentação do item `tool-call`
+
+Rechecagem estática no ASAR original de SHA-256 `055b087a…de0e860`, bundle `dist/renderer/assets/index-wlkGG389.js`:
+
+- O renderer separa a lista de entradas da conversa da lista de outline: o switch da linha de transcript retorna `null` para `kind:"tool-call"` (offset ~1.448.823); a linha de outline `oZ` cria um `<button>` com `data-kind` e `data-status` e deriva o texto amigável pelo nome da ferramenta (offset ~1.753.984).
+- O ícone do outline é `loading` quando `status === "pending"`, `x-circle` quando `failed` e `wrench` nos demais estados. O estado pending ativa o modificador de animação `spin`; o resumo, quando não vazio, aparece como preview e expande em detalhes (offsets ~1.751.740–1.755.600).
+- O código comum do renderer identifica entry estático `tool-call` por `id`, `status` e comprimento de `summary` (~1.087.076), e conteúdo detalhado como `summary`; o coordinator valida também `name`, `argumentsJson`, `atMs` e `result` opcional, cujo resultado tem JSON e timestamp (coordinator ~875.000).
+
+Isto recupera um contrato estrutural e de apresentação estática. Não comprova que cada tool-call seja mostrado para todo perfil/estado, nem que o nosso renderer já o reproduza. A UI provisória do TheGrok atualmente põe eventos de ferramenta como linhas do transcript; isso difere da separação original entre transcript e outline. Corrigir essa diferença depende de primeiro construir a estrutura de tarefa/outline correta, não de presumir uma mensagem chat comum.
+
 ## O que permanece incógnito
 
 - O nome exato do método/edge RPC que submete prompt de chat e o schema integral do request/response.

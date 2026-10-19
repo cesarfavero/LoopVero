@@ -49,3 +49,9 @@ Estes nomes evidenciam código empacotado para essas superfícies; não provam q
 ## Composição estática adicional
 
 O rastreio focado de composição, estados de layout, tema e ciclo do composer está em [RENDERER_TRACE.md](RENDERER_TRACE.md). Ele aponta que a estrutura atual da implementação (lista de bots + chat + painel de detalhes) ainda não representa o shell completo baseado em tarefas do original; não promover paridade visual até mapear e implementar essa composição.
+
+## REA e transcript tipado: nova análise
+
+Em 2026-10-19, REA refez a análise estática do ASAR focando `index-wlkGG389.js` e `index.eager-app-DSuGVQNC.js`: Evidence de análise pai `ev_8d917749d8bac2f07b1b2affdfde39c7e3454fd360752a732e66831114c3bcb9`, resumo `ev_e6a0b5cab857987a144d6f620bd27616df6c3d92aa54987c652e539c380e55ae`. O hash ASAR confere com o inventário. A análise parseou os bundles como texto inerte, mas deixou 610 arquivos não selecionados; ambos os módulos centrais excederam o orçamento de grafo e a cobertura resultante é parcial. Seis artefatos nativos desempacotados têm bytes que contradizem metadados de integridade e foram excluídos como base de conclusões.
+
+No código minificado do bundle principal, `tool-call` é uma variante de entry do outline com `id`, `status` e `summary`; seu nome deriva de `name`, com ícones `loading` para pending, `x-circle` para failed e `wrench` nos demais estados. A linha do outline pode expandir detalhes. Um renderer de transcript retorna `null` para essa variante. O coordinator contém um validador mais amplo com `name`, `argumentsJson`, `atMs` e resultado opcional. São observações estáticas sobre renderer/coordinator, não prova de exibição em runtime nem protocolo de ferramenta do CodexRouter. Referência detalhada: [CHAT_PROTOCOL.md](CHAT_PROTOCOL.md).
