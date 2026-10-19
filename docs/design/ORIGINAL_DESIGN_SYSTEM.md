@@ -38,11 +38,12 @@ Sombras nomeadas no CSS incluem controle `#1c1c1c1f`, card `#1c1c1c09`, popover 
 | Menu de novo chat | radius 14 px; row radius 8 px | Recuperada |
 | Toolbar | `--sand-titlebar-block`, fallback 38 px | Recuperada com valor dinâmico/fallback |
 | Sidebar | fallback expandido 280 px; resize 240–400 px; colapsado 88 px; `--x---sand-sidebar-width` | Recuperado do app chunk e dos setters de layout; largura efetiva pode vir do estado persistido e da disponibilidade da janela/info pane |
+| Shell principal | grid base `280px minmax(0,1fr) auto`; transcript/chat mínimo 424 px; titlebar usa fallback 38 px e variantes CSS de 44/52 px | Recuperado da composição `l9`/`ZQ` e das classes atomizadas; app chunk pode substituir a largura da sidebar conforme estado/janela |
 | Glyph | nudge vertical 1.5 px | Recuperado |
 
 CSS global bloqueia seleção de texto, reabilitando seleção em inputs, textareas e contenteditable. Foco visível usa outline de 2 px com token azul; há tratamento de forced-colors e reduced-motion. Transições observadas incluem 120 ms/ease-out em seletores gerados; não generalizar para todas as animações. O stylesheet também define marcação de transcript, busca, menus, overlays, botões e controles, porém seus estados precisam ser relacionados aos módulos/componentes antes de especificar uma tela.
 
-O mapa de código da sidebar e do roster relaciona os valores acima aos componentes e propriedades atomizadas: [SIDEBAR_RENDERER_MAP.md](../research/SIDEBAR_RENDERER_MAP.md). Esse mapa também recupera a container query `sand-sidebar (max-width: 130px)` usada pela linha de agente e os estados base `expanded`, `collapsed` e `pinned`. Os valores são contratos estáticos de CSS/layout, não dimensões medidas de uma sessão original nem prova do tema ou preferência efetiva de uma conta.
+Os mapas de código da [sidebar/roster](../research/SIDEBAR_RENDERER_MAP.md) e do [shell/transcript](../research/RENDERER_TRACE.md) relacionam os valores acima aos componentes e propriedades atomizadas. A sidebar recupera a container query `sand-sidebar (max-width: 130px)` e estados base `expanded`, `collapsed` e `pinned`; o shell mapeia a grid principal, mínimo do chat e estados do titlebar. Os valores são contratos estáticos de CSS/layout, não dimensões medidas de uma sessão original nem prova do tema ou preferência efetiva de uma conta.
 
 ### Assets, camadas e responsividade
 
