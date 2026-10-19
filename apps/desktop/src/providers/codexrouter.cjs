@@ -18,7 +18,15 @@ async function providerStatus() {
 }
 
 function generate({ model, input, tools, signal, onDelta }) {
-  return generateResponse({ url: `${BASE}/v1/responses`, model, input, tools, signal, onDelta });
+  return generateResponse({ url: `${BASE}/v1/responses`, model, input, tools, signal, onEvent: event => { if (event.type === 'text-delta') onDelta?.(event.delta); } });
 }
 
-module.exports = { providerStatus, generate };
+function createPromptSession({ model, signal, onEvent = () => {} }) {
+  return {
+    execute({ input, tools = [] }) {
+      return generateResponse({ url: `${BASE}/v1/responses`, model, input, tools, signal, onEvent });
+    },
+  };
+}
+
+module.exports = { providerStatus, generate, createPromptSession };

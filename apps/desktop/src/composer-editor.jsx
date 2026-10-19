@@ -1,6 +1,7 @@
 import React, { forwardRef, useImperativeHandle } from 'react';
 import { EditorContent, useEditor } from '@tiptap/react';
 import { Extension } from '@tiptap/core';
+import Link from '@tiptap/extension-link';
 import { Plugin, PluginKey } from '@tiptap/pm/state';
 import StarterKit from '@tiptap/starter-kit';
 import Placeholder from '@tiptap/extension-placeholder';
@@ -25,7 +26,29 @@ const AriaPlaceholder = Extension.create({
 });
 
 const PromptExtensions = [
-  StarterKit.configure({ listKeymap: false }),
+  StarterKit.configure({
+    paragraph: { HTMLAttributes: { class: 'composer-prompt-paragraph' } },
+    blockquote: false,
+    bold: false,
+    code: false,
+    codeBlock: false,
+    heading: false,
+    horizontalRule: false,
+    italic: false,
+    link: false,
+    strike: false,
+    underline: false,
+    undoRedo: { newGroupDelay: 100 },
+    bulletList: { HTMLAttributes: { class: 'composer-prompt-list' } },
+    orderedList: { HTMLAttributes: { class: 'composer-prompt-list' } },
+    listKeymap: false,
+    trailingNode: false,
+  }),
+  Link.configure({
+    openOnClick: false,
+    defaultProtocol: 'https',
+    HTMLAttributes: { class: 'composer-prompt-link' },
+  }),
   Placeholder.configure({ placeholder: 'Ask anything, or drop a file', emptyEditorClass: 'is-editor-empty' }),
   AriaPlaceholder,
 ];
@@ -42,10 +65,24 @@ const ComposerEditor = forwardRef(function ComposerEditor({ initialDocument, ini
         spellcheck: 'true',
       },
       handleKeyDown(view, event) {
-        if (event.key !== 'Enter' || event.shiftKey || event.metaKey || event.ctrlKey || event.isComposing || event.repeat) return false;
-        event.preventDefault();
-        onSubmit?.();
-        return true;
+        if (event.isComposing) return false;
+        if (event.key === 'Tab' && !event.shiftKey && !event.repeat) {
+          event.preventDefault();
+          view.dispatch(view.state.tr.insertText('\t').scrollIntoView());
+          return true;
+        }
+        if (event.key === 'Enter' && event.shiftKey && !event.metaKey && !event.ctrlKey && view.state.selection.empty) return false;
+        if (event.key === 'Enter' && !event.shiftKey && !event.repeat) {
+          event.preventDefault();
+          onSubmit?.();
+          return true;
+        }
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          view.dom.blur();
+          return true;
+        }
+        return false;
       },
     },
     editable: !disabled,

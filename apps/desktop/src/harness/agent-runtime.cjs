@@ -1,6 +1,7 @@
 const { randomUUID } = require('node:crypto');
 const router = require('../providers/codexrouter.cjs');
 const tools = require('../tools/registry.cjs');
+const { createPromptSession } = require('./prompt-session.cjs');
 const MAX_TURNS = 8;
 const MAX_TOOL_CALLS_PER_TURN = 4;
 const MAX_SUBAGENTS_PER_TURN = 2;
@@ -58,9 +59,13 @@ async function runTurn({ botId, text, history = [], instructions = '', model = '
   input.push({ role: 'user', content: [{ type: 'input_text', text: text.slice(0, 12000) }] });
   const toolRuns = [];
   let delegatedRuns = 0;
+  const session = createPromptSession({ inference, model, signal, onEvent: event => {
+    if (event.type === 'text-delta') onEvent({ taskId, botId, type: 'text-delta', delta: event.delta });
+    else onEvent({ taskId, botId, type: 'inference-event', event });
+  } });
   for (let turn = 0; turn < MAX_TURNS; turn += 1) {
     if (signal?.aborted) throw new Error('Execução cancelada.');
-    const response = await inference.generate({ model, input, tools: definitions, signal, onDelta: delta => onEvent({ taskId, botId, type: 'text-delta', delta }) });
+    const response = await session.execute({ input, tools: definitions });
     const calls = (response.output || []).filter(item => item.type === 'function_call');
     if (calls.length > MAX_TOOL_CALLS_PER_TURN) throw new Error('Limite de chamadas de ferramenta por turno excedido.');
     input.push(...(response.output || []));
