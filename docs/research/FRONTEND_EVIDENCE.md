@@ -46,6 +46,14 @@ Estes nomes evidenciam código empacotado para essas superfícies; não provam q
 - Captura controlada por REA em 2026-10-19 (`capture_electron_scenario`, Evidence `ev_be59a2e523c4956c400709516ebf9de8a67b3b55d7d5e4fcdb8a4ba3855f86cd`) usou o executável Electron absoluto do workspace, entrada `apps/desktop/src/main.cjs`, raiz `apps/desktop` e perfil temporário. Observou janela visível `TheGrok` em `http://127.0.0.1:4180/`, carregamento concluído e invocações IPC `state:load` e `provider:status`, sem erro nesses handlers. A captura foi parcial: o hook não instrumenta o contexto preload/renderer, os valores IPC não foram retidos e não houve envio de mensagem; não comprova o fluxo completo nem paridade visual. O launcher existente resolve Electron dentro do workspace, valida o caminho da entrada e não tem fallback para abrir a página padrão. Uma seleção CUA posterior apontou para um Electron preexistente do GG-Bot; essa janela não foi iniciada pelo launcher TheGrok e não é evidência sobre ele.
 
 
+## Fluxo real de conversa em Electron isolado
+
+Em 2026-10-19, TheGrok foi iniciado pelo launcher do workspace, usando Vite em `127.0.0.1:4181`, Electron com `--user-data-dir=/tmp/thegrok-isolated-data/profile` e CDP restrito a loopback em `127.0.0.1:9237`. O processo carregou título `TheGrok`, composer e estado primário, anunciou provider conectado e não produziu exceções no console. Uma interação CDP de teclado enviou: “Use obrigatoriamente a ferramenta get_local_time antes de responder. Depois informe a data e hora retornadas.”
+
+O fluxo observado foi composer → `window.grok.sendMessage` → IPC `agent:turn` → runtime Responses → `get_local_time` → retorno `function_call_output` → resposta final → persistência. O transcript exibiu a mensagem, a resposta e a seção `ACTIVITY / Get Local Time / completed`. O arquivo temporário `/tmp/thegrok-isolated-data/profile/thegrok-state.json` continha a resposta assistant com task ID e `toolCalls` separado, status `completed`, ferramenta `get_local_time` e resumo correspondente. Nenhum erro JS/console foi observado. CodexRouter permaneceu acessado apenas em `127.0.0.1:17842`; nenhuma configuração global foi alterada.
+
+Essa é prova funcional do fluxo da reconstrução neste host e não prova comportamento equivalente do harness original, paridade visual, execução distribuída, retomada após reinício ou cancelamento. O teste usou a instância TheGrok isolada e não abriu nem enviou prompt ao Grok Bot original.
+
 ## Composição estática adicional
 
 O rastreio focado de composição, estados de layout, tema e ciclo do composer está em [RENDERER_TRACE.md](RENDERER_TRACE.md). Ele aponta que a estrutura atual da implementação (lista de bots + chat + painel de detalhes) ainda não representa o shell completo baseado em tarefas do original; não promover paridade visual até mapear e implementar essa composição.
