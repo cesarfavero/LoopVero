@@ -45,3 +45,9 @@ The current app also does not implement the original renderer shell or its navig
 - Recover the original group transcript, sidebar row, membership management, invite/add/remove people and failed/empty/loading states from their exact chunks and callsites.
 - Compare state-matched original and reconstruction captures only after code-derived screen states are implemented; no parity claim follows from these static findings.
 - Continue mapping every primary renderer surface and its CSS/assets before replacing generic shell elements.
+
+## Group connect/waiting module
+
+REA analyzed the exact ASAR member `dist/renderer/assets/chunk-group-chat-connect-waiting-DgOnN3kG.js` under Evidence `ev_7b1a8d828a0f5d11a156e6cb7b2567a77786a67166d6344ab1635dee98639328`. It parsed without a syntax failure. The 1,769-byte module exports a helper that maps a targeted response to `{agentId, groupChat:{sessionId, waitingOn}}` using `answerAt.agentId`, `answerAt.sessionId`, the current viewer auth ID and a `waitingOn` helper. Three additional exports produce localized truncated labels from member/server names. This is a small support module, not the main group transcript renderer. REA's selected application inventory did not retain the module as a standalone semantic graph node, so the behavior here is from exact source inspection corroborated by the successful focused REA parse; no UI/runtime branch is claimed.
+
+The entry bundle imports this module's helper into assistant response handling, showing a static consumer path from targeted/group reply state to a group-chat descriptor. The parent import/use condition is not fully resolved in the partial entry semantic graph. Continue following that descriptor into transcript/session composition and the room-member turn RPCs before implementing the group transcript.
