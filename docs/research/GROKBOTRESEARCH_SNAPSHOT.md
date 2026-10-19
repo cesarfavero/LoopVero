@@ -1,9 +1,9 @@
-# GrokBotResearch harness source snapshot
+# GrokBotResearch full harness snapshot
 
-`GrokBotResearch/` is an operator-supplied extraction of the Grok Bot Linux Sand Host runtime, not an independently built or complete source repository. The tracked files in this directory are a text-only research snapshot taken from `GrokBotResearch/sand/` on 2026-10-19.
+`GrokBotResearch/` is an operator-supplied extraction of the Grok Bot Linux Sand Host runtime, not an independently built source repository. By explicit user authorization, the private repository tracks the complete extracted tree from `GrokBotResearch/`, including compiled host bundles, scripts, vendored dependency trees, OfficeKit material, native modules, WASM, and opaque files. At the 2026-10-19 inventory, it contained 1,073 files and 159,723,110 bytes.
 
-The snapshot includes the extracted host/evaluation bundles, workers, isolation worker, extension source, launch and maintenance scripts, package metadata, and version marker. It deliberately leaves the local reference tree unchanged.
+The extracted host/evaluation bundles, workers, isolation worker, extensions, launch and maintenance scripts, package metadata, dependency files and version marker are retained. The local reference tree is not modified by this Git operation.
 
-The Git snapshot excludes `node_modules/`, `sand/deps/`, the packaged `officekit` and `officekit-ts` trees, native `.node` modules, the opaque `extensions/codebase-telemetry/csnaps` executable, and Finder metadata. These local files remain available under `GrokBotResearch/` for REA research. Consequently, this Git snapshot is not self-contained or directly runnable; it preserves the harness text used for analysis without copying its vendored dependency trees and opaque binaries into history.
+The user authorized retaining licensed materials in this private repository for testing and later manual removal. No files are published outside the private repository by this change.
 
-The repository containing this snapshot is private. The extracted code and scripts are research material, not an authorization to publish or redistribute them. Secrets and session files are excluded; the submitted text snapshot was scanned for common private-key and token patterns before staging. That scan is a best-effort check, not a proof that arbitrary embedded sensitive data cannot exist.
+Before staging, the 1,073-file tree was checked for symlinks, oversized files, common private-key/token/JWT signatures, SQLite/key file signatures, and credential/session-named artifacts. No such signatures or data files were found; two generic `PASSWORD = "..."` pattern matches were confirmed by surrounding source to be the non-secret sentinel `CODE_NOT_IN_ONEPASSWORD`. This is a best-effort scan, not proof that arbitrary embedded sensitive data cannot exist. Continue to exclude real credentials, tokens, cookies, sessions, and personal data if the extraction is refreshed.
