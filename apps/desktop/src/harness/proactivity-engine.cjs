@@ -94,6 +94,17 @@ function createProactivityEngine({ store, scheduler = new RunScheduler(), infere
           if (event.type === 'text-delta') emit({ type: 'proactivity-progress', objectiveId: current.id, eventId, delta: event.delta });
         },
       });
+      const latestState = store.load();
+      const latestObjective = latestState.objectives.find(item => item.id === current.id);
+      const latestReview = latestState.proactiveEvents.find(item => item.id === eventId);
+      if (controller.signal.aborted || disposed || (epochs.get(current.botId) || 0) !== epoch || !latestState.proactiveSettings.enabled || latestObjective?.status !== 'active' || latestReview?.status !== 'investigating') {
+        if (latestReview?.status === 'investigating') {
+          const cancelled = store.updateProactiveState({ proactiveEvent: { ...latestReview, status: 'cancelled', summary: 'Review cancelled before the result could be applied.', cooldownUntil: new Date(clock() + latestState.proactiveSettings.cooldownMinutes * 60_000).toISOString() } });
+          emit({ type: 'proactivity-cancelled', objectiveId: current.id, eventId });
+          return cancelled;
+        }
+        return;
+      }
       const candidate = parseCandidate(result.text, evidence);
       const scored = candidate ? scoreCandidate(candidate, current, state) : { relevant: false, score: 0 };
       if (!candidate || !scored.relevant) {

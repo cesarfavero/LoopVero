@@ -127,6 +127,27 @@ test('disabling proactivity aborts an active background inference and records ca
   } finally { context.cleanup(); }
 });
 
+test('does not publish a late proposal after its objective is completed', async () => {
+  const quote = 'Please prepare the project launch summary by Friday.';
+  let resolveInference;
+  const inferenceOverride = { generate() { return new Promise(resolve => { resolveInference = resolve; }); } };
+  const context = fixture({ messages: [quote], inferenceOverride });
+  try {
+    const pending = context.engine.tick({ force: true });
+    await new Promise(resolve => setImmediate(resolve));
+    const investigation = context.store.load().proactiveEvents[0];
+    assert.equal(investigation.status, 'investigating');
+
+    context.engine.completeObjective('goal-1', 'completed');
+    resolveInference({ output_text: JSON.stringify({ opportunity: { title: 'Prepare launch summary', summary: 'The saved goal can move forward.', evidenceQuote: quote } }), output: [] });
+    await pending;
+
+    assert.equal(context.store.load().objectives[0].status, 'completed');
+    assert.equal(context.store.load().proactiveEvents[0].status, 'dismissed');
+    assert.ok(!context.events.some(event => event.type === 'proactivity-proposal'));
+  } finally { context.cleanup(); }
+});
+
 test('resuming a completed objective makes it eligible for a fresh review', async () => {
   const quote = 'Please help prepare the project launch summary by Friday.';
   const context = fixture({ messages: [quote] });
