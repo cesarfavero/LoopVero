@@ -37,7 +37,7 @@ function createWindow() {
   const window = new BrowserWindow({
     width: 1920, height: 1050, minWidth: 900, minHeight: 620,
     backgroundColor: '#0a0a0a', title: 'Grok Bot',
-    ...(isMac ? { titleBarStyle: 'hiddenInset' } : {}),
+    ...(isMac ? { frame: true, titleBarStyle: 'hiddenInset', trafficLightPosition: { x: 16, y: 15 } } : {}),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
       contextIsolation: true, nodeIntegration: false, sandbox: true,
