@@ -43,3 +43,12 @@ test('executes a provider function call, reports tool lifecycle, and feeds resul
   assert.equal(result.tools.length, 1);
   assert.ok(events.some(event => event.type === 'assistant-final' && event.text === result.text));
 });
+
+test('adds the saved agent instructions to the provider context as a system message', async () => {
+  let request;
+  const inference = { async generate(value) { request = value; return { output_text: 'ok', output: [{ type: 'message', content: [{ type: 'output_text', text: 'ok' }] }] }; } };
+  const toolRegistry = { definitions: [], async execute() { throw new Error('unexpected tool call'); } };
+  await runTurn({ botId: 'custom', text: 'hello', instructions: 'Follow the profile. Bearer secret-value', inference, toolRegistry });
+  assert.deepEqual(request.input[0], { role: 'system', content: [{ type: 'input_text', text: 'Follow the profile. Bearer [redacted]' }] });
+  assert.ok(request.input.some(item => item.role === 'user' && item.content[0].text === 'hello'));
+});

@@ -41,7 +41,10 @@ function sanitizeBot(input) {
       ...(typeof call.taskId === 'string' ? { taskId: call.taskId.slice(0, 100) } : {}),
     };
   }).filter(Boolean) : [];
-  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', messages, toolCalls };
+  const instructions = typeof input.instructions === 'string'
+    ? input.instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 12000)
+    : '';
+  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', instructions, messages, toolCalls };
 }
 
 function createStore(getUserDataPath) {
@@ -86,7 +89,14 @@ function createStore(getUserDataPath) {
     const name = typeof input.name === 'string' ? input.name.trim().slice(0, 100) : '';
     if (!id || !name) throw new Error('Identificador ou nome do agente inválido.');
     const existing = load().bots.find(bot => bot.id === id);
-    return saveBot({ id, name, description: input.description, messages: existing?.messages || [], toolCalls: existing?.toolCalls || [] });
+    return saveBot({
+      id,
+      name,
+      description: input.description ?? existing?.description,
+      instructions: input.instructions ?? existing?.instructions,
+      messages: existing?.messages || [],
+      toolCalls: existing?.toolCalls || [],
+    });
   }
   return { load, saveBot, saveBotProfile };
 }

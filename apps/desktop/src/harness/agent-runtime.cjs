@@ -9,9 +9,11 @@ function textFrom(response) {
   return (response.output || []).flatMap(item => item.content || []).filter(item => item.type === 'output_text').map(item => item.text || '').join('');
 }
 
-async function runTurn({ botId, text, history = [], model = 'codexrouter/gateway', signal, onEvent = () => {}, inference = router, toolRegistry = tools }) {
+async function runTurn({ botId, text, history = [], instructions = '', model = 'codexrouter/gateway', signal, onEvent = () => {}, inference = router, toolRegistry = tools }) {
   const taskId = randomUUID();
   const input = history.slice(-80).filter(item => ['user', 'assistant', 'system'].includes(item.role)).map(item => ({ role: item.role, content: [{ type: item.role === 'assistant' ? 'output_text' : 'input_text', text: String(item.text).slice(0, 24000) }] }));
+  const systemInstruction = typeof instructions === 'string' ? instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').trim().slice(0, 12000) : '';
+  if (systemInstruction) input.unshift({ role: 'system', content: [{ type: 'input_text', text: systemInstruction }] });
   input.push({ role: 'user', content: [{ type: 'input_text', text: text.slice(0, 12000) }] });
   const toolRuns = [];
   for (let turn = 0; turn < MAX_TURNS; turn += 1) {

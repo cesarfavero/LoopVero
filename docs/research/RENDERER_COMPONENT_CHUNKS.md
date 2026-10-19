@@ -1,0 +1,33 @@
+# Renderer 0.71.2: componentes pequenos e regras de estilo
+
+## Método e limites
+
+Esta investigação usa exclusivamente código do `Grok Bot.app/Contents/Resources/app.asar`, sem execução do aplicativo e sem copiar módulos para `apps/desktop/`. O ASAR foi lido pelo índice do cabeçalho; os cinco chunks e o CSS foram extraídos para `/tmp/thegrok-renderer-focused/` e tiveram seu SHA-256 conferido contra a entrada de integridade do próprio índice. Essa conferência identifica os bytes estudados, mas não é prova de autenticidade do artefato.
+
+REA analisou isoladamente `chunk-thread-card-Bd1pjUBX.js` em `/tmp/thegrok-renderer-thread-only/`, Evidence `ev_c61c358b953dabc3a6dead9ed14ab2877a79613e291b573a129031bb3cc8d08d`. O parse cobriu um arquivo, 3.152 bytes, 878 nós AST e nenhuma falha; o grafo de inventário informou cobertura completa para esse recorte. O grafo semântico continuou com famílias parciais e imports não resolvidos, pois os módulos vizinhos não integraram esse recorte. Uma tentativa conjunta com cinco chunks completou no servidor REA, mas a resposta ultrapassou o limite de transporte; Evidence retida `ev_81b11db40dd0eb3fb910338eb51dcf788cb61cc2a132017f0df090c0faa0b823`. Não inferimos ausências desse resultado.
+
+Depois, REA analisou seleções unitárias do diretório `dist/renderer` para os módulos `chunk-new-chat-bar-BqaDAl0q.js`, `chunk-agents-DEGBx4lG.js`, `chunk-chat-oYCOIqHR.js` e `chunk-draft-composer-bubble-JtoyEiKL.js`. Evidences: `ev_c001601e0de9394eb1107cc4c9bbcec56544b8735793d0dc494c44b273e85161`, `ev_18906fc0fa4bf8f23ef91b47ad40251516326316e90d7b0f2278a3df96442707`, `ev_22e2a1c70c47fe4f49f01d3d70a92a68d62f7a2d2304a98985923a360d2a0701` e `ev_5fb433225dd6f44eb93b1ee7c65e172b86b546415c78b0b02bc48772511715f4`. Os quatro parsearam sem falhas. A seleção `agents-DEGBx4lG` e `chat-oYCOIqHR` produziu somente 85 nós AST e 1 finding cada, apesar de conter 26.553 e 45.201 bytes; por isso não uso esses resumos para afirmar comportamento dos módulos. Nos demais, REA reteve 11.233 nós/60 findings para NewChatBar e 1.899/18 para composer. A análise deixa 536 arquivos fora de escopo, mantém 6.422–8.646 incógnitas semânticas e não executa bootstrap nem prova reachability. As descrições de comportamento abaixo resultam da inspeção AST/código dos chunks, com esses limites explícitos.
+
+## Cartão de thread
+
+**Código identificado.** `chunk-thread-card-Bd1pjUBX.js`, hash `0a7960b0ae1ac228640aed5c26aca5c9e90b697a7a703b9aa147ed4dadc1599c`, tem export `T` de um componente que recebe `name`, `detail`, `icon`, `onOpen`, `aria-label` e `ref`. Renderiza um `button` com ícone à esquerda, nome e detalhe em duas linhas, usando `bdi` para direção de texto. O `onClick` chama `onOpen` após `stopPropagation()`. A condição `v("sand_tasks")` troca classes e componentes de tipografia. É uma variante visual condicionada por feature, não uma medida de qual variante estava habilitada em uma conta real.
+
+**CSS correspondente.** As classes atômicas do mesmo botão em `index-DkV65EBE.css` incluem `sand-78zum5` (`display:flex`), `sand-167g77z` (`gap:8px`), `sand-h8yej3` (`width:100%`), `sand-10e981r` (fundo `--sand-bg-elevated`), `sand-1sygd3j` (hover `--sand-bg-hover`), `sand-1v9kw1t` (sombra `0 2px 8px --sand-shadow-card`), `sand-1m1syzd` (raio `24px`) e `sand-fyql7a` (`max-width:354px`) na variante `sand_tasks`. As linhas usam `sand-lyipyv` (`text-overflow:ellipsis`) e `sand-b3r6kr` (`overflow:hidden`). O CSS principal tem hash `30beefeee1dd1b707732f529954a6ab7b9be5bbb43fa2ec4ac9525c4dee7ed5a`.
+
+## Barra de nova conversa
+
+**Código identificado.** `chunk-new-chat-bar-BqaDAl0q.js`, hash `0a1a27cca8e9a4342e3683f0578d9a3ef77aca4c9ca89ded68189ca56f8628d7`, exporta `NewChatBar`. As props incluem agentes, destinatários, estado de criação, modo de grupo, pedido de abertura do menu, chat de grupo, agentes da equipe e callbacks de adicionar/remover destinatário, entrar em grupo, criar bot de equipe, confirmar e fechar. A árvore traz destinatários em chips, um `input` com `role="combobox"`, `aria-autocomplete="list"`, `aria-controls`, `aria-activedescendant`, `aria-expanded`, e menu de opções. As opções são botões com `role="option"`, `aria-selected`, `aria-posinset` e `aria-setsize`; o módulo materializa espaçadores para as linhas não visíveis, evidência de janela/virtualização da lista. O container expõe `aria-busy` enquanto cria. REA parseou o chunk focado (11.233 nós, zero falhas), mas manteve o grafo geral parcial e os vizinhos sem análise.
+
+**CSS correspondente.** A barra usa `position:relative`, `display:flex`, alinhamento `flex-start`, `gap:6px`, padding vertical `10px` e `-webkit-app-region:no-drag`. O menu usa `position:absolute`, `top:calc(100% - 4px)` e `inset-inline-start:24px`. Esses valores vêm das regras das classes atômicas que o JSX aplica, não de uma captura de tela.
+
+## Composer e cartões de transcript
+
+**Código identificado.** `chunk-draft-composer-bubble-JtoyEiKL.js` (hash `ade1445cc5785b731c625ecb214f25f8a6fe6458f394cb66649724c7ae8c0e6d`) contém um formulário com `onInput`, `onCompositionEnd`, `onSubmit`, botão principal de envio e botão de descarte/ação secundária. O estado `isSending` troca o botão principal por carregamento desabilitado. `canSend` desabilita o envio quando falso. Isso não estabelece como o conteúdo do editor ou o callback de envio é calculado, pois eles são injetados por props. REA parseou o chunk focado em 1.899 nós e 18 findings, sem falhas.
+
+`chunk-settled-message-card-DrXK-izZ.js` (hash `1a47ae4f6c4a074eaadb05b43bae337a818fadb00fb6f3034a59d18cd9c31a70`) exporta um cartão de transcript com `leading`, `title`, `status`, `summary`, `note`, `footer`, `tone` e opção de ponto de status. Renderiza `section role="region"` ligada ao título por `aria-labelledby`; `tone="success"` escolhe cor verde para status. Sua função auxiliar extrai a primeira linha e limita título curto a 80 caracteres. A presença do componente não prova em que tipo de mensagem ele aparece.
+
+`chunk-prompt-editor-A2oxbQX4.js` (hash `f99d9683b705a7b891bbaec90eb9f999a544bf8c335bbd45547e0c03432e5270`) define extensões do editor `sandComposerDirection` e `sandAriaPlaceholder`, inclusive atributo `aria-placeholder` calculado a partir do documento/seleção. Esse recorte não basta para afirmar atalho de envio, persistência de rascunho nem ligação ao protocolo de mensagens.
+
+## Próximo elo necessário
+
+Rastrear, a partir do bundle de entrada e do app chunk, os imports de `NewChatBar`, cartão de thread, composer e cartão de transcript para a tela e estado que os ativam. A árvore de import/uso e o layout global ainda estão incompletos. Também faltam estado de tema e largura reais do usuário; CSS e JSX isolados não provam a tela inicial efetiva.

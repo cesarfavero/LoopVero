@@ -36,6 +36,26 @@ test('profile updates preserve the latest transcript even with stale renderer da
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
+test('persists agent instructions across profile edits and redacts bearer-like values', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBotProfile({ id: 'primary', name: 'Grok Bot', description: 'Primary', instructions: 'Use this rule. Bearer secret-value' });
+    store.saveBotProfile({ id: 'primary', name: 'Renamed', description: 'Updated', instructions: 'Use this rule. Bearer secret-value' });
+    assert.equal(store.load().bots[0].instructions, 'Use this rule. Bearer [redacted]');
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
+test('partial profile updates preserve fields omitted by a stale renderer', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBotProfile({ id: 'primary', name: 'Grok Bot', description: 'Primary', instructions: 'Follow the saved profile.' });
+    store.saveBotProfile({ id: 'primary', name: 'Renamed', description: 'Changed' });
+    assert.equal(store.load().bots[0].instructions, 'Follow the saved profile.');
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
 test('persists sanitized tool outline entries separately from conversation messages', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-store-'));
   try {

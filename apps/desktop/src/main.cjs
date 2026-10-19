@@ -85,7 +85,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         const history = currentBot.messages;
         currentBot.messages = [...history, { id: runId, role: 'user', text, createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
-        result = await runTurn({ botId, text, history, model, signal: controller.signal, onEvent: event => {
+        result = await runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, onEvent: event => {
           emit({ ...event, runId, botId });
           if (event.type === 'assistant-final' && typeof event.text === 'string') {
             const current = store.load().bots.find(item => item.id === botId);
