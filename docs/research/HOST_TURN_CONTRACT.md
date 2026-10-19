@@ -11,7 +11,7 @@ Este relatório mapeia o código extraído do Grok Bot Harness em `GrokBotResear
 
 O REA recebeu a seleção exata `agent-isolation/agent-store-worker.cjs`, analisou 97.937 nós AST, teve zero falhas de parse, mas reteve grafo semântico parcial/truncado nos limites configurados (18 mil nós por arquivo e 45 mil totais). O inventário identificou 874 arquivos relevantes, dos quais 873 ficaram fora da seleção. Portanto, esse Evidence não prova ausência de relações nos demais arquivos.
 
-Uma análise REA anterior do arquivo inteiro `host-main.cjs`, com limite solicitado de 20 minutos e 4 GiB, encerrou em 300 segundos no limite interno de MCP (`timed out awaiting tools/call after 300s`). Isso é falha de observação, não ausência de funcionalidade. O contrato abaixo combina as linhas estáticas verificadas com REA aplicado ao worker; relações semânticas completas do host continuam pendentes.
+Uma análise REA anterior do arquivo inteiro `host-main.cjs`, com limite solicitado de 20 minutos e 4 GiB, encerrou sem Evidence útil no limite interno de MCP. Isso é falha de observação, não ausência de funcionalidade. Um recorte AST de declarações do gateway/proxy (13.167 nós, zero parse failures, 3.246 incógnitas) também não resolveu semanticamente o slot `sendPrompt`; o contrato abaixo combina a análise REA parcial do worker com leitura estática direta, por bytes/offsets, do host. Relações semânticas completas continuam pendentes.
 
 ## Visão do fluxo
 
@@ -86,16 +86,32 @@ O diagrama representa chamadas confirmadas por código estático. Não implica q
 
 ## Limites de evidência e lacunas
 
-1. **Inferência:** o host chama `executeToolStream`, mas o caminho até transporte/model service é abstraído em `rootPromptExecutor`. O artefato extraído precisa ser rastreado por call graph e coordenador/extension antes de nomear protocolo, endpoint, autenticação ou estratégia de retry.
+### Gateway, proxy remoto e fronteira de harness
+
+- `createHostGatewayApi` é envolvido por `wrapGatewayApiWithServerAgentProxy`; para `sendPrompt`, agentes que `proxy.isProxiedAgent` reconhece são enviados por `performAction`, os demais seguem para `TranscriptManager`. A classificação vem do roster sincronizado do host, não do nome do método (`host-main.cjs:493286-493290`, `714802-714809`, `492170+`).
+- `perform` adapta `sendPrompt` para `GrokBotService.SendGrokBotUserMessage`, reutiliza `clientNonce` como `messageId` e inclui texto, rich text, reply, anexos, source/session, timezone e outros metadados (`710265-710329`). O cliente é criado por `createSandCursorBackendClient(GrokBotService, ...)`, com backend e credenciais do usuário/equipe/máquina (`714707-714712`).
+- A declaração gerada do serviço documenta idempotência por `(agent_id,message_id)`, sinalização de `grokBotTurnWorkflow` para harness Temporal e recusa para BOX (`comentário de SendGrokBotUserMessage`, offsets documentados em `DESKTOP_CONTRACT.md`). Isso é comentário de contrato no client bundle; código do servidor/workflow não foi extraído.
+- `sand_transcript_server_tail` tem default OFF. Quando habilitada no Main para o dial do Coordinator, o proxy acompanha `WatchGrokBotTranscripts`; tail alimenta eventos de atividade e leituras, enquanto o indexer sincroniza intervalos para `serverTranscriptMirror` (`host-main.cjs:461371-461382`, `714668-714705`, `714172-714239`). O contrato gerado descreve replay a partir de cursores, commits posteriores do publisher da box ou Temporal e heartbeats (`211605-211620`).
+- `openAgentTail` e `getAgentTranscriptTail` são redirecionados ao proxy para agentes proxied; outras identidades leem o transcript manager local (`492250-492259`). A máquina da cauda pode voltar à leitura do gateway da BOX após flag off ou falhas consecutivas (`713087-713112`, `713975-714037`). Portanto `/events` e `WatchGrokBotTranscripts` são trilhas distintas e a fonte visível é condicional.
+- Limite: esta leitura fecha as chamadas cliente e os contratos presentes no bundle, não a implementação de publicação remota, persistência backend, execução efetiva do workflow ou associação física a VM.
+
+### Provider e stream de inferência: evidência separada do eval runner
+
+- No Sand Host, `AbstractUserMessageActionHandler.runStep` recebe `rootPromptExecutor` como argumento, monta um `toolSetHandle` por step e chama `rootPromptExecutor.executeToolStream(...)` (`host-main.cjs:654218-654321`). `AnysphereAgent.runStream` obtém o executor de `promptSession.getExecutor()` e envolve-o com redaction (`678238+`). O construtor do `AnysphereAgent` recebe `promptSession` por parâmetro (`678127`); não localizei neste bundle a fábrica que injeta a sessão para os turnos regulares. Portanto o host prova a interface/consumo do executor, não o provider dessa sessão.
+- O bundle separado `sand-eval-runner.cjs` contém uma implementação concreta: `createSandEvalInference.createSession` chama `createCursorInferencePromptSession`; esta cria cliente Connect para `InferenceService` e `ProtoPromptSession`. `ProtoPromptExecutor.stream` serializa mensagens, tools, modelo, IDs/contexto e configurações em `InferenceStreamRequest` e chama `client.stream` (`sand-eval-runner.cjs:494326-494422`, `494536+`, `495003-495040`, `597538-597575`). O descriptor gerado identifica `InferenceService.Stream` como server-streaming (`493609-493623`).
+- REA analisou um recorte AST exato desse provider, 2.963 nós, zero parse failures e 638 incógnitas semânticas; a cobertura do grafo é `unknown/partial`, sem provar relações por dependências omitidas. Evidência parent `ev_c2758e56c57610e717d43118119cda4fad49351cfe1319abe12a2c59d42a641e`; resumo `ev_475a9074de27cdfe9da7364fef501db34ec92608927ec15bd891250f870cdcb1`. Bundle original SHA-256 `5d951bc76d9747e0c37c494c4bfd82d787f2d81742ead2627e26d36e3b0ef54c`; recorte temporário SHA-256 `eafe86c02a2385ba372c4d7a411cc4402ceb2b8d953781222b85558ebfe77fae`.
+- Limite: esse provider foi confirmado dentro do fluxo de Sand Eval Runner. Não encontrei no `host-main.cjs` uma construção equivalente nem uma chamada explícita a `InferenceService`; não transferir a implementação de avaliação para o caminho regular sem provar como o host injeta `promptSession`.
+
+1. **Inferência:** o host regular chama `executeToolStream`, mas a fábrica de `promptSession` não foi localizada no bundle Sand Host. O Sand Eval Runner tem uma trilha separada concreta até `InferenceService.Stream`; ainda é incógnito se/how o host regular usa esse provider.
 2. **Ferramentas:** o toolset é montado dinamicamente por `toolsGenerator`; os schemas/implementações estão dispersos em fábricas e dependências. Este documento cobre contrato do call site e roteamento, não um catálogo exaustivo.
 3. **Recuperação:** persistência de estado/blobs e recuperação de raiz são observadas; retomada de uma execução ativa, replay sem duplicar efeitos externos e semântica de idempotência exigem rastrear o Transcript Manager e handlers de retomada.
 4. **Watchdog:** o scheduler abre slot e deixa execução velha como zombie após grace; a interrupção efetiva do executor não é demonstrada nesse código do scheduler.
-5. **Grafo REA:** seleção do worker foi analisada por REA; grafo parcial, truncado, fonte isolada do grafo dos demais 873 arquivos. A tentativa REA do host inteiro encerrou no limite interno do servidor aos 300 s mesmo com timeout maior. A análise source-level estática não substitui a futura análise REA focada em módulos/callsites menores.
+5. **Grafo REA:** seleção do worker foi analisada por REA; grafo parcial, truncado, fonte isolada do grafo dos demais 873 arquivos. O recorte host de gateway/proxy também é parcial (3.246 incógnitas) e não resolveu relação `sendPrompt`; as ligações acima são leitura estática independente dos bytes/offsets, sem alegar que o REA as provou.
 6. **Runtime:** nenhuma inferência ou ferramenta foi executada para este relatório; `open_binary` classifica/identifica o JavaScript, e `analyze_javascript_application` faz análise inerte. As linhas provam código e contratos locais, não frequência ou execução real.
 
 ## Próximo rastreamento recomendado
 
-1. Analisar via REA seleções fonte pequenas para `host-main.cjs` em torno de `runTurnLoop`, `runStep`, `executeStepWithCommonMetrics`, `rootPromptExecutor` e `RunLifecycle` para obter Evidence sem aguardar o bundle todo.
-2. Seguir o call site do `rootPromptExecutor` ao provider de inferência e à origem de `toolsGenerator`.
+1. Seguir no host regular o ciclo de vida que injeta `promptSession` em `AnysphereAgent`; o REA do recorte host-turn registrou 4.007 incógnitas, e o acesso dinâmico limita o trace.
+2. Examinar como `sand-eval-runner.cjs` é chamado/isolado pelo harness e manter separada a inferência do eval até aparecer a ligação ao host regular.
 3. Seguir `createAgentTurn`/`computeNewStructure`/`onStateUpdate` até Transcript Manager e store RPC para confirmar restauração, commit e publicação dos checkpoints.
-4. Examinar `sand-eval-runner.cjs` como harness de avaliação/teste, sem assumir que ele é a implementação primária do runtime.
+4. Relacionar `toolsGenerator` ao registry/policy de ferramentas por cenário e validar sem presumir reachability a partir do nome de módulo.

@@ -10,19 +10,25 @@ flowchart LR
   C -->|coordinator-control RPC| M[Electron Main]
   M -->|connector.connect gateway| G[SandBox connector / broker]
   C -->|HTTP POST /api/{method}; GET /events| G2[Gateway URL]
-  G2 -->|HTTP dispatch| H[Sand Host gateway server]
+  G2 -. gateway da box se disponível .-> H[Sand Host gateway server]
+  H -->|agentes proxied| S[Cursor backend: ação + watch de transcript]
+  S -. contrato temporal .-> W[grokBotTurnWorkflow]
+  S -->|Watch frames| H
   H -. vínculo de implantação / VM desconhecido .-> B[SandBox]
   H --> T[Transcript Manager]
   T --> Q[SandRunScheduler]
   Q --> X[Turn Runtime]
-  X --> I[Inference]
+  X -->|executor supplied by promptSession; factory unknown| I[Inference]
+  E -->|its own createSandEvalInference| I2[InferenceService.Stream]
   X --> W[Agent worker pool]
   X --> E[Sand Eval Runner]
   H --> A[Automation runtime]
   H --> B[Background wakes]
 ```
 
-O Coordinator pede `resolveGatewayConnection({path: "gateway"})` à Main, que delega ao connector e obtém baseUrl/tokens do SandBox. Depois, valida RPCs do data port e usa a URL via `POST /api/{method}` e `GET /events`; o servidor do Sand Host despacha a API HTTP para handlers locais, e `sendPrompt` chama o transcript manager. O processo do host publica dados de descoberta do gateway e transmite eventos do host por SSE. A identidade/endpoint do transcript server-side usado na arbitragem de leitura permanece independente e desconhecida. O vínculo de implantação do gateway ao processo/box/VM também não está provado. As entradas de código foram verificadas no ASAR e no Sand Host extraído; presença não demonstra execução. Veja [contrato desktop](DESKTOP_CONTRACT.md).
+O Coordinator pede `resolveGatewayConnection({path: "gateway"})` à Main, que delega ao connector e obtém baseUrl/tokens do SandBox. Quando a conexão ao gateway está disponível, valida RPCs do data port e usa a URL via `POST /api/{method}` e `GET /events`; o servidor do Sand Host despacha a API HTTP para handlers. `sendPrompt` chega ao transcript manager e, para agentes proxied, ao server-agent-proxy, que envia ações a `GrokBotService` e mantém um watch remoto de transcript/atividade.
+
+O rollout `sand_transcript_server_tail` (default OFF) seleciona leitura server-side para agentes elegíveis; frames alimentam a cauda de transcript e o indexer do host. Falhas ou flag desligada podem devolver leitura de BOX ao gateway. Assim, SSE `/events` e `WatchGrokBotTranscripts` são caminhos distintos, e a origem efetiva depende do harness/estado do rollout. O contrato gerado documenta signal para `grokBotTurnWorkflow`, mas a implementação backend e a relação física entre gateway e Sand Host não estão provadas. No host regular, `runStep` consome `rootPromptExecutor.executeToolStream`, porém a fábrica de `promptSession` não foi localizada. O Sand Eval Runner tem caminho concreto próprio via `createSandEvalInference` → `createCursorInferencePromptSession` → `InferenceService.Stream`; não há prova de que ele injete a sessão no host regular. Presença de código não demonstra execução. Veja [contrato desktop](DESKTOP_CONTRACT.md) e [contrato de turno](HOST_TURN_CONTRACT.md).
 
 ## Contratos observados no bundle do Sand Host
 
@@ -40,11 +46,11 @@ O Coordinator pede `resolveGatewayConnection({path: "gateway"})` à Main, que de
 
 1. Renderer, preload e Main foram traçados para a porta transferida do coordinator; o app independente tem E2E local por CDP, não equivalente ao wire original.
 2. O Main faz fork do coordinator e transfere bootstrap e três portas; Coordinator pede `resolveGatewayConnection({path: "gateway"})`; Main delega ao connector de sandbox e devolve baseUrl e tokens.
-3. O Coordinator envia RPCs validados ao gateway por POST `/api/{method}` e recebe eventos por SSE `/events`; host server implementa ambos. HTTP `sendPrompt` chega ao transcript manager, que direciona agentes proxied ao server-agent-proxy e não executa localmente sends de agents server-hosted.
-4. A leitura de transcript também arbitra uma fonte server-side separada do gateway; sua identidade e endpoint permanecem desconhecidos. O vínculo físico do processo Sand Host ao box/VM também segue pendente.
+3. O Coordinator envia RPCs validados ao gateway por POST `/api/{method}` e recebe eventos por SSE `/events`; o host implementa ambos. HTTP `sendPrompt` chega ao transcript manager e, para agentes proxied, ao server-agent-proxy que envia ação por Connect RPC ao backend; a declaração gerada documenta o signal Temporal.
+4. O server-agent-proxy também assina `WatchGrokBotTranscripts`, mantém cauda/index remoto e serve leituras para agentes proxied quando o rollout está ativo. O default é OFF; falhas podem devolver BOX ao gateway. Esta trilha é distinta do SSE. A implementação backend e o deploy físico seguem desconhecidos.
 5. O scheduler do host original ordena tarefas por agente, com prioridade de usuário, agente e background; isso está no bundle compilado. O scheduler de TheGrok é implementação local independente.
-6. O ciclo completo de `sendPrompt` para agents proxied até o backend remoto continua a traçar; o pipeline local deliberadamente recusa turns de agentes server-hosted. Inferência, tool calls, memória, subagentes, streaming e resposta têm contrato estático parcial em [HOST_TURN_CONTRACT](HOST_TURN_CONTRACT.md), faltando correlação com eventos do renderer e execução observada.
+6. O caminho de ação proxied está estaticamente conectado ao RPC e ao contrato gerado de serviço, mas a implementação do backend/workflow não está extraída. O provider do eval runner foi rastreado até `InferenceService.Stream`; a sessão do host regular continua sem fábrica identificada. O pipeline local bloqueia turns BOX quando a flag correspondente está ativa. Inferência, tool calls, memória, subagentes, streaming e resposta têm contrato estático parcial em [HOST_TURN_CONTRACT](HOST_TURN_CONTRACT.md), faltando correlação com eventos do renderer e execução observada.
 
 ## Limites e próximos passos
 
-O backend remoto e o algoritmo que seleciona oportunidades proativas não foram recuperados. `WakeParent`, `PendingWake` e o scheduler demonstram mecanismos de entrega e priorização, não a origem da decisão espontânea. O REA analisou estaticamente os bundles e seus recortes; nenhum bootstrap ou tráfego foi executado/capturado nesta etapa. A resolução, o servidor e o dispatch do gateway foram rastreados até o transcript manager. Próxima etapa: traçar por REA o manager→server-agent-proxy→serviço remoto para agents proxied, além do caminho local de agentes temporais e o fluxo de inferência/tool calls.
+O backend remoto e o algoritmo que seleciona oportunidades proativas não foram recuperados. `WakeParent`, `PendingWake` e o scheduler demonstram mecanismos de entrega e priorização, não a origem da decisão espontânea. O REA analisou estaticamente os bundles e seus recortes; nenhum bootstrap ou tráfego foi executado/capturado nesta etapa. A resolução e o dispatch do gateway foram rastreados até o proxy remoto e o contrato gerado. Próxima etapa: seguir por REA o fluxo de inferência/tool calls e relacionar publishers de transcript nos harnesses à API observada, mantendo backend remoto como fronteira não fornecida.
