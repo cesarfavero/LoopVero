@@ -30,7 +30,7 @@ Depois, REA analisou seleções unitárias do diretório `dist/renderer` para os
 
 ## Próximo elo necessário
 
-Rastrear, a partir do bundle de entrada e do app chunk, os imports de `NewChatBar`, cartão de thread, composer e cartão de transcript para a tela e estado que os ativam. A árvore de import/uso e o layout global ainda estão incompletos. Também faltam estado de tema e largura reais do usuário; CSS e JSX isolados não provam a tela inicial efetiva.
+`NewChatBar` e seu pai `HZ` no entry foram localizados estaticamente; o callsite passa `groupChat`, destinatários e callbacks, mas a análise REA do entry reteve grafo parcial. Seguir os callbacks `onCommit`, `onAddRecipient`, `onEnterGroupMode`, `onCreateTeamBot` e `onClose` até ações, stores e persistência para recuperar o ciclo completo da conversa em grupo. Não portar esse elemento para o modelo atual de bots individuais até definir a entidade e o lifecycle correspondentes. A árvore global de import/uso continua incompleta; estado de tema, largura real e tela ativa também não são provados por CSS ou JSX isolados.
 
 ## Nova análise REA e comparação runtime (2026-10-19)
 
