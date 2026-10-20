@@ -13,6 +13,7 @@ const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
 const { createTaskDocumentStore } = require('./persistence/task-document-store.cjs');
 const { createTaskTranscriptStore } = require('./persistence/task-transcript-store.cjs');
+const { createTaskViewStateStore } = require('./persistence/task-view-state-store.cjs');
 const { createWindowState } = require('./persistence/window-state.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
@@ -25,6 +26,7 @@ let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
 const taskDocuments = createTaskDocumentStore(() => app.getPath('userData'), agentId => store.load().bots.some(bot => bot.id === agentId));
 const taskTranscripts = createTaskTranscriptStore(() => app.getPath('userData'), taskDocuments);
+const taskViewState = createTaskViewStateStore(() => app.getPath('userData'), taskDocuments, taskTranscripts);
 let windowState;
 let themeState;
 const activeRuns = new Map();
@@ -103,11 +105,14 @@ ipcMain.handle('theme:set', (event, preference) => {
   return themeState;
 });
 ipcMain.handle('bot:save', (event, bot) => { assertSender(event); return store.saveBotProfile(bot); });
-ipcMain.handle('task-document:list', (event, agentId, status) => { assertSender(event); return taskDocuments.list(agentId, status); });
-ipcMain.handle('task-document:read', (event, agentId, taskId) => { assertSender(event); return taskDocuments.read(agentId, taskId); });
+ipcMain.handle('task-document:list', (event, agentId, status) => { assertSender(event); return taskDocuments.list(agentId, status).map(task => ({ ...task, ...taskViewState.list(agentId, task.id) })); });
+ipcMain.handle('task-document:read', (event, agentId, taskId) => { assertSender(event); const task = taskDocuments.read(agentId, taskId); return task ? { ...task, ...taskViewState.list(agentId, taskId) } : null; });
 ipcMain.handle('task-document:create', (event, agentId, input) => { assertSender(event); return taskDocuments.create(agentId, input); });
-ipcMain.handle('task-document:update', (event, agentId, taskId, input) => { assertSender(event); return taskDocuments.update(agentId, taskId, input); });
+ipcMain.handle('task-document:update', (event, agentId, taskId, input) => { assertSender(event); return { ...taskDocuments.update(agentId, taskId, input), ...taskViewState.list(agentId, taskId) }; });
 ipcMain.handle('task-transcript:load', (event, agentId, taskId) => { assertSender(event); return taskTranscripts.load(agentId, taskId); });
+ipcMain.handle('task-view:read', (event, agentId, taskId) => { assertSender(event); return taskViewState.list(agentId, taskId); });
+ipcMain.handle('task-view:mark-read', (event, agentId, taskId, entryId) => { assertSender(event); return taskViewState.markRead(agentId, taskId, entryId); });
+ipcMain.handle('task-view:pin', (event, agentId, taskId, isPinned) => { assertSender(event); return taskViewState.setPinned(agentId, taskId, isPinned); });
 ipcMain.handle('memory:list', (event, botId) => {
   assertSender(event);
   if (typeof botId !== 'string' || botId.length > 100) throw new Error('Agente inválido.');
@@ -181,7 +186,8 @@ async function runTaskThreadTurn(payload) {
   const target = { kind: 'task', taskId };
   const controller = new AbortController();
   activeRuns.set(runId, controller);
-  const emit = data => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('agent:event', { ...data, botId, runId, sendTarget: target, sessionId: document.sessionId }); };
+  const sanitizeEvent = value => typeof value === 'string' ? value.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 24000) : Array.isArray(value) ? value.map(sanitizeEvent) : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).map(([key, item]) => [key, sanitizeEvent(item)])) : value;
+  const emit = data => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('agent:event', { ...sanitizeEvent(data), botId, runId, sendTarget: target, sessionId: document.sessionId }); };
   emit({ type: 'started' });
   proactivity.cancelForBot(botId);
   try {
@@ -203,13 +209,15 @@ async function runTaskThreadTurn(payload) {
           if (request.action === 'forget') return store.forgetBotMemory(botId, request.fact);
           throw new Error('Ação de memória inválida.');
         }, onEvent: event => {
-          emit(event);
           if (event.type === 'assistant-final' && typeof event.text === 'string') {
-            taskTranscripts.appendMessage(botId, taskId, { role: 'assistant', text: event.text, executionId: runId });
+            const entry = taskTranscripts.appendMessage(botId, taskId, { role: 'assistant', text: event.text, executionId: runId });
+            taskViewState.markUnread(botId, taskId, entry.id);
+            emit(event);
             emit({ type: 'task-transcript-updated' });
           }
-          if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) return;
+          if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) { if (event.type !== 'assistant-final') emit(event); return; }
           taskTranscripts.upsertTool(botId, taskId, { id: event.tool.id, name: event.tool.name, status: event.tool.status === 'running' ? 'pending' : event.tool.status, summary: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '', executionId: runId });
+          emit(event);
           emit({ type: 'task-transcript-updated' });
         } });
         return result;

@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import ComposerEditor from './composer-editor.jsx';
 
-export default function TaskDocumentView({ task, agentName, transcript, liveText, onSend, onBack, onToggleStatus, busy, turnBusy }) {
+export default function TaskDocumentView({ task, agentName, transcript, liveText, onSend, onBack, onToggleStatus, onPin, busy, turnBusy }) {
   const [draft, setDraft] = useState('');
   const [generation, setGeneration] = useState(0);
   const composer = useRef(null);
@@ -18,6 +18,7 @@ export default function TaskDocumentView({ task, agentName, transcript, liveText
     <header className="task-document-header">
       <div className="task-document-breadcrumb"><button type="button" className="task-document-back" onClick={onBack} aria-label="Back to conversation">{agentName}</button><span aria-hidden="true">›</span><span aria-current="page" title={task.description}>{task.name}</span></div>
       <span className="task-document-kind">Task document</span>
+      <button type="button" className="task-document-status" onClick={onPin} aria-pressed={Boolean(task.pinnedAtMs)}>{task.pinnedAtMs ? 'Unpin' : 'Pin'}</button>
       <button type="button" className="task-document-status" disabled={busy} onClick={onToggleStatus} aria-label={task.status === 'open' ? 'Mark task done' : 'Reopen task'}>{task.status === 'open' ? 'Mark done' : 'Reopen'}</button>
     </header>
     <div className="task-thread-history" aria-label="Task transcript">

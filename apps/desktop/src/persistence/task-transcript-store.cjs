@@ -8,6 +8,21 @@ const MAX_TEXT = 24000;
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
 
 function createTaskTranscriptStore(getUserDataPath, taskDocuments) {
+  function validateRecord(record, agentId, taskId) {
+    if (!record || record.schemaVersion !== 1 || record.agentId !== agentId || record.taskId !== taskId || record.sessionId !== taskSessionId(taskId) || !Number.isSafeInteger(record.nextSeq) || !Array.isArray(record.entries) || record.entries.length > MAX_ENTRIES) throw new Error('Transcript inválido.');
+    let maxSeq = 0;
+    for (const entry of record.entries) {
+      if (!entry || typeof entry.id !== 'string' || !entry.id || !Number.isSafeInteger(entry.seq) || entry.seq < 1 || typeof entry.executionId !== 'string' || !entry.executionId || typeof entry.createdAt !== 'string' || !Number.isFinite(Date.parse(entry.createdAt))) throw new Error('Entrada de transcript inválida.');
+      if (entry.kind === 'message') {
+        if (!['user', 'assistant'].includes(entry.role) || typeof entry.text !== 'string' || entry.text.length > MAX_TEXT || (entry.error !== undefined && typeof entry.error !== 'boolean')) throw new Error('Mensagem de transcript inválida.');
+      } else if (entry.kind === 'tool') {
+        if (typeof entry.name !== 'string' || !entry.name || entry.name.length > 120 || !['pending', 'completed', 'failed'].includes(entry.status) || typeof entry.summary !== 'string' || entry.summary.length > MAX_TEXT) throw new Error('Registro de ferramenta inválido.');
+      } else throw new Error('Tipo de entrada de transcript inválido.');
+      maxSeq = Math.max(maxSeq, entry.seq);
+    }
+    if (record.nextSeq <= maxSeq) throw new Error('Sequência de transcript inválida.');
+    return record;
+  }
   function fileFor(agentId, taskId) {
     if (!taskDocuments.read(agentId, taskId)) throw new Error('Tarefa não encontrada.');
     const hash = createHash('sha256').update(agentId).digest('hex');
@@ -22,8 +37,7 @@ function createTaskTranscriptStore(getUserDataPath, taskDocuments) {
       const stat = fs.lstatSync(file);
       if (!stat.isFile() || stat.isSymbolicLink() || stat.size > MAX_FILE_BYTES) throw new Error('Arquivo de transcript inválido.');
       const record = JSON.parse(fs.readFileSync(file, 'utf8'));
-      if (record.schemaVersion !== 1 || record.agentId !== agentId || record.taskId !== taskId || record.sessionId !== sessionId || !Number.isSafeInteger(record.nextSeq) || !Array.isArray(record.entries)) throw new Error('Transcript inválido.');
-      return record;
+      return validateRecord(record, agentId, taskId);
     } catch (error) {
       if (error?.code === 'ENOENT') return { schemaVersion: 1, agentId, taskId, sessionId, nextSeq: 1, entries: [] };
       throw error;
