@@ -19,6 +19,19 @@ test('creates and updates a bot without losing its messages', () => {
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
 
+test('persists a validated application theme preference without changing other state', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-theme-'));
+  try {
+    const store = createStore(() => directory);
+    assert.equal(store.load().themePreference, 'system');
+    store.saveBot({ id: 'primary', name: 'Grok Bot', messages: [{ id: 'hello', role: 'user', text: 'keep me' }] });
+    assert.equal(store.updateThemePreference('light').themePreference, 'light');
+    assert.equal(store.load().bots[0].messages[0].text, 'keep me');
+    assert.throws(() => store.updateThemePreference('sepia'), /tema inválida/);
+    assert.equal(store.load().themePreference, 'light');
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});
+
 test('persists safe structured rich text alongside its model-readable transcript', () => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-rich-message-'));
   try {

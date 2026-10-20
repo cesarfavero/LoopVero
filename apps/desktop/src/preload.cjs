@@ -2,6 +2,14 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('grok', Object.freeze({
   loadState: () => ipcRenderer.invoke('state:load'),
+  loadTheme: () => ipcRenderer.invoke('theme:load'),
+  setTheme: preference => ipcRenderer.invoke('theme:set', preference),
+  onThemeChange: callback => {
+    if (typeof callback !== 'function') return () => {};
+    const listener = (_event, state) => callback(state);
+    ipcRenderer.on('theme:changed', listener);
+    return () => ipcRenderer.removeListener('theme:changed', listener);
+  },
   saveBot: bot => ipcRenderer.invoke('bot:save', bot),
   sendMessage: payload => ipcRenderer.invoke('agent:turn', payload),
   cancel: taskId => ipcRenderer.invoke('agent:cancel', taskId),

@@ -10,6 +10,14 @@ import { renderComposerDocument } from './composer-document.mjs';
 
 const newBot = () => ({ id: crypto.randomUUID(), name: 'New Bot', description: 'Agent', instructions: '', messages: [] });
 function Mark({ small = false }) { return <img className={small ? 'mark small' : 'mark'} src={appIcon} alt="" aria-hidden="true"/>; }
+function applyTheme(theme) {
+  if (!theme || !['light', 'dark'].includes(theme.resolved)) return;
+  const root = document.documentElement;
+  root.dataset.theme = theme.resolved;
+  root.style.colorScheme = theme.resolved;
+  const meta = document.querySelector('meta[name="color-scheme"]');
+  if (meta) meta.content = theme.resolved;
+}
 function Icon({ name }) {
   const p = {
     search: <><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></>, plus: <path d="M12 5v14M5 12h14"/>, sidebar: <><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M9 5v14"/></>, dots: <><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></>, info: <><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></>, close: <path d="m6 6 12 12M18 6 6 18"/>, send: <path d="m5 12 14-7-5 14-3-6-6-1Zm6 1 8-8"/>, attach: <path d="m21 11-9 9a6 6 0 0 1-8-8l9-9a4 4 0 0 1 6 6l-9 9a2 2 0 0 1-3-3l9-9"/>, settings: <><circle cx="12" cy="12" r="3"/><path d="m19 15 .1.1a1.7 1.7 0 1 1-2.4 2.4l-.1-.1a1.7 1.7 0 0 0-2.9 1.2v.2a1.7 1.7 0 1 1-3.4 0v-.2a1.7 1.7 0 0 0-2.9-1.2l-.1.1a1.7 1.7 0 1 1-2.4-2.4l.1-.1a1.7 1.7 0 0 0-1.2-2.9H4a1.7 1.7 0 1 1 0-3.4h.2a1.7 1.7 0 0 0 1.2-2.9l-.1-.1a1.7 1.7 0 1 1 2.4-2.4l.1.1a1.7 1.7 0 0 0 2.9-1.2V4a1.7 1.7 0 1 1 3.4 0v.2a1.7 1.7 0 0 0 2.9 1.2l.1-.1a1.7 1.7 0 1 1 2.4 2.4l.1.1a1.7 1.7 0 0 0 1.2 2.9h.2a1.7 1.7 0 1 1 0 3.4h-.2a1.7 1.7 0 0 0-1.2 2.9Z"/></>, computer: <><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></>, activity: <path d="M3 12h4l3-8 4 16 3-8h4"/>, app: <><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 6l2-3h4l2 3M8 14h8m-4-4v7"/></>, microphone: <><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0m-7 7v3m-4 0h8"/></>, voiceChat: <><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="M7 12v-2m3 5V9m3 6V9m3 3v-2" stroke="#111" strokeWidth="1.8"/></>
@@ -20,6 +28,7 @@ function Icon({ name }) {
 function App() {
   const [state, setState] = useState(null);
   const [provider, setProvider] = useState({ connected: false, models: [] });
+  const [theme, setTheme] = useState({ preference: 'system', resolved: 'dark' });
   const [model, setModel] = useState('codexrouter/gateway');
   const [activeId, setActiveId] = useState('primary');
   const [sidebarLayout, setSidebarLayout] = useState(() => readSidebarLayout(window.localStorage));
@@ -31,6 +40,7 @@ function App() {
   const [query, setQuery] = useState('');
   const [searchOpen, setSearchOpen] = useState(false);
   const [details, setDetails] = useState(false);
+  const [accountMenuOpen, setAccountMenuOpen] = useState(false);
   const [detailTab, setDetailTab] = useState('Details');
   const [notice, setNotice] = useState('');
   const [busyBotIds, setBusyBotIds] = useState([]);
@@ -78,9 +88,11 @@ function App() {
 
   useEffect(() => {
     let alive = true;
+    window.grok.loadTheme().then(value => { if (alive) { setTheme(value); applyTheme(value); } }).catch(() => {});
+    const unsubscribeTheme = window.grok.onThemeChange(value => { setTheme(value); applyTheme(value); });
     window.grok.loadState().then(value => { if (alive) { setState(value); setActiveId(value.bots.find(bot => bot.id === 'primary')?.id || value.bots.find(bot => bot.name !== 'New Bot' || bot.messages.length > 0)?.id || value.bots[0]?.id || 'primary'); } }).catch(error => { if (alive) setNotice(error.message); });
     window.grok.providerStatus().then(value => { if (alive) { setProvider(value); if (value.models[0]) setModel(value.models.find(item => item.id === 'codexrouter/gateway')?.id || value.models[0].id); } });
-    return () => { alive = false; };
+    return () => { alive = false; unsubscribeTheme(); };
   }, []);
   useEffect(() => { if (state?.proactiveSettings) setProactiveSettingsDraft(state.proactiveSettings); }, [state?.proactiveSettings]);
   useEffect(() => window.grok.onRunEvent(event => {
@@ -202,12 +214,17 @@ function App() {
     catch (error) { setNotice(String(error?.message || error)); }
   }
 
+  async function changeTheme(preference) {
+    try { const next = await window.grok.setTheme(preference); setTheme(next); applyTheme(next); }
+    catch (error) { setNotice(String(error?.message || error)); }
+  }
+
   if (!state) return <main className="boot"><Mark/><span>Starting TheGrok…</span></main>;
   return <div className={`app-shell ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`} style={{ '--sidebar-width': `${sidebarCollapsed ? sidebarWidthBounds.collapsed : sidebarLayout.expandedWidth}px` }}>
     <aside className="sidebar">
       <div className="sidebar-top"><div className="sidebar-tools"><button className="sidebar-round sidebar-toggle" aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Toggle compact sidebar'} title={sidebarCollapsed ? 'Expand sidebar' : 'Toggle compact sidebar'} aria-expanded={!sidebarCollapsed} onClick={toggleSidebar}><Icon name="sidebar"/></button><span className="sidebar-spacer"/>{searchOpen ? <label className="search sidebar-search"><Icon name="search"/><input autoFocus className="sidebar-search-input" value={query} onChange={event => setQuery(event.target.value)} onKeyDown={event => { if (event.key === 'Escape') { setQuery(''); setSearchOpen(false); } }} placeholder="Search" aria-label="Search"/></label> : <button className="sidebar-round sidebar-search-control" aria-label="Search" title="Search" onClick={() => setSearchOpen(true)}><Icon name="search"/></button>}<button className="sidebar-round sidebar-new-bot" aria-label="New Bot" title="New Bot" onClick={createBot}><Icon name="plus"/></button></div></div>
       <nav className="agent-list" aria-label="Bots">{filteredBots.map(bot => <button key={bot.id} className={`agent-item ${bot.id === activeId ? 'active' : ''}`} onClick={() => { setActiveId(bot.id); setNotice(''); }}><span className="agent-mark"><Mark small/>{bot.id === 'primary' && <span className="main-agent-badge" aria-label="Main Bot">★</span>}</span><span className="agent-copy"><b>{bot.name}</b>{bot.messages.at(-1)?.text && <small>{bot.messages.at(-1).text}</small>}</span></button>)}{!filteredBots.length && <p className="empty-list">No bots found</p>}</nav>
-      <div className="sidebar-bottom"><div className="sidebar-account-row"><button className="account" onClick={() => setNotice('Account menu is not implemented yet.')} aria-label="Open account menu"><span className="person">C</span></button></div><button className="connect" onClick={() => setNotice('Connectors are not configured yet.')}><Icon name="plus"/>Connect apps <span className="connector-icons" aria-hidden="true">✉︎ ▣</span></button></div>
+      <div className="sidebar-bottom"><div className="sidebar-account-row"><button className="account" onClick={() => setAccountMenuOpen(value => !value)} aria-label="Open account menu" aria-expanded={accountMenuOpen}><span className="person">C</span></button>{accountMenuOpen && <div className="account-menu-panel"><label htmlFor="theme-preference">Theme</label><select id="theme-preference" value={theme.preference} onChange={event => void changeTheme(event.target.value)}><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>}</div><button className="connect" onClick={() => setNotice('Connectors are not configured yet.')}><Icon name="plus"/>Connect apps <span className="connector-icons" aria-hidden="true">✉︎ ▣</span></button></div>
       {!sidebarCollapsed && <div className="sidebar-resize-handle" role="separator" aria-label="Resize sidebar" aria-orientation="vertical" aria-valuemin={sidebarWidthBounds.min} aria-valuemax={sidebarWidthBounds.max} aria-valuenow={Math.round(sidebarLayout.expandedWidth)} tabIndex={0} onPointerDown={event => { event.preventDefault(); sidebarResize.current = { clientX: event.clientX, width: sidebarLayout.expandedWidth }; event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={resizeSidebar} onPointerUp={endSidebarResize} onPointerCancel={endSidebarResize} onKeyDown={event => { if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return; event.preventDefault(); setSidebarLayout(layout => ({ ...layout, expandedWidth: clampSidebarWidth(layout.expandedWidth + (event.key === 'ArrowRight' ? 16 : -16)) })); }}/>}</aside>
     <main className="conversation">
       <header className="conversation-header"><div className="window-drag-region" aria-hidden="true"/><div className="active-agent"><span><b>{activeBot?.name || 'Grok Bot'}</b></span></div><div className="header-actions"><button className="icon-button" aria-label="View conversation details" onClick={() => setDetails(value => !value)}><Icon name="info"/></button></div></header>

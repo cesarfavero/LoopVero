@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, BrowserWindow, ipcMain } = electron;
+const { app, BrowserWindow, ipcMain, nativeTheme } = electron;
 const path = require('node:path');
 app.setName('Grok Bot');
 const userDataOverride = app.commandLine.getSwitchValue('user-data-dir');
@@ -15,10 +15,12 @@ const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
 const { createProactivityEngine } = require('./harness/proactivity-engine.cjs');
 const { createExecutionHostClient } = require('./harness/execution-host-client.cjs');
+const { getThemeState } = require('./theme.cjs');
 
 let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
+let themeState;
 const activeRuns = new Map();
 const scheduler = new RunScheduler();
 const executionHost = createExecutionHostClient();
@@ -42,7 +44,7 @@ function createWindow() {
   const isMac = process.platform === 'darwin';
   const window = new BrowserWindow({
     width: 1920, height: 1050, minWidth: 900, minHeight: 620,
-    backgroundColor: '#0a0a0a', title: 'Grok Bot',
+    backgroundColor: themeState.resolved === 'dark' ? '#0a0a0a' : '#fcfcfc', title: 'Grok Bot',
     ...(isMac ? { frame: true, titleBarStyle: 'hiddenInset', trafficLightPosition: { x: 16, y: 15 } } : {}),
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
@@ -50,6 +52,9 @@ function createWindow() {
     },
   });
   mainWindow = window;
+  window.webContents.on('did-finish-load', () => {
+    if (mainWindow === window && !window.isDestroyed()) window.webContents.send('theme:changed', themeState);
+  });
   if (process.argv.includes('--dev')) {
     const devUrl = process.env.THEGROK_DEV_SERVER_URL || 'http://127.0.0.1:4180/';
     const parsedDevUrl = new URL(devUrl);
@@ -76,6 +81,19 @@ function assertSender(event) {
 }
 
 ipcMain.handle('state:load', event => { assertSender(event); return store.load(); });
+ipcMain.handle('theme:load', event => { assertSender(event); return themeState; });
+ipcMain.handle('theme:set', (event, preference) => {
+  assertSender(event);
+  if (!['system', 'light', 'dark'].includes(preference)) throw new Error('Preferência de tema inválida.');
+  store.updateThemePreference(preference);
+  nativeTheme.themeSource = preference;
+  themeState = getThemeState(preference, nativeTheme.shouldUseDarkColors);
+  if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.setBackgroundColor(themeState.resolved === 'dark' ? '#0a0a0a' : '#fcfcfc');
+    mainWindow.webContents.send('theme:changed', themeState);
+  }
+  return themeState;
+});
 ipcMain.handle('bot:save', (event, bot) => { assertSender(event); return store.saveBotProfile(bot); });
 ipcMain.handle('provider:status', event => { assertSender(event); return providerStatus(); });
 ipcMain.handle('proactivity:update', (event, update) => {
@@ -223,6 +241,17 @@ ipcMain.handle('agent:turn', async (event, payload) => {
 });
 
 app.whenReady().then(() => {
+  const preference = store.load().themePreference || 'system';
+  nativeTheme.themeSource = preference;
+  themeState = getThemeState(preference, nativeTheme.shouldUseDarkColors);
+  nativeTheme.on('updated', () => {
+    if (themeState.preference !== 'system') return;
+    themeState = getThemeState('system', nativeTheme.shouldUseDarkColors);
+    if (mainWindow && !mainWindow.isDestroyed()) {
+      mainWindow.setBackgroundColor(themeState.resolved === 'dark' ? '#0a0a0a' : '#fcfcfc');
+      mainWindow.webContents.send('theme:changed', themeState);
+    }
+  });
   if (process.platform === 'darwin' && app.dock && electron.nativeImage) {
     app.dock.setIcon(electron.nativeImage.createFromPath(path.join(__dirname, 'assets/licensed-test/app-icon.png')));
   }

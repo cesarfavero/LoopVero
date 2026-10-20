@@ -12,7 +12,7 @@ const MAX_OBJECTIVES = 200;
 const MAX_PROACTIVE_EVENTS = 500;
 
 function emptyState() {
-  return { schemaVersion: 1, bots: [{ id: 'primary', name: 'Grok Bot', description: 'Primary Agent', instructions: '', messages: [], toolCalls: [] }], objectives: [], proactiveEvents: [], proactiveSettings: { enabled: false, intervalMinutes: 60, cooldownMinutes: 1440 } };
+  return { schemaVersion: 1, bots: [{ id: 'primary', name: 'Grok Bot', description: 'Primary Agent', instructions: '', messages: [], toolCalls: [] }], objectives: [], proactiveEvents: [], proactiveSettings: { enabled: false, intervalMinutes: 60, cooldownMinutes: 1440 }, themePreference: 'system' };
 }
 
 function sanitizeObjective(input) {
@@ -134,6 +134,7 @@ function createStore(getUserDataPath) {
         objectives: Array.isArray(parsed.objectives) ? parsed.objectives.slice(-MAX_OBJECTIVES).map(sanitizeObjective).filter(Boolean) : [],
         proactiveEvents: Array.isArray(parsed.proactiveEvents) ? parsed.proactiveEvents.slice(-MAX_PROACTIVE_EVENTS).map(sanitizeProactiveEvent).filter(Boolean) : [],
         proactiveSettings: sanitizeSettings(parsed.proactiveSettings),
+        themePreference: ['system', 'light', 'dark'].includes(parsed.themePreference) ? parsed.themePreference : 'system',
       };
     } catch (error) {
       if (error?.code === 'ENOENT') return emptyState();
@@ -206,7 +207,18 @@ function createStore(getUserDataPath) {
     fs.renameSync(temporary, destination);
     return state;
   }
-  return { load, saveBot, saveBotProfile, updateProactiveState };
+  function updateThemePreference(preference) {
+    if (!['system', 'light', 'dark'].includes(preference)) throw new Error('Preferência de tema inválida.');
+    const state = load();
+    state.themePreference = preference;
+    const destination = filePath();
+    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
+    const temporary = `${destination}.${randomUUID()}.tmp`;
+    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
+    fs.renameSync(temporary, destination);
+    return state;
+  }
+  return { load, saveBot, saveBotProfile, updateProactiveState, updateThemePreference };
 }
 
 module.exports = { createStore };

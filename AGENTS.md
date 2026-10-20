@@ -4,7 +4,9 @@
 - A implementação independente fica em `apps/desktop/`; pesquisas verificáveis ficam em `docs/research/`.
 - Registre separadamente código identificado, contrato recuperado, comportamento observado, inferência e lógica remota indisponível.
 - Nunca atribua proatividade espontânea ao cliente local sem localizar a decisão inicial ou a fronteira remota.
-- O CodexRouter local usa somente o loopback do Mac. Não exponha o serviço na rede nem reutilize autenticação do aplicativo original.
+- O CodexRouter é usado pelo próprio Codex neste Mac. A aplicação TheGrok pode consumir apenas a API existente pelo loopback; não altere configuração global, padrões, autenticação, processo ou armazenamento do CodexRouter, nem exponha o serviço na rede ou reutilize credenciais do Grok Bot.
+- O escopo inclui reconstruir as responsabilidades verificáveis do cliente Electron, Coordinator, serviços de controle e Sand Host/harness distribuído. Não trate uma execução local como substituta do fluxo remoto original; registre fronteiras indisponíveis e só implemente protocolos sustentados por código ou observação autorizada.
+- Derive a interface dos bundles, estilos, tokens e componentes do app original. Use capturas pareadas para validar depois da reconstrução de cada superfície; screenshots não substituem a investigação do código.
 - Para teste de runtime Electron, use `apps/desktop/scripts/launch-electron.cjs` com `--user-data-dir=/caminho/absoluto/temporario` e, quando necessário, porta CDP em loopback; não abra o executável Electron sem o entrypoint do TheGrok. O perfil temporário serve para não misturar validação aos dados locais usuais.
 - Valide o fluxo real antes de declarar paridade visual, funcional ou comportamental.
 - Preserve trabalho preexistente e faça commits coesos com push quando houver entrega verificável.
