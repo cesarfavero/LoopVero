@@ -2,17 +2,22 @@ const { randomUUID } = require('node:crypto');
 const router = require('../providers/codexrouter.cjs');
 const tools = require('../tools/registry.cjs');
 const { createPromptSession } = require('./prompt-session.cjs');
+const { createMemoryRuntime } = require('./memory-runtime.cjs');
 const MAX_TURNS = 8;
 const MAX_TOOL_CALLS_PER_TURN = 4;
 const MAX_SUBAGENTS_PER_TURN = 2;
 const MAX_SUBAGENT_TASK_CHARS = 6000;
 const DELEGATE_TOOL = 'delegate_to_agent';
 
+function resolveMemoryTools(toolRegistry, memoryRuntime) {
+  return typeof toolRegistry.memoryTools === 'function' ? toolRegistry.memoryTools(memoryRuntime) : [];
+}
+
 function normalizeAgentRoster(agents, botId) {
   if (!Array.isArray(agents)) return [];
   return agents.filter(agent => agent && typeof agent.id === 'string' && agent.id !== botId && typeof agent.name === 'string')
     .slice(0, 20)
-    .map(agent => ({ id: agent.id.slice(0, 100), name: agent.name.slice(0, 100), instructions: typeof agent.instructions === 'string' ? agent.instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 12000) : '' }));
+    .map(agent => ({ id: agent.id.slice(0, 100), name: agent.name.slice(0, 100), instructions: typeof agent.instructions === 'string' ? agent.instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 12000) : '', memories: Array.isArray(agent.memories) ? agent.memories.slice(0, 500) : [] }));
 }
 
 function delegationDefinition(agents) {
@@ -49,13 +54,17 @@ function textFrom(response) {
   return (response.output || []).flatMap(item => item.content || []).filter(item => item.type === 'output_text').map(item => item.text || '').join('');
 }
 
-async function runTurn({ botId, text, history = [], instructions = '', model = 'codexrouter/gateway', signal, onEvent = () => {}, inference = router, toolRegistry = tools, agents = [], parentTaskId = null, taskId = randomUUID() }) {
+async function runTurn({ botId, text, history = [], instructions = '', model = 'codexrouter/gateway', signal, onEvent = () => {}, inference = router, toolRegistry = tools, agents = [], memories = [], memoryRequest, parentTaskId = null, taskId = randomUUID() }) {
   const availableAgents = normalizeAgentRoster(agents, botId);
   const delegateTool = availableAgents.length ? delegationDefinition(availableAgents) : null;
-  const definitions = delegateTool ? [...toolRegistry.definitions, delegateTool] : toolRegistry.definitions;
+  const memoryRuntime = memoryRequest ? createMemoryRuntime({ memories, turnId: taskId, request: request => memoryRequest({ ...request, botId }) }) : null;
+  const memoryDefinitions = memoryRuntime ? resolveMemoryTools(toolRegistry, memoryRuntime) : [];
+  const definitions = [...toolRegistry.definitions, ...memoryDefinitions, ...(delegateTool ? [delegateTool] : [])];
   const input = history.slice(-80).filter(item => ['user', 'assistant', 'system'].includes(item.role)).map(item => ({ role: item.role, content: [{ type: item.role === 'assistant' ? 'output_text' : 'input_text', text: String(item.text).slice(0, 24000) }] }));
   const systemInstruction = typeof instructions === 'string' ? instructions.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').trim().slice(0, 12000) : '';
   if (systemInstruction) input.unshift({ role: 'system', content: [{ type: 'input_text', text: systemInstruction }] });
+  const memoryContext = memoryRuntime?.context();
+  if (memoryContext) input.unshift({ role: 'system', content: [{ type: 'input_text', text: memoryContext }] });
   input.push({ role: 'user', content: [{ type: 'input_text', text: text.slice(0, 12000) }] });
   const toolRuns = [];
   let delegatedRuns = 0;
@@ -102,6 +111,8 @@ async function runTurn({ botId, text, history = [], instructions = '', model = '
               signal,
               inference,
               toolRegistry,
+              memories: agent.memories,
+              memoryRequest: memoryRequest ? request => memoryRequest({ ...request, botId: agent.id }) : undefined,
               agents: [],
               parentTaskId: taskId,
               taskId: childTaskId,
@@ -121,7 +132,7 @@ async function runTurn({ botId, text, history = [], instructions = '', model = '
           }
           output = JSON.stringify({ status: childResult.status, agentId: agent.id, agentName: agent.name, taskId: childResult.taskId, parentTaskId: taskId, result: childResult.text });
         } else {
-          output = await toolRegistry.execute(call.name, call.arguments);
+          output = await toolRegistry.execute(call.name, call.arguments, memoryRuntime);
         }
         toolRun.status = 'completed';
       } catch (error) {

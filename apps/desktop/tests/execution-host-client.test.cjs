@@ -24,13 +24,27 @@ test('execution host client forwards typed events and resolves the matching run'
     await new Promise(resolve => setImmediate(resolve));
     const request = context.sent.find(message => message.type === 'run');
     assert.ok(request?.requestId);
-    assert.deepEqual(request.payload, { botId: 'primary', text: 'hello', history: [], instructions: '', model: 'codexrouter/gateway', agents: [{ id: 'researcher', name: 'Researcher', instructions: 'Trace renderer.' }] });
+    assert.deepEqual(request.payload, { botId: 'primary', text: 'hello', history: [], instructions: '', model: 'codexrouter/gateway', memories: [], agents: [{ id: 'researcher', name: 'Researcher', instructions: 'Trace renderer.', memories: [] }] });
     assert.equal(context.forkOptions.env.ELECTRON_RUN_AS_NODE, '1');
     assert.equal(context.forkOptions.env.ROUTER_SECRET, undefined);
     context.child.emit('message', { type: 'event', requestId: request.requestId, event: { type: 'text-delta', delta: 'hi' } });
     context.child.emit('message', { type: 'result', requestId: request.requestId, result: { status: 'completed', text: 'hi' } });
     assert.deepEqual(await pending, { status: 'completed', text: 'hi' });
     assert.deepEqual(events, [{ type: 'text-delta', delta: 'hi' }]);
+  } finally { context.client.dispose(); }
+});
+
+test('execution host client routes memory write requests to Main and returns the scoped result', async () => {
+  const context = fixture();
+  try {
+    const pending = context.client.runTurn({ botId: 'primary', text: 'remember', handleMemoryRequest: async data => ({ outcome: { ok: true, added: true }, memories: [{ content: data.fact }] }) });
+    await new Promise(resolve => setImmediate(resolve));
+    const run = context.sent.find(message => message.type === 'run');
+    context.child.emit('message', { type: 'memory-request', requestId: run.requestId, memoryRequestId: 'memory-1', data: { action: 'write', botId: 'primary', fact: 'Prefers dark mode' } });
+    await new Promise(resolve => setImmediate(resolve));
+    assert.deepEqual(context.sent.find(message => message.type === 'memory-result'), { type: 'memory-result', requestId: run.requestId, memoryRequestId: 'memory-1', result: { outcome: { ok: true, added: true }, memories: [{ content: 'Prefers dark mode' }] } });
+    context.child.emit('message', { type: 'result', requestId: run.requestId, result: { status: 'completed' } });
+    assert.deepEqual(await pending, { status: 'completed' });
   } finally { context.client.dispose(); }
 });
 

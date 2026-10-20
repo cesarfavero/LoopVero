@@ -95,6 +95,20 @@ ipcMain.handle('theme:set', (event, preference) => {
   return themeState;
 });
 ipcMain.handle('bot:save', (event, bot) => { assertSender(event); return store.saveBotProfile(bot); });
+ipcMain.handle('memory:list', (event, botId) => {
+  assertSender(event);
+  if (typeof botId !== 'string' || botId.length > 100) throw new Error('Agente inválido.');
+  const bot = store.load().bots.find(item => item.id === botId);
+  if (!bot) throw new Error('Agente não encontrado.');
+  return bot.memories || [];
+});
+ipcMain.handle('memory:update', (event, update) => {
+  assertSender(event);
+  if (!update || typeof update !== 'object' || typeof update.botId !== 'string' || update.botId.length > 100) throw new Error('Atualização de memória inválida.');
+  if (update.action === 'write') return store.writeBotMemory(update.botId, update);
+  if (update.action === 'forget') return store.forgetBotMemory(update.botId, update.fact);
+  throw new Error('Ação de memória inválida.');
+});
 ipcMain.handle('provider:status', event => { assertSender(event); return providerStatus(); });
 ipcMain.handle('proactivity:update', (event, update) => {
   assertSender(event);
@@ -167,8 +181,13 @@ ipcMain.handle('agent:turn', async (event, payload) => {
         currentBot.messages = [...history, { id: runId, role: 'user', text, ...(richText ? { richText } : {}), createdAt: new Date().toISOString() }];
         store.saveBot(currentBot);
         if (store.load().proactiveSettings.enabled) void proactivity.tick();
-        const availableAgents = store.load().bots.filter(agent => agent.id !== botId && agent.name !== 'New Bot').map(agent => ({ id: agent.id, name: agent.name, instructions: agent.instructions }));
-        result = await executionHost.runTurn({ botId, text, history, instructions: currentBot.instructions, model, signal: controller.signal, agents: availableAgents, onEvent: event => {
+        const availableAgents = store.load().bots.filter(agent => agent.id !== botId && agent.name !== 'New Bot').map(agent => ({ id: agent.id, name: agent.name, instructions: agent.instructions, memories: agent.memories || [] }));
+        result = await executionHost.runTurn({ botId, text, history, instructions: currentBot.instructions, memories: currentBot.memories || [], model, signal: controller.signal, agents: availableAgents, handleMemoryRequest: request => {
+          if (!request || request.botId !== botId) throw new Error('Agente da memória não corresponde ao turno.');
+          if (request.action === 'write') return store.writeBotMemory(botId, request);
+          if (request.action === 'forget') return store.forgetBotMemory(botId, request.fact);
+          throw new Error('Ação de memória inválida.');
+        }, onEvent: event => {
           const eventBotId = typeof event.botId === 'string' ? event.botId : botId;
           emit({ ...event, runId, botId: eventBotId });
           if (event.type === 'subagent-start') {

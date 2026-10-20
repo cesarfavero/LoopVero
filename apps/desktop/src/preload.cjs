@@ -11,6 +11,8 @@ contextBridge.exposeInMainWorld('grok', Object.freeze({
     return () => ipcRenderer.removeListener('theme:changed', listener);
   },
   saveBot: bot => ipcRenderer.invoke('bot:save', bot),
+  listMemories: botId => ipcRenderer.invoke('memory:list', botId),
+  updateMemory: update => ipcRenderer.invoke('memory:update', update),
   sendMessage: payload => ipcRenderer.invoke('agent:turn', payload),
   cancel: taskId => ipcRenderer.invoke('agent:cancel', taskId),
   onRunEvent: callback => {

@@ -51,6 +51,23 @@ function createExecutionHostClient({ forkProcess = fork, execPath = process.exec
           }
           return;
         }
+        if (message?.type === 'memory-request') {
+          const entry = pending.get(message.requestId);
+          if (!entry) return;
+          const reply = response => {
+            try { if (current.connected) current.send(response); }
+            catch (error) { pending.delete(message.requestId); entry.reject(error); }
+          };
+          Promise.resolve().then(() => {
+            if (typeof entry.handleMemoryRequest !== 'function') throw new Error('Persistência de memória indisponível.');
+            return entry.handleMemoryRequest(message.data);
+          }).then(result => {
+            reply({ type: 'memory-result', requestId: message.requestId, memoryRequestId: message.memoryRequestId, result });
+          }, error => {
+            reply({ type: 'memory-result', requestId: message.requestId, memoryRequestId: message.memoryRequestId, error: String(error?.message || error).replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 700) });
+          });
+          return;
+        }
         const entry = pending.get(message?.requestId);
         if (!entry || !['result', 'error'].includes(message?.type)) return;
         pending.delete(message.requestId);
@@ -80,20 +97,23 @@ function createExecutionHostClient({ forkProcess = fork, execPath = process.exec
     if (options?.signal?.aborted) throw new Error('Execução cancelada.');
     const worker = await start();
     const requestId = randomUUID();
+    const handleMemoryRequest = options.handleMemoryRequest;
     const payload = {
       botId: options.botId,
       text: options.text,
       history: Array.isArray(options.history) ? options.history : [],
       instructions: typeof options.instructions === 'string' ? options.instructions : '',
       model: typeof options.model === 'string' ? options.model : 'codexrouter/gateway',
+      memories: Array.isArray(options.memories) ? options.memories.slice(0, 500) : [],
       agents: Array.isArray(options.agents) ? options.agents.slice(0, 20).map(agent => ({
         id: typeof agent?.id === 'string' ? agent.id.slice(0, 100) : '',
         name: typeof agent?.name === 'string' ? agent.name.slice(0, 100) : '',
         instructions: typeof agent?.instructions === 'string' ? agent.instructions.slice(0, 12000) : '',
+        memories: Array.isArray(agent?.memories) ? agent.memories.slice(0, 500) : [],
       })).filter(agent => agent.id && agent.name) : [],
     };
     return new Promise((resolve, reject) => {
-      const entry = { resolve, reject, onEvent: options.onEvent, signal: options.signal, abortListener: null, abortRequested: false };
+      const entry = { resolve, reject, onEvent: options.onEvent, handleMemoryRequest, signal: options.signal, abortListener: null, abortRequested: false };
       const rejectAsAborted = () => {
         if (pending.get(requestId) !== entry) return;
         pending.delete(requestId);

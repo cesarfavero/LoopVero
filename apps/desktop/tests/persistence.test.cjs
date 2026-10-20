@@ -143,3 +143,23 @@ test('merges transcript entries by id so concurrent run updates are not lost', (
     assert.equal(store.load().bots[0].toolCalls.find(call => call.id === 'tool-1').status, 'completed');
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
+
+test('stores private profile and journal memories per bot and removes only an exact fact', () => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'thegrok-memory-'));
+  try {
+    const store = createStore(() => directory);
+    store.saveBotProfile({ id: 'agent-a', name: 'Agent A' });
+    store.saveBotProfile({ id: 'agent-b', name: 'Agent B' });
+    const saved = store.writeBotMemory('agent-a', { fact: '  Prefers   dark mode ', memoryType: 'profile', turnId: 'task-1' });
+    assert.equal(saved.outcome.added, true);
+    assert.equal(saved.memories[0].id, require('node:crypto').createHash('sha1').update('prefers dark mode').digest('hex').slice(0, 16));
+    assert.equal(saved.memories[0].provenance, 'tool turn:task-1');
+    assert.equal(store.writeBotMemory('agent-a', { fact: 'PREFERS dark mode', memoryType: 'journal' }).outcome.duplicate, true);
+    store.writeBotMemory('agent-b', { fact: 'Uses Linux', memoryType: 'journal' });
+    assert.equal(store.load().bots.find(bot => bot.id === 'agent-b').memories.length, 1);
+    assert.equal(store.forgetBotMemory('agent-a', 'dark mode').outcome.removed, false);
+    assert.equal(store.forgetBotMemory('agent-a', 'Prefers dark mode').outcome.removed, true);
+    assert.deepEqual(store.load().bots.find(bot => bot.id === 'agent-a').memories, []);
+    assert.equal(store.load().bots.find(bot => bot.id === 'agent-b').memories[0].content, 'Uses Linux');
+  } finally { fs.rmSync(directory, { recursive: true, force: true }); }
+});

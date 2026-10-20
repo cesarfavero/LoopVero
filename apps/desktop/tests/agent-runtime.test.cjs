@@ -53,6 +53,61 @@ test('adds the saved agent instructions to the provider context as a system mess
   assert.ok(request.input.some(item => item.role === 'user' && item.content[0].text === 'hello'));
 });
 
+test('injects saved private memory into context and only exposes scoped memory tools', async () => {
+  let request;
+  const inference = { async generate(value) { request = value; return { output_text: 'ok', output: [{ type: 'message', content: [{ type: 'output_text', text: 'ok' }] }] }; } };
+  const result = await runTurn({ botId: 'agent-a', text: 'hello', memories: [{ id: 'm1', content: 'Prefers dark mode', type: 'profile', createdAt: '2026-03-01T00:00:00.000Z' }], inference, memoryRequest: async () => { throw new Error('not called'); } });
+  assert.equal(result.status, 'completed');
+  assert.match(request.input[0].content[0].text, /Private memory for this agent/);
+  assert.match(request.input[0].content[0].text, /Prefers dark mode/);
+  assert.deepEqual(request.tools.map(tool => tool.name), ['get_local_time', 'RecallMemory', 'UpdateMemory']);
+});
+
+test('persists a memory tool write before recalling it in the same agent turn', async () => {
+  let step = 0;
+  const persisted = [];
+  const inference = { async generate(request) {
+    step += 1;
+    if (step === 1) return { output: [{ type: 'function_call', call_id: 'memory-write', name: 'UpdateMemory', arguments: JSON.stringify({ action: 'write', fact: 'Prefers dark mode', type: 'profile' }) }] };
+    if (step === 2) {
+      assert.match(request.input.find(item => item.type === 'function_call_output' && item.call_id === 'memory-write').output, /added/);
+      return { output: [{ type: 'function_call', call_id: 'memory-recall', name: 'RecallMemory', arguments: JSON.stringify({ query: 'dark mode', limit: 20 }) }] };
+    }
+    assert.match(request.input.find(item => item.type === 'function_call_output' && item.call_id === 'memory-recall').output, /Prefers dark mode/);
+    return { output_text: 'I will remember.', output: [{ type: 'message', content: [{ type: 'output_text', text: 'I will remember.' }] }] };
+  } };
+  const result = await runTurn({ botId: 'agent-a', text: 'Remember my preference.', inference, memoryRequest: async request => {
+    assert.equal(request.botId, 'agent-a');
+    if (request.action === 'write') persisted.push({ id: 'saved', content: request.fact, type: request.memoryType, createdAt: '2026-03-01T00:00:00.000Z' });
+    return { outcome: { ok: true, added: true }, memories: persisted };
+  } });
+  assert.equal(result.text, 'I will remember.');
+  assert.equal(step, 3);
+  assert.equal(persisted.length, 1);
+});
+
+test('delegated subagent memory mutations keep the delegated agent scope', async () => {
+  let step = 0;
+  const requests = [];
+  const inference = { async generate(request) {
+    const child = request.input.some(item => item.role === 'system' && item.content?.[0]?.text === 'Child profile');
+    if (child) {
+      step += 1;
+      if (step === 1) return { output: [{ type: 'function_call', call_id: 'child-memory', name: 'UpdateMemory', arguments: JSON.stringify({ action: 'write', fact: 'Child fact', type: 'profile' }) }] };
+      return { output_text: 'Child done.', output: [{ type: 'message', content: [{ type: 'output_text', text: 'Child done.' }] }] };
+    }
+    if (request.input.some(item => item.type === 'function_call_output' && item.call_id === 'delegate-memory')) {
+      return { output_text: 'Parent done.', output: [{ type: 'message', content: [{ type: 'output_text', text: 'Parent done.' }] }] };
+    }
+    return { output: [{ type: 'function_call', call_id: 'delegate-memory', name: 'delegate_to_agent', arguments: JSON.stringify({ agentId: 'child', task: 'Record one fact.' }) }] };
+  } };
+  await runTurn({ botId: 'primary', text: 'Delegate.', inference, agents: [{ id: 'child', name: 'Child', instructions: 'Child profile' }], memoryRequest: async request => {
+    requests.push(request.botId);
+    return { outcome: { ok: true, added: true }, memories: [{ id: 'child-memory', content: 'Child fact', type: 'profile', createdAt: '2026-03-01T00:00:00.000Z' }] };
+  } });
+  assert.deepEqual(requests, ['child']);
+});
+
 test('delegates a bounded task to a distinct agent and feeds its structured result back to the parent', async () => {
   const requests = [];
   const events = [];

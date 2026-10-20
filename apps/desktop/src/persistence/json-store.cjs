@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { randomUUID } = require('node:crypto');
+const { randomUUID, createHash } = require('node:crypto');
 
 const MAX_STATE_BYTES = 8 * 1024 * 1024;
 const MAX_BOTS = 200;
@@ -10,9 +10,36 @@ const MAX_SUBAGENT_RUNS_PER_BOT = 500;
 const MAX_MESSAGE_CHARS = 24000;
 const MAX_OBJECTIVES = 200;
 const MAX_PROACTIVE_EVENTS = 500;
+const MAX_MEMORIES_PER_BOT = 500;
+const MAX_MEMORY_CHARS = 500;
 
 function emptyState() {
-  return { schemaVersion: 1, bots: [{ id: 'primary', name: 'Grok Bot', description: 'Primary Agent', instructions: '', messages: [], toolCalls: [] }], objectives: [], proactiveEvents: [], proactiveSettings: { enabled: false, intervalMinutes: 60, cooldownMinutes: 1440 }, themePreference: 'system' };
+  return { schemaVersion: 1, bots: [{ id: 'primary', name: 'Grok Bot', description: 'Primary Agent', instructions: '', messages: [], toolCalls: [], memories: [] }], objectives: [], proactiveEvents: [], proactiveSettings: { enabled: false, intervalMinutes: 60, cooldownMinutes: 1440 }, themePreference: 'system' };
+}
+
+function normalizeMemoryContent(value) {
+  if (typeof value !== 'string') return '';
+  return value.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').replace(/[\r\n\t]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, MAX_MEMORY_CHARS);
+}
+
+function memoryIdFor(content) { return createHash('sha1').update(normalizeMemoryContent(content).toLocaleLowerCase()).digest('hex').slice(0, 16); }
+
+function sanitizeMemory(input) {
+  if (!input || typeof input !== 'object') return null;
+  const content = normalizeMemoryContent(input.content);
+  if (!content) return null;
+  const validDate = value => {
+    const date = typeof value === 'string' ? new Date(value) : null;
+    return date && Number.isFinite(date.getTime()) ? date.toISOString() : new Date().toISOString();
+  };
+  return {
+    id: typeof input.id === 'string' && input.id.length <= 100 ? input.id : memoryIdFor(content),
+    content,
+    type: input.type === 'journal' ? 'journal' : 'profile',
+    createdAt: validDate(input.createdAt),
+    updatedAt: validDate(input.updatedAt),
+    ...(typeof input.provenance === 'string' && input.provenance.trim() ? { provenance: input.provenance.replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 1000) } : {}),
+  };
 }
 
 function sanitizeObjective(input) {
@@ -117,7 +144,12 @@ function sanitizeBot(input) {
       updatedAt: typeof run.updatedAt === 'string' ? run.updatedAt.slice(0, 40) : new Date().toISOString(),
     };
   }).filter(Boolean) : [];
-  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', instructions, messages, toolCalls, subagentRuns };
+  const memoriesByContent = new Map();
+  for (const memory of (Array.isArray(input.memories) ? input.memories : []).slice(-MAX_MEMORIES_PER_BOT)) {
+    const clean = sanitizeMemory(memory);
+    if (clean) memoriesByContent.set(clean.content.replace(/\s+/g, ' ').trim().toLocaleLowerCase(), clean);
+  }
+  return { id, name, description: typeof input.description === 'string' ? input.description.slice(0, 160) : '', instructions, messages, toolCalls, subagentRuns, memories: [...memoriesByContent.values()] };
 }
 
 function createStore(getUserDataPath) {
@@ -157,6 +189,9 @@ function createStore(getUserDataPath) {
       const subagentRuns = new Map((existing.subagentRuns || []).map(run => [run.id, run]));
       for (const run of bot.subagentRuns) subagentRuns.set(run.id, run);
       bot.subagentRuns = [...subagentRuns.values()].slice(-MAX_SUBAGENT_RUNS_PER_BOT);
+      const memories = new Map((existing.memories || []).map(memory => [memory.content.replace(/\s+/g, ' ').trim().toLocaleLowerCase(), memory]));
+      for (const memory of bot.memories) memories.set(memory.content.replace(/\s+/g, ' ').trim().toLocaleLowerCase(), memory);
+      bot.memories = [...memories.values()].slice(-MAX_MEMORIES_PER_BOT);
       state.bots[index] = bot;
     }
     const destination = filePath();
@@ -180,6 +215,7 @@ function createStore(getUserDataPath) {
       messages: existing?.messages || [],
       toolCalls: existing?.toolCalls || [],
       subagentRuns: existing?.subagentRuns || [],
+      memories: existing?.memories || [],
     });
   }
   function updateProactiveState(update) {
@@ -218,7 +254,45 @@ function createStore(getUserDataPath) {
     fs.renameSync(temporary, destination);
     return state;
   }
-  return { load, saveBot, saveBotProfile, updateProactiveState, updateThemePreference };
+  function updateBotMemories(botId, memories) {
+    const state = load();
+    const index = state.bots.findIndex(item => item.id === botId);
+    if (index < 0) throw new Error('Agente não encontrado.');
+    state.bots[index] = sanitizeBot({ ...state.bots[index], memories });
+    const destination = filePath();
+    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
+    const temporary = `${destination}.${randomUUID()}.tmp`;
+    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
+    fs.renameSync(temporary, destination);
+    return state.bots[index];
+  }
+  function writeBotMemory(botId, input) {
+    const bot = load().bots.find(item => item.id === botId);
+    if (!bot) throw new Error('Agente não encontrado.');
+    const content = normalizeMemoryContent(input?.fact);
+    if (!content) return { outcome: { ok: false, reason: 'empty' }, memories: bot.memories };
+    if (!['profile', 'journal'].includes(input?.memoryType)) throw new Error('Tipo de memória inválido.');
+    const normalized = content.toLocaleLowerCase();
+    if (bot.memories.some(memory => normalizeMemoryContent(memory.content).toLocaleLowerCase() === normalized)) {
+      return { outcome: { ok: true, duplicate: true }, memories: bot.memories };
+    }
+    const timestamp = new Date().toISOString();
+    const memory = sanitizeMemory({ content, type: input.memoryType, createdAt: timestamp, updatedAt: timestamp, ...(typeof input.turnId === 'string' ? { provenance: `tool turn:${input.turnId}` } : {}) });
+    updateBotMemories(botId, [...bot.memories, memory]);
+    return { outcome: { ok: true, added: true, id: memory.id }, memories: load().bots.find(item => item.id === botId).memories };
+  }
+  function forgetBotMemory(botId, fact) {
+    const bot = load().bots.find(item => item.id === botId);
+    if (!bot) throw new Error('Agente não encontrado.');
+    const content = normalizeMemoryContent(fact);
+    if (!content) return { outcome: { ok: false, reason: 'empty' }, memories: bot.memories };
+    const key = content.toLocaleLowerCase();
+    const memories = bot.memories.filter(memory => normalizeMemoryContent(memory.content).toLocaleLowerCase() !== key);
+    if (memories.length === bot.memories.length) return { outcome: { ok: true, removed: false }, memories };
+    updateBotMemories(botId, memories);
+    return { outcome: { ok: true, removed: true }, memories: load().bots.find(item => item.id === botId).memories };
+  }
+  return { load, saveBot, saveBotProfile, updateBotMemories, writeBotMemory, forgetBotMemory, updateProactiveState, updateThemePreference };
 }
 
 module.exports = { createStore };
