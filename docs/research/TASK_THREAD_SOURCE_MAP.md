@@ -29,6 +29,8 @@ O bundle completo do Sand Host inclui nomes de arquivos-fonte internos e estes c
 - Protocolo de transcript (`193992-194170`, RPC `211610-211625`): entradas e cursores incluem `agent_id`, `session_id`, geração e sequência. `WatchGrokBotTranscripts` reproduz mudanças após cursor e novos commits. Documento da task e transcript da sessão são stores separados. A listagem de sessões tem comentário explícito de implementação futura (`211650-211663`).
 - `GrokBotTask`/`KeepGrokBotTaskList`/`ListGrokBotTasks` (`196280-196532`, `211982-212024`) formam **outra lista**, de progresso, associada a agente e sessão. Ela não é a coleção dos documentos Markdown nem uma execução de subagente.
 
+Uma implementação de proxy no mesmo bundle (`492729-492732`) devolve arrays vazios para `getAgentTasks`, `markAgentTaskDone`, `markAgentTaskRead` e `setAgentTaskPinned`. Isso identifica um caminho sem suporte a tasks; não prova que todos os backends e contas retornam vazio. A rota que efetivamente fornece tasks ao renderer permanece por localizar.
+
 A extração REA do harness foi parcial: Evidence `ev_b12cbb9bb20c0d99cb66a0982e27f9b967abdd717f73a9a2a1c8749cc6ddb3b7` terminou por limite de heap e não cobre a semântica completa de `host-main.cjs`; os contratos acima foram lidos diretamente no bundle com rótulos de origem, sem executá-lo. O backend remoto que persiste documentos, autoriza acesso e projeta sessões não está identificado nesse artefato. Não inferir schema de banco ou transação.
 
 ## Confronto com a réplica
@@ -42,3 +44,7 @@ O fluxo local de delegação possui um vínculo comprovado em `agent-runtime.cjs
 ## Validação controlada da fatia local
 
 Em perfil temporário isolado, um estado de teste continha uma delegação `task-1`, mensagens de usuário/assistente e chamada de ferramenta com esse ID, mais uma mensagem `task-2` no mesmo bot filho. O Electron 42.11.15 iniciou pelo entrypoint absoluto de `apps/desktop/src/main.cjs` e carregou `apps/desktop/dist/index.html`; a captura REA `ev_af86a2a9f4d3746fa37c1c19c3b591bf9c21d9889d64a78c41d15e48586bba17` observou cliques concluídos em abrir tarefa e voltar, com cobertura de eventos `partial_attach`. Uma inspeção CDP local depois do clique confirmou título, chamada de ferramenta e resposta da `task-1` no `.delegated-task-history`, ausência do texto exclusivo da `task-2` nessa região, e restauração da conversa após voltar. O perfil de teste não foi misturado aos dados normais. Isso prova somente essa navegação e o filtro local; não prova layout original, envio, sincronização remota ou paridade visual.
+
+## Fronteira de navegação local
+
+O renderer agora representa a seleção de uma delegação como `{kind:'delegated-run',parentBotId,runId}`. A resolução exige que o pai ainda seja o agente ativo; a troca de agente limpa a seleção. O rótulo acessível e o cabeçalho da visualização passaram a dizer “Delegated run”, pois o UUID local não é o ID documental hexadecimal do Sand. O composer principal continua destinado ao chat principal. Não foi criada task documental nem transporte remoto: a próxima integração precisa armazenar a metadata/documento fora de `subagentRuns` e abrir a thread por `{agentId,taskId}`, com transcript derivado da sessão e envio tipado. O build Vite passou em 2026-10-19; isso não verifica paridade com o original.

@@ -12,8 +12,8 @@ export default function DelegatedTaskThread({ run, agent, onBack }) {
     const byTime = Date.parse(left.item.createdAt) - Date.parse(right.item.createdAt);
     return (Number.isFinite(byTime) ? byTime : 0) || (left.kind === right.kind ? left.index - right.index : left.kind === 'message' ? -1 : 1);
   });
-  return <section className="delegated-task-thread" aria-label={`Task: ${run.task}`}>
-    <header className="delegated-task-header"><button type="button" onClick={onBack} aria-label="Back to conversation">‹</button><div><small>{agent?.name || run.agentName}</small><h2>{run.task}</h2></div><span className={`delegated-task-status ${run.status}`}>{run.status}</span></header>
+  return <section className="delegated-task-thread" aria-label={`Delegated run: ${run.task}`}>
+    <header className="delegated-task-header"><button type="button" onClick={onBack} aria-label="Back to conversation">‹</button><div><small>Delegated run · {agent?.name || run.agentName}</small><h2>{run.task}</h2></div><span className={`delegated-task-status ${run.status}`}>{run.status}</span></header>
     <div className="delegated-task-history">
       {entries.map(({ kind, item }) => kind === 'message'
         ? <article className={`delegated-task-entry ${item.role}`} key={`message:${item.id}`}><span>{item.role === 'user' ? 'Task' : agent?.name || run.agentName}</span><div><ReactMarkdown remarkPlugins={[remarkGfm]}>{item.text}</ReactMarkdown></div></article>
