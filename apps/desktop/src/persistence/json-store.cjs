@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { randomUUID, createHash } = require('node:crypto');
+const { createFileMemoryStore } = require('./file-memory-store.cjs');
 
 const MAX_STATE_BYTES = 8 * 1024 * 1024;
 const MAX_BOTS = 200;
@@ -154,13 +155,27 @@ function sanitizeBot(input) {
 
 function createStore(getUserDataPath) {
   const filePath = () => path.join(getUserDataPath(), 'thegrok-state.json');
+  const memoryStore = botId => createFileMemoryStore(getUserDataPath(), botId);
+  function provenanceForLegacy(value) {
+    if (typeof value !== 'string') return undefined;
+    const match = /^(tool|extract|episode|promote|template)(?: turn:([\w.:-]{1,128}))?$/.exec(value.trim());
+    return match ? { source: match[1], ...(match[2] ? { turnId: match[2] } : {}) } : undefined;
+  }
+  function persistState(state) {
+    const destination = filePath();
+    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
+    const temporary = `${destination}.${randomUUID()}.tmp`;
+    const diskState = { ...state, bots: state.bots.map(bot => ({ ...bot, memories: [] })) };
+    fs.writeFileSync(temporary, JSON.stringify(diskState), { mode: 0o600, flag: 'wx' });
+    fs.renameSync(temporary, destination);
+  }
   function load() {
     try {
       const buffer = fs.readFileSync(filePath());
       if (buffer.byteLength > MAX_STATE_BYTES) throw new Error('Estado local excede o limite permitido.');
       const parsed = JSON.parse(buffer.toString('utf8'));
       if (parsed?.schemaVersion !== 1 || !Array.isArray(parsed.bots)) return emptyState();
-      return {
+      const state = {
         schemaVersion: 1,
         bots: parsed.bots.slice(0, MAX_BOTS).map(sanitizeBot),
         objectives: Array.isArray(parsed.objectives) ? parsed.objectives.slice(-MAX_OBJECTIVES).map(sanitizeObjective).filter(Boolean) : [],
@@ -168,8 +183,26 @@ function createStore(getUserDataPath) {
         proactiveSettings: sanitizeSettings(parsed.proactiveSettings),
         themePreference: ['system', 'light', 'dark'].includes(parsed.themePreference) ? parsed.themePreference : 'system',
       };
+      if (state.bots.some(bot => bot.memories.length)) {
+        const backup = `${filePath()}.pre-file-memory.bak`;
+        try {
+          fs.copyFileSync(filePath(), backup, fs.constants.COPYFILE_EXCL);
+          fs.chmodSync(backup, 0o600);
+        } catch (error) { if (error?.code !== 'EEXIST') throw error; }
+        for (const bot of state.bots) {
+          const files = memoryStore(bot.id);
+          for (const record of bot.memories) files.add(record.content, record.createdAt, record.type === 'journal' ? 'log' : 'profile', provenanceForLegacy(record.provenance));
+        }
+        persistState(state);
+      }
+      for (const bot of state.bots) bot.memories = memoryStore(bot.id).list();
+      return state;
     } catch (error) {
-      if (error?.code === 'ENOENT') return emptyState();
+      if (error?.code === 'ENOENT') {
+        const state = emptyState();
+        for (const bot of state.bots) bot.memories = memoryStore(bot.id).list();
+        return state;
+      }
       throw error;
     }
   }
@@ -189,16 +222,11 @@ function createStore(getUserDataPath) {
       const subagentRuns = new Map((existing.subagentRuns || []).map(run => [run.id, run]));
       for (const run of bot.subagentRuns) subagentRuns.set(run.id, run);
       bot.subagentRuns = [...subagentRuns.values()].slice(-MAX_SUBAGENT_RUNS_PER_BOT);
-      const memories = new Map((existing.memories || []).map(memory => [memory.content.replace(/\s+/g, ' ').trim().toLocaleLowerCase(), memory]));
-      for (const memory of bot.memories) memories.set(memory.content.replace(/\s+/g, ' ').trim().toLocaleLowerCase(), memory);
-      bot.memories = [...memories.values()].slice(-MAX_MEMORIES_PER_BOT);
+      bot.memories = existing.memories;
       state.bots[index] = bot;
     }
-    const destination = filePath();
-    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
-    const temporary = `${destination}.${randomUUID()}.tmp`;
-    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
-    fs.renameSync(temporary, destination);
+    if (index < 0) bot.memories = memoryStore(bot.id).list();
+    persistState(state);
     return bot;
   }
   function saveBotProfile(input) {
@@ -236,35 +264,15 @@ function createStore(getUserDataPath) {
       if (index < 0) state.proactiveEvents.unshift(event); else state.proactiveEvents[index] = event;
       state.proactiveEvents = state.proactiveEvents.slice(0, MAX_PROACTIVE_EVENTS);
     }
-    const destination = filePath();
-    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
-    const temporary = `${destination}.${randomUUID()}.tmp`;
-    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
-    fs.renameSync(temporary, destination);
+    persistState(state);
     return state;
   }
   function updateThemePreference(preference) {
     if (!['system', 'light', 'dark'].includes(preference)) throw new Error('Preferência de tema inválida.');
     const state = load();
     state.themePreference = preference;
-    const destination = filePath();
-    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
-    const temporary = `${destination}.${randomUUID()}.tmp`;
-    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
-    fs.renameSync(temporary, destination);
+    persistState(state);
     return state;
-  }
-  function updateBotMemories(botId, memories) {
-    const state = load();
-    const index = state.bots.findIndex(item => item.id === botId);
-    if (index < 0) throw new Error('Agente não encontrado.');
-    state.bots[index] = sanitizeBot({ ...state.bots[index], memories });
-    const destination = filePath();
-    fs.mkdirSync(path.dirname(destination), { recursive: true, mode: 0o700 });
-    const temporary = `${destination}.${randomUUID()}.tmp`;
-    fs.writeFileSync(temporary, JSON.stringify(state), { mode: 0o600, flag: 'wx' });
-    fs.renameSync(temporary, destination);
-    return state.bots[index];
   }
   function writeBotMemory(botId, input) {
     const bot = load().bots.find(item => item.id === botId);
@@ -276,10 +284,9 @@ function createStore(getUserDataPath) {
     if (bot.memories.some(memory => normalizeMemoryContent(memory.content).toLocaleLowerCase() === normalized)) {
       return { outcome: { ok: true, duplicate: true }, memories: bot.memories };
     }
-    const timestamp = new Date().toISOString();
-    const memory = sanitizeMemory({ content, type: input.memoryType, createdAt: timestamp, updatedAt: timestamp, ...(typeof input.turnId === 'string' ? { provenance: `tool turn:${input.turnId}` } : {}) });
-    updateBotMemories(botId, [...bot.memories, memory]);
-    return { outcome: { ok: true, added: true, id: memory.id }, memories: load().bots.find(item => item.id === botId).memories };
+    const validTurnId = typeof input.turnId === 'string' && /^[\w.:-]{1,128}$/.test(input.turnId) ? input.turnId : undefined;
+    const memory = memoryStore(botId).add(content, Date.now(), input.memoryType === 'journal' ? 'log' : 'profile', { source: 'tool', ...(validTurnId ? { turnId: validTurnId } : {}) });
+    return { outcome: { ok: true, added: true, id: memory.id }, memories: memoryStore(botId).list() };
   }
   function forgetBotMemory(botId, fact) {
     const bot = load().bots.find(item => item.id === botId);
@@ -287,12 +294,12 @@ function createStore(getUserDataPath) {
     const content = normalizeMemoryContent(fact);
     if (!content) return { outcome: { ok: false, reason: 'empty' }, memories: bot.memories };
     const key = content.toLocaleLowerCase();
-    const memories = bot.memories.filter(memory => normalizeMemoryContent(memory.content).toLocaleLowerCase() !== key);
-    if (memories.length === bot.memories.length) return { outcome: { ok: true, removed: false }, memories };
-    updateBotMemories(botId, memories);
-    return { outcome: { ok: true, removed: true }, memories: load().bots.find(item => item.id === botId).memories };
+    const exists = bot.memories.some(memory => normalizeMemoryContent(memory.content).toLocaleLowerCase() === key);
+    if (!exists) return { outcome: { ok: true, removed: false }, memories: bot.memories };
+    const removed = memoryStore(botId).removeByContent(content);
+    return { outcome: { ok: true, removed }, memories: memoryStore(botId).list() };
   }
-  return { load, saveBot, saveBotProfile, updateBotMemories, writeBotMemory, forgetBotMemory, updateProactiveState, updateThemePreference };
+  return { load, saveBot, saveBotProfile, writeBotMemory, forgetBotMemory, updateProactiveState, updateThemePreference };
 }
 
 module.exports = { createStore };
