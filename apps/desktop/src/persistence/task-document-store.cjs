@@ -8,7 +8,7 @@ const MAX_TASKS_PER_AGENT = 500;
 
 function taskSessionId(taskId, parentSessionId = '') {
   if (!TASK_ID.test(taskId)) throw new Error('ID de tarefa inválido.');
-  if (parentSessionId && (!/^dm:[1-9]\d*$/.test(parentSessionId) || parentSessionId.length > 80)) throw new Error('Sessão pai inválida.');
+  if (typeof parentSessionId !== 'string' || parentSessionId.length > 200 || parentSessionId.includes('\0')) throw new Error('Sessão pai inválida.');
   return `task:${taskId}${parentSessionId ? `:${parentSessionId}` : ''}`;
 }
 
@@ -33,6 +33,25 @@ function documentOf(record) {
 }
 
 function createTaskDocumentStore(getUserDataPath, hasAgent) {
+  function withAgentLock(agentId, operation) {
+    const safeAgentId = validateAgentId(agentId);
+    if (!hasAgent(safeAgentId)) throw new Error('Agente não encontrado.');
+    const root = path.join(getUserDataPath(), 'task-documents');
+    try { if (fs.lstatSync(root).isSymbolicLink()) throw new Error('Diretório de tarefas inválido.'); }
+    catch (error) { if (error?.code !== 'ENOENT') throw error; }
+    fs.mkdirSync(root, { recursive: true, mode: 0o700 });
+    if (fs.lstatSync(root).isSymbolicLink()) throw new Error('Diretório de tarefas inválido.');
+    const hash = createHash('sha256').update(safeAgentId).digest('hex');
+    const lock = path.join(root, `${hash}.lock`);
+    let fd;
+    try { fd = fs.openSync(lock, 'wx', 0o600); }
+    catch (error) {
+      if (error?.code === 'EEXIST') throw new Error('Outra operação de tarefa está em andamento. Tente novamente.');
+      throw error;
+    }
+    try { return operation(); }
+    finally { fs.closeSync(fd); fs.unlinkSync(lock); }
+  }
   function fileFor(agentId, taskId) {
     const safeAgentId = validateAgentId(agentId);
     if (!hasAgent(safeAgentId)) throw new Error('Agente não encontrado.');
@@ -88,37 +107,41 @@ function createTaskDocumentStore(getUserDataPath, hasAgent) {
   }
   function create(agentId, input) {
     validateAgentId(agentId);
-    if (list(agentId, 'open').length + list(agentId, 'done').length >= MAX_TASKS_PER_AGENT) throw new Error('Limite local de tarefas atingido.');
     const name = cleanLine(input?.name, 120, 'Nome da tarefa');
     const description = cleanLine(input?.description, 120, 'Descrição da tarefa');
     const body = cleanBody(input?.body ?? '');
-    for (let attempt = 0; attempt < 5; attempt++) {
-      const id = randomBytes(5).toString('hex');
-      if (read(agentId, id)) continue;
-      const now = Date.now();
-      return write({ id, agentId, name, description, status: 'open', body, version: 1, createdAtMs: now, updatedAtMs: now }, true);
-    }
-    throw new Error('Não foi possível gerar um ID de tarefa.');
+    return withAgentLock(agentId, () => {
+      if (list(agentId, 'open').length + list(agentId, 'done').length >= MAX_TASKS_PER_AGENT) throw new Error('Limite local de tarefas atingido.');
+      for (let attempt = 0; attempt < 5; attempt++) {
+        const id = randomBytes(5).toString('hex');
+        if (read(agentId, id)) continue;
+        const now = Date.now();
+        return write({ id, agentId, name, description, status: 'open', body, version: 1, createdAtMs: now, updatedAtMs: now }, true);
+      }
+      throw new Error('Não foi possível gerar um ID de tarefa.');
+    });
   }
   function update(agentId, taskId, input) {
-    const current = read(agentId, taskId);
-    if (!current) throw new Error('Tarefa não encontrada.');
-    if (!input || typeof input !== 'object' || !Number.isSafeInteger(input.version) || input.version !== current.version) throw new Error('Versão da tarefa desatualizada.');
-    const fields = ['name', 'description', 'status', 'body'];
-    if (!fields.some(field => Object.hasOwn(input, field)) || Object.keys(input).some(key => key !== 'version' && !fields.includes(key))) throw new Error('Edição de tarefa inválida.');
-    const record = {
-      ...current,
-      name: input.name === undefined ? current.name : cleanLine(input.name, 120, 'Nome da tarefa'),
-      description: input.description === undefined ? current.description : cleanLine(input.description, 120, 'Descrição da tarefa'),
-      status: input.status === undefined ? current.status : input.status,
-      body: input.body === undefined ? current.body : cleanBody(input.body),
-      version: current.version + 1,
-      updatedAtMs: Date.now(),
-    };
-    if (!['open', 'done'].includes(record.status)) throw new Error('Estado de tarefa inválido.');
-    delete record.content;
-    delete record.sessionId;
-    return write(record);
+    return withAgentLock(agentId, () => {
+      const current = read(agentId, taskId);
+      if (!current) throw new Error('Tarefa não encontrada.');
+      if (!input || typeof input !== 'object' || !Number.isSafeInteger(input.version) || input.version !== current.version) throw new Error('Versão da tarefa desatualizada.');
+      const fields = ['name', 'description', 'status', 'body'];
+      if (!fields.some(field => Object.hasOwn(input, field)) || Object.keys(input).some(key => key !== 'version' && !fields.includes(key))) throw new Error('Edição de tarefa inválida.');
+      const record = {
+        ...current,
+        name: input.name === undefined ? current.name : cleanLine(input.name, 120, 'Nome da tarefa'),
+        description: input.description === undefined ? current.description : cleanLine(input.description, 120, 'Descrição da tarefa'),
+        status: input.status === undefined ? current.status : input.status,
+        body: input.body === undefined ? current.body : cleanBody(input.body),
+        version: current.version + 1,
+        updatedAtMs: Date.now(),
+      };
+      if (!['open', 'done'].includes(record.status)) throw new Error('Estado de tarefa inválido.');
+      delete record.content;
+      delete record.sessionId;
+      return write(record);
+    });
   }
   return { list, read, create, update };
 }

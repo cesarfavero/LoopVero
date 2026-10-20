@@ -8,6 +8,8 @@ import { clampSidebarWidth, readSidebarLayout, sidebarWidthBounds, writeSidebarL
 import ComposerEditor from './composer-editor.jsx';
 import { renderComposerDocument } from './composer-document.mjs';
 import DelegatedTaskThread from './delegated-task-thread.jsx';
+import TaskDocumentView from './task-document-view.jsx';
+import TaskSidebar from './task-sidebar.jsx';
 
 const newBot = () => ({ id: crypto.randomUUID(), name: 'New Bot', description: 'Agent', instructions: '', messages: [] });
 function Mark({ small = false }) { return <img className={small ? 'mark small' : 'mark'} src={appIcon} alt="" aria-hidden="true"/>; }
@@ -33,6 +35,10 @@ function App() {
   const [model, setModel] = useState('codexrouter/gateway');
   const [activeId, setActiveId] = useState('primary');
   const [selectedConversation, setSelectedConversation] = useState(null);
+  const [taskDocuments, setTaskDocuments] = useState({});
+  const [selectedTaskDocument, setSelectedTaskDocument] = useState(null);
+  const [taskDocumentLoadError, setTaskDocumentLoadError] = useState('');
+  const [taskDocumentBusy, setTaskDocumentBusy] = useState(false);
   const [sidebarLayout, setSidebarLayout] = useState(() => readSidebarLayout(window.localStorage));
   const sidebarResize = useRef(null);
   const sidebarCollapsed = sidebarLayout.isCollapsed;
@@ -72,12 +78,44 @@ function App() {
     ? (activeBot?.subagentRuns || []).find(run => run.id === selectedConversation.runId)
     : null;
   const selectedDelegatedAgent = selectedDelegatedRun ? bots.find(bot => bot.id === selectedDelegatedRun.agentId) : null;
+  const selectedDocumentTarget = selectedConversation?.kind === 'document-task' && selectedConversation.agentId === activeBot?.id ? selectedConversation : null;
   const rosterBots = useMemo(() => bots.filter(bot => bot.id === 'primary' || bot.id === activeId || bot.name !== 'New Bot' || bot.messages.length > 0), [bots, activeId]);
   const filteredBots = useMemo(() => rosterBots.filter(bot => `${bot.name} ${bot.messages.at(-1)?.text || ''}`.toLowerCase().includes(query.toLowerCase())), [rosterBots, query]);
 
   useEffect(() => { writeSidebarLayout(window.localStorage, sidebarLayout); }, [sidebarLayout]);
   useEffect(() => { setMemoryDraft(''); setMemoryTypeDraft('profile'); }, [activeId]);
   useEffect(() => { setSelectedConversation(null); }, [activeId]);
+  useEffect(() => {
+    let alive = true;
+    setSelectedTaskDocument(null);
+    if (!activeBot?.id) return () => { alive = false; };
+    const agentId = activeBot.id;
+    Promise.all([window.grok.listTaskDocuments(agentId, 'open'), window.grok.listTaskDocuments(agentId, 'done')])
+      .then(([open, done]) => { if (alive) setTaskDocuments(current => ({ ...current, [agentId]: [...open, ...done] })); })
+      .catch(error => { if (alive) setNotice(String(error?.message || error)); });
+    return () => { alive = false; };
+  }, [activeBot?.id]);
+  useEffect(() => {
+    let alive = true;
+    setSelectedTaskDocument(null);
+    setTaskDocumentLoadError('');
+    if (selectedDocumentTarget) window.grok.readTaskDocument(selectedDocumentTarget.agentId, selectedDocumentTarget.taskId)
+      .then(task => { if (alive) { if (task) setSelectedTaskDocument(task); else setTaskDocumentLoadError('Task document not found.'); } })
+      .catch(error => { if (alive) setTaskDocumentLoadError(String(error?.message || error)); });
+    return () => { alive = false; };
+  }, [selectedDocumentTarget?.agentId, selectedDocumentTarget?.taskId]);
+
+  async function toggleTaskDocumentStatus() {
+    if (!selectedTaskDocument || taskDocumentBusy) return;
+    setTaskDocumentBusy(true);
+    try {
+      const next = await window.grok.updateTaskDocument(selectedTaskDocument.agentId, selectedTaskDocument.id, { version: selectedTaskDocument.version, status: selectedTaskDocument.status === 'open' ? 'done' : 'open' });
+      setSelectedTaskDocument(next);
+      const [open, done] = await Promise.all([window.grok.listTaskDocuments(next.agentId, 'open'), window.grok.listTaskDocuments(next.agentId, 'done')]);
+      setTaskDocuments(current => ({ ...current, [next.agentId]: [...open, ...done] }));
+    } catch (error) { setNotice(String(error?.message || error)); }
+    finally { setTaskDocumentBusy(false); }
+  }
 
   function toggleSidebar() {
     setSidebarLayout(layout => ({ ...layout, isCollapsed: !layout.isCollapsed }));
@@ -251,11 +289,11 @@ function App() {
   return <div className={`app-shell ${sidebarCollapsed ? 'sidebar-collapsed' : ''}`} style={{ '--sidebar-width': `${sidebarCollapsed ? sidebarWidthBounds.collapsed : sidebarLayout.expandedWidth}px` }}>
     <aside className="sidebar">
       <div className="sidebar-top"><div className="sidebar-tools"><button className="sidebar-round sidebar-toggle" aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Toggle compact sidebar'} title={sidebarCollapsed ? 'Expand sidebar' : 'Toggle compact sidebar'} aria-expanded={!sidebarCollapsed} onClick={toggleSidebar}><Icon name="sidebar"/></button><span className="sidebar-spacer"/>{searchOpen ? <label className="search sidebar-search"><Icon name="search"/><input autoFocus className="sidebar-search-input" value={query} onChange={event => setQuery(event.target.value)} onKeyDown={event => { if (event.key === 'Escape') { setQuery(''); setSearchOpen(false); } }} placeholder="Search" aria-label="Search"/></label> : <button className="sidebar-round sidebar-search-control" aria-label="Search" title="Search" onClick={() => setSearchOpen(true)}><Icon name="search"/></button>}<button className="sidebar-round sidebar-new-bot" aria-label="New Bot" title="New Bot" onClick={createBot}><Icon name="plus"/></button></div></div>
-      <nav className="agent-list" aria-label="Bots">{filteredBots.map(bot => <button key={bot.id} className={`agent-item ${bot.id === activeId ? 'active' : ''}`} onClick={() => { setActiveId(bot.id); setNotice(''); }}><span className="agent-mark"><Mark small/>{bot.id === 'primary' && <span className="main-agent-badge" aria-label="Main Bot">★</span>}</span><span className="agent-copy"><b>{bot.name}</b>{bot.messages.at(-1)?.text && <small>{bot.messages.at(-1).text}</small>}</span></button>)}{!filteredBots.length && <p className="empty-list">No bots found</p>}</nav>
+      <nav className="agent-list" aria-label="Bots">{filteredBots.map(bot => <button key={bot.id} className={`agent-item ${bot.id === activeId ? 'active' : ''}`} onClick={() => { setActiveId(bot.id); setNotice(''); }}><span className="agent-mark"><Mark small/>{bot.id === 'primary' && <span className="main-agent-badge" aria-label="Main Bot">★</span>}</span><span className="agent-copy"><b>{bot.name}</b>{bot.messages.at(-1)?.text && <small>{bot.messages.at(-1).text}</small>}</span></button>)}{!filteredBots.length && <p className="empty-list">No bots found</p>}{!sidebarCollapsed && <TaskSidebar key={activeBot?.id} agent={activeBot} tasks={taskDocuments[activeBot?.id] || []} selectedTaskId={selectedDocumentTarget?.taskId} onOpen={task => setSelectedConversation({ kind: 'document-task', agentId: task.agentId, taskId: task.id })}/>}</nav>
       <div className="sidebar-bottom"><div className="sidebar-account-row"><button className="account" onClick={() => setAccountMenuOpen(value => !value)} aria-label="Open account menu" aria-expanded={accountMenuOpen}><span className="person">C</span></button>{accountMenuOpen && <div className="account-menu-panel"><label htmlFor="theme-preference">Theme</label><select id="theme-preference" value={theme.preference} onChange={event => void changeTheme(event.target.value)}><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>}</div><button className="connect" onClick={() => setNotice('Connectors are not configured yet.')}><Icon name="plus"/>Connect apps <span className="connector-icons" aria-hidden="true">✉︎ ▣</span></button></div>
       {!sidebarCollapsed && <div className="sidebar-resize-handle" role="separator" aria-label="Resize sidebar" aria-orientation="vertical" aria-valuemin={sidebarWidthBounds.min} aria-valuemax={sidebarWidthBounds.max} aria-valuenow={Math.round(sidebarLayout.expandedWidth)} tabIndex={0} onPointerDown={event => { event.preventDefault(); sidebarResize.current = { clientX: event.clientX, width: sidebarLayout.expandedWidth }; event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={resizeSidebar} onPointerUp={endSidebarResize} onPointerCancel={endSidebarResize} onKeyDown={event => { if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return; event.preventDefault(); setSidebarLayout(layout => ({ ...layout, expandedWidth: clampSidebarWidth(layout.expandedWidth + (event.key === 'ArrowRight' ? 16 : -16)) })); }}/>}</aside>
     <main className="conversation">
-      {selectedDelegatedRun ? <DelegatedTaskThread run={selectedDelegatedRun} agent={selectedDelegatedAgent} onBack={() => setSelectedConversation(null)}/> : <>
+      {selectedDelegatedRun ? <DelegatedTaskThread run={selectedDelegatedRun} agent={selectedDelegatedAgent} onBack={() => setSelectedConversation(null)}/> : selectedDocumentTarget ? (selectedTaskDocument ? <TaskDocumentView task={selectedTaskDocument} agentName={activeBot?.name || 'Grok Bot'} onBack={() => setSelectedConversation(null)} onToggleStatus={toggleTaskDocumentStatus} busy={taskDocumentBusy}/> : <section className="task-document-view"><header className="task-document-header"><button type="button" className="task-document-back" onClick={() => setSelectedConversation(null)} aria-label="Back to conversation">‹</button><span role="status">{taskDocumentLoadError || 'Loading task document…'}</span></header></section>) : <>
       <header className="conversation-header"><div className="window-drag-region" aria-hidden="true"/><div className="active-agent"><span><b>{activeBot?.name || 'Grok Bot'}</b></span></div><div className="header-actions"><button className="icon-button" aria-label="View conversation details" onClick={() => setDetails(value => !value)}><Icon name="info"/></button></div></header>
       <section className="transcript" ref={bodyRef} aria-live="polite">{activeBot?.messages.length || taskCalls.length || activeBot?.subagentRuns?.length || busy ? <div className="message-list">{activeBot?.messages.map((message, index) => <article className={`message ${message.role === 'assistant' ? 'assistant' : 'user'} ${message.error ? 'error' : ''}`} key={message.id}><div className="message-avatar">{message.role === 'assistant' && (index === 0 || activeBot.messages[index - 1]?.role !== 'assistant') && <Mark small/>}</div><div className="message-body"><div className="message-markdown">{message.richText ? renderComposerDocument(React, message.richText) : <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown>}</div></div></article>)}{(taskCalls.length > 0 || activeBot.subagentRuns?.length > 0) && <section className="task-outline" aria-label="Activity"><div className="task-outline-title">Activity</div>{taskCalls.map(call => <details className={`tool-row ${call.status}`} key={call.id} open={call.status === 'pending'}><summary><Icon name="activity"/><b>{call.name.replaceAll('_', ' ')}</b><span>{call.status === 'pending' ? 'Running' : call.status}</span></summary><small>{call.summary}</small></details>)}{(activeBot.subagentRuns || []).slice(-20).map(run => <button type="button" className={`subagent-run ${run.status}`} key={run.id} onClick={() => setSelectedConversation({ kind: 'delegated-run', parentBotId: activeBot.id, runId: run.id })} aria-label={`Open delegated run ${run.task}`}><Icon name="activity"/><div><b>{run.agentName} · {run.status === 'running' ? 'Working' : run.status}</b><small>{run.status === 'running' ? run.preview || run.task : run.result || run.error || run.task}</small></div></button>)}</section>}{busy && liveTools.filter(tool => tool.botId === activeBot.id && !taskCalls.some(call => call.id === tool.id)).map(tool => <article className={`tool-row ${tool.status === 'running' ? 'pending' : tool.status}`} key={tool.id}><Icon name="activity"/><div><b>{tool.name.replaceAll('_', ' ')}</b><small>{tool.status === 'running' ? 'Em execução' : tool.output}</small></div></article>)}{busy && <article className="message assistant"><div className="message-avatar"><Mark small/></div><div className="message-body"><div className="message-meta"><b>{activeBot.name}</b><span className="working"><i/>Working</span></div><div className="message-markdown">{liveText ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{liveText}</ReactMarkdown> : 'Thinking…'}</div></div></article>}</div> : <div className="empty-chat"><div className="empty-symbol"><Mark/></div><h1>{activeBot?.name || 'Grok Bot'}</h1><p>How can I help?</p></div>}</section>
       {notice && <div className="notice" role="status"><span>{notice}</span><button aria-label="Dismiss" onClick={() => setNotice('')}><Icon name="close"/></button></div>}
