@@ -196,6 +196,9 @@ function App() {
   useEffect(() => window.grok.onRunEvent(event => {
     if (event.sendTarget?.kind === 'task') {
       const target = selectedDocumentTargetRef.current;
+      if (event.type === 'task-transcript-updated') Promise.all([window.grok.listTaskDocuments(event.botId, 'open'), window.grok.listTaskDocuments(event.botId, 'done')])
+        .then(([open, done]) => setTaskDocuments(current => ({ ...current, [event.botId]: [...open, ...done] })))
+        .catch(error => setNotice(String(error?.message || error)));
       if (target?.agentId !== event.botId || target?.taskId !== event.sendTarget.taskId) return;
       if (event.type === 'text-delta') setTaskLiveText(value => `${value}${event.delta}`);
       if (event.type === 'task-transcript-updated') window.grok.loadTaskTranscript(event.botId, event.sendTarget.taskId).then(async transcript => {
