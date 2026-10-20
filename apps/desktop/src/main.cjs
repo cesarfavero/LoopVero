@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, BrowserWindow, ipcMain, nativeTheme } = electron;
+const { app, BrowserWindow, ipcMain, nativeTheme, screen } = electron;
 const path = require('node:path');
 app.setName('Grok Bot');
 const userDataOverride = app.commandLine.getSwitchValue('user-data-dir');
@@ -11,6 +11,7 @@ if (userDataOverride) {
 }
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
+const { createWindowState } = require('./persistence/window-state.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
 const { createProactivityEngine } = require('./harness/proactivity-engine.cjs');
@@ -20,6 +21,7 @@ const { getThemeState } = require('./theme.cjs');
 let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
+let windowState;
 let themeState;
 const activeRuns = new Map();
 const scheduler = new RunScheduler();
@@ -42,8 +44,9 @@ function createWindow() {
     throw new Error('TheGrok deve ser iniciado pelo executável Electron instalado, não como script Node.');
   }
   const isMac = process.platform === 'darwin';
+  const initialWindowState = windowState.resolveInitialState();
   const window = new BrowserWindow({
-    width: 1920, height: 1050, minWidth: 900, minHeight: 620,
+    ...initialWindowState.windowOptions,
     backgroundColor: themeState.resolved === 'dark' ? '#0a0a0a' : '#fcfcfc', title: 'Grok Bot',
     ...(isMac ? { frame: true, titleBarStyle: 'hiddenInset', trafficLightPosition: { x: 16, y: 15 } } : {}),
     webPreferences: {
@@ -52,6 +55,7 @@ function createWindow() {
     },
   });
   mainWindow = window;
+  windowState.apply(window, initialWindowState);
   window.webContents.on('did-finish-load', () => {
     if (mainWindow === window && !window.isDestroyed()) window.webContents.send('theme:changed', themeState);
   });
@@ -260,6 +264,7 @@ ipcMain.handle('agent:turn', async (event, payload) => {
 });
 
 app.whenReady().then(() => {
+  windowState = createWindowState({ userDataPath: app.getPath('userData'), screen });
   const preference = store.load().themePreference || 'system';
   nativeTheme.themeSource = preference;
   themeState = getThemeState(preference, nativeTheme.shouldUseDarkColors);
