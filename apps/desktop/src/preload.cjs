@@ -11,6 +11,10 @@ contextBridge.exposeInMainWorld('grok', Object.freeze({
     return () => ipcRenderer.removeListener('theme:changed', listener);
   },
   saveBot: bot => ipcRenderer.invoke('bot:save', bot),
+  listTaskDocuments: (agentId, status) => ipcRenderer.invoke('task-document:list', agentId, status),
+  readTaskDocument: (agentId, taskId) => ipcRenderer.invoke('task-document:read', agentId, taskId),
+  createTaskDocument: (agentId, input) => ipcRenderer.invoke('task-document:create', agentId, input),
+  updateTaskDocument: (agentId, taskId, input) => ipcRenderer.invoke('task-document:update', agentId, taskId, input),
   listMemories: botId => ipcRenderer.invoke('memory:list', botId),
   updateMemory: update => ipcRenderer.invoke('memory:update', update),
   sendMessage: payload => ipcRenderer.invoke('agent:turn', payload),

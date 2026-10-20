@@ -11,6 +11,7 @@ if (userDataOverride) {
 }
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
+const { createTaskDocumentStore } = require('./persistence/task-document-store.cjs');
 const { createWindowState } = require('./persistence/window-state.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
@@ -21,6 +22,7 @@ const { getThemeState } = require('./theme.cjs');
 let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
+const taskDocuments = createTaskDocumentStore(() => app.getPath('userData'), agentId => store.load().bots.some(bot => bot.id === agentId));
 let windowState;
 let themeState;
 const activeRuns = new Map();
@@ -99,6 +101,10 @@ ipcMain.handle('theme:set', (event, preference) => {
   return themeState;
 });
 ipcMain.handle('bot:save', (event, bot) => { assertSender(event); return store.saveBotProfile(bot); });
+ipcMain.handle('task-document:list', (event, agentId, status) => { assertSender(event); return taskDocuments.list(agentId, status); });
+ipcMain.handle('task-document:read', (event, agentId, taskId) => { assertSender(event); return taskDocuments.read(agentId, taskId); });
+ipcMain.handle('task-document:create', (event, agentId, input) => { assertSender(event); return taskDocuments.create(agentId, input); });
+ipcMain.handle('task-document:update', (event, agentId, taskId, input) => { assertSender(event); return taskDocuments.update(agentId, taskId, input); });
 ipcMain.handle('memory:list', (event, botId) => {
   assertSender(event);
   if (typeof botId !== 'string' || botId.length > 100) throw new Error('Agente inválido.');
@@ -159,6 +165,9 @@ ipcMain.handle('agent:cancel', (event, taskId) => {
 });
 ipcMain.handle('agent:turn', async (event, payload) => {
   assertSender(event);
+  if (payload?.sendTarget !== undefined && payload.sendTarget?.kind !== 'main') {
+    throw new Error('Envio para thread de tarefa ainda não está conectado ao serviço de tasks.');
+  }
   const botId = typeof payload?.botId === 'string' ? payload.botId.slice(0, 100) : '';
   const composer = await import('./composer-document.mjs');
   const richText = composer.sanitizeComposerDocument(payload?.richText);

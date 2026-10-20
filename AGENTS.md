@@ -4,6 +4,7 @@
 - A implementação independente fica em `apps/desktop/`; pesquisas verificáveis ficam em `docs/research/`.
 - Registre separadamente código identificado, contrato recuperado, comportamento observado, inferência e lógica remota indisponível.
 - No Grok Bot, diferencie a task documental do Sand (`CreateTask`/`UpdateTask`/`ReadTask`, ID hexadecimal de dez caracteres e transcript em sessão própria) da lista de progresso `GrokBotTask` e das delegações locais `subagentRuns`; IDs e fluxos não são intercambiáveis sem contrato comprovado.
+- O adaptador documental local fica em `apps/desktop/src/persistence/task-document-store.cjs`, separado do JSON agregado de bots; ele não reproduz o servidor remoto. O turno atual só aceita `sendTarget` principal e deve rejeitar envio para task até haver transcript por sessão e transporte ligado.
 - Nunca atribua proatividade espontânea ao cliente local sem localizar a decisão inicial ou a fronteira remota.
 - O CodexRouter é usado pelo próprio Codex neste Mac. A aplicação TheGrok pode consumir apenas a API existente pelo loopback; não altere configuração global, padrões, autenticação, processo ou armazenamento do CodexRouter, nem exponha o serviço na rede ou reutilize credenciais do Grok Bot.
 - O escopo inclui reconstruir as responsabilidades verificáveis do cliente Electron, Coordinator, serviços de controle e Sand Host/harness distribuído. Não trate uma execução local como substituta do fluxo remoto original; registre fronteiras indisponíveis e só implemente protocolos sustentados por código ou observação autorizada.
