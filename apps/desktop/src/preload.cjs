@@ -15,6 +15,7 @@ contextBridge.exposeInMainWorld('grok', Object.freeze({
   readTaskDocument: (agentId, taskId) => ipcRenderer.invoke('task-document:read', agentId, taskId),
   createTaskDocument: (agentId, input) => ipcRenderer.invoke('task-document:create', agentId, input),
   updateTaskDocument: (agentId, taskId, input) => ipcRenderer.invoke('task-document:update', agentId, taskId, input),
+  loadTaskTranscript: (agentId, taskId) => ipcRenderer.invoke('task-transcript:load', agentId, taskId),
   listMemories: botId => ipcRenderer.invoke('memory:list', botId),
   updateMemory: update => ipcRenderer.invoke('memory:update', update),
   sendMessage: payload => ipcRenderer.invoke('agent:turn', payload),

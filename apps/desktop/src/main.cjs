@@ -12,6 +12,7 @@ if (userDataOverride) {
 const { pathToFileURL } = require('node:url');
 const { createStore } = require('./persistence/json-store.cjs');
 const { createTaskDocumentStore } = require('./persistence/task-document-store.cjs');
+const { createTaskTranscriptStore } = require('./persistence/task-transcript-store.cjs');
 const { createWindowState } = require('./persistence/window-state.cjs');
 const { providerStatus } = require('./providers/codexrouter.cjs');
 const { RunScheduler } = require('./harness/run-scheduler.cjs');
@@ -23,6 +24,7 @@ let mainWindow;
 let trustedUrl;
 const store = createStore(() => app.getPath('userData'));
 const taskDocuments = createTaskDocumentStore(() => app.getPath('userData'), agentId => store.load().bots.some(bot => bot.id === agentId));
+const taskTranscripts = createTaskTranscriptStore(() => app.getPath('userData'), taskDocuments);
 let windowState;
 let themeState;
 const activeRuns = new Map();
@@ -105,6 +107,7 @@ ipcMain.handle('task-document:list', (event, agentId, status) => { assertSender(
 ipcMain.handle('task-document:read', (event, agentId, taskId) => { assertSender(event); return taskDocuments.read(agentId, taskId); });
 ipcMain.handle('task-document:create', (event, agentId, input) => { assertSender(event); return taskDocuments.create(agentId, input); });
 ipcMain.handle('task-document:update', (event, agentId, taskId, input) => { assertSender(event); return taskDocuments.update(agentId, taskId, input); });
+ipcMain.handle('task-transcript:load', (event, agentId, taskId) => { assertSender(event); return taskTranscripts.load(agentId, taskId); });
 ipcMain.handle('memory:list', (event, botId) => {
   assertSender(event);
   if (typeof botId !== 'string' || botId.length > 100) throw new Error('Agente inválido.');
@@ -163,11 +166,66 @@ ipcMain.handle('agent:cancel', (event, taskId) => {
   if (run) run.abort();
   return { cancelled: Boolean(run) };
 });
+async function runTaskThreadTurn(payload) {
+  const botId = typeof payload?.botId === 'string' ? payload.botId.slice(0, 100) : '';
+  const taskId = payload?.sendTarget?.taskId;
+  const composer = await import('./composer-document.mjs');
+  const richText = composer.sanitizeComposerDocument(payload?.richText);
+  const text = (richText ? composer.serializeComposerDocument(richText) : typeof payload?.text === 'string' ? payload.text : '').trim().slice(0, 12000);
+  const model = typeof payload?.model === 'string' ? payload.model.slice(0, 120) : 'codexrouter/gateway';
+  if (!botId || !text) throw new Error('Mensagem ou agente inválido.');
+  const document = taskDocuments.read(botId, taskId);
+  if (!document) throw new Error('Tarefa não encontrada.');
+  if (document.status !== 'open') throw new Error('Reabra a tarefa antes de enviar uma mensagem.');
+  const runId = require('node:crypto').randomUUID();
+  const target = { kind: 'task', taskId };
+  const controller = new AbortController();
+  activeRuns.set(runId, controller);
+  const emit = data => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.webContents.send('agent:event', { ...data, botId, runId, sendTarget: target, sessionId: document.sessionId }); };
+  emit({ type: 'started' });
+  proactivity.cancelForBot(botId);
+  try {
+    return await scheduler.enqueue(botId, async () => {
+      if (controller.signal.aborted) throw new Error('Execução cancelada.');
+      const currentDocument = taskDocuments.read(botId, taskId);
+      if (!currentDocument || currentDocument.status !== 'open') throw new Error('Reabra a tarefa antes de enviar uma mensagem.');
+      const bot = store.load().bots.find(item => item.id === botId);
+      if (!bot) throw new Error('Agente não encontrado.');
+      const history = taskTranscripts.load(botId, taskId).entries.filter(entry => entry.kind === 'message' && !entry.error);
+      taskTranscripts.appendMessage(botId, taskId, { role: 'user', text, executionId: runId });
+      emit({ type: 'task-transcript-updated' });
+      const taskContext = `Task document (${currentDocument.id}, version ${currentDocument.version}):\n${currentDocument.content.slice(0, 6000)}`;
+      const instructions = `${taskContext}\n\n${bot.instructions || ''}`.slice(0, 12000);
+      try {
+        const result = await executionHost.runTurn({ botId, taskId: runId, text, history, instructions, memories: bot.memories || [], model, signal: controller.signal, agents: [], handleMemoryRequest: request => {
+          if (!request || request.botId !== botId) throw new Error('Agente da memória não corresponde ao turno.');
+          if (request.action === 'write') return store.writeBotMemory(botId, request);
+          if (request.action === 'forget') return store.forgetBotMemory(botId, request.fact);
+          throw new Error('Ação de memória inválida.');
+        }, onEvent: event => {
+          emit(event);
+          if (event.type === 'assistant-final' && typeof event.text === 'string') {
+            taskTranscripts.appendMessage(botId, taskId, { role: 'assistant', text: event.text, executionId: runId });
+            emit({ type: 'task-transcript-updated' });
+          }
+          if (!['tool-start', 'tool-finish'].includes(event.type) || !event.tool) return;
+          taskTranscripts.upsertTool(botId, taskId, { id: event.tool.id, name: event.tool.name, status: event.tool.status === 'running' ? 'pending' : event.tool.status, summary: event.type === 'tool-start' ? 'Em execução' : event.tool.output || '', executionId: runId });
+          emit({ type: 'task-transcript-updated' });
+        } });
+        return result;
+      } catch (error) {
+        taskTranscripts.appendMessage(botId, taskId, { role: 'assistant', text: `Falha: ${String(error?.message || error).replace(/Bearer\s+\S+/gi, 'Bearer [redacted]').slice(0, 700)}`, executionId: runId, error: true });
+        emit({ type: 'task-transcript-updated' });
+        throw error;
+      }
+    }, { lane: 'user', source: 'task-thread', onCancelled: () => { throw new Error('Execução cancelada.'); } });
+  } finally { activeRuns.delete(runId); }
+}
+
 ipcMain.handle('agent:turn', async (event, payload) => {
   assertSender(event);
-  if (payload?.sendTarget !== undefined && payload.sendTarget?.kind !== 'main') {
-    throw new Error('Envio para thread de tarefa ainda não está conectado ao serviço de tasks.');
-  }
+  if (payload?.sendTarget?.kind === 'task') return runTaskThreadTurn(payload);
+  if (payload?.sendTarget !== undefined && payload.sendTarget?.kind !== 'main') throw new Error('Alvo de envio inválido.');
   const botId = typeof payload?.botId === 'string' ? payload.botId.slice(0, 100) : '';
   const composer = await import('./composer-document.mjs');
   const richText = composer.sanitizeComposerDocument(payload?.richText);

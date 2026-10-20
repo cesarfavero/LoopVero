@@ -39,6 +39,10 @@ function App() {
   const [selectedTaskDocument, setSelectedTaskDocument] = useState(null);
   const [taskDocumentLoadError, setTaskDocumentLoadError] = useState('');
   const [taskDocumentBusy, setTaskDocumentBusy] = useState(false);
+  const [taskTranscript, setTaskTranscript] = useState(null);
+  const [taskTurnBusy, setTaskTurnBusy] = useState(false);
+  const [taskLiveText, setTaskLiveText] = useState('');
+  const taskTurnPending = useRef(false);
   const [sidebarLayout, setSidebarLayout] = useState(() => readSidebarLayout(window.localStorage));
   const sidebarResize = useRef(null);
   const sidebarCollapsed = sidebarLayout.isCollapsed;
@@ -79,6 +83,8 @@ function App() {
     : null;
   const selectedDelegatedAgent = selectedDelegatedRun ? bots.find(bot => bot.id === selectedDelegatedRun.agentId) : null;
   const selectedDocumentTarget = selectedConversation?.kind === 'document-task' && selectedConversation.agentId === activeBot?.id ? selectedConversation : null;
+  const selectedDocumentTargetRef = useRef(null);
+  selectedDocumentTargetRef.current = selectedDocumentTarget;
   const rosterBots = useMemo(() => bots.filter(bot => bot.id === 'primary' || bot.id === activeId || bot.name !== 'New Bot' || bot.messages.length > 0), [bots, activeId]);
   const filteredBots = useMemo(() => rosterBots.filter(bot => `${bot.name} ${bot.messages.at(-1)?.text || ''}`.toLowerCase().includes(query.toLowerCase())), [rosterBots, query]);
 
@@ -99,8 +105,13 @@ function App() {
     let alive = true;
     setSelectedTaskDocument(null);
     setTaskDocumentLoadError('');
+    setTaskTranscript(null);
+    setTaskLiveText('');
     if (selectedDocumentTarget) window.grok.readTaskDocument(selectedDocumentTarget.agentId, selectedDocumentTarget.taskId)
       .then(task => { if (alive) { if (task) setSelectedTaskDocument(task); else setTaskDocumentLoadError('Task document not found.'); } })
+      .catch(error => { if (alive) setTaskDocumentLoadError(String(error?.message || error)); });
+    if (selectedDocumentTarget) window.grok.loadTaskTranscript(selectedDocumentTarget.agentId, selectedDocumentTarget.taskId)
+      .then(transcript => { if (alive) setTaskTranscript(transcript); })
       .catch(error => { if (alive) setTaskDocumentLoadError(String(error?.message || error)); });
     return () => { alive = false; };
   }, [selectedDocumentTarget?.agentId, selectedDocumentTarget?.taskId]);
@@ -115,6 +126,26 @@ function App() {
       setTaskDocuments(current => ({ ...current, [next.agentId]: [...open, ...done] }));
     } catch (error) { setNotice(String(error?.message || error)); }
     finally { setTaskDocumentBusy(false); }
+  }
+
+  async function sendTaskMessage({ text, richText }) {
+    if (!selectedDocumentTarget || taskTurnPending.current || !text.trim()) return false;
+    const { agentId, taskId } = selectedDocumentTarget;
+    taskTurnPending.current = true;
+    setTaskTurnBusy(true);
+    setTaskLiveText('');
+    setNotice('');
+    try {
+      await window.grok.sendMessage({ botId: agentId, sendTarget: { kind: 'task', taskId }, text, richText, model });
+      const transcript = await window.grok.loadTaskTranscript(agentId, taskId);
+      if (selectedDocumentTargetRef.current?.agentId === agentId && selectedDocumentTargetRef.current?.taskId === taskId) setTaskTranscript(transcript);
+      return true;
+    } catch (error) {
+      setNotice(String(error?.message || error));
+      const transcript = await window.grok.loadTaskTranscript(agentId, taskId).catch(() => null);
+      if (transcript && selectedDocumentTargetRef.current?.agentId === agentId && selectedDocumentTargetRef.current?.taskId === taskId) setTaskTranscript(transcript);
+      return false;
+    } finally { taskTurnPending.current = false; setTaskTurnBusy(false); if (selectedDocumentTargetRef.current?.agentId === agentId && selectedDocumentTargetRef.current?.taskId === taskId) setTaskLiveText(''); }
   }
 
   function toggleSidebar() {
@@ -144,6 +175,15 @@ function App() {
   }, []);
   useEffect(() => { if (state?.proactiveSettings) setProactiveSettingsDraft(state.proactiveSettings); }, [state?.proactiveSettings]);
   useEffect(() => window.grok.onRunEvent(event => {
+    if (event.sendTarget?.kind === 'task') {
+      const target = selectedDocumentTargetRef.current;
+      if (target?.agentId !== event.botId || target?.taskId !== event.sendTarget.taskId) return;
+      if (event.type === 'text-delta') setTaskLiveText(value => `${value}${event.delta}`);
+      if (event.type === 'task-transcript-updated') window.grok.loadTaskTranscript(event.botId, event.sendTarget.taskId).then(transcript => {
+        if (selectedDocumentTargetRef.current?.agentId === event.botId && selectedDocumentTargetRef.current?.taskId === event.sendTarget.taskId) setTaskTranscript(current => current?.sessionId === transcript.sessionId && current.nextSeq > transcript.nextSeq ? current : transcript);
+      }).catch(error => setNotice(String(error?.message || error)));
+      return;
+    }
     if (event.type === 'text-delta') setLiveTextByBot(value => ({ ...value, [event.botId]: `${value[event.botId] || ''}${event.delta}` }));
     if (['subagent-start', 'subagent-progress', 'subagent-finish'].includes(event.type)) {
       setState(current => {
@@ -293,7 +333,7 @@ function App() {
       <div className="sidebar-bottom"><div className="sidebar-account-row"><button className="account" onClick={() => setAccountMenuOpen(value => !value)} aria-label="Open account menu" aria-expanded={accountMenuOpen}><span className="person">C</span></button>{accountMenuOpen && <div className="account-menu-panel"><label htmlFor="theme-preference">Theme</label><select id="theme-preference" value={theme.preference} onChange={event => void changeTheme(event.target.value)}><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div>}</div><button className="connect" onClick={() => setNotice('Connectors are not configured yet.')}><Icon name="plus"/>Connect apps <span className="connector-icons" aria-hidden="true">✉︎ ▣</span></button></div>
       {!sidebarCollapsed && <div className="sidebar-resize-handle" role="separator" aria-label="Resize sidebar" aria-orientation="vertical" aria-valuemin={sidebarWidthBounds.min} aria-valuemax={sidebarWidthBounds.max} aria-valuenow={Math.round(sidebarLayout.expandedWidth)} tabIndex={0} onPointerDown={event => { event.preventDefault(); sidebarResize.current = { clientX: event.clientX, width: sidebarLayout.expandedWidth }; event.currentTarget.setPointerCapture(event.pointerId); }} onPointerMove={resizeSidebar} onPointerUp={endSidebarResize} onPointerCancel={endSidebarResize} onKeyDown={event => { if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return; event.preventDefault(); setSidebarLayout(layout => ({ ...layout, expandedWidth: clampSidebarWidth(layout.expandedWidth + (event.key === 'ArrowRight' ? 16 : -16)) })); }}/>}</aside>
     <main className="conversation">
-      {selectedDelegatedRun ? <DelegatedTaskThread run={selectedDelegatedRun} agent={selectedDelegatedAgent} onBack={() => setSelectedConversation(null)}/> : selectedDocumentTarget ? (selectedTaskDocument ? <TaskDocumentView task={selectedTaskDocument} agentName={activeBot?.name || 'Grok Bot'} onBack={() => setSelectedConversation(null)} onToggleStatus={toggleTaskDocumentStatus} busy={taskDocumentBusy}/> : <section className="task-document-view"><header className="task-document-header"><button type="button" className="task-document-back" onClick={() => setSelectedConversation(null)} aria-label="Back to conversation">‹</button><span role="status">{taskDocumentLoadError || 'Loading task document…'}</span></header></section>) : <>
+      {selectedDelegatedRun ? <DelegatedTaskThread run={selectedDelegatedRun} agent={selectedDelegatedAgent} onBack={() => setSelectedConversation(null)}/> : selectedDocumentTarget ? (selectedTaskDocument?.id === selectedDocumentTarget.taskId && selectedTaskDocument?.agentId === selectedDocumentTarget.agentId ? <TaskDocumentView key={`${selectedDocumentTarget.agentId}:${selectedDocumentTarget.taskId}`} task={selectedTaskDocument} agentName={activeBot?.name || 'Grok Bot'} transcript={taskTranscript?.sessionId === selectedTaskDocument.sessionId ? taskTranscript : null} liveText={taskLiveText} onSend={sendTaskMessage} onBack={() => setSelectedConversation(null)} onToggleStatus={toggleTaskDocumentStatus} busy={taskDocumentBusy || taskTurnBusy} turnBusy={taskTurnBusy}/> : <section className="task-document-view"><header className="task-document-header"><button type="button" className="task-document-back" onClick={() => setSelectedConversation(null)} aria-label="Back to conversation">‹</button><span role="status">{taskDocumentLoadError || 'Loading task document…'}</span></header></section>) : <>
       <header className="conversation-header"><div className="window-drag-region" aria-hidden="true"/><div className="active-agent"><span><b>{activeBot?.name || 'Grok Bot'}</b></span></div><div className="header-actions"><button className="icon-button" aria-label="View conversation details" onClick={() => setDetails(value => !value)}><Icon name="info"/></button></div></header>
       <section className="transcript" ref={bodyRef} aria-live="polite">{activeBot?.messages.length || taskCalls.length || activeBot?.subagentRuns?.length || busy ? <div className="message-list">{activeBot?.messages.map((message, index) => <article className={`message ${message.role === 'assistant' ? 'assistant' : 'user'} ${message.error ? 'error' : ''}`} key={message.id}><div className="message-avatar">{message.role === 'assistant' && (index === 0 || activeBot.messages[index - 1]?.role !== 'assistant') && <Mark small/>}</div><div className="message-body"><div className="message-markdown">{message.richText ? renderComposerDocument(React, message.richText) : <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown>}</div></div></article>)}{(taskCalls.length > 0 || activeBot.subagentRuns?.length > 0) && <section className="task-outline" aria-label="Activity"><div className="task-outline-title">Activity</div>{taskCalls.map(call => <details className={`tool-row ${call.status}`} key={call.id} open={call.status === 'pending'}><summary><Icon name="activity"/><b>{call.name.replaceAll('_', ' ')}</b><span>{call.status === 'pending' ? 'Running' : call.status}</span></summary><small>{call.summary}</small></details>)}{(activeBot.subagentRuns || []).slice(-20).map(run => <button type="button" className={`subagent-run ${run.status}`} key={run.id} onClick={() => setSelectedConversation({ kind: 'delegated-run', parentBotId: activeBot.id, runId: run.id })} aria-label={`Open delegated run ${run.task}`}><Icon name="activity"/><div><b>{run.agentName} · {run.status === 'running' ? 'Working' : run.status}</b><small>{run.status === 'running' ? run.preview || run.task : run.result || run.error || run.task}</small></div></button>)}</section>}{busy && liveTools.filter(tool => tool.botId === activeBot.id && !taskCalls.some(call => call.id === tool.id)).map(tool => <article className={`tool-row ${tool.status === 'running' ? 'pending' : tool.status}`} key={tool.id}><Icon name="activity"/><div><b>{tool.name.replaceAll('_', ' ')}</b><small>{tool.status === 'running' ? 'Em execução' : tool.output}</small></div></article>)}{busy && <article className="message assistant"><div className="message-avatar"><Mark small/></div><div className="message-body"><div className="message-meta"><b>{activeBot.name}</b><span className="working"><i/>Working</span></div><div className="message-markdown">{liveText ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{liveText}</ReactMarkdown> : 'Thinking…'}</div></div></article>}</div> : <div className="empty-chat"><div className="empty-symbol"><Mark/></div><h1>{activeBot?.name || 'Grok Bot'}</h1><p>How can I help?</p></div>}</section>
       {notice && <div className="notice" role="status"><span>{notice}</span><button aria-label="Dismiss" onClick={() => setNotice('')}><Icon name="close"/></button></div>}

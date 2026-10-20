@@ -100,6 +100,7 @@ function createExecutionHostClient({ forkProcess = fork, execPath = process.exec
     const handleMemoryRequest = options.handleMemoryRequest;
     const payload = {
       botId: options.botId,
+      ...(typeof options.taskId === 'string' ? { taskId: options.taskId } : {}),
       text: options.text,
       history: Array.isArray(options.history) ? options.history : [],
       instructions: typeof options.instructions === 'string' ? options.instructions : '',
