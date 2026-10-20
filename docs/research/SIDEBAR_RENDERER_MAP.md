@@ -30,7 +30,7 @@ Data da inspeção: 2026-10-19. Este documento mapeia código estático do Grok 
 | `YD`, 522.653–524.044 | Grupo de pins | Cabeçalho expansível com contagem e itens de agente em lista. |
 | `aq`, 533.143–536.713 | Grade/área de tiles fixados | Zona de drop, grid de pins, abertura/animação e apresentação de tiles. |
 | `ZD`, 519.391–522.570 | Lista agrupada por seções | Renderiza cabeçalhos e grupos, collapse e reorder de seções; controla ghost/drop visual. |
-| `QD`, 524.241–525.242 | Grupos de tarefas por agente | Cabeçalho dobrável e linhas de task/thread por agente. |
+| `QD`, início em 524.243; `Qv`, início em 525.244 | Grupos de tarefas por agente | Cabeçalho dobrável e linhas de task/thread por agente. Offsets corrigidos pela leitura do membro íntegro do ASAR; ver [mapa de tasks e threads](TASK_THREAD_SOURCE_MAP.md). |
 | `hq`, 554.154–555.146 | Wrapper de lista arrastável | Zona de drop para agentes, adiciona shield durante drag. |
 | `bq`, 577.651–578.749 | Alça de resize | `role=separator`, orientação vertical e gesto pointer para resize. |
 
