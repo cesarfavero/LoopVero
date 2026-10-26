@@ -1,45 +1,55 @@
-# LoopVero · Harness Reference
+# LoopVero · Inside the Harness
 
-Este repositório é um estudo do harness original. Os arquivos de referência são a fonte de verdade; o guia explica o que eles implementam, as fichas mapeiam suas funções e cada conclusão aponta para o código que a sustenta.
+[English](README.md) · [Português (Brasil)](README.pt-BR.md) · [Español](README.es.md) · [简体中文](README.zh-CN.md)
 
-O aplicativo reconstruído, o frontend e seus testes foram retirados. A estrutura usa nomes próprios em inglês, sem instruções de obtenção dos arquivos ou de reprodução de uma extração.
+**You know that bot people call “the best in the world”? Suppose you could follow the machinery behind the answer.**
 
-## Comece aqui
+LoopVero is a source-linked study of an agent harness: tools, memory, checkpoints, subagents, and the visible mechanisms behind proactive work. Follow the reference files, inspect the function maps, and see where the evidence ends.
 
-1. [Guia completo](guide/README.md): percurso de leitura, responsabilidades e contratos.
-2. [Arquitetura de ponta a ponta](guide/architecture/README.md): host, gateway, execução remota, executor de avaliação e persistência.
-3. [Proatividade](guide/components/proactivity/README.md): disparo, automações, executor silencioso, WakeParent e limites da evidência.
-4. [Conclusões verificadas](guide/findings/README.md): o que muda a interpretação do harness.
-5. [Mapa completo de módulos e funções](mapped/README.md): uma ficha README para cada função nomeada catalogada.
+**1,070 original files · 19,741 named-function occurrences · 14,935 function reference pages.**
 
-## Organização
+The reference files are the source of truth: the guide explains what they implement, the function pages map their functions, and every conclusion points to the code that supports it.
 
-| Pasta | Conteúdo | Como usar |
+This is static analysis of the available artifacts, not an installable agent or a claim about the complete production system.
+
+The reconstructed application, frontend, and their tests have been removed. The structure uses its own English names and provides no instructions for obtaining the files or reproducing an extraction.
+
+## Start here
+
+1. [Complete guide](guide/README.md): reading path, responsibilities, and contracts.
+2. [End-to-end architecture](guide/architecture/README.md): host, gateway, remote execution, evaluation runner, and persistence.
+3. [Proactivity](guide/components/proactivity/README.md): triggers, automations, silent runner, WakeParent, and limits of the evidence.
+4. [Verified findings](guide/findings/README.md): findings that change how the harness should be understood.
+5. [Complete module and function map](mapped/README.md): a README page for every cataloged named function.
+
+## Organization
+
+| Directory | Contents | Use |
 | --- | --- | --- |
-| [reference](reference/README.md) | Arquivos originais, com seus bytes preservados e pastas reorganizadas | Evidência primária |
-| [guide](guide/README.md) | Explicações manuais, decisões, fluxos, algoritmos e diagramas | Entender comportamento |
-| [mapped](mapped/README.md) | READMEs por módulo e função, parâmetros, chamadas e localização | Navegar pela implementação |
-| [tools/research](tools/research/README.md) | Indexação AST, geração e verificação estática | Reproduzir o mapa a partir das referências já presentes |
+| [reference](reference/README.md) | Original files, with their bytes preserved and directories reorganized | Primary evidence |
+| [guide](guide/README.md) | Manually written explanations, decisions, flows, algorithms, and diagrams | Understand behavior |
+| [mapped](mapped/README.md) | Module and function READMEs, parameters, calls, and locations | Navigate the implementation |
+| [tools/research](tools/research/README.md) | AST indexing, generation, and static verification | Reproduce the map from the references already present |
 
-## Três conclusões fundamentais
+## Three essential findings
 
-**O host não oferece um loop BOX local ativo nessa entrada.** `SendPipeline.sendPrompt` retorna sem trabalho para prompt vazio e sem anexos; uma entrada efetiva encontra a recusa BOX, incluindo `refuseBoxTurn`, que lança `SandBoxHarnessRetiredError`. Para agentes marcados como `temporal`, o gateway usa um proxy de ações e transcripts remotos. Isso foi verificado no código, não deduzido pelo nome das classes. [Gateway](guide/components/gateway/README.md), [turnos](guide/components/turns/README.md).
+**The host does not provide an active local BOX loop at this entry point.** `SendPipeline.sendPrompt` returns without doing any work for an empty prompt with no attachments; a substantive input encounters the BOX refusal path, including `refuseBoxTurn`, which throws `SandBoxHarnessRetiredError`. For agents marked as `temporal`, the gateway uses a proxy for remote actions and transcripts. This was verified in the code, not inferred from class names. [Gateway](guide/components/gateway/README.md), [turns](guide/components/turns/README.md).
 
-**O executor de avaliação contém implementações concretas do loop.** Seu caminho liga a criação de sessão, composição de ferramentas, streaming, checkpoints, subagentes e encerramento. Ele permite estudar o funcionamento que está presente no artefato, sem provar que a produção utiliza exatamente essa configuração. [Inferência](guide/components/inference/README.md).
+**The evaluation runner contains concrete implementations of the loop.** Its path connects session creation, tool composition, streaming, checkpoints, subagents, and shutdown. It makes the behavior present in the artifact available for study, without proving that production uses this exact configuration. [Inference](guide/components/inference/README.md).
 
-**Proatividade é uma cadeia de responsabilidades.** Há código concreto de automação, execução silenciosa e comunicação com o pai. A seleção inicial de oportunidades espontâneas e o agendamento remoto completo não foram encontrados nas referências disponíveis. `WakeParent` não deve ser confundido com o algoritmo que decide investigar uma oportunidade. [Proatividade](guide/components/proactivity/README.md).
+**Proactivity is a chain of responsibilities.** There is concrete code for automation, silent execution, and communication with the parent. The initial selection of spontaneous opportunities and the complete remote scheduling implementation were not found in the available references. `WakeParent` should not be confused with the algorithm that decides to investigate an opportunity. [Proactivity](guide/components/proactivity/README.md).
 
-## Cobertura e rigor
+## Coverage and rigor
 
-- 1.070 arquivos originais mantidos com o mesmo Git blob SHA-1. Apenas as pastas foram reorganizadas; metadados do Finder e um marcador vazio foram retirados.
-- 3 bundles centrais analisados por AST, com 1.466 módulos selecionados.
-- 19.741 ocorrências de funções nomeadas, agrupadas em 14.935 fichas README. Métodos e closures nomeadas estão incluídos; callbacks anônimos não recebem ficha própria.
-- Os guias funcionais são análises manuais. As fichas geradas registram fatos sintáticos e não afirmam validação semântica completa ou execução em produção.
-- O snapshot está associado ao commit `655acca99bff0d17466547611108f94ed6a8a5e7`. O marcador original de build contém `fcbae14`; ele não foi convertido em uma versão de produto presumida.
+- 1,070 original files retain the same Git blob SHA-1. Only directories were reorganized; Finder metadata and one empty marker were removed.
+- 3 core bundles analyzed through their ASTs, with 1,466 selected modules.
+- 19,741 occurrences of named functions, grouped into 14,935 README pages. Methods and named closures are included; anonymous callbacks do not receive their own pages.
+- The functional guides are manual analyses. Generated pages record syntactic facts and do not claim complete semantic validation or execution in production.
+- The snapshot is associated with commit `655acca99bff0d17466547611108f94ed6a8a5e7`. The original build marker contains `fcbae14`; it has not been converted into an assumed product version.
 
-Consulte [método e limites](guide/methodology/README.md) e [cobertura](guide/coverage/README.md). Os nomes internos dos símbolos continuam preservados: são necessários para rastrear o código original com precisão.
+See [method and limitations](guide/methodology/README.md) and [coverage](guide/coverage/README.md). Internal symbol names remain intact: they are necessary to trace the original code accurately.
 
-## Verificar o estudo
+## Verify the study
 
 ```bash
 npm ci --prefix tools/research --ignore-scripts
@@ -48,4 +58,4 @@ python3 tools/research/render-catalog.py
 python3 tools/research/verify-reference.py
 ```
 
-Esses comandos leem e analisam arquivos. Não inicializam o host, não abrem sessões de inferência e não executam os bundles originais.
+These commands read and analyze files. They do not start the host, open inference sessions, or execute the original bundles.
