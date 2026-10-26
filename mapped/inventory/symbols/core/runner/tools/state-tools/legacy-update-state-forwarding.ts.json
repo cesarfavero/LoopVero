@@ -1,0 +1,279 @@
+[
+  {
+    "id": "evaluation:555697:20596545",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "legacyNameOf",
+    "qualified_name": "legacyNameOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555697,
+    "end_line": 555699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "alias2"
+    ],
+    "body_sha256": "936736029d926d559c9852a86bce87cadb47c90fb79dcbbdf116b866fc23068b",
+    "calls": [
+      "SAND_LEGACY_UPDATE_STATE_TOOL_NAMES.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555700:20596661",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "readArgs",
+    "qualified_name": "readArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555700,
+    "end_line": 555704,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argsStream"
+    ],
+    "body_sha256": "264f3d83dea632020345e8919ef8fe8338bfae0d89d897831ec124c1a37ed543",
+    "calls": [],
+    "writes": [
+      "args"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555706:20596908",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "parseLegacyArgs",
+    "qualified_name": "parseLegacyArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555706,
+    "end_line": 555713,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2ae7e2250de54ceeeeed2146ea7242446bd7fd86df82783947064dd332b437ad",
+    "calls": [
+      "JSON.parse",
+      "legacyUpdateStateArgs.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:555714:20597104",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "oneShot",
+    "qualified_name": "oneShot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555714,
+    "end_line": 555716,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "153f561c362fc26eab3442506f4de073944bc640edab62dd49386c54d4539e5d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555717:20597154",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "recordForwarded",
+    "qualified_name": "recordForwarded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555717,
+    "end_line": 555721,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "target",
+      "forwardedTo"
+    ],
+    "body_sha256": "27fb349e08f8b45675153f8c90674583ecf1df25c097e64200333cae70720e32",
+    "calls": [
+      "legacyUpdateStateForwarded.applied",
+      "new ShimCall",
+      "shims.flush",
+      "shims.report"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555722:20597355",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "refuse",
+    "qualified_name": "refuse",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555722,
+    "end_line": 555728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "legacyName",
+      "target",
+      "reason",
+      "problem"
+    ],
+    "body_sha256": "f35f5e795963b79b0cf27f1c7edbb885da8603bfb252820d799cc85ef856a722",
+    "calls": [
+      "legacyUpdateStateForwarded.refused",
+      "new ShimCall",
+      "new ToolCallArgParseError",
+      "shims.flush",
+      "shims.report"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555729:20597921",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "withLegacyUpdateStateForwarding",
+    "qualified_name": "withLegacyUpdateStateForwarding",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555729,
+    "end_line": 555785,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "569dd11f21923bdefd5022c1125c861944a94a15ccf718f6d40aca06fb45e183",
+    "calls": [
+      "new Map",
+      "tools.find",
+      "tools.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:555739:20598347",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/state-tools/legacy-update-state-forwarding.ts",
+    "name": "execute",
+    "qualified_name": "withLegacyUpdateStateForwarding/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 555739,
+    "end_line": 555782,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "e7a3b7195b466b6535b37edf029f4627f71b0b7c5017458876619721d6066c48",
+    "calls": [
+      "JSON.stringify",
+      "legacyNameOf",
+      "memoryTool.execute",
+      "oneShot",
+      "parseLegacyArgs",
+      "readArgs",
+      "recordForwarded",
+      "refuse",
+      "splitStateToolForTarget",
+      "splitTool.execute",
+      "toolsByName.get"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "refuse"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 3,
+      "catches": 0
+    }
+  }
+]

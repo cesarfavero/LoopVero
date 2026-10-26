@@ -1,0 +1,82 @@
+[
+  {
+    "id": "host:683347:25963756",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/cursor-skills-marketplace.ts",
+    "name": "fetchSandManagedSkills",
+    "qualified_name": "fetchSandManagedSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683347,
+    "end_line": 683363,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "d7367de900a45cab62a96310588d1d477fbb55e3faa3e61ee139dcbbd94ecaaa",
+    "calls": [
+      "client.getManagedSkills",
+      "createDashboardClient",
+      "new GetManagedSkillsRequest",
+      "response.skills.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683364:25964262",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/cursor-skills-marketplace.ts",
+    "name": "fetchSkillCatalog",
+    "qualified_name": "fetchSkillCatalog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683364,
+    "end_line": 683402,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "getAccessToken",
+      "getTeamId",
+      "getMachineId",
+      "report"
+    ],
+    "body_sha256": "55e8e14706d3820618629c1183c0935ca3aed952eb75adb7fc478e5bf6325fe6",
+    "calls": [
+      "client.listMarketplacePlugins",
+      "createDashboardClient",
+      "entries.push",
+      "entries.sort",
+      "errorLogTag",
+      "new Set",
+      "plugin.id.toString",
+      "rememberPluginLogoUrl",
+      "report",
+      "seen.add",
+      "seen.has",
+      "skill.name.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

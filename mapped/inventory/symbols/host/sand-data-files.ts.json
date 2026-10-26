@@ -1,0 +1,2937 @@
+[
+  {
+    "id": "host:453717:16625710",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "UntrustedSandDataFileError.constructor",
+    "qualified_name": "UntrustedSandDataFileError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453717,
+    "end_line": 453721,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason",
+      "path33"
+    ],
+    "body_sha256": "6b475aca57629e6adac7b7c28ae09337b0cb0f323b0f020c6349f20241de818b",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.path",
+      "this.reason"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453723:16625840",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "isRefusedSandDataFile",
+    "qualified_name": "isRefusedSandDataFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453723,
+    "end_line": 453725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f1f6464adbcb86a4dd98794caf72382dfb5b4448859c62fef67e26d3231dbd5f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453726:16625983",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "writeSandDataFileSync",
+    "qualified_name": "writeSandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453726,
+    "end_line": 453731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "data2",
+      "options2 = {}"
+    ],
+    "body_sha256": "48853fc7d78c47cde77e9f46cd79035a5176dc6dc70410d3ebe8501980df9d37",
+    "calls": [
+      "keptModeSync",
+      "sandDataNoFollowRoot",
+      "writeFileAtomicSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453732:16626195",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "writeSandDataFile",
+    "qualified_name": "writeSandDataFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453732,
+    "end_line": 453737,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "data2",
+      "options2 = {}"
+    ],
+    "body_sha256": "92632a8a242468ea2d937279af9ca4b7784bf5b5cbf12608caece72992519568",
+    "calls": [
+      "keptMode",
+      "sandDataNoFollowRoot",
+      "writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453738:16626413",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readHostOwnedFileSync",
+    "qualified_name": "readHostOwnedFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453738,
+    "end_line": 453746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "10e20cb5a4910da681900246256ebacbecdffb25646b02f285d494ae6f6eb3e2",
+    "calls": [
+      "openNoFollowSync2",
+      "readCappedSync",
+      "refuseUntrustedFile",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453748:16626785",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readSandDataFileIfPresentSync",
+    "qualified_name": "readSandDataFileIfPresentSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453748,
+    "end_line": 453757,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "options2 = {}"
+    ],
+    "body_sha256": "8329c8e47771c927841521c8525666c473f19c7aabcd3014085096e1efce6237",
+    "calls": [
+      "findSystemErrno",
+      "openNoFollowSync2",
+      "readOpenSandDataFile",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [
+      "fd"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:453758:16627105",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readSandDataFileSync",
+    "qualified_name": "readSandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453758,
+    "end_line": 453761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "af543339e8bf100c0e832d45176731adeddd22ed5ffb0cdf50592446138f59b8",
+    "calls": [
+      "openNoFollowSync2",
+      "readOpenSandDataFile",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453762:16627310",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readOpenSandDataFile",
+    "qualified_name": "readOpenSandDataFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453762,
+    "end_line": 453769,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "options2"
+    ],
+    "body_sha256": "0fadd862cbd0d7942f06cb5970aba792edd0fa8d77e493cd473f34e9bba8a14c",
+    "calls": [
+      "readCappedSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453770:16627582",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readCappedSync",
+    "qualified_name": "readCappedSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453770,
+    "end_line": 453773,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "55faf445087d16268bef88fdbfe01aa41c50c5a4f4c32d68dc5fcc0be0acd966",
+    "calls": [
+      "oversizedSandDataFile",
+      "readBoundedSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453774:16627785",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readBoundedSync",
+    "qualified_name": "readBoundedSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453774,
+    "end_line": 453789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "63c4dcb676c930cbb705d8e2d9ef233aa7eacd025aa438821ee692a90ea06399",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "Math.max",
+      "Math.min",
+      "buffer.copy",
+      "buffer.toString",
+      "oversizedSandDataFile"
+    ],
+    "writes": [
+      "buffer",
+      "length"
+    ],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453790:16628466",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "oversizedSandDataFile",
+    "qualified_name": "oversizedSandDataFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453790,
+    "end_line": 453792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "cf946ab51d29be6179ada8b9c2a987882467084a6701f1824a7a9304996f90c2",
+    "calls": [
+      "new RangeError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453793:16628596",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readHostOwnedFile",
+    "qualified_name": "readHostOwnedFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453793,
+    "end_line": 453805,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "8298f8772435e45513347464fb21f869b95b3c7dcec4d9f64b80abec6b04fb6f",
+    "calls": [
+      "file2.close",
+      "file2.stat",
+      "openNoFollow",
+      "oversizedSandDataFile",
+      "readBounded",
+      "refuseUntrustedFile",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453806:16629061",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readBounded",
+    "qualified_name": "readBounded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453806,
+    "end_line": 453821,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2",
+      "path33",
+      "maxBytes",
+      "sizeHint"
+    ],
+    "body_sha256": "37f2a447efbb2754b67b186f19f93e4b2e2d29201a31e7b11db93318f35b099b",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "Math.max",
+      "Math.min",
+      "buffer.copy",
+      "buffer.toString",
+      "file2.read",
+      "oversizedSandDataFile"
+    ],
+    "writes": [
+      "buffer",
+      "length"
+    ],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453822:16629725",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "resolveWithinSync",
+    "qualified_name": "resolveWithinSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453822,
+    "end_line": 453829,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "root",
+      "path33"
+    ],
+    "body_sha256": "86c46907b00900624ece611369173db8b49d5859dd976b30e21b71e4d29629fb",
+    "calls": [
+      "isPathWithin",
+      "new UntrustedSandDataFileError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "UntrustedSandDataFileError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453830:16630080",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "readFileWithinSync",
+    "qualified_name": "readFileWithinSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453830,
+    "end_line": 453838,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "root",
+      "path33"
+    ],
+    "body_sha256": "34d2b7bf3e4c7f64a67ec29a415b602ad042034d2765c4907703d3b33dbc92af",
+    "calls": [
+      "openNoFollowSync2",
+      "readCappedSync",
+      "resolveWithinSync",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453839:16630381",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "ensureSandDataDirSync",
+    "qualified_name": "ensureSandDataDirSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453839,
+    "end_line": 453862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "mode"
+    ],
+    "body_sha256": "cfcd976e2dc4a2c253a6322a89dbe0da496d9231133c1f2433568e72039666e4",
+    "calls": [
+      "entryOf2",
+      "findSystemErrno",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow"
+    ],
+    "writes": [
+      "current2",
+      "fd"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:453864:16631385",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "refuseDatabaseFileLinks",
+    "qualified_name": "refuseDatabaseFileLinks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453864,
+    "end_line": 453872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentFd",
+      "path33"
+    ],
+    "body_sha256": "2d7adecf133cf7215ec007c671e4cce882e2cf993eb8d21bf9991b0f0aa693ed",
+    "calls": [
+      ".isSymbolicLink",
+      "entryOf2",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "NoFollowRefusedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453873:16631816",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "refuseSandDataDatabaseLinksSync",
+    "qualified_name": "refuseSandDataDatabaseLinksSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453873,
+    "end_line": 453876,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "192ddab6d40232c7cdc64037bc240c53bdc3bcd98eb5c18f8fe84956a3fed054",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453877:16632018",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "checkSandDataDatabaseSync",
+    "qualified_name": "checkSandDataDatabaseSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453877,
+    "end_line": 453885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "target"
+    ],
+    "body_sha256": "9c580f303e05de7fdfbbde9d7561e1a7f8fe2f8958ed83cd013b846f43f9972a",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453886:16632505",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "mainDatabaseFile",
+    "qualified_name": "mainDatabaseFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453886,
+    "end_line": 453889,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "6f1e3727ba5bffeb7ad0bdf2e281826b462044747f35acbe622f720aaf03c60b",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453890:16632656",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataFileSync",
+    "qualified_name": "removeSandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453890,
+    "end_line": 453892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "9a5315069a93bd9150fcbec9e58df0e455a054245f028e5c17897774a4406e43",
+    "calls": [
+      "removeNoFollowSync",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453893:16632770",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataTree",
+    "qualified_name": "removeSandDataTree",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453893,
+    "end_line": 453907,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "1684125575b4d6f7309a5717e7ae4fed6d706621dbbfc99959952cf217762c36",
+    "calls": [
+      "findSystemErrno",
+      "held.parent.handle.close",
+      "openParentNoFollow2",
+      "removeTreeNoFollow",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [
+      "held"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:453908:16633210",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataTreeSync",
+    "qualified_name": "removeSandDataTreeSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453908,
+    "end_line": 453917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "173a9948df324af0f4e622159eb1797d0150161501fd14ef410cbeb74a93a427",
+    "calls": [
+      "findSystemErrno",
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:453918:16633554",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "copySandDataFileSync",
+    "qualified_name": "copySandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453918,
+    "end_line": 453931,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "target"
+    ],
+    "body_sha256": "1c1483065bca319bd46fa2633aac0c47034472fd7632380c7bd5bca37af94d0a",
+    "calls": [
+      "openNoFollowSync2",
+      "sandDataNoFollowRoot",
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453932:16634172",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "openSandDataFileSync",
+    "qualified_name": "openSandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453932,
+    "end_line": 453950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "flags"
+    ],
+    "body_sha256": "4b35e7cff0e0cb53156859e6daae6198e7b6c251d1494332c443529e317f9624",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453951:16634843",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "targetLinkRefusalOf",
+    "qualified_name": "targetLinkRefusalOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453951,
+    "end_line": 453953,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "path33"
+    ],
+    "body_sha256": "e403205b65a8f7a688b080969cf017a598d86497cbc3d1673860557109f99be1",
+    "calls": [
+      "findSystemErrno",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453954:16635000",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "renameSandDataFileSync",
+    "qualified_name": "renameSandDataFileSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453954,
+    "end_line": 453962,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "target"
+    ],
+    "body_sha256": "a3ec89f3aa39904a619af0d8d81a05f408a74f9f694be487c805ffba84809547",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453963:16635433",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "chownSandDataEntrySync",
+    "qualified_name": "chownSandDataEntrySync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453963,
+    "end_line": 453968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "uid",
+      "gid"
+    ],
+    "body_sha256": "fc23d46c14997ab0826869a73daa5011d157ad06bb1a74a1baee7700ff04d194",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453969:16635717",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "withParentNoFollowSync",
+    "qualified_name": "withParentNoFollowSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453969,
+    "end_line": 453984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "use"
+    ],
+    "body_sha256": "17c6432f6dfd9a3cc82df8327e4d14adb1ab69abbc5e5733178d02774ad49e20",
+    "calls": [
+      "entryOf2",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow",
+      "use"
+    ],
+    "writes": [
+      "current2",
+      "fd"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:453985:16636303",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "removeEntryTreeSync",
+    "qualified_name": "removeEntryTreeSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 453985,
+    "end_line": 454009,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentFd",
+      "logicalPath",
+      "name18"
+    ],
+    "body_sha256": "84e79c565ad753d2cc9fd81997289fef839df0c2674041d539d19287bc8d708b",
+    "calls": [
+      "descriptorDirOf",
+      "entryOf2",
+      "findSystemErrno",
+      "removeEntryTreeSync",
+      "unlinkIgnoringMissing"
+    ],
+    "writes": [
+      "fd"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:454010:16637121",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "openDirectoryRefusingLinks",
+    "qualified_name": "openDirectoryRefusingLinks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454010,
+    "end_line": 454021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "shown",
+      "options2 = {}"
+    ],
+    "body_sha256": "a5b67f05978e1e080f5397ae759ba9b3b19d65b9ea7aeb3b49409766980dd6ce",
+    "calls": [
+      ".isSymbolicLink",
+      "findSystemErrno",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConditionalExpression"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:454022:16637694",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "unlinkIgnoringMissing",
+    "qualified_name": "unlinkIgnoringMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454022,
+    "end_line": 454028,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "368f70ca176127ab98fbf7e9fbb70725adcecc9d1f1e5551e39d2d57916aef61",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:454029:16637876",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "entryOf2",
+    "qualified_name": "entryOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454029,
+    "end_line": 454031,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath",
+      "name18"
+    ],
+    "body_sha256": "9a73d1622c19f59cc727f384eb22f9fa62298b21e1cf7b85fb72434a10b84e75",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454032:16638010",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "descriptorDirOf",
+    "qualified_name": "descriptorDirOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454032,
+    "end_line": 454034,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath"
+    ],
+    "body_sha256": "0bf7003b5c1d80bafa511fca1ca121d6285626e3807854a30944bac8bec6f3f7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454035:16638133",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataNoFollowRoot",
+    "qualified_name": "sandDataNoFollowRoot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454035,
+    "end_line": 454037,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "d6eb86670b650973c5b0c764258e6d5906e5df0313d62a7902c95b91360f694d",
+    "calls": [
+      "hostNoFollowRoot",
+      "isSandDataPath",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454038:16638287",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "isSandDataPath",
+    "qualified_name": "isSandDataPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454038,
+    "end_line": 454040,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "c61c1b3691504955e0a66ad5cd5a483fba0c23c73271600e68d55a00c73ee2fd",
+    "calls": [
+      "isPathWithin",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454041:16638372",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataAnchor",
+    "qualified_name": "sandDataAnchor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454041,
+    "end_line": 454043,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "b1ba2ae5ff812b85ee688e2962e5823de22dfff06d720de1fa32ffa90952ffa5",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454044:16638462",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "isHostOwned",
+    "qualified_name": "isHostOwned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454044,
+    "end_line": 454047,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "uid"
+    ],
+    "body_sha256": "5b538d79a3cabe3e23c59bc080dc91d98a02be236d972fbb100994f2e844fbff",
+    "calls": [
+      "process.geteuid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454048:16638579",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "untrustedFileReason",
+    "qualified_name": "untrustedFileReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454048,
+    "end_line": 454051,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2"
+    ],
+    "body_sha256": "6b0630e4b52d3905c696febbc2f09b9e55e21bbb1c11243aa0899dd4f14c0ab7",
+    "calls": [
+      "isHostOwned"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454052:16638738",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "refuseUntrustedFile",
+    "qualified_name": "refuseUntrustedFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454052,
+    "end_line": 454055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2",
+      "path33"
+    ],
+    "body_sha256": "23d923cc5d5560126d06a665e29799148372650643f62fb89d95dd7822a3e88a",
+    "calls": [
+      "new UntrustedSandDataFileError",
+      "untrustedFileReason"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "UntrustedSandDataFileError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454057:16638936",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeOf",
+    "qualified_name": "keptModeOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454057,
+    "end_line": 454059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "info2"
+    ],
+    "body_sha256": "8081d379a28e781a37ed803436dbafa1f720fa8bc46a5240ba88440dd389e42c",
+    "calls": [
+      "info2.isFile",
+      "isHostOwned",
+      "process.umask"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454060:16639083",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeSync",
+    "qualified_name": "keptModeSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454060,
+    "end_line": 454062,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "657552db1c2b9f0e2ca2af2d2c76c67b65cbc7a610472273dc2a5d1f383c7ebe",
+    "calls": [
+      "keptModeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454063:16639205",
+    "artifact": "host",
+    "module": "host/sand-data-files.ts",
+    "name": "keptMode",
+    "qualified_name": "keptMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454063,
+    "end_line": 454069,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "e56c1302ba07de25ce95f098e539f4dd92f6d355d1e9ccc44fc4cef3ba9c75dd",
+    "calls": [
+      ".catch",
+      "keptModeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627493:23800555",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "writeSandDataFileSync",
+    "qualified_name": "writeSandDataFileSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627493,
+    "end_line": 627498,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "data2",
+      "options2 = {}"
+    ],
+    "body_sha256": "48853fc7d78c47cde77e9f46cd79035a5176dc6dc70410d3ebe8501980df9d37",
+    "calls": [
+      "keptModeSync",
+      "sandDataNoFollowRoot",
+      "writeFileAtomicSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627500:23800816",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "readSandDataFileSync",
+    "qualified_name": "readSandDataFileSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627500,
+    "end_line": 627503,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "e38df45ba537fb488668430a2b3540d811a3dfe9dfa1c69a24b305fdcf19b8a1",
+    "calls": [
+      "openNoFollowSync",
+      "readOpenSandDataFile",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627504:23801020",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "readOpenSandDataFile",
+    "qualified_name": "readOpenSandDataFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627504,
+    "end_line": 627511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "options2"
+    ],
+    "body_sha256": "08f610df92f2ea9f712bcc938e1214c0eed76a4c1879e064e264a339e0e11079",
+    "calls": [
+      "readCappedSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627512:23801294",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "readCappedSync",
+    "qualified_name": "readCappedSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627512,
+    "end_line": 627515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "1b9488a713e1044ac559cdb5af58973bd3bccdcf3e696f24103fff60a1e9ad93",
+    "calls": [
+      "oversizedSandDataFile",
+      "readBoundedSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627516:23801498",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "readBoundedSync",
+    "qualified_name": "readBoundedSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627516,
+    "end_line": 627531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "1836e606d8914f71f2a9619a83ab44eb6b369a53258170ddac173cb35c16759c",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "Math.max",
+      "Math.min",
+      "buffer.copy",
+      "buffer.toString",
+      "oversizedSandDataFile"
+    ],
+    "writes": [
+      "buffer",
+      "length"
+    ],
+    "throw_targets": [
+      "oversizedSandDataFile"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627532:23802181",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "oversizedSandDataFile",
+    "qualified_name": "oversizedSandDataFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627532,
+    "end_line": 627534,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "maxBytes"
+    ],
+    "body_sha256": "cf946ab51d29be6179ada8b9c2a987882467084a6701f1824a7a9304996f90c2",
+    "calls": [
+      "new RangeError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627535:23802311",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "ensureSandDataDirSync",
+    "qualified_name": "ensureSandDataDirSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627535,
+    "end_line": 627558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "mode"
+    ],
+    "body_sha256": "26fdb60aa31b8efe687729bd1e128392cf8cf4aa27d1fda3108c79e365a9c548",
+    "calls": [
+      "entryOf",
+      "findSystemErrno",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow2"
+    ],
+    "writes": [
+      "current2",
+      "fd"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627559:23803259",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataTreeSync",
+    "qualified_name": "removeSandDataTreeSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627559,
+    "end_line": 627568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "4795c601f14469a21ff720f109f3edcee2af51ccc12a1d48f6cc5b955782054c",
+    "calls": [
+      "findSystemErrno",
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627569:23803603",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "withParentNoFollowSync",
+    "qualified_name": "withParentNoFollowSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627569,
+    "end_line": 627584,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "use"
+    ],
+    "body_sha256": "fa5bd482060cd7500650b62f79074e856ea27988ca0de719623a6b4ea096b53e",
+    "calls": [
+      "entryOf",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow2",
+      "use"
+    ],
+    "writes": [
+      "current2",
+      "fd"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627585:23804191",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "removeEntryTreeSync",
+    "qualified_name": "removeEntryTreeSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627585,
+    "end_line": 627609,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentFd",
+      "logicalPath",
+      "name18"
+    ],
+    "body_sha256": "c0b4904148627c4e16f57b34206cee02e72f01b73a3eeca6ff234c57f5953c3f",
+    "calls": [
+      "descriptorDirOf",
+      "entryOf",
+      "findSystemErrno",
+      "removeEntryTreeSync",
+      "unlinkIgnoringMissing"
+    ],
+    "writes": [
+      "fd"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:627610:23805012",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "openDirectoryRefusingLinks",
+    "qualified_name": "openDirectoryRefusingLinks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627610,
+    "end_line": 627621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "shown",
+      "options2 = {}"
+    ],
+    "body_sha256": "17082097b5a40429c94d05fe67e2eabf63757d58e938c31e1460f525478ac1f1",
+    "calls": [
+      ".isSymbolicLink",
+      "findSystemErrno",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConditionalExpression"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627622:23805589",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "unlinkIgnoringMissing",
+    "qualified_name": "unlinkIgnoringMissing",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627622,
+    "end_line": 627628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "73cf7c8093a90229d36856c15990292a5dfb8689c1284f94d6c42fdc2381f8a9",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627629:23805772",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "entryOf",
+    "qualified_name": "entryOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627629,
+    "end_line": 627631,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath",
+      "name18"
+    ],
+    "body_sha256": "e2707b1386eabb19d53e1d23ad62e1a0fc87008d7eb906e69ee4536c4b6ec536",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627632:23805905",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "descriptorDirOf",
+    "qualified_name": "descriptorDirOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627632,
+    "end_line": 627634,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath"
+    ],
+    "body_sha256": "0bf7003b5c1d80bafa511fca1ca121d6285626e3807854a30944bac8bec6f3f7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627635:23806028",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataNoFollowRoot",
+    "qualified_name": "sandDataNoFollowRoot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627635,
+    "end_line": 627637,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "2fecda2057e7569eae4b6ac174074735dbea8af32d7de47a6a212bf9027cd0f6",
+    "calls": [
+      "hostNoFollowRoot",
+      "isSandDataPath",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627638:23806182",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "isSandDataPath",
+    "qualified_name": "isSandDataPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627638,
+    "end_line": 627640,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "0fbe23d02317c6bf18da7db08ab45d570a21ad07ab6b22a6c183b3852660476e",
+    "calls": [
+      "isPathWithin2",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627641:23806268",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataAnchor",
+    "qualified_name": "sandDataAnchor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627641,
+    "end_line": 627643,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "efcaed33fac5564131f685e84e228095c87875a8cecfd39daf6201408b508cd5",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627644:23806358",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "isHostOwned",
+    "qualified_name": "isHostOwned",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627644,
+    "end_line": 627647,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "uid"
+    ],
+    "body_sha256": "5b538d79a3cabe3e23c59bc080dc91d98a02be236d972fbb100994f2e844fbff",
+    "calls": [
+      "process.geteuid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627649:23806501",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeOf",
+    "qualified_name": "keptModeOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627649,
+    "end_line": 627651,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "info2"
+    ],
+    "body_sha256": "8081d379a28e781a37ed803436dbafa1f720fa8bc46a5240ba88440dd389e42c",
+    "calls": [
+      "info2.isFile",
+      "isHostOwned",
+      "process.umask"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627652:23806648",
+    "artifact": "evaluation",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeSync",
+    "qualified_name": "keptModeSync",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627652,
+    "end_line": 627654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "9c5383b77557ae7b9f889a791571ffdca357f21a22b2fbdf19f74dd215c35532",
+    "calls": [
+      "keptModeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:476:17488",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "UntrustedSandDataFileError.constructor",
+    "qualified_name": "UntrustedSandDataFileError.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 476,
+    "end_line": 480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason",
+      "path"
+    ],
+    "body_sha256": "89c0e5056f8700fe6611fbc62305a7042036b61ed22c09640a5cedd1ca45bdcf",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.path",
+      "this.reason"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:482:17612",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "isRefusedSandDataFile",
+    "qualified_name": "isRefusedSandDataFile",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 482,
+    "end_line": 484,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error"
+    ],
+    "body_sha256": "8c050660d8a5584c1347fd043bf8e635a5c72b6cca1ad63377a48ef453fddf29",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:485:17749",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "writeSandDataFileSync",
+    "qualified_name": "writeSandDataFileSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 485,
+    "end_line": 490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path",
+      "data",
+      "options = {}"
+    ],
+    "body_sha256": "b9f04163e3f70383b321b5d8c2aebee9e12b7de56859adfda8d6a541e56e2a92",
+    "calls": [
+      "keptModeSync",
+      "sandDataNoFollowRoot",
+      "writeFileAtomicSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:492:17998",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "ensureSandDataDirSync",
+    "qualified_name": "ensureSandDataDirSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 492,
+    "end_line": 515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "mode"
+    ],
+    "body_sha256": "d8b1943cee08b21adf26263174b99d010dcbedcf35dbda3356a3715b715d0b0d",
+    "calls": [
+      "entryOf",
+      "findSystemErrno",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow"
+    ],
+    "writes": [
+      "current",
+      "fd"
+    ],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:517:18976",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "refuseDatabaseFileLinks",
+    "qualified_name": "refuseDatabaseFileLinks",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 517,
+    "end_line": 525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentFd",
+      "path"
+    ],
+    "body_sha256": "135ecf4bf2028e61a5c7759ba89c2565729ccb819817ba9a63224664e65e5acd",
+    "calls": [
+      ".isSymbolicLink",
+      "entryOf",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "NoFollowRefusedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:526:19393",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "refuseSandDataDatabaseLinksSync",
+    "qualified_name": "refuseSandDataDatabaseLinksSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 526,
+    "end_line": 529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "cf4497ec8af4d89cb6b615485be10646d5a1abbd704235dbbed0a07d12f8fcbd",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:530:19588",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "checkSandDataDatabaseSync",
+    "qualified_name": "checkSandDataDatabaseSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 530,
+    "end_line": 538,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "target"
+    ],
+    "body_sha256": "fac8a7b3c1d98cbd77de8b7de2af63e8f70d41cf92f6daacb10cd7c8c25cf1e8",
+    "calls": [
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:539:20060",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "mainDatabaseFile",
+    "qualified_name": "mainDatabaseFile",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 539,
+    "end_line": 542,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "2696e521b285f6c754b079cccdfe870015ef9792cfc4c4376e3d04d4e86ad19f",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:543:20208",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataFileSync",
+    "qualified_name": "removeSandDataFileSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 543,
+    "end_line": 545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path"
+    ],
+    "body_sha256": "d741be0c2766ed1981a0ec42d7584aac9acd7219bbc7f8f8aa5ae0cc694ab72a",
+    "calls": [
+      "removeNoFollowSync",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:546:20316",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "removeSandDataTreeSync",
+    "qualified_name": "removeSandDataTreeSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 546,
+    "end_line": 555,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "a53b8996e28654ec9dcfdce32f1772c45f86c52b49e294b8514bf9ff41c19687",
+    "calls": [
+      "findSystemErrno",
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:556:20644",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "copySandDataFileSync",
+    "qualified_name": "copySandDataFileSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 556,
+    "end_line": 569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "target"
+    ],
+    "body_sha256": "03a174b50b48ad6c1c83c309fe745063d146a95abac5774f1adc28bcc24d41ce",
+    "calls": [
+      "openNoFollowSync",
+      "sandDataNoFollowRoot",
+      "withParentNoFollowSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:570:21248",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "withParentNoFollowSync",
+    "qualified_name": "withParentNoFollowSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 570,
+    "end_line": 585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path",
+      "use"
+    ],
+    "body_sha256": "4f85d8f88bf08d25f76be6933cfa0324904b19797d1dc670c20808e3601d9964",
+    "calls": [
+      "entryOf",
+      "openDirectoryRefusingLinks",
+      "sandDataNoFollowRoot",
+      "segmentsBelow",
+      "use"
+    ],
+    "writes": [
+      "current",
+      "fd"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:586:21814",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "removeEntryTreeSync",
+    "qualified_name": "removeEntryTreeSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 586,
+    "end_line": 610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentFd",
+      "logicalPath",
+      "name"
+    ],
+    "body_sha256": "0c22f83d881415c9ff95793c5ba5295dc8afb4770c5f97a02ec0694a5dffc612",
+    "calls": [
+      "descriptorDirOf",
+      "entryOf",
+      "findSystemErrno",
+      "removeEntryTreeSync",
+      "unlinkIgnoringMissing"
+    ],
+    "writes": [
+      "fd"
+    ],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:611:22614",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "openDirectoryRefusingLinks",
+    "qualified_name": "openDirectoryRefusingLinks",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 611,
+    "end_line": 622,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "shown",
+      "options = {}"
+    ],
+    "body_sha256": "2564e555b863ccaf4627aea7cfae7a80216d55e88aa9867bcd7e57d40af4936c",
+    "calls": [
+      ".isSymbolicLink",
+      "findSystemErrno",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConditionalExpression"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:623:23179",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "unlinkIgnoringMissing",
+    "qualified_name": "unlinkIgnoringMissing",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 623,
+    "end_line": 629,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "8aa0c3b1d082ec89f7166d07485b752dcddbb13be13a5727b1e53aa379f47f56",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:630:23355",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "entryOf",
+    "qualified_name": "entryOf",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 630,
+    "end_line": 632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath",
+      "name"
+    ],
+    "body_sha256": "23f9dc63aa2ae39c3f6ad6fcdb50e287ecf2ca54c38fd19e83957b47e2961cbd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:633:23484",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "descriptorDirOf",
+    "qualified_name": "descriptorDirOf",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 633,
+    "end_line": 635,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd",
+      "logicalPath"
+    ],
+    "body_sha256": "0bf7003b5c1d80bafa511fca1ca121d6285626e3807854a30944bac8bec6f3f7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:636:23607",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataNoFollowRoot",
+    "qualified_name": "sandDataNoFollowRoot",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 636,
+    "end_line": 638,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path"
+    ],
+    "body_sha256": "8731c56a631bc1e8c6ec6d9946308e5ce225ea833af23b7dbd7f410fd9f4c12f",
+    "calls": [
+      "hostNoFollowRoot",
+      "isSandDataPath",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:639:23754",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "isSandDataPath",
+    "qualified_name": "isSandDataPath",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 639,
+    "end_line": 641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path"
+    ],
+    "body_sha256": "96227e849fd19c63f4e781a9f8f1b5517752a8f12d46d9815cd779a0962375eb",
+    "calls": [
+      "isPathWithin",
+      "sandDataAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:642:23835",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "sandDataAnchor",
+    "qualified_name": "sandDataAnchor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 642,
+    "end_line": 644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "26c21d97bd60ce227c649f9bae926541e624df65258f2b8521c8f89d2d95705c",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:645:23924",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "isHostOwned",
+    "qualified_name": "isHostOwned",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 645,
+    "end_line": 648,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "uid"
+    ],
+    "body_sha256": "5b538d79a3cabe3e23c59bc080dc91d98a02be236d972fbb100994f2e844fbff",
+    "calls": [
+      "process.geteuid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:650:24067",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeOf",
+    "qualified_name": "keptModeOf",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 650,
+    "end_line": 652,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "info"
+    ],
+    "body_sha256": "8aae794ac97b43fd70cd5f8b7f5c39ba6bee362e5d9e6e6776eb2d3be6d0396c",
+    "calls": [
+      "info.isFile",
+      "isHostOwned",
+      "process.umask"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:653:24210",
+    "artifact": "state-worker",
+    "module": "host/sand-data-files.ts",
+    "name": "keptModeSync",
+    "qualified_name": "keptModeSync",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 653,
+    "end_line": 655,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path"
+    ],
+    "body_sha256": "556414feacfd75f169fc2162581c61857dccaf2195ef4accf74ed17f6324e562",
+    "calls": [
+      "keptModeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

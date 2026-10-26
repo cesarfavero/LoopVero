@@ -1,0 +1,284 @@
+[
+  {
+    "id": "host:768305:29450234",
+    "artifact": "host",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "normalizationForm",
+    "qualified_name": "normalizationForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768305,
+    "end_line": 768313,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3544991c952fb603d1d12a10a31019f657d1ff156aad008d802956c14eaffcf2",
+    "calls": [
+      "raw.endsWith",
+      "raw.startsWith",
+      "raw.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768327:29451665",
+    "artifact": "host",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "createReactToMicrosoftTeamsMessageTool",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768327,
+    "end_line": 768358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reaction"
+    ],
+    "body_sha256": "b8eabba79cd4383678521c8b2b6d392587f2a6efb37b8f5f3a3889a47214b292",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768333:29452732",
+    "artifact": "host",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768333,
+    "end_line": 768336,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9d81fc9028846da872ec242a076f992e2cb5563443be9ba50fcdf8ba6fbb1364",
+    "calls": [
+      "args.conversation.trim",
+      "args.reaction.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768337:29452841",
+    "artifact": "host",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768337,
+    "end_line": 768356,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "teams"
+    ],
+    "body_sha256": "b7efab2a322337b318fdba8181fedd660c89d1a06b86cc34b5c2b60a39b9c9e1",
+    "calls": [
+      "args.activity_id.trim",
+      "args.conversation.trim",
+      "args.reaction.trim",
+      "new SandToolInputError",
+      "new ShimCall",
+      "normalizationForm",
+      "normalizeTeamsReactionName",
+      "shims.flush",
+      "shims.report",
+      "teams.react",
+      "teamsReactionNameNormalization.applied"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563821:20980765",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "normalizationForm",
+    "qualified_name": "normalizationForm",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563821,
+    "end_line": 563829,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3544991c952fb603d1d12a10a31019f657d1ff156aad008d802956c14eaffcf2",
+    "calls": [
+      "raw.endsWith",
+      "raw.startsWith",
+      "raw.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563843:20982196",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "createReactToMicrosoftTeamsMessageTool",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563843,
+    "end_line": 563874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reaction"
+    ],
+    "body_sha256": "b8eabba79cd4383678521c8b2b6d392587f2a6efb37b8f5f3a3889a47214b292",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563849:20983263",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563849,
+    "end_line": 563852,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9d81fc9028846da872ec242a076f992e2cb5563443be9ba50fcdf8ba6fbb1364",
+    "calls": [
+      "args.conversation.trim",
+      "args.reaction.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563853:20983372",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/teams/sand-teams-reaction-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReactToMicrosoftTeamsMessageTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563853,
+    "end_line": 563872,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "teams"
+    ],
+    "body_sha256": "b7efab2a322337b318fdba8181fedd660c89d1a06b86cc34b5c2b60a39b9c9e1",
+    "calls": [
+      "args.activity_id.trim",
+      "args.conversation.trim",
+      "args.reaction.trim",
+      "new SandToolInputError",
+      "new ShimCall",
+      "normalizationForm",
+      "normalizeTeamsReactionName",
+      "shims.flush",
+      "shims.report",
+      "teams.react",
+      "teamsReactionNameNormalization.applied"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

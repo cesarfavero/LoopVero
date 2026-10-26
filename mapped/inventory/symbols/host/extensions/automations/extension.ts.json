@@ -1,0 +1,807 @@
+[
+  {
+    "id": "host:505896:18566640",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "reconcileWhenAuthenticated",
+    "qualified_name": "reconcileWhenAuthenticated",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505896,
+    "end_line": 505909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  auth: auth2,\n  reconcile\n}"
+    ],
+    "body_sha256": "bc3e0e2748cfebbf8dfc959fdd8955e97412a1f7565332ee96370c381156bfbf",
+    "calls": [
+      "auth2.subscribeToRenewal",
+      "reconcileOnce"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505901:18566763",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "reconcileOnce",
+    "qualified_name": "reconcileWhenAuthenticated/reconcileOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505901,
+    "end_line": 505905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9be32c9c69371298af502998ef53c6398edc25c9caaef1d8126cecf4ea938ed2",
+    "calls": [
+      "auth2.peekAccessToken",
+      "reconcile"
+    ],
+    "writes": [
+      "hasReconciled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505919:18567237",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "start",
+    "qualified_name": "start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505919,
+    "end_line": 506023,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "9dc50c644891cf492d5928583a799bb770d2ca37dd7858c315f242ea889ea2e5",
+    "calls": [
+      "context2.onStop",
+      "createListenerIntegrationReads",
+      "createPollingPolicy2",
+      "createSandCursorBackendClient",
+      "new Map",
+      "new SandAutomationCloudSync",
+      "new SandWebhookCredentialService",
+      "reconcileWhenAuthenticated",
+      "startCloudSyncPoll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505929:18567709",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getMachineId",
+    "qualified_name": "start/getMachineId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505929,
+    "end_line": 505929,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e26665cc577f4422a6265c49b3368bf62980ad9feb3e3597e422dfeddd882f23",
+    "calls": [
+      "auth2.getMachineId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505938:18568005",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getMachineId",
+    "qualified_name": "start/getMachineId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505938,
+    "end_line": 505938,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e26665cc577f4422a6265c49b3368bf62980ad9feb3e3597e422dfeddd882f23",
+    "calls": [
+      "auth2.getMachineId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505942:18568161",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "reportDiagnostic",
+    "qualified_name": "start/reportDiagnostic",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505942,
+    "end_line": 505942,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "diagnostic"
+    ],
+    "body_sha256": "d3d4e5f22d61751cbd39881cf4d3559fd7ed9aa1f3141a9b3450b6589a9a6bdb",
+    "calls": [
+      "context2.deps.telemetry.logs.reportHostExtensionDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505943:18568270",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "hasCredential",
+    "qualified_name": "start/hasCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505943,
+    "end_line": 505943,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3bc2fd910a6d6ac5e6fdd55ebe0d262368387012356439d8dea3afdc78947ad1",
+    "calls": [
+      "auth2.peekAccessToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505944:18568333",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "dropWebhookKeys",
+    "qualified_name": "start/dropWebhookKeys",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505944,
+    "end_line": 505944,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "automationIds"
+    ],
+    "body_sha256": "e20705d408c0749a8fbcd14ad6e035513afd7028871ec17c00deba968f0b4d61",
+    "calls": [
+      "credentialService.dropKeys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505945:18568412",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "onFailure",
+    "qualified_name": "start/onFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505945,
+    "end_line": 505954,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "8744c66b9c7d9b6dd89bc28ff1389494433a68d81fbb92a404677a6443f5cfbd",
+    "calls": [
+      "automationSyncFailureTrayIds.has",
+      "automationSyncFailureTrayIds.set",
+      "context2.deps.trays.pushError",
+      "hostTrayTitle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505955:18568830",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "onRecovery",
+    "qualified_name": "start/onRecovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505955,
+    "end_line": 505960,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "2f048be6af82df94f76ef47583ccccef9dc00cccccd16f5c4adf934151c42f03",
+    "calls": [
+      "automationSyncFailureTrayIds.delete",
+      "automationSyncFailureTrayIds.get",
+      "context2.deps.trays.dismiss"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505967:18569286",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "startCloudSyncPoll",
+    "qualified_name": "start/startCloudSyncPoll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505967,
+    "end_line": 505969,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3fc2044cf2c60968de95026de7891a27f8d33b0e8305d344bcc8b718086810c9",
+    "calls": [
+      "cloudSyncPolling.start"
+    ],
+    "writes": [
+      "cloudSyncPoll"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505970:18569411",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "stopCloudSyncPoll",
+    "qualified_name": "start/stopCloudSyncPoll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505970,
+    "end_line": 505973,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "64dd1920ee223eb63ff428ee94867e4b7e5fbf9235b8d5a7676dafafa5f55d2d",
+    "calls": [
+      "cloudSyncPoll.dispose"
+    ],
+    "writes": [
+      "cloudSyncPoll"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505979:18569663",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "isDesktopScmConnectEnabled",
+    "qualified_name": "start/isDesktopScmConnectEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505979,
+    "end_line": 505981,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "06bcf42a7211bf0e8e930efe2bddf68f6425e98bb5155ff46fb0a2806a9aa087",
+    "calls": [
+      "context2.deps.experiments.checkFeatureGate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505986:18569922",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "reconcile",
+    "qualified_name": "start/reconcile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505986,
+    "end_line": 505988,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f4210338b86b5d2829d05f1b4ed1546946427704c1bb3121a6418362268e89fc",
+    "calls": [
+      "cloudSync.reconcileNow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505995:18570123",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "suspendWakes",
+    "qualified_name": "start/suspendWakes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505995,
+    "end_line": 505997,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4710dc8b266af78c47745f85cd434e2ca8b427194a20e96da6a5ad0bd0051119",
+    "calls": [
+      "stopCloudSyncPoll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505998:18570194",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "resumeWakes",
+    "qualified_name": "start/resumeWakes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505998,
+    "end_line": 506000,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ed5620df00a91607539dbbdee04a7d35106af4dff0f332e5ab97f101763cf08b",
+    "calls": [
+      "startCloudSyncPoll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506001:18570269",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "deleteAgentSchedules",
+    "qualified_name": "start/deleteAgentSchedules",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506001,
+    "end_line": 506001,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "602f573e4cd689805ff86dc3fa7b22fd6cb3c887591a2234ca7b90adefb2012e",
+    "calls": [
+      "cloudSync.deleteAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506002:18570342",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getWebhookCredential",
+    "qualified_name": "start/getWebhookCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506002,
+    "end_line": 506008,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId, localId }"
+    ],
+    "body_sha256": "c18d14ba7286f528287a349e0a7b122bef1e78c1ae5e3e7baa26a3d752f23e10",
+    "calls": [
+      ".find",
+      "assertWebhookCredentialTarget",
+      "credentialService.getCredential",
+      "transcript.getAgentAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506009:18570680",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "runNowInSession",
+    "qualified_name": "start/runNowInSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506009,
+    "end_line": 506015,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c55bf22c6142160613021a51c93c21632d3dd96ccac8b6d94f6bde5efafeb3b3",
+    "calls": [
+      "runSandAutomationNowInSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506012:18570795",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "listAutomations",
+    "qualified_name": "start/runNowInSession/listAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506012,
+    "end_line": 506012,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "592483d85e8335fea524bec9196900444fcb9a1ac752f26ef828692a7eccc00c",
+    "calls": [
+      "transcript.listAllAutomationDefinitions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506016:18570896",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "reconcileNow",
+    "qualified_name": "start/reconcileNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506016,
+    "end_line": 506016,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "74d02cce8d73e21b638d714bab75c0cbdf28a464ad1faf9c160d7149ecdb1b96",
+    "calls": [
+      "cloudSync.reconcileNow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506017:18570959",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getListenerIntegrations",
+    "qualified_name": "start/getListenerIntegrations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506017,
+    "end_line": 506017,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b0adbcb904f155faa7829565ec48a180d3fd3878d4b2e5ef99a80a4164c26a45",
+    "calls": [
+      "listenerReads.getIntegrations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506018:18571027",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getListenerConnectUrl",
+    "qualified_name": "start/getListenerConnectUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506018,
+    "end_line": 506018,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "platform2",
+      "options2"
+    ],
+    "body_sha256": "e752d35c62e89824590afe9dd0c631a9f3f9205c136380b5da61ea1c38958f2e",
+    "calls": [
+      "listenerReads.getConnectUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506019:18571136",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "disconnectListenerPlatform",
+    "qualified_name": "start/disconnectListenerPlatform",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506019,
+    "end_line": 506019,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "287f94e334dfe37118dbe03bd019ad808d7e146f595ea97600ab432480a8b8bb",
+    "calls": [
+      "listenerReads.disconnectPlatform"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506020:18571225",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "completeGithubConnect",
+    "qualified_name": "start/completeGithubConnect",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506020,
+    "end_line": 506020,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2afb8d12349c90656c8fbf7c54cb056e2b63115101b875aa4485cb8b36a32b92",
+    "calls": [
+      "listenerReads.completeGithubConnect"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506021:18571302",
+    "artifact": "host",
+    "module": "host/extensions/automations/extension.ts",
+    "name": "getAgentChannels",
+    "qualified_name": "start/getAgentChannels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506021,
+    "end_line": 506021,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "cb78ce7d10fd8bcb1b823c3ff03cfb99f9d4cb56f01d1b83ea11888f3e71816e",
+    "calls": [
+      "listenerReads.getAgentChannels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

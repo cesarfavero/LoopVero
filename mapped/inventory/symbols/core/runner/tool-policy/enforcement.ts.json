@@ -1,0 +1,130 @@
+[
+  {
+    "id": "evaluation:543256:20062262",
+    "artifact": "evaluation",
+    "module": "core/runner/tool-policy/enforcement.ts",
+    "name": "resolveSandTurnToolDecisions",
+    "qualified_name": "resolveSandTurnToolDecisions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543256,
+    "end_line": 543286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runner"
+    ],
+    "body_sha256": "13b42c7b27a31e5f40cfa4d387191fd132970c2df2524a6c5fff58e28fae5283",
+    "calls": [
+      "isSandSubagentHistoryKind",
+      "resolveSandAgentKind",
+      "resolveSandAgentTools",
+      "runner.gates.subagentHistoryTools",
+      "sandAgentToolsPlacedByManifest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543270:20062941",
+    "artifact": "evaluation",
+    "module": "core/runner/tool-policy/enforcement.ts",
+    "name": "childInboxWritesWithheld",
+    "qualified_name": "resolveSandTurnToolDecisions/childInboxWritesWithheld",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543270,
+    "end_line": 543270,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4db8ae4bfe9003a0c6707dc942c88bffd5adc3411370051ced1fc2bdaaed2179",
+    "calls": [
+      "runner.activeTurnRequestSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543271:20063125",
+    "artifact": "evaluation",
+    "module": "core/runner/tool-policy/enforcement.ts",
+    "name": "offersTool",
+    "qualified_name": "resolveSandTurnToolDecisions/offersTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543271,
+    "end_line": 543271,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "8b856e30a67edc1e4feedddbac1aa1fae381e07b6cea2a4e7b94d994ffa5984a",
+    "calls": [
+      "READONLY_CHILD_INBOX_WRITES.has",
+      "childInboxWritesWithheld",
+      "policy.offers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543281:20063708",
+    "artifact": "evaluation",
+    "module": "core/runner/tool-policy/enforcement.ts",
+    "name": "enforce",
+    "qualified_name": "resolveSandTurnToolDecisions/enforce",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543281,
+    "end_line": 543284,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "acfe5bd2a388d05abc9ff3109eb5c120936f1699a4b40cd80793ae391443b185",
+    "calls": [
+      "tools.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

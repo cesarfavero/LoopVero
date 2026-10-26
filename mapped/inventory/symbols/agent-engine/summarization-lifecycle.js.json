@@ -1,0 +1,676 @@
+[
+  {
+    "id": "host:647456:24250620",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "eventBase",
+    "qualified_name": "eventBase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647456,
+    "end_line": 647463,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lifecycle2"
+    ],
+    "body_sha256": "7335a2e6b6d190440f3e86fce6598d9300441b721c051b19d3f3ab53784c784b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647464:24250872",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "liveLifecycle",
+    "qualified_name": "liveLifecycle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647464,
+    "end_line": 647466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "54a0a5ed3916155503e1ced9061d211fdb7bfa19ce20c241e907055f9267d545",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647467:24250964",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "createLiveSummaryLifecycle",
+    "qualified_name": "createLiveSummaryLifecycle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647467,
+    "end_line": 647476,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "9ac4cba91d85eb10b5c33b9d8f44dd737fe87c00a95bb8eb1b5269b15636d168",
+    "calls": [
+      "crypto.randomUUID",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647477:24251287",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "resumeSummaryLifecycle",
+    "qualified_name": "resumeSummaryLifecycle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647477,
+    "end_line": 647479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "83e5f4a938ae2c7f62530d53f806b50cf65d958bb165c964b5d481671177d90a",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647480:24251425",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleStarted",
+    "qualified_name": "emitSummaryLifecycleStarted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647480,
+    "end_line": 647490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source"
+    ],
+    "body_sha256": "0a5852a19d61e9d924532ca4b67117cc4fd3da390a8d16e00747399f4a3587a9",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647491:24251752",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleCompleted",
+    "qualified_name": "emitSummaryLifecycleCompleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647491,
+    "end_line": 647502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "outcome"
+    ],
+    "body_sha256": "fe23bf2c834890cca2d7d1544a379ff90e8f360035610000e867b00aa187fa7a",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647503:24252107",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleDeferred",
+    "qualified_name": "emitSummaryLifecycleDeferred",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647503,
+    "end_line": 647514,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "reason"
+    ],
+    "body_sha256": "29c4f56157069eb8a08d1bf5c954cdddffabffc652438854dcc8244c56ea06c6",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "lifecycle2.emittedDeferrals.add",
+      "lifecycle2.emittedDeferrals.has",
+      "liveLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647515:24252510",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleTerminal",
+    "qualified_name": "emitSummaryLifecycleTerminal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647515,
+    "end_line": 647525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "event"
+    ],
+    "body_sha256": "827c7c8c67493437d3807d68e13ed713efa052ccd88ba7e757885883d7844d55",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647526:24252839",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleAbandoned",
+    "qualified_name": "emitSummaryLifecycleAbandoned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647526,
+    "end_line": 647528,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "reason"
+    ],
+    "body_sha256": "954df29f1a55ac1cc3dd2c27a2e63a5db70bca1a2bc0d783994388d56b6e127d",
+    "calls": [
+      "emitSummaryLifecycleTerminal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647529:24252980",
+    "artifact": "host",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecyclePersisted",
+    "qualified_name": "emitSummaryLifecyclePersisted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647529,
+    "end_line": 647531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source"
+    ],
+    "body_sha256": "988847e9f94b09bd61faa0c6dc30d39fa42902d4dce7290271ae8dd47c1c43e5",
+    "calls": [
+      "emitSummaryLifecycleTerminal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439119:15505496",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "eventBase",
+    "qualified_name": "eventBase",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439119,
+    "end_line": 439126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lifecycle2"
+    ],
+    "body_sha256": "7335a2e6b6d190440f3e86fce6598d9300441b721c051b19d3f3ab53784c784b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439127:15505748",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "liveLifecycle",
+    "qualified_name": "liveLifecycle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439127,
+    "end_line": 439129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "54a0a5ed3916155503e1ced9061d211fdb7bfa19ce20c241e907055f9267d545",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439130:15505840",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "createLiveSummaryLifecycle",
+    "qualified_name": "createLiveSummaryLifecycle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439130,
+    "end_line": 439139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "9ac4cba91d85eb10b5c33b9d8f44dd737fe87c00a95bb8eb1b5269b15636d168",
+    "calls": [
+      "crypto.randomUUID",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439140:15506163",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "resumeSummaryLifecycle",
+    "qualified_name": "resumeSummaryLifecycle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439140,
+    "end_line": 439142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "83e5f4a938ae2c7f62530d53f806b50cf65d958bb165c964b5d481671177d90a",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439143:15506301",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleStarted",
+    "qualified_name": "emitSummaryLifecycleStarted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439143,
+    "end_line": 439153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source"
+    ],
+    "body_sha256": "0a5852a19d61e9d924532ca4b67117cc4fd3da390a8d16e00747399f4a3587a9",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439154:15506628",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleCompleted",
+    "qualified_name": "emitSummaryLifecycleCompleted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439154,
+    "end_line": 439165,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "outcome"
+    ],
+    "body_sha256": "fe23bf2c834890cca2d7d1544a379ff90e8f360035610000e867b00aa187fa7a",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439166:15506983",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleDeferred",
+    "qualified_name": "emitSummaryLifecycleDeferred",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439166,
+    "end_line": 439177,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "reason"
+    ],
+    "body_sha256": "29c4f56157069eb8a08d1bf5c954cdddffabffc652438854dcc8244c56ea06c6",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "lifecycle2.emittedDeferrals.add",
+      "lifecycle2.emittedDeferrals.has",
+      "liveLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439178:15507386",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleTerminal",
+    "qualified_name": "emitSummaryLifecycleTerminal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439178,
+    "end_line": 439188,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "event"
+    ],
+    "body_sha256": "827c7c8c67493437d3807d68e13ed713efa052ccd88ba7e757885883d7844d55",
+    "calls": [
+      ".trackSummaryLifecycle",
+      "eventBase",
+      "getAgentEventTracker",
+      "liveLifecycle"
+    ],
+    "writes": [
+      "lifecycle2.status"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439189:15507715",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecycleAbandoned",
+    "qualified_name": "emitSummaryLifecycleAbandoned",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439189,
+    "end_line": 439191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source",
+      "reason"
+    ],
+    "body_sha256": "954df29f1a55ac1cc3dd2c27a2e63a5db70bca1a2bc0d783994388d56b6e127d",
+    "calls": [
+      "emitSummaryLifecycleTerminal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439192:15507856",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-lifecycle.js",
+    "name": "emitSummaryLifecyclePersisted",
+    "qualified_name": "emitSummaryLifecyclePersisted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439192,
+    "end_line": 439194,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "source"
+    ],
+    "body_sha256": "988847e9f94b09bd61faa0c6dc30d39fa42902d4dce7290271ae8dd47c1c43e5",
+    "calls": [
+      "emitSummaryLifecycleTerminal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

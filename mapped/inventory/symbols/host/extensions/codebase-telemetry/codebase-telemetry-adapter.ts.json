@@ -1,0 +1,589 @@
+[
+  {
+    "id": "host:540533:19839697",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.create",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.create",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540533,
+    "end_line": 540614,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    credentials,\n    paths,\n    backendUrl,\n    csnapsBinPath,\n    spawnCsnaps: spawnCsnaps2,\n    uploadPolling,\n    createUploadCredentials,\n    logger: logger132,\n    signal\n  }"
+    ],
+    "body_sha256": "dc9a6c95768e20783a076016ca6164ddb1292e74d53395402cac63820b4b34e0",
+    "calls": [
+      "createDeadlinePolicy",
+      "csnaps.close",
+      "new CodebaseTelemetryCleanupError",
+      "new _CsnapsCodebaseTelemetryAdapter",
+      "spawnCsnaps2"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CodebaseTelemetryCleanupError",
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:540615:19841948",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.constructor",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540615,
+    "end_line": 540644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    csnaps,\n    authId,\n    initialState,\n    uploadPolling,\n    createUploadCredentials,\n    logger: logger132\n  }"
+    ],
+    "body_sha256": "3c7bc71f19086e8634c95a04fb4f97ae2713d184305b19cd245ac2cb03c7d6d2",
+    "calls": [
+      "Promise.withResolvers",
+      "createWatchChannel",
+      "csnaps.terminalFailure.then",
+      "toAdapterState"
+    ],
+    "writes": [
+      "this.authId",
+      "this.createUploadCredentials",
+      "this.csnaps",
+      "this.logger",
+      "this.terminalFailure",
+      "this.uploadPollingPolicy"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540630:19842398",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "onSubscriberError",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.constructor/onSubscriberError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540630,
+    "end_line": 540630,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "16c4f34e5c71a746e4453ee62961c66a7491910e22a2f1db39ede366b041d45d",
+    "calls": [
+      "logger132.error"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540653:19843049",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.reconcileFeatureGates",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.reconcileFeatureGates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540653,
+    "end_line": 540654,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_values"
+    ],
+    "body_sha256": "400066854f48300ab5631585a0847e1928318cbdcaf79263b1f9055501fea273",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540655:19843092",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.setDesiredCodebases",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.setDesiredCodebases",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540655,
+    "end_line": 540669,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "codebases"
+    ],
+    "body_sha256": "b14b0ecd51f727e9f2e8b329ada0068993b10744c8b0a1bbe1eac676e93b71db",
+    "calls": [
+      "new CsnapsAdapterError",
+      "this.csnaps.applyCodebaseSpecs",
+      "this.publishState",
+      "this.uploadPollingPolicy.start"
+    ],
+    "writes": [
+      "this.nextStateRequestSequence",
+      "this.uploadPolling"
+    ],
+    "throw_targets": [
+      "CsnapsAdapterError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540670:19843613",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.snapshot",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.snapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540670,
+    "end_line": 540675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "b54ca24d000021b0837037604cf65fe62f74d4bf0448924b9cfb795bfb3d0845",
+    "calls": [
+      "Promise.resolve",
+      "this.csnaps.snapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540676:19843762",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.runGitHistoryCapture",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.runGitHistoryCapture",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540676,
+    "end_line": 540677,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540678:19843798",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.flushPendingUploads",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.flushPendingUploads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540678,
+    "end_line": 540687,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "04338c7835c3a02a5b4d7badce8b4330fe5071dbd8d7e972dc8f081ef3e6661d",
+    "calls": [
+      "this.createUploadCredentials",
+      "this.csnaps.flushPendingUploads"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540688:19844026",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.close",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.close",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540688,
+    "end_line": 540694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ab3c2c16196cf9009e184933214bdc6bc98c533faea0d90572f83482f38e8726",
+    "calls": [
+      ".then",
+      "Promise.resolve"
+    ],
+    "writes": [
+      "this.closePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540695:19844231",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.dispose",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540695,
+    "end_line": 540707,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7b8ece2f87d9521d7b510f0150591fd802c600c2d9620d0355f1fc3a616be6e6",
+    "calls": [
+      ".then",
+      "this.close"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540708:19844639",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.releaseResources",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.releaseResources",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540708,
+    "end_line": 540727,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a140cbe1c1a82736268c71292585f47cd5c3be2f02acaecfa6e8ab1cdbe9afcb",
+    "calls": [
+      "errors.push",
+      "this.csnaps.close",
+      "this.stateSender.dispose",
+      "this.uploadPolling.dispose",
+      "toNonEmptyErrors"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:540728:19845156",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.isDisposed",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.isDisposed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540728,
+    "end_line": 540730,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cb9a63c82e293b17193e738e02ceb28e3849fcc9c1e1e8bc4bdb2f97762656b8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540731:19845227",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.runUploadPoll",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.runUploadPoll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540731,
+    "end_line": 540733,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b0301d1f52feff466dfae437894a7c5c10f376e726cca2e09a06c793e0d8fc5f",
+    "calls": [
+      "Promise.all",
+      "this.refreshState",
+      "this.triggerUpload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540734:19845324",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.refreshState",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.refreshState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540734,
+    "end_line": 540750,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3c7033168f1c77d10f19ec493c410c3ba5af7f73c31a076450d5fd5240e6d264",
+    "calls": [
+      "this.csnaps.getState",
+      "this.logger.warn",
+      "this.publishState"
+    ],
+    "writes": [
+      "this.nextStateRequestSequence"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:540751:19845774",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.publishState",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.publishState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540751,
+    "end_line": 540757,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "stateRequestSequence",
+      "state"
+    ],
+    "body_sha256": "67fa4b7c27d99252f0f988a9151e3789102aa8c5d0ba56e13e18b6b81c4f366b",
+    "calls": [
+      "this.stateSender.send",
+      "toAdapterState"
+    ],
+    "writes": [
+      "this.latestPublishedStateRequestSequence"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540758:19846059",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "_CsnapsCodebaseTelemetryAdapter.triggerUpload",
+    "qualified_name": "_CsnapsCodebaseTelemetryAdapter.triggerUpload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540758,
+    "end_line": 540773,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3d32100f822b054fff16af5cd7950bc8a051df890d235228cd95439900194545",
+    "calls": [
+      "this.createUploadCredentials",
+      "this.csnaps.triggerUpload",
+      "this.logger.warn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:540778:19846528",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "toAdapterState",
+    "qualified_name": "toAdapterState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540778,
+    "end_line": 540783,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "authId",
+      "state"
+    ],
+    "body_sha256": "33b98b0b0f91ef1736e8469e85a0a320ecb6669f0ac3df4474d32d2ce239368f",
+    "calls": [
+      "state.tracked.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540784:19846727",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-adapter.ts",
+    "name": "toCodebase",
+    "qualified_name": "toCodebase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540784,
+    "end_line": 540798,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "authId",
+      "codebase"
+    ],
+    "body_sha256": "434d5c09dd906dd70f9ad2575673ece375e7082aad84f235feb8569bf55b78a6",
+    "calls": [
+      "isCodebaseEnvironment",
+      "isCodebaseKind",
+      "new CsnapsAdapterError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsAdapterError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

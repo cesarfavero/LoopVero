@@ -1,0 +1,532 @@
+[
+  {
+    "id": "evaluation:585072:22013528",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "isBlank2",
+    "qualified_name": "isBlank2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585072,
+    "end_line": 585072,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "63a8fae33bc9b406f7faadc08adb2f67b26f7c1491b30eae5b2f7ef84b38ec46",
+    "calls": [
+      "line.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585073:22013574",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "isTabList",
+    "qualified_name": "isTabList",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585073,
+    "end_line": 585073,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "lines2"
+    ],
+    "body_sha256": "08ee0461ac0a13a1a6ad97d8a1301fa74b9bbc00d46669007438f068b547baea",
+    "calls": [
+      "lines2.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585074:22013652",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "parseResultText",
+    "qualified_name": "parseResultText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585074,
+    "end_line": 585082,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "8b8752657082dfd2bf53d822281915c98e6212324f666975a7fd18f2770e5f33",
+    "calls": [
+      ".push",
+      "line.slice",
+      "line.startsWith",
+      "sections.at",
+      "sections.push",
+      "text3.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585083:22013954",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "renderResultText",
+    "qualified_name": "renderResultText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585083,
+    "end_line": 585086,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ preamble, sections }"
+    ],
+    "body_sha256": "c7021a4d88fccdb97d758aa045e40533d218d5a80a4a4ab53bcfcb60be637fa0",
+    "calls": [
+      ".join",
+      "sections.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585087:22014137",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "sectionBody",
+    "qualified_name": "sectionBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585087,
+    "end_line": 585089,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sections",
+      "title"
+    ],
+    "body_sha256": "a28d8107fc3944f7e03be606cd4d6c6810c68b47b13de7eb723dd49d4dbd3695",
+    "calls": [
+      "sections.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585090:22014247",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "shapeTabs",
+    "qualified_name": "shapeTabs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585090,
+    "end_line": 585121,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  sections,\n  toolName,\n  lastTabList\n}"
+    ],
+    "body_sha256": "e6d455e2907fd159d7e747c8dc95c0b0ff03cda8eafb76f9d2c6426fd920821d",
+    "calls": [
+      "isTabList",
+      "listed.join",
+      "openTabs.join",
+      "sectionBody",
+      "sections.flatMap",
+      "sections.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585122:22015479",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "isSnapshotLink",
+    "qualified_name": "isSnapshotLink",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585122,
+    "end_line": 585125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "39d189e2b62dac53b7849a23146496f24a3fc8b51a07359bd620921cbf98f897",
+    "calls": [
+      "SNAPSHOT_FILE_LINK.test",
+      "body.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585126:22015644",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "withoutBoilerplate",
+    "qualified_name": "withoutBoilerplate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585126,
+    "end_line": 585136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sections",
+      "toolName"
+    ],
+    "body_sha256": "ceec1f0f86556846a168a5f0673c7e2afc285a40db4010919cd9b5aea6d9e1b9",
+    "calls": [
+      "sections.filter",
+      "sections.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585137:22016252",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "waitedForText",
+    "qualified_name": "waitedForText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585137,
+    "end_line": 585141,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d19ca0a4d0337f297ea4e06a3253d4ba0334b219fc08edb2b0ec71507fa4dd7f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585142:22016471",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "findArgs",
+    "qualified_name": "findArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585142,
+    "end_line": 585151,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "wait2",
+      "text3"
+    ],
+    "body_sha256": "1184e8d9dccee27ec161769e460be8f13cd7b95d6402d082d784aa345184fe05",
+    "calls": [
+      "Value.fromJson",
+      "new McpArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585152:22016792",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "foundText",
+    "qualified_name": "foundText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585152,
+    "end_line": 585166,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "find"
+    ],
+    "body_sha256": "553c8071257ea53171c605d2279e800e13f5ae49b69fabee972389cbf8f9cd6d",
+    "calls": [
+      "find",
+      "rewriteMcpSuccessText",
+      "success2.content.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:585154:22016882",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "trim",
+    "qualified_name": "foundText/trim",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585154,
+    "end_line": 585157,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "321d4544210db8f4305813c383372d6284ace168bb9078bb0e1165a44586b2eb",
+    "calls": [
+      "formatPlaywrightResultText"
+    ],
+    "writes": [
+      "trimmed.beforeSpill"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585167:22017335",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "withPlaywrightResultShaping",
+    "qualified_name": "withPlaywrightResultShaping",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585167,
+    "end_line": 585212,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor"
+    ],
+    "body_sha256": "d77d87742d4a7eeac9e759046d4643f308922142ff38ede9f8623264441a525b",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585169:22017461",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "rememberTabsAndShape",
+    "qualified_name": "withPlaywrightResultShaping/rememberTabsAndShape",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585169,
+    "end_line": 585179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{\n    text: text3,\n    provider,\n    toolName\n  }"
+    ],
+    "body_sha256": "28cc8c8eb9e3c1c7d64f1ee73cc39c75dd179363ffe8313c1c63bfbf43e31a8b",
+    "calls": [
+      "parseResultText",
+      "renderResultText",
+      "shapeTabs",
+      "tabLists.delete",
+      "tabLists.get",
+      "tabLists.set",
+      "withoutBoilerplate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585181:22017916",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "isBackendRouted",
+    "qualified_name": "withPlaywrightResultShaping/isBackendRouted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585181,
+    "end_line": 585181,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "3326bf8889fdcbf666497666616b86468b240ccef3beb8400ba95d08005cbc08",
+    "calls": [
+      "executor.isBackendRouted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585182:22017994",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-result-shaping.ts",
+    "name": "execute",
+    "qualified_name": "withPlaywrightResultShaping/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585182,
+    "end_line": 585210,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "7c29864049f8b3d221128d22abada1da88a1065e584462fabd99e4acd1e56434",
+    "calls": [
+      "content.push",
+      "executor.execute",
+      "foundText",
+      "playwrightBoxMcpWindowIndex",
+      "rememberTabsAndShape",
+      "waitedForText"
+    ],
+    "writes": [
+      "item.content.value.text"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

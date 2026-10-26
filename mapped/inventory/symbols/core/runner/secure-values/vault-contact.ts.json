@@ -1,0 +1,938 @@
+[
+  {
+    "id": "host:724436:27479539",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "hasVaultPostalAddress",
+    "qualified_name": "hasVaultPostalAddress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724436,
+    "end_line": 724438,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "064ffbfc3f6e5787de40112cd1b0958867096858a739251dfb060d7abeaceee7",
+    "calls": [
+      "POSTAL_LINE_KEYS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724439:27479649",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "withoutLoneVaultCountry",
+    "qualified_name": "withoutLoneVaultCountry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724439,
+    "end_line": 724442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "37a0729aae369347c466172506c81e083ec149ab1cd6fabc040be84e67065864",
+    "calls": [
+      "hasVaultPostalAddress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724443:27479812",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "parseVaultContactInput",
+    "qualified_name": "parseVaultContactInput",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724443,
+    "end_line": 724481,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "d208f7b8ce9650792cbb3e8f7cc8f7ce518a75533165fce2a0fbadec2c6f81cb",
+    "calls": [
+      ".find",
+      "EMAIL_PATTERN.test",
+      "PHONE_PATTERN.test",
+      "canonicalVaultCountryCode",
+      "hasVaultPostalAddress",
+      "input2.address[computed].trim",
+      "input2.email.trim",
+      "input2.label.trim",
+      "isVaultCountryCode",
+      "withoutLoneVaultCountry"
+    ],
+    "writes": [
+      "entered[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724515:27483005",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "isVaultContactFormFieldId",
+    "qualified_name": "isVaultContactFormFieldId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724515,
+    "end_line": 724517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "4eeb97a3dcade8d90dca1930b0d21c77e7e504ea098d0597ee2cd7178b9d36e8",
+    "calls": [
+      "VAULT_CONTACT_FORM_FIELD_IDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724518:27483119",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactFormValueProblem",
+    "qualified_name": "vaultContactFormValueProblem",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724518,
+    "end_line": 724530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "value"
+    ],
+    "body_sha256": "b9a1c17f382b6d27a2c5bacf3ec5aaad3ba11ff49f3e4319f339b549c2a275a0",
+    "calls": [
+      "JSON.stringify",
+      "canonicalVaultCountryCode",
+      "isVaultCountryCode",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724531:27483748",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "formPrefillValue",
+    "qualified_name": "formPrefillValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724531,
+    "end_line": 724539,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "raw"
+    ],
+    "body_sha256": "909e407d360adbea206446fa657200a3538c5785866e8da842d56d3ca7b31e7b",
+    "calls": [
+      ".slice",
+      "canonicalVaultCountryCode",
+      "isVaultCountryCode",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724540:27484079",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactFormFields",
+    "qualified_name": "vaultContactFormFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724540,
+    "end_line": 724545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefill = {}"
+    ],
+    "body_sha256": "4cf337974302ed81f6bf8c491df6e3088eb6a9d2bb507afbb5943cd93b51a576",
+    "calls": [
+      "CONTACT_FORM_FIELDS.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724546:27484321",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactInputOfForm",
+    "qualified_name": "vaultContactInputOfForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724546,
+    "end_line": 724558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "bb69773d64dfda1d1d7c15258cbc15c73d059300fb602ffb61df4b33895e5ce9",
+    "calls": [
+      "Object.entries"
+    ],
+    "writes": [
+      "address[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724560:27484778",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactPrefillOf",
+    "qualified_name": "vaultContactPrefillOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724560,
+    "end_line": 724576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "contact"
+    ],
+    "body_sha256": "24b99d35f860fbba76bdc2aad14e8e047838d4bde371bea145757cd2b36c430a",
+    "calls": [
+      "mergeVaultContactPrefill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724577:27485244",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "mergeVaultContactPrefill",
+    "qualified_name": "mergeVaultContactPrefill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724577,
+    "end_line": 724588,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  saved,\n  changes = {}\n}"
+    ],
+    "body_sha256": "2c09a42c10f1dd713413ec28a4b6d6442a7ed536a42dd9da8a2656e898fc68f5",
+    "calls": [
+      "change.trim"
+    ],
+    "writes": [
+      "merged[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724597:27485734",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactSummary",
+    "qualified_name": "vaultContactSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724597,
+    "end_line": 724600,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "contact"
+    ],
+    "body_sha256": "79208481c42975dd31e0a22cbd291afc7805827bb6f0bb3df31e6118e983f759",
+    "calls": [
+      ".filter",
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724601:27486011",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "contactText",
+    "qualified_name": "contactText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724601,
+    "end_line": 724603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ab60646af7f3fbc6ef6b2e7704ea008d6e59cd80d4742fb35f852299c094ead6",
+    "calls": [
+      ".max",
+      ".optional",
+      ".trim",
+      "external_exports2.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724630:27486983",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactChangeSummary",
+    "qualified_name": "vaultContactChangeSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724630,
+    "end_line": 724636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "1d4c04e77f13e2de381526a08ecb3df5bf3a3d03b89d4c3c5e582cb9641d3a10",
+    "calls": [
+      ".join",
+      "VAULT_CONTACT_FORM_FIELD_IDS.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724637:27487289",
+    "artifact": "host",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultToolParameters",
+    "qualified_name": "vaultToolParameters",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724637,
+    "end_line": 724646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cards"
+    ],
+    "body_sha256": "86adf04e008403941ea4b2b9f25eecd497ae874655793fab3d04676bb3e0f55f",
+    "calls": [
+      ".describe",
+      ".min",
+      ".optional",
+      ".strict",
+      ".trim",
+      "contactParameter.optional",
+      "external_exports2.enum",
+      "external_exports2.object",
+      "external_exports2.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549915:20320498",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "hasVaultPostalAddress",
+    "qualified_name": "hasVaultPostalAddress",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549915,
+    "end_line": 549917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "064ffbfc3f6e5787de40112cd1b0958867096858a739251dfb060d7abeaceee7",
+    "calls": [
+      "POSTAL_LINE_KEYS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549918:20320608",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "withoutLoneVaultCountry",
+    "qualified_name": "withoutLoneVaultCountry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549918,
+    "end_line": 549921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "37a0729aae369347c466172506c81e083ec149ab1cd6fabc040be84e67065864",
+    "calls": [
+      "hasVaultPostalAddress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549922:20320771",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "parseVaultContactInput",
+    "qualified_name": "parseVaultContactInput",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549922,
+    "end_line": 549960,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "d208f7b8ce9650792cbb3e8f7cc8f7ce518a75533165fce2a0fbadec2c6f81cb",
+    "calls": [
+      ".find",
+      "EMAIL_PATTERN.test",
+      "PHONE_PATTERN.test",
+      "canonicalVaultCountryCode",
+      "hasVaultPostalAddress",
+      "input2.address[computed].trim",
+      "input2.email.trim",
+      "input2.label.trim",
+      "isVaultCountryCode",
+      "withoutLoneVaultCountry"
+    ],
+    "writes": [
+      "entered[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549994:20323964",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "isVaultContactFormFieldId",
+    "qualified_name": "isVaultContactFormFieldId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549994,
+    "end_line": 549996,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "4eeb97a3dcade8d90dca1930b0d21c77e7e504ea098d0597ee2cd7178b9d36e8",
+    "calls": [
+      "VAULT_CONTACT_FORM_FIELD_IDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549997:20324078",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactFormValueProblem",
+    "qualified_name": "vaultContactFormValueProblem",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549997,
+    "end_line": 550009,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "value"
+    ],
+    "body_sha256": "b9a1c17f382b6d27a2c5bacf3ec5aaad3ba11ff49f3e4319f339b549c2a275a0",
+    "calls": [
+      "JSON.stringify",
+      "canonicalVaultCountryCode",
+      "isVaultCountryCode",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550010:20324707",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "formPrefillValue",
+    "qualified_name": "formPrefillValue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550010,
+    "end_line": 550018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "raw"
+    ],
+    "body_sha256": "909e407d360adbea206446fa657200a3538c5785866e8da842d56d3ca7b31e7b",
+    "calls": [
+      ".slice",
+      "canonicalVaultCountryCode",
+      "isVaultCountryCode",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550019:20325038",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactFormFields",
+    "qualified_name": "vaultContactFormFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550019,
+    "end_line": 550024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefill = {}"
+    ],
+    "body_sha256": "4cf337974302ed81f6bf8c491df6e3088eb6a9d2bb507afbb5943cd93b51a576",
+    "calls": [
+      "CONTACT_FORM_FIELDS.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550025:20325280",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactInputOfForm",
+    "qualified_name": "vaultContactInputOfForm",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550025,
+    "end_line": 550037,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "bb69773d64dfda1d1d7c15258cbc15c73d059300fb602ffb61df4b33895e5ce9",
+    "calls": [
+      "Object.entries"
+    ],
+    "writes": [
+      "address[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550039:20325737",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactPrefillOf",
+    "qualified_name": "vaultContactPrefillOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550039,
+    "end_line": 550055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "contact"
+    ],
+    "body_sha256": "24b99d35f860fbba76bdc2aad14e8e047838d4bde371bea145757cd2b36c430a",
+    "calls": [
+      "mergeVaultContactPrefill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550056:20326203",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "mergeVaultContactPrefill",
+    "qualified_name": "mergeVaultContactPrefill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550056,
+    "end_line": 550067,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  saved,\n  changes = {}\n}"
+    ],
+    "body_sha256": "2c09a42c10f1dd713413ec28a4b6d6442a7ed536a42dd9da8a2656e898fc68f5",
+    "calls": [
+      "change.trim"
+    ],
+    "writes": [
+      "merged[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550076:20326693",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactSummary",
+    "qualified_name": "vaultContactSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550076,
+    "end_line": 550079,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "contact"
+    ],
+    "body_sha256": "79208481c42975dd31e0a22cbd291afc7805827bb6f0bb3df31e6118e983f759",
+    "calls": [
+      ".filter",
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550080:20326970",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "contactText",
+    "qualified_name": "contactText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550080,
+    "end_line": 550082,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "e871da5dd12263f375030bb364489db7fd00db3d19783a28f666ba6088c9f805",
+    "calls": [
+      ".max",
+      ".optional",
+      ".trim",
+      "external_exports3.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550109:20327942",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultContactChangeSummary",
+    "qualified_name": "vaultContactChangeSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550109,
+    "end_line": 550115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "1d4c04e77f13e2de381526a08ecb3df5bf3a3d03b89d4c3c5e582cb9641d3a10",
+    "calls": [
+      ".join",
+      "VAULT_CONTACT_FORM_FIELD_IDS.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550116:20328248",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/vault-contact.ts",
+    "name": "vaultToolParameters",
+    "qualified_name": "vaultToolParameters",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550116,
+    "end_line": 550125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cards"
+    ],
+    "body_sha256": "39ba163e25ebba4002b2c401b525378d6f465dd323fe011db3779dc2f112c2cc",
+    "calls": [
+      ".describe",
+      ".min",
+      ".optional",
+      ".strict",
+      ".trim",
+      "contactParameter.optional",
+      "external_exports3.enum",
+      "external_exports3.object",
+      "external_exports3.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

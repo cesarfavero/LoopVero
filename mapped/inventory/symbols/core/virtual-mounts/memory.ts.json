@@ -1,0 +1,1020 @@
+[
+  {
+    "id": "host:769526:29502283",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryFolderFactsOf",
+    "qualified_name": "memoryFolderFactsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769526,
+    "end_line": 769529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a69a4206b323444b75b7c9f2315170e174bcb9fc97b6d36aaba4add90a5b9563",
+    "calls": [
+      "deps.memoryFolders",
+      "folders.list",
+      "memoryFolderFacts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769530:29502455",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryFolderFactCandidate",
+    "qualified_name": "memoryFolderFactCandidate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769530,
+    "end_line": 769544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fact",
+      "index",
+      "teamBot"
+    ],
+    "body_sha256": "a17bde40e13bf80dce9495cfa494cb5b1d9a90c3639e4d62b78e70e6a41c14e0",
+    "calls": [
+      "String",
+      "memoryFolderAudienceNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769546:29502985",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "collectMemoryCandidates",
+    "qualified_name": "collectMemoryCandidates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769546,
+    "end_line": 769577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "scopes"
+    ],
+    "body_sha256": "f3441fe3e57caf8d7264e734724582243b653c761bb457dbb3cfd1d70adf7040",
+    "calls": [
+      ".map",
+      "candidates.push",
+      "deps.memoryFolders",
+      "deps.memoryStore",
+      "deps.userMemory",
+      "memoryFolderFactsOf",
+      "scopes.includes",
+      "store.listMemories",
+      "userBot.listMemories",
+      "userMemory.listAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769578:29504022",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "candidateLabel",
+    "qualified_name": "candidateLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769578,
+    "end_line": 769590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "7165dc9b562835e04f6c7abb97c6d00e4ed567619a5d2c99b16aa9105e594765",
+    "calls": [
+      "agentMemorySourceTag",
+      "candidate.via.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769591:29504737",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryCandidateLine",
+    "qualified_name": "memoryCandidateLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769591,
+    "end_line": 769593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "a99bf6d819cdbfeb4db7108718d02237afbd1cdd1de572ebd146a51288aa2559",
+    "calls": [
+      "candidateLabel",
+      "formatMemoryDate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769594:29504890",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryScopePath",
+    "qualified_name": "memoryScopePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769594,
+    "end_line": 769596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope"
+    ],
+    "body_sha256": "49bb066271cc81b5841ba030362c7da95ac29f7e9f83327f26728761089699ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769597:29504957",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryPath",
+    "qualified_name": "memoryPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769597,
+    "end_line": 769599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "f788c29aa8bda5620348ea0dde447aec22bedab58bfd77cf39757ef296923434",
+    "calls": [
+      "encodeURIComponent",
+      "memoryScopePath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769600:29505076",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "scopeOfPath",
+    "qualified_name": "scopeOfPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769600,
+    "end_line": 769603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "ccb544d98041470fc7c2d6f61f0c67e3ffa41ab82b8504d4ddad9915aac55c7c",
+    "calls": [
+      "MEMORY_SCOPES.find",
+      "path33.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769604:29505208",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "availableScopes",
+    "qualified_name": "availableScopes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769604,
+    "end_line": 769612,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "7d6b50c2ca4443212beced74392ddcec0bf70776ee80976da630e26455143172",
+    "calls": [
+      "MEMORY_SCOPES.filter",
+      "deps.memoryStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769613:29505555",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryDoc",
+    "qualified_name": "memoryDoc",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769613,
+    "end_line": 769621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate",
+      "position"
+    ],
+    "body_sha256": "32dd4cf58c627840663b4e4e8c7be0f898d1f3958b3b819661b877cc4adc0a9f",
+    "calls": [
+      "memoryCandidateLine",
+      "memoryPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769623:29505825",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "createMemoryVirtualMount",
+    "qualified_name": "createMemoryVirtualMount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769623,
+    "end_line": 769684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "229ada1f2e27a1aa0f3484fb69e5ca84585ae629d996a0fdd2a44b2fec20f39c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769624:29505889",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "scopesUnder",
+    "qualified_name": "createMemoryVirtualMount/scopesUnder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769624,
+    "end_line": 769629,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "4489f84af1b3dc0eebd7574b43c5349b951267a2a623d55b30e5f18460072867",
+    "calls": [
+      "available.filter",
+      "availableScopes",
+      "scopeOfPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769632:29506223",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "list",
+    "qualified_name": "createMemoryVirtualMount/list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769632,
+    "end_line": 769658,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "path33"
+    ],
+    "body_sha256": "00aaa37bd35f6b4321991cf94e3eca83d96209b24b69275d140a078b26632b9c",
+    "calls": [
+      ".filter",
+      "candidates.map",
+      "collectMemoryCandidates",
+      "isUnder",
+      "refused2",
+      "scopes.map",
+      "scopes.some",
+      "scopesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769659:29507235",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "read",
+    "qualified_name": "createMemoryVirtualMount/read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769659,
+    "end_line": 769677,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "path33",
+      "window2 = {}"
+    ],
+    "body_sha256": "d7e51e1ac16c2b33a85d55c49ef3f0af96d792c107be4846018aa23d43b8328a",
+    "calls": [
+      ".filter",
+      "candidates.filter",
+      "collectMemoryCandidates",
+      "path33.split",
+      "refused2",
+      "scopesUnder",
+      "selected.map",
+      "windowOf2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769678:29508152",
+    "artifact": "host",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "search",
+    "qualified_name": "createMemoryVirtualMount/search",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769678,
+    "end_line": 769682,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "request5"
+    ],
+    "body_sha256": "ae405f259cbb7061c6e802f34a779981112dd480af3df333b107d4e97c7a4d4d",
+    "calls": [
+      ".map",
+      "collectMemoryCandidates",
+      "memorySearch",
+      "scopesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565195:21039626",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryFolderFactsOf",
+    "qualified_name": "memoryFolderFactsOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565195,
+    "end_line": 565198,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a69a4206b323444b75b7c9f2315170e174bcb9fc97b6d36aaba4add90a5b9563",
+    "calls": [
+      "deps.memoryFolders",
+      "folders.list",
+      "memoryFolderFacts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565199:21039798",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryFolderFactCandidate",
+    "qualified_name": "memoryFolderFactCandidate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565199,
+    "end_line": 565213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fact",
+      "index",
+      "teamBot"
+    ],
+    "body_sha256": "a17bde40e13bf80dce9495cfa494cb5b1d9a90c3639e4d62b78e70e6a41c14e0",
+    "calls": [
+      "String",
+      "memoryFolderAudienceNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565215:21040328",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "collectMemoryCandidates",
+    "qualified_name": "collectMemoryCandidates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565215,
+    "end_line": 565246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "scopes"
+    ],
+    "body_sha256": "0601279b3661cb54bb48bebb451fbb780a6fd62cb4263fbed1a033b022518fd7",
+    "calls": [
+      ".map",
+      "candidates.push",
+      "deps.memoryFolders",
+      "deps.memoryStore",
+      "deps.userMemory",
+      "memoryFolderFactsOf",
+      "scopes.includes",
+      "store.listMemories",
+      "userBot.listMemories",
+      "userMemory.listAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565247:21041365",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "candidateLabel",
+    "qualified_name": "candidateLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565247,
+    "end_line": 565259,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "7165dc9b562835e04f6c7abb97c6d00e4ed567619a5d2c99b16aa9105e594765",
+    "calls": [
+      "agentMemorySourceTag",
+      "candidate.via.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565260:21042080",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryCandidateLine",
+    "qualified_name": "memoryCandidateLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565260,
+    "end_line": 565262,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "a99bf6d819cdbfeb4db7108718d02237afbd1cdd1de572ebd146a51288aa2559",
+    "calls": [
+      "candidateLabel",
+      "formatMemoryDate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565263:21042233",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryScopePath",
+    "qualified_name": "memoryScopePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565263,
+    "end_line": 565265,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope"
+    ],
+    "body_sha256": "49bb066271cc81b5841ba030362c7da95ac29f7e9f83327f26728761089699ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565266:21042300",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryPath",
+    "qualified_name": "memoryPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565266,
+    "end_line": 565268,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "f788c29aa8bda5620348ea0dde447aec22bedab58bfd77cf39757ef296923434",
+    "calls": [
+      "encodeURIComponent",
+      "memoryScopePath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565269:21042419",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "scopeOfPath",
+    "qualified_name": "scopeOfPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565269,
+    "end_line": 565272,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "ccb544d98041470fc7c2d6f61f0c67e3ffa41ab82b8504d4ddad9915aac55c7c",
+    "calls": [
+      "MEMORY_SCOPES.find",
+      "path33.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565273:21042551",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "availableScopes",
+    "qualified_name": "availableScopes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565273,
+    "end_line": 565281,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "7d6b50c2ca4443212beced74392ddcec0bf70776ee80976da630e26455143172",
+    "calls": [
+      "MEMORY_SCOPES.filter",
+      "deps.memoryStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565282:21042898",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "memoryDoc",
+    "qualified_name": "memoryDoc",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565282,
+    "end_line": 565290,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate",
+      "position"
+    ],
+    "body_sha256": "32dd4cf58c627840663b4e4e8c7be0f898d1f3958b3b819661b877cc4adc0a9f",
+    "calls": [
+      "memoryCandidateLine",
+      "memoryPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565292:21043168",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "createMemoryVirtualMount",
+    "qualified_name": "createMemoryVirtualMount",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565292,
+    "end_line": 565353,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "9da1418449743751fe2b967741f0df925e0be58d43e662fdb3f1625ada25fa8a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565293:21043232",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "scopesUnder",
+    "qualified_name": "createMemoryVirtualMount/scopesUnder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565293,
+    "end_line": 565298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "4489f84af1b3dc0eebd7574b43c5349b951267a2a623d55b30e5f18460072867",
+    "calls": [
+      "available.filter",
+      "availableScopes",
+      "scopeOfPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565301:21043566",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "list",
+    "qualified_name": "createMemoryVirtualMount/list",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565301,
+    "end_line": 565327,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "path33"
+    ],
+    "body_sha256": "288182952e226ae1742f75a6f5b65a4cca8b90765d94151e486dc2518cbd5c07",
+    "calls": [
+      ".filter",
+      "candidates.map",
+      "collectMemoryCandidates",
+      "isUnder",
+      "refused",
+      "scopes.map",
+      "scopes.some",
+      "scopesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565328:21044576",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "read",
+    "qualified_name": "createMemoryVirtualMount/read",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565328,
+    "end_line": 565346,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "path33",
+      "window2 = {}"
+    ],
+    "body_sha256": "1876d0d187ef62c60c8dd6dccf02c39b9f4d2165e597d8a96c36f35d25bdff1e",
+    "calls": [
+      ".filter",
+      "candidates.filter",
+      "collectMemoryCandidates",
+      "path33.split",
+      "refused",
+      "scopesUnder",
+      "selected.map",
+      "windowOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565347:21045490",
+    "artifact": "evaluation",
+    "module": "core/virtual-mounts/memory.ts",
+    "name": "search",
+    "qualified_name": "createMemoryVirtualMount/search",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565347,
+    "end_line": 565351,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_access",
+      "request3"
+    ],
+    "body_sha256": "38a1547c52ed5b1f627a0aad182fd3ac99485b2f7abb9d9587397393574f8f4e",
+    "calls": [
+      ".map",
+      "collectMemoryCandidates",
+      "memorySearch",
+      "scopesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

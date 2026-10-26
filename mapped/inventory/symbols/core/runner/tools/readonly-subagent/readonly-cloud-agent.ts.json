@@ -1,0 +1,332 @@
+[
+  {
+    "id": "host:777782:29897858",
+    "artifact": "host",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "calledAction",
+    "qualified_name": "calledAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777782,
+    "end_line": 777790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawArgs"
+    ],
+    "body_sha256": "fff6c7cb8011903990448600a6cfd87358c8618f4bd9e20f9b39598fa866e361",
+    "calls": [
+      "JSON.parse",
+      "cloudAgentCall.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:777791:29898134",
+    "artifact": "host",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "refuseUnlessRead",
+    "qualified_name": "refuseUnlessRead",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777791,
+    "end_line": 777797,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "964e8fea5b868fed9696c4b2f68f3b0a763635c8efb2edab0ac6def206a09d3f",
+    "calls": [
+      "CLOUD_AGENT_READ_ACTIONS.join",
+      "CLOUD_AGENT_READ_ACTIONS.some",
+      "new ToolCallUnexpectedEnvironmentError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ToolCallUnexpectedEnvironmentError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777798:29898617",
+    "artifact": "host",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "oneShot",
+    "qualified_name": "oneShot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777798,
+    "end_line": 777800,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "153f561c362fc26eab3442506f4de073944bc640edab62dd49386c54d4539e5d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777801:29898667",
+    "artifact": "host",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "withReadonlyCloudAgentActions",
+    "qualified_name": "withReadonlyCloudAgentActions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777801,
+    "end_line": 777816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "a1d0ba9bc624beb6b23120328c7345220571bb24695671160003f5e3c49aab20",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777804:29898751",
+    "artifact": "host",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "execute",
+    "qualified_name": "withReadonlyCloudAgentActions/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777804,
+    "end_line": 777814,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "be3ef094f5555aad2f4edf40d32ab74a98bcc7edbef9401474518661d77d595a",
+    "calls": [
+      "calledAction",
+      "ctx.with",
+      "oneShot",
+      "refuseUnlessRead",
+      "tool.execute"
+    ],
+    "writes": [
+      "rawArgs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577477:21626243",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "calledAction",
+    "qualified_name": "calledAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577477,
+    "end_line": 577485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawArgs"
+    ],
+    "body_sha256": "cfc1998aa46d8a37c9762af6d706ab104c5faedc1a54f59c92cae9fcdcd3daed",
+    "calls": [
+      "JSON.parse",
+      "cloudAgentCall.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:577486:21626515",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "refuseUnlessRead",
+    "qualified_name": "refuseUnlessRead",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577486,
+    "end_line": 577492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "964e8fea5b868fed9696c4b2f68f3b0a763635c8efb2edab0ac6def206a09d3f",
+    "calls": [
+      "CLOUD_AGENT_READ_ACTIONS.join",
+      "CLOUD_AGENT_READ_ACTIONS.some",
+      "new ToolCallUnexpectedEnvironmentError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ToolCallUnexpectedEnvironmentError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577493:21626998",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "oneShot2",
+    "qualified_name": "oneShot2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577493,
+    "end_line": 577495,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "d5ac23077f77664206f556972ac7dc1cd5ef203bab7faf91999bcb797b149f9d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577496:21627049",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "withReadonlyCloudAgentActions",
+    "qualified_name": "withReadonlyCloudAgentActions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577496,
+    "end_line": 577511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "d4b0ce658f1faccee0cfccb1244a638382830f1cfc6c3f8317a570a1c6be32fc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577499:21627133",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-cloud-agent.ts",
+    "name": "execute",
+    "qualified_name": "withReadonlyCloudAgentActions/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577499,
+    "end_line": 577509,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "2011bdff2346f13ae7754c2968e1a8c7a9e5d1f4e7e0543112e961ff90af034a",
+    "calls": [
+      "calledAction",
+      "ctx.with",
+      "oneShot2",
+      "refuseUnlessRead",
+      "tool.execute"
+    ],
+    "writes": [
+      "rawArgs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "id": "host:701434:26658381",
+    "artifact": "host",
+    "module": "host/extensions/mcp/mcp-app-runtime.ts",
+    "name": "isVisibleToApps",
+    "qualified_name": "isVisibleToApps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701434,
+    "end_line": 701438,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "a696fca18a773092a32e1b06f800933fe86d5162903045bf25fd58387f37aa15",
+    "calls": [
+      "Array.isArray",
+      "isUnknownRecord2",
+      "visibility.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701439:26658622",
+    "artifact": "host",
+    "module": "host/extensions/mcp/mcp-app-runtime.ts",
+    "name": "appCallableTool",
+    "qualified_name": "appCallableTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701439,
+    "end_line": 701447,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool",
+      "args"
+    ],
+    "body_sha256": "223b5ddefe9670532e721e280b938b44ebabdd9adf8b7dc02d4106b4ab17b0f7",
+    "calls": [
+      "isDeclaredReadOnlyMcpTool",
+      "isVisibleToApps"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701448:26659116",
+    "artifact": "host",
+    "module": "host/extensions/mcp/mcp-app-runtime.ts",
+    "name": "appToolCallResultOf",
+    "qualified_name": "appToolCallResultOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701448,
+    "end_line": 701465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "6a0bcc22c026aa36710757d833e4a3bf1d2216fbec7bcede3c0c681c6bf035b6",
+    "calls": [
+      "mcpAppToolResultPayload",
+      "writeMcpAppJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701466:26659835",
+    "artifact": "host",
+    "module": "host/extensions/mcp/mcp-app-runtime.ts",
+    "name": "parseToolArguments",
+    "qualified_name": "parseToolArguments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701466,
+    "end_line": 701472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argumentsJson"
+    ],
+    "body_sha256": "88772ceb98b9a811ac0a15f66ff9744d216d0c70700da2df35b120dff42a6314",
+    "calls": [
+      "Struct.fromJsonString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:701473:26659974",
+    "artifact": "host",
+    "module": "host/extensions/mcp/mcp-app-runtime.ts",
+    "name": "callMcpAppTool",
+    "qualified_name": "callMcpAppTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701473,
+    "end_line": 701500,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcp",
+      "args"
+    ],
+    "body_sha256": "f6ece64b5aaaaa908c95da453797e6cff48bf6535c211d9ac488a1d86fc110c1",
+    "calls": [
+      "appCallableTool",
+      "appToolCallResultOf",
+      "createContext",
+      "executor.execute",
+      "mcp.createExecutor",
+      "mcp.findTool",
+      "new McpArgs",
+      "parseToolArguments"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

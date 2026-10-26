@@ -1,0 +1,168 @@
+[
+  {
+    "id": "host:541765:19878884",
+    "artifact": "host",
+    "module": "host/extensions/content-search/agent-content-search.ts",
+    "name": "entrySearchText",
+    "qualified_name": "entrySearchText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541765,
+    "end_line": 541776,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "8e13c394fbdfff7f549cefd061a0c4b3829d0e792106ce8dc620e9e21d292bcf",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541777:19879168",
+    "artifact": "host",
+    "module": "host/extensions/content-search/agent-content-search.ts",
+    "name": "entryRole",
+    "qualified_name": "entryRole",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541777,
+    "end_line": 541779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "b38a62bbd71ed46693913b20791143bd52f2adf0b1741d3cab0ef5585bd76a10",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541780:19879260",
+    "artifact": "host",
+    "module": "host/extensions/content-search/agent-content-search.ts",
+    "name": "flatten",
+    "qualified_name": "flatten",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541780,
+    "end_line": 541782,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "1a937c86a38579b10117e32476e26e6f648f61192bfe83cb220029de2e61dcd2",
+    "calls": [
+      ".trim",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541783:19879332",
+    "artifact": "host",
+    "module": "host/extensions/content-search/agent-content-search.ts",
+    "name": "buildContentSnippet",
+    "qualified_name": "buildContentSnippet",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541783,
+    "end_line": 541794,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "normalizedQuery"
+    ],
+    "body_sha256": "1541f2ad4ec55ccdf7d14565110f7146aae08654b736211770a7dde07c58c7ba",
+    "calls": [
+      ".indexOf",
+      "Math.max",
+      "Math.min",
+      "flat.slice",
+      "flat.toLowerCase",
+      "flatten"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541795:19879871",
+    "artifact": "host",
+    "module": "host/extensions/content-search/agent-content-search.ts",
+    "name": "findAgentContentMatches",
+    "qualified_name": "findAgentContentMatches",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541795,
+    "end_line": 541813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "normalizedQuery",
+      "limit3 = AGENT_CONTENT_SEARCH_MAX_MATCHES_PER_AGENT"
+    ],
+    "body_sha256": "bd2e61e238b0fda01fca45807ada4f02de614cb2649be62fcdd3d4687e921de7",
+    "calls": [
+      "buildContentSnippet",
+      "entryRole",
+      "entrySearchText",
+      "isHiddenOutboundAgentPeerMessageEntry",
+      "matches.push"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,3530 @@
+[
+  {
+    "id": "host:682290:25915892",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "normalizeSchedule",
+    "qualified_name": "normalizeSchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682290,
+    "end_line": 682292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2824112704df76f0f3397eb0d17cce92caa8f3ad060e9cf067fa25698d1f59cb",
+    "calls": [
+      ".replace",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682294:25916023",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "splitScheduleTimeZone",
+    "qualified_name": "splitScheduleTimeZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682294,
+    "end_line": 682298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "11af8ba607dc69d51e03e2600288be18d599ef403484a1ff63fd0dbf1eeb852a",
+    "calls": [
+      "SCHEDULE_TZ_PREFIX.exec",
+      "normalizeSchedule",
+      "normalized.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682299:25916314",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "expandAlias",
+    "qualified_name": "expandAlias",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682299,
+    "end_line": 682302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "bfddaf3e7c9def4796f7c0ed66e4e9cd44201aa441513ed408738025698e51d7",
+    "calls": [
+      "schedule.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682303:25916431",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseCronField",
+    "qualified_name": "parseCronField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682303,
+    "end_line": 682331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field",
+      "min",
+      "max"
+    ],
+    "body_sha256": "c341b38aa14f17a545b81f110c5810853d4ae57058c8b857260791368b93af2b",
+    "calls": [
+      "Number",
+      "Number.isInteger",
+      "field.split",
+      "new Set",
+      "part.split",
+      "rangePart.includes",
+      "rangePart.split",
+      "values.add"
+    ],
+    "writes": [
+      "rangeEnd",
+      "rangeStart",
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682332:25917540",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseCron",
+    "qualified_name": "parseCron",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682332,
+    "end_line": 682354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "expression"
+    ],
+    "body_sha256": "8ee1a540b7b48efff8054dc74ce3f19e7a3fed95cf6022e0cf6344b66c181ae5",
+    "calls": [
+      ".map",
+      "expression.split",
+      "new Set",
+      "parseCronField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682355:25918372",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronDayMatches",
+    "qualified_name": "cronDayMatches",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682355,
+    "end_line": 682363,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "wall"
+    ],
+    "body_sha256": "fc1c512ae6b23f172f638f65b0fad8d480331b85bb8bcc4dc9f4a2b79d226fbe",
+    "calls": [
+      "matcher.dayOfMonth.has",
+      "matcher.dayOfWeek.has",
+      "matcher.month.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682364:25918791",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronMatchesWallClock",
+    "qualified_name": "cronMatchesWallClock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682364,
+    "end_line": 682368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "wall"
+    ],
+    "body_sha256": "68d920ac1eb4d6b6a05932c433763bd9d0831aa614ee402d597d7fa3df098867",
+    "calls": [
+      "cronDayMatches",
+      "matcher.hour.has",
+      "matcher.minute.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682369:25918984",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "boxLocalWallClock",
+    "qualified_name": "boxLocalWallClock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682369,
+    "end_line": 682378,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "date6"
+    ],
+    "body_sha256": "a2df5215825ea3ff6403145b80623864903f0a92a48b0154fa0e839769c02849",
+    "calls": [
+      "date6.getDate",
+      "date6.getDay",
+      "date6.getFullYear",
+      "date6.getHours",
+      "date6.getMinutes",
+      "date6.getMonth"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682389:25919378",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "getZonedFormatter",
+    "qualified_name": "getZonedFormatter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682389,
+    "end_line": 682409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "timeZone"
+    ],
+    "body_sha256": "c948f6b17287067997329ff8d221c0ce3491513609355fdb6c2791781c601487",
+    "calls": [
+      "new Intl.DateTimeFormat",
+      "zonedFormatterCache.get",
+      "zonedFormatterCache.set"
+    ],
+    "writes": [
+      "formatter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:682410:25919884",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "zonedWallClock",
+    "qualified_name": "zonedWallClock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682410,
+    "end_line": 682424,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "date6",
+      "formatter"
+    ],
+    "body_sha256": "3e339e9d3216745081c073c02a086e295306db3f22acadb24747f598c4e0e63e",
+    "calls": [
+      "Number",
+      "formatter.formatToParts"
+    ],
+    "writes": [
+      "lookup3[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682427:25920414",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isSameWallClockDay",
+    "qualified_name": "isSameWallClockDay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682427,
+    "end_line": 682429,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "f51d51e48d572f08aa67e6d15b62500a142c411e4973d537da90a517db4ab3ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682430:25920540",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "nextCronRun",
+    "qualified_name": "nextCronRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682430,
+    "end_line": 682456,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "afterMs",
+      "wallClockOf"
+    ],
+    "body_sha256": "304d10ce7243262afeaa7cf11c5905c9995aa26f08ce004684a0cc0b47e95f68",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "cronDayMatches",
+      "cronMatchesWallClock",
+      "isSameWallClockDay",
+      "new Date",
+      "wallClockOf"
+    ],
+    "writes": [
+      "cursorMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682457:25921509",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseTemporalDurationMs",
+    "qualified_name": "parseTemporalDurationMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682457,
+    "end_line": 682469,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "duration3",
+      "allowZero"
+    ],
+    "body_sha256": "8b0ebe349e33a847e53da5dcd0b31fc1fbaaff2b86bf86997461da9f73c243f5",
+    "calls": [
+      "Number",
+      "TEMPORAL_DURATION_PART.exec",
+      "part[computed].toLowerCase"
+    ],
+    "writes": [
+      "TEMPORAL_DURATION_PART.lastIndex",
+      "consumed",
+      "part",
+      "totalMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682470:25922064",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseEverySchedule",
+    "qualified_name": "parseEverySchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682470,
+    "end_line": 682480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "6235d815e5470bec94b03e34dfa4b874de5843d384ccfb417fa717693cbe6eb9",
+    "calls": [
+      "TEMPORAL_EVERY_PATTERN.exec",
+      "intervalAndPhase.split",
+      "parseTemporalDurationMs",
+      "schedule.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682481:25922633",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseEveryIntervalMs",
+    "qualified_name": "parseEveryIntervalMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682481,
+    "end_line": 682483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "2644d5bbbe281220f3f2e2ef7c6b5ca1ec019e800297f510bc953fcb6b859d86",
+    "calls": [
+      "parseEverySchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682484:25922736",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "compileCronMatcher",
+    "qualified_name": "compileCronMatcher",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682484,
+    "end_line": 682489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "2c3d5aa2ff6fdddccdfb7c0686e59996ad387eb95b169e7776342203d772f8a1",
+    "calls": [
+      "expandAlias",
+      "getZonedFormatter",
+      "parseCron",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682490:25923049",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "wallClockOfInstant",
+    "qualified_name": "wallClockOfInstant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682490,
+    "end_line": 682494,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2",
+      "timeZone"
+    ],
+    "body_sha256": "987b85c5ca08be1006b5ca492a13078f8fd41c3ed2ab365f7b7702ef64fda41e",
+    "calls": [
+      "boxLocalWallClock",
+      "getZonedFormatter",
+      "new Date",
+      "zonedWallClock"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682495:25923315",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronIntervalIsAtLeast",
+    "qualified_name": "cronIntervalIsAtLeast",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682495,
+    "end_line": 682521,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "759f12dcceb3e4f925b7a05a038668511d211547dbc662fbdc01aa205eb6472b",
+    "calls": [
+      ".flatMap",
+      ".sort",
+      "Date.UTC",
+      "cronDayMatches",
+      "date6.getUTCDate",
+      "date6.getUTCDay",
+      "date6.getUTCMonth",
+      "new Date"
+    ],
+    "writes": [
+      "dayMs",
+      "index",
+      "previousDayMatches"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682522:25924444",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isValidSchedule",
+    "qualified_name": "isValidSchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682522,
+    "end_line": 682530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "81e9233d03f3f1035c0d88dd6388dfe0de8843b4f273ba291983840edc48d386",
+    "calls": [
+      "compileCronMatcher",
+      "cronIntervalIsAtLeast",
+      "normalizeSchedule",
+      "parseEveryIntervalMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682531:25924878",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "clampScheduleToMinimumInterval",
+    "qualified_name": "clampScheduleToMinimumInterval",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682531,
+    "end_line": 682579,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "27119174bb24e05cb71fab23554b9419a564d09a97b8a256ea514d1f1dd1815c",
+    "calls": [
+      ".sort",
+      ".split",
+      ".trim",
+      "Number.isSafeInteger",
+      "String",
+      "calendarFields.join",
+      "commentedExpression.indexOf",
+      "commentedExpression.slice",
+      "cronIntervalIsAtLeast",
+      "expandAlias",
+      "fields3.join",
+      "fields3.slice",
+      "getZonedFormatter",
+      "isValidSchedule",
+      "new Set",
+      "normalizeSchedule",
+      "normalized.startsWith",
+      "parseCron",
+      "parseCronField",
+      "parseEveryIntervalMs",
+      "selected.join",
+      "selected.pop",
+      "selected.push",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [
+      "fields3[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682580:25927523",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "computeNextRunAt",
+    "qualified_name": "computeNextRunAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682580,
+    "end_line": 682590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "afterMs",
+      "timeZone"
+    ],
+    "body_sha256": "cbefbe5013c1c9ce7101b48590c38860e410e25a22f941e8f8bd60884626ab93",
+    "calls": [
+      "Math.floor",
+      "compileCronMatcher",
+      "nextCronRunAt",
+      "normalizeSchedule",
+      "parseEverySchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682591:25928021",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "nextCronRunAt",
+    "qualified_name": "nextCronRunAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682591,
+    "end_line": 682596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "afterMs",
+      "timeZone"
+    ],
+    "body_sha256": "6322554128f5a8c79b3d7eb972533bed55330f3fd74466fe472445552741358f",
+    "calls": [
+      "getZonedFormatter",
+      "nextCronRun"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682597:25928367",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "automationAnchor",
+    "qualified_name": "automationAnchor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682597,
+    "end_line": 682599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "automation"
+    ],
+    "body_sha256": "689b549d62db1b63877b6dd835b5c463e819001936cb8783d4e73ac2d439edc5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682609:25928575",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "formatClock",
+    "qualified_name": "formatClock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682609,
+    "end_line": 682613,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hour",
+      "minute"
+    ],
+    "body_sha256": "3c5901a98ff2b089bfc3e98a9fda053492f3bb54e9610a115e04625eb0335773",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682629:25929019",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "joinWithAnd",
+    "qualified_name": "joinWithAnd",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682629,
+    "end_line": 682633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts"
+    ],
+    "body_sha256": "6ab96f982e4599bc7934773d6444f72e328145a8eabbe942b923ce92a7e54482",
+    "calls": [
+      ".join",
+      "parts.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682634:25929240",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "formatDayOfMonthOrdinal",
+    "qualified_name": "formatDayOfMonthOrdinal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682634,
+    "end_line": 682646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "day"
+    ],
+    "body_sha256": "a7f5102b70cb2346e7d7f5ee8b213c967810cbfb95359ce9685b9eff423473ce",
+    "calls": [],
+    "writes": [
+      "suffix"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682647:25929538",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "ascending",
+    "qualified_name": "ascending",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682647,
+    "end_line": 682649,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "b933ee8cf83af10b7986324ee1714d5407556dd26ae898fd9924b07c6eddc5c0",
+    "calls": [
+      ".sort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682650:25929615",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "uniformStride",
+    "qualified_name": "uniformStride",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682650,
+    "end_line": 682662,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sorted"
+    ],
+    "body_sha256": "57186b4d8f1c7e794ded00ac148731833fe146dde972f10a6006b9ee0099ffd6",
+    "calls": [],
+    "writes": [
+      "index",
+      "previous"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682665:25930145",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "setsEqual",
+    "qualified_name": "setsEqual",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682665,
+    "end_line": 682667,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "f76ba11374b386c4c2c364821e25a91134c277b546345a9f01cf100131407671",
+    "calls": [
+      ".every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682668:25930246",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyCronDays",
+    "qualified_name": "classifyCronDays",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682668,
+    "end_line": 682708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "03de9e0207c1d252936a401e7135aefd5d6c0ea4a18ddbcaa9736a3aa372d4b0",
+    "calls": [
+      "ascending",
+      "classifyNthWeekday",
+      "setsEqual",
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 16,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682711:25931983",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyNthWeekday",
+    "qualified_name": "classifyNthWeekday",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682711,
+    "end_line": 682722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "9e38ea941e031065152a2fd67f5584564936e7e8266f5bc056c9a1ad2e1452b4",
+    "calls": [
+      "ascending",
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682724:25932588",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "englishCronDays",
+    "qualified_name": "englishCronDays",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682724,
+    "end_line": 682769,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "days"
+    ],
+    "body_sha256": "946a2b09ec8c6f608024332f02b297f6651886b3aa380abebb37e2663b803092",
+    "calls": [
+      "days.days.map",
+      "formatDayOfMonthOrdinal",
+      "invariant",
+      "joinWithAnd"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682770:25934334",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "minuteIntervalOf",
+    "qualified_name": "minuteIntervalOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682770,
+    "end_line": 682777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sorted"
+    ],
+    "body_sha256": "86e05eee04e09a23f6150b030df3a3a48fafbd1b56665153d656695d83a53a1b",
+    "calls": [
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682778:25934662",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "minuteOfHourToken",
+    "qualified_name": "minuteOfHourToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682778,
+    "end_line": 682780,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "minute"
+    ],
+    "body_sha256": "6bdbe156fdfefe0176f849426a501d55069fc170fd9d3cfced16e0186119e6c9",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682781:25934749",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyCronTime",
+    "qualified_name": "classifyCronTime",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682781,
+    "end_line": 682850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "b4308e1565b5960f14a5a3c498a30d42fe621fd291aa8b6d7d4ac437249d3d79",
+    "calls": [
+      "ascending",
+      "hours.map",
+      "minuteIntervalOf",
+      "minutes.map",
+      "uniformStride"
+    ],
+    "writes": [
+      "every"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 13,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682851:25937052",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "englishEvery",
+    "qualified_name": "englishEvery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682851,
+    "end_line": 682862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "every"
+    ],
+    "body_sha256": "462180fdf7cad1b2edc81b2356bb96d287f90eefdbf560cc1dd8f8c615fc5296",
+    "calls": [
+      "every.minutes.map",
+      "joinWithAnd",
+      "minuteOfHourToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682867:25937642",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMatcher",
+    "qualified_name": "describeCronMatcher",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682867,
+    "end_line": 682874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "forDisplay"
+    ],
+    "body_sha256": "37335cc84f4f0983f9f2a4752db156b2c77d6b66f954670932a963af9b2ec042",
+    "calls": [
+      "DISPLAY_ONLY_DAY_KINDS.has",
+      "classifyCronDays",
+      "classifyCronTime",
+      "describeCronTime",
+      "englishCronDays"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682875:25937978",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronTime",
+    "qualified_name": "describeCronTime",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682875,
+    "end_line": 682883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dayPhrase",
+      "time4"
+    ],
+    "body_sha256": "b42e7bdb7587b02ac2f57c1c42fc4f59e7c320cbdacb53212bed84b2fdb6ea66",
+    "calls": [
+      "englishEvery",
+      "formatClock",
+      "joinWithAnd",
+      "time4.times.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682884:25938486",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeOneShotSchedule",
+    "qualified_name": "describeOneShotSchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682884,
+    "end_line": 682899,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "492eadf507d955d48473b430f43a7c1160701f0783d22967ab72def831497c18",
+    "calls": [
+      ".schedule.startsWith",
+      "compileCronMatcher",
+      "formatClock",
+      "isCalendarDate",
+      "normalizeSchedule",
+      "parseEveryIntervalMs",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682900:25939346",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isCalendarDate",
+    "qualified_name": "isCalendarDate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682900,
+    "end_line": 682903,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ month, day }"
+    ],
+    "body_sha256": "f6b03fd6212abb8238c291a44db0ae62ffb186247f57349712e41a087e3180e3",
+    "calls": [
+      "date6.getDate",
+      "date6.getMonth",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682904:25939505",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeScheduleWith",
+    "qualified_name": "describeScheduleWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682904,
+    "end_line": 682919,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "normalized",
+      "forDisplay"
+    ],
+    "body_sha256": "80e096c96a26758fb637d43737aa5a0cde0cd7222a587c3c5bcdcc37b709d45c",
+    "calls": [
+      "EVERY_PATTERN.exec",
+      "compileCronMatcher",
+      "describeCronMatcher",
+      "describeOneShotSchedule",
+      "match2[computed].toLowerCase",
+      "parseEveryIntervalMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682920:25940223",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeSchedule",
+    "qualified_name": "describeSchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682920,
+    "end_line": 682923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "e868a68a2d399dfa6b97b82e56d01f0fd8dd082a5a85a40ebf6d8580eae5f72e",
+    "calls": [
+      "describeScheduleWith",
+      "normalizeSchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682924:25940377",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isApproximateCronTrigger",
+    "qualified_name": "isApproximateCronTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682924,
+    "end_line": 682926,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "991b39470aaa4bf933c090170cecffb7a17bb1c6ec4afd569c0781d5083e0778",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682927:25940493",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "approximateWhenShifted",
+    "qualified_name": "approximateWhenShifted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682927,
+    "end_line": 682929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2",
+      "sentence"
+    ],
+    "body_sha256": "54c9de9f78a0930ae27f76fe21d903fe08c3d78b9cff63be01207f25a02edaa0",
+    "calls": [
+      "isApproximateCronTrigger",
+      "sentence.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682930:25940644",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMember",
+    "qualified_name": "describeCronMember",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682930,
+    "end_line": 682932,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "155122675fa8efe123750134ec7c0dcdd14bab06b5e5f7079963c9c0d28cea96",
+    "calls": [
+      "approximateWhenShifted",
+      "describeSchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682934:25940799",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMemberWithZone",
+    "qualified_name": "describeCronMemberWithZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682934,
+    "end_line": 682938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "00dc48c2df485bd0b2491f4c922423fec07516dc29f763752c0de825939018d5",
+    "calls": [
+      "describeCronMember",
+      "isApproximateCronTrigger",
+      "sentence.includes",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682939:25941090",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronWindowNote",
+    "qualified_name": "cronWindowNote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682939,
+    "end_line": 682946,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "window2"
+    ],
+    "body_sha256": "92918dab3a25d80851f65106c5c06d017df0e8edebaf244ab72c7306bf02949f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682947:25941449",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTriggerWith",
+    "qualified_name": "describeTriggerWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682947,
+    "end_line": 682954,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2",
+      "describeCron"
+    ],
+    "body_sha256": "88751ab39e4c4df6a165dba33d52f37c73d801582788f2af96701ebd0f503747",
+    "calls": [
+      ".join",
+      "describeMember",
+      "rest.map",
+      "triggerList"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682948:25941529",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeMember",
+    "qualified_name": "describeTriggerWith/describeMember",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682948,
+    "end_line": 682948,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "c4e59b0497e31f844116e44fce009943f4df1291e05a5b7d7296f343975b6a90",
+    "calls": [
+      "describeCron",
+      "describeListener"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682955:25941789",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTrigger",
+    "qualified_name": "describeTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682955,
+    "end_line": 682957,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "3d5aa31e116b28de21260a7136b7926fc993a68969091e4a722e4f13c95fb4a3",
+    "calls": [
+      "describeTriggerWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682958:25941888",
+    "artifact": "host",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTriggerWithWindow",
+    "qualified_name": "describeTriggerWithWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682958,
+    "end_line": 682963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "a078b8aa24b09b9600911732e105fbff274f5040a63748eb52365b8492a4b1a8",
+    "calls": [
+      "describeTriggerWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526504:19168535",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "normalizeSchedule",
+    "qualified_name": "normalizeSchedule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526504,
+    "end_line": 526506,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2824112704df76f0f3397eb0d17cce92caa8f3ad060e9cf067fa25698d1f59cb",
+    "calls": [
+      ".replace",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526508:19168666",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "splitScheduleTimeZone",
+    "qualified_name": "splitScheduleTimeZone",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526508,
+    "end_line": 526512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "11af8ba607dc69d51e03e2600288be18d599ef403484a1ff63fd0dbf1eeb852a",
+    "calls": [
+      "SCHEDULE_TZ_PREFIX.exec",
+      "normalizeSchedule",
+      "normalized.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526513:19168957",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "expandAlias",
+    "qualified_name": "expandAlias",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526513,
+    "end_line": 526516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "bfddaf3e7c9def4796f7c0ed66e4e9cd44201aa441513ed408738025698e51d7",
+    "calls": [
+      "schedule.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526517:19169074",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseCronField",
+    "qualified_name": "parseCronField",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526517,
+    "end_line": 526545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field",
+      "min",
+      "max"
+    ],
+    "body_sha256": "c341b38aa14f17a545b81f110c5810853d4ae57058c8b857260791368b93af2b",
+    "calls": [
+      "Number",
+      "Number.isInteger",
+      "field.split",
+      "new Set",
+      "part.split",
+      "rangePart.includes",
+      "rangePart.split",
+      "values.add"
+    ],
+    "writes": [
+      "rangeEnd",
+      "rangeStart",
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526546:19170183",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseCron",
+    "qualified_name": "parseCron",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526546,
+    "end_line": 526568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "expression"
+    ],
+    "body_sha256": "8ee1a540b7b48efff8054dc74ce3f19e7a3fed95cf6022e0cf6344b66c181ae5",
+    "calls": [
+      ".map",
+      "expression.split",
+      "new Set",
+      "parseCronField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526569:19171015",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronDayMatches",
+    "qualified_name": "cronDayMatches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526569,
+    "end_line": 526577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "wall"
+    ],
+    "body_sha256": "fc1c512ae6b23f172f638f65b0fad8d480331b85bb8bcc4dc9f4a2b79d226fbe",
+    "calls": [
+      "matcher.dayOfMonth.has",
+      "matcher.dayOfWeek.has",
+      "matcher.month.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526578:19171434",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronMatchesWallClock",
+    "qualified_name": "cronMatchesWallClock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526578,
+    "end_line": 526582,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "wall"
+    ],
+    "body_sha256": "68d920ac1eb4d6b6a05932c433763bd9d0831aa614ee402d597d7fa3df098867",
+    "calls": [
+      "cronDayMatches",
+      "matcher.hour.has",
+      "matcher.minute.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526583:19171627",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "boxLocalWallClock",
+    "qualified_name": "boxLocalWallClock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526583,
+    "end_line": 526592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "date6"
+    ],
+    "body_sha256": "a2df5215825ea3ff6403145b80623864903f0a92a48b0154fa0e839769c02849",
+    "calls": [
+      "date6.getDate",
+      "date6.getDay",
+      "date6.getFullYear",
+      "date6.getHours",
+      "date6.getMinutes",
+      "date6.getMonth"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526603:19172021",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "getZonedFormatter",
+    "qualified_name": "getZonedFormatter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526603,
+    "end_line": 526623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "timeZone"
+    ],
+    "body_sha256": "c948f6b17287067997329ff8d221c0ce3491513609355fdb6c2791781c601487",
+    "calls": [
+      "new Intl.DateTimeFormat",
+      "zonedFormatterCache.get",
+      "zonedFormatterCache.set"
+    ],
+    "writes": [
+      "formatter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:526624:19172527",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "zonedWallClock",
+    "qualified_name": "zonedWallClock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526624,
+    "end_line": 526638,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "date6",
+      "formatter"
+    ],
+    "body_sha256": "3e339e9d3216745081c073c02a086e295306db3f22acadb24747f598c4e0e63e",
+    "calls": [
+      "Number",
+      "formatter.formatToParts"
+    ],
+    "writes": [
+      "lookup3[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526641:19173056",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isSameWallClockDay",
+    "qualified_name": "isSameWallClockDay",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526641,
+    "end_line": 526643,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "f51d51e48d572f08aa67e6d15b62500a142c411e4973d537da90a517db4ab3ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526644:19173182",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "nextCronRun",
+    "qualified_name": "nextCronRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526644,
+    "end_line": 526670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "afterMs",
+      "wallClockOf"
+    ],
+    "body_sha256": "b8017bbe5ba1e19d04bd2e23a835c4b8d7d573313108cb8eb5a081c95e1e13b0",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "cronDayMatches",
+      "cronMatchesWallClock",
+      "isSameWallClockDay",
+      "new Date",
+      "wallClockOf"
+    ],
+    "writes": [
+      "cursorMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526671:19174144",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseTemporalDurationMs",
+    "qualified_name": "parseTemporalDurationMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526671,
+    "end_line": 526683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "duration3",
+      "allowZero"
+    ],
+    "body_sha256": "8b0ebe349e33a847e53da5dcd0b31fc1fbaaff2b86bf86997461da9f73c243f5",
+    "calls": [
+      "Number",
+      "TEMPORAL_DURATION_PART.exec",
+      "part[computed].toLowerCase"
+    ],
+    "writes": [
+      "TEMPORAL_DURATION_PART.lastIndex",
+      "consumed",
+      "part",
+      "totalMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526684:19174699",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseEverySchedule",
+    "qualified_name": "parseEverySchedule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526684,
+    "end_line": 526694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "6235d815e5470bec94b03e34dfa4b874de5843d384ccfb417fa717693cbe6eb9",
+    "calls": [
+      "TEMPORAL_EVERY_PATTERN.exec",
+      "intervalAndPhase.split",
+      "parseTemporalDurationMs",
+      "schedule.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526695:19175268",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "parseEveryIntervalMs",
+    "qualified_name": "parseEveryIntervalMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526695,
+    "end_line": 526697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "2644d5bbbe281220f3f2e2ef7c6b5ca1ec019e800297f510bc953fcb6b859d86",
+    "calls": [
+      "parseEverySchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526698:19175371",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "compileCronMatcher",
+    "qualified_name": "compileCronMatcher",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526698,
+    "end_line": 526703,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "2c3d5aa2ff6fdddccdfb7c0686e59996ad387eb95b169e7776342203d772f8a1",
+    "calls": [
+      "expandAlias",
+      "getZonedFormatter",
+      "parseCron",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526704:19175684",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "wallClockOfInstant",
+    "qualified_name": "wallClockOfInstant",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526704,
+    "end_line": 526708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2",
+      "timeZone"
+    ],
+    "body_sha256": "987b85c5ca08be1006b5ca492a13078f8fd41c3ed2ab365f7b7702ef64fda41e",
+    "calls": [
+      "boxLocalWallClock",
+      "getZonedFormatter",
+      "new Date",
+      "zonedWallClock"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526709:19175950",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "formatTimestamp2",
+    "qualified_name": "formatTimestamp2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526709,
+    "end_line": 526718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2",
+      "timeZone"
+    ],
+    "body_sha256": "d261a5685633f56210498632ff529cd89f71a1f90e8e2942a24669c147511034",
+    "calls": [
+      ".toLocaleString",
+      "Number.isFinite",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:526719:19176338",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronIntervalIsAtLeast",
+    "qualified_name": "cronIntervalIsAtLeast",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526719,
+    "end_line": 526745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "a721d8cc6b6b7b8075a10b891035d3076efd337b6ec07ab235cb5a1b114a29d7",
+    "calls": [
+      ".flatMap",
+      ".sort",
+      "Date.UTC",
+      "cronDayMatches",
+      "date6.getUTCDate",
+      "date6.getUTCDay",
+      "date6.getUTCMonth",
+      "new Date"
+    ],
+    "writes": [
+      "dayMs",
+      "index",
+      "previousDayMatches"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526746:19177464",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isValidSchedule",
+    "qualified_name": "isValidSchedule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526746,
+    "end_line": 526754,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "81e9233d03f3f1035c0d88dd6388dfe0de8843b4f273ba291983840edc48d386",
+    "calls": [
+      "compileCronMatcher",
+      "cronIntervalIsAtLeast",
+      "normalizeSchedule",
+      "parseEveryIntervalMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526755:19177898",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "clampScheduleToMinimumInterval",
+    "qualified_name": "clampScheduleToMinimumInterval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526755,
+    "end_line": 526803,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "minimumIntervalMs"
+    ],
+    "body_sha256": "f571154182453d9bfb3a7b4c80639b72b100d4175f5b686516ffbbc7a687849c",
+    "calls": [
+      ".sort",
+      ".split",
+      ".trim",
+      "Number.isSafeInteger",
+      "String",
+      "calendarFields.join",
+      "commentedExpression.indexOf",
+      "commentedExpression.slice",
+      "cronIntervalIsAtLeast",
+      "expandAlias",
+      "fields3.join",
+      "fields3.slice",
+      "getZonedFormatter",
+      "isValidSchedule",
+      "new Set",
+      "normalizeSchedule",
+      "normalized.startsWith",
+      "parseCron",
+      "parseCronField",
+      "parseEveryIntervalMs",
+      "selected.join",
+      "selected.pop",
+      "selected.push",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [
+      "fields3[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526804:19180541",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "computeNextRunAt",
+    "qualified_name": "computeNextRunAt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526804,
+    "end_line": 526814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule",
+      "afterMs",
+      "timeZone"
+    ],
+    "body_sha256": "cbefbe5013c1c9ce7101b48590c38860e410e25a22f941e8f8bd60884626ab93",
+    "calls": [
+      "Math.floor",
+      "compileCronMatcher",
+      "nextCronRunAt",
+      "normalizeSchedule",
+      "parseEverySchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526815:19181039",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "nextCronRunAt",
+    "qualified_name": "nextCronRunAt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526815,
+    "end_line": 526820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "afterMs",
+      "timeZone"
+    ],
+    "body_sha256": "6322554128f5a8c79b3d7eb972533bed55330f3fd74466fe472445552741358f",
+    "calls": [
+      "getZonedFormatter",
+      "nextCronRun"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526821:19181385",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "automationAnchor",
+    "qualified_name": "automationAnchor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526821,
+    "end_line": 526823,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "automation"
+    ],
+    "body_sha256": "689b549d62db1b63877b6dd835b5c463e819001936cb8783d4e73ac2d439edc5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526833:19181593",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "formatClock",
+    "qualified_name": "formatClock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526833,
+    "end_line": 526837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hour",
+      "minute"
+    ],
+    "body_sha256": "3c5901a98ff2b089bfc3e98a9fda053492f3bb54e9610a115e04625eb0335773",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526853:19182037",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "joinWithAnd",
+    "qualified_name": "joinWithAnd",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526853,
+    "end_line": 526857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts"
+    ],
+    "body_sha256": "6ab96f982e4599bc7934773d6444f72e328145a8eabbe942b923ce92a7e54482",
+    "calls": [
+      ".join",
+      "parts.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526858:19182258",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "formatDayOfMonthOrdinal",
+    "qualified_name": "formatDayOfMonthOrdinal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526858,
+    "end_line": 526870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "day"
+    ],
+    "body_sha256": "a7f5102b70cb2346e7d7f5ee8b213c967810cbfb95359ce9685b9eff423473ce",
+    "calls": [],
+    "writes": [
+      "suffix"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526871:19182556",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "ascending",
+    "qualified_name": "ascending",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526871,
+    "end_line": 526873,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "b933ee8cf83af10b7986324ee1714d5407556dd26ae898fd9924b07c6eddc5c0",
+    "calls": [
+      ".sort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526874:19182633",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "uniformStride",
+    "qualified_name": "uniformStride",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526874,
+    "end_line": 526886,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sorted"
+    ],
+    "body_sha256": "57186b4d8f1c7e794ded00ac148731833fe146dde972f10a6006b9ee0099ffd6",
+    "calls": [],
+    "writes": [
+      "index",
+      "previous"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526889:19183163",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "setsEqual",
+    "qualified_name": "setsEqual",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526889,
+    "end_line": 526891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "f76ba11374b386c4c2c364821e25a91134c277b546345a9f01cf100131407671",
+    "calls": [
+      ".every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526892:19183264",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyCronDays",
+    "qualified_name": "classifyCronDays",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526892,
+    "end_line": 526932,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "03de9e0207c1d252936a401e7135aefd5d6c0ea4a18ddbcaa9736a3aa372d4b0",
+    "calls": [
+      "ascending",
+      "classifyNthWeekday",
+      "setsEqual",
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 16,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526935:19185001",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyNthWeekday",
+    "qualified_name": "classifyNthWeekday",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526935,
+    "end_line": 526946,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "9e38ea941e031065152a2fd67f5584564936e7e8266f5bc056c9a1ad2e1452b4",
+    "calls": [
+      "ascending",
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526948:19185606",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "englishCronDays",
+    "qualified_name": "englishCronDays",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526948,
+    "end_line": 526993,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "days"
+    ],
+    "body_sha256": "5f00999d1ee1c0f6b4efb6af78cc00e840c9df883ae0f895fa87f8ea123988cc",
+    "calls": [
+      "days.days.map",
+      "formatDayOfMonthOrdinal",
+      "invariant",
+      "joinWithAnd"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:526994:19187355",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "minuteIntervalOf",
+    "qualified_name": "minuteIntervalOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 526994,
+    "end_line": 527001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sorted"
+    ],
+    "body_sha256": "86e05eee04e09a23f6150b030df3a3a48fafbd1b56665153d656695d83a53a1b",
+    "calls": [
+      "uniformStride"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527002:19187683",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "minuteOfHourToken",
+    "qualified_name": "minuteOfHourToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527002,
+    "end_line": 527004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "minute"
+    ],
+    "body_sha256": "6bdbe156fdfefe0176f849426a501d55069fc170fd9d3cfced16e0186119e6c9",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527005:19187770",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "classifyCronTime",
+    "qualified_name": "classifyCronTime",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527005,
+    "end_line": 527074,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher"
+    ],
+    "body_sha256": "b4308e1565b5960f14a5a3c498a30d42fe621fd291aa8b6d7d4ac437249d3d79",
+    "calls": [
+      "ascending",
+      "hours.map",
+      "minuteIntervalOf",
+      "minutes.map",
+      "uniformStride"
+    ],
+    "writes": [
+      "every"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 13,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527075:19190073",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "englishEvery",
+    "qualified_name": "englishEvery",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527075,
+    "end_line": 527086,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "every"
+    ],
+    "body_sha256": "462180fdf7cad1b2edc81b2356bb96d287f90eefdbf560cc1dd8f8c615fc5296",
+    "calls": [
+      "every.minutes.map",
+      "joinWithAnd",
+      "minuteOfHourToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527091:19190663",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMatcher",
+    "qualified_name": "describeCronMatcher",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527091,
+    "end_line": 527098,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matcher",
+      "forDisplay"
+    ],
+    "body_sha256": "37335cc84f4f0983f9f2a4752db156b2c77d6b66f954670932a963af9b2ec042",
+    "calls": [
+      "DISPLAY_ONLY_DAY_KINDS.has",
+      "classifyCronDays",
+      "classifyCronTime",
+      "describeCronTime",
+      "englishCronDays"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527099:19190999",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronTime",
+    "qualified_name": "describeCronTime",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527099,
+    "end_line": 527107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dayPhrase",
+      "time4"
+    ],
+    "body_sha256": "b42e7bdb7587b02ac2f57c1c42fc4f59e7c320cbdacb53212bed84b2fdb6ea66",
+    "calls": [
+      "englishEvery",
+      "formatClock",
+      "joinWithAnd",
+      "time4.times.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527108:19191507",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeOneShotSchedule",
+    "qualified_name": "describeOneShotSchedule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527108,
+    "end_line": 527123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "492eadf507d955d48473b430f43a7c1160701f0783d22967ab72def831497c18",
+    "calls": [
+      ".schedule.startsWith",
+      "compileCronMatcher",
+      "formatClock",
+      "isCalendarDate",
+      "normalizeSchedule",
+      "parseEveryIntervalMs",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527124:19192367",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isCalendarDate",
+    "qualified_name": "isCalendarDate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527124,
+    "end_line": 527127,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ month, day }"
+    ],
+    "body_sha256": "f6b03fd6212abb8238c291a44db0ae62ffb186247f57349712e41a087e3180e3",
+    "calls": [
+      "date6.getDate",
+      "date6.getMonth",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527128:19192526",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeScheduleWith",
+    "qualified_name": "describeScheduleWith",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527128,
+    "end_line": 527143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "normalized",
+      "forDisplay"
+    ],
+    "body_sha256": "4b948cdb49ebca07da764323fd50cb9e8becfcfbce4f9f21afce7c2a44406088",
+    "calls": [
+      "EVERY_PATTERN.exec",
+      "compileCronMatcher",
+      "describeCronMatcher",
+      "describeOneShotSchedule",
+      "match2[computed].toLowerCase",
+      "parseEveryIntervalMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527144:19193244",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeSchedule",
+    "qualified_name": "describeSchedule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527144,
+    "end_line": 527147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "schedule"
+    ],
+    "body_sha256": "e868a68a2d399dfa6b97b82e56d01f0fd8dd082a5a85a40ebf6d8580eae5f72e",
+    "calls": [
+      "describeScheduleWith",
+      "normalizeSchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527148:19193398",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "isApproximateCronTrigger",
+    "qualified_name": "isApproximateCronTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527148,
+    "end_line": 527150,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger"
+    ],
+    "body_sha256": "5682720320e8aa8fd64d550366c89900166a9d0479ea6e3229af114e5bbe9bd2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527151:19193511",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "approximateWhenShifted",
+    "qualified_name": "approximateWhenShifted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527151,
+    "end_line": 527153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger",
+      "sentence"
+    ],
+    "body_sha256": "3dd0658129c5b4305a9dd3d8605f1585e59e1657b002a3e7fa61551596273b64",
+    "calls": [
+      "isApproximateCronTrigger",
+      "sentence.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527154:19193660",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMember",
+    "qualified_name": "describeCronMember",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527154,
+    "end_line": 527156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "155122675fa8efe123750134ec7c0dcdd14bab06b5e5f7079963c9c0d28cea96",
+    "calls": [
+      "approximateWhenShifted",
+      "describeSchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527158:19193815",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeCronMemberWithZone",
+    "qualified_name": "describeCronMemberWithZone",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527158,
+    "end_line": 527162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "00dc48c2df485bd0b2491f4c922423fec07516dc29f763752c0de825939018d5",
+    "calls": [
+      "describeCronMember",
+      "isApproximateCronTrigger",
+      "sentence.includes",
+      "splitScheduleTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527163:19194106",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "cronWindowNote",
+    "qualified_name": "cronWindowNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527163,
+    "end_line": 527170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "window2"
+    ],
+    "body_sha256": "92918dab3a25d80851f65106c5c06d017df0e8edebaf244ab72c7306bf02949f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527171:19194465",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTriggerWith",
+    "qualified_name": "describeTriggerWith",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527171,
+    "end_line": 527178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger",
+      "describeCron"
+    ],
+    "body_sha256": "4e22dc3a69117c042d6eaa92964741d7afd8864c3eaa778beb2754a2d5ef9972",
+    "calls": [
+      ".join",
+      "describeMember",
+      "rest.map",
+      "triggerList"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527172:19194544",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeMember",
+    "qualified_name": "describeTriggerWith/describeMember",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527172,
+    "end_line": 527172,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "c4e59b0497e31f844116e44fce009943f4df1291e05a5b7d7296f343975b6a90",
+    "calls": [
+      "describeCron",
+      "describeListener"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527179:19194803",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTrigger",
+    "qualified_name": "describeTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527179,
+    "end_line": 527181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger"
+    ],
+    "body_sha256": "d0c644f1ea40ed90d9a4b155d6fbb4db1a1ee902ce3319eb3ef5e68e801c402f",
+    "calls": [
+      "describeTriggerWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527182:19194900",
+    "artifact": "evaluation",
+    "module": "shared/automations/automation-schedule.ts",
+    "name": "describeTriggerWithWindow",
+    "qualified_name": "describeTriggerWithWindow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527182,
+    "end_line": 527187,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger"
+    ],
+    "body_sha256": "c7078a90517a740d83180c482a33255f3819c915ad1ac5e4d2e7c9b606d52abd",
+    "calls": [
+      "describeTriggerWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

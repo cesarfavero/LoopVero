@@ -1,0 +1,346 @@
+[
+  {
+    "id": "host:759582:29038130",
+    "artifact": "host",
+    "module": "core/store/attachment-alias.ts",
+    "name": "isAliasBucket",
+    "qualified_name": "isAliasBucket",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759582,
+    "end_line": 759584,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fdd028865c96eb625cc0ee61cf9483de79289276c0cdac62697376085263f508",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759585:29038232",
+    "artifact": "host",
+    "module": "core/store/attachment-alias.ts",
+    "name": "formatGrokBotAttachmentAlias",
+    "qualified_name": "formatGrokBotAttachmentAlias",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759585,
+    "end_line": 759595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  agentDir,\n  bucket,\n  hex: hex3,\n  ext: ext2\n}"
+    ],
+    "body_sha256": "8d90772dc18a6ff7e38e80d2a82947588e07478424add66e63f1cf0818e88b6c",
+    "calls": [
+      "ALIAS_EXT.test",
+      "ALIAS_HEX.test",
+      "isAliasBucket",
+      "isGrokBotAttachmentAgentId",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759596:29038605",
+    "artifact": "host",
+    "module": "core/store/attachment-alias.ts",
+    "name": "barePathOf",
+    "qualified_name": "barePathOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759596,
+    "end_line": 759609,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "02915bed41b1a530c0f1dc141457cd99787346d3a415a9195166ec57e2962e0b",
+    "calls": [
+      "ENCODED_SEPARATOR.test",
+      "new URL",
+      "path33.includes",
+      "path33.startsWith",
+      "platformIndependentPosixPathOf"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:759610:29039033",
+    "artifact": "host",
+    "module": "core/store/attachment-alias.ts",
+    "name": "platformIndependentPosixPathOf",
+    "qualified_name": "platformIndependentPosixPathOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759610,
+    "end_line": 759616,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "433f8dd068721dbf8cab8aa483c2e4078739947690b2f45038a45cd86f41f145",
+    "calls": [
+      "decodeURIComponent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:759617:29039172",
+    "artifact": "host",
+    "module": "core/store/attachment-alias.ts",
+    "name": "parseGrokBotAttachmentAlias",
+    "qualified_name": "parseGrokBotAttachmentAlias",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759617,
+    "end_line": 759632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "65b73d322f422788cd8ace27c832bb99e1c8aa4848f77dc25b444bac273d54aa",
+    "calls": [
+      ".split",
+      "ALIAS_FILE.exec",
+      "ALIAS_ROOTS.find",
+      "bare.slice",
+      "barePathOf",
+      "formatGrokBotAttachmentAlias",
+      "isAliasBucket",
+      "isGrokBotAttachmentAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549750:20315801",
+    "artifact": "evaluation",
+    "module": "core/store/attachment-alias.ts",
+    "name": "isAliasBucket",
+    "qualified_name": "isAliasBucket",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549750,
+    "end_line": 549752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fdd028865c96eb625cc0ee61cf9483de79289276c0cdac62697376085263f508",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549753:20315903",
+    "artifact": "evaluation",
+    "module": "core/store/attachment-alias.ts",
+    "name": "formatGrokBotAttachmentAlias",
+    "qualified_name": "formatGrokBotAttachmentAlias",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549753,
+    "end_line": 549763,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  agentDir,\n  bucket,\n  hex: hex3,\n  ext: ext2\n}"
+    ],
+    "body_sha256": "8d90772dc18a6ff7e38e80d2a82947588e07478424add66e63f1cf0818e88b6c",
+    "calls": [
+      "ALIAS_EXT.test",
+      "ALIAS_HEX.test",
+      "isAliasBucket",
+      "isGrokBotAttachmentAgentId",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549764:20316276",
+    "artifact": "evaluation",
+    "module": "core/store/attachment-alias.ts",
+    "name": "barePathOf",
+    "qualified_name": "barePathOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549764,
+    "end_line": 549777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "02915bed41b1a530c0f1dc141457cd99787346d3a415a9195166ec57e2962e0b",
+    "calls": [
+      "ENCODED_SEPARATOR.test",
+      "new URL",
+      "path33.includes",
+      "path33.startsWith",
+      "platformIndependentPosixPathOf"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:549778:20316704",
+    "artifact": "evaluation",
+    "module": "core/store/attachment-alias.ts",
+    "name": "platformIndependentPosixPathOf",
+    "qualified_name": "platformIndependentPosixPathOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549778,
+    "end_line": 549784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "433f8dd068721dbf8cab8aa483c2e4078739947690b2f45038a45cd86f41f145",
+    "calls": [
+      "decodeURIComponent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:549785:20316843",
+    "artifact": "evaluation",
+    "module": "core/store/attachment-alias.ts",
+    "name": "parseGrokBotAttachmentAlias",
+    "qualified_name": "parseGrokBotAttachmentAlias",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549785,
+    "end_line": 549800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "65b73d322f422788cd8ace27c832bb99e1c8aa4848f77dc25b444bac273d54aa",
+    "calls": [
+      ".split",
+      "ALIAS_FILE.exec",
+      "ALIAS_ROOTS.find",
+      "bare.slice",
+      "barePathOf",
+      "formatGrokBotAttachmentAlias",
+      "isAliasBucket",
+      "isGrokBotAttachmentAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

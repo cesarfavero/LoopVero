@@ -1,0 +1,2289 @@
+[
+  {
+    "id": "host:690704:26244279",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "settledOrAsListed",
+    "qualified_name": "settledOrAsListed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690704,
+    "end_line": 690706,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "discovered"
+    ],
+    "body_sha256": "5213e015813dc57989fe8f0759278f1d51c02bbb0475fe66d896042ff65fad76",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690712:26244555",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "settle2",
+    "qualified_name": "settle2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690712,
+    "end_line": 690717,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "promise2"
+    ],
+    "body_sha256": "52e99e24f8d92fff40871f859ae4ec5c904f08c8fce41ef7d155caf2a81efdc4",
+    "calls": [
+      "promise2.then"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690718:26244713",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "settledWithin",
+    "qualified_name": "settledWithin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690718,
+    "end_line": 690729,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "promise2",
+      "timeoutMs",
+      "clock"
+    ],
+    "body_sha256": "f03b10e394239e38ef1b666a0074b462f96e93a05d04953894530ae6f38450b8",
+    "calls": [
+      "Promise.race",
+      "Promise.resolve",
+      "budget.run",
+      "createDeadlinePolicy"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:690730:26245128",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "applyCustomInstructionsToMcpResult",
+    "qualified_name": "applyCustomInstructionsToMcpResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690730,
+    "end_line": 690753,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "serverName",
+      "rawInstructions"
+    ],
+    "body_sha256": "89a43eae9fcd678a8b7809604433d16a0c4c84924cdee9c7e5c6dc572a492724",
+    "calls": [
+      "formatMcpCustomInstructionToolNote",
+      "new McpResult",
+      "new McpSuccess",
+      "new McpTextContent",
+      "new McpToolResultContentItem",
+      "rawInstructions.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690754:26245862",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "slotFor",
+    "qualified_name": "slotFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690754,
+    "end_line": 690760,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server",
+      "identifier2"
+    ],
+    "body_sha256": "c8a50b71ac0316c054fafc942e8253b2f8fe0a091115475947a38a157b3ff522",
+    "calls": [
+      "server.accounts.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690761:26246161",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "createMcpToolsDiscovery",
+    "qualified_name": "createMcpToolsDiscovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690761,
+    "end_line": 691533,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "core2",
+      "deps = {}"
+    ],
+    "body_sha256": "35cbcd8704f9d3719b30ecc541ab261e453660851c71897caf5ecce846fc4f78",
+    "calls": [
+      "Promise.resolve",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690771:26246563",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_isBackendDisplayServer",
+    "qualified_name": "createMcpToolsDiscovery/_isBackendDisplayServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690771,
+    "end_line": 690773,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "739c06134fac18b568225b4d09893a4b9b6f6fb80334c33046712e6e9fa6adb0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690774:26246672",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_reportFirstCall",
+    "qualified_name": "createMcpToolsDiscovery/_reportFirstCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690774,
+    "end_line": 690790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier",
+      "ok"
+    ],
+    "body_sha256": "d760f8bf50de8f7dcd5ccb63a1fff3b0984022f406faf6a36e6f7f546d6fd42a",
+    "calls": [
+      "_displayRowForIdentifier",
+      "deps.onConnectorAuth",
+      "firstCallReported.get",
+      "firstCallReported.set"
+    ],
+    "writes": [
+      "entry.failed",
+      "entry.ok"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690791:26247450",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getTools",
+    "qualified_name": "createMcpToolsDiscovery/_getTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690791,
+    "end_line": 690793,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "d6e61155cc8658ae8be419d15037baf75c336622eba0c44335181f8ee49b8e6e",
+    "calls": [
+      "_filterDisabledTools",
+      "_getToolsRaw"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690794:26247576",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getToolsRaw",
+    "qualified_name": "createMcpToolsDiscovery/_getToolsRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690794,
+    "end_line": 690796,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "_ctx",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "195e4745bc5be02962853429fad35d4a21e92c30427d36478c3e00603b2a0c1f",
+    "calls": [
+      "_getDiscovered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690797:26247689",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getServerStatuses",
+    "qualified_name": "createMcpToolsDiscovery/_getServerStatuses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690797,
+    "end_line": 690803,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "24e2452f7631f29f89a430a4c527f8e45a58cfcd0fb2cfe1ea0185108c093298",
+    "calls": [
+      "_getDiscovered",
+      "_withRowIdentityStatuses",
+      "core2.definitionSource.getUserServerConfigs",
+      "deps.needsGrantRowIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690804:26248023",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_peekServerStatuses",
+    "qualified_name": "createMcpToolsDiscovery/_peekServerStatuses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690804,
+    "end_line": 690809,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "895034246426712500ef0f54b35a3d4324894eb5f953fa4c3a94a605c03ba08f",
+    "calls": [
+      "_currentDiscoveredForKey",
+      "_peekDiscoveryServerNames",
+      "_toolServerSetKey",
+      "_withRowIdentityStatuses"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690810:26248342",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getServerErrorMessages",
+    "qualified_name": "createMcpToolsDiscovery/_getServerErrorMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690810,
+    "end_line": 690812,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "7a5485ab36a1dfd47dc6e1c8e228f25f7fc327e98a3444681f4f6b71363289d9",
+    "calls": [
+      "_getDiscovered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690813:26248468",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_rowIdentityIds",
+    "qualified_name": "createMcpToolsDiscovery/_rowIdentityIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690813,
+    "end_line": 690821,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "53073569cb357999d10adb5dcb270bf10c880b408d6a24ef6b5a621983994790",
+    "calls": [
+      "slots.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690822:26248835",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_withRowIdentityStatuses",
+    "qualified_name": "createMcpToolsDiscovery/_withRowIdentityStatuses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690822,
+    "end_line": 690835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "base",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "b6f4d9951d9e0445d6fa6f5b8eb8bdaef1477e6b76409cd9312709c3f06ae63b",
+    "calls": [
+      "_rowIdentityIds",
+      "base.has",
+      "core2.lastAccountDisplayConfig",
+      "deps.needsGrantRowIdentity",
+      "extra.push",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690836:26249426",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getDiscovered",
+    "qualified_name": "createMcpToolsDiscovery/_getDiscovered",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690836,
+    "end_line": 690866,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "420422691f5cdd7a5c6292bc835fe9871f4501543144543bdc9d9961d5a498b5",
+    "calls": [
+      "Date.now",
+      "_peekDiscoveryServerNames",
+      "_resolveColdThenAdopt",
+      "_startToolsResolution",
+      "_toolServerSetKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690867:26250736",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_resolveColdThenAdopt",
+    "qualified_name": "createMcpToolsDiscovery/_resolveColdThenAdopt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690867,
+    "end_line": 690879,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "486034c84251a93a9ac0c15fd5bb039d5989526d13d3e2bff5468ee4a954e467",
+    "calls": [
+      "Date.now",
+      "Promise.resolve",
+      "_getToolsViaBackend",
+      "settledOrAsListed"
+    ],
+    "writes": [
+      "toolsCacheEntry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690880:26251275",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getToolsForTurnStart",
+    "qualified_name": "createMcpToolsDiscovery/_getToolsForTurnStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690880,
+    "end_line": 690898,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "6ce1e8e893b6f5147d5b87b80c550491c840008b9750365173e76cc605462068",
+    "calls": [
+      "_currentDiscoveredForKey",
+      "_dropSettledCacheForEmptyServerSet",
+      "_filterDisabledTools",
+      "_getTools",
+      "_peekDiscoveryServerNames",
+      "_scheduleColdStartWarm",
+      "_startToolsResolution",
+      "_toolServerSetKey",
+      "_toolsEntryUsable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690899:26251893",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_displayRowForIdentifier",
+    "qualified_name": "createMcpToolsDiscovery/_displayRowForIdentifier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690899,
+    "end_line": 690903,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "identifier2"
+    ],
+    "body_sha256": "84dd1062f83150d39647d769d8a1ff59111ee31bb6d4b70c5a45b954271f8632",
+    "calls": [
+      ".servers.find",
+      "core2.lastAccountDisplayConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690904:26252192",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_filterDisabledTools",
+    "qualified_name": "createMcpToolsDiscovery/_filterDisabledTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690904,
+    "end_line": 690906,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "8a6b679942423dccc3282a47ce82fb369bd1cb5cd9c058a29f448bc04b73bf2d",
+    "calls": [
+      "tools.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690907:26252296",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_rowServerHost",
+    "qualified_name": "createMcpToolsDiscovery/_rowServerHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690907,
+    "end_line": 690910,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row"
+    ],
+    "body_sha256": "821357b55c318f8cedfda9ff45ba0a5cea9e57db4a562cdd8d43775b546fd0d1",
+    "calls": [
+      "mcpPermissionServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690911:26252497",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_countEnabledTools",
+    "qualified_name": "createMcpToolsDiscovery/_countEnabledTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690911,
+    "end_line": 690913,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "edeaaead080447ba7d32850735b9ab62f209ffedcb9e9e081aeb6743a51ad33d",
+    "calls": [
+      "tools.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690914:26252606",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_toolServerSetKey",
+    "qualified_name": "createMcpToolsDiscovery/_toolServerSetKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690914,
+    "end_line": 690917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverNames",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "87f359198a13a6e2c5f4915e1f76db880454ec7e79406fe8f863b2e80acff32d",
+    "calls": [
+      ".join",
+      ".sort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690918:26252795",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_peekDiscoveryServerNames",
+    "qualified_name": "createMcpToolsDiscovery/_peekDiscoveryServerNames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690918,
+    "end_line": 690928,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "094fd8653d65848ba2a1cee0808326287bb8853c3f23611fa393fe07d5055159",
+    "calls": [
+      "_grokNativeIdentifiers",
+      "core2.definitionSource.peekHttpServerNames",
+      "core2.definitionSource.peekStdioServerNames",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690929:26253220",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_grokNativeIdentifiers",
+    "qualified_name": "createMcpToolsDiscovery/_grokNativeIdentifiers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690929,
+    "end_line": 690933,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ff53464d85ff44fbfb00e62732a93da06eb8568c7401b047adcf7dd76cf9a1fc",
+    "calls": [
+      ".servers.flatMap",
+      "core2.lastAccountDisplayConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690934:26253445",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_listBoxServers",
+    "qualified_name": "createMcpToolsDiscovery/_listBoxServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690934,
+    "end_line": 690973,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifiers",
+      "options2"
+    ],
+    "body_sha256": "9560a8b708623d5db799bfc3ba9616fe385d752fbc7d65366a75aed01c2b38d2",
+    "calls": [
+      ".catch",
+      ".filter",
+      ".map",
+      "_ensureBoxServersPushed",
+      "boxMcpExec.listTools",
+      "core2.definitionSource.ensureConfigLoaded",
+      "core2.definitionSource.getServersMissingPluginFiles",
+      "core2.definitionSource.reloadBoxServers",
+      "new SandMcpConfigError",
+      "new Set",
+      "servers.filter"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690974:26255060",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_stdioServerNamesForBox",
+    "qualified_name": "createMcpToolsDiscovery/_stdioServerNamesForBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690974,
+    "end_line": 690979,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ab2ffe0f85f71eb84e908d0538556956905e9c1a570cba36eb26dddac40ac08a",
+    "calls": [
+      "Object.keys",
+      "core2.definitionSource.getStdioServerConfigs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690980:26255244",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_ensureBoxServersPushed",
+    "qualified_name": "createMcpToolsDiscovery/_ensureBoxServersPushed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690980,
+    "end_line": 691014,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7bdc4917054dbb85aad7ac3152ab3dd0b477b9bc234dedd907e223f73d6ac23e",
+    "calls": [
+      "JSON.stringify",
+      "Object.keys",
+      "boxPushChain.then",
+      "core2.definitionSource.getPushedServerConfigs",
+      "push.catch",
+      "reportMcpHostEdgeFailure"
+    ],
+    "writes": [
+      "boxPushChain",
+      "stdioConfigs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691015:26256350",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_currentDiscoveredForKey",
+    "qualified_name": "createMcpToolsDiscovery/_currentDiscoveredForKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691015,
+    "end_line": 691027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "24485a5116c838b0c40d07f2914447e7cea93d3a955302e7a5f4c4b915f9ce59",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691028:26256658",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_toolsEntryUsable",
+    "qualified_name": "createMcpToolsDiscovery/_toolsEntryUsable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691028,
+    "end_line": 691037,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "7d495f0b6bdc003aeb8467b55bc21de8151659d99c59240c75c4e445dfb2e0d8",
+    "calls": [
+      "Date.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691038:26256980",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_dropSettledCacheForEmptyServerSet",
+    "qualified_name": "createMcpToolsDiscovery/_dropSettledCacheForEmptyServerSet",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691038,
+    "end_line": 691042,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "05631fa4e5d795bd0229e26a46633e7a518b43cd9e6f98d3ce2b40fc1d8f7895",
+    "calls": [],
+    "writes": [
+      "toolsCacheEntry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691043:26257119",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_scheduleColdStartWarm",
+    "qualified_name": "createMcpToolsDiscovery/_scheduleColdStartWarm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691043,
+    "end_line": 691052,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7bacdab4f405a81a7880332eaeb3632b2daf1dff11c73c1868642dfaaa805465",
+    "calls": [
+      ".finally",
+      "_warmToolsCache"
+    ],
+    "writes": [
+      "toolsColdWarmScheduled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691053:26257379",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_startToolsResolution",
+    "qualified_name": "createMcpToolsDiscovery/_startToolsResolution",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691053,
+    "end_line": 691100,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requestedKey",
+      "carryStale",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "4d3009841c72a85536a25f43dfbfcf119f0b653d74f3d797c176f7faa448e7c8",
+    "calls": [
+      "Date.now",
+      "_currentDiscoveredForKey",
+      "_getToolsViaBackend",
+      "entry.promise.then"
+    ],
+    "writes": [
+      "toolsCacheEntry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691101:26258865",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_invalidateToolsCache",
+    "qualified_name": "createMcpToolsDiscovery/_invalidateToolsCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691101,
+    "end_line": 691107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "95ecbe22d85db8e8d2f22857f51d0b5269f4b2683186d3b181c279e49a19bc11",
+    "calls": [
+      ".catch",
+      "_warmToolsCache",
+      "firstCallReported.clear"
+    ],
+    "writes": [
+      "toolsCacheEntry",
+      "toolsCacheEpoch"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691108:26259056",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_warmToolsCache",
+    "qualified_name": "createMcpToolsDiscovery/_warmToolsCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691108,
+    "end_line": 691124,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "epoch"
+    ],
+    "body_sha256": "01b12a097b336bd82db6c72055eb9eca85f25d8bba4cf85604e3b5c83b0d8187",
+    "calls": [
+      "Promise.all",
+      "_dropSettledCacheForEmptyServerSet",
+      "_httpServerNamesForBackend",
+      "_startToolsResolution",
+      "_stdioServerNamesForBox",
+      "_toolServerSetKey",
+      "_toolsEntryUsable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691125:26259549",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_isToolDisabled",
+    "qualified_name": "createMcpToolsDiscovery/_isToolDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691125,
+    "end_line": 691140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n    providerIdentifier,\n    toolName\n  }"
+    ],
+    "body_sha256": "5b171b6ca2ba1e824c230048842c5b6ecf3f2cf628c9b867bb33a50276131fa4",
+    "calls": [
+      ".getMcpDisabledToolsByServerId",
+      ".getToolPermissions",
+      "_displayRowForIdentifier",
+      "_rowServerHost",
+      "core2.settingsStore",
+      "disabled.includes",
+      "mcpToolPermissionScope",
+      "routedToolCarriedPermission"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691138:26260148",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "isDisabled",
+    "qualified_name": "createMcpToolsDiscovery/_isToolDisabled/isDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691138,
+    "end_line": 691138,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "272f601281ca320a578d4e96ab39f0ba88ed6e685165d905badbd431bba4f21c",
+    "calls": [
+      "disabled.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691141:26260214",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_executeTool",
+    "qualified_name": "createMcpToolsDiscovery/_executeTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691141,
+    "end_line": 691167,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "auditIdentity",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "b48031fac54d0749dc1525f75f02ac2562294bdbda836f05e8c6ed88219865be",
+    "calls": [
+      ".getRawMcpCustomInstruction",
+      ".getRawMcpCustomInstructionByServerId",
+      "_displayRowForIdentifier",
+      "_executeToolRaw",
+      "_isToolDisabled",
+      "applyCustomInstructionsToMcpResult",
+      "coerceMcpArgsToToolSchema",
+      "core2.settingsStore",
+      "new McpError",
+      "new McpResult",
+      "recordMcpExecRefusedBeforeDispatch",
+      "resolveMcpCustomInstruction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691168:26261380",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_readResource",
+    "qualified_name": "createMcpToolsDiscovery/_readResource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691168,
+    "end_line": 691192,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "252495b4fb797d438844132e968a60309729bc431bfd9a8ccb38b0ae3ff2c4a2",
+    "calls": [
+      "_ensureBoxServersPushed",
+      "_isBoxStdioProvider",
+      "_isHttpProvider",
+      "boxMcpExec.readResource",
+      "core2.backendMcpExec.readResource",
+      "errorMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691193:26262375",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_resolveProviderTransport",
+    "qualified_name": "createMcpToolsDiscovery/_resolveProviderTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691193,
+    "end_line": 691197,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "6a44885e60bf6e2c9bc86110429bef91ce5fa1cf3dc7ebfe9e0970aeb2026144",
+    "calls": [
+      "_isBoxStdioProvider",
+      "_isHttpProvider"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691198:26262603",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_executeToolRaw",
+    "qualified_name": "createMcpToolsDiscovery/_executeToolRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691198,
+    "end_line": 691254,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "auditIdentity",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "466a617cfdf7d69bf82987d17e79bd3f8b203fa717b51ca948966df8436b8d8e",
+    "calls": [
+      "_boxStdioProviderKind",
+      "_displayRowForIdentifier",
+      "_ensureBoxServersPushed",
+      "_isHttpProvider",
+      "_reportFirstCall",
+      "boxMcpExec.executeTool",
+      "core2.backendMcpExec.executeTool",
+      "core2.definitionSource.getUserServerConfigs",
+      "deps.needsGrantRowIdentity",
+      "errorMessage",
+      "new McpError",
+      "new McpResult",
+      "recordMcpExecRefusedBeforeDispatch",
+      "toJsonArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691255:26264952",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_getToolsViaBackend",
+    "qualified_name": "createMcpToolsDiscovery/_getToolsViaBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691255,
+    "end_line": 691257,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "2041681435fe5c3bde36892930360fbcf0e84a7792ca2a46a60e341664c03a1b",
+    "calls": [
+      "TOOLS_DISCOVERY_DEADLINE.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691258:26265089",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_fetchToolsViaBackend",
+    "qualified_name": "createMcpToolsDiscovery/_fetchToolsViaBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691258,
+    "end_line": 691288,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "7958d7ab4ca72a56be3d7b3ab7ee909b95be890fc3bc7c42c67775827118e46c",
+    "calls": [
+      "Promise.all",
+      "Promise.allSettled",
+      "_discoverBoxTools",
+      "_discoverHttpTools",
+      "_fetchToolsWithinBoxBudget",
+      "_httpServerNamesForBackend",
+      "_stdioServerNamesForBox",
+      "_toolServerSetKey",
+      "_withBoxListing",
+      "clock.monotonicNow",
+      "deps.boxListingBudget"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "boxResult.reason",
+      "httpResult.reason"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691289:26266397",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_fetchToolsWithinBoxBudget",
+    "qualified_name": "createMcpToolsDiscovery/_fetchToolsWithinBoxBudget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691289,
+    "end_line": 691333,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "dc40ffa6e19aa814fcbc184398a6fd63ffe74e5d9b9f890cc3258f897d851c16",
+    "calls": [
+      "Math.min",
+      "_discoverBoxTools",
+      "_discoverHttpTools",
+      "_withBoxListing",
+      "boxListing.then",
+      "deferredBox.serverIdentifiers.map",
+      "deps.onBoxListingDeferred",
+      "new Map",
+      "settle2",
+      "settledWithin",
+      "sinceStart",
+      "statusFromBoxListStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691291:26266541",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "sinceStart",
+    "qualified_name": "createMcpToolsDiscovery/_fetchToolsWithinBoxBudget/sinceStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691291,
+    "end_line": 691291,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6467c579feab081c5ed05bef7212f9b92b8cf6979c415328ec6fa5c7605e2f4d",
+    "calls": [
+      "clock.monotonicNow",
+      "elapsedMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691334:26267914",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_withBoxListing",
+    "qualified_name": "createMcpToolsDiscovery/_withBoxListing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691334,
+    "end_line": 691345,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hosted",
+      "box",
+      "resolvedKey"
+    ],
+    "body_sha256": "b16372017bca5931144805057eb0c9e0cef8b29bc257df561c01b7ca4fea482a",
+    "calls": [
+      "new Map",
+      "reportMcpHostEdgeFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691346:26268364",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_adoptDeferredBoxListing",
+    "qualified_name": "createMcpToolsDiscovery/_adoptDeferredBoxListing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691346,
+    "end_line": 691351,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deferredBox",
+      "settledListing"
+    ],
+    "body_sha256": "f6e8d8a9a39897a694ef85d8fc4a121397432bcc0900bea7f3b4c1aa4b644026",
+    "calls": [
+      "Date.now"
+    ],
+    "writes": [
+      "deferredBox.settledListing",
+      "entry.fulfilled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691352:26268645",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_noDiscoveredServers",
+    "qualified_name": "createMcpToolsDiscovery/_noDiscoveredServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691352,
+    "end_line": 691354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "9742d0510910287dbbd6fcac07c4daa87356cc00af5fab2886d717843d295afb",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691355:26268790",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_discoverHttpTools",
+    "qualified_name": "createMcpToolsDiscovery/_discoverHttpTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691355,
+    "end_line": 691385,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifiers",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "39111d50a94876d2ad1d382b829f4ff7a76a5e1061de572bb3efb8cad77e0e0d",
+    "calls": [
+      "_displayRowForIdentifier",
+      "_noDiscoveredServers",
+      "core2.backendMcpExec.listTools",
+      "deps.onBackendListing",
+      "errorMessages.set",
+      "new Map",
+      "reportMcpHostEdgeDegraded",
+      "slotFor",
+      "statusForBackendSlot",
+      "statuses.set",
+      "tools.push",
+      "withMcpTurnStartDiscoveryWait"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691386:26270307",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_discoverBoxTools",
+    "qualified_name": "createMcpToolsDiscovery/_discoverBoxTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691386,
+    "end_line": 691423,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stdioServerNames"
+    ],
+    "body_sha256": "97c6f006cf42d3b20e0704cfe3f85807092aa8ac93c20d9e6a29d7a63df78ce8",
+    "calls": [
+      "_ensureBoxServersPushed",
+      "_noDiscoveredServers",
+      "new Map",
+      "reportBoxStdioErrorStatus",
+      "reportMcpHostEdgeFailure",
+      "statusFromBoxListStatus",
+      "statuses.set",
+      "tools.push",
+      "withMcpTurnStartDiscoveryWait"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691424:26271587",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_httpServerNamesForBackend",
+    "qualified_name": "createMcpToolsDiscovery/_httpServerNamesForBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691424,
+    "end_line": 691428,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "862b40a01ab75d1f4b949a65e32dfdead0915b2a5a0f6fced4784a38e5f317cb",
+    "calls": [
+      ".filter",
+      ".map",
+      "Object.entries",
+      "_grokNativeIdentifiers",
+      "core2.definitionSource.getUserServerConfigs",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691429:26271925",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_inlineHttpServerNames",
+    "qualified_name": "createMcpToolsDiscovery/_inlineHttpServerNames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691429,
+    "end_line": 691438,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "792bbd124f67911fa03b88d16ea4af0d5ac9d2b583412f21d139eadacdc43ae4",
+    "calls": [
+      "Object.entries",
+      "names3.add",
+      "new Set",
+      "parseAccountMcpConfigJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691439:26272258",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_isHttpProvider",
+    "qualified_name": "createMcpToolsDiscovery/_isHttpProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691439,
+    "end_line": 691457,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "14d0ce0e64432c173611e048ad102621a038da3f682b34168a4308b22c748ba5",
+    "calls": [
+      ".has",
+      "_displayRowForIdentifier",
+      "_inlineHttpServerNames",
+      "_isBackendDisplayServer",
+      "core2.definitionSource.getServerUrlForIdentifier",
+      "reportMcpHostEdgeFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691458:26273071",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_boxStdioProviderKind",
+    "qualified_name": "createMcpToolsDiscovery/_boxStdioProviderKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691458,
+    "end_line": 691471,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "4f8a6914d34b7ae00056c15f61dcecbc960745c510d464f7b88faa50f702bc82",
+    "calls": [
+      "core2.definitionSource.getPushedServerConfigs",
+      "core2.definitionSource.getStdioServerConfigs",
+      "reportMcpHostEdgeFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:691472:26273567",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_isBoxStdioProvider",
+    "qualified_name": "createMcpToolsDiscovery/_isBoxStdioProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691472,
+    "end_line": 691474,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "090c368b5a5d6df636dae3d477bfba07e36d519b49c8a8ca9fb4adc4507746d5",
+    "calls": [
+      "_boxStdioProviderKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691475:26273731",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_setBoxMcpExec",
+    "qualified_name": "createMcpToolsDiscovery/_setBoxMcpExec",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691475,
+    "end_line": 691479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "137e7dd6fd9c8a454bb62700e9d0871010f69209e596d5c7ff030d1af883a300",
+    "calls": [
+      "_invalidateToolsCache"
+    ],
+    "writes": [
+      "boxMcpExecSlot",
+      "lastPushedBoxConfigJson"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691480:26273861",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "_executeToolCall",
+    "qualified_name": "createMcpToolsDiscovery/_executeToolCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691480,
+    "end_line": 691493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "call"
+    ],
+    "body_sha256": "d0a7991c7f84cb29741fcdbb5eb6aa637edc472dc673cdedd4dddaa0212d078c",
+    "calls": [
+      ".map",
+      "Object.entries",
+      "Object.fromEntries",
+      "_executeTool",
+      "createContext",
+      "new McpArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691496:26274371",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "getToolsRaw",
+    "qualified_name": "createMcpToolsDiscovery/getToolsRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691496,
+    "end_line": 691496,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "63aef35a2c51e576f55b6615058f55693262de2cf43a424eb284190ad973c90d",
+    "calls": [
+      "_getToolsRaw",
+      "createContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691504:26274798",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "providerDisplayName",
+    "qualified_name": "createMcpToolsDiscovery/providerDisplayName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691504,
+    "end_line": 691504,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "16a88d8eba94faa2b67962c8ca24b3371f7136412818bbacf7f3c049488d2b29",
+    "calls": [
+      "_displayRowForIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691505:26274896",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "providerServerId",
+    "qualified_name": "createMcpToolsDiscovery/providerServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691505,
+    "end_line": 691505,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "ddd56141051ab4d049233794daa8a63a8d562e9fa3e2ab2f5b28be73d794d238",
+    "calls": [
+      "_displayRowForIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691506:26274996",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "providerAccountLabel",
+    "qualified_name": "createMcpToolsDiscovery/providerAccountLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691506,
+    "end_line": 691510,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "fe5c4f7a52b219e0c4707b9971007a64c2fb3e3e9dd37fd16d01d676e3757a00",
+    "calls": [
+      "_displayRowForIdentifier",
+      "slotFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691512:26275350",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "providerServerUrl",
+    "qualified_name": "createMcpToolsDiscovery/providerServerUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691512,
+    "end_line": 691515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "7cf27894e713464ce207f41d1041a0e3e6ef846da34fd4784d1556222908cb33",
+    "calls": [
+      "_displayRowForIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691521:26275774",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "resetPushState",
+    "qualified_name": "createMcpToolsDiscovery/resetPushState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691521,
+    "end_line": 691526,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "dedb9e5a6e22f1f78065b494dce13b504f946584c37d2c07886059a99ec583a3",
+    "calls": [],
+    "writes": [
+      "hasEverPushedBoxConfig",
+      "lastPushedBoxConfigJson"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691527:26275949",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "isBoxExecWired",
+    "qualified_name": "createMcpToolsDiscovery/isBoxExecWired",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691527,
+    "end_line": 691527,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "51c1505f0ff5cf576f1834bad76304875c6428a0ae9e6c49b86e848baa0f7fd0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691528:26276004",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "reconcileBoxServers",
+    "qualified_name": "createMcpToolsDiscovery/reconcileBoxServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691528,
+    "end_line": 691531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dc37f8b6c7176ddbb4235528f91b1d6987053b647fd755ef373074de6418b918",
+    "calls": [
+      "_ensureBoxServersPushed"
+    ],
+    "writes": [
+      "hasEverPushedBoxConfig"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691535:26276145",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "SandMcpExecutor.constructor",
+    "qualified_name": "SandMcpExecutor.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691535,
+    "end_line": 691541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "discovery",
+      "persistImage",
+      "spillLargeText",
+      "auditIdentity",
+      "mcpConfigJson"
+    ],
+    "body_sha256": "225b739972175f74fb19e5550c58d4b2abea3d8012a84df9425d2f340f877338",
+    "calls": [],
+    "writes": [
+      "this.auditIdentity",
+      "this.discovery",
+      "this.mcpConfigJson",
+      "this.persistImage",
+      "this.spillLargeText"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:691547:26276511",
+    "artifact": "host",
+    "module": "shared/node/mcp/tools-discovery.ts",
+    "name": "SandMcpExecutor.execute",
+    "qualified_name": "SandMcpExecutor.execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 691547,
+    "end_line": 691557,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "78a4e41f600b67c751d92163f0cc796b7ccd94eebf57b0005c23cf5f55a692af",
+    "calls": [
+      "augmentMcpResultWithSavedImages",
+      "this.discovery.executeTool",
+      "this.spillLargeText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

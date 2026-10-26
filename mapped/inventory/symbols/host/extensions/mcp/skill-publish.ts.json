@@ -1,0 +1,863 @@
+[
+  {
+    "id": "host:702074:26682040",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "createSandSkillPublishClient",
+    "qualified_name": "createSandSkillPublishClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702074,
+    "end_line": 702081,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a80cab93de73e35526cd1b8789956a7df5017d82b81204142727d3e99f353026",
+    "calls": [
+      "createSandCursorBackendClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702082:26682303",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "teamIdsWhereOnlyAdminsMayPublish",
+    "qualified_name": "teamIdsWhereOnlyAdminsMayPublish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702082,
+    "end_line": 702090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memberPublishSettings"
+    ],
+    "body_sha256": "6d3a3b0c34402a5413c21f03736df28647944d74053dde03bb1c9944487abff8",
+    "calls": [
+      "adminOnly.add",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702091:26682624",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "noPublishTargetsReason",
+    "qualified_name": "noPublishTargetsReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702091,
+    "end_line": 702097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "counts"
+    ],
+    "body_sha256": "31280736a3b94d9f0db6adde150cacb6415413f0a1b680f6b14fcc4f884dbec0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702098:26682953",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "noPublishTargetsRefusal",
+    "qualified_name": "noPublishTargetsRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702098,
+    "end_line": 702105,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "counts"
+    ],
+    "body_sha256": "1586fc98ef955c58b7b0b2e883262e29979536f34025f0ba26ee4f874d683531",
+    "calls": [
+      "noPublishTargetsReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702106:26683221",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "publishableTeams",
+    "qualified_name": "publishableTeams",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702106,
+    "end_line": 702111,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response",
+      "memberPublishSettingsOrUnknown = void 0"
+    ],
+    "body_sha256": "9f7d86c3d84e8cd0a24cdaba82a7157c554daeaeaaab08ab82aba379fe0dab64",
+    "calls": [
+      ".filter",
+      ".map",
+      "response.teams.filter",
+      "teamIdsWhereOnlyAdminsMayPublish"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702112:26683640",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "stageSkillDirForPublish",
+    "qualified_name": "stageSkillDirForPublish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702112,
+    "end_line": 702123,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "281a0db9196e1c13a85ea6902af78a65ea4720c570cce0118586d8cd28c18e7b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702117:26683916",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "filter",
+    "qualified_name": "stageSkillDirForPublish/filter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702117,
+    "end_line": 702120,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "bc282ca8cdc43d059bdac1120dc71acc543a6c4bd1edf7f11b7b1a97c5ecb227",
+    "calls": [
+      "UNPUBLISHABLE_FILES.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702125:26684177",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.constructor",
+    "qualified_name": "SandSkillPublishService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702125,
+    "end_line": 702128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8c7c75e977bf579b71e3aebfb32e553a1750fa66e46e55256a8c145876d0a794",
+    "calls": [
+      "getGlobalSkillsDir",
+      "new GlobalSkillLibrary"
+    ],
+    "writes": [
+      "this.library",
+      "this.options"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702131:26684349",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.listTargets",
+    "qualified_name": "SandSkillPublishService.listTargets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702131,
+    "end_line": 702163,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "67e42e31e1e677f5b71f6697b018c9e7f414ad2530912bd137f110d6fc010147",
+    "calls": [
+      "errorLogTag",
+      "errorMessage",
+      "new GetTeamsRequest",
+      "noPublishTargetsRefusal",
+      "publishableTeams",
+      "this.options.client.getTeams",
+      "this.options.log",
+      "this.options.readMemberPublishMarketplaces",
+      "this.options.reportEdgeFailed"
+    ],
+    "writes": [
+      "response"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702164:26685549",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.publish",
+    "qualified_name": "SandSkillPublishService.publish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702164,
+    "end_line": 702186,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "462ebb97f0113e4b4fcfb89d1c5047b8c6f75487a720894f744ab869eb4a3eef",
+    "calls": [
+      "Number.isInteger",
+      "new SandSkillPublishError",
+      "this.confirmPublishLanded",
+      "this.library.remove",
+      "this.options.log",
+      "this.requireLibraryRecord",
+      "this.upload"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702187:26686520",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.resync",
+    "qualified_name": "SandSkillPublishService.resync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702187,
+    "end_line": 702202,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d2a3a3d09759f5a3f247f1c31f783be953db837d336f786aa86b08f478148dab",
+    "calls": [
+      "readSkillFrontmatter",
+      "requireManifestName",
+      "skillsRootRelativePath",
+      "this.requirePublishedPluginSkill",
+      "this.syncBestEffort",
+      "this.upload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702203:26687223",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.unpublish",
+    "qualified_name": "SandSkillPublishService.unpublish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702203,
+    "end_line": 702212,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "825d1fa6e27eafa34f01019b5d351ad31503d526f05208ca50cf84a03e9a8e96",
+    "calls": [
+      "BigInt",
+      "new UnpublishPluginRequest",
+      "this.options.client.unpublishPlugin",
+      "this.requirePublishedPluginSkill",
+      "this.restoreToLibrary",
+      "this.syncBestEffort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702213:26687675",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.hasRestorablePluginCopy",
+    "qualified_name": "SandSkillPublishService.hasRestorablePluginCopy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702213,
+    "end_line": 702215,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3bc167f5bc1a50ef6347211d788268df74f6f6d9a7b263a3ed3768395e06cac0",
+    "calls": [
+      "this.ownPluginRecords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702216:26687771",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.unpublishPlugin",
+    "qualified_name": "SandSkillPublishService.unpublishPlugin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702216,
+    "end_line": 702228,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "40b53a41a78c5bccfc08251f978bb1b7722568a1a6ccb64e43737e516f3685a6",
+    "calls": [
+      "BigInt",
+      "new UnpublishPluginRequest",
+      "this.options.client.unpublishPlugin",
+      "this.ownPluginRecords",
+      "this.restoreToLibrary",
+      "this.syncBestEffort"
+    ],
+    "writes": [
+      "restoredWorkflowId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702229:26688273",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.ownPluginRecords",
+    "qualified_name": "SandSkillPublishService.ownPluginRecords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702229,
+    "end_line": 702234,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "pluginId"
+    ],
+    "body_sha256": "b5e96a0cef0c201e1d272264376fcba1382ad5b1d02c4e958aa2765c947837ca",
+    "calls": [
+      "index.skills.filter",
+      "this.options.pluginSkills.currentIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702235:26688555",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.restoreToLibrary",
+    "qualified_name": "SandSkillPublishService.restoreToLibrary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702235,
+    "end_line": 702246,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "e4beb2041fa2b081e3e3bef12dd5a8398d67d48cf92802cce853a4deac49c877",
+    "calls": [
+      "getGlobalSkillsDir",
+      "restoreSkillsFromPluginDir",
+      "this.library.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702247:26689198",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.upload",
+    "qualified_name": "SandSkillPublishService.upload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702247,
+    "end_line": 702295,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f7f191d20bb190a490612d64a0df699410c71b4b61497b8b618f5879f5623582",
+    "calls": [
+      "args.description.trim",
+      "errorLogTag",
+      "errorMessage",
+      "new PublishPluginRequest",
+      "new SandSkillPublishError",
+      "new Uint8Array",
+      "packPluginArtifact",
+      "readManifestName",
+      "response.pluginId.toString",
+      "stageSkillDirForPublish",
+      "synthesizeSkillPluginDir",
+      "this.options.client.publishPlugin",
+      "this.options.log",
+      "this.options.reportEdgeFailed"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702296:26691153",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.confirmPublishLanded",
+    "qualified_name": "SandSkillPublishService.confirmPublishLanded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702296,
+    "end_line": 702305,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "published"
+    ],
+    "body_sha256": "a033bdf1b371af89d4b230c318171c16fa42e19af67028e179e89c418f08f4ef",
+    "calls": [
+      ".skills.find",
+      "this.options.pluginSkills.currentIndex",
+      "this.syncBestEffort"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702306:26691623",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.requireLibraryRecord",
+    "qualified_name": "SandSkillPublishService.requireLibraryRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702306,
+    "end_line": 702312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "workflowId"
+    ],
+    "body_sha256": "84f378f5d3cf8241a1f152f48dd703d420332017117139cf876b7eca495152c8",
+    "calls": [
+      "new SandSkillPublishError",
+      "this.library.get"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702313:26691861",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.requirePublishedPluginSkill",
+    "qualified_name": "SandSkillPublishService.requirePublishedPluginSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702313,
+    "end_line": 702328,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "workflowId"
+    ],
+    "body_sha256": "100204cd3f60199517377127f509e094e7f273a781388b57a101ba1061f07d79",
+    "calls": [
+      "index.skills.find",
+      "new SandSkillPublishError",
+      "this.options.pluginSkills.currentIndex"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702329:26692638",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "SandSkillPublishService.syncBestEffort",
+    "qualified_name": "SandSkillPublishService.syncBestEffort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702329,
+    "end_line": 702341,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "88e2e21ba466f52b08f4e966a74ad5601a40552e838a6b94bce262948c3a80d4",
+    "calls": [
+      "errorLogTag",
+      "errorMessage",
+      "this.options.log",
+      "this.options.pluginSkills.sync",
+      "this.options.reportEdgeFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702343:26692991",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "readSkillFrontmatter",
+    "qualified_name": "readSkillFrontmatter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702343,
+    "end_line": 702355,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "6c4bca53f9f75c5741327feb461c31fdeaa43a1ced9ebd67bb6954d41503d3c7",
+    "calls": [
+      "new SandSkillPublishError",
+      "parseSkillFile",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702356:26693426",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "readManifestName",
+    "qualified_name": "readManifestName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702356,
+    "end_line": 702368,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pluginDir"
+    ],
+    "body_sha256": "6db0a1f358bca67f7a3a6a086c93e7e9d3d36e0e4b5217f729a9d14c0f5a9f3e",
+    "calls": [
+      "JSON.parse",
+      "manifest.name.trim",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702369:26693866",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "requireManifestName",
+    "qualified_name": "requireManifestName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702369,
+    "end_line": 702377,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "installPath"
+    ],
+    "body_sha256": "2b0586fd6569878ff97faa9e2e7de7506be9391ba9f2e9da0f34fda5f69712f4",
+    "calls": [
+      "new SandSkillPublishError",
+      "readManifestName"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702378:26694190",
+    "artifact": "host",
+    "module": "host/extensions/mcp/skill-publish.ts",
+    "name": "skillsRootRelativePath",
+    "qualified_name": "skillsRootRelativePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702378,
+    "end_line": 702385,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skillRelativePath"
+    ],
+    "body_sha256": "2b29579ef08b7e7c847001cf63af77de71ff3c975cf5fd4e719bae8e8ff94a95",
+    "calls": [
+      ".filter",
+      ".split",
+      "new SandSkillPublishError",
+      "segments.slice",
+      "withoutRoot.join"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSkillPublishError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

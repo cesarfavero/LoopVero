@@ -1,0 +1,1326 @@
+[
+  {
+    "id": "host:757285:28924523",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "normalizeSendToAgentArgs",
+    "qualified_name": "normalizeSendToAgentArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757285,
+    "end_line": 757321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "c432d46496234f32c9de6296d624f5bd0d9f11a332195fecf01985193f735c68",
+    "calls": [
+      ".filter",
+      "Object.entries",
+      "Object.fromEntries",
+      "SEND_TO_AGENT_FAN_OUT_KEYS.find",
+      "aliasesUsed.join",
+      "ctx.addIssue",
+      "isUnknownRecord2",
+      "pick2",
+      "preprocessLenientBoolean",
+      "reportShim",
+      "sendToAgentArgAlias.applied"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757288:28924659",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "pick2",
+    "qualified_name": "normalizeSendToAgentArgs/pick2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757288,
+    "end_line": 757294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "canonical",
+      "aliases"
+    ],
+    "body_sha256": "0a8ef70223e2a3fe9549a765a66dfdc681c83007b98b9ae7198c3f510eeb9efc",
+    "calls": [
+      "aliases.find",
+      "aliasesUsed.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757323:28926635",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "refineSendToAgentImages",
+    "qualified_name": "refineSendToAgentImages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757323,
+    "end_line": 757333,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "4e7b0b5824702b8e07055f5ebedf8773dcd69bda4cbea3d85b1482d8328e9e44",
+    "calls": [
+      ".entries",
+      "ctx.addIssue",
+      "isValidAttachmentUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757363:28931924",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeSendToAgentTool",
+    "qualified_name": "describeSendToAgentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757363,
+    "end_line": 757365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "audience = \"main\""
+    ],
+    "body_sha256": "57d1e5bd71ea61345fa226bc910968242f7ea6927a0cb70754b2cd6f2dfa6082",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757366:28932234",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "offersSendToAgent",
+    "qualified_name": "offersSendToAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757366,
+    "end_line": 757369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c8e747c4c855c29fef304011cc6a2eb294fcaab09afed7a67962d30057df954f",
+    "calls": [
+      "host.gates.automationSendToAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757370:28932410",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "resolveSendToAgentImages",
+    "qualified_name": "resolveSendToAgentImages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757370,
+    "end_line": 757379,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "images",
+      "deps"
+    ],
+    "body_sha256": "cd1da840368ebed31c7657ea21b936423b1e744e829abaebd893b21a66cdb20b",
+    "calls": [
+      "deps.resolveImageSource",
+      "resolved.push",
+      "sendToAgentImageDimensions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757380:28932935",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "sendToAgentImageDimensions",
+    "qualified_name": "sendToAgentImageDimensions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757380,
+    "end_line": 757385,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "readMediaDimensions2"
+    ],
+    "body_sha256": "b85151bc8b6342cfdcebdbdf1283ba8e341476ee56ddbf2eb1c879c59dabcbe9",
+    "calls": [
+      "filePathFromFileUrl",
+      "readMediaDimensions2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757386:28933244",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createSendToAgentTool",
+    "qualified_name": "createSendToAgentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757386,
+    "end_line": 757433,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "84d7db385344c12165b27cdc00930eaa29826675c62fa545757c08c6ac16af24",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "defineCommunicateTool",
+      "describeSendToAgentTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757396:28933714",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSendToAgentTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757396,
+    "end_line": 757396,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4d053a98eb430cdc565b7cf0c0705cb637b089f9880122c34c0a3717c117e773",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757397:28933767",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createSendToAgentTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757397,
+    "end_line": 757431,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "01f16500ba2dfcde6c3dc4d83392e583404aa2f88c2e883752606aed746cbfbe",
+    "calls": [
+      "bindMessageDeliveryReport",
+      "d.getSelfAgentId",
+      "d.sendToAgent",
+      "reportDelivery.failed",
+      "reportDelivery.settled",
+      "resolveCardTaskThread",
+      "resolveSendToAgentImages"
+    ],
+    "writes": [
+      "sent"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:757443:28935727",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createListSectionsTool",
+    "qualified_name": "createListSectionsTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757443,
+    "end_line": 757457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "c551b496968273280e18ee34dcc02f6dbd351c7036f6e4dd2f3bd40cf016cde2",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports2.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757449:28936239",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createListSectionsTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757449,
+    "end_line": 757455,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_args",
+      "m2"
+    ],
+    "body_sha256": "a1c03aec0f86e3e86de6513d299aa768579aa7f65bc423edf2863e26a0637d23",
+    "calls": [
+      ".join",
+      "m2.listSections",
+      "sections.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757458:28936575",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createCreateAgentTool",
+    "qualified_name": "createCreateAgentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757458,
+    "end_line": 757474,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "c2f8eb76a296b8d481af93b4d39876574b61d077715bffbe4e4f4d21bb113875",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757464:28937313",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createCreateAgentTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757464,
+    "end_line": 757472,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "m2"
+    ],
+    "body_sha256": "85b1c575056821e7704bc097d3184bc041188bfc1d855cb6f447a3f030afb7b8",
+    "calls": [
+      "m2.create"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757480:28938149",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createUpdateAgentTool",
+    "qualified_name": "createUpdateAgentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757480,
+    "end_line": 757503,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "18b24be0c9cff8db34d5715cb970ad190d23352943b06f3d817ffe66732c7f0e",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757486:28938652",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createUpdateAgentTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757486,
+    "end_line": 757486,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "eb31fbd10e77b5574a68d25c1af03de840fbb145fcd788fb5a3ce3157adf2494",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757487:28938704",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createUpdateAgentTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757487,
+    "end_line": 757501,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "m2"
+    ],
+    "body_sha256": "4685f3eaedf6a12a48471ffa6e075bffd802c1d77a1612773bf37106c3c3352c",
+    "calls": [
+      "m2.update"
+    ],
+    "writes": [
+      "patch2.description",
+      "patch2.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757507:28939551",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createSetPrimaryBotTool",
+    "qualified_name": "createSetPrimaryBotTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757507,
+    "end_line": 757522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "setPrimaryBot"
+    ],
+    "body_sha256": "e7eb7929125797ba0ac5be1ff41163530317389e0dcfc0e481456185c2873449",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757515:28940435",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSetPrimaryBotTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757515,
+    "end_line": 757515,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "eb31fbd10e77b5574a68d25c1af03de840fbb145fcd788fb5a3ce3157adf2494",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:757516:28940489",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createSetPrimaryBotTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 757516,
+    "end_line": 757519,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "1fd6d2beef10a2c10a02e64d51f5380543b1e3dc786630825db822ecb7b94351",
+    "calls": [
+      "d.setPrimaryBot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543308:20064850",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "normalizeSendToAgentArgs",
+    "qualified_name": "normalizeSendToAgentArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543308,
+    "end_line": 543344,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "27567c8a338d52c707e730cbaa42ee0481e172cbed81123f477d751cc6f7938c",
+    "calls": [
+      ".filter",
+      "Object.entries",
+      "Object.fromEntries",
+      "SEND_TO_AGENT_FAN_OUT_KEYS.find",
+      "aliasesUsed.join",
+      "ctx.addIssue",
+      "isUnknownRecord2",
+      "pick2",
+      "preprocessLenientBoolean",
+      "reportShim",
+      "sendToAgentArgAlias.applied"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543311:20064986",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "pick2",
+    "qualified_name": "normalizeSendToAgentArgs/pick2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543311,
+    "end_line": 543317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "canonical",
+      "aliases"
+    ],
+    "body_sha256": "0a8ef70223e2a3fe9549a765a66dfdc681c83007b98b9ae7198c3f510eeb9efc",
+    "calls": [
+      "aliases.find",
+      "aliasesUsed.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543346:20066962",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "refineSendToAgentImages",
+    "qualified_name": "refineSendToAgentImages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543346,
+    "end_line": 543356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "54af9031b568fe17af79ec1e3f2670ff3eef4e0837f6ca7b2a8897cd483b46ed",
+    "calls": [
+      ".entries",
+      "ctx.addIssue",
+      "isValidAttachmentUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543386:20072251",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeSendToAgentTool",
+    "qualified_name": "describeSendToAgentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543386,
+    "end_line": 543388,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "audience = \"main\""
+    ],
+    "body_sha256": "57d1e5bd71ea61345fa226bc910968242f7ea6927a0cb70754b2cd6f2dfa6082",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543389:20072561",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "offersSendToAgent",
+    "qualified_name": "offersSendToAgent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543389,
+    "end_line": 543392,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c8e747c4c855c29fef304011cc6a2eb294fcaab09afed7a67962d30057df954f",
+    "calls": [
+      "host.gates.automationSendToAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543393:20072737",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "resolveSendToAgentImages",
+    "qualified_name": "resolveSendToAgentImages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543393,
+    "end_line": 543402,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "images",
+      "deps"
+    ],
+    "body_sha256": "cd1da840368ebed31c7657ea21b936423b1e744e829abaebd893b21a66cdb20b",
+    "calls": [
+      "deps.resolveImageSource",
+      "resolved.push",
+      "sendToAgentImageDimensions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543403:20073262",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "sendToAgentImageDimensions",
+    "qualified_name": "sendToAgentImageDimensions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543403,
+    "end_line": 543408,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "readMediaDimensions"
+    ],
+    "body_sha256": "60bfd9bceb7afef48425b3352e85ac20682041a7d4b9e1e411ac4042f0d0fd47",
+    "calls": [
+      "filePathFromFileUrl",
+      "readMediaDimensions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543409:20073568",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createSendToAgentTool",
+    "qualified_name": "createSendToAgentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543409,
+    "end_line": 543456,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "3051e9b6fb0a4f18de0838291c816c4f38f8326823b45a6ddab5d9ef2079cff8",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "defineCommunicateTool",
+      "describeSendToAgentTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543419:20074038",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSendToAgentTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543419,
+    "end_line": 543419,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4d053a98eb430cdc565b7cf0c0705cb637b089f9880122c34c0a3717c117e773",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543420:20074091",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createSendToAgentTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543420,
+    "end_line": 543454,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "069f796d5441ff6c0eda11792328eaf748dc90fff94ee144ee1879b58e325e12",
+    "calls": [
+      "bindMessageDeliveryReport",
+      "d.getSelfAgentId",
+      "d.sendToAgent",
+      "reportDelivery.failed",
+      "reportDelivery.settled",
+      "resolveCardTaskThread",
+      "resolveSendToAgentImages"
+    ],
+    "writes": [
+      "sent"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:543466:20076051",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createListSectionsTool",
+    "qualified_name": "createListSectionsTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543466,
+    "end_line": 543480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "e06146adc50281e95476e24912f61c4a837a26579ec064ada6164cb7b467dd97",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports3.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543472:20076563",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createListSectionsTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543472,
+    "end_line": 543478,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "_args",
+      "m2"
+    ],
+    "body_sha256": "a1c03aec0f86e3e86de6513d299aa768579aa7f65bc423edf2863e26a0637d23",
+    "calls": [
+      ".join",
+      "m2.listSections",
+      "sections.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543481:20076899",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createCreateAgentTool",
+    "qualified_name": "createCreateAgentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543481,
+    "end_line": 543497,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "c2f8eb76a296b8d481af93b4d39876574b61d077715bffbe4e4f4d21bb113875",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543487:20077637",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createCreateAgentTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543487,
+    "end_line": 543495,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "m2"
+    ],
+    "body_sha256": "85b1c575056821e7704bc097d3184bc041188bfc1d855cb6f447a3f030afb7b8",
+    "calls": [
+      "m2.create"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543503:20078473",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createUpdateAgentTool",
+    "qualified_name": "createUpdateAgentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543503,
+    "end_line": 543526,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "management"
+    ],
+    "body_sha256": "18b24be0c9cff8db34d5715cb970ad190d23352943b06f3d817ffe66732c7f0e",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543509:20078976",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createUpdateAgentTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543509,
+    "end_line": 543509,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "eb31fbd10e77b5574a68d25c1af03de840fbb145fcd788fb5a3ce3157adf2494",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543510:20079028",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createUpdateAgentTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543510,
+    "end_line": 543524,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "m2"
+    ],
+    "body_sha256": "4685f3eaedf6a12a48471ffa6e075bffd802c1d77a1612773bf37106c3c3352c",
+    "calls": [
+      "m2.update"
+    ],
+    "writes": [
+      "patch2.description",
+      "patch2.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543530:20079875",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "createSetPrimaryBotTool",
+    "qualified_name": "createSetPrimaryBotTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543530,
+    "end_line": 543545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "setPrimaryBot"
+    ],
+    "body_sha256": "e7eb7929125797ba0ac5be1ff41163530317389e0dcfc0e481456185c2873449",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543538:20080759",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSetPrimaryBotTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543538,
+    "end_line": 543538,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "eb31fbd10e77b5574a68d25c1af03de840fbb145fcd788fb5a3ce3157adf2494",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:543539:20080813",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-agent-management-tools.ts",
+    "name": "execute",
+    "qualified_name": "createSetPrimaryBotTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 543539,
+    "end_line": 543542,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "1fd6d2beef10a2c10a02e64d51f5380543b1e3dc786630825db822ecb7b94351",
+    "calls": [
+      "d.setPrimaryBot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,441 @@
+[
+  {
+    "id": "host:738763:28065237",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.constructor",
+    "qualified_name": "ProfileWatch.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738763,
+    "end_line": 738767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm",
+      "emitter",
+      "rosterEmit"
+    ],
+    "body_sha256": "408979bbb9a818da75bbe01a6b0e9aebb46555b8e6a64a1ac0e58e43bf4f0f30",
+    "calls": [],
+    "writes": [
+      "this.emitter",
+      "this.rosterEmit",
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738777:28065603",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.emitProfileChanged",
+    "qualified_name": "ProfileWatch.emitProfileChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738777,
+    "end_line": 738783,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "avatarChanged = false"
+    ],
+    "body_sha256": "5726fcbd669867e941259d702a51c8b5eed78b3bcb6eda2abb6177f0eb3b9427",
+    "calls": [
+      "this.emitter.emit",
+      "this.recordNameChangeEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738784:28065795",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.noteAgentIdentityRenamed",
+    "qualified_name": "ProfileWatch.noteAgentIdentityRenamed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738784,
+    "end_line": 738800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    previousName,\n    name: name18\n  }"
+    ],
+    "body_sha256": "02e55dad30bf40f55214a091adeb8f32fa8cfff4c7ee3cc39d5685bba1b48853",
+    "calls": [
+      "previousName.trim",
+      "this.lastKnownAgentNames.get",
+      "this.lastKnownAgentNames.set",
+      "this.tm.emitTimelineEvent",
+      "this.tm.sessions.isAgentGone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738801:28066295",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.noteHostWrittenAvatarVersion",
+    "qualified_name": "ProfileWatch.noteHostWrittenAvatarVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738801,
+    "end_line": 738803,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "15d1e694ea6aea954db91427d7086b2d23825a32d2a4988fc27c6faab000c178",
+    "calls": [
+      "this.hostWrittenAvatarVersions.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738804:28066399",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.recordNameChangeEvent",
+    "qualified_name": "ProfileWatch.recordNameChangeEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738804,
+    "end_line": 738816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "021997dcdc3ed095a513a0b7f62cdf4b64df13c6baa24e287d3b439ef501070d",
+    "calls": [
+      "profile.name.trim",
+      "this.lastKnownAgentNames.get",
+      "this.lastKnownAgentNames.set",
+      "this.tm.emitTimelineEvent",
+      "this.tm.sessionStore.getAgentProfileText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738817:28066915",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.seedKnownAgentName",
+    "qualified_name": "ProfileWatch.seedKnownAgentName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738817,
+    "end_line": 738822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "dd4e3ff0edacb2b03170a4ad7d006b86aedcb5454fe6b6386b475e210b0d0a70",
+    "calls": [
+      "profile.name.trim",
+      "this.lastKnownAgentNames.has",
+      "this.lastKnownAgentNames.set",
+      "this.tm.sessionStore.getAgentProfileText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738823:28067203",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.subscribeProfileChanged",
+    "qualified_name": "ProfileWatch.subscribeProfileChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738823,
+    "end_line": 738828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "77798a98fcc2b9e9adf6ce146c7fa0987fba8c7b77f9bfd3071becb81bfab94f",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738829:28067370",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.watchSessionProfile",
+    "qualified_name": "ProfileWatch.watchSessionProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738829,
+    "end_line": 738843,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "5fc4dbc317e6a5da928951db6b177c6439945f8512377534d9cf2174579f0460",
+    "calls": [
+      "this.seedKnownAgentName",
+      "this.stopWatchingProfile"
+    ],
+    "writes": [
+      "this.profileWatcher",
+      "this.watchedProfileAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:738844:28068030",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.scheduleProfileEmit",
+    "qualified_name": "ProfileWatch.scheduleProfileEmit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738844,
+    "end_line": 738864,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "avatarChanged"
+    ],
+    "body_sha256": "119309b7c425219b1e435841623ee0be06b3ae4263ac97e229c62b527721a4f3",
+    "calls": [
+      "this.tm.clock.schedule"
+    ],
+    "writes": [
+      "this.pendingAvatarChange",
+      "this.profileWatchTimer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738865:28068949",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.emitLocalAvatarChange",
+    "qualified_name": "ProfileWatch.emitLocalAvatarChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738865,
+    "end_line": 738869,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "bfa89a4b87716433ee90d644780fb8bdb69fb444bcd2e2f520e4313efc81570e",
+    "calls": [
+      "this.emitProfileChanged",
+      "this.hostWrittenAvatarVersions.get",
+      "this.tm.sessionStore.getAgentAvatar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738870:28069201",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.stopWatchingProfile",
+    "qualified_name": "ProfileWatch.stopWatchingProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738870,
+    "end_line": 738877,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "78fc955e127a11aef1e4d4bd3b71aa9d6a807b15291acc8ac1532e6e7c46922b",
+    "calls": [
+      "this.profileWatchTimer.dispose",
+      "this.profileWatcher.close"
+    ],
+    "writes": [
+      "this.pendingAvatarChange",
+      "this.profileWatchTimer",
+      "this.profileWatcher",
+      "this.watchedProfileAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738878:28069463",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.getAgentDisplayProfile",
+    "qualified_name": "ProfileWatch.getAgentDisplayProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738878,
+    "end_line": 738886,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "aad539d9e21814f0a0a8f03c3c72d6b09bcb29aa6d5e308733c78d3c451bc0c3",
+    "calls": [
+      "getSandProfilePath",
+      "profile.name.trim",
+      "readSandProfileFile",
+      "this.tm.sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738887:28069863",
+    "artifact": "host",
+    "module": "host/extensions/transcript/profile-watch.ts",
+    "name": "ProfileWatch.resolveAgentProfile",
+    "qualified_name": "ProfileWatch.resolveAgentProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738887,
+    "end_line": 738894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "41111a7a0e106c2f63731ba1a8fd06986bb57c5416b974e2faf1d316b8b90eee",
+    "calls": [
+      "fileProfile.name.trim",
+      "getSandProfilePath",
+      "getSandSettingsPath",
+      "readSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

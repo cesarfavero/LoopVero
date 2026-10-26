@@ -1,0 +1,300 @@
+[
+  {
+    "id": "host:685082:26025924",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "normalizeAccountKey",
+    "qualified_name": "normalizeAccountKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685082,
+    "end_line": 685088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawAccountKey"
+    ],
+    "body_sha256": "f50202008c5316acb04fb73937719678cb5d6c3537614e49812848c002355658",
+    "calls": [
+      "new SandMcpConfigError",
+      "normalizeMcpAccountLabel"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685089:26026160",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "runtimeConfigFromDisplay",
+    "qualified_name": "runtimeConfigFromDisplay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685089,
+    "end_line": 685098,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "display"
+    ],
+    "body_sha256": "250bfcedff646452c2bf8baad1ef20ecb8d4f6d05f705ab7950ca73e260b8c72",
+    "calls": [
+      "Object.fromEntries",
+      "display.servers.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685099:26026506",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "credentialStateByRow",
+    "qualified_name": "credentialStateByRow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685099,
+    "end_line": 685110,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "display"
+    ],
+    "body_sha256": "23bdce90169325be1d073c76a6a23690205033b51ebf592491e06efcd9bbaf6e",
+    "calls": [
+      ".map",
+      ".sort",
+      "byIdentifier.set",
+      "isWithheldMcpDisplayServer",
+      "new Map",
+      "unnamedMcpRowIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685111:26027013",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "accountCredentialFingerprint",
+    "qualified_name": "accountCredentialFingerprint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685111,
+    "end_line": 685115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "display"
+    ],
+    "body_sha256": "14fecf18b81320cdfd771c1a70d17dd613da6664f5175098088ddfe959f1051b",
+    "calls": [
+      ".sort",
+      "JSON.stringify",
+      "credentialStateByRow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685116:26027186",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "accountCredentialRowFingerprints",
+    "qualified_name": "accountCredentialRowFingerprints",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685116,
+    "end_line": 685120,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "display"
+    ],
+    "body_sha256": "d04a9d4b30af72d9d15743fdb5b65c7230b11e42f58faaa7acf3de69fd56c4ef",
+    "calls": [
+      ".map",
+      "credentialStateByRow",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685121:26027355",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "validateMarketplacePluginId",
+    "qualified_name": "validateMarketplacePluginId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685121,
+    "end_line": 685127,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawPluginId"
+    ],
+    "body_sha256": "27c6b23f9b7635de2d49f22160ff19121a5905c83c702ce761c208f8fe8498e4",
+    "calls": [
+      "/^\\d+$/.test",
+      "new SandMcpConfigError",
+      "rawPluginId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685128:26027580",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "pluginAttributionFromDisplayServer",
+    "qualified_name": "pluginAttributionFromDisplayServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685128,
+    "end_line": 685139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "bbde1cd7226f214d65df0e11782a8a7d5ce4eab8e7a83a2b6fcf4504025f7d86",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685140:26028316",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "statusFromBackendListStatus",
+    "qualified_name": "statusFromBackendListStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685140,
+    "end_line": 685143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status",
+      "{ statusDetail } = {}"
+    ],
+    "body_sha256": "e42dc84deed68dbc9ba6e942a9ec6287b3a4070dd96f4b004b89334eea8b692b",
+    "calls": [
+      "parseMcpRawServerStatus",
+      "statusFromMcpRawServerStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685144:26028623",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-display-runtime.ts",
+    "name": "statusFromBoxListStatus",
+    "qualified_name": "statusFromBoxListStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685144,
+    "end_line": 685154,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status",
+      "{\n  discoveryUnavailable = false,\n  technicalDetail,\n  pendingSignIn\n} = {}"
+    ],
+    "body_sha256": "511596daf7964653bac306ba2603f77ac878af4446bc02c97120e695b4d2ece4",
+    "calls": [
+      "parseMcpRawServerStatus",
+      "statusFromMcpRawServerStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

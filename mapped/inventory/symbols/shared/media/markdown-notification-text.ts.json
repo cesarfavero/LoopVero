@@ -1,0 +1,332 @@
+[
+  {
+    "id": "host:722185:27398312",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "markdownToNotificationText",
+    "qualified_name": "markdownToNotificationText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722185,
+    "end_line": 722195,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdown",
+      "maxChars = SOURCE_MAX_CHARS"
+    ],
+    "body_sha256": "b642188b5423688ffa8a92ef7fa6f1e6e008ff5b0c977e3fb32aa3e6b7df326f",
+    "calls": [
+      ".replace",
+      ".trim",
+      "boundedPreviewSource",
+      "codeRuns",
+      "escapeRuns",
+      "flattenMarkup",
+      "flattenMathSpans",
+      "maskRuns",
+      "stripInlineFormattingTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722196:27398938",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "maskRuns",
+    "qualified_name": "maskRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722196,
+    "end_line": 722205,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "runs",
+      "literals"
+    ],
+    "body_sha256": "1f3d7372fd94fc7e3c9cf04d21de5e89944693f0a64e2b900ceb90cf6884aa31",
+    "calls": [
+      "literals.push",
+      "text3.slice"
+    ],
+    "writes": [
+      "cursor",
+      "masked"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722206:27399258",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "flattenMarkup",
+    "qualified_name": "flattenMarkup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722206,
+    "end_line": 722217,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "a3b42830125ee5064ff31f91110bcce92912e1f5b73b393193184b448845498a",
+    "calls": [
+      "BLOCK_TRANSFORMS.reduce",
+      "EMPHASIS_TRANSFORMS.reduce",
+      "LINK_TRANSFORMS.reduce",
+      "flattened.replace"
+    ],
+    "writes": [
+      "flattened",
+      "pass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722218:27399790",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "codeRuns",
+    "qualified_name": "codeRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722218,
+    "end_line": 722241,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "cut"
+    ],
+    "body_sha256": "522208931e82120efa31ba6d9beac99571169aee35012771b527f4b3749c841e",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "codeSpanRanges",
+      "fencedBlockRanges",
+      "fences.map",
+      "indentedCodeRuns",
+      "monotonicRangeProbe",
+      "source.lastIndexOf",
+      "source.matchAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722242:27401072",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "escapeRuns",
+    "qualified_name": "escapeRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722242,
+    "end_line": 722249,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "a125b2043e3ce2d6cbf0f61bd7323b6474475f6982abcf71b27e2f1c5d86a4cb",
+    "calls": [
+      ".map",
+      "text3.matchAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722250:27401262",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "indentedCodeRuns",
+    "qualified_name": "indentedCodeRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722250,
+    "end_line": 722278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "fences"
+    ],
+    "body_sha256": "74171bb860e5befed906e047c4e467ab5d8665d15f78c18860302cc2385f81eb",
+    "calls": [
+      "/^[ \\t]/.test",
+      "INDENTED_CODE_PATTERN.test",
+      "LIST_ITEM_PATTERN.test",
+      "fences.map",
+      "isInsideFenceBody",
+      "line.trim",
+      "monotonicRangeProbe",
+      "runs.push",
+      "source.slice",
+      "source.split"
+    ],
+    "writes": [
+      "afterBlank",
+      "inList",
+      "offset2",
+      "open13"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722279:27402424",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "monotonicRangeProbe",
+    "qualified_name": "monotonicRangeProbe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722279,
+    "end_line": 722288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ranges"
+    ],
+    "body_sha256": "384a16d62086c2fd72f623271cb76c3dafce2212cc0a0a4d48c09c548dc415d6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722289:27402703",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "fenceBody",
+    "qualified_name": "fenceBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722289,
+    "end_line": 722293,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "block"
+    ],
+    "body_sha256": "ec9956e5247c47a36ce97cdaf08832dc7e42ffaa5bcda84c6c03a067e6da1892",
+    "calls": [
+      ".slice",
+      "FENCE_CLOSE_PATTERN.test",
+      "block.split",
+      "lines2.at",
+      "lines2.join",
+      "lines2.pop"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722294:27402873",
+    "artifact": "host",
+    "module": "shared/media/markdown-notification-text.ts",
+    "name": "spanBody",
+    "qualified_name": "spanBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722294,
+    "end_line": 722297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span"
+    ],
+    "body_sha256": "536e4c0c3832ced37b814e2788642fb933a6c5b79e7c818df99541982e3ed09f",
+    "calls": [
+      "span.replace",
+      "span.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,29 @@
+# `owesSubagentRevivalReply`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/components/subagents/README.md).
+
+**Módulo:** `core/runner/subagent-revival-prompt.ts` · [README do módulo](../../../../../modules/core/runner/subagent-revival-prompt-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [evaluation:583901-583907](../../../../../../reference/runtime/sand-eval-runner.cjs#L583901-L583907) | `FunctionDeclaration` | não | `batch, context2` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [evaluation:583901-583907](../../../../../../reference/runtime/sand-eval-runner.cjs#L583901-L583907) | 1 | 0 | 0 | 2 | 0 | 0 |
+
+### evaluation:583901
+
+Chamadas escritas diretamente neste corpo: `batch.subagents.some`, `revivalInstructionOf`.
+
+SHA-256 do trecho: `149adfb066c9ba605445a755baf05a0337cac85dbbffc1186d746bf3b8848854`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

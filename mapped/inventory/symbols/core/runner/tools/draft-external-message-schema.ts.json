@@ -1,0 +1,710 @@
+[
+  {
+    "id": "host:755049:28823768",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "isFieldProvided2",
+    "qualified_name": "isFieldProvided2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755049,
+    "end_line": 755054,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c060956a6294b96d85547adc4bbfe178866245307eb1d903f8dfb7c0529a4373",
+    "calls": [
+      "Array.isArray"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755055:28823966",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "requireField",
+    "qualified_name": "requireField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755055,
+    "end_line": 755061,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "field",
+      "platform2"
+    ],
+    "body_sha256": "8ab2bb215571892128a3eb348f1c8293622c48706ed0f1c8b2932c37e796918c",
+    "calls": [
+      "ctx.addIssue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755062:28824172",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "isPlainEmailAddress",
+    "qualified_name": "isPlainEmailAddress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755062,
+    "end_line": 755064,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e4767355ef0f297ea82add9b43b799523bd506fc4ca2e48536a104edfc333de1",
+    "calls": [
+      "/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755065:28824263",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "requireAddresses",
+    "qualified_name": "requireAddresses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755065,
+    "end_line": 755073,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "field",
+      "values"
+    ],
+    "body_sha256": "047f48f02eae31079e9291fbe7fedb5e4ac33f4715f2595f84e73e28d125d2a4",
+    "calls": [
+      "ctx.addIssue",
+      "invalid2.join",
+      "values.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755074:28824667",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineEmailBodies",
+    "qualified_name": "refineEmailBodies",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755074,
+    "end_line": 755084,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "9338fffb78f14e230906bdaff61cc5b7700c8d8f38a375d31ff6dae41450f55e",
+    "calls": [
+      "ctx.addIssue",
+      "emailBodyHtmlTag",
+      "refineHtmlBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755085:28825221",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineHtmlBody",
+    "qualified_name": "refineHtmlBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755085,
+    "end_line": 755102,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html",
+      "body",
+      "ctx"
+    ],
+    "body_sha256": "f88d607baf94cb02d21f20a46b3235faac92662b840b8f24ec6ba7393d960c51",
+    "calls": [
+      "ctx.addIssue",
+      "emailHtmlMatchesBody",
+      "emailHtmlNonTextTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755111:28826600",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "slackBodyProblems",
+    "qualified_name": "slackBodyProblems",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755111,
+    "end_line": 755137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "2e6396da5d8c040e34aa635799f6fd2c580735033504202c32e8d6ff416b2fb0",
+    "calls": [
+      ".trimEnd",
+      "/\\s/.test",
+      "FENCE_AFTER_TEXT.exec",
+      "FENCE_OPENING.exec",
+      "SLACK_BULLET.test",
+      "SLACK_LINK.test",
+      "body.split",
+      "line.replace",
+      "line.trim",
+      "new Set",
+      "opening[computed].includes",
+      "opening[computed].startsWith",
+      "opening[computed].trim",
+      "problems.add",
+      "readFenceLine"
+    ],
+    "writes": [
+      "fence"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755138:28827651",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "readFenceLine",
+    "qualified_name": "readFenceLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755138,
+    "end_line": 755147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trimmed",
+      "fence"
+    ],
+    "body_sha256": "08160499ed60f52fbf3c7b81f6fbc2681b0afd8ac418c282ea6e042821f8512f",
+    "calls": [
+      "/^(`+|~+)$/.exec",
+      "CLOSE_AFTER_TEXT.exec",
+      "CLOSE_BEFORE_TEXT.exec",
+      "run.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755153:28828439",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineSlackBody",
+    "qualified_name": "refineSlackBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755153,
+    "end_line": 755164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "ctx"
+    ],
+    "body_sha256": "628c2fa83d32d2a036d657673a64f2f872dff69c1fa6bfca1b3df682d850422c",
+    "calls": [
+      ".map",
+      "SLACK_DRAFT_SYNTAX_PROBLEMS.filter",
+      "ctx.addIssue",
+      "fixes.join",
+      "slackBodyProblems"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755165:28828996",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineDraftExternalMessage",
+    "qualified_name": "refineDraftExternalMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755165,
+    "end_line": 755203,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "b583cfb4a90a5b73a4d4242230af2ee12d4caa9c80873930228a722fb0b2fbc6",
+    "calls": [
+      "ctx.addIssue",
+      "isFieldProvided2",
+      "refineEmailBodies",
+      "refineSlackBody",
+      "requireAddresses",
+      "requireField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539674:19907686",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "isFieldProvided2",
+    "qualified_name": "isFieldProvided2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539674,
+    "end_line": 539679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c060956a6294b96d85547adc4bbfe178866245307eb1d903f8dfb7c0529a4373",
+    "calls": [
+      "Array.isArray"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539680:19907884",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "requireField",
+    "qualified_name": "requireField",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539680,
+    "end_line": 539686,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "field",
+      "platform"
+    ],
+    "body_sha256": "43a9a45648232c14d3b833186cc9605efcf06be13e6ef3392c71a1646527f58e",
+    "calls": [
+      "ctx.addIssue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539687:19908088",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "isPlainEmailAddress",
+    "qualified_name": "isPlainEmailAddress",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539687,
+    "end_line": 539689,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e4767355ef0f297ea82add9b43b799523bd506fc4ca2e48536a104edfc333de1",
+    "calls": [
+      "/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539690:19908179",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "requireAddresses",
+    "qualified_name": "requireAddresses",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539690,
+    "end_line": 539698,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "field",
+      "values"
+    ],
+    "body_sha256": "2f8cf4e6cebb89a5203d5bf9a8c069de4e47de3d37062988d1ca714f20643b9f",
+    "calls": [
+      "ctx.addIssue",
+      "invalid2.join",
+      "values.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539699:19908583",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineEmailBodies",
+    "qualified_name": "refineEmailBodies",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539699,
+    "end_line": 539709,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "d5ded1d0756e9e2d08274319a4cea2f04c79a80edf415a8919ba097eee6f93ea",
+    "calls": [
+      "ctx.addIssue",
+      "emailBodyHtmlTag",
+      "refineHtmlBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539710:19909137",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineHtmlBody",
+    "qualified_name": "refineHtmlBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539710,
+    "end_line": 539727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html",
+      "body",
+      "ctx"
+    ],
+    "body_sha256": "da9aecf2f92e790d6582c32ab8df3f81851d9c8f6e250a7a02981615f0e2a4e6",
+    "calls": [
+      "ctx.addIssue",
+      "emailHtmlMatchesBody",
+      "emailHtmlNonTextTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539736:19910516",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "slackBodyProblems",
+    "qualified_name": "slackBodyProblems",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539736,
+    "end_line": 539762,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "2e6396da5d8c040e34aa635799f6fd2c580735033504202c32e8d6ff416b2fb0",
+    "calls": [
+      ".trimEnd",
+      "/\\s/.test",
+      "FENCE_AFTER_TEXT.exec",
+      "FENCE_OPENING.exec",
+      "SLACK_BULLET.test",
+      "SLACK_LINK.test",
+      "body.split",
+      "line.replace",
+      "line.trim",
+      "new Set",
+      "opening[computed].includes",
+      "opening[computed].startsWith",
+      "opening[computed].trim",
+      "problems.add",
+      "readFenceLine"
+    ],
+    "writes": [
+      "fence"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539763:19911567",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "readFenceLine",
+    "qualified_name": "readFenceLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539763,
+    "end_line": 539772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trimmed",
+      "fence"
+    ],
+    "body_sha256": "08160499ed60f52fbf3c7b81f6fbc2681b0afd8ac418c282ea6e042821f8512f",
+    "calls": [
+      "/^(`+|~+)$/.exec",
+      "CLOSE_AFTER_TEXT.exec",
+      "CLOSE_BEFORE_TEXT.exec",
+      "run.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539778:19912355",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineSlackBody",
+    "qualified_name": "refineSlackBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539778,
+    "end_line": 539789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "ctx"
+    ],
+    "body_sha256": "7f486a437d1e4cff7ad098d8843633d9d2d2d304b8b94d73d5050a234f97203a",
+    "calls": [
+      ".map",
+      "SLACK_DRAFT_SYNTAX_PROBLEMS.filter",
+      "ctx.addIssue",
+      "fixes.join",
+      "slackBodyProblems"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539790:19912912",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-schema.ts",
+    "name": "refineDraftExternalMessage",
+    "qualified_name": "refineDraftExternalMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539790,
+    "end_line": 539828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "ctx"
+    ],
+    "body_sha256": "42db26d4d770e0202a405435c813011d98925e6704b3ec3b2cfad7523c521458",
+    "calls": [
+      "ctx.addIssue",
+      "isFieldProvided2",
+      "refineEmailBodies",
+      "refineSlackBody",
+      "requireAddresses",
+      "requireField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

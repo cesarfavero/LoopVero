@@ -1,0 +1,426 @@
+[
+  {
+    "id": "host:722346:27404536",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "peerMessageLastEntry",
+    "qualified_name": "peerMessageLastEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722346,
+    "end_line": 722372,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "31a64336e07a6b0be37d90cd0e00bf1d7bd14cae2f655664fa44f59a6f4cbf2b",
+    "calls": [
+      "boundedPreviewSource",
+      "hostSessionPreview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722373:27405247",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "getUpdatedAtFromStats",
+    "qualified_name": "getUpdatedAtFromStats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722373,
+    "end_line": 722376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "dbStats"
+    ],
+    "body_sha256": "faacdb81e2754c203fad33ae15b38a24bf71a64b9e36d006bbd7d1e01eab4ce1",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "Number"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722377:27405418",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "getSummaryUpdatedAt",
+    "qualified_name": "getSummaryUpdatedAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722377,
+    "end_line": 722379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "unreadState"
+    ],
+    "body_sha256": "f41c4e8b502b22c85d6ae9b377475bd37d1142f414548da68c6aaa19e19507f7",
+    "calls": [
+      "Math.max",
+      "Number"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722380:27405551",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "seedActivityFromMtime",
+    "qualified_name": "seedActivityFromMtime",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722380,
+    "end_line": 722394,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "agentId",
+      "dbStats"
+    ],
+    "body_sha256": "d03ad76453193e6ed88e3081322dd8777e31372f5232b2cf91ac2e9c7ea86b16",
+    "calls": [
+      "db.get",
+      "db.getUnreadState",
+      "db.seedActivityAsRead",
+      "getDefaultAgentMetadata",
+      "getUpdatedAtFromStats"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722395:27405966",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "isSameAttachmentBatch",
+    "qualified_name": "isSameAttachmentBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722395,
+    "end_line": 722397,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate",
+      "anchor2"
+    ],
+    "body_sha256": "e6c36a1f1c990139ac0a54d6e889b8f8fe49482ae3dcf7ef520f31f8925023c1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722398:27406094",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "collectLastAttachmentBatchKinds",
+    "qualified_name": "collectLastAttachmentBatchKinds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722398,
+    "end_line": 722429,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "index"
+    ],
+    "body_sha256": "b275d203903cd806147ce58ec42d7c2226a69e05f1e488db8c77d502a1ddfd1b",
+    "calls": [
+      "classifyAttachment",
+      "isSameAttachmentBatch",
+      "isSessionPreviewLink",
+      "kinds.push",
+      "kinds.reverse"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722430:27407163",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "buildAttachmentLastEntry",
+    "qualified_name": "buildAttachmentLastEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722430,
+    "end_line": 722437,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "index"
+    ],
+    "body_sha256": "6a053538045baff23f5ba1d90ff30d6690af519b99abba95786314915118f759",
+    "calls": [
+      "collectLastAttachmentBatchKinds",
+      "countAttachmentKinds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722438:27407386",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "getLastMessageFromTranscript",
+    "qualified_name": "getLastMessageFromTranscript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722438,
+    "end_line": 722461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "69808880efa66d858957f407db08ce2b91f41e6e0fbae9fd47a6acbcf7017064",
+    "calls": [
+      "capPreviewLine",
+      "getChatTranscriptEntries",
+      "getPushMessageContentFromTranscript",
+      "hostSessionPreview",
+      "isLocalizableSessionPreview",
+      "markdownToNotificationText",
+      "sessionPreviewForSendMessage"
+    ],
+    "writes": [
+      "i",
+      "previewSource"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722462:27408343",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "getLastEntryFromTranscript",
+    "qualified_name": "getLastEntryFromTranscript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722462,
+    "end_line": 722501,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "7c2c5d32850664ccd018f8ce477a5bcf6b0226e8f9ee1a259cd2ce395bada90c",
+    "calls": [
+      "boundedPreviewSource",
+      "buildAttachmentLastEntry",
+      "getMainTranscriptEntries",
+      "hostSessionPreview",
+      "isAgentPeerMessageEntry",
+      "isLocalizableSessionPreview",
+      "isSessionPreviewLink",
+      "peerMessageLastEntry",
+      "sessionPreviewForSendMessage",
+      "sessionPreviewForWidget"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722502:27409869",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "previewsSettledWithin",
+    "qualified_name": "previewsSettledWithin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722502,
+    "end_line": 722511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tail",
+      "previews"
+    ],
+    "body_sha256": "85d87fae4e221e841d692bc62d0ef38aca37e2c2b15f0cfdff5054b75d958c8f",
+    "calls": [
+      "getMainTranscriptEntries",
+      "isAttachmentEntry",
+      "new Map",
+      "tail.map",
+      "tail.some",
+      "visible.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722512:27410455",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "branchChainStaysWithin",
+    "qualified_name": "branchChainStaysWithin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722512,
+    "end_line": 722524,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "byId"
+    ],
+    "body_sha256": "ebd6a6196186d3a39a439492c0462c47b95bdef8e99d146df496f5891077dab9",
+    "calls": [
+      "byId.get",
+      "getEntryReplyTo",
+      "isBranchedEntry",
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722525:27410879",
+    "artifact": "host",
+    "module": "host/extensions/session/session-projection.ts",
+    "name": "isAttachmentEntry",
+    "qualified_name": "isAttachmentEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722525,
+    "end_line": 722527,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "8afc5662743dfc2367795e3253da7c33e444154ca75d1878e9d41a0ec214c0f0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,442 @@
+[
+  {
+    "id": "host:226161:9649445",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "pinMcpDiagnosticsReporter",
+    "qualified_name": "pinMcpDiagnosticsReporter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226161,
+    "end_line": 226168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporter"
+    ],
+    "body_sha256": "2badc4f9509f77f5d08d27cc4935d2f356cef4749bdc76188986699118cf3227",
+    "calls": [
+      "reportedBoxStdioStatuses.clear",
+      "reporter"
+    ],
+    "writes": [
+      "buffered",
+      "pinnedReporter3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226169:9649691",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "mcpErrorClassOf",
+    "qualified_name": "mcpErrorClassOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226169,
+    "end_line": 226172,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f98e66e44c253d48e3eb30df65dfcc0a9ab1f45ab6c8c6f9c24cd64451235ad2",
+    "calls": [
+      "errorClassOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226173:9649845",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "reportMcpHostEdgeFailure",
+    "qualified_name": "reportMcpHostEdgeFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226173,
+    "end_line": 226181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "leg",
+      "error64"
+    ],
+    "body_sha256": "21ab4a6e59ad5c8389fb2d114da16c48d7c61538d932a67732cc036a80478350",
+    "calls": [
+      "buffered.push",
+      "mcpErrorClassOf",
+      "pinnedReporter3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226182:9650123",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "reportMcpHostEdgeDegraded",
+    "qualified_name": "reportMcpHostEdgeDegraded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226182,
+    "end_line": 226190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "leg",
+      "errorClass"
+    ],
+    "body_sha256": "aa142838621f91a21ab00c6ee9bf3ca00c5098cc559d396d8d4b0a895bbe57d7",
+    "calls": [
+      "buffered.push",
+      "pinnedReporter3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226191:9650379",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "boxStdioStatusClassOf",
+    "qualified_name": "boxStdioStatusClassOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226191,
+    "end_line": 226194,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statusDetail"
+    ],
+    "body_sha256": "a01b1eb626657935a079bb67dbc20c7bf3a7de5948c32e8ac57e8eb45beec434",
+    "calls": [
+      "classifyLocalExecFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226195:9650562",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "reportBoxStdioErrorStatus",
+    "qualified_name": "reportBoxStdioErrorStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226195,
+    "end_line": 226202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier",
+      "statusDetail"
+    ],
+    "body_sha256": "98f4c1ab14c141e24efdc3624019e91bb5e51c0ddfa03bb4e74c5d1d77fa00eb",
+    "calls": [
+      "boxStdioStatusClassOf",
+      "reportMcpHostEdgeDegraded",
+      "reportedBoxStdioStatuses.add",
+      "reportedBoxStdioStatuses.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226203:9650966",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "recordMcpExecErrorClass",
+    "qualified_name": "recordMcpExecErrorClass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226203,
+    "end_line": 226207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "error64"
+    ],
+    "body_sha256": "124546fc3439105d48745bf7fcd7e5fc95331abaa5188de9c107509499d54b9c",
+    "calls": [
+      "ctx.get",
+      "mcpErrorClassOf"
+    ],
+    "writes": [
+      "attribution.errorClass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226208:9651159",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "recordMcpExecRefusedBeforeDispatch",
+    "qualified_name": "recordMcpExecRefusedBeforeDispatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226208,
+    "end_line": 226212,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4bf7040ad55563517057329b49c861190a1dd61b67a9a1a738b5e3b4f3efe9a9",
+    "calls": [
+      "ctx.get"
+    ],
+    "writes": [
+      "attribution.refusedBeforeDispatch"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:226215:9651551",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "src/shared/node/mcp/mcp-diagnostics.ts",
+    "qualified_name": "src/shared/node/mcp/mcp-diagnostics.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 226215,
+    "end_line": 226231,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "854edfcb45552e05b701adb56485271e9852e7fe159be238c9be9b81e7050347",
+    "calls": [
+      "Symbol",
+      "createKey",
+      "init_dist5",
+      "init_errors",
+      "init_esm2",
+      "init_local_exec_failure_classifier",
+      "init_system_errno",
+      "new Set"
+    ],
+    "writes": [
+      "BOX_STDIO_STATUS_REPORT_CAP",
+      "PRE_PIN_BUFFER_CAP",
+      "buffered",
+      "mcpExecAttributionKey",
+      "pinnedReporter3",
+      "reportedBoxStdioStatuses"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479042:17353785",
+    "artifact": "evaluation",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "mcpErrorClassOf",
+    "qualified_name": "mcpErrorClassOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479042,
+    "end_line": 479045,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "6a164b6c02ec7cf96e1803e936507254da973bb99ea786639ad9daad591c3a5f",
+    "calls": [
+      "errorClassOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479046:17353939",
+    "artifact": "evaluation",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "boxStdioStatusClassOf",
+    "qualified_name": "boxStdioStatusClassOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479046,
+    "end_line": 479049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statusDetail"
+    ],
+    "body_sha256": "a01b1eb626657935a079bb67dbc20c7bf3a7de5948c32e8ac57e8eb45beec434",
+    "calls": [
+      "classifyLocalExecFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479056:17354319",
+    "artifact": "evaluation",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "recordMcpExecErrorClass",
+    "qualified_name": "recordMcpExecErrorClass",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479056,
+    "end_line": 479060,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "error63"
+    ],
+    "body_sha256": "302269d99ccbcebecbad859b6ec4b09cad7b3ffd238139806d84abbacfce9487",
+    "calls": [
+      "ctx.get",
+      "mcpErrorClassOf"
+    ],
+    "writes": [
+      "attribution.errorClass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479061:17354512",
+    "artifact": "evaluation",
+    "module": "shared/node/mcp/mcp-diagnostics.ts",
+    "name": "recordMcpExecRefusedBeforeDispatch",
+    "qualified_name": "recordMcpExecRefusedBeforeDispatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479061,
+    "end_line": 479065,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4bf7040ad55563517057329b49c861190a1dd61b67a9a1a738b5e3b4f3efe9a9",
+    "calls": [
+      "ctx.get"
+    ],
+    "writes": [
+      "attribution.refusedBeforeDispatch"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

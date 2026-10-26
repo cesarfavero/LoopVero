@@ -1,0 +1,480 @@
+[
+  {
+    "id": "host:721379:27369503",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.constructor",
+    "qualified_name": "SandSessionMaterialization.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721379,
+    "end_line": 721381,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "6739b592404421f682b6affe527a447ef0b00db07005ef6c3d68a9152c25e657",
+    "calls": [],
+    "writes": [
+      "this.host"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721386:27369686",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.requireWorkerPool",
+    "qualified_name": "SandSessionMaterialization.requireWorkerPool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721386,
+    "end_line": 721391,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4a199def91b85ecbcb06c1bcbac4b160e716b911294887b906945ef7ef546ed4",
+    "calls": [
+      "this.host.createBlobWorkerPool"
+    ],
+    "writes": [
+      "this.workerPool"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721392:27369836",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.blobStoreFor",
+    "qualified_name": "SandSessionMaterialization.blobStoreFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721392,
+    "end_line": 721400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "eed034870959b55fc8f8be32f19d965895cb3c7b3f18c4557aa3ea0e036d7d6f",
+    "calls": [
+      "agentIdFromDbPath",
+      "new WorkerBlobStore",
+      "this.requireWorkerPool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721401:27370130",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.closeWorkerPool",
+    "qualified_name": "SandSessionMaterialization.closeWorkerPool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721401,
+    "end_line": 721405,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d600b2b19e9f1adeb0e811c3018179a2d655a95219f389610466cc32a4fdb472",
+    "calls": [
+      "this.workerPool.closeAll"
+    ],
+    "writes": [
+      "this.workerPool"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721406:27370272",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.listAgentRecordIds",
+    "qualified_name": "SandSessionMaterialization.listAgentRecordIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721406,
+    "end_line": 721415,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c8ae996c974848a734bf3385e747e880e1269f7bc5bd45741cde241850a085f2",
+    "calls": [
+      "keepAgentDirs"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721416:27370587",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.enqueueMint",
+    "qualified_name": "SandSessionMaterialization.enqueueMint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721416,
+    "end_line": 721428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "run"
+    ],
+    "body_sha256": "82691ab18c7af0e3ba976588a12b29d0629109a7d8c86923a5246ab39686b3a8",
+    "calls": [
+      "invariant",
+      "next.then",
+      "this.mintChain.then",
+      "this.mintInFlight.getStore"
+    ],
+    "writes": [
+      "this.mintChain"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721421:27370800",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "chained",
+    "qualified_name": "SandSessionMaterialization.enqueueMint/chained",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721421,
+    "end_line": 721421,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79dd03b1371f69fe5ff5eb8cb03c6a18aea7fd86b16e4c071cb013570cb33905",
+    "calls": [
+      "this.mintInFlight.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721429:27371012",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.mintAgent",
+    "qualified_name": "SandSessionMaterialization.mintAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721429,
+    "end_line": 721433,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "mint2",
+      "providedId"
+    ],
+    "body_sha256": "40e96e4ecd758b5d389e05c305f98b646f022b7c2acb3f1fb17c67f3b91ff4e6",
+    "calls": [
+      "this.enqueueMint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721434:27371186",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.runMint",
+    "qualified_name": "SandSessionMaterialization.runMint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721434,
+    "end_line": 721448,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "mint2"
+    ],
+    "body_sha256": "126c4b6515977fa995d68ab56116bf7e39768450ce3a08782e40bc82ec42ea6b",
+    "calls": [
+      ".catch",
+      "mint2",
+      "removeSandDataTree",
+      "this.host.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721449:27371610",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.createSession",
+    "qualified_name": "SandSessionMaterialization.createSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721449,
+    "end_line": 721454,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "profile",
+      "origin = \"user\"",
+      "options2 = {}"
+    ],
+    "body_sha256": "4462ad2b61d2fa54f9cf4f6e32dd8ca21dbe1f5f68ac8d5db075199fe867cd0f",
+    "calls": [
+      "this.mintAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721455:27371830",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.materializeSession",
+    "qualified_name": "SandSessionMaterialization.materializeSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721455,
+    "end_line": 721516,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "profile",
+      "origin",
+      "options2 = {}"
+    ],
+    "body_sha256": "a62b8aae0b2863ffb76d8a707f873051116d2462182cc20576202f9e8c0a12d8",
+    "calls": [
+      ".createAgentStore",
+      "assertValidSandAgentId",
+      "automationStoreForDbPath",
+      "automations.upsert",
+      "channelStoreForDbPath",
+      "createSandProfile",
+      "db.set",
+      "db.setAgentOrigin",
+      "db.setAgentPurpose",
+      "getAgentDbPath",
+      "getSandSettingsPath",
+      "new AgentStore2",
+      "prepareAgentMediaStoreRoots",
+      "profile.avatarColor.trim",
+      "profile.avatarShape.trim",
+      "profile.description.trim",
+      "profile.name.trim",
+      "profile.title.trim",
+      "skillStoreForDbPath",
+      "this.blobStoreFor",
+      "this.host.createAgentDb",
+      "this.host.memory",
+      "writeSandSettingsFile"
+    ],
+    "writes": [
+      "namedBy"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721517:27374157",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.recoverConversationRootIfMissing",
+    "qualified_name": "SandSessionMaterialization.recoverConversationRootIfMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721517,
+    "end_line": 721536,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath",
+      "db"
+    ],
+    "body_sha256": "1d4311df7834097cb9978c45e8e379bf444120e44f0eca3bf95f805991152c01",
+    "calls": [
+      "agentStore.dispose",
+      "agentStore.resetFromDb",
+      "db.get",
+      "new AgentStore2",
+      "recoverConversationIfRootMissing",
+      "this.blobStoreFor",
+      "this.host.maintenanceHost"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721537:27374880",
+    "artifact": "host",
+    "module": "host/extensions/session/session-materialization.ts",
+    "name": "SandSessionMaterialization.openSession",
+    "qualified_name": "SandSessionMaterialization.openSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721537,
+    "end_line": 721576,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "7dabd5a2e2881faa6bddc3621f30ca2cd2464a45d95ed4b75f45dfbf30d5318a",
+    "calls": [
+      ".createAgentStore",
+      "agentStore.resetFromDb",
+      "assertValidSandAgentId",
+      "automationStoreForDbPath",
+      "channelStoreForDbPath",
+      "clearStaleCheckpointRootsOnce",
+      "db.get",
+      "ensureProfileFile",
+      "ensureSettingsFile",
+      "getAgentDbPath",
+      "new AgentStore2",
+      "new SandAgentMissingError",
+      "prepareAgentMediaStoreRoots",
+      "recoverConversationIfRootMissing",
+      "repairHiddenTranscriptEntriesOnce",
+      "scheduleConversationSizeMaintenance",
+      "skillStoreForDbPath",
+      "this.blobStoreFor",
+      "this.host.agentExists",
+      "this.host.createAgentDb",
+      "this.host.maintenanceHost",
+      "this.host.memory"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentMissingError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

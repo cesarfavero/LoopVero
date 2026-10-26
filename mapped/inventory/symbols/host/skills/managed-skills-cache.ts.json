@@ -1,0 +1,234 @@
+[
+  {
+    "id": "host:683278:25961045",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "getManagedSkillsDir",
+    "qualified_name": "getManagedSkillsDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683278,
+    "end_line": 683280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sandRoot"
+    ],
+    "body_sha256": "77dc6c4109cc28540872655a4380c3d6da685d1c0d4eb9312101386c3800c19b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683281:25961162",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "getManagedSkillsCachePath",
+    "qualified_name": "getManagedSkillsCachePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683281,
+    "end_line": 683283,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheDir"
+    ],
+    "body_sha256": "9381036bb2c57111e5b11e23c89598cef6768038c2f6f10bba12d57fcfb53eda",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683284:25961292",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "getManagedSkillFilePath",
+    "qualified_name": "getManagedSkillFilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683284,
+    "end_line": 683286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheDir",
+      "id"
+    ],
+    "body_sha256": "0f0fe3c9e03337804d5c9c8fbd5ebf835d44675fac865ca013a3a5d34c855af0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683287:25961438",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "isManagedSkill",
+    "qualified_name": "isManagedSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683287,
+    "end_line": 683290,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "caf83a6fcaa9d9f21ea328edc7114bf6ea96dd5d73858451bc4a842bf793517d",
+    "calls": [
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683291:25961715",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "readManagedSkillsCache",
+    "qualified_name": "readManagedSkillsCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683291,
+    "end_line": 683304,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheDir"
+    ],
+    "body_sha256": "ecff5f0a198da617c08a45fac5e092c79aa8ee805945714a47bd6479d9119e54",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "Number.isFinite",
+      "getManagedSkillsCachePath",
+      "parsed2.skills.every",
+      "readHostOwnedFileSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683305:25962238",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "writeManagedSkillsCache",
+    "qualified_name": "writeManagedSkillsCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683305,
+    "end_line": 683317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheDir",
+      "skills"
+    ],
+    "body_sha256": "791d49372c8e5ce92bc0780a87f2f408e89ca938045e87ca939153e212b4f8a0",
+    "calls": [
+      "Date.now",
+      "JSON.stringify",
+      "ensureSandDataDirSync",
+      "getManagedSkillsCachePath",
+      "materializeManagedSkillFiles",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683318:25962622",
+    "artifact": "host",
+    "module": "host/skills/managed-skills-cache.ts",
+    "name": "materializeManagedSkillFiles",
+    "qualified_name": "materializeManagedSkillFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683318,
+    "end_line": 683340,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheDir",
+      "skills"
+    ],
+    "body_sha256": "a35e8421d8ff66528b4d6bd34dc785f9db0dee11c33a4904df4b6ea985a29a76",
+    "calls": [
+      "ensureSandDataDirSync",
+      "getManagedSkillFilePath",
+      "keep.has",
+      "new Set",
+      "removeSandDataTreeSync",
+      "serializeSkillFile",
+      "skills.map",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

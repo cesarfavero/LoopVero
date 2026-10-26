@@ -1,0 +1,942 @@
+[
+  {
+    "id": "host:760326:29072787",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "afterDeny",
+    "qualified_name": "afterDeny",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760326,
+    "end_line": 760329,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "meetingId",
+      "drafts"
+    ],
+    "body_sha256": "d37208944a14148412687fd101d958fa962725f8affa8a1c947edf5f01d8301d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760333:29073651",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "afterDeny",
+    "qualified_name": "afterDeny",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760333,
+    "end_line": 760336,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "meetingId",
+      "drafts"
+    ],
+    "body_sha256": "1e59830137d720e24bb63caed1dd1cd3512489c8c1c8746f90e37bac3a82bd00",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760345:29076068",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.constructor",
+    "qualified_name": "_MeetingChatSender.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760345,
+    "end_line": 760347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760353:29076271",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.fallback",
+    "qualified_name": "_MeetingChatSender.fallback",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760353,
+    "end_line": 760355,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b4eafac987abf68fbacfdd8404b16a02c2c388144a7dda78305cfb994c600104",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760356:29076346",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.send",
+    "qualified_name": "_MeetingChatSender.send",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760356,
+    "end_line": 760369,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "07ff38802769e87fac16480ebb611f4d9fdccda8027201689bc19cc30a51ea0d",
+    "calls": [
+      "this.deps.meetings.recordChatSend",
+      "this.sendTraced"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760370:29076731",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.sendTraced",
+    "qualified_name": "_MeetingChatSender.sendTraced",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760370,
+    "end_line": 760420,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ meetingId, text: text3, signal, once: once2 }",
+      "trace2"
+    ],
+    "body_sha256": "37851255daaa4a783c0fa8a9704152da48ef719b9861d3d4c1d9b98d2bd5d683",
+    "calls": [
+      "Date.now",
+      "_MeetingChatSender.notPosted",
+      "once2.seen",
+      "this.deps.mark",
+      "this.deps.meetings.readChatContext",
+      "this.deps.meetings.readMarkedInternal",
+      "this.notApproved",
+      "this.postOnce",
+      "this.refusal",
+      "this.review"
+    ],
+    "writes": [
+      "trace2.markedInternal",
+      "trace2.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760421:29078868",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.review",
+    "qualified_name": "_MeetingChatSender.review",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760421,
+    "end_line": 760450,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "input2",
+      "signal",
+      "trace2"
+    ],
+    "body_sha256": "4ac8df7dce43875cb9f0ec35994de04f454a9c3d564124889a2eef2cde4ff3a1",
+    "calls": [
+      "Date.now",
+      "MeetingChatReview.run",
+      "MeetingChatReviewJev.run",
+      "this.deps.meetings.recordChatReview",
+      "this.deps.reviewed"
+    ],
+    "writes": [
+      "trace2.review",
+      "verdict"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760433:29079286",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "run",
+    "qualified_name": "_MeetingChatSender.review/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760433,
+    "end_line": 760433,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "prompt",
+      "reviewSignal"
+    ],
+    "body_sha256": "1298c1bcff6e373d5807f1e9bf26873f5e5229d408b62d33a76dd661ef264794",
+    "calls": [
+      "this.deps.meetings.runChatReview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760451:29079980",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.postOnce",
+    "qualified_name": "_MeetingChatSender.postOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760451,
+    "end_line": 760479,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "{\n    once: once2,\n    signal,\n    trace: trace2\n  }",
+      "post"
+    ],
+    "body_sha256": "89b6eba5ec625de2d022bfe8bc67e4623cd3f88d703e6d68eb2df2878b938421",
+    "calls": [
+      "Date.now",
+      "_MeetingChatSender.notPosted",
+      "_MeetingChatSender.postOutcome",
+      "once2.claim",
+      "once2.posted",
+      "once2.release",
+      "post",
+      "this.deps.mark",
+      "this.posted"
+    ],
+    "writes": [
+      "sent",
+      "trace2.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760480:29080862",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.postOutcome",
+    "qualified_name": "_MeetingChatSender.postOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760480,
+    "end_line": 760483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sent"
+    ],
+    "body_sha256": "f3aacfa548121b9ae2fdafa9a2d9ab2a66a94fc69fd95a194702f66d2551de6e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760484:29080994",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.notPosted",
+    "qualified_name": "_MeetingChatSender.notPosted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760484,
+    "end_line": 760486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "0ff761d073791c6e67a5f49c90ee5738a6b6f8da7fb9bc0f3dce4aa0e924db45",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760487:29081065",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.notApproved",
+    "qualified_name": "_MeetingChatSender.notApproved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760487,
+    "end_line": 760500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "verdict",
+      "meetingId"
+    ],
+    "body_sha256": "14a3642803e8422a50304832a3bceee61031312564a8fe2b75c29402a7cbf08c",
+    "calls": [
+      ".join",
+      "_MeetingChatSender.notPosted",
+      "this.fallback.afterDeny",
+      "verdict.reasons.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760501:29081631",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.posted",
+    "qualified_name": "_MeetingChatSender.posted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760501,
+    "end_line": 760519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "post"
+    ],
+    "body_sha256": "17f1a35c7c26584a9f51194303fdb76c6069fbd3d4302aace4b1f526096c0e5a",
+    "calls": [
+      "MeetingChannelAddress.of",
+      "_MeetingChatSender.notPosted",
+      "this.refusal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760520:29082575",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.refusal",
+    "qualified_name": "_MeetingChatSender.refusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760520,
+    "end_line": 760541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "reason",
+      "status"
+    ],
+    "body_sha256": "b10baa484b99e29a9743f00b7c87dcf3c4e226f7a667d9f210b2026a2a6a2555",
+    "calls": [
+      "_MeetingChatSender.notPosted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551141:20381530",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "afterDeny",
+    "qualified_name": "afterDeny",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551141,
+    "end_line": 551144,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "meetingId",
+      "drafts"
+    ],
+    "body_sha256": "d37208944a14148412687fd101d958fa962725f8affa8a1c947edf5f01d8301d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551148:20382394",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "afterDeny",
+    "qualified_name": "afterDeny",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551148,
+    "end_line": 551151,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "meetingId",
+      "drafts"
+    ],
+    "body_sha256": "1e59830137d720e24bb63caed1dd1cd3512489c8c1c8746f90e37bac3a82bd00",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551160:20384811",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.constructor",
+    "qualified_name": "_MeetingChatSender.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551160,
+    "end_line": 551162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551168:20385014",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.fallback",
+    "qualified_name": "_MeetingChatSender.fallback",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551168,
+    "end_line": 551170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b4eafac987abf68fbacfdd8404b16a02c2c388144a7dda78305cfb994c600104",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551171:20385089",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.send",
+    "qualified_name": "_MeetingChatSender.send",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551171,
+    "end_line": 551184,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "request3"
+    ],
+    "body_sha256": "d1932d1968d57d1bc69b0d5904bbadb5c17baf60023042fee10a3acc5820f343",
+    "calls": [
+      "this.deps.meetings.recordChatSend",
+      "this.sendTraced"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551185:20385474",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.sendTraced",
+    "qualified_name": "_MeetingChatSender.sendTraced",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551185,
+    "end_line": 551235,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ meetingId, text: text3, signal, once: once2 }",
+      "trace2"
+    ],
+    "body_sha256": "37851255daaa4a783c0fa8a9704152da48ef719b9861d3d4c1d9b98d2bd5d683",
+    "calls": [
+      "Date.now",
+      "_MeetingChatSender.notPosted",
+      "once2.seen",
+      "this.deps.mark",
+      "this.deps.meetings.readChatContext",
+      "this.deps.meetings.readMarkedInternal",
+      "this.notApproved",
+      "this.postOnce",
+      "this.refusal",
+      "this.review"
+    ],
+    "writes": [
+      "trace2.markedInternal",
+      "trace2.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551236:20387611",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.review",
+    "qualified_name": "_MeetingChatSender.review",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551236,
+    "end_line": 551265,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "input2",
+      "signal",
+      "trace2"
+    ],
+    "body_sha256": "19cec07808c280f06e101fd92734acc38fc65d480ad71cc14be213d632747b19",
+    "calls": [
+      "Date.now",
+      "MeetingChatReview.run",
+      "MeetingChatReviewJev.run",
+      "this.deps.meetings.recordChatReview",
+      "this.deps.reviewed"
+    ],
+    "writes": [
+      "trace2.review",
+      "verdict"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551248:20388029",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "run",
+    "qualified_name": "_MeetingChatSender.review/run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551248,
+    "end_line": 551248,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "prompt",
+      "reviewSignal"
+    ],
+    "body_sha256": "1298c1bcff6e373d5807f1e9bf26873f5e5229d408b62d33a76dd661ef264794",
+    "calls": [
+      "this.deps.meetings.runChatReview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551266:20388723",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.postOnce",
+    "qualified_name": "_MeetingChatSender.postOnce",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551266,
+    "end_line": 551294,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "{\n    once: once2,\n    signal,\n    trace: trace2\n  }",
+      "post"
+    ],
+    "body_sha256": "89b6eba5ec625de2d022bfe8bc67e4623cd3f88d703e6d68eb2df2878b938421",
+    "calls": [
+      "Date.now",
+      "_MeetingChatSender.notPosted",
+      "_MeetingChatSender.postOutcome",
+      "once2.claim",
+      "once2.posted",
+      "once2.release",
+      "post",
+      "this.deps.mark",
+      "this.posted"
+    ],
+    "writes": [
+      "sent",
+      "trace2.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551295:20389605",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.postOutcome",
+    "qualified_name": "_MeetingChatSender.postOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551295,
+    "end_line": 551298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sent"
+    ],
+    "body_sha256": "f3aacfa548121b9ae2fdafa9a2d9ab2a66a94fc69fd95a194702f66d2551de6e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551299:20389737",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.notPosted",
+    "qualified_name": "_MeetingChatSender.notPosted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551299,
+    "end_line": 551301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "0ff761d073791c6e67a5f49c90ee5738a6b6f8da7fb9bc0f3dce4aa0e924db45",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551302:20389808",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.notApproved",
+    "qualified_name": "_MeetingChatSender.notApproved",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551302,
+    "end_line": 551315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "verdict",
+      "meetingId"
+    ],
+    "body_sha256": "14a3642803e8422a50304832a3bceee61031312564a8fe2b75c29402a7cbf08c",
+    "calls": [
+      ".join",
+      "_MeetingChatSender.notPosted",
+      "this.fallback.afterDeny",
+      "verdict.reasons.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551316:20390374",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.posted",
+    "qualified_name": "_MeetingChatSender.posted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551316,
+    "end_line": 551334,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "post"
+    ],
+    "body_sha256": "17f1a35c7c26584a9f51194303fdb76c6069fbd3d4302aace4b1f526096c0e5a",
+    "calls": [
+      "MeetingChannelAddress.of",
+      "_MeetingChatSender.notPosted",
+      "this.refusal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:551335:20391318",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-sender.ts",
+    "name": "_MeetingChatSender.refusal",
+    "qualified_name": "_MeetingChatSender.refusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 551335,
+    "end_line": 551356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "meetingId",
+      "reason",
+      "status"
+    ],
+    "body_sha256": "b10baa484b99e29a9743f00b7c87dcf3c4e226f7a667d9f210b2026a2a6a2555",
+    "calls": [
+      "_MeetingChatSender.notPosted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

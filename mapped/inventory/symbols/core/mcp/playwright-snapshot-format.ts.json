@@ -1,0 +1,1124 @@
+[
+  {
+    "id": "host:742729:28247075",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "splitKey",
+    "qualified_name": "splitKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742729,
+    "end_line": 742746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "fe027bf1a7f8092e53fec90304e28bb375b8a6dd50abed3fa653c7550ed0c687",
+    "calls": [
+      ".startsWith",
+      "body.slice",
+      "rest.search",
+      "rest.slice",
+      "rest.startsWith"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742747:28247674",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "parseNode",
+    "qualified_name": "parseNode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742747,
+    "end_line": 742785,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "depth",
+      "body"
+    ],
+    "body_sha256": "09af82fc4751e8b40f33ed4b06f2a18a785aa8077108eb2347f5394a80ce927d",
+    "calls": [
+      ".map",
+      ".matchAll",
+      "/^\\/?[A-Za-z][\\w-]*/.exec",
+      "attrs.every",
+      "attrs.some",
+      "body.slice",
+      "body.startsWith",
+      "key.search",
+      "splitKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742786:28248671",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "parseTree2",
+    "qualified_name": "parseTree2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742786,
+    "end_line": 742799,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2"
+    ],
+    "body_sha256": "2224183f0fd28ed9b327ecb335b6fcdb77887aa2facea95df82626fad4727605",
+    "calls": [
+      "line.slice",
+      "line.trimStart",
+      "parent.children.push",
+      "parseNode",
+      "roots.push",
+      "stack.pop",
+      "stack.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742800:28249163",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "shownChildren",
+    "qualified_name": "shownChildren",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742800,
+    "end_line": 742802,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "2c035df1ce8876c0c8a8b2896877b3b347952b4a4a571a9b32f9b3a31705f6e0",
+    "calls": [
+      "node2.children.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742803:28249286",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "isCollapsibleWrapper",
+    "qualified_name": "isCollapsibleWrapper",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742803,
+    "end_line": 742810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "86e999c8266f560b95e646de0a0467e8c3dd31ea5f8a021a2383b2066ae04d34",
+    "calls": [
+      "WRAPPER_ROLES.has",
+      "only.role.startsWith",
+      "shownChildren"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742811:28249686",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "collapseWrappers",
+    "qualified_name": "collapseWrappers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742811,
+    "end_line": 742830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "roots"
+    ],
+    "body_sha256": "3e0335589b4149f69a940b3fb60da0186888c3ba5e9f61616703803015bb186c",
+    "calls": [
+      "isCollapsibleWrapper",
+      "walk3"
+    ],
+    "writes": [
+      "changed",
+      "node2.skip"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742813:28249755",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "walk3",
+    "qualified_name": "collapseWrappers/walk3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742813,
+    "end_line": 742818,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nodes"
+    ],
+    "body_sha256": "e665abdc56c6227e1b4029f3d15ce7d01dd90c5201ad904a761ab86350759462",
+    "calls": [
+      "all.push",
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742831:28250101",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "sameOriginPath",
+    "qualified_name": "sameOriginPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742831,
+    "end_line": 742840,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "origin"
+    ],
+    "body_sha256": "305035a90718033aa215a1b246d56d5b9fc44c741016abc2b707218577fac328",
+    "calls": [
+      "bare.slice",
+      "bare.startsWith",
+      "path33.startsWith",
+      "resolvesTo",
+      "url2.endsWith",
+      "url2.slice",
+      "url2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742841:28250544",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "resolvesTo",
+    "qualified_name": "resolvesTo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742841,
+    "end_line": 742847,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "url2",
+      "origin"
+    ],
+    "body_sha256": "ec1e98cc662ca34f13aea2beef2309c52f214265887851aaf65f2d5843d06ad9",
+    "calls": [
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:742848:28250696",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "compactBody",
+    "qualified_name": "compactBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742848,
+    "end_line": 742860,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "origin"
+    ],
+    "body_sha256": "2cfcf97225404f135f7b30540a8827ec907e89affa5bb4a1db3603e3f239c685",
+    "calls": [
+      ".replace",
+      "CLICKABLE_ROLES.has",
+      "body.slice",
+      "sameOriginPath"
+    ],
+    "writes": [
+      "body"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742861:28251140",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "renderTree",
+    "qualified_name": "renderTree",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742861,
+    "end_line": 742875,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "roots",
+      "origin"
+    ],
+    "body_sha256": "b39a3b1f1d401ac31e50ab722f5f2c6c9f5a6cceabf276af758724e90773abcd",
+    "calls": [
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742863:28251211",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "walk3",
+    "qualified_name": "renderTree/walk3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742863,
+    "end_line": 742872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nodes",
+      "depth"
+    ],
+    "body_sha256": "8427c56aab6136a75602380f36056487d6ce74ee6bee924bf36f462396f61fbb",
+    "calls": [
+      "  .repeat",
+      "compactBody",
+      "out.push",
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742876:28251508",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "originOf",
+    "qualified_name": "originOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742876,
+    "end_line": 742885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "71d84f14abf8e33b1bbfa1ead6933410d22849b3e0a51c25fead6ae2d1848d86",
+    "calls": [
+      "PAGE_URL_LINE.exec",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:742886:28251754",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "formatTreeRun",
+    "qualified_name": "formatTreeRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742886,
+    "end_line": 742890,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "origin"
+    ],
+    "body_sha256": "feb2604559c7dc654366c1926f058fa877407e88c150fc2835f7972f0ef415d5",
+    "calls": [
+      "collapseWrappers",
+      "parseTree2",
+      "renderTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742891:28251896",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "formatPlaywrightResultText",
+    "qualified_name": "formatPlaywrightResultText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742891,
+    "end_line": 742917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c3ec0dde316cc46060bc6863e37397c939d2a25757466f4b07aacffd823a0e38",
+    "calls": [
+      "ELISION_LINE.test",
+      "FENCE.test",
+      "SECTION_HEADING.test",
+      "TREE_LINE.test",
+      "flush",
+      "originOf",
+      "out.join",
+      "out.push",
+      "run.push",
+      "text3.includes",
+      "text3.split"
+    ],
+    "writes": [
+      "inTreeSection"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742897:28252100",
+    "artifact": "host",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "flush",
+    "qualified_name": "formatPlaywrightResultText/flush",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742897,
+    "end_line": 742900,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d6a6563d6f895f73c197ed7045982e0bec11651be6fa17341f953149000bbfcb",
+    "calls": [
+      "formatTreeRun",
+      "out.push"
+    ],
+    "writes": [
+      "run"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515391:18724732",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "splitKey",
+    "qualified_name": "splitKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515391,
+    "end_line": 515408,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "fe027bf1a7f8092e53fec90304e28bb375b8a6dd50abed3fa653c7550ed0c687",
+    "calls": [
+      ".startsWith",
+      "body.slice",
+      "rest.search",
+      "rest.slice",
+      "rest.startsWith"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515409:18725331",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "parseNode",
+    "qualified_name": "parseNode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515409,
+    "end_line": 515447,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "depth",
+      "body"
+    ],
+    "body_sha256": "09af82fc4751e8b40f33ed4b06f2a18a785aa8077108eb2347f5394a80ce927d",
+    "calls": [
+      ".map",
+      ".matchAll",
+      "/^\\/?[A-Za-z][\\w-]*/.exec",
+      "attrs.every",
+      "attrs.some",
+      "body.slice",
+      "body.startsWith",
+      "key.search",
+      "splitKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515448:18726328",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "parseTree2",
+    "qualified_name": "parseTree2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515448,
+    "end_line": 515461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2"
+    ],
+    "body_sha256": "2224183f0fd28ed9b327ecb335b6fcdb77887aa2facea95df82626fad4727605",
+    "calls": [
+      "line.slice",
+      "line.trimStart",
+      "parent.children.push",
+      "parseNode",
+      "roots.push",
+      "stack.pop",
+      "stack.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515462:18726820",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "shownChildren",
+    "qualified_name": "shownChildren",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515462,
+    "end_line": 515464,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "2c035df1ce8876c0c8a8b2896877b3b347952b4a4a571a9b32f9b3a31705f6e0",
+    "calls": [
+      "node2.children.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515465:18726943",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "isCollapsibleWrapper",
+    "qualified_name": "isCollapsibleWrapper",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515465,
+    "end_line": 515472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "86e999c8266f560b95e646de0a0467e8c3dd31ea5f8a021a2383b2066ae04d34",
+    "calls": [
+      "WRAPPER_ROLES.has",
+      "only.role.startsWith",
+      "shownChildren"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515473:18727343",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "collapseWrappers",
+    "qualified_name": "collapseWrappers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515473,
+    "end_line": 515492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "roots"
+    ],
+    "body_sha256": "3e0335589b4149f69a940b3fb60da0186888c3ba5e9f61616703803015bb186c",
+    "calls": [
+      "isCollapsibleWrapper",
+      "walk3"
+    ],
+    "writes": [
+      "changed",
+      "node2.skip"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515475:18727412",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "walk3",
+    "qualified_name": "collapseWrappers/walk3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515475,
+    "end_line": 515480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nodes"
+    ],
+    "body_sha256": "e665abdc56c6227e1b4029f3d15ce7d01dd90c5201ad904a761ab86350759462",
+    "calls": [
+      "all.push",
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515493:18727758",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "sameOriginPath",
+    "qualified_name": "sameOriginPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515493,
+    "end_line": 515502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "origin"
+    ],
+    "body_sha256": "305035a90718033aa215a1b246d56d5b9fc44c741016abc2b707218577fac328",
+    "calls": [
+      "bare.slice",
+      "bare.startsWith",
+      "path33.startsWith",
+      "resolvesTo",
+      "url2.endsWith",
+      "url2.slice",
+      "url2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515503:18728201",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "resolvesTo",
+    "qualified_name": "resolvesTo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515503,
+    "end_line": 515509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "url2",
+      "origin"
+    ],
+    "body_sha256": "ec1e98cc662ca34f13aea2beef2309c52f214265887851aaf65f2d5843d06ad9",
+    "calls": [
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:515510:18728353",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "compactBody",
+    "qualified_name": "compactBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515510,
+    "end_line": 515522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "origin"
+    ],
+    "body_sha256": "2cfcf97225404f135f7b30540a8827ec907e89affa5bb4a1db3603e3f239c685",
+    "calls": [
+      ".replace",
+      "CLICKABLE_ROLES.has",
+      "body.slice",
+      "sameOriginPath"
+    ],
+    "writes": [
+      "body"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515523:18728797",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "renderTree",
+    "qualified_name": "renderTree",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515523,
+    "end_line": 515537,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "roots",
+      "origin"
+    ],
+    "body_sha256": "b39a3b1f1d401ac31e50ab722f5f2c6c9f5a6cceabf276af758724e90773abcd",
+    "calls": [
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515525:18728868",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "walk3",
+    "qualified_name": "renderTree/walk3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515525,
+    "end_line": 515534,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nodes",
+      "depth"
+    ],
+    "body_sha256": "8427c56aab6136a75602380f36056487d6ce74ee6bee924bf36f462396f61fbb",
+    "calls": [
+      "  .repeat",
+      "compactBody",
+      "out.push",
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515538:18729165",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "originOf",
+    "qualified_name": "originOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515538,
+    "end_line": 515547,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "71d84f14abf8e33b1bbfa1ead6933410d22849b3e0a51c25fead6ae2d1848d86",
+    "calls": [
+      "PAGE_URL_LINE.exec",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:515548:18729411",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "formatTreeRun",
+    "qualified_name": "formatTreeRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515548,
+    "end_line": 515552,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "origin"
+    ],
+    "body_sha256": "feb2604559c7dc654366c1926f058fa877407e88c150fc2835f7972f0ef415d5",
+    "calls": [
+      "collapseWrappers",
+      "parseTree2",
+      "renderTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515553:18729553",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "formatPlaywrightResultText",
+    "qualified_name": "formatPlaywrightResultText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515553,
+    "end_line": 515579,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c3ec0dde316cc46060bc6863e37397c939d2a25757466f4b07aacffd823a0e38",
+    "calls": [
+      "ELISION_LINE.test",
+      "FENCE.test",
+      "SECTION_HEADING.test",
+      "TREE_LINE.test",
+      "flush",
+      "originOf",
+      "out.join",
+      "out.push",
+      "run.push",
+      "text3.includes",
+      "text3.split"
+    ],
+    "writes": [
+      "inTreeSection"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515559:18729757",
+    "artifact": "evaluation",
+    "module": "core/mcp/playwright-snapshot-format.ts",
+    "name": "flush",
+    "qualified_name": "formatPlaywrightResultText/flush",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515559,
+    "end_line": 515562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d6a6563d6f895f73c197ed7045982e0bec11651be6fa17341f953149000bbfcb",
+    "calls": [
+      "formatTreeRun",
+      "out.push"
+    ],
+    "writes": [
+      "run"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

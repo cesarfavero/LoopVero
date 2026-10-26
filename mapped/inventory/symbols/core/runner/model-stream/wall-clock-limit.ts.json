@@ -1,0 +1,280 @@
+[
+  {
+    "id": "evaluation:586650:22079610",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "ModelStreamWallClockCutError.constructor",
+    "qualified_name": "ModelStreamWallClockCutError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586650,
+    "end_line": 586654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "limitMs"
+    ],
+    "body_sha256": "b2c22372bf9a09b40b6f92a92720408f58492e9cf8e092e9506f5ce7f04bb2f9",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.limitMs",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586658:22079859",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "ModelStreamWallClockLimitError.constructor",
+    "qualified_name": "ModelStreamWallClockLimitError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586658,
+    "end_line": 586662,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "limitMs"
+    ],
+    "body_sha256": "95558b7ba384588d8055870652431022089d5d0e4c28842b2f6e9d39132ed54c",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.limitMs",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586666:22080098",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "isModelStreamWallClockLimitError",
+    "qualified_name": "isModelStreamWallClockLimitError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586666,
+    "end_line": 586676,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "40f719cb101b428852a8241799f2c79c4888a7698ffb332b37b7eab381c1afbf",
+    "calls": [
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586678:22080558",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "ModelStreamWallClockMiddleware.constructor",
+    "qualified_name": "ModelStreamWallClockMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586678,
+    "end_line": 586683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "limitMs",
+      "cuts"
+    ],
+    "body_sha256": "3dacd9e71dadf4d44eabb66d3a0f6f9cc3fe8ee9701d4ba42463a08bd594709e",
+    "calls": [
+      "createExpiryPolicy",
+      "super"
+    ],
+    "writes": [
+      "this.cuts",
+      "this.expiry",
+      "this.limitMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586688:22080819",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "ModelStreamWallClockMiddleware.stream",
+    "qualified_name": "ModelStreamWallClockMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586688,
+    "end_line": 586742,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "d0077b7ccd53531e5c9fd734b874fa10a722466f15e52552f2a91d7bba1ab38e",
+    "calls": [
+      "ctx.withCancel",
+      "cutAfter",
+      "fullStream",
+      "result.response.then",
+      "this.expiry.arm",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [
+      "this.streams"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586692:22080993",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "cutAfter",
+    "qualified_name": "ModelStreamWallClockMiddleware.stream/cutAfter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586692,
+    "end_line": 586704,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "phase"
+    ],
+    "body_sha256": "1b89c4a3c7a0bf72a1a8dd4b0ca494d3f25e4b669a98b24a3b520fbb76b74b93",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586709:22081727",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "fullStream",
+    "qualified_name": "ModelStreamWallClockMiddleware.stream/fullStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586709,
+    "end_line": 586724,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "30e06746a53e1f1be430c688a3f8d127e87c4ba6fd2190a78ec64a0ceb868f8e",
+    "calls": [
+      "MODEL_OUTPUT_PART_TYPES.has",
+      "armed.dispose",
+      "cutAfter",
+      "expiry.arm"
+    ],
+    "writes": [
+      "armed",
+      "streaming"
+    ],
+    "throw_targets": [
+      "LogicalExpression",
+      "limitError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:586744:22082729",
+    "artifact": "evaluation",
+    "module": "core/runner/model-stream/wall-clock-limit.ts",
+    "name": "createModelStreamWallClockMiddleware",
+    "qualified_name": "createModelStreamWallClockMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586744,
+    "end_line": 586748,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "limitMs"
+    ],
+    "body_sha256": "86bd627309935815c56ca1283ce7ffff6234a2b011968bf87f9e86dcd0d46b15",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

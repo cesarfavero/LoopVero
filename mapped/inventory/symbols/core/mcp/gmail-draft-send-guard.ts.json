@@ -1,0 +1,260 @@
+[
+  {
+    "id": "evaluation:584393:21980178",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "isSendMessage",
+    "qualified_name": "isSendMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584393,
+    "end_line": 584396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "78168fcd0abb0dbbd906f2a56fd3158ebd481080e9797bdeb60a59fc076d6ed4",
+    "calls": [
+      "args.name.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584397:21980376",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "isProvided",
+    "qualified_name": "isProvided",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584397,
+    "end_line": 584409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1c328bfa5c55e57c91c5f78d5b65295b3c25f2b59d0e5d4f67280c74021e887c",
+    "calls": [
+      "value.kind.value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584410:21980676",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "ignoredDraftSendFields",
+    "qualified_name": "ignoredDraftSendFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584410,
+    "end_line": 584413,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "aba578ed8a1cc2c09b532e8378ddfac9c3710acd840da694d6caa0f76f878c9a",
+    "calls": [
+      "DRAFT_OVERRIDE_FIELDS.filter",
+      "isProvided",
+      "isSendMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584414:21980871",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "gmailDraftSendRefusal",
+    "qualified_name": "gmailDraftSendRefusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584414,
+    "end_line": 584416,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "03bd253ed9fdc95ad8960968e085fa48c2c3a24e301a5972e27d4a05b6bde367",
+    "calls": [
+      "fields3.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584417:21981406",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "refusalResult2",
+    "qualified_name": "refusalResult2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584417,
+    "end_line": 584434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "733253e6e27c30cb586f8cd49f55e873cbd0df326f200e53a095fd7625a185b5",
+    "calls": [
+      "gmailDraftSendRefusal",
+      "new McpResult",
+      "new McpSuccess",
+      "new McpTextContent",
+      "new McpToolResultContentItem"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584435:21981809",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "withGmailDraftSendGuard",
+    "qualified_name": "withGmailDraftSendGuard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584435,
+    "end_line": 584446,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor"
+    ],
+    "body_sha256": "2fa256145c37e4b406934e6a79424cbafd6deb3f0e5c2f3d75ec4576bd482df3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584437:21981886",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "isBackendRouted",
+    "qualified_name": "withGmailDraftSendGuard/isBackendRouted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584437,
+    "end_line": 584437,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "3326bf8889fdcbf666497666616b86468b240ccef3beb8400ba95d08005cbc08",
+    "calls": [
+      "executor.isBackendRouted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584438:21981964",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-draft-send-guard.ts",
+    "name": "execute",
+    "qualified_name": "withGmailDraftSendGuard/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584438,
+    "end_line": 584444,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "8bd2cbd640de8d1a6f5e9d7c9d4fad13edc6e95969eaa731d1d8e1f274c60d06",
+    "calls": [
+      "executor.execute",
+      "ignoredDraftSendFields",
+      "recordMcpExecRefusedBeforeDispatch",
+      "refusalResult2",
+      "refusals.increment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

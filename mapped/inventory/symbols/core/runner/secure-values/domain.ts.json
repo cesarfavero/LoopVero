@@ -1,0 +1,332 @@
+[
+  {
+    "id": "host:758036:28960197",
+    "artifact": "host",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "normalizeHostname",
+    "qualified_name": "normalizeHostname",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758036,
+    "end_line": 758038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname4"
+    ],
+    "body_sha256": "9aa4d6ea170d631384d06befc3f0e677c22d2ff1ee3c3e50a24b6f3351bf9bec",
+    "calls": [
+      ".replace",
+      "hostname4.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758039:28960293",
+    "artifact": "host",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "parseSecureValueHttpsSite",
+    "qualified_name": "parseSecureValueHttpsSite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758039,
+    "end_line": 758055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "7010d9c538992f295dbed9407bcf7e795428f80cf23059c36d540363157f9008",
+    "calls": [
+      ".toLowerCase",
+      "candidate.includes",
+      "new URL",
+      "normalizeHostname",
+      "raw.trim"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:758056:28960861",
+    "artifact": "host",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "parseSecureValueHttpsUrl",
+    "qualified_name": "parseSecureValueHttpsUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758056,
+    "end_line": 758058,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f26434f93beb954875c2157da080bb72f47fdccf40df438329d3d6d6dfd171bd",
+    "calls": [
+      "URL.parse",
+      "parseSecureValueHttpsSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758059:28960994",
+    "artifact": "host",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "secureValueDomainMatchesSite",
+    "qualified_name": "secureValueDomainMatchesSite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758059,
+    "end_line": 758064,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "allowedDomain",
+      "site"
+    ],
+    "body_sha256": "44d4f213b16d15b83a79fa1b328c796dfcd39e7dd4b0e79ea9da1e60316af497",
+    "calls": [
+      "parseSecureValueHttpsSite",
+      "site.hostname.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758065:28961319",
+    "artifact": "host",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "authorizeSecureValueCardSites",
+    "qualified_name": "authorizeSecureValueCardSites",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758065,
+    "end_line": 758072,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "814ae1b3c12d3ebc6f583f0c05d778f0e1189cd3095bcd1cf6f532d673887650",
+    "calls": [
+      "parseSecureValueHttpsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546227:20164620",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "normalizeHostname",
+    "qualified_name": "normalizeHostname",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546227,
+    "end_line": 546229,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname3"
+    ],
+    "body_sha256": "595857b6b5e3a6a86f9658211dca29cc65a1c8844e82c3f5a96a3d77ad27ee6e",
+    "calls": [
+      ".replace",
+      "hostname3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546230:20164716",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "parseSecureValueHttpsSite",
+    "qualified_name": "parseSecureValueHttpsSite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546230,
+    "end_line": 546246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "7a0cb2e1bfafd8b1e22f15258ba613581c767f805a85560ce7ccd5068172facf",
+    "calls": [
+      ".toLowerCase",
+      "candidate.includes",
+      "new URL",
+      "normalizeHostname",
+      "raw.trim"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:546247:20165284",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "parseSecureValueHttpsUrl",
+    "qualified_name": "parseSecureValueHttpsUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546247,
+    "end_line": 546249,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f26434f93beb954875c2157da080bb72f47fdccf40df438329d3d6d6dfd171bd",
+    "calls": [
+      "URL.parse",
+      "parseSecureValueHttpsSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546250:20165417",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "secureValueDomainMatchesSite",
+    "qualified_name": "secureValueDomainMatchesSite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546250,
+    "end_line": 546255,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "allowedDomain",
+      "site"
+    ],
+    "body_sha256": "44d4f213b16d15b83a79fa1b328c796dfcd39e7dd4b0e79ea9da1e60316af497",
+    "calls": [
+      "parseSecureValueHttpsSite",
+      "site.hostname.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546256:20165742",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/domain.ts",
+    "name": "authorizeSecureValueCardSites",
+    "qualified_name": "authorizeSecureValueCardSites",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546256,
+    "end_line": 546263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "814ae1b3c12d3ebc6f583f0c05d778f0e1189cd3095bcd1cf6f532d673887650",
+    "calls": [
+      "parseSecureValueHttpsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,887 @@
+[
+  {
+    "id": "host:720837:27350618",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "readPluginSkillFileFacts",
+    "qualified_name": "readPluginSkillFileFacts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720837,
+    "end_line": 720865,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pluginsRoot",
+      "filePath"
+    ],
+    "body_sha256": "e6cc69d38dbee882aa3ad8b5f973c3d2790c5f11609f7409546c4e7934e5a3e3",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "parseSkillFile",
+      "readFileWithinSync",
+      "reportFallbackUnlessAbsent",
+      "resolveWithinSync"
+    ],
+    "writes": [
+      "helperScripts",
+      "raw",
+      "skillDir"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:720866:27351597",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "agentHasSkills",
+    "qualified_name": "agentHasSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720866,
+    "end_line": 720885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "002ddeaab1700bbd1ee93a6fb386aeaba9c4d546f7f1e0fb42907c3e6ecbd4cb",
+    "calls": [
+      "entry.isDirectory",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:720887:27352248",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.constructor",
+    "qualified_name": "FileSkillStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720887,
+    "end_line": 720912,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentDir",
+      "globalDir",
+      "resolveUserTimeZone = () => void 0"
+    ],
+    "body_sha256": "a568fcca7c305da30426d2909a3064b504a8978d9ff3c6678389ff4491432fcf",
+    "calls": [
+      "createDebouncePolicy",
+      "getAgentAutomationsDir",
+      "getManagedSkillsDir",
+      "getPluginSkillsDir",
+      "getPluginsRootDir",
+      "new FileAutomationStore",
+      "new GlobalSkillLibrary",
+      "new WatchedDirectory",
+      "this.migrateLegacyPerAgentSkills"
+    ],
+    "writes": [
+      "this.agentDir",
+      "this.automations",
+      "this.library",
+      "this.managedDir",
+      "this.managedDirWatcher",
+      "this.pluginSkillsDir",
+      "this.pluginSkillsDirWatcher",
+      "this.pluginsRoot"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720921:27353407",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.getLocation",
+    "qualified_name": "FileSkillStore.getLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720921,
+    "end_line": 720923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0ac749d96110ecb06b467015bc502bb35d178835ddbaf9392d6940a1c6b64894",
+    "calls": [
+      "this.library.getLocation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720924:27353468",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.setOnChange",
+    "qualified_name": "FileSkillStore.setOnChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720924,
+    "end_line": 720929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "16b3306b141089b285ab5189fcb50f1da17590ac4efd7e2d48dc797e8ec376c8",
+    "calls": [
+      "this.automations.setOnChange",
+      "this.library.setOnChange",
+      "this.managedDirWatcher.setOnChange",
+      "this.pluginSkillsDirWatcher.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720930:27353691",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.skillFromRecord",
+    "qualified_name": "FileSkillStore.skillFromRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720930,
+    "end_line": 720949,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "ee22ebfdfeb1ce089df05203a23b234eeae3b4c6d23bacc7b361a9f0899afdbc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720950:27354212",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.managedSkillToSkill",
+    "qualified_name": "FileSkillStore.managedSkillToSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720950,
+    "end_line": 720977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "skill",
+      "fetchedAt"
+    ],
+    "body_sha256": "71b543040d0a52a3569a499ccd3fc3c082ce70fb52f69726f40e684651f96d62",
+    "calls": [
+      ".isFile",
+      "getManagedSkillFilePath",
+      "getManagedSkillsCachePath",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "hasSkillFile"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720978:27355064",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.readManagedSkillsIndex",
+    "qualified_name": "FileSkillStore.readManagedSkillsIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720978,
+    "end_line": 720983,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ea3f81cbd31d8516d63e48ce9f3624b9fb48de28bdfe9283190fbdfe786a3838",
+    "calls": [
+      "getManagedSkillsCachePath",
+      "managedSkillsIndexCache.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720984:27355248",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.readPluginSkillsIndex",
+    "qualified_name": "FileSkillStore.readPluginSkillsIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720984,
+    "end_line": 720989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "21ba5eeb86d56e23328259089505e72d185fb3836c88f611676ec16ba715aba8",
+    "calls": [
+      "getPluginSkillsCachePath",
+      "pluginSkillsIndexCache.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720990:27355431",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.managedSkills",
+    "qualified_name": "FileSkillStore.managedSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720990,
+    "end_line": 720994,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "excludedIds = /* @__PURE__ */ new Set()"
+    ],
+    "body_sha256": "7be7177ceb1107f91ffbdacd760fda9917c0a072fb6f68271a48059c887c048b",
+    "calls": [
+      ".map",
+      "cache3.skills.filter",
+      "this.readManagedSkillsIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720995:27355722",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.pluginSkillToSkill",
+    "qualified_name": "FileSkillStore.pluginSkillToSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720995,
+    "end_line": 721020,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3",
+      "index"
+    ],
+    "body_sha256": "7b0ecf92b7bbdfd629cc4779d1c8b3d6cddb8ccc2dc936fc54be3fa115488244",
+    "calls": [
+      "pluginSkillParseCache.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721021:27356699",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.pluginSkills",
+    "qualified_name": "FileSkillStore.pluginSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721021,
+    "end_line": 721031,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "excludedIds = /* @__PURE__ */ new Set()"
+    ],
+    "body_sha256": "2d7582596b87866afb17bf12494802bce5f99578ad9295cda392e5edea4eb314",
+    "calls": [
+      "excludedIds.has",
+      "skills.push",
+      "slugifySkillName",
+      "this.pluginSkillToSkill",
+      "this.readPluginSkillsIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721032:27357148",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.pluginSkillRecord",
+    "qualified_name": "FileSkillStore.pluginSkillRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721032,
+    "end_line": 721035,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "4808a01a2aa6d070869376cc4a2287616622a0a9c9a5eec6f50e4cbfa1d55df8",
+    "calls": [
+      "cache3.skills.find",
+      "this.readPluginSkillsIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721036:27357289",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.listAll",
+    "qualified_name": "FileSkillStore.listAll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721036,
+    "end_line": 721038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "dcdf3b900c48fca862685e32089a5e4e2affddf2f67a551b7bb6ecc8f6322df2",
+    "calls": [
+      "this.listAllFrom"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721039:27357368",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.listAllFrom",
+    "qualified_name": "FileSkillStore.listAllFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721039,
+    "end_line": 721048,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ definitionsOnly }"
+    ],
+    "body_sha256": "37ab83abdcafd13882fb8dc21c00c3989e1736b7fb8b74dc45524ed0d0768f8e",
+    "calls": [
+      ".filter",
+      ".map",
+      "managed.map",
+      "new Set",
+      "records2.map",
+      "this.automations.list",
+      "this.automations.listDefinitions",
+      "this.library.list",
+      "this.managedSkills",
+      "this.pluginSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721049:27358034",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.list",
+    "qualified_name": "FileSkillStore.list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721049,
+    "end_line": 721051,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b8af21b3479ea323e593ce32ea582846231fd0eeef9b8d1bd0efbe94a935a61b",
+    "calls": [
+      "this.listAllFrom"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721052:27358104",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.get",
+    "qualified_name": "FileSkillStore.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721052,
+    "end_line": 721066,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "119620ff31b4c4e4264cb82473e32d5ebd90e5796ca85c00a51f0466d20903cc",
+    "calls": [
+      ".find",
+      ".map",
+      "RESERVED_MANAGED_SKILL_IDS.has",
+      "automationToSkill",
+      "managedAll.find",
+      "managedAll.map",
+      "new Set",
+      "this.automations.get",
+      "this.library.get",
+      "this.library.list",
+      "this.managedSkills",
+      "this.pluginSkills",
+      "this.skillFromRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721067:27358831",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.create",
+    "qualified_name": "FileSkillStore.create",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721067,
+    "end_line": 721084,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "spec",
+      "provenance"
+    ],
+    "body_sha256": "b448ed54cf5cefc9bc019863c5ef9f544c39cee39cbd4761728def5edfb9a7f7",
+    "calls": [
+      "clampSkillBody",
+      "clampSkillName",
+      "this.createAutomation",
+      "this.library.create",
+      "this.skillFromRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721085:27359419",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.createAutomation",
+    "qualified_name": "FileSkillStore.createAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721085,
+    "end_line": 721097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "spec",
+      "provenance"
+    ],
+    "body_sha256": "648b218950704858b0eb411b4c86c66fdcd4a10518005978d805b1968e91a01e",
+    "calls": [
+      "automationToSkill",
+      "cronTrigger",
+      "this.automations.upsert"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721098:27359801",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.update",
+    "qualified_name": "FileSkillStore.update",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721098,
+    "end_line": 721134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "spec",
+      "provenance"
+    ],
+    "body_sha256": "594174508e7022385a44be8fbb7d0b60ad400a3eda95f0d2c724e0a4d1d5d2dd",
+    "calls": [
+      "automationToSkill",
+      "clampSkillBody",
+      "clampSkillName",
+      "cronTrigger",
+      "schedule.trim",
+      "this.automations.get",
+      "this.automations.update",
+      "this.get",
+      "this.library.update",
+      "this.skillFromRecord",
+      "this.updatePluginSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721135:27361228",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.updatePluginSkill",
+    "qualified_name": "FileSkillStore.updatePluginSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721135,
+    "end_line": 721155,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "spec"
+    ],
+    "body_sha256": "dd5746e3cb04027bf53fd5ae6d4e94c6f03a83ea53c2a2171a7333e7f27fb90e",
+    "calls": [
+      "parseSkillFile",
+      "readFileWithinSync",
+      "reportFallbackUnlessAbsent",
+      "resolveWithinSync",
+      "serializeSkillFile",
+      "this.get",
+      "this.pluginSkillRecord",
+      "this.pluginSkillsDirWatcher.writeFileAtomic"
+    ],
+    "writes": [
+      "existing",
+      "target"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721156:27361956",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.remove",
+    "qualified_name": "FileSkillStore.remove",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721156,
+    "end_line": 721163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "b9c2996756df4982b6fc23ab9438ddbf3c3c18ac77fccb8a9ac7cdac666943c9",
+    "calls": [
+      "this.automations.remove",
+      "this.get",
+      "this.library.get",
+      "this.library.remove"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721164:27362215",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.importMarkdown",
+    "qualified_name": "FileSkillStore.importMarkdown",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721164,
+    "end_line": 721176,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "markdown",
+      "fallbackName"
+    ],
+    "body_sha256": "c48583dbddf0c085d362dc1b43085563933c840f62001e59ec910e825527fa6b",
+    "calls": [
+      "skillSpecFromMarkdown",
+      "this.library.create"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721177:27362646",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.importLiveSource",
+    "qualified_name": "FileSkillStore.importLiveSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721177,
+    "end_line": 721185,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "source",
+      "fallbackName"
+    ],
+    "body_sha256": "7a293065786f7a664442bf34e062912b5df7b355ec53748b5250a6703b2dc6a5",
+    "calls": [
+      "clampSkillName",
+      "deriveSkillNameFromUrl",
+      "liveSkillSpecFromSource",
+      "source.trim",
+      "this.library.create"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721186:27363098",
+    "artifact": "host",
+    "module": "host/skills/skill-store.ts",
+    "name": "FileSkillStore.migrateLegacyPerAgentSkills",
+    "qualified_name": "FileSkillStore.migrateLegacyPerAgentSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721186,
+    "end_line": 721220,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "81da6ea8a02d7fd4cabea887adc8afa6ec2d14057aa5926aeb435d91f07c09fe",
+    "calls": [
+      "entry.isDirectory",
+      "parseSkillFile",
+      "readSandDataFileSync",
+      "removeSandDataTreeSync",
+      "this.library.getLocation",
+      "this.library.has",
+      "this.library.renameLegacyRecipeFiles",
+      "this.library.writeAt"
+    ],
+    "writes": [
+      "entries",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  }
+]

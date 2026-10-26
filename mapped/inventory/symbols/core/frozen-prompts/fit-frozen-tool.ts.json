@@ -1,0 +1,104 @@
+[
+  {
+    "id": "evaluation:553827:20515779",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/fit-frozen-tool.ts",
+    "name": "withRowDate",
+    "qualified_name": "withRowDate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 553827,
+    "end_line": 553833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "description9",
+      "dates"
+    ],
+    "body_sha256": "503cbe325a4a4d875d989e57d002408b81ddde798bc04c46d26618e1459238c6",
+    "calls": [
+      "buildWebSearchYearGuidance",
+      "description9.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:553834:20516027",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/fit-frozen-tool.ts",
+    "name": "narrowToAcceptedParameters",
+    "qualified_name": "narrowToAcceptedParameters",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 553834,
+    "end_line": 553874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  schema: schema3,\n  accepting,\n  adjustments,\n  acceptorLabel = \"the live tool\"\n}"
+    ],
+    "body_sha256": "f495722de0f8686c21c769aed0d27aef5b86315d777bb497193054987cdb93c8",
+    "calls": [
+      ".flatMap",
+      "Object.entries",
+      "Object.fromEntries",
+      "objectSchema.safeParse",
+      "required2.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:553875:20517697",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/fit-frozen-tool.ts",
+    "name": "fitFrozenTool",
+    "qualified_name": "fitFrozenTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 553875,
+    "end_line": 553884,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "frozen",
+      "live",
+      "dates"
+    ],
+    "body_sha256": "dc3f5fd753d9ba9174cae3dc1ff765e7e98ca9720053513764a074ea72d06d7c",
+    "calls": [
+      "narrowToAcceptedParameters",
+      "withRowDate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

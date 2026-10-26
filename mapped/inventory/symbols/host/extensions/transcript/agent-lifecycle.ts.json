@@ -1,0 +1,1096 @@
+[
+  {
+    "id": "host:733439:27854528",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "emptyDeleteStats",
+    "qualified_name": "emptyDeleteStats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733439,
+    "end_line": 733441,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "627951bb92f023d7545a0c6961cdb91dfd0f1978e640b2cfb4659158bb4f2bb5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733442:27854640",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "cloneAgentDisplayName",
+    "qualified_name": "cloneAgentDisplayName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733442,
+    "end_line": 733445,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "5707b7cef90487573810a9257eb5bd3d7a9ef7dcb8cec54d0f3492d243972897",
+    "calls": [
+      "name18.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733447:27854816",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.constructor",
+    "qualified_name": "AgentLifecycle.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733447,
+    "end_line": 733449,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733452:27854930",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.withAvatarMutation",
+    "qualified_name": "AgentLifecycle.withAvatarMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733452,
+    "end_line": 733468,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "run"
+    ],
+    "body_sha256": "1271af4b85d38aa5690eea54aafa5a340354c35f655ce2486584527f81fff295",
+    "calls": [
+      "Promise.resolve",
+      "new Promise",
+      "release",
+      "run",
+      "this.avatarMutationMutexes.delete",
+      "this.avatarMutationMutexes.get",
+      "this.avatarMutationMutexes.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733469:27855433",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.createAgent",
+    "qualified_name": "AgentLifecycle.createAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733469,
+    "end_line": 733487,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "profile",
+      "origin = \"user\"",
+      "options2 = {}"
+    ],
+    "body_sha256": "89344842f60c655c5dd86742dab9397585aa5ace60fd37f14dc98a146399b747",
+    "calls": [
+      "Date.now",
+      "getTranscript",
+      "new SandAgentLifecycleError",
+      "this.mintAgentSession",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgents",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.markSessionViewed",
+      "this.tm.sessionStore.summarizeOpenSession",
+      "this.tm.sessions.clearActiveTranscript",
+      "this.tm.sessions.invalidateDeferredActivation",
+      "this.tm.sessions.markSessionLeftBehind",
+      "this.tm.sessions.replaceSession"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentLifecycleError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733488:27856446",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.createBackgroundAgent",
+    "qualified_name": "AgentLifecycle.createBackgroundAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733488,
+    "end_line": 733503,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "profile",
+      "origin = \"user\"",
+      "options2 = {}"
+    ],
+    "body_sha256": "0831a9b3a1b4699b2988a41144350979bab89c1052d33c5ac373f0de4fffe779",
+    "calls": [
+      "new SandAgentLifecycleError",
+      "nextSession.agentStore.dispose",
+      "nextSession.db.close",
+      "nextSession.db.getTranscriptEntries",
+      "this.mintAgentSession",
+      "this.tm.roster.emitAgents",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.summarizeOpenSession"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentLifecycleError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733504:27857167",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.mintAgentSession",
+    "qualified_name": "AgentLifecycle.mintAgentSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733504,
+    "end_line": 733514,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "profile",
+      "origin",
+      "options2"
+    ],
+    "body_sha256": "3cc560f041162aeb628347ab52dcd8dd472f02c4006a41c304c09e26e2d90620",
+    "calls": [
+      "options2.configureAgentDir",
+      "this.tm.sessionStore.createSession",
+      "this.tm.sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733515:27857576",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.cloneAgent",
+    "qualified_name": "AgentLifecycle.cloneAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733515,
+    "end_line": 733559,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sourceId",
+      "provision"
+    ],
+    "body_sha256": "85bc256494e6216304a58e3109ad6ec2e12bdd4c7327c480928a3b0f8c27b0a7",
+    "calls": [
+      ".find",
+      "cloneAgentDisplayName",
+      "new SandAgentLifecycleError",
+      "provision",
+      "this.commitOpenedSession",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessionStore.mintAgent"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentLifecycleError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733560:27859157",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.commitOpenedSession",
+    "qualified_name": "AgentLifecycle.commitOpenedSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733560,
+    "end_line": 733585,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    session,\n    entries,\n    agent\n  }"
+    ],
+    "body_sha256": "e05393e18830048f82a86a8a287c2038f4ce21cfffa1d187354dc82f20a8da1b",
+    "calls": [
+      "Date.now",
+      "getTranscript",
+      "publishTranscriptMutation",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgents",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.markSessionViewed",
+      "this.tm.sessionStore.summarizeOpenSession",
+      "this.tm.sessions.invalidateDeferredActivation",
+      "this.tm.sessions.markSessionLeftBehind",
+      "this.tm.sessions.replaceSession",
+      "this.tm.sessions.setActiveTranscript"
+    ],
+    "writes": [
+      "this.tm.sessions.loaded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733586:27860132",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.openMintedSession",
+    "qualified_name": "AgentLifecycle.openMintedSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733586,
+    "end_line": 733600,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "newId2"
+    ],
+    "body_sha256": "949987972eacb3d0e481051ae1eaa337b41b746b78c99d9480ee7495fecfb69b",
+    "calls": [
+      "new SandAgentLifecycleError",
+      "this.discardMintedSession",
+      "this.tm.sessionStore.getTranscriptEntries",
+      "this.tm.sessionStore.openSession",
+      "this.tm.sessionStore.summarizeOpenSession"
+    ],
+    "writes": [
+      "session"
+    ],
+    "throw_targets": [
+      "SandAgentLifecycleError",
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733601:27860691",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.discardMintedSession",
+    "qualified_name": "AgentLifecycle.discardMintedSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733601,
+    "end_line": 733615,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "newId2"
+    ],
+    "body_sha256": "9fd0614c2e16fff2089a3526dbba5b31fb26f83cbacb018b141ab3936a6b9ee8",
+    "calls": [
+      ".catch",
+      "session.agentStore.dispose",
+      "session.db.close",
+      "this.tm.sessionStore.deleteSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733616:27861094",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.deleteAgent",
+    "qualified_name": "AgentLifecycle.deleteAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733616,
+    "end_line": 733618,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "ea749c6cbd77fcb81826653efed085bd65e987dff41b5ebf31d000fc3c525d86",
+    "calls": [
+      "this.tm.deleteAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733619:27861175",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.forgetAgentDeletion",
+    "qualified_name": "AgentLifecycle.forgetAgentDeletion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733619,
+    "end_line": 733621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "38d727d92ffc00d8414ccf01b70faf5d8defe07f5b0a201baa4e8fe7f1b7bc2a",
+    "calls": [
+      "this.tm.sessions.deletedAgentIds.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733622:27861265",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.deleteAgents",
+    "qualified_name": "AgentLifecycle.deleteAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733622,
+    "end_line": 733633,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentIds"
+    ],
+    "body_sha256": "383fb87fb0acd3b28aecadc99f9fc9acef1eaf3cef1922b8bc701241b935e4d3",
+    "calls": [
+      "emptyDeleteStats",
+      "getTranscript",
+      "new Set",
+      "this.runDeleteAgents",
+      "this.tm.sessionStore.agentDirExists",
+      "this.tm.sessions.deletedAgentIds.delete"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733634:27861674",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.runDeleteAgents",
+    "qualified_name": "AgentLifecycle.runDeleteAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733634,
+    "end_line": 733726,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ids"
+    ],
+    "body_sha256": "9b9f786c42f95f367739a6f6b8c70ab3dbff55222dad6773beb04dc77b04f516",
+    "calls": [
+      ".filter",
+      ".find",
+      "Date.now",
+      "active.agentStore.dispose",
+      "emptyDeleteStats",
+      "errorLogTag",
+      "getTranscript",
+      "ids.has",
+      "new Set",
+      "retained.agentStore.dispose",
+      "this.deleteAgentFiles",
+      "this.deleteListedAndClearRoster",
+      "this.interruptAgentForDeletion",
+      "this.tm.boxHandoff.awaitingSink.clear",
+      "this.tm.boxHandoff.boxHandoffs.delete",
+      "this.tm.hostLog",
+      "this.tm.onAgentForgotten",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgents",
+      "this.tm.runLifecycle.closeSessionWhenIdle",
+      "this.tm.runLifecycle.watchActiveSession",
+      "this.tm.sessionStore.getTranscriptEntries",
+      "this.tm.sessionStore.listAgentRecordIds",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessionStore.markSessionViewed",
+      "this.tm.sessions.clearActiveSession",
+      "this.tm.sessions.clearActiveTranscript",
+      "this.tm.sessions.invalidateDeferredActivation",
+      "this.tm.sessions.liveSessions.delete",
+      "this.tm.sessions.liveSessions.get",
+      "this.tm.sessions.openSessionOnce",
+      "this.tm.sessions.pendingSessionOpens.delete",
+      "this.tm.sessions.pendingSessionOpens.get",
+      "this.tm.sessions.restoreSession",
+      "this.tm.sessions.setActiveSession",
+      "this.tm.sessions.setActiveTranscript",
+      "this.tm.sessions.settledOpen",
+      "this.tm.trayErrors.clearForAgent"
+    ],
+    "writes": [
+      "nextSession",
+      "stats.deletedActive",
+      "stats.diskDeleteMs",
+      "stats.drainMs",
+      "stats.successorMs",
+      "this.tm.sessions.loaded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 5,
+      "awaits": 16,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733727:27865738",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.deleteListedAndClearRoster",
+    "qualified_name": "AgentLifecycle.deleteListedAndClearRoster",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733727,
+    "end_line": 733752,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ids"
+    ],
+    "body_sha256": "643d19ef4974c54e141599ef9b9ae089d6935787f3567e505aaa6e8862a3fc85",
+    "calls": [
+      "Date.now",
+      "emptyDeleteStats",
+      "getTranscript",
+      "this.deleteAgentFiles",
+      "this.interruptAgentForDeletion",
+      "this.tm.boxHandoff.awaitingSink.clear",
+      "this.tm.boxHandoff.boxHandoffs.delete",
+      "this.tm.onAgentForgotten",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgents",
+      "this.tm.sessions.clearActiveSession",
+      "this.tm.sessions.clearActiveTranscript",
+      "this.tm.sessions.invalidateDeferredActivation",
+      "this.tm.sessions.liveSessions.delete",
+      "this.tm.sessions.pendingSessionOpens.delete",
+      "this.tm.trayErrors.clearForAgent"
+    ],
+    "writes": [
+      "stats.diskDeleteMs",
+      "stats.drainMs",
+      "this.tm.sessions.loaded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733753:27866752",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.deleteAgentFiles",
+    "qualified_name": "AgentLifecycle.deleteAgentFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733753,
+    "end_line": 733755,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "cd6d264c9fc21ebd53833c98a0ce6750afcd485e469e741d220b6cf0be4d7657",
+    "calls": [
+      "this.withAvatarMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733756:27866896",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.interruptAgentForDeletion",
+    "qualified_name": "AgentLifecycle.interruptAgentForDeletion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733756,
+    "end_line": 733761,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "c5713a3b1230816647d005afaae66470de6998f488cc73f95e02aeef93e6df08",
+    "calls": [
+      "this.tm.groupChat.cancelTemporalMemberTurns",
+      "this.tm.runLifecycle.drainExclusiveRuns",
+      "this.tm.sessions.deletedAgentIds.add",
+      "this.tm.sessions.forgetStoredIdsAtDuplicate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733762:27867195",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.updateAgent",
+    "qualified_name": "AgentLifecycle.updateAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733762,
+    "end_line": 733782,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "profile"
+    ],
+    "body_sha256": "608d83a70899cdb7f611d21d3adcbf0dc0d832e413886ef695081de8b5157d32",
+    "calls": [
+      "profile.avatarColor.trim",
+      "profile.avatarShape.trim",
+      "profile.description.trim",
+      "profile.name.trim",
+      "profile.title.trim",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.roster.emitProfileChanged",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.summarizeOpenSession",
+      "this.tm.sessionStore.updateAgentProfile",
+      "this.tm.sessionStore.writeAgentProfileFile"
+    ],
+    "writes": [
+      "summary"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733783:27868241",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.seedConversationName",
+    "qualified_name": "AgentLifecycle.seedConversationName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733783,
+    "end_line": 733803,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    prompt\n  }"
+    ],
+    "body_sha256": "e3edb72fbb5e6db45a408ef76389c8ffe353078396901889ad5a2e165149bd05",
+    "calls": [
+      "conversationNameFromPrompt",
+      "seedRoomProfileName",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.roster.emitProfileChanged",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.lastKnownAgentNames.set",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.getAgentDir",
+      "this.tm.sessionStore.summarizeAgentById",
+      "this.tm.sessionStore.summarizeOpenSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733804:27869062",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentUnread",
+    "qualified_name": "AgentLifecycle.setAgentUnread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733804,
+    "end_line": 733817,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isUnread",
+      "atMs"
+    ],
+    "body_sha256": "35cfab606de547667aae8ad4e8c963b26cf19a98d0dde5397d640bbe4f247634",
+    "calls": [
+      "active.db.markRead",
+      "active.db.markUnread",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.seedSessionActivityFromDbMtime",
+      "this.tm.sessionStore.setSessionUnread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733818:27869559",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentNotifyOnUpdates",
+    "qualified_name": "AgentLifecycle.setAgentNotifyOnUpdates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733818,
+    "end_line": 733821,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isEnabled"
+    ],
+    "body_sha256": "3090696ca09db0f4d631f10a17871e78d188bdb41d40d3226d568f9687b0d8ff",
+    "calls": [
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.setSessionNotifyOnUpdates"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733822:27869741",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentDraftingDisabled",
+    "qualified_name": "AgentLifecycle.setAgentDraftingDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733822,
+    "end_line": 733824,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isDisabled"
+    ],
+    "body_sha256": "785773d8a7f429cfcde38024791aedc1c527c5c4e03190e1f95abcb4c5c8d89c",
+    "calls": [
+      "this.tm.sessionStore.setSessionDraftingDisabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733825:27869864",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentVoice",
+    "qualified_name": "AgentLifecycle.setAgentVoice",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733825,
+    "end_line": 733838,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    voiceId,\n    voiceSpeed,\n    voiceLanguage\n  }"
+    ],
+    "body_sha256": "241604245c0a9b8f6400991eeedab33ab112d5698c7e74319f36db78f390bc06",
+    "calls": [
+      "normalizeSandVoiceId",
+      "normalizeSandVoiceLanguage",
+      "normalizeSandVoiceSpeed",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.setSessionVoice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733839:27870360",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentHiddenFromSidebar",
+    "qualified_name": "AgentLifecycle.setAgentHiddenFromSidebar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733839,
+    "end_line": 733842,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isHidden"
+    ],
+    "body_sha256": "e3448fd91f12960af2ad909ce98700f50158a15bdc0d3bf85fb0c5fcbce44a3c",
+    "calls": [
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.setSessionHiddenFromSidebar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733843:27870537",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentAvatarBytes",
+    "qualified_name": "AgentLifecycle.setAgentAvatarBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733843,
+    "end_line": 733848,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "pngBytes"
+    ],
+    "body_sha256": "46fe70e7fea388ae6a5d396691ac1a2c07cdc062f2f0ec3f4309a57272f9ea6a",
+    "calls": [
+      "this.withAvatarMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733849:27870736",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentAvatarBytesIfVersion",
+    "qualified_name": "AgentLifecycle.setAgentAvatarBytesIfVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733849,
+    "end_line": 733856,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1b7f1d20f4cfe95ee777ea5a6b533d95004112a9b7a1590fbfdb86d4cd8e3d22",
+    "calls": [
+      "this.withAvatarMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733857:27871114",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.setAgentAvatarBytesUnlocked",
+    "qualified_name": "AgentLifecycle.setAgentAvatarBytesUnlocked",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733857,
+    "end_line": 733879,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "pngBytes",
+      "source"
+    ],
+    "body_sha256": "ba27957409416e32a2f2c94f7a2597b0c7d942f3ad9d25b59ff3ecf5ce918188",
+    "calls": [
+      "avatarVersionForBytes",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.roster.emitProfileChanged",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.noteHostWrittenAvatarVersion",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.setAgentAvatarBytes",
+      "this.tm.sessionStore.setAgentAvatarBytesById"
+    ],
+    "writes": [
+      "summary"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733880:27871983",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-lifecycle.ts",
+    "name": "AgentLifecycle.getAgentAvatar",
+    "qualified_name": "AgentLifecycle.getAgentAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733880,
+    "end_line": 733882,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "40870419d29f4c8396c051ecd5ec1991301e0fad1bc99891e12dc41353e3de82",
+    "calls": [
+      "this.tm.sessionStore.getAgentAvatar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

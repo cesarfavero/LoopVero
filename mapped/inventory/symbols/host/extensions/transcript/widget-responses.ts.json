@@ -1,0 +1,1621 @@
+[
+  {
+    "id": "host:782393:30157514",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.constructor",
+    "qualified_name": "WidgetResponses.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782393,
+    "end_line": 782395,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782398:30157636",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.scheduleCredentialRequestExpiry",
+    "qualified_name": "WidgetResponses.scheduleCredentialRequestExpiry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782398,
+    "end_line": 782418,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "925ec71aa2797201499e9b4e4dfead3c33843224dc74342c809f0d63caa97d83",
+    "calls": [
+      ".dispose",
+      "JSON.stringify",
+      "Math.max",
+      "this.credentialExpiryTimers.get",
+      "this.credentialExpiryTimers.set",
+      "this.tm.clock.now",
+      "this.tm.clock.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782419:30158358",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.restoreCredentialRequestExpiryTimers",
+    "qualified_name": "WidgetResponses.restoreCredentialRequestExpiryTimers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782419,
+    "end_line": 782474,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "78482e6b1977a3652ea4996625556f7e57ee4e2c979ff3396b51b972700bbdad",
+    "calls": [
+      "errorLogTag",
+      "parseCredentialRequest",
+      "reportHostDiagnostic",
+      "session.agentStore.dispose",
+      "session.db.close",
+      "session.db.getTranscriptEntries",
+      "this.awaitBrokeredCredentialRequest",
+      "this.scheduleCredentialRequestExpiry",
+      "this.tm.sessionStore.listAgentIds",
+      "this.tm.sessionStore.openSession",
+      "this.tm.sessions.isAgentGone",
+      "this.tm.sessions.liveSessions.get"
+    ],
+    "writes": [
+      "agentIds",
+      "session"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:782475:30160310",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.cancelCredentialRequestExpiry",
+    "qualified_name": "WidgetResponses.cancelCredentialRequestExpiry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782475,
+    "end_line": 782479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "6fe2994d1661dba20ff983317018af881747f3d67302af2dffc5d41918022df9",
+    "calls": [
+      ".dispose",
+      "JSON.stringify",
+      "this.credentialExpiryTimers.delete",
+      "this.credentialExpiryTimers.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782480:30160492",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.dispose",
+    "qualified_name": "WidgetResponses.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782480,
+    "end_line": 782483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d515c68e3a43aa7f87a7b2ae2b32cd5c1194417fe1f8f36b36a12bf00c0972f3",
+    "calls": [
+      "this.credentialExpiryTimers.clear",
+      "this.credentialExpiryTimers.values",
+      "timer.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782484:30160644",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.respondToWidget",
+    "qualified_name": "WidgetResponses.respondToWidget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782484,
+    "end_line": 782512,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId",
+      "value",
+      "agentId"
+    ],
+    "body_sha256": "0154fc6e9b5088daf25cfedfd0c7f767b1108ea30c46e298b18929e94ce2f609",
+    "calls": [
+      "buildWidgetAnswerNote",
+      "describeRepliedMessageQuote",
+      "findEntry",
+      "this.recordWidgetResponse",
+      "this.rollbackWidgetResponse",
+      "this.tm.groupChat.isGroupSession",
+      "this.tm.sendPrompt",
+      "this.tm.sessions.ensureActionTarget",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:782513:30161809",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settleStaleAutoReviewCard",
+    "qualified_name": "WidgetResponses.settleStaleAutoReviewCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782513,
+    "end_line": 782529,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    entryId,\n    requestId: requestId2\n  }"
+    ],
+    "body_sha256": "984c805f6bb65e58055eee814c59e55e2843b94ea5925368735f9c41c30bf64a",
+    "calls": [
+      ".find",
+      "this.settlePendingAutoReviewApprovalsOnSession",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingAutoReviewApprovals",
+      "this.tm.sessionStore.readAgentTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782530:30162621",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.expireAllPendingAutoReviewApprovalCards",
+    "qualified_name": "WidgetResponses.expireAllPendingAutoReviewApprovalCards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782530,
+    "end_line": 782566,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1d9becb95f87bd96cec3aba35acce50f43ba2e785f9086d3c7b335d41cc569ed",
+    "calls": [
+      "recordSweepFailure",
+      "this.settlePendingAutoReviewApprovalsOnSession",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingAutoReviewApprovals",
+      "this.tm.sessionStore.listAgentIds"
+    ],
+    "writes": [
+      "agentIds",
+      "expired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:782531:30162657",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "recordSweepFailure",
+    "qualified_name": "WidgetResponses.expireAllPendingAutoReviewApprovalCards/recordSweepFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782531,
+    "end_line": 782536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "ae4ccab44cc3a4bb43a80430d636760fd76ecdb8306359cd2c03aafa42c7514f",
+    "calls": [
+      "errorLogTag",
+      "this.tm.telemetry.reportAutoReviewExpireSweepFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782567:30163770",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settlePendingAutoReviewApprovalsOnSession",
+    "qualified_name": "WidgetResponses.settlePendingAutoReviewApprovalsOnSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782567,
+    "end_line": 782581,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "50fe8055867e3c674a69cd4f77b24fee125b86d2f2c76d0f0214483ed7e035af",
+    "calls": [
+      "session.db.getTranscriptEntries",
+      "session.db.updateTranscriptEntry",
+      "settlePendingAutoReviewApprovalEntry",
+      "this.tm.roster.emit",
+      "this.tm.sessions.liveSessions.get",
+      "updateEntry"
+    ],
+    "writes": [
+      "retired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782582:30164596",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settleStaleLocalToolPermissionCard",
+    "qualified_name": "WidgetResponses.settleStaleLocalToolPermissionCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782582,
+    "end_line": 782603,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    entryId,\n    requestId: requestId2,\n    status = \"expired\"\n  }"
+    ],
+    "body_sha256": "32d3581978a3fd27b1767dc9fcb26d344b578d559df5ed4fb98fffb979815d5e",
+    "calls": [
+      ".find",
+      "this.settlePendingLocalToolPermissionAsksOnSession",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingLocalToolPermissionAsks",
+      "this.tm.sessionStore.readAgentTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782604:30165529",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.expireAllPendingLocalToolPermissionCards",
+    "qualified_name": "WidgetResponses.expireAllPendingLocalToolPermissionCards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782604,
+    "end_line": 782649,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "2e1dc1d4db9c135e7da721ae2067cca9df7197c2329a6e595daed1abacc723f5",
+    "calls": [
+      "reportSweepFailure",
+      "this.settlePendingLocalToolPermissionAsksOnSession",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingLocalToolPermissionAsks",
+      "this.tm.sessionStore.listAgentIds"
+    ],
+    "writes": [
+      "agentIds",
+      "expired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:782605:30165573",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "reportSweepFailure",
+    "qualified_name": "WidgetResponses.expireAllPendingLocalToolPermissionCards/reportSweepFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782605,
+    "end_line": 782611,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fd5c87a6ce5bf3963f20d08cea4e034946dcdeba3e877a068e19097597078d7f",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782650:30166952",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.expireAllPendingCookieOriginApprovalCards",
+    "qualified_name": "WidgetResponses.expireAllPendingCookieOriginApprovalCards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782650,
+    "end_line": 782694,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "54d182a3e71075ee8aea2572a55bf74c6d0faada16edc181c360fc0e90184d09",
+    "calls": [
+      "reportSweepFailure",
+      "this.settlePendingCookieOriginApprovalsOnSession",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingCookieOriginApprovals",
+      "this.tm.sessionStore.listAgentIds"
+    ],
+    "writes": [
+      "agentIds",
+      "expired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:782651:30166996",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "reportSweepFailure",
+    "qualified_name": "WidgetResponses.expireAllPendingCookieOriginApprovalCards/reportSweepFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782651,
+    "end_line": 782657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fd5c87a6ce5bf3963f20d08cea4e034946dcdeba3e877a068e19097597078d7f",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782695:30168318",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settlePendingCookieOriginApprovalsOnSession",
+    "qualified_name": "WidgetResponses.settlePendingCookieOriginApprovalsOnSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782695,
+    "end_line": 782715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f42a33380e90395c751d9581906cc45d0510e1b02c6299dd51d917a826229ccc",
+    "calls": [
+      "session.db.getTranscriptEntries",
+      "session.db.updateTranscriptEntry",
+      "settlePendingCookieOriginApprovalEntry",
+      "this.tm.roster.emit",
+      "this.tm.sessions.liveSessions.get",
+      "unlessRequestId",
+      "updateEntry"
+    ],
+    "writes": [
+      "retired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782716:30169516",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settlePendingLocalToolPermissionAsksOnSession",
+    "qualified_name": "WidgetResponses.settlePendingLocalToolPermissionAsksOnSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782716,
+    "end_line": 782737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "687091849ff3a1ef80bfc347c7bdc8ffe92ed01647a29eb3963c7b8faa438ebe",
+    "calls": [
+      "session.db.getTranscriptEntries",
+      "session.db.updateTranscriptEntry",
+      "settlePendingLocalToolPermissionEntry",
+      "this.tm.roster.emit",
+      "this.tm.sessions.liveSessions.get",
+      "unlessRequestId",
+      "updateEntry"
+    ],
+    "writes": [
+      "retired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782738:30170771",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.resolveVirtualCardApproval",
+    "qualified_name": "WidgetResponses.resolveVirtualCardApproval",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782738,
+    "end_line": 782740,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cfaef97fbf552d23d1e6ff18f3fd4fec49f7af0e462e69dac66b0e9bf07e6970",
+    "calls": [
+      "this.settlePendingVirtualCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782741:30170895",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settlePendingVirtualCard",
+    "qualified_name": "WidgetResponses.settlePendingVirtualCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782741,
+    "end_line": 782755,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c4ff8ca246c4f03f1dd7622fc2d7b7e9f97e9d6427f65fee9f4fe7870b03ae33",
+    "calls": [
+      "this.settlePendingVirtualCardOnSession",
+      "this.tm.roster.emit",
+      "this.tm.sessionStore.settleVirtualCardApproval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782756:30171648",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settlePendingVirtualCardOnSession",
+    "qualified_name": "WidgetResponses.settlePendingVirtualCardOnSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782756,
+    "end_line": 782787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4381e6cf797dea473e680af389de20dd24108b021d36cce3e8e9e31e4af16dc2",
+    "calls": [
+      "session.db.getTranscriptEntries",
+      "session.db.updateTranscriptEntry",
+      "settlePendingVirtualCardApprovalEntry",
+      "this.tm.roster.emit",
+      "this.tm.sessions.liveSessions.get",
+      "unlessRequestId",
+      "updateEntry"
+    ],
+    "writes": [
+      "retired"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782788:30173427",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.expireAllPendingVirtualCardApprovalCards",
+    "qualified_name": "WidgetResponses.expireAllPendingVirtualCardApprovalCards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782788,
+    "end_line": 782831,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "5b7276a3d425749a5e708db765eedbc54c3340949f09b181dd512edd4d75540b",
+    "calls": [
+      "reportSweepFailure",
+      "this.settlePendingVirtualCardOnSession",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.expirePendingVirtualCardApprovals",
+      "this.tm.sessionStore.listAgentIds"
+    ],
+    "writes": [
+      "agentIds"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:782789:30173471",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "reportSweepFailure",
+    "qualified_name": "WidgetResponses.expireAllPendingVirtualCardApprovalCards/reportSweepFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782789,
+    "end_line": 782795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fd5c87a6ce5bf3963f20d08cea4e034946dcdeba3e877a068e19097597078d7f",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782832:30174758",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.dismissWidget",
+    "qualified_name": "WidgetResponses.dismissWidget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782832,
+    "end_line": 782857,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    entryId,\n    agentId\n  }"
+    ],
+    "body_sha256": "ee7d99906e18434accd2e1c47b1127f96a30da6608eb31cc7adc6cab695b925f",
+    "calls": [
+      "findEntry",
+      "this.tm.roster.emit",
+      "this.tm.sessions.activeSession.db.updateTranscriptEntry",
+      "this.tm.sessions.ensureActionTarget",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782842:30175156",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "markDismissed",
+    "qualified_name": "WidgetResponses.dismissWidget/markDismissed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782842,
+    "end_line": 782850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "3b6aac4b95ae18b8cacda65f8a34c0ee895ba93b33da460454a025fa5f94675b",
+    "calls": [],
+    "writes": [
+      "didStamp"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782858:30175779",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.storeSecret",
+    "qualified_name": "WidgetResponses.storeSecret",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782858,
+    "end_line": 782868,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "target",
+      "value",
+      "agentId"
+    ],
+    "body_sha256": "52d19c89a8af480b830bf3961021a58bd2efe5ea2845545910e24d73547b268f",
+    "calls": [
+      "this.routeSecret",
+      "this.tm.sessions.ensureActionTarget",
+      "this.tm.storeBoxSecret",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782869:30176243",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.expireCredentialRequest",
+    "qualified_name": "WidgetResponses.expireCredentialRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782869,
+    "end_line": 782893,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5dd4818591c6a98dcd05c076dcc20741c0617fe982ed0093515056e3444d7763",
+    "calls": [
+      "session.agentStore.dispose",
+      "session.db.close",
+      "session.db.getEntryById",
+      "session.db.updateTranscriptEntry",
+      "this.tm.clock.now",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.openSession",
+      "this.tm.sessions.isAgentGone",
+      "this.tm.sessions.liveSessions.get",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782878:30176878",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "markExpired",
+    "qualified_name": "WidgetResponses.expireCredentialRequest/markExpired",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782878,
+    "end_line": 782878,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "5007389796db809c14b13da1026fab741adf1a4ae0827bcf0c8508a34930ca04",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782894:30177769",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.awaitBrokeredCredentialRequest",
+    "qualified_name": "WidgetResponses.awaitBrokeredCredentialRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782894,
+    "end_line": 782936,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a23f0491e06495b00b3420c5a36eb4f60809297d640244969a6f6e2cbaa0bde7",
+    "calls": [
+      "brokeredAccessOutcomeResolution",
+      "errorLogTag",
+      "reportHostDiagnostic",
+      "session.agentStore.dispose",
+      "session.db.close",
+      "session.db.getEntryById",
+      "session.db.updateTranscriptEntry",
+      "this.cancelCredentialRequestExpiry",
+      "this.tm.awaitBrokeredCredentialAccess",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.openSession",
+      "this.tm.sessions.isAgentGone",
+      "this.tm.sessions.liveSessions.get",
+      "updateEntry"
+    ],
+    "writes": [
+      "outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:782920:30178912",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "markResolved",
+    "qualified_name": "WidgetResponses.awaitBrokeredCredentialRequest/markResolved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782920,
+    "end_line": 782920,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "b0724c6683585c63c1ddc1ed7b504bbc6f674564e4afda00716422466c0e304c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782937:30179894",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.requestCredentialAutoFill",
+    "qualified_name": "WidgetResponses.requestCredentialAutoFill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782937,
+    "end_line": 782963,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "dcd36e69ecf4bec2975cc4dd01f19ad11aae22dc61f42fc039837a3818ccdf4f",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic",
+      "session.db.updateTranscriptEntry",
+      "this.tm.requestCredentialAutoFill",
+      "this.tm.roster.emit",
+      "this.tm.sessions.ensureActionTarget",
+      "updateEntry"
+    ],
+    "writes": [
+      "outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:782953:30180440",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "askUser",
+    "qualified_name": "WidgetResponses.requestCredentialAutoFill/askUser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782953,
+    "end_line": 782959,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "22f26eed6a445c264f41c922da981863c9d99998b70282a1055d66b46587c468",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782964:30181074",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.getOpenCredentialRequest",
+    "qualified_name": "WidgetResponses.getOpenCredentialRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782964,
+    "end_line": 782984,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1e5d70c4fd4f279002ca590ec22c1f714b342503d0dcfad4d652eacfeafdb47b",
+    "calls": [
+      "findEntry",
+      "this.settleCredentialRequest",
+      "this.tm.clock.now",
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:782985:30181829",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.resolveCredentialRequest",
+    "qualified_name": "WidgetResponses.resolveCredentialRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 782985,
+    "end_line": 783011,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "35bf4a72b6dde3aea2e5a958ea0fe3243041b819133e5d15292da0b971088f79",
+    "calls": [
+      "findEntry",
+      "this.settleCredentialRequest",
+      "this.tm.clock.now",
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783012:30182833",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.settleCredentialRequest",
+    "qualified_name": "WidgetResponses.settleCredentialRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783012,
+    "end_line": 783032,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ef46c68db8952d2e09c2d7678313356e2d72276a3f3264b24b4e23e1cd64cd40",
+    "calls": [
+      "args.session.db.updateTranscriptEntry",
+      "this.cancelCredentialRequestExpiry",
+      "this.tm.roster.emit",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783014:30182893",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "markResolved",
+    "qualified_name": "WidgetResponses.settleCredentialRequest/markResolved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783014,
+    "end_line": 783020,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "d5be139f8b19e5519a8eb00c4d325e55853d8959da1b1d2c6522331d94c21a2c",
+    "calls": [],
+    "writes": [
+      "didStamp"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783033:30183591",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.submitSecret",
+    "qualified_name": "WidgetResponses.submitSecret",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783033,
+    "end_line": 783056,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId",
+      "value",
+      "agentId"
+    ],
+    "body_sha256": "4ab40c77318d7ad6cb37220768672fa5fff2dfe8fe067b6a62ab279f0ee0e61c",
+    "calls": [
+      "findEntry",
+      "hostTrayTitle",
+      "new SandSecretStoreFailedError",
+      "session.db.updateTranscriptEntry",
+      "this.routeSecret",
+      "this.tm.roster.emit",
+      "this.tm.sessions.ensureActionTarget",
+      "this.tm.trayErrors.pushError",
+      "updateEntry",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSecretStoreFailedError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783052:30184400",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "markProvided",
+    "qualified_name": "WidgetResponses.submitSecret/markProvided",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783052,
+    "end_line": 783052,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "b5b4b90208da78e9b9af951772fff6e7dca62d96897766c93e9a2f012543a345",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783057:30184731",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.routeSecret",
+    "qualified_name": "WidgetResponses.routeSecret",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783057,
+    "end_line": 783084,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "target",
+      "value"
+    ],
+    "body_sha256": "0ae555964c3a67cd08ce53a6473e73ad08f25cfb7a2520a6f09fdae814fcaaf9",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic",
+      "this.tm.sessionStore.storeConnectorCredential",
+      "this.tm.storeBoxSecret"
+    ],
+    "writes": [
+      "stored"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:783085:30185509",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.recordWidgetResponse",
+    "qualified_name": "WidgetResponses.recordWidgetResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783085,
+    "end_line": 783124,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId",
+      "value"
+    ],
+    "body_sha256": "68b7b8fa2d54c5ad7197ea02835dc60741a4bef7c60961de8977802ab6a10ad3",
+    "calls": [
+      "findEntry",
+      "getMainTranscriptEntries",
+      "getThreadTranscriptEntries",
+      "getTranscript",
+      "mainEntries.some",
+      "surfaces.every",
+      "surfaces.push",
+      "this.tm.roster.emit",
+      "this.tm.sessions.activeSession.db.updateTranscriptEntry",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783092:30185942",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "hasUserMomentAfterIn",
+    "qualified_name": "WidgetResponses.recordWidgetResponse/hasUserMomentAfterIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783092,
+    "end_line": 783097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "scope"
+    ],
+    "body_sha256": "01a54d1addfd0fc077caae3908840e31800b932a473d3ba0ea3998bef135bec2",
+    "calls": [
+      ".some",
+      "scope.findIndex",
+      "scope.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783110:30186824",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "withResponse",
+    "qualified_name": "WidgetResponses.recordWidgetResponse/withResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783110,
+    "end_line": 783117,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "a9ff4b54de1e05b8c1656641e16771ed4fd490750edf63aedf52bd6701d1bd89",
+    "calls": [],
+    "writes": [
+      "didStamp"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783125:30187404",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.rollbackWidgetResponse",
+    "qualified_name": "WidgetResponses.rollbackWidgetResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783125,
+    "end_line": 783134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId"
+    ],
+    "body_sha256": "02c0eed9e444b418e4ec366b861408793661a283ae030df7a70aa2fe91021a87",
+    "calls": [
+      "this.tm.roster.emit",
+      "this.tm.sessions.activeSession.db.updateTranscriptEntry",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783126:30187444",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "withoutResponse",
+    "qualified_name": "WidgetResponses.rollbackWidgetResponse/withoutResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783126,
+    "end_line": 783130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "0ccdc53b1fd4ec9e45792ba6c94c9246346a0a36a9e6bc8775700597b2c47629",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783135:30187879",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.reactToMessage",
+    "qualified_name": "WidgetResponses.reactToMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783135,
+    "end_line": 783145,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId",
+      "emoji3",
+      "agentId"
+    ],
+    "body_sha256": "d38be99caa747d180bd613314e34bdda4aa8510cf58e4dac7327e31635955c7e",
+    "calls": [
+      "emoji3.trim",
+      "this.applyReaction",
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783146:30188210",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "WidgetResponses.applyReaction",
+    "qualified_name": "WidgetResponses.applyReaction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783146,
+    "end_line": 783167,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0a530317adcdbd87697256f410c65bbc8cd3494d12a62a912927497a5d277aa8",
+    "calls": [
+      "findEntry",
+      "isCurrentReaction",
+      "session.db.getEntryById",
+      "session.db.updateTranscriptEntry",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessions.activeSession.db.updateTranscriptEntry",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:783152:30188584",
+    "artifact": "host",
+    "module": "host/extensions/transcript/widget-responses.ts",
+    "name": "withToggle",
+    "qualified_name": "WidgetResponses.applyReaction/withToggle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 783152,
+    "end_line": 783156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "0827620e153abdaeff48c9a1cd212a71967f5773537e1828580fd674cb63f8c8",
+    "calls": [
+      "toggleReaction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

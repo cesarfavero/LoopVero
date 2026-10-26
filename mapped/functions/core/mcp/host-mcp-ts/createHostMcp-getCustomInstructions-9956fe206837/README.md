@@ -1,0 +1,31 @@
+# `createHostMcp/getCustomInstructions`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/components/integrations/README.md).
+
+**Módulo:** `core/mcp/host-mcp.ts` · [README do módulo](../../../../../modules/core/mcp/host-mcp-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:701129-701129](../../../../../../reference/runtime/host-main.cjs#L701129-L701129) | `ArrowFunctionExpression` | sim | `(nenhum)` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:701129-701129](../../../../../../reference/runtime/host-main.cjs#L701129-L701129) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+A ocorrência em host:701129 usa retorno implícito de arrow function.
+
+### host:701129
+
+Chamadas escritas diretamente neste corpo: `manager.getMcpCustomInstructions`.
+
+SHA-256 do trecho: `35f03e8ecdce221c056e1d23f2adba08f5d698f69320c23013f0d5fad37300dc`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

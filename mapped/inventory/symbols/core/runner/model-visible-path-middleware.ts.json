@@ -1,0 +1,324 @@
+[
+  {
+    "id": "evaluation:586751:22083029",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "mapPreservingIdentity",
+    "qualified_name": "mapPreservingIdentity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586751,
+    "end_line": 586759,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "map5"
+    ],
+    "body_sha256": "99d8e55cfa31e9122d94f0d875963662b2328f1b40d2711559f245ca503cb5c9",
+    "calls": [
+      "items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586760:22083257",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "toModelVisibleUserContent",
+    "qualified_name": "toModelVisibleUserContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586760,
+    "end_line": 586767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "9ab793c1bd8b17d53b755772e1d9a65b16d3e33d77c9df54a0e4a437c006bec1",
+    "calls": [
+      "mapPreservingIdentity",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586768:22083592",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "toModelVisibleAssistantContent",
+    "qualified_name": "toModelVisibleAssistantContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586768,
+    "end_line": 586781,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "6c0d6413150caf3625e848e2d483597cdad85e150d2e738c6ac77d0d10516720",
+    "calls": [
+      "mapPreservingIdentity",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586782:22084134",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "assistantTextOf",
+    "qualified_name": "assistantTextOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586782,
+    "end_line": 586789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "0e2ed309a294f45fa54f75372253ff6a3e9d7f578445f16043b8188cffdbef22",
+    "calls": [
+      "content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586790:22084421",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "rewroteAnyText",
+    "qualified_name": "rewroteAnyText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586790,
+    "end_line": 586793,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "before",
+      "after"
+    ],
+    "body_sha256": "ba810415a6fcb443394c67eb7942e52dfa405fb0df06e82e0a3a6eb88e53e7ab",
+    "calls": [
+      ".some",
+      "assistantTextOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586794:22084593",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "toModelVisibleAssistantMessage",
+    "qualified_name": "toModelVisibleAssistantMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586794,
+    "end_line": 586807,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "061ba58d26029bd07e25dc1b9bf4eb16f587e1994e6c624dbbba9695b2c7ceb9",
+    "calls": [
+      "rewroteAnyText",
+      "toModelVisibleAssistantContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586808:22085176",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "toModelVisibleToolContent",
+    "qualified_name": "toModelVisibleToolContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586808,
+    "end_line": 586814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "3fb6269fecb5e212605aecfdca2475dab7dea2b07a8e654ea6089f51e157a0ca",
+    "calls": [
+      "mapPreservingIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586815:22085452",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "toModelVisibleMessage",
+    "qualified_name": "toModelVisibleMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586815,
+    "end_line": 586832,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "1e00fa45d0b4a378a0c37afe656d0789b7c58ba15eefebfeb0694ae420628b3f",
+    "calls": [
+      "toModelVisibleAssistantMessage",
+      "toModelVisibleText",
+      "toModelVisibleToolContent",
+      "toModelVisibleUserContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586834:22086184",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "ModelVisiblePathMiddleware.appendMessages",
+    "qualified_name": "ModelVisiblePathMiddleware.appendMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586834,
+    "end_line": 586839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "e083e6934a1d93c99c8193b8645a708ee0c5f781f3d4576f14877afcaef5efcd",
+    "calls": [
+      "Array.isArray",
+      "messages.map",
+      "this.innerExecutor.appendMessages",
+      "toModelVisibleMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586841:22086369",
+    "artifact": "evaluation",
+    "module": "core/runner/model-visible-path-middleware.ts",
+    "name": "createModelVisiblePathMiddleware",
+    "qualified_name": "createModelVisiblePathMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586841,
+    "end_line": 586843,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor"
+    ],
+    "body_sha256": "8210e9b0dd09d8b47f9412c80686112b1da29ddec98fce0a651c627b7280475c",
+    "calls": [
+      "new ModelVisiblePathMiddleware"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,470 @@
+[
+  {
+    "id": "host:684111:25991368",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "resolvePollIntervalMs",
+    "qualified_name": "resolvePollIntervalMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684111,
+    "end_line": 684114,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "watchIntervalMsRaw"
+    ],
+    "body_sha256": "bc78ac66d70fb781e5205ee69c5535eb8bbfa35c2be008529e2ab092928acccc",
+    "calls": [
+      "Number.isInteger",
+      "Number.parseInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684115:25991566",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "startManagedSetupWhenAuthenticated",
+    "qualified_name": "startManagedSetupWhenAuthenticated",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684115,
+    "end_line": 684139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "178a63ae5f18dcb1f79f7afdb8c4ea5b41b646107f3aee59edee1b23c418e00a",
+    "calls": [
+      "options2.auth.peekAccessToken",
+      "options2.auth.subscribeToRenewal",
+      "start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684118:25991686",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "start",
+    "qualified_name": "startManagedSetupWhenAuthenticated/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684118,
+    "end_line": 684123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "94e28e03d1b74545a01903691e52bb306cdd38b0e27b201df2f2f53e83aced30",
+    "calls": [
+      "options2.startManagedSetup",
+      "options2.startManagedSkills"
+    ],
+    "writes": [
+      "started2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684124:25991851",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "handleRenewal",
+    "qualified_name": "startManagedSetupWhenAuthenticated/handleRenewal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684124,
+    "end_line": 684131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "ac00500a379bd425b866e4ea9ad0069504b70280ba742a42401793c112d47f26",
+    "calls": [
+      "options2.auth.peekAccessToken",
+      "options2.refreshManagedSkills",
+      "start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684140:25992312",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "startManagedSetup",
+    "qualified_name": "startManagedSetup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684140,
+    "end_line": 684205,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "6273ab98f1db1cc1752b901d0672e7f93e91452100c9835be3d48615543ed6ee",
+    "calls": [
+      "context2.onStop",
+      "createPollingPolicy2",
+      "createRetryPolicy",
+      "createSandCursorBackendClient",
+      "new ManagedSetupService",
+      "new SandManagedSetupClient",
+      "new SandManagedSkillsService",
+      "resolvePollIntervalMs",
+      "startManagedSetupWhenAuthenticated"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684152:25992773",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "reportDiagnostic",
+    "qualified_name": "startManagedSetup/reportDiagnostic",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684152,
+    "end_line": 684152,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "diagnostic"
+    ],
+    "body_sha256": "d3d4e5f22d61751cbd39881cf4d3559fd7ed9aa1f3141a9b3450b6589a9a6bdb",
+    "calls": [
+      "context2.deps.telemetry.logs.reportHostExtensionDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684170:25993571",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "log",
+    "qualified_name": "startManagedSetup/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684170,
+    "end_line": 684170,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684173:25993689",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "getCacheDir",
+    "qualified_name": "startManagedSetup/getCacheDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684173,
+    "end_line": 684173,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9936929d0881168af5c283304634bd148d3bbaf85f94f6a1070533e2a8563e3d",
+    "calls": [
+      "getManagedSkillsDir",
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684174:25993745",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "fetch",
+    "qualified_name": "startManagedSetup/fetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684174,
+    "end_line": 684179,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "64925ce671044ec01e59a2837663ee3246c555db3f9d640372cb79a4d01a77d9",
+    "calls": [
+      "fetchSandManagedSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684184:25994070",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "startManagedSetup",
+    "qualified_name": "startManagedSetup/startManagedSetup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684184,
+    "end_line": 684184,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "53ebbeb061f6fa47441ce31be0f55268f7ceead87624f5c16912a6ed095d6e02",
+    "calls": [
+      "service.start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684185:25994117",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "startManagedSkills",
+    "qualified_name": "startManagedSetup/startManagedSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684185,
+    "end_line": 684185,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "17a00449d2f8de3c0da3290ddd1c396a738a945f831ca58839b21b5615574fdc",
+    "calls": [
+      "managedSkills.start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684186:25994172",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "refreshManagedSkills",
+    "qualified_name": "startManagedSetup/refreshManagedSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684186,
+    "end_line": 684186,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c1d01c4f5e0628130b8d9c43b8b3c5768b5ee19cb2d003273879c044714407b5",
+    "calls": [
+      "managedSkills.handleAuthChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684188:25994235",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "dispose",
+    "qualified_name": "startManagedSetup/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684188,
+    "end_line": 684192,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ba993fdf60e54f3d01fe21c4496ad215f5a7ee5d28b175fce0442b1e22b3d036",
+    "calls": [
+      "managedSkills.dispose",
+      "service.dispose",
+      "stopCredentialStartup"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684196:25994400",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "skillsCatalog",
+    "qualified_name": "startManagedSetup/skillsCatalog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684196,
+    "end_line": 684202,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e6aa3c35bd92b893ead40669ecd5613563f8856cdb164c554b22eab9387b38aa",
+    "calls": [
+      "fetchSkillCatalog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684203:25994581",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/extension.ts",
+    "name": "ensureManagedSkill",
+    "qualified_name": "startManagedSetup/ensureManagedSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684203,
+    "end_line": 684203,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "670f1501d71ae60fe73c4c2c12b6c609fce17d204f1229e128d49ad9fb76e0a7",
+    "calls": [
+      "managedSkills.ensureSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

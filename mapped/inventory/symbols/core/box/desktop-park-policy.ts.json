@@ -1,0 +1,136 @@
+[
+  {
+    "id": "host:553726:20355283",
+    "artifact": "host",
+    "module": "core/box/desktop-park-policy.ts",
+    "name": "isUnderMemoryPressure",
+    "qualified_name": "isUnderMemoryPressure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553726,
+    "end_line": 553731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memory",
+      "config2"
+    ],
+    "body_sha256": "82855ae0035cf141702b3d4df75a97c0fe203df2fdc3ecf1c3797ab7cfd143f4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:553732:20355611",
+    "artifact": "host",
+    "module": "core/box/desktop-park-policy.ts",
+    "name": "parksToRelievePressure",
+    "qualified_name": "parksToRelievePressure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553732,
+    "end_line": 553737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memory",
+      "config2"
+    ],
+    "body_sha256": "c2680ff6e868fc4de2de810e697bfe60735d4f27252d6fe2fd3e8f7e189c9dcd",
+    "calls": [
+      "Math.ceil",
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:553738:20355902",
+    "artifact": "host",
+    "module": "core/box/desktop-park-policy.ts",
+    "name": "decideDesktopParks",
+    "qualified_name": "decideDesktopParks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553738,
+    "end_line": 553782,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "943d4646c91082f6fccbc8f6d9a335282afa1b0d7dcdce4292ecf365171d2de0",
+    "calls": [
+      ".map",
+      ".sort",
+      "Math.max",
+      "input2.seats.filter",
+      "isUnderMemoryPressure",
+      "new Set",
+      "parked2.has",
+      "parks.map",
+      "parks.push",
+      "parks.slice",
+      "parksToRelievePressure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:553748:20356487",
+    "artifact": "host",
+    "module": "core/box/desktop-park-policy.ts",
+    "name": "byWindow",
+    "qualified_name": "decideDesktopParks/byWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553748,
+    "end_line": 553748,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "8c478c11df25c3cde4708b86b5d8934568efc02d4a4713ae4fc29865b832e0d5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

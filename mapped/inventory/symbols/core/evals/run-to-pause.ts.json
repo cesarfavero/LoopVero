@@ -1,0 +1,83 @@
+[
+  {
+    "id": "evaluation:627122:23785646",
+    "artifact": "evaluation",
+    "module": "core/evals/run-to-pause.ts",
+    "name": "untilDrainedOrStopped",
+    "qualified_name": "untilDrainedOrStopped",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627122,
+    "end_line": 627130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "drained",
+      "stops"
+    ],
+    "body_sha256": "df84e9acae96cd8c5f9a715230754b8be2130c131dfa9b69cf5c58ae721e0d69",
+    "calls": [
+      "Promise.resolve",
+      "new Promise",
+      "signals.some",
+      "stops.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627131:23786052",
+    "artifact": "evaluation",
+    "module": "core/evals/run-to-pause.ts",
+    "name": "runSandAgentToPause",
+    "qualified_name": "runSandAgentToPause",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627131,
+    "end_line": 627163,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runner",
+      "options2"
+    ],
+    "body_sha256": "ca035e3dd8a3917b8b675d4737893c504cc1807291be366bee66cf411dc4027c",
+    "calls": [
+      "buildSubagentRevival",
+      "options2.backgroundWaitLimit",
+      "options2.revivalRunOptions",
+      "owesSubagentRevivalReply",
+      "pendingCompletions.splice",
+      "revivalBatchOf",
+      "revivalRunLength",
+      "runner.drainBackgroundSubagents",
+      "runner.run",
+      "runner.setBackgroundSubagentHandler",
+      "untilDrainedOrStopped",
+      "waitLimit.dispose"
+    ],
+    "writes": [
+      "result",
+      "revivalIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

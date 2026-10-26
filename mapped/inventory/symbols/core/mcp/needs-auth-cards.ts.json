@@ -1,0 +1,394 @@
+[
+  {
+    "id": "evaluation:584924:22006697",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "connectCardWait",
+    "qualified_name": "connectCardWait",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584924,
+    "end_line": 584928,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "slot",
+      "followUpGate"
+    ],
+    "body_sha256": "31936fcd7e409a2a89b2f6893f26343bb1f91db8b601a3a52c4a143793a3e48a",
+    "calls": [
+      "signedInReadClaimsWait"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584929:22006954",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "createNeedsAuthCards",
+    "qualified_name": "createNeedsAuthCards",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584929,
+    "end_line": 585060,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "379d869aec2ba73b93043ce3556d4c32223b166db3dd9de4187ade888a042dc1",
+    "calls": [
+      "createNeedsAuthHold",
+      "mcp.resolvePendingSignInSlot.bind",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584935:22007291",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "onProbeFailed",
+    "qualified_name": "createNeedsAuthCards/onProbeFailed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584935,
+    "end_line": 584938,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "probeError"
+    ],
+    "body_sha256": "ea543fe963ea1687125451f30d153cf0d8c390e9df644da8dd08d64473b4e55d",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584940:22007450",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "followUpGateFor",
+    "qualified_name": "createNeedsAuthCards/followUpGateFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584940,
+    "end_line": 584940,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "slot"
+    ],
+    "body_sha256": "d3ece60cc1e543e05fe824944f90f230c73155a0be62f072faa20b383043704c",
+    "calls": [
+      "deps.connectCardFollowUp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584941:22007554",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "describeCard",
+    "qualified_name": "createNeedsAuthCards/describeCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584941,
+    "end_line": 584952,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "slot",
+      "surfaced",
+      "resumesOnSignIn",
+      "followUp"
+    ],
+    "body_sha256": "622e1e19045a4dcc47f3823d9367ffbaef479479285a7b65b8a05e0065ac5596",
+    "calls": [
+      "describeNeedsAuthCard",
+      "gatedSignOutReasonNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584953:22008019",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "canSurface",
+    "qualified_name": "createNeedsAuthCards/canSurface",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584953,
+    "end_line": 584957,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "be893b5f0bcaefba67aed1788761b85c771e66bb3d9c23ea9955a00c51f0c8dc",
+    "calls": [
+      "connectCardEmittedForServer.has",
+      "cursorScmProviderForMcpServerIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584958:22008539",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "surfaceAutomationCard",
+    "qualified_name": "createNeedsAuthCards/surfaceAutomationCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584958,
+    "end_line": 584974,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier",
+      "slot",
+      "failedCallError"
+    ],
+    "body_sha256": "418a108880a355a8fcd4d96aed1425665afa75d755231a9a2c02ad7bc13c07ae",
+    "calls": [
+      "connectCardEmittedForServer.set",
+      "connectorCardAccountFields",
+      "deps.emitConnectorCard",
+      "describeNeedsAuthCardForAutomation",
+      "hold.hold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584975:22009250",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "surfaceSlotCard",
+    "qualified_name": "createNeedsAuthCards/surfaceSlotCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584975,
+    "end_line": 585015,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier",
+      "slot",
+      "failedCallError",
+      "probes",
+      "holdFollowUp",
+      "cardSource"
+    ],
+    "body_sha256": "bd05ac556cbc03e85a8c9af3b95d2b1da5df3a5cb1bd7a8e48bfa0a3c316fa58",
+    "calls": [
+      "connectCardEmittedForServer.set",
+      "connectCardWait",
+      "connectorCardAccountFields",
+      "deps.automationConnectCard",
+      "deps.emitConnectorCard",
+      "describeCard",
+      "describeNeedsAuthForAutomation",
+      "followUpGateFor",
+      "hold.hold",
+      "probes.openedAfterMs",
+      "stdioSignInCardFields",
+      "surfaceAutomationCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585016:22011094",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "liveNeedsAuthNote",
+    "qualified_name": "createNeedsAuthCards/liveNeedsAuthNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585016,
+    "end_line": 585030,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier",
+      "result",
+      "probes"
+    ],
+    "body_sha256": "59711c7ac80b577d2524bcb1884f5d95115035ad272213edbd0da904e4d34ca3",
+    "calls": [
+      "connectCardEmittedForServer.get",
+      "connectCardWait",
+      "cursorScmProviderForMcpServerIdentifier",
+      "describeCard",
+      "followUpGateFor",
+      "mcp.resolveNeedsAuthSlot",
+      "probes.openedAfterMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585033:22011823",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "surfaceNeedsAuthCard",
+    "qualified_name": "createNeedsAuthCards/surfaceNeedsAuthCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585033,
+    "end_line": 585049,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "providerIdentifier",
+      "result",
+      "probes",
+      "holdFollowUp = false",
+      "cardSource"
+    ],
+    "body_sha256": "a352147c043d652077cd781a35f0f857e2c2001871243988a1b9e11a51683d40",
+    "calls": [
+      "canSurface",
+      "liveNeedsAuthNote",
+      "mcp.resolveNeedsAuthSlot",
+      "surfaceSlotCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:585050:22012467",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-cards.ts",
+    "name": "surfacePendingSignInCard",
+    "qualified_name": "createNeedsAuthCards/surfacePendingSignInCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 585050,
+    "end_line": 585058,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "providerIdentifier",
+      "settled",
+      "probes"
+    ],
+    "body_sha256": "b614924cc8ed8d5f75cdc105213bcbc020a5a0a0b27d9a9a88bccac03d808283",
+    "calls": [
+      "canSurface",
+      "mcp.resolvePendingSignInSlot",
+      "probes.probed",
+      "surfaceSlotCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

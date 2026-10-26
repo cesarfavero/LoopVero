@@ -1,0 +1,530 @@
+[
+  {
+    "id": "host:639599:23870399",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "aliasSkillCatalogPathRoots",
+    "qualified_name": "aliasSkillCatalogPathRoots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639599,
+    "end_line": 639654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "b0e996bce96b7b2a3b8e6fc3ed902527338dbd5a9d8f563d757fc3d0376652fc",
+    "calls": [
+      ".reduce",
+      ".split",
+      "UNLISTABLE_PATH.test",
+      "assignRoots",
+      "createNode",
+      "members2.map",
+      "members2.push",
+      "membersByRoot.get",
+      "membersByRoot.set",
+      "membersByRoot.values",
+      "new Map",
+      "node2.children.get",
+      "node2.children.set",
+      "node2.skillIndexes.push",
+      "rootByIndex.get",
+      "roots.push",
+      "segments.slice",
+      "skill.fullPath.replace",
+      "skill.fullPath.slice",
+      "skills.entries",
+      "skills.keys",
+      "skills[computed].fullPath.slice"
+    ],
+    "writes": [
+      "aliasedSkills[computed]",
+      "child",
+      "node2",
+      "nodeByIndex[computed]",
+      "savedLength"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 5,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639655:23872425",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "createNode",
+    "qualified_name": "createNode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639655,
+    "end_line": 639664,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "parent"
+    ],
+    "body_sha256": "1c82a54c5ad952253f11f5790facbfbb8a107a8f0fd24583353fb68b8fdb074f",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639665:23872669",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "subtreeCost",
+    "qualified_name": "subtreeCost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639665,
+    "end_line": 639672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root"
+    ],
+    "body_sha256": "ca379ff6a5b318ba3eb4cf703e74a2454486b6f87c730032220c284df57416a0",
+    "calls": [
+      "Math.min",
+      "keepRootCost",
+      "node2.costByRoot.get",
+      "node2.costByRoot.set",
+      "openRootCost"
+    ],
+    "writes": [
+      "cost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639673:23872899",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "openRootCost",
+    "qualified_name": "openRootCost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639673,
+    "end_line": 639678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "ba9d7b1fd06d535ac23fd96194509e91479d081e3671918acc485486c01f3df1",
+    "calls": [
+      "keepRootCost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639679:23873084",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "keepRootCost",
+    "qualified_name": "keepRootCost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639679,
+    "end_line": 639686,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root"
+    ],
+    "body_sha256": "93a51a999e0038b1bcbcbbccc656a2efb872deff107ac6bbaaa00490c0862128",
+    "calls": [
+      "node2.children.values",
+      "subtreeCost"
+    ],
+    "writes": [
+      "cost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639687:23873400",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "assignRoots",
+    "qualified_name": "assignRoots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639687,
+    "end_line": 639697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root",
+      "rootByIndex"
+    ],
+    "body_sha256": "f825670c9633f2c2066bb3c38cca798ea41b9375619f2d4730553a9f505458dc",
+    "calls": [
+      "assignRoots",
+      "keepRootCost",
+      "node2.children.values",
+      "openRootCost",
+      "rootByIndex.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639698:23873759",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "commonAncestor",
+    "qualified_name": "commonAncestor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639698,
+    "end_line": 639709,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "first",
+      "second"
+    ],
+    "body_sha256": "113a97af4c6998bd9791cbf95832189e4f4bf2f63a56dc39545ed7d4a344c6e3",
+    "calls": [],
+    "writes": [
+      "a",
+      "b2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430213:15085613",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "aliasSkillCatalogPathRoots",
+    "qualified_name": "aliasSkillCatalogPathRoots",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430213,
+    "end_line": 430268,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "b0e996bce96b7b2a3b8e6fc3ed902527338dbd5a9d8f563d757fc3d0376652fc",
+    "calls": [
+      ".reduce",
+      ".split",
+      "UNLISTABLE_PATH.test",
+      "assignRoots",
+      "createNode",
+      "members2.map",
+      "members2.push",
+      "membersByRoot.get",
+      "membersByRoot.set",
+      "membersByRoot.values",
+      "new Map",
+      "node2.children.get",
+      "node2.children.set",
+      "node2.skillIndexes.push",
+      "rootByIndex.get",
+      "roots.push",
+      "segments.slice",
+      "skill.fullPath.replace",
+      "skill.fullPath.slice",
+      "skills.entries",
+      "skills.keys",
+      "skills[computed].fullPath.slice"
+    ],
+    "writes": [
+      "aliasedSkills[computed]",
+      "child",
+      "node2",
+      "nodeByIndex[computed]",
+      "savedLength"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 5,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430269:15087639",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "createNode",
+    "qualified_name": "createNode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430269,
+    "end_line": 430278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "parent"
+    ],
+    "body_sha256": "1c82a54c5ad952253f11f5790facbfbb8a107a8f0fd24583353fb68b8fdb074f",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430279:15087883",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "subtreeCost",
+    "qualified_name": "subtreeCost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430279,
+    "end_line": 430286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root"
+    ],
+    "body_sha256": "ca379ff6a5b318ba3eb4cf703e74a2454486b6f87c730032220c284df57416a0",
+    "calls": [
+      "Math.min",
+      "keepRootCost",
+      "node2.costByRoot.get",
+      "node2.costByRoot.set",
+      "openRootCost"
+    ],
+    "writes": [
+      "cost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430287:15088113",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "openRootCost",
+    "qualified_name": "openRootCost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430287,
+    "end_line": 430292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2"
+    ],
+    "body_sha256": "ba9d7b1fd06d535ac23fd96194509e91479d081e3671918acc485486c01f3df1",
+    "calls": [
+      "keepRootCost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430293:15088298",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "keepRootCost",
+    "qualified_name": "keepRootCost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430293,
+    "end_line": 430300,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root"
+    ],
+    "body_sha256": "93a51a999e0038b1bcbcbbccc656a2efb872deff107ac6bbaaa00490c0862128",
+    "calls": [
+      "node2.children.values",
+      "subtreeCost"
+    ],
+    "writes": [
+      "cost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430301:15088614",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "assignRoots",
+    "qualified_name": "assignRoots",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430301,
+    "end_line": 430311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "node2",
+      "root",
+      "rootByIndex"
+    ],
+    "body_sha256": "f825670c9633f2c2066bb3c38cca798ea41b9375619f2d4730553a9f505458dc",
+    "calls": [
+      "assignRoots",
+      "keepRootCost",
+      "node2.children.values",
+      "openRootCost",
+      "rootByIndex.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430312:15088973",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-path-roots.js",
+    "name": "commonAncestor",
+    "qualified_name": "commonAncestor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430312,
+    "end_line": 430323,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "first",
+      "second"
+    ],
+    "body_sha256": "113a97af4c6998bd9791cbf95832189e4f4bf2f63a56dc39545ed7d4a344c6e3",
+    "calls": [],
+    "writes": [
+      "a",
+      "b2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

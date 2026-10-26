@@ -1,0 +1,252 @@
+[
+  {
+    "id": "host:712676:27051635",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "isBackgroundTaskStopNotice",
+    "qualified_name": "isBackgroundTaskStopNotice",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712676,
+    "end_line": 712678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "2d70943be4a1756274ffd82206b4736374189edff53adba6db7650ea7c6c4849",
+    "calls": [
+      "entry.text.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712679:27051777",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "isEmptyStreamingPreviewEntry",
+    "qualified_name": "isEmptyStreamingPreviewEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712679,
+    "end_line": 712681,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "1eee56c5a760a721c8754b9190aa45a8f2bc414ed6aaab870c9ac7f34a026922",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712682:27051965",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "isTimelineHiddenEntry",
+    "qualified_name": "isTimelineHiddenEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712682,
+    "end_line": 712684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "247f992ddce3341742743ff93c9db516eb9689a388bb7f45514cdded5acbb8cf",
+    "calls": [
+      "isBackgroundTaskStopNotice",
+      "isBlankTeamSharedEvent",
+      "isBotShareAutoReviewEntry",
+      "isEmptyStreamingPreviewEntry",
+      "isExpiredLocalToolPermissionEntry",
+      "isHiddenOutboundAgentPeerMessageEntry",
+      "isOffChatChannelEntry",
+      "isSuppressedEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712685:27052476",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "isTranscriptWindowEdgeBarrier",
+    "qualified_name": "isTranscriptWindowEdgeBarrier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712685,
+    "end_line": 712700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "e53238b9733132d74811bf1ec03e5c6813c1be3dcc59c62219a9d1579bbdf31d",
+    "calls": [
+      "isAgentPeerMessageEntry",
+      "isValidTimestampMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712701:27052972",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "alignTranscriptWindowStart",
+    "qualified_name": "alignTranscriptWindowStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712701,
+    "end_line": 712715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rows",
+      "options2"
+    ],
+    "body_sha256": "75684576cf0fd9378f8482a983ae413105dcf15626b8e54749990a639ae35588",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "isTranscriptWindowEdgeBarrier",
+      "precedingTimestamp",
+      "rows.slice"
+    ],
+    "writes": [
+      "index",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712716:27053592",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "duplicateRowIndices",
+    "qualified_name": "duplicateRowIndices",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712716,
+    "end_line": 712727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rows",
+      "from2",
+      "to3"
+    ],
+    "body_sha256": "95eb9566d77819a91565ece7fdc316f246a04cce2e2aca2ea6e418b2d18f55ed",
+    "calls": [
+      "duplicates.add",
+      "getEntryRowKey",
+      "isTimelineHiddenEntry",
+      "new Set",
+      "seenKeys.add",
+      "seenKeys.has"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712728:27054020",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-window-edge.ts",
+    "name": "precedingTimestamp",
+    "qualified_name": "precedingTimestamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712728,
+    "end_line": 712747,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rows",
+      "start",
+      "cut"
+    ],
+    "body_sha256": "f2b0cd3d24c4acc9e3de2688c39b4cdbd4be015154f8e8bedc35b7625886d2f8",
+    "calls": [
+      "Math.max",
+      "duplicateRowIndices",
+      "duplicates.has",
+      "isAgentPeerMessageEntry",
+      "isTimelineHiddenEntry",
+      "isValidTimestampMs"
+    ],
+    "writes": [
+      "index",
+      "runStartMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,471 @@
+[
+  {
+    "id": "evaluation:583412:21934239",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "parseHttpUrl2",
+    "qualified_name": "parseHttpUrl2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583412,
+    "end_line": 583422,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "0836c49a2e4eeb3b0b262fdc57ac106130cfc39223d1c3129242f6b911ce98d1",
+    "calls": [
+      "/^[a-z][a-z0-9+.-]*:/i.test",
+      "new URL",
+      "raw.trim"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:583423:21934590",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "linkKey2",
+    "qualified_name": "linkKey2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583423,
+    "end_line": 583427,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "84969496fd3f7c3948778d2f4ba44f55cba21b88f880e506c7f4f068b71cca5e",
+    "calls": [
+      "parseHttpUrl2",
+      "url2.pathname.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583428:21934761",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "asWritten",
+    "qualified_name": "asWritten",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583428,
+    "end_line": 583430,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "97407ecc8d6863f0258d1c76e9310eba640afc0e416aa6e7f3e4912685517261",
+    "calls": [
+      ".replace",
+      "raw.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583431:21934872",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "trimUrlToken2",
+    "qualified_name": "trimUrlToken2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583431,
+    "end_line": 583441,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "token"
+    ],
+    "body_sha256": "fe07a5867bc539394ca926111b2da7b6a9b5978f01a025cbd7f32adece7c0d12",
+    "calls": [
+      "URL_TRAILING_PUNCTUATION2.includes",
+      "token.charAt",
+      "token.slice",
+      "token.split"
+    ],
+    "writes": [
+      "end",
+      "unmatchedClose"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583442:21935242",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "sentLinks",
+    "qualified_name": "sentLinks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583442,
+    "end_line": 583452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "b4942f022cae3ee570dad046dad49f4da8e29b90f961a82c68f81326c5bcb55f",
+    "calls": [
+      "add2",
+      "message.content.matchAll",
+      "new Map",
+      "trimUrlToken2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583444:21935330",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "add2",
+    "qualified_name": "sentLinks/add2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583444,
+    "end_line": 583448,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "9035eda119faa3d2d00ecca08ac6c92866fae8d7f5bb305d619e95d3f4718c27",
+    "calls": [
+      "byKey.has",
+      "byKey.set",
+      "linkKey2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583453:21935660",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "onDomain",
+    "qualified_name": "onDomain",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583453,
+    "end_line": 583455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "domains"
+    ],
+    "body_sha256": "ac5cb2f07123107d3896aecc589c0d612075b1d59925d8e4da1d601452fec57a",
+    "calls": [
+      "domains.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583456:21935783",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "linkHostCategory",
+    "qualified_name": "linkHostCategory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583456,
+    "end_line": 583461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "a807d2a44f6cdc8872c335a17af0942e1ad9036d409751b6268545dd3049eb5f",
+    "calls": [
+      "SHOPPING_BRANDS_ANY_TLD.test",
+      "onDomain",
+      "parseHttpUrl2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583462:21936049",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "addBounded",
+    "qualified_name": "addBounded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583462,
+    "end_line": 583469,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "set3",
+      "value",
+      "max"
+    ],
+    "body_sha256": "d52bfd13f4e2f21fcd740810b9eb5699f7a9160c9e827c727a20ea9278d648ac",
+    "calls": [
+      ".next",
+      "set3.add",
+      "set3.delete",
+      "set3.has",
+      "set3.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583470:21936269",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "createSentLinkChecks",
+    "qualified_name": "createSentLinkChecks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583470,
+    "end_line": 583517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "4a5e96c8ce7bc13a6926b3d59d1ccbe037b37e6b83666bdb08ac30a33cf45c69",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583473:21936423",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "checksFor",
+    "qualified_name": "createSentLinkChecks/checksFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583473,
+    "end_line": 583488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "207c5206c011ad81a6996405570f8d7231b591bb2f950ec44c5ad4e20e1ac7e9",
+    "calls": [
+      ".map",
+      "sentLinks"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583474:21936461",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "checkedVia",
+    "qualified_name": "createSentLinkChecks/checksFor/checkedVia",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583474,
+    "end_line": 583483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "key",
+      "raw"
+    ],
+    "body_sha256": "304d5b895b83b3ffc264e550a112d8588441723c37a9afbd8a1719c674145777",
+    "calls": [
+      "asWritten",
+      "command.includes",
+      "fetchedKeys.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583490:21936950",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "noteToolCall",
+    "qualified_name": "createSentLinkChecks/noteToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583490,
+    "end_line": 583502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event",
+      "toolCall2"
+    ],
+    "body_sha256": "296a030cd96f22a1e264c6db90f1b9f0e242537ccf676d4c133f48ca4062e9dc",
+    "calls": [
+      "addBounded",
+      "command.slice",
+      "linkKey2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583504:21937533",
+    "artifact": "evaluation",
+    "module": "core/runner/link-checks/sent-link-checks.ts",
+    "name": "countDelivered",
+    "qualified_name": "createSentLinkChecks/countDelivered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583504,
+    "end_line": 583515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "message"
+    ],
+    "body_sha256": "cbf7213eaa16f0a183c902890bd979df9a2e37e4ea71e3b4292693e51aa93aa4",
+    "calls": [
+      "checksFor",
+      "errorLogTag",
+      "logger98.warn",
+      "sentLinkCheck.increment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

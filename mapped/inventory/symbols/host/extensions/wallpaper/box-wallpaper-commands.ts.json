@@ -1,0 +1,230 @@
+[
+  {
+    "id": "host:784882:30248862",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "parseTonePlan",
+    "qualified_name": "parseTonePlan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784882,
+    "end_line": 784887,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stdout"
+    ],
+    "body_sha256": "84a473e1f2823620204a718a49dec8b2700ad0230a1f26ee4dad6a3a9be7c188",
+    "calls": [
+      ".split",
+      "/^[a-z]+$/.test",
+      "/^\\d+$/.test",
+      "Number",
+      "stdout.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784888:30249173",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "readLiveDisplays",
+    "qualified_name": "readLiveDisplays",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784888,
+    "end_line": 784901,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "socketDir"
+    ],
+    "body_sha256": "81b59813d18ca5b940d877e75303158675f837700cb03498983953468408392a",
+    "calls": [
+      ".catch",
+      ".sort",
+      "displays.push",
+      "entries.flatMap",
+      "stats.isSocket"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784902:30249836",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "createBoxWallpaperCommands",
+    "qualified_name": "createBoxWallpaperCommands",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784902,
+    "end_line": 784938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "252a642248e900a51c96b8e2e37a82296d8c34e1c42e36a8777b9a52e8324669",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784909:30250325",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "resolvePlan",
+    "qualified_name": "createBoxWallpaperCommands/resolvePlan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784909,
+    "end_line": 784922,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "bc8663a2d85558000e75a333f5ff7f3ab352948814f768d67dcdb224105d127e",
+    "calls": [
+      ".catch",
+      "options2.log",
+      "parseTonePlan",
+      "runCommand3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784923:30250845",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "paint",
+    "qualified_name": "createBoxWallpaperCommands/paint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784923,
+    "end_line": 784936,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "0eaf8b8e13f26f1baaf4f2d67a5f6dcf9981dd00a43c068ce32e1e4ac217ea81",
+    "calls": [
+      ".catch",
+      "asDisplayOwner",
+      "describe4",
+      "options2.log",
+      "readLiveDisplays",
+      "runCommand3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:784939:30251387",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "asDisplayOwner",
+    "qualified_name": "asDisplayOwner",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784939,
+    "end_line": 784943,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "owner"
+    ],
+    "body_sha256": "b9ee5a2fbe9001e7c3b72ce05203e3e81ae21402f3d48b03c6d4536c650b488d",
+    "calls": [
+      "process.getgid",
+      "process.getuid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784944:30251563",
+    "artifact": "host",
+    "module": "host/extensions/wallpaper/box-wallpaper-commands.ts",
+    "name": "describe4",
+    "qualified_name": "describe4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784944,
+    "end_line": 784946,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "cf3b3db4b7bfa1766b1fffa832ffe07e764ac0ff6721494f5414eec95ed2bbc6",
+    "calls": [
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

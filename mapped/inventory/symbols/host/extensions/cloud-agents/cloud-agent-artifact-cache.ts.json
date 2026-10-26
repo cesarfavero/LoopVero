@@ -1,0 +1,304 @@
+[
+  {
+    "id": "host:538208:19765705",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "statIsFile",
+    "qualified_name": "statIsFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538208,
+    "end_line": 538217,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "boxPath"
+    ],
+    "body_sha256": "21979f65a9eae66ace1a9f398100cdc2301a6a98b2f1ff9641a69259e4accd40",
+    "calls": [
+      ".isFile",
+      "findSystemErrno",
+      "import_node_fs46.promises.stat"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:538218:19765983",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "plannedFromArtifactFiles",
+    "qualified_name": "plannedFromArtifactFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538218,
+    "end_line": 538223,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "2974e851d976467e3e1892dfe529337bf527adef194e319ee3a0a22c7b1b08fb",
+    "calls": [
+      "files.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538225:19766218",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "CloudAgentArtifactCache.constructor",
+    "qualified_name": "CloudAgentArtifactCache.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538225,
+    "end_line": 538228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "331e01c0a6a905e615c73d20d2ff4bb3908cf273827700778653aa21530e2693",
+    "calls": [],
+    "writes": [
+      "this.deps",
+      "this.isBoxFilePresent"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538233:19766462",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "CloudAgentArtifactCache.syncPlanned",
+    "qualified_name": "CloudAgentArtifactCache.syncPlanned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538233,
+    "end_line": 538241,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "bcId",
+      "planned"
+    ],
+    "body_sha256": "644b1e1a26cc865e83209ef50bc4bef7a1ae977124d14a0495f747a881169a85",
+    "calls": [
+      ".finally",
+      "pending.then",
+      "start",
+      "this.inflight.get",
+      "this.inflight.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538235:19766552",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "start",
+    "qualified_name": "CloudAgentArtifactCache.syncPlanned/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538235,
+    "end_line": 538235,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7c5c36cba1b0f0339607e42ff90311e68465f7b82e62233cd6c99e0af62e2b1a",
+    "calls": [
+      "this.syncMissing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538242:19766850",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "CloudAgentArtifactCache.syncMissing",
+    "qualified_name": "CloudAgentArtifactCache.syncMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538242,
+    "end_line": 538254,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "bcId",
+      "planned"
+    ],
+    "body_sha256": "b039ecde5b2702dbe63eaf82ddec3cc4cf2aabf037d68984adaf5a039bbb8fab",
+    "calls": [
+      "syncCloudAgentArtifactsToBox",
+      "this.partitionByPresence"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538249:19767139",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "writeBoxFile",
+    "qualified_name": "CloudAgentArtifactCache.syncMissing/writeBoxFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538249,
+    "end_line": 538249,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "boxPath",
+      "data2"
+    ],
+    "body_sha256": "ce390d5fe27ec8e96072eec28fe9efadb983e2ea66580cfd93ad4798a6bb5bf8",
+    "calls": [
+      "this.deps.box.uploadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538255:19767363",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "CloudAgentArtifactCache.ensure",
+    "qualified_name": "CloudAgentArtifactCache.ensure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538255,
+    "end_line": 538269,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "bcId"
+    ],
+    "body_sha256": "a1cd2875eba9ce4031d59cb3d59b3aedf51779847689518c4d109e3c9fa8bf7a",
+    "calls": [
+      "artifacts.files.map",
+      "new Set",
+      "outcome.skipped.map",
+      "plannedFromArtifactFiles",
+      "this.deps.api.getInfo",
+      "this.syncPlanned"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:538270:19767989",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-artifact-cache.ts",
+    "name": "CloudAgentArtifactCache.partitionByPresence",
+    "qualified_name": "CloudAgentArtifactCache.partitionByPresence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 538270,
+    "end_line": 538284,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "planned"
+    ],
+    "body_sha256": "664bfce5f5c74f2baef955fd7dee022597762c642e2d931493d545d17f27e2c1",
+    "calls": [
+      "Promise.all",
+      "missing.push",
+      "planned.entries",
+      "planned.map",
+      "present.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

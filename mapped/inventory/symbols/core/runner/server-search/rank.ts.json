@@ -1,0 +1,428 @@
+[
+  {
+    "id": "host:765877:29344568",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "queryWords",
+    "qualified_name": "queryWords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765877,
+    "end_line": 765879,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "ignoreWords"
+    ],
+    "body_sha256": "5fb26910e1121f3fa39d1313ce9dcfce14a09476775c2f9cba75974eb989fa66",
+    "calls": [
+      ".filter",
+      ".match",
+      ".slice",
+      "new Set",
+      "normalizeCommandText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765880:29344805",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "sliceYielder",
+    "qualified_name": "sliceYielder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765880,
+    "end_line": 765887,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "37b3ecb05e33052979fcdb27ba568de8897fb93a7a57926e2f8c6ec3678275e3",
+    "calls": [
+      "performance.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765888:29345044",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "scoreEachWordByCoverage",
+    "qualified_name": "scoreEachWordByCoverage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765888,
+    "end_line": 765899,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scorer",
+      "id",
+      "words2"
+    ],
+    "body_sha256": "7abfb1cf7c09e4c9b2d3edd56045f8f2a64b8637162d57c1e7e979966850dd0a",
+    "calls": [
+      "scorer.score"
+    ],
+    "writes": [
+      "matched",
+      "total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765900:29345327",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "createSearchIndex",
+    "qualified_name": "createSearchIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765900,
+    "end_line": 765920,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "toDoc"
+    ],
+    "body_sha256": "eebc1a3d9d260af37d31e2402fe11e972f145e3afc9ab59e5d9790c1625e87ab",
+    "calls": [
+      "CommandScoreComputer.createInSlices",
+      "entries.map",
+      "items.map",
+      "sliceYielder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765907:29345650",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "rank",
+    "qualified_name": "createSearchIndex/rank",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765907,
+    "end_line": 765918,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "query2",
+      "options2"
+    ],
+    "body_sha256": "07ebf7037423e9cd5a66184d0035ce5b2dc4a8b47b871e6f8bc4a1ae0f2ba88f",
+    "calls": [
+      ".map",
+      ".slice",
+      "entries.entries",
+      "matches.push",
+      "matches.sort",
+      "new Set",
+      "queryWords",
+      "scoreEachWordByCoverage",
+      "sliceYielder",
+      "yieldIfDue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765921:29346282",
+    "artifact": "host",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "rankSearchDocs",
+    "qualified_name": "rankSearchDocs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765921,
+    "end_line": 765926,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "query2",
+      "options2"
+    ],
+    "body_sha256": "4b536d0e272ba0688eec50520071930e45ba0cd7c3073080ce2003b64376f104",
+    "calls": [
+      ".rank",
+      "createSearchIndex",
+      "new Set",
+      "queryWords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559241:20764660",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "queryWords",
+    "qualified_name": "queryWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559241,
+    "end_line": 559243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "ignoreWords"
+    ],
+    "body_sha256": "5fb26910e1121f3fa39d1313ce9dcfce14a09476775c2f9cba75974eb989fa66",
+    "calls": [
+      ".filter",
+      ".match",
+      ".slice",
+      "new Set",
+      "normalizeCommandText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559244:20764897",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "sliceYielder",
+    "qualified_name": "sliceYielder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559244,
+    "end_line": 559251,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "37b3ecb05e33052979fcdb27ba568de8897fb93a7a57926e2f8c6ec3678275e3",
+    "calls": [
+      "performance.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559252:20765136",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "scoreEachWordByCoverage",
+    "qualified_name": "scoreEachWordByCoverage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559252,
+    "end_line": 559263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scorer",
+      "id",
+      "words"
+    ],
+    "body_sha256": "903050d5a80977d36a249505f41c11c1fce81e9913bbcb68d1262bd4e847e5ad",
+    "calls": [
+      "scorer.score"
+    ],
+    "writes": [
+      "matched",
+      "total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559264:20765416",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "createSearchIndex",
+    "qualified_name": "createSearchIndex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559264,
+    "end_line": 559284,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "toDoc"
+    ],
+    "body_sha256": "b8232d71a364d4e282bda326f0925b57c3ca40c85127926f20d24003014374e2",
+    "calls": [
+      "CommandScoreComputer.createInSlices",
+      "entries.map",
+      "items.map",
+      "sliceYielder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559271:20765739",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "rank",
+    "qualified_name": "createSearchIndex/rank",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559271,
+    "end_line": 559282,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "query2",
+      "options2"
+    ],
+    "body_sha256": "6edc5c11e8a1eb158bf21b52064e59554e6abafcd150ff0f5c01c1a4faa764dc",
+    "calls": [
+      ".map",
+      ".slice",
+      "entries.entries",
+      "matches.push",
+      "matches.sort",
+      "new Set",
+      "queryWords",
+      "scoreEachWordByCoverage",
+      "sliceYielder",
+      "yieldIfDue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559285:20766368",
+    "artifact": "evaluation",
+    "module": "core/runner/server-search/rank.ts",
+    "name": "rankSearchDocs",
+    "qualified_name": "rankSearchDocs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559285,
+    "end_line": 559290,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "query2",
+      "options2"
+    ],
+    "body_sha256": "4b536d0e272ba0688eec50520071930e45ba0cd7c3073080ce2003b64376f104",
+    "calls": [
+      ".rank",
+      "createSearchIndex",
+      "new Set",
+      "queryWords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

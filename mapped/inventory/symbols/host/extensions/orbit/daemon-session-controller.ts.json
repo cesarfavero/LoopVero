@@ -1,0 +1,1491 @@
+[
+  {
+    "id": "host:705621:26803548",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "createOrbitDaemonSessionController",
+    "qualified_name": "createOrbitDaemonSessionController",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705621,
+    "end_line": 706107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "ba8aabb919b0964a78a3f3fedf456c6b5f898bb3b24b5e8509b288aa63bec49c",
+    "calls": [
+      "deps.createProxyHandler",
+      "new AbortController"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705638:26804065",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "setTarget",
+    "qualified_name": "createOrbitDaemonSessionController/setTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705638,
+    "end_line": 705657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "85b0c00436d96e9a5ad9444709952aab68422488afb89eca4f610de446b08dc5",
+    "calls": [
+      "beginRetirement",
+      "normalizeTarget",
+      "requestReconciliation",
+      "sameIdentity",
+      "sameSessionCredentials",
+      "sameTarget"
+    ],
+    "writes": [
+      "state.rejectedCredentials",
+      "state.retryAttempt",
+      "state.target"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705658:26804786",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "dispose",
+    "qualified_name": "createOrbitDaemonSessionController/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705658,
+    "end_line": 705675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "bea303ce01d002660eef2994b5ec1822ef605ea34d9459a86e6e9a30e65e97a9",
+    "calls": [
+      "Promise.withResolvers",
+      "beginRetirement",
+      "completion.promise.finally",
+      "disposeAbortController.abort",
+      "maybeResolveDisposal",
+      "requestReconciliation"
+    ],
+    "writes": [
+      "state.disposePromise",
+      "state.disposed",
+      "state.rejectedCredentials",
+      "state.resolveDisposal",
+      "state.target"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705676:26805424",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "withPublishedSession",
+    "qualified_name": "createOrbitDaemonSessionController/withPublishedSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705676,
+    "end_line": 705717,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "call",
+      "callerSignal"
+    ],
+    "body_sha256": "ec8acee11ca357da8b348533062a53bd7aa1d556be3d5b0420fbe9914c6d1f86",
+    "calls": [
+      "AbortSignal.any",
+      "ConnectError.from",
+      "beginRetirement",
+      "call",
+      "isOperationProtocolMismatch",
+      "new ConnectError",
+      "operationUnavailable",
+      "requestReconciliation"
+    ],
+    "writes": [
+      "result",
+      "retirement"
+    ],
+    "throw_targets": [
+      "ConnectError",
+      "error64",
+      "operationUnavailable"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 5,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705718:26806891",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "requestReconciliation",
+    "qualified_name": "createOrbitDaemonSessionController/requestReconciliation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705718,
+    "end_line": 705734,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ee441ad682417dd8abc746c4cbc806a32432aba3f06e9d9c21d20d58dca1709b",
+    "calls": [
+      ".then",
+      "cancelScheduledWake",
+      "drainReconciliation"
+    ],
+    "writes": [
+      "running",
+      "state.reconciliationPromise",
+      "state.reconciliationRequested"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705735:26807392",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "finishReconciliation",
+    "qualified_name": "createOrbitDaemonSessionController/finishReconciliation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705735,
+    "end_line": 705745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "running"
+    ],
+    "body_sha256": "d52978d51449eef1137f443bf3b73d20f02881ec78ff2e43f2fce5b400a410f0",
+    "calls": [
+      "maybeResolveDisposal",
+      "requestReconciliation"
+    ],
+    "writes": [
+      "state.reconciliationPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705746:26807673",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "drainReconciliation",
+    "qualified_name": "createOrbitDaemonSessionController/drainReconciliation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705746,
+    "end_line": 705772,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "31a224456aaf869ca81d510b13477c39c962f12cc477916405feffd1a29f2002",
+    "calls": [
+      "reconcileOneEffect",
+      "reportFailure",
+      "scheduleRenewal",
+      "scheduleRetry"
+    ],
+    "writes": [
+      "result",
+      "state.reconciliationRequested",
+      "state.retryAttempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705773:26808363",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "reconcileOneEffect",
+    "qualified_name": "createOrbitDaemonSessionController/reconcileOneEffect",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705773,
+    "end_line": 705810,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "c57e2fe90080b37dc7dae45e8995a96a082d938e628eb3f87273b422b8b92bf4",
+    "calls": [
+      "beginRetirement",
+      "deps.clock.monotonicNow",
+      "needsAccessTokenUpdate",
+      "needsConfigurationUpdate",
+      "openSession",
+      "publishOperations",
+      "reconcileAccessToken",
+      "reconcileConfiguration",
+      "renewSession",
+      "retireOneEffect",
+      "sameIdentity",
+      "targetUsesSessionCredentials"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705811:26809891",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "openSession",
+    "qualified_name": "createOrbitDaemonSessionController/openSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705811,
+    "end_line": 705866,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "activeTarget"
+    ],
+    "body_sha256": "ad177cb3df457ee61f844e2a7fc6ebbaad5861f7e01e22d3c41b43c75b519809",
+    "calls": [
+      "BigInt",
+      "beginRetirement",
+      "deps.client.openSession",
+      "isDefinitiveOpenFailure",
+      "isProtocolDivergence",
+      "leaseDeadlines",
+      "reportFailure",
+      "sameIdentity",
+      "sameSessionCredentials",
+      "session.close",
+      "sessionCredentialsOf",
+      "toDaemonConfiguration"
+    ],
+    "writes": [
+      "session",
+      "state.currentSession",
+      "state.rejectedCredentials"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:705867:26811816",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "reconcileAccessToken",
+    "qualified_name": "createOrbitDaemonSessionController/reconcileAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705867,
+    "end_line": 705885,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "activeTarget"
+    ],
+    "body_sha256": "572e123f4784d8c7bf1c8368e6df988fd5583e9dbb671cb2f9b0fb892ec9061a",
+    "calls": [
+      "ConnectError.from",
+      "beginRetirement",
+      "handleSessionRpcFailure",
+      "sameSessionCredentials",
+      "sessionCredentialsOf",
+      "updateAccessToken"
+    ],
+    "writes": [
+      "state.rejectedCredentials"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705886:26812541",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "renewSession",
+    "qualified_name": "createOrbitDaemonSessionController/renewSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705886,
+    "end_line": 705898,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2"
+    ],
+    "body_sha256": "4513fecdc520c9c8d6fd2c043cc39c7cbd43591b6ce21567efbb47f46a772ecc",
+    "calls": [
+      "handleSessionRpcFailure",
+      "leaseDeadlines",
+      "openSession2.session.renew"
+    ],
+    "writes": [
+      "openSession2.leaseExpiresAtMonotonicMs",
+      "openSession2.renewAtMonotonicMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705899:26813071",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "reconcileConfiguration",
+    "qualified_name": "createOrbitDaemonSessionController/reconcileConfiguration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705899,
+    "end_line": 705906,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "configuration"
+    ],
+    "body_sha256": "b28ffa4cd9c9c003916cc6765d7b0df9f1ab47a8b733856e4242d75756f94322",
+    "calls": [
+      "handleSessionRpcFailure",
+      "updateConfiguration"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705907:26813400",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "handleSessionRpcFailure",
+    "qualified_name": "createOrbitDaemonSessionController/handleSessionRpcFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705907,
+    "end_line": 705921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "1117e81541712b02ba0a75083dae69d953659db7a93dc23273f3ef1bec5137e2",
+    "calls": [
+      "beginRetirement",
+      "isLostSessionError",
+      "isProtocolDivergence",
+      "reportFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705922:26813868",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "retireOneEffect",
+    "qualified_name": "createOrbitDaemonSessionController/retireOneEffect",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705922,
+    "end_line": 705956,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2"
+    ],
+    "body_sha256": "7f4157f16bbb1abf06c05d91c955fa3814cb354b2db3e116ed2a8724201b71ff",
+    "calls": [
+      "beginRetirement",
+      "closeSession",
+      "deps.clock.monotonicNow",
+      "isLostSessionError",
+      "isProtocolDivergence",
+      "reportFailure",
+      "sameIdentity",
+      "updateConfiguration"
+    ],
+    "writes": [
+      "openSession2.retirement.disableAttempted",
+      "retirement.disableAttempted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705957:26815396",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "closeSession",
+    "qualified_name": "createOrbitDaemonSessionController/closeSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705957,
+    "end_line": 705967,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2"
+    ],
+    "body_sha256": "886140f30271a9695948203862827037074fc6d5b5f3e16ab3254f221a26e3f6",
+    "calls": [
+      "openSession2.session.close",
+      "reportFailure",
+      "withdrawOperations"
+    ],
+    "writes": [
+      "state.currentSession"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705968:26815697",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "beginRetirement",
+    "qualified_name": "createOrbitDaemonSessionController/beginRetirement",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705968,
+    "end_line": 705980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "kind"
+    ],
+    "body_sha256": "b2ca4fa74a7c7ee175d155c19d2959d58a9a560ac7c176afaddb17b26bf95278",
+    "calls": [
+      "withdrawOperations"
+    ],
+    "writes": [
+      "openSession2.retirement"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705981:26816233",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "publishOperations",
+    "qualified_name": "createOrbitDaemonSessionController/publishOperations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705981,
+    "end_line": 705986,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2"
+    ],
+    "body_sha256": "b1ad0f99301a935397a526dce32b79bfbd81d69ff3fd8ac92172e513ad144b00",
+    "calls": [
+      "new AbortController"
+    ],
+    "writes": [
+      "openSession2.hasPublishedOperations",
+      "openSession2.operationPublication"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705987:26816424",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "withdrawOperations",
+    "qualified_name": "createOrbitDaemonSessionController/withdrawOperations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705987,
+    "end_line": 705990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2"
+    ],
+    "body_sha256": "4bda22d71962a6d51cce8c9df4c5d554c1668628b41d54de404a0e38b49735c5",
+    "calls": [
+      "openSession2.operationPublication.abortController.abort"
+    ],
+    "writes": [
+      "openSession2.operationPublication"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705991:26816586",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "updateAccessToken",
+    "qualified_name": "createOrbitDaemonSessionController/updateAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705991,
+    "end_line": 706006,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "accessToken",
+      "signal"
+    ],
+    "body_sha256": "c911054ad7b0165d9b2ea39e1c43bf81db28f43137028627f442584513539061",
+    "calls": [
+      "BigInt",
+      "assertAcknowledgedRevision",
+      "openSession2.session.updateAccessToken"
+    ],
+    "writes": [
+      "accessTokenState.lastConfirmed",
+      "accessTokenState.needsReconciliation",
+      "accessTokenState.revision"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706007:26817293",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "updateConfiguration",
+    "qualified_name": "createOrbitDaemonSessionController/updateConfiguration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706007,
+    "end_line": 706022,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession2",
+      "configuration",
+      "signal"
+    ],
+    "body_sha256": "72723e46950a9786b609595fada095ef84dd37a5f01f604dbe776b5438346700",
+    "calls": [
+      "BigInt",
+      "assertAcknowledgedRevision",
+      "openSession2.session.updateConfiguration",
+      "sameConfiguration",
+      "toDaemonConfiguration"
+    ],
+    "writes": [
+      "configurationState.lastConfirmed",
+      "configurationState.needsReconciliation",
+      "configurationState.revision"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706023:26818114",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "scheduleRetry",
+    "qualified_name": "createOrbitDaemonSessionController/scheduleRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706023,
+    "end_line": 706053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "d2132d916a10038cd0baf0dd001d1d2f74fc4f8978501928f7dffaa0c12484de",
+    "calls": [
+      "delay5.elapsed.then",
+      "deps.policies.reconciliationRetry.schedule"
+    ],
+    "writes": [
+      "state.reconciliationRequested",
+      "state.retryAttempt",
+      "state.scheduledWake"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706054:26818935",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "scheduleRenewal",
+    "qualified_name": "createOrbitDaemonSessionController/scheduleRenewal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706054,
+    "end_line": 706071,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "78b798f7f8e3ce18f8e5d6f82cc684f0518ab17f69e18efe20776b4efc02dc5e",
+    "calls": [
+      "Math.max",
+      "Number",
+      "deps.clock.monotonicNow",
+      "deps.clock.schedule",
+      "maybeResolveDisposal"
+    ],
+    "writes": [
+      "state.scheduledWake"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706072:26819564",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "leaseDeadlines",
+    "qualified_name": "createOrbitDaemonSessionController/leaseDeadlines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706072,
+    "end_line": 706085,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "expiresAt"
+    ],
+    "body_sha256": "a4069ec993f57a839a54a1941e6e2dc0fbfdaf7bf708ad393c44a8cd7e01accc",
+    "calls": [
+      "Number",
+      "deps.clock.monotonicNow",
+      "deps.clock.now",
+      "expiresAt.getTime",
+      "new ConnectError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConnectError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706086:26820053",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "cancelScheduledWake",
+    "qualified_name": "createOrbitDaemonSessionController/cancelScheduledWake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706086,
+    "end_line": 706090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "6e08fab5f15367f144d91a09f5d8e9efa340c0c13dd42cd660e8a7abd7b3e898",
+    "calls": [
+      "wake.dispose"
+    ],
+    "writes": [
+      "state.scheduledWake"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706091:26820185",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "maybeResolveDisposal",
+    "qualified_name": "createOrbitDaemonSessionController/maybeResolveDisposal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706091,
+    "end_line": 706096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "76958cf64d82a50b9eaf981615543012d3149fb9034edf0eb378a80b98ecf7c4",
+    "calls": [
+      "state.resolveDisposal"
+    ],
+    "writes": [
+      "state.resolveDisposal"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706097:26820439",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "reportFailure",
+    "qualified_name": "createOrbitDaemonSessionController/reportFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706097,
+    "end_line": 706101,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "c3b22c8d1048dd5473ab076e1397fceaa85102b92e86e07bf01d067412564833",
+    "calls": [
+      "ConnectError.from",
+      "deps.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706108:26820697",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "normalizeTarget",
+    "qualified_name": "normalizeTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706108,
+    "end_line": 706116,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "93b44da8c3744797d667f710a4487bcbd5efbd23542d52fb79f2f1093fbd31b9",
+    "calls": [
+      ".sort",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706117:26820904",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "sameTarget",
+    "qualified_name": "sameTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706117,
+    "end_line": 706125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "ca0021c965310de82b408459f0c963a51672d9f7293c29a8461ef45794bec441",
+    "calls": [
+      "sameIdentity",
+      "samePorts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706126:26821221",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "sameSessionCredentials",
+    "qualified_name": "sameSessionCredentials",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706126,
+    "end_line": 706128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "16a1b4f831b9f26b43b1a0f04499e2776a84a2d22e1c9cc4a96bd2774fc23708",
+    "calls": [
+      "sameIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706129:26821419",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "sessionCredentialsOf",
+    "qualified_name": "sessionCredentialsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706129,
+    "end_line": 706134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d54c1c1497561efe1835a7919dca806e261f4d8817daa1e18b5d6e6bff1a3bcb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706135:26821544",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "targetUsesSessionCredentials",
+    "qualified_name": "targetUsesSessionCredentials",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706135,
+    "end_line": 706137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "credentials",
+      "target"
+    ],
+    "body_sha256": "ae9ad892070cea1547a424d66911f7eb7db8c6a790811d7977e7a0fe037cc392",
+    "calls": [
+      "sameIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706138:26821719",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "sameIdentity",
+    "qualified_name": "sameIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706138,
+    "end_line": 706140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "6d76763938a2c137ca2a622904121a322015a24b5d04a492c92c96e158990dff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706141:26821835",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "needsAccessTokenUpdate",
+    "qualified_name": "needsAccessTokenUpdate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706141,
+    "end_line": 706143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession",
+      "accessToken"
+    ],
+    "body_sha256": "d98cf2dcb63aecbf0bc008eb4539d1a3ec3ac9db1c3fbca62c09ff06be52e2b1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706144:26822008",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "needsConfigurationUpdate",
+    "qualified_name": "needsConfigurationUpdate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706144,
+    "end_line": 706146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "openSession",
+      "configuration"
+    ],
+    "body_sha256": "437dc0b2c1c065d57dec6b8a07c637f3154258e7991ee64fe75113f9612756b0",
+    "calls": [
+      "sameConfiguration"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706147:26822208",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "sameConfiguration",
+    "qualified_name": "sameConfiguration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706147,
+    "end_line": 706155,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "8493eb33bb6cc879f453935028deea97fabcfde57b1b8cebb333e7b41175f407",
+    "calls": [
+      "samePorts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706156:26822443",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "toDaemonConfiguration",
+    "qualified_name": "toDaemonConfiguration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706156,
+    "end_line": 706166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "configuration"
+    ],
+    "body_sha256": "e244dd8932ef8a1567a8e05abfb6f039f3ca0ea7aa0e7095a7deafdc8100e1fa",
+    "calls": [
+      "configuration.cdpPorts.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706167:26822735",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "samePorts",
+    "qualified_name": "samePorts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706167,
+    "end_line": 706169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "404586477f4c5c7e71d246751bbe0b05850f94f6fbe3bb1d4d8c7467bc76a5d1",
+    "calls": [
+      "left.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706170:26822864",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "assertAcknowledgedRevision",
+    "qualified_name": "assertAcknowledgedRevision",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706170,
+    "end_line": 706178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stage",
+      "expected",
+      "actual"
+    ],
+    "body_sha256": "ab7183c12455d55aba6dd1e2b0b7051055ffb3dc8a2bd8db9b063582855b0a17",
+    "calls": [
+      "new ConnectError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConnectError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706179:26823113",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "isLostSessionError",
+    "qualified_name": "isLostSessionError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706179,
+    "end_line": 706181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "50b5932e64a786dea9a02873044be97460baf4e3c372fbab7a4b8fe9bfa80788",
+    "calls": [
+      "ConnectError.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706182:26823221",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "isOperationProtocolMismatch",
+    "qualified_name": "isOperationProtocolMismatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706182,
+    "end_line": 706186,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "826ec637e05ebcda343ce9f2cdae3efbd19b7d909af1affea99a161c00d37209",
+    "calls": [
+      "ConnectError.from",
+      "String",
+      "connectError.metadata.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706187:26823538",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "operationUnavailable",
+    "qualified_name": "operationUnavailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706187,
+    "end_line": 706195,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "486d01dc11193cd0620f25d309e9f9e7c106353936850994821c16b49b1f8302",
+    "calls": [
+      "new ConnectError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706196:26823711",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "isProtocolDivergence",
+    "qualified_name": "isProtocolDivergence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706196,
+    "end_line": 706199,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "65a93a5c8d69f505e8be6c7f91c216abe589071f03e4e26341a7e343e367843a",
+    "calls": [
+      "ConnectError.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706200:26823871",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-session-controller.ts",
+    "name": "isDefinitiveOpenFailure",
+    "qualified_name": "isDefinitiveOpenFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706200,
+    "end_line": 706203,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "c4f56457656c1b7e4a6d3968891ce822de061dfb91ca919394812cf0d5c7cbad",
+    "calls": [
+      "ConnectError.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

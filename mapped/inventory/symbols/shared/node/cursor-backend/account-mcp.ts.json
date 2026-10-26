@@ -1,0 +1,1039 @@
+[
+  {
+    "id": "host:690265:26227189",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "defaultCreateBackendClient2",
+    "qualified_name": "defaultCreateBackendClient2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690265,
+    "end_line": 690265,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "3d3186d26ec9a9ac12b40f5f2dfb2781d82bf911da9a54548b9801b4f3ed11ce",
+    "calls": [
+      "createSandCursorBackendClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690266:26227263",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "identityBackendClient",
+    "qualified_name": "identityBackendClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690266,
+    "end_line": 690273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "getAccessToken"
+    ],
+    "body_sha256": "1a16b9835320311d5d17f997af1550796a34930a1e5c75549219790be72a63a7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690274:26227509",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "accountMcpBackendClient",
+    "qualified_name": "accountMcpBackendClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690274,
+    "end_line": 690276,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "eabbb72c231d23c7c0d201caa048c1d9eeea5c3cda200c939afb6070997938c5",
+    "calls": [
+      "deps.createBackendClient",
+      "identityBackendClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690277:26227666",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "accountMcpAccessToken",
+    "qualified_name": "accountMcpAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690277,
+    "end_line": 690279,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "c095a792fc86d3ce371ff6504aeca1230d135034edf866adc48fcc1aeaafc189",
+    "calls": [
+      "deps.getAccessToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690280:26227846",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "logAccountMcpFetchError",
+    "qualified_name": "logAccountMcpFetchError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690280,
+    "end_line": 690282,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "leg",
+      "error64"
+    ],
+    "body_sha256": "24cf97d91ed2c62230bc410b7755e8600ae3d1af0cf734d46467474610c776bf",
+    "calls": [
+      "reportMcpHostEdgeFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690283:26227939",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "parseAccountMcpConfigJson",
+    "qualified_name": "parseAccountMcpConfigJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690283,
+    "end_line": 690291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "json3"
+    ],
+    "body_sha256": "61ef0ae205c29679cb5425db89d1db67c6223b60d270a6d03eb2b39c07066c40",
+    "calls": [
+      "JSON.parse",
+      "json3.trim",
+      "mcpConfigSchema2.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:690292:26228189",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "teamServerTransport",
+    "qualified_name": "teamServerTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690292,
+    "end_line": 690294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "type2"
+    ],
+    "body_sha256": "83f25b08e5a0b17158a045538ec559b9e41a1dd076977ffa06be126f2bff4d39",
+    "calls": [
+      "type2.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690295:26228287",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "serverIdsByNameFromMetadata",
+    "qualified_name": "serverIdsByNameFromMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690295,
+    "end_line": 690303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadataByName"
+    ],
+    "body_sha256": "08febb3bbcf390f6112f747290392f9362c22dca0f61f6b999d325bd126fa6be",
+    "calls": [
+      "BigInt",
+      "Object.entries"
+    ],
+    "writes": [
+      "serverIdsByName[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690304:26228593",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "httpConfigFromAvailableServer",
+    "qualified_name": "httpConfigFromAvailableServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690304,
+    "end_line": 690312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "b1808b99c5b8f2ba52328f57fe1e626f9328e9aac75ada907d0a7daeff57258b",
+    "calls": [
+      "server.type.toLowerCase",
+      "teamServerTransport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690313:26228843",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "stdioConfigFromAvailableServer",
+    "qualified_name": "stdioConfigFromAvailableServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690313,
+    "end_line": 690321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "82e4de0beae8eb9c40e666e1971c19234b791a3297a44fa6bf10656b5a2d123b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690322:26229090",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "isLeftoverListingId",
+    "qualified_name": "isLeftoverListingId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690322,
+    "end_line": 690324,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "6444a12a96ebb08eaab841d79aa9399a0382ea61514cc6303a34dfb07530b636",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690325:26229144",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "accountSlotsFromAvailableServer",
+    "qualified_name": "accountSlotsFromAvailableServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690325,
+    "end_line": 690340,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "ddc5a4c114e6b8f3a1e5012e85f68b3d5c1b3859b628f087c8449605ae3fbd08",
+    "calls": [
+      "normalizeMcpAccountLabel",
+      "slots.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690341:26229807",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "pluginAttributionFromAvailableServer",
+    "qualified_name": "pluginAttributionFromAvailableServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690341,
+    "end_line": 690347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "b533b01f20429f55c4eb7289c4efacaf018908f5cf2cf1f389509876e165c661",
+    "calls": [
+      "BigInt",
+      "server.pluginId.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690348:26230131",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "displayServerId",
+    "qualified_name": "displayServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690348,
+    "end_line": 690352,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "1d15ad62faef8a2e01e8a391d20f709acdd8f9586bcb6fdf1930ff12bbc9865e",
+    "calls": [
+      "String",
+      "server.serverIdentifier.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690353:26230404",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "displayServerFields",
+    "qualified_name": "displayServerFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690353,
+    "end_line": 690373,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server",
+      "id"
+    ],
+    "body_sha256": "0059f808b5fbea1939dcc8a5c2cfe630ce75bfff8435382169ec3aae649efd45",
+    "calls": [
+      "accountSlotsFromAvailableServer",
+      "pluginAttributionFromAvailableServer",
+      "server.dataCenters.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690374:26231658",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "displayServerFromAvailableServer",
+    "qualified_name": "displayServerFromAvailableServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690374,
+    "end_line": 690379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server",
+      "id",
+      "config2"
+    ],
+    "body_sha256": "2daad38369711ddba36e1df062bc08e780dbd0966974de6682685ea24e532092",
+    "calls": [
+      "displayServerFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690380:26231801",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "grokNativeDisplayServer",
+    "qualified_name": "grokNativeDisplayServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690380,
+    "end_line": 690385,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server",
+      "id"
+    ],
+    "body_sha256": "00b3b60059139a557b5f588fd4c99a37442cb2e7dbe7108be46b9f515f502666",
+    "calls": [
+      "displayServerFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690386:26231927",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "tokenScopedBackendClient",
+    "qualified_name": "tokenScopedBackendClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690386,
+    "end_line": 690388,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "accessToken"
+    ],
+    "body_sha256": "0201ea158f3c0f2eb8b78489f662ba7c0008ff109d80086aea0da5012d461fa5",
+    "calls": [
+      "deps.createBackendClient",
+      "identityBackendClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690389:26232102",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "unavailableAccountMcpServers",
+    "qualified_name": "unavailableAccountMcpServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690389,
+    "end_line": 690391,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheScope"
+    ],
+    "body_sha256": "65fba258f7c1628af6db2da493665cc3bf92a7d8a9e1ac7c9cbe4dab5984ec6f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690392:26232241",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "fetchAccountMcpServers",
+    "qualified_name": "fetchAccountMcpServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690392,
+    "end_line": 690501,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "0060e93f698e6b408214ac28b12b02d04dfd85c341649b8bf00cd848fdfac8dc",
+    "calls": [
+      "Object.entries",
+      "Promise.all",
+      "String",
+      "accountMcpAccessToken",
+      "accountScopeOfToken",
+      "client.getAvailableMcpServers",
+      "displayServerFields",
+      "displayServerFromAvailableServer",
+      "displayServerId",
+      "fetchStdioRuntimeConfig",
+      "grokNativeDisplayServer",
+      "httpConfigFromAvailableServer",
+      "isLeftoverListingId",
+      "new GetAvailableMcpServersRequest",
+      "new GetMcpConfigRequest",
+      "new Map",
+      "new Set",
+      "parseAccountMcpConfigJson",
+      "response.servers.flatMap",
+      "response.servers.some",
+      "server.type.toLowerCase",
+      "serverIdsByNameFromMetadata",
+      "servers.push",
+      "stdioConfigById.get",
+      "stdioConfigById.set",
+      "stdioConfigFromAvailableServer",
+      "teamStdioTeamIds.map",
+      "tokenScopedBackendClient",
+      "unavailableAccountMcpServers",
+      "unresolvedServerIds.push"
+    ],
+    "writes": [
+      "cacheScope",
+      "config2",
+      "config3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 3,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:690411:26233173",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "fetchStdioRuntimeConfig",
+    "qualified_name": "fetchAccountMcpServers/fetchStdioRuntimeConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690411,
+    "end_line": 690414,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "b4011e979a631f4d64c46f2cdb5dd9bc831d6d39f1758a692ae34ba10963040f",
+    "calls": [
+      ".catch",
+      "client.getMcpConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690502:26236387",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "toEffectivePluginInstallMode",
+    "qualified_name": "toEffectivePluginInstallMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690502,
+    "end_line": 690517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mode"
+    ],
+    "body_sha256": "7fe26c1bcc93bc659490a215a42f2ad7c145bdd50ca15ab375611d7d76997c2b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690518:26236830",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "fetchEffectiveUserPlugins",
+    "qualified_name": "fetchEffectiveUserPlugins",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690518,
+    "end_line": 690549,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "70c3d9fffcb120e09e92ccf58891a822be65b8dbb28d0d33bf086f22677a6259",
+    "calls": [
+      "BigInt",
+      "accountMcpBackendClient",
+      "client.getEffectiveUserPlugins",
+      "new GetEffectiveUserPluginsRequest",
+      "plugin.id.toString",
+      "plugin.mcpServers.map",
+      "plugins.push",
+      "toEffectivePluginInstallMode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690550:26238638",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "backfillUserPluginInstalls",
+    "qualified_name": "backfillUserPluginInstalls",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690550,
+    "end_line": 690575,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "3dd17b4b25288883aefee22fce0256caf617dea75b5a0e9928f53ea645bcb67d",
+    "calls": [
+      "BigInt",
+      "Promise.all",
+      "accountMcpBackendClient",
+      "backfilled.push",
+      "client.getAvailableMcpServers",
+      "client.installUserPlugin",
+      "effective.map",
+      "fetchEffectiveUserPlugins",
+      "knownPluginIds.has",
+      "logAccountMcpFetchError",
+      "missingPluginIds.add",
+      "new GetAvailableMcpServersRequest",
+      "new InstallUserPluginRequest",
+      "new Set",
+      "server.pluginId.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:690576:26239752",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "createAccountMcpWriter",
+    "qualified_name": "createAccountMcpWriter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690576,
+    "end_line": 690623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a715a0f16e58f34361e42c23e2e671f91d13d551f077a9f097ff8fad32aebcf2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690577:26239813",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "makeClient",
+    "qualified_name": "createAccountMcpWriter/makeClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690577,
+    "end_line": 690577,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a8ccb6ba286c0ef4b7d488de4b208cc1da16a5041f753c42e395029c3adf206d",
+    "calls": [
+      "accountMcpBackendClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690579:26239887",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "getConfigForEdit",
+    "qualified_name": "createAccountMcpWriter/getConfigForEdit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690579,
+    "end_line": 690588,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "e1cd8322c6628c5d7c97cf4408054b588fd2e5bec9012c60dd19db2dd92487af",
+    "calls": [
+      ".getMcpConfig",
+      "makeClient",
+      "new GetMcpConfigRequest",
+      "parseAccountMcpConfigJson",
+      "serverIdsByNameFromMetadata"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690589:26240305",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "setConfig",
+    "qualified_name": "createAccountMcpWriter/setConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690589,
+    "end_line": 690597,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "config2",
+      "serverIdsByName"
+    ],
+    "body_sha256": "cd437625a120ba50926f5ccc2092d2cae192ea77a492c7d72bfcc9e62fe100fa",
+    "calls": [
+      ".setMcpConfig",
+      "JSON.stringify",
+      "makeClient",
+      "new SetMcpConfigRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690598:26240582",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "installPlugin",
+    "qualified_name": "createAccountMcpWriter/installPlugin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690598,
+    "end_line": 690606,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f90a7b7b13e942973f7ba13d140b214abbdda9d9ef9e62902a3c1a236a6c7954",
+    "calls": [
+      ".installUserPlugin",
+      "Object.keys",
+      "Struct.fromJson",
+      "makeClient",
+      "new InstallUserPluginRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690607:26240956",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "uninstallPlugin",
+    "qualified_name": "createAccountMcpWriter/uninstallPlugin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690607,
+    "end_line": 690612,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1281310e8ecd3369886311bcf66de0aad1105af41491c516dcc1dcd55ef278c3",
+    "calls": [
+      ".uninstallUserPlugin",
+      "makeClient",
+      "new UninstallUserPluginRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690613:26241180",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/account-mcp.ts",
+    "name": "updatePluginInstall",
+    "qualified_name": "createAccountMcpWriter/updatePluginInstall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690613,
+    "end_line": 690621,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "739af73bb121a3784ea97518ee953dfae8f24de278c6804858db32f7bea28d00",
+    "calls": [
+      ".updateUserPluginInstall",
+      "Struct.fromJson",
+      "makeClient",
+      "new UpdateUserPluginInstallRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

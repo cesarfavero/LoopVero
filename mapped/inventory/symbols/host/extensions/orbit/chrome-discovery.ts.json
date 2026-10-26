@@ -1,0 +1,322 @@
+[
+  {
+    "id": "host:705223:26791129",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "discoverManagedChromeCdpPorts",
+    "qualified_name": "discoverManagedChromeCdpPorts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705223,
+    "end_line": 705247,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "d9c30dd694c53b369c0e40c099688666bb2b60fe10cf61cd7a01f47c63e1d5a0",
+    "calls": [
+      ".sort",
+      "cdpPorts.add",
+      "errorLogTag",
+      "managedChromeCdpPortOf",
+      "new Set",
+      "options2.signal.throwIfAborted",
+      "readChromeProcessSnapshots"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705248:26792079",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "managedChromeCdpPortOf",
+    "qualified_name": "managedChromeCdpPortOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705248,
+    "end_line": 705273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "process3",
+      "maxWindowIndex"
+    ],
+    "body_sha256": "c4473b2e69461a7cae221d6c2f773594916e125c78786103c68c148912353d73",
+    "calls": [
+      "/^[1-9]\\d*$/.test",
+      "Number",
+      "Number.isSafeInteger",
+      "lastSwitchValue",
+      "windowIndexForProfilePath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705274:26793167",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "parseChromeProcCmdline",
+    "qualified_name": "parseChromeProcCmdline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705274,
+    "end_line": 705280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "a8ca57f3cd1b1d1a711c1f3e0a2625e5e9dab3adb68eba7241dc2814a4f7583c",
+    "calls": [
+      ".filter",
+      "argv[computed].split",
+      "raw.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705281:26793410",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "readChromeProcessSnapshots",
+    "qualified_name": "readChromeProcessSnapshots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705281,
+    "end_line": 705301,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "procRoot",
+      "signal",
+      "readProcFile"
+    ],
+    "body_sha256": "3cd1a785c64cf32de4359bbb7c441a05c33212fa3f8b6319870657d9c9994b1e",
+    "calls": [
+      "/^\\d+$/.test",
+      "entry.isDirectory",
+      "isProcessGoneError",
+      "processes.push",
+      "readChromeProcessSnapshot",
+      "signal.throwIfAborted"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705302:26794049",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "readChromeProcessSnapshot",
+    "qualified_name": "readChromeProcessSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705302,
+    "end_line": 705317,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "procRoot",
+      "pidName",
+      "signal",
+      "readProcFile"
+    ],
+    "body_sha256": "91ff9031a0109872a926cbf8dab5a854b8549edb3d75fc9a1b2b2900bf5779f1",
+    "calls": [
+      "parseChromeProcCmdline",
+      "parseProcStatIdentity",
+      "readProcFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705318:26794853",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "parseProcStatIdentity",
+    "qualified_name": "parseProcStatIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705318,
+    "end_line": 705333,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "54df9210b3084a016466dbb1b09ccabbda38ce5a75fc93f69d1330ad9489f031",
+    "calls": [
+      ".split",
+      ".trim",
+      "/^\\d+$/.test",
+      "BigInt",
+      "raw.indexOf",
+      "raw.lastIndexOf",
+      "raw.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705334:26795323",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "lastSwitchValue",
+    "qualified_name": "lastSwitchValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705334,
+    "end_line": 705346,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv",
+      "name18"
+    ],
+    "body_sha256": "03b609d30bc4ba9fd01fa85821fdd1e635096f039a0db77c0767f9ffa35db381",
+    "calls": [
+      "argument.slice",
+      "argument.startsWith"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705347:26795601",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "windowIndexForProfilePath",
+    "qualified_name": "windowIndexForProfilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705347,
+    "end_line": 705360,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profilePath"
+    ],
+    "body_sha256": "8e975850308b1255733c4db620c9653aa2072471526ddcab2bb023ed2bf457e6",
+    "calls": [
+      "/^[1-9]\\d*$/.test",
+      "Number",
+      "Number.isSafeInteger",
+      "profilePath.slice",
+      "profilePath.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705361:26796075",
+    "artifact": "host",
+    "module": "host/extensions/orbit/chrome-discovery.ts",
+    "name": "isProcessGoneError",
+    "qualified_name": "isProcessGoneError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705361,
+    "end_line": 705364,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "48061a079972c0bef2a271c6b0cd3203a40d5faac81eeda0a0d3cef7b545d13d",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

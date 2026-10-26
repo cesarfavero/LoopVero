@@ -1,0 +1,896 @@
+[
+  {
+    "id": "evaluation:533673:19582036",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "joinNonEmpty",
+    "qualified_name": "joinNonEmpty",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533673,
+    "end_line": 533677,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "first",
+      "second",
+      "separator"
+    ],
+    "body_sha256": "5fb61a90e6e9f1dbafe9d409a7ebb56de0dcdd073349c85ef38aeae5a847b512",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533678:19582212",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "attachNote",
+    "qualified_name": "attachNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533678,
+    "end_line": 533687,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "note",
+      "isNoteAboveBody"
+    ],
+    "body_sha256": "e9b581bb1d513007eb1f3c939696b05851013634478c4c81a7c412cbad84f639",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533688:19582415",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "createPromptCollectorGlue",
+    "qualified_name": "createPromptCollectorGlue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533688,
+    "end_line": 534034,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "358df2836ed713c7a374a9d1aa8335622570d1aec1ebb7f3342e79cf585a19b0",
+    "calls": [
+      "createImageGenerationConcurrencyLimiter",
+      "createSandAgentToolsUploader"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533689:19582460",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getLatestAgentProfileUpdate",
+    "qualified_name": "createPromptCollectorGlue/getLatestAgentProfileUpdate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533689,
+    "end_line": 533705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "366abb9a1dcd117d5ef56b875e6cd2838ecdab2951a227b2a27b180a700b4e66",
+    "calls": [
+      "parseLatestAgentProfileUpdate"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533706:19583152",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getAutomationStatusReminderForTurn",
+    "qualified_name": "createPromptCollectorGlue/getAutomationStatusReminderForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533706,
+    "end_line": 533726,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "compactionEpoch",
+      "firingAutomationId"
+    ],
+    "body_sha256": "7edfac23c30ac444dab042f781cb12fe02884c8f932eb0d597474fbc856bb92e",
+    "calls": [
+      ".slice",
+      "Object.keys",
+      "host.requestContext.resolve",
+      "lastSeenAutomationStatusReminder",
+      "renderAutomationClearedStatusReminder",
+      "renderAutomationRuntimeStatusReminder",
+      "store.getLocation",
+      "store.list",
+      "store.listDefinitions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533727:19584252",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "lastSeenAutomationStatusReminder",
+    "qualified_name": "createPromptCollectorGlue/lastSeenAutomationStatusReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533727,
+    "end_line": 533735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "compactionEpoch"
+    ],
+    "body_sha256": "ef63bcab0e82c14e4b21506afbc8de4153492281936e30d02ad519e70ffe96f1",
+    "calls": [
+      "host.promptSectionSnapshots.getPromptSectionSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533736:19584852",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "persistAutomationStatusReminder",
+    "qualified_name": "createPromptCollectorGlue/persistAutomationStatusReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533736,
+    "end_line": 533747,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reminder",
+      "compactionEpoch"
+    ],
+    "body_sha256": "18a76eb4e2cd9e6d73203827cf3a13b206d4ed64d20af5b0624b59f5857abb7f",
+    "calls": [
+      "snapshots.getPromptSectionSnapshot",
+      "snapshots.setPromptSectionSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533748:19585373",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getMcpCustomInstructionsSection",
+    "qualified_name": "createPromptCollectorGlue/getMcpCustomInstructionsSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533748,
+    "end_line": 533756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7e6cb537d54f801c892d5fb10daf24d9972bf4846d5352f3cdb75c414cf7522d",
+    "calls": [
+      "buildMcpCustomInstructionsSystemPromptSection",
+      "host.mcpConnectedServerNamesForTurn",
+      "host.mcpCustomInstructionsForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533757:19585698",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "resolveMcpCustomInstructions",
+    "qualified_name": "createPromptCollectorGlue/resolveMcpCustomInstructions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533757,
+    "end_line": 533766,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ff2dc62a2576aa3ece7cbd0e33d6f61d2cea367e70dec35e26db34d63b912bd3",
+    "calls": [
+      "host.mcp.getCustomInstructions",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:533767:19586026",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "appendProfileUpdateToHistory",
+    "qualified_name": "createPromptCollectorGlue/appendProfileUpdateToHistory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533767,
+    "end_line": 533788,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "snapshot",
+      "onAppended"
+    ],
+    "body_sha256": "f1af7207c5f5912007b27a8a1e8306539a58ab4c782675c0a0cd9e8e629efb32",
+    "calls": [
+      "agentProfileIdentitiesEqual",
+      "getLatestAgentProfileUpdate",
+      "host.agentProfileProvider",
+      "host.gates.agentDescription",
+      "host.gates.renamedPromptMarkers",
+      "messages.some",
+      "onAppended",
+      "promptedAgentProfileIdentity",
+      "renderAgentProfileUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533789:19586859",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getRemoteBoxSection",
+    "qualified_name": "createPromptCollectorGlue/getRemoteBoxSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533789,
+    "end_line": 533791,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "canUseUserComputer"
+    ],
+    "body_sha256": "64a22d8b72a1192249df37b53b04b97ce92ffcc98e57dca473f5a9f7b71017e8",
+    "calls": [
+      "renderRemoteBoxSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533792:19586977",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getComputerSection",
+    "qualified_name": "createPromptCollectorGlue/getComputerSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533792,
+    "end_line": 533794,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "builtinSkillPointers",
+      "skillAccess"
+    ],
+    "body_sha256": "2a721acebc4bef0535b43a7c53206431b3b9f3862a0d08061ebd18c8a7a0d7ad",
+    "calls": [
+      "renderComputerSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533795:19587123",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "createFileTransferController",
+    "qualified_name": "createPromptCollectorGlue/createFileTransferController",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533795,
+    "end_line": 533804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "faf488377275aad2fda81e35ef4cc42df43893b2e3256460ed8fecf9ee9780ea",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533798:19587226",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getBoxId",
+    "qualified_name": "createPromptCollectorGlue/createFileTransferController/getBoxId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533798,
+    "end_line": 533798,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b8eb63b39fbf5ab3224326a4a4cc42312a6c1f3dafc1b5a49148a1f6a666d091",
+    "calls": [
+      "host.resolveBoxId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533799:19587279",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "getComputerAgentId",
+    "qualified_name": "createPromptCollectorGlue/createFileTransferController/getComputerAgentId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533799,
+    "end_line": 533799,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0bf2e2c259a056dfd4f16fa526e18a6b0cf5e9e6664a5e48ccd017580eea8eb1",
+    "calls": [
+      "host.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533801:19587374",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "isBoxPreparing",
+    "qualified_name": "createPromptCollectorGlue/createFileTransferController/isBoxPreparing",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533801,
+    "end_line": 533801,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dd72c05cf503b0107464c50483919b608bfb3346ca7ecc471cdb1fd8e0211ef1",
+    "calls": [
+      "boxIsPreparing",
+      "host.resolveBoxId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533808:19587636",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "isRemoteBoxAvailable",
+    "qualified_name": "createPromptCollectorGlue/isRemoteBoxAvailable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533808,
+    "end_line": 533808,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "eecfb231c259ae15ece4b4e21e973444d7af4b191db64a7cc2daa9938e447127",
+    "calls": [
+      "host.getRemoteBoxAvailable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533809:19587685",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "agentId",
+    "qualified_name": "createPromptCollectorGlue/agentId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533809,
+    "end_line": 533809,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0bf2e2c259a056dfd4f16fa526e18a6b0cf5e9e6664a5e48ccd017580eea8eb1",
+    "calls": [
+      "host.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533811:19587724",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "createMcpTextSpiller",
+    "qualified_name": "createPromptCollectorGlue/createMcpTextSpiller",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533811,
+    "end_line": 533816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "95825d885b91ab1ca82079f857a2770d6fb215ff0188eca338b55c675f47532a",
+    "calls": [
+      "createSandMcpTextSpiller",
+      "isLargeOutputSpillEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533817:19587910",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "createToolResultTextWriter",
+    "qualified_name": "createPromptCollectorGlue/createToolResultTextWriter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533817,
+    "end_line": 533819,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "5275ef977a70d31586b24117d4a83e1c87409f8e7f48cbb89831fba309c034bc",
+    "calls": [
+      "createSandAgentToolsTextWriter",
+      "isLargeOutputSpillEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533820:19588060",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "readSubagentVideoBytes",
+    "qualified_name": "createPromptCollectorGlue/readSubagentVideoBytes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533820,
+    "end_line": 533834,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "videoPath"
+    ],
+    "body_sha256": "7bea023c25abb7059c346e4b4c1bcf709556f8b08a758ec401d0b5b0eea76ada",
+    "calls": [
+      "boxVideoReadFailureMessage",
+      "host.readVideoAttachmentBytes",
+      "host.resolveBoxId",
+      "new SandVideoAttachmentError",
+      "readBoxVideoAttachment"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandVideoAttachmentError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533835:19588586",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "resolveSelectedVideosForTurn",
+    "qualified_name": "createPromptCollectorGlue/resolveSelectedVideosForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533835,
+    "end_line": 533853,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "videos"
+    ],
+    "body_sha256": "e69532ca14ec2428973cf8fb4c2c152b22f062ed327d9ee7df1fc1e20251d45d",
+    "calls": [
+      "new SelectedVideo",
+      "readSubagentVideoBytes",
+      "resolved.push",
+      "video.path.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533858:19589411",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "assembleTurnAction",
+    "qualified_name": "createPromptCollectorGlue/assembleTurnAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533858,
+    "end_line": 534006,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d192603ac5ce5df5f7e2e1515c6db2b600e8cc3e82e855643680ad875d5f1c90",
+    "calls": [
+      ".filter",
+      ".join",
+      ".map",
+      ".some",
+      "allowsSystemReminder",
+      "appendUserMessageReminders",
+      "args.compactionEpoch",
+      "attachedFilePaths.map",
+      "automationWakeTrustMarker",
+      "backgroundResultNoteForPrompt",
+      "buildAttachedFilesNote",
+      "buildUnansweredQuestionsNote",
+      "buildUserMessageLeadingNotes",
+      "freshMessageIds.add",
+      "getAutomationStatusReminderForTurn",
+      "hiddenPromptMarker",
+      "host.gates.backgroundResultNote",
+      "host.gates.remindersOutsideUserQuery",
+      "host.gates.renamedPromptMarkers",
+      "host.gates.sandUiMap",
+      "host.gates.typedCardReply",
+      "host.gates.typedCardReplyChatFollowup",
+      "host.gates.unansweredCardOnWake",
+      "host.gates.widgetV0",
+      "host.resolveBoxId",
+      "isAgentStartedPrompt",
+      "joinNonEmpty",
+      "new ConversationAction",
+      "new SelectedContext",
+      "new Set",
+      "new UserMessage",
+      "new UserMessageAction",
+      "options2.messageId.trim",
+      "options2.richText.trim",
+      "peerWakeApprovalReminderFor",
+      "prependUserMessages.push",
+      "readSubagentImageAttachments",
+      "resolveSelectedVideosForTurn",
+      "sandSubagentToolName",
+      "selectedImageInputs.flatMap",
+      "selectedImageInputs.map",
+      "traceSendPhase",
+      "turnNotes.flatMap",
+      "turnNotes.reduce",
+      "userMessageReminderBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534019:19597404",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "noteAutomationStatusReminder",
+    "qualified_name": "createPromptCollectorGlue/noteAutomationStatusReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534019,
+    "end_line": 534025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reminder",
+      "compactionEpoch"
+    ],
+    "body_sha256": "eac43972b8b4be4012ae1bc77831f086eddd9b95014aa3a77e6abaaa20efbe8f",
+    "calls": [
+      "persistAutomationStatusReminder"
+    ],
+    "writes": [
+      "lastAutomationStatusCompactionEpoch",
+      "lastAutomationStatusReminder"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534026:19597703",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "resetAutomationStatusReminder",
+    "qualified_name": "createPromptCollectorGlue/resetAutomationStatusReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534026,
+    "end_line": 534029,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d5207069e2f5bdf3d5212cd9a635f03599ab5709e1d42a9da288f35d63f6a9f7",
+    "calls": [],
+    "writes": [
+      "lastAutomationStatusCompactionEpoch",
+      "lastAutomationStatusReminder"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534030:19597843",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "imageGenerationLimiter",
+    "qualified_name": "createPromptCollectorGlue/imageGenerationLimiter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534030,
+    "end_line": 534030,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c714c07aa280193731fe9d7c18b592aba1ff7d6b11dec94a26009edd82f8057e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534031:19597912",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-collector-glue.ts",
+    "name": "videoGenerationLimiter",
+    "qualified_name": "createPromptCollectorGlue/videoGenerationLimiter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534031,
+    "end_line": 534031,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d524f5e35e04ae6b5164c06e9d6601cf7acfa8b5f5b1cd9ebfdb28da15856c81",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

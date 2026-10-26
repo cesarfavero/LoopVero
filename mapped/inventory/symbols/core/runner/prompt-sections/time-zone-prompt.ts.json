@@ -1,0 +1,102 @@
+[
+  {
+    "id": "evaluation:538907:19878170",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/time-zone-prompt.ts",
+    "name": "formatUtcOffset",
+    "qualified_name": "formatUtcOffset",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538907,
+    "end_line": 538920,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "now",
+      "timeZone"
+    ],
+    "body_sha256": "fcf26c629883588578270f86e65649b9c6da26d64687a7ffbfe5bd6d0e3d8a21",
+    "calls": [
+      ".formatToParts",
+      "new Intl.DateTimeFormat",
+      "parts.find",
+      "raw.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:538921:19878595",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/time-zone-prompt.ts",
+    "name": "formatSandTimeZoneWithOffset",
+    "qualified_name": "formatSandTimeZoneWithOffset",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538921,
+    "end_line": 538924,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "timeZone",
+      "now"
+    ],
+    "body_sha256": "fd4e6678929bf70928aa13dbb2803098652c44fd608d989850c32b380b2310b6",
+    "calls": [
+      "formatUtcOffset"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538925:19878778",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/time-zone-prompt.ts",
+    "name": "renderTimeZoneSystemPrompt",
+    "qualified_name": "renderTimeZoneSystemPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538925,
+    "end_line": 538932,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "timeZone",
+      "now = /* @__PURE__ */ new Date()"
+    ],
+    "body_sha256": "99ab81632bb0344ba1ba7fac7fe9248bdaa35a1078162a00b16bfc12377a467f",
+    "calls": [
+      ".join",
+      "formatSandTimeZoneWithOffset"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

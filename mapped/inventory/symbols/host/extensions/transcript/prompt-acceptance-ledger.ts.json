@@ -1,0 +1,517 @@
+[
+  {
+    "id": "host:733183:27846482",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "withDegradedWindow",
+    "qualified_name": "withDegradedWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733183,
+    "end_line": 733200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "gaps",
+      "window2"
+    ],
+    "body_sha256": "af03678294621f5b7f409bdc51761bdca6225ba861d7fb0315eefbbff7244e1d",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "base.degradedWindows.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733201:27847040",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "withCorruptReset",
+    "qualified_name": "withCorruptReset",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733201,
+    "end_line": 733207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "gaps",
+      "atMs"
+    ],
+    "body_sha256": "4237f9d03dc34d975548fdf44f3cca1397a784493848e76ed95fdfa3c5cc769d",
+    "calls": [
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733209:27847257",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "parseSendAcceptanceFile",
+    "qualified_name": "parseSendAcceptanceFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733209,
+    "end_line": 733240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "486073c82c0c70c8fb8cfca2507eb0d2a65c347b6d2239d75a03c978eb0c31f4",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "coerceGaps",
+      "coerceRecord",
+      "records2.push"
+    ],
+    "writes": [
+      "damaged",
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733241:27848178",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "coerceGaps",
+    "qualified_name": "coerceGaps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733241,
+    "end_line": 733262,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c32045dc42480005622e7ce6bc586b9f8a122cff54427558ea685eea19e96cd8",
+    "calls": [
+      "Array.isArray",
+      "isFiniteNumber4",
+      "isUnknownRecord2",
+      "windows.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733263:27849027",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "isFiniteNumber4",
+    "qualified_name": "isFiniteNumber4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733263,
+    "end_line": 733265,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "765ed51ac6b1fe2a77bf918e435a30d9bb45e1cdc3cb2e0f33ccae7364faeea9",
+    "calls": [
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733266:27849125",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "coerceRecord",
+    "qualified_name": "coerceRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733266,
+    "end_line": 733294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "ca2c2cabea601bf0cce3c45212791e3d036cc185751e1629bb2d776213951e7f",
+    "calls": [
+      "Number.isFinite",
+      "STATUSES.find",
+      "isUnknownRecord2",
+      "parseAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733295:27850169",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "recordKey2",
+    "qualified_name": "recordKey2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733295,
+    "end_line": 733297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accountSlot",
+      "clientNonce"
+    ],
+    "body_sha256": "f905a71537cdbbfe9d7f5dabd9bfaec615563ee91ef5d67666af803e9aecc0c7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733299:27850312",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.constructor",
+    "qualified_name": "PromptAcceptanceLedger.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733299,
+    "end_line": 733302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rootDir",
+      "nowMs2 = () => Date.now()"
+    ],
+    "body_sha256": "ed14a23e1f4737486a3534d847c2bafe97ed14630cb90c558f656e2e15e3efa4",
+    "calls": [],
+    "writes": [
+      "this.filePath",
+      "this.nowMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733308:27850595",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.lookup",
+    "qualified_name": "PromptAcceptanceLedger.lookup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733308,
+    "end_line": 733316,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "30b8e313a59b55f89b06aac38c36b89d53965ae97b75d693793dbd8e9cf5543f",
+    "calls": [
+      "loaded.records.get",
+      "recordKey2",
+      "this.load"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733317:27850965",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.markerPath",
+    "qualified_name": "PromptAcceptanceLedger.markerPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733317,
+    "end_line": 733319,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8cd052829f872ee3928670a0ee36626ede4ec024fcc70502ac58fb5a94712bf6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733320:27851051",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.load",
+    "qualified_name": "PromptAcceptanceLedger.load",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733320,
+    "end_line": 733359,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c3f88af678f0f59c41f05ebf70465b93724ba0752f1081f9eb6f96ffc04c5d1e",
+    "calls": [
+      "new Map",
+      "parseSendAcceptanceFile",
+      "parsed2.records.map",
+      "readSandDataFileIfPresentSync",
+      "reportFallbackUnlessAbsent",
+      "this.nowMs",
+      "this.persist",
+      "this.readDegradedMarker",
+      "withCorruptReset",
+      "withDegradedWindow",
+      "writeSandDataFileSync"
+    ],
+    "writes": [
+      "gaps",
+      "raw",
+      "repairNeeded",
+      "this.loaded",
+      "this.markerMayExist"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:733360:27852326",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.readDegradedMarker",
+    "qualified_name": "PromptAcceptanceLedger.readDegradedMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733360,
+    "end_line": 733377,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c6c776ccd074babf60a5842cb3c6046ececf0dddca572dc97be6fb0f7c8f44a6",
+    "calls": [
+      "JSON.parse",
+      "isFiniteNumber4",
+      "readSandDataFileIfPresentSync",
+      "reportFallbackUnlessAbsent",
+      "this.markerPath"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:733378:27852847",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.persist",
+    "qualified_name": "PromptAcceptanceLedger.persist",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733378,
+    "end_line": 733400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "417e644797ca89506c2f457daf7a039de7c8537ff62514b0b8bc5a24b3785f04",
+    "calls": [
+      "JSON.stringify",
+      "loaded.records.values",
+      "this.enterDegraded",
+      "this.nowMs",
+      "this.removeDegradedMarker",
+      "withDegradedWindow",
+      "writeSandDataFileSync"
+    ],
+    "writes": [
+      "loaded.gaps",
+      "this.degradedSinceMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733401:27853547",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.enterDegraded",
+    "qualified_name": "PromptAcceptanceLedger.enterDegraded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733401,
+    "end_line": 733418,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "nowMs2",
+      "error64"
+    ],
+    "body_sha256": "e9fd48f424b6fd9f490bb25d061332677ff925d4362f5e5a2f864f8e3f0d7868",
+    "calls": [
+      "JSON.stringify",
+      "errorLogTag",
+      "reportHostDiagnostic",
+      "this.markerPath",
+      "writeSandDataFileSync"
+    ],
+    "writes": [
+      "this.degradedSinceMs",
+      "this.markerMayExist"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:733419:27854047",
+    "artifact": "host",
+    "module": "host/extensions/transcript/prompt-acceptance-ledger.ts",
+    "name": "PromptAcceptanceLedger.removeDegradedMarker",
+    "qualified_name": "PromptAcceptanceLedger.removeDegradedMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733419,
+    "end_line": 733428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "318f4a3ef42bcea04a304b9b87975b54be24605d83a9315d19bd1dbc1bd71f7b",
+    "calls": [
+      "removeSandDataFileSync",
+      "this.markerPath"
+    ],
+    "writes": [
+      "this.markerMayExist"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

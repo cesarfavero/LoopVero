@@ -1,0 +1,147 @@
+[
+  {
+    "id": "evaluation:582544:21896490",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-refusals.ts",
+    "name": "readonlySubagentToolRefusal",
+    "qualified_name": "readonlySubagentToolRefusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582544,
+    "end_line": 582551,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "listedNames"
+    ],
+    "body_sha256": "eb61cc57c6b4debeaffd180c064c24d075883384c7ed03fe489e12c973ee408d",
+    "calls": [
+      ".filter",
+      "fallbacks.join",
+      "listedNames.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582552:21897010",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-refusals.ts",
+    "name": "withReadonlySubagentRefusals",
+    "qualified_name": "withReadonlySubagentRefusals",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582552,
+    "end_line": 582576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listed",
+      "withheld",
+      "dropped"
+    ],
+    "body_sha256": "c3cc5a3b61256fd7f5c68b08e7a6d98a54341559b4e0b901110dd579485d9c77",
+    "calls": [
+      "dropped.map",
+      "listed.find",
+      "listed.map",
+      "new Map",
+      "new Set",
+      "withheld.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582561:21897606",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-refusals.ts",
+    "name": "resolveExecutionAliasTelemetry",
+    "qualified_name": "withReadonlySubagentRefusals/resolveExecutionAliasTelemetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582561,
+    "end_line": 582565,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "alias2"
+    ],
+    "body_sha256": "599bd1ea1ccbc814046e52ba5f4db69b87db612b6a5d2d3bf6575ed30791eb85",
+    "calls": [
+      "carrier.resolveExecutionAliasTelemetry",
+      "droppedIdentifiers.get",
+      "refused4.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582566:21897835",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-refusals.ts",
+    "name": "execute",
+    "qualified_name": "withReadonlySubagentRefusals/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582566,
+    "end_line": 582573,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "95ed13f4f810e4db56425471693a29aedcfd889adc61ba50ea79c1631fc0f2c0",
+    "calls": [
+      "carrier.execute",
+      "new ToolCallUnexpectedEnvironmentError",
+      "readonlySubagentRefusals.increment",
+      "readonlySubagentToolRefusal",
+      "refused4.has"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ToolCallUnexpectedEnvironmentError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

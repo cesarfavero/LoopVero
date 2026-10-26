@@ -1,0 +1,520 @@
+[
+  {
+    "id": "host:478953:17529706",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.constructor",
+    "qualified_name": "BoxStorePackPipeline.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478953,
+    "end_line": 478962,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a0db801efb4dc2469e701e51e94407f773f86dcb0a0340b95584a1f463247fa3",
+    "calls": [],
+    "writes": [
+      "this.categories",
+      "this.discardTemp",
+      "this.getFlushWaiters",
+      "this.log",
+      "this.manifestStore",
+      "this.now",
+      "this.objectStore",
+      "this.sha256File"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478963:17530051",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.resolveLocalPathForRelPath",
+    "qualified_name": "BoxStorePackPipeline.resolveLocalPathForRelPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478963,
+    "end_line": 478974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "relPath"
+    ],
+    "body_sha256": "e4930a1ac82acbfeb87e5de30ddd6117eb6ff767e99e0ae2b6326d2310a404bb",
+    "calls": [
+      ".split",
+      "relPath.slice",
+      "relPath.startsWith"
+    ],
+    "writes": [
+      "best"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478975:17530527",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.openSweptPackTmpDir",
+    "qualified_name": "BoxStorePackPipeline.openSweptPackTmpDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478975,
+    "end_line": 479009,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ccab8528c4a110f21ff35a49dc5d7152d40bdd9e1412e3a8607bf706abd4f641",
+    "calls": [
+      "base.handle.close",
+      "descriptorPathOf",
+      "directory.handle.close",
+      "entryOf",
+      "findSystemErrno",
+      "info2.isDirectory",
+      "openDirectoryNoFollow2",
+      "openRootDirectory",
+      "this.claimPackTmpDir",
+      "this.now"
+    ],
+    "writes": [
+      "directory"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 9,
+      "returns": 1,
+      "throws": 2,
+      "catches": 4
+    }
+  },
+  {
+    "id": "host:479010:17531684",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.claimPackTmpDir",
+    "qualified_name": "BoxStorePackPipeline.claimPackTmpDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479010,
+    "end_line": 479024,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "a78719b4a52334876e5748306343b58cee784b84fc26099c41515fc1d5da0031",
+    "calls": [
+      "directory.handle.chmod",
+      "directory.handle.stat",
+      "new SandBoxStoreSyncError",
+      "process.geteuid"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479025:17532213",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.syncPacks",
+    "qualified_name": "BoxStorePackPipeline.syncPacks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479025,
+    "end_line": 479199,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId"
+    ],
+    "body_sha256": "127078b7692f731cc1f3140041ebda572c5ce3f64e3447139f0c2b279f00cd6e",
+    "calls": [
+      ".filter",
+      ".toString",
+      "Buffer.from",
+      "JSON.stringify",
+      "Math.max",
+      "buildPackFile",
+      "built.members.reduce",
+      "builtPacks.flatMap",
+      "builtPacks.push",
+      "eligible.has",
+      "eligible.set",
+      "entryOf",
+      "errorMessage",
+      "info2.isFile",
+      "isBoxStoreManifestFileEntry",
+      "live.set",
+      "localBySha.set",
+      "merged.some",
+      "new Map",
+      "new SandBoxStoreSyncError",
+      "new Set",
+      "new Uint8Array",
+      "nextIndex2.packs.map",
+      "parsePackIndex",
+      "parsePackRetired",
+      "plan.retiredPackIds.filter",
+      "planPackMaintenance",
+      "planned.flatMap",
+      "serializePackRetired",
+      "store.delete",
+      "store.get",
+      "store.put",
+      "store.putFromFile",
+      "this.discardTemp",
+      "this.log",
+      "this.manifestStore.loadManifest",
+      "this.objectStore",
+      "this.openSweptPackTmpDir",
+      "this.resolveLocalPathForRelPath",
+      "this.sha256File",
+      "tmpDir.handle.close",
+      "yieldToFlush"
+    ],
+    "writes": [
+      "existing",
+      "summary.bytesUploaded",
+      "summary.failures",
+      "summary.filesScanned",
+      "summary.filesUploaded",
+      "summary.removed",
+      "summary.skippedUnchanged"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 20,
+      "loops": 3,
+      "awaits": 13,
+      "returns": 7,
+      "throws": 1,
+      "catches": 4
+    }
+  },
+  {
+    "id": "host:479078:17534266",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "yieldToFlush",
+    "qualified_name": "BoxStorePackPipeline.syncPacks/yieldToFlush",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479078,
+    "end_line": 479078,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2b69feac57811701d5e26ccf5d8241662e005582491449218c7a3191ad8fa2c1",
+    "calls": [
+      "this.getFlushWaiters"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479200:17538849",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "BoxStorePackPipeline.restoreBulkSmallFromPacks",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479200,
+    "end_line": 479326,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2b3d23b2033280b99a8331f5e62624305675d09dacc2334fb592bf01583801eb",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "errorMessage",
+      "forEachBounded",
+      "new ClaimSet",
+      "new Set",
+      "parsePackIndex",
+      "restoredByPack.snapshot",
+      "store.get",
+      "this.log"
+    ],
+    "writes": [
+      "packIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:479214:17539199",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "ensureDir",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/ensureDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479214,
+    "end_line": 479218,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dir"
+    ],
+    "body_sha256": "3ad7947d138a33a6ac79970cbb4f09cbbbc41dda08b8ce9be0477f8fddfc1c82",
+    "calls": [
+      "ensuredDirs.add",
+      "ensuredDirs.has",
+      "mkdirOwned"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479219:17539348",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "restoreFromPack",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/restoreFromPack",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479219,
+    "end_line": 479256,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pack"
+    ],
+    "body_sha256": "5433511ff0e83581f62852c45b2b2a8866d8f28811c343cc8392e42dc5f835ae",
+    "calls": [
+      ".toString",
+      "bulkSmall.get",
+      "ensureDir",
+      "entryOf",
+      "localFileMatches",
+      "restorePackThrough",
+      "restoredByPack.has",
+      "this.openSweptPackTmpDir",
+      "tmpDir.handle.close",
+      "usable.push"
+    ],
+    "writes": [
+      "pending",
+      "usableClen",
+      "usableSize"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 5,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479257:17540673",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "restorePackThrough",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/restorePackThrough",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479257,
+    "end_line": 479304,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pack",
+      "tmpPath"
+    ],
+    "body_sha256": "064541df6b126fbbb5d8feea003c474d29ca61fa3886c7ed877ab8f6c16be232",
+    "calls": [
+      "extractPackMembers",
+      "store.getToFile",
+      "this.discardTemp",
+      "this.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479267:17541072",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "admitBytes",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/restorePackThrough/admitBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479267,
+    "end_line": 479270,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "memberBytes"
+    ],
+    "body_sha256": "ce5c78876409f276165126ddcf37a1ce86d071f9659ce90173e373d9dce8dd8d",
+    "calls": [
+      "byteBudget.acquire"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479271:17541236",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "wants",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/restorePackThrough/wants",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479271,
+    "end_line": 479274,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "890fc03a364ae0bdcd2371242f6af68bdf8e37bf2e1a6159ba2b5fc8a2e5685c",
+    "calls": [
+      "bulkSmall.get",
+      "group.relPaths.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479275:17541454",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-pack-pipeline.ts",
+    "name": "onBlob",
+    "qualified_name": "BoxStorePackPipeline.restoreBulkSmallFromPacks/restorePackThrough/onBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479275,
+    "end_line": 479294,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member",
+      "blobBytes"
+    ],
+    "body_sha256": "52dcb4fa1b23aa43a5d09e8011ce989e5e2d2222d23df23963cdcb9767b84324",
+    "calls": [
+      "applyExistingFileMetadata",
+      "bulkSmall.get",
+      "ensureDir",
+      "localFileMatches",
+      "recordRestoredPath",
+      "restoredByPack.release",
+      "restoredByPack.tryClaim",
+      "writeVerifiedBytes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

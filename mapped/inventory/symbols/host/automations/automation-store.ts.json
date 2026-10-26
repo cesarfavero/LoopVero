@@ -1,0 +1,2060 @@
+[
+  {
+    "id": "host:720437:27337773",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "inspectAgentAutomationDefinitions",
+    "qualified_name": "inspectAgentAutomationDefinitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720437,
+    "end_line": 720483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "e91dc219cae77adfd9f13e07a92f44949266849ffae18eb4dfc60ae76eeaa724",
+    "calls": [
+      ".isDirectory",
+      "Date.now",
+      "Math.floor",
+      "entry.isDirectory",
+      "getAgentAutomationsDir",
+      "isSafeFolderId",
+      "parseStoredConfig",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "candidateCount",
+      "entries",
+      "fallbackCreatedAt",
+      "raw",
+      "validDefinitionCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 4
+    }
+  },
+  {
+    "id": "host:720484:27339352",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "agentHasAutomations",
+    "qualified_name": "agentHasAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720484,
+    "end_line": 720486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "89e16785a58e1b11921b5aac508ce2c16da6d43d111d8bf2bb9d94bfbe2b2940",
+    "calls": [
+      "inspectAgentAutomationDefinitions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720488:27339521",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.constructor",
+    "qualified_name": "FileAutomationStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720488,
+    "end_line": 720499,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "automationsDir",
+      "resolveUserTimeZone = () => void 0",
+      "clock = realClock"
+    ],
+    "body_sha256": "1fececb7c69368ee7df4df9512fa664b4c0f0e9871dbfabc552bbfb1f7a8339a",
+    "calls": [
+      "createDebouncePolicy",
+      "new WatchedDirectory"
+    ],
+    "writes": [
+      "this.automationsDir",
+      "this.dir",
+      "this.resolveUserTimeZone"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720503:27339966",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.getLocation",
+    "qualified_name": "FileAutomationStore.getLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720503,
+    "end_line": 720505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "fc9d6c44839317ec665dcddb5a2577b612f4e38b7fc695ac4826b9d007a17f7e",
+    "calls": [
+      "this.dir.getLocation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720506:27340023",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setOnChange",
+    "qualified_name": "FileAutomationStore.setOnChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720506,
+    "end_line": 720508,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "d17099db849835aefa3fe0717511d60b95dab562c6bc9e4a33c94e82b4171953",
+    "calls": [
+      "this.dir.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720509:27340088",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.configPath",
+    "qualified_name": "FileAutomationStore.configPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720509,
+    "end_line": 720511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "3f3c6990bd42c1eca6b7db73c0e10cd95ca3bb6b8f7339555fe2afacde48d32f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720512:27340193",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.runsPath",
+    "qualified_name": "FileAutomationStore.runsPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720512,
+    "end_line": 720514,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "1ddc62f21b2a58bad8fe344eacd3d0f04e92e110f5fc998493eed708ec890ed9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720515:27340296",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.toRecord",
+    "qualified_name": "FileAutomationStore.toRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720515,
+    "end_line": 720527,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    config: config2,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "97862d8cd9ebf298ccb5bba001e74847f9da7e8947efd413ac604203c9df80ac",
+    "calls": [
+      "automationRecordFromConfig",
+      "earliestAutomationNextRunAt",
+      "this.configPath",
+      "this.readRuns",
+      "this.resolveUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720528:27340646",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.readRuns",
+    "qualified_name": "FileAutomationStore.readRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720528,
+    "end_line": 720537,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "7ff884facc5c7fa14d4e90208b7f8ef780aa0c263b37b786aaa5aa156e969787",
+    "calls": [
+      "parseStoredAutomationRuns",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent",
+      "this.runsPath"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720538:27340897",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.writeRuns",
+    "qualified_name": "FileAutomationStore.writeRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720538,
+    "end_line": 720540,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "runs"
+    ],
+    "body_sha256": "9c796d78deafbf837f92777c506279d62ac589729dd65e56af08c30e243835c2",
+    "calls": [
+      "serializeRuns",
+      "this.dir.writeFileAtomic",
+      "this.runsPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720541:27340996",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.readConfig",
+    "qualified_name": "FileAutomationStore.readConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720541,
+    "end_line": 720563,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "f3d1481fec08183f048f404941801e8c5e7b4c45ba2aa1dea2849a84a86d00b5",
+    "calls": [
+      "Date.now",
+      "Math.floor",
+      "migrateAutomationConfigToMinimumInterval",
+      "parseStoredConfig",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent",
+      "this.configPath",
+      "this.writeConfig"
+    ],
+    "writes": [
+      "fallbackCreatedAt",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:720564:27341757",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.writeConfig",
+    "qualified_name": "FileAutomationStore.writeConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720564,
+    "end_line": 720566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "config2"
+    ],
+    "body_sha256": "4264b1c110179c57be5509b887881c56b1ded59fbb342d65a8fc8528c7be41ae",
+    "calls": [
+      "serializeConfig",
+      "this.configPath",
+      "this.dir.writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720567:27341863",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.listIds",
+    "qualified_name": "FileAutomationStore.listIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720567,
+    "end_line": 720569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "45d2a0403fcdd9aee2d975c68b29f08fd91f05cbdd1635d3330d8db9cd0ed4d4",
+    "calls": [
+      "this.dir.listSubdirectoryNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720570:27341923",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.list",
+    "qualified_name": "FileAutomationStore.list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720570,
+    "end_line": 720584,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "91137b247295c1a8a04c096c046b4e9a7a4cb902d574679113868903cbc70fa4",
+    "calls": [
+      "automations.push",
+      "automations.sort",
+      "this.listIds",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720585:27342453",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.listDefinitions",
+    "qualified_name": "FileAutomationStore.listDefinitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720585,
+    "end_line": 720594,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "35d6299d45fb5992b51bb8a37d334ccaf247ff61632be9c1031bcdd714236ee8",
+    "calls": [
+      "automations.push",
+      "automations.sort",
+      "this.listIds",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720595:27342778",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.get",
+    "qualified_name": "FileAutomationStore.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720595,
+    "end_line": 720599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "1867fc401ef9f125f8154ddc5315048ec48d49679bb5e10d8edbfca35a8e55dd",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720600:27342978",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.count",
+    "qualified_name": "FileAutomationStore.count",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720600,
+    "end_line": 720602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f979a1e3765f745d356524d042fc40ac0b8291078d2ffd241e7d75b78f1f0d8d",
+    "calls": [
+      ".filter",
+      "this.listIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720603:27343075",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.uniqueId",
+    "qualified_name": "FileAutomationStore.uniqueId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720603,
+    "end_line": 720605,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "bdc5170e72095f92150c810097aca6caa2018048b0ad8a01cdc13e919b9ce609",
+    "calls": [
+      "new Set",
+      "this.listIds",
+      "uniqueAutomationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720606:27343162",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.upsert",
+    "qualified_name": "FileAutomationStore.upsert",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720606,
+    "end_line": 720617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "spec",
+      "provenance",
+      "createdAt = Date.now()"
+    ],
+    "body_sha256": "113e1e492c193b8c17c9415f10777b540c93bbc75afcc9ae6dbce6194310aa32",
+    "calls": [
+      "automationConfigFromSpec",
+      "this.count",
+      "this.toRecord",
+      "this.uniqueId",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720618:27343626",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.update",
+    "qualified_name": "FileAutomationStore.update",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720618,
+    "end_line": 720631,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "spec",
+      "provenance"
+    ],
+    "body_sha256": "dec2054879f741393785eb7709fb952201203c2486d58a541041f4a01b3ad992",
+    "calls": [
+      "automationConfigWithSpec",
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720632:27344065",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.markNoticeRaised",
+    "qualified_name": "FileAutomationStore.markNoticeRaised",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720632,
+    "end_line": 720646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "notice"
+    ],
+    "body_sha256": "8840b37fcb8215f11beea73506b76e5bb39850a2314fc9c49bb4a816e059049a",
+    "calls": [
+      "config2.pendingNotices.filter",
+      "config2.raisedNotices.includes",
+      "isAutomationNoticeId",
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720647:27344667",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setEnabled",
+    "qualified_name": "FileAutomationStore.setEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720647,
+    "end_line": 720657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "isEnabled"
+    ],
+    "body_sha256": "21a070703977903f7668cf04b85d5d8c3d6618442f3514d8e809e823a1d93c00",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720658:27345093",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRun",
+    "qualified_name": "FileAutomationStore.recordRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720658,
+    "end_line": 720660,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "at3 = Date.now()"
+    ],
+    "body_sha256": "40bad036a7c63627692711d92bb010a98083d62e095ac4df6138f4446903f8ed",
+    "calls": [
+      "this.recordRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720661:27345214",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRunDefinition",
+    "qualified_name": "FileAutomationStore.recordRunDefinition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720661,
+    "end_line": 720663,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "at3 = Date.now()"
+    ],
+    "body_sha256": "6ef12505f13b5d028d29220749772161fee5980a77396177d6433ec32a99b5e3",
+    "calls": [
+      "this.recordRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720664:27345330",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRunWith",
+    "qualified_name": "FileAutomationStore.recordRunWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720664,
+    "end_line": 720675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    at: at3,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "a66203c69e0b674b791d51bd50a594dc20cf63255299c870a6bdd8559bff6b07",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720676:27345662",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.beginRun",
+    "qualified_name": "FileAutomationStore.beginRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720676,
+    "end_line": 720702,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    trigger: trigger2,\n    at: at3 = Date.now(),\n    event,\n    runId = (0, import_node_crypto63.randomUUID)(),\n    coalescedRunIds\n  }"
+    ],
+    "body_sha256": "f7186444968e9dd09a24dda63d8431475cd423aa90cb17d3dbd6de20baa7096f",
+    "calls": [
+      ".slice",
+      "clampCoalescedRunIds",
+      "clampRunDetail",
+      "isSafeFolderId",
+      "runs.find",
+      "this.readConfig",
+      "this.readRuns",
+      "this.writeRuns"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720703:27346542",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setRunRequestIdDefinition",
+    "qualified_name": "FileAutomationStore.setRunRequestIdDefinition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720703,
+    "end_line": 720718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    requestId: requestId2\n  }"
+    ],
+    "body_sha256": "0474f4f7f61168cd7a5b45e2ce9925298a291a4710a9ceb0341c4f1d4f262191",
+    "calls": [
+      "isSafeFolderId",
+      "requestId2.trim",
+      "runs.findIndex",
+      "this.readConfig",
+      "this.readRuns",
+      "this.writeRuns"
+    ],
+    "writes": [
+      "nextRuns[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720719:27347135",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRun",
+    "qualified_name": "FileAutomationStore.finishRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720719,
+    "end_line": 720728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "runId",
+      "status",
+      "at3 = Date.now()",
+      "detail"
+    ],
+    "body_sha256": "49070daa21ccaec94aa94fa7cc16a3654ced8e9b0c3db2a408e282f392cf9e50",
+    "calls": [
+      "this.finishRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720729:27347374",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRunDefinition",
+    "qualified_name": "FileAutomationStore.finishRunDefinition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720729,
+    "end_line": 720748,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    status,\n    at: at3 = Date.now(),\n    detail,\n    errorKind,\n    requestId: requestId2\n  }"
+    ],
+    "body_sha256": "771604583ea6fb78325a6f23e34b9b3a3e13defaded388cc0aad534512008965",
+    "calls": [
+      "this.finishRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720749:27347797",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRunWith",
+    "qualified_name": "FileAutomationStore.finishRunWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720749,
+    "end_line": 720782,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    status,\n    at: at3,\n    detail,\n    errorKind,\n    requestId: requestId2,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "dec961844c3b0b147a37b031b9af07744fe6ea34cedd7f990b477efc6441c36d",
+    "calls": [
+      "clampRunDetail",
+      "isSafeFolderId",
+      "requestId2.trim",
+      "runs.findIndex",
+      "this.readConfig",
+      "this.readRuns",
+      "this.toRecord",
+      "this.writeRuns"
+    ],
+    "writes": [
+      "nextRuns[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720783:27348924",
+    "artifact": "host",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.remove",
+    "qualified_name": "FileAutomationStore.remove",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720783,
+    "end_line": 720797,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "85b50554cb199622ca05149818805035077d8d7a8842a0a8d2b7fa7ab4876778",
+    "calls": [
+      ".isDirectory",
+      "isSafeFolderId",
+      "removeSandDataTreeSync",
+      "reportFallbackUnlessAbsent",
+      "this.dir.scheduleNotify"
+    ],
+    "writes": [
+      "existed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627839:23812668",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.constructor",
+    "qualified_name": "FileAutomationStore.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627839,
+    "end_line": 627850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "automationsDir",
+      "resolveUserTimeZone = () => void 0",
+      "clock = realClock"
+    ],
+    "body_sha256": "1fececb7c69368ee7df4df9512fa664b4c0f0e9871dbfabc552bbfb1f7a8339a",
+    "calls": [
+      "createDebouncePolicy",
+      "new WatchedDirectory"
+    ],
+    "writes": [
+      "this.automationsDir",
+      "this.dir",
+      "this.resolveUserTimeZone"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627854:23813113",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.getLocation",
+    "qualified_name": "FileAutomationStore.getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627854,
+    "end_line": 627856,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "fc9d6c44839317ec665dcddb5a2577b612f4e38b7fc695ac4826b9d007a17f7e",
+    "calls": [
+      "this.dir.getLocation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627857:23813170",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setOnChange",
+    "qualified_name": "FileAutomationStore.setOnChange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627857,
+    "end_line": 627859,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "d17099db849835aefa3fe0717511d60b95dab562c6bc9e4a33c94e82b4171953",
+    "calls": [
+      "this.dir.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627860:23813235",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.configPath",
+    "qualified_name": "FileAutomationStore.configPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627860,
+    "end_line": 627862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "9c0e12ffc121a0e1a1dc05afc28c4be8b617e15395576ca171ff58f3ef04fbc4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627863:23813339",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.runsPath",
+    "qualified_name": "FileAutomationStore.runsPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627863,
+    "end_line": 627865,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "5c64f9b93d5c4ac969c8c600b278bba9f3c75448201348f3f1bba85bd60f11af",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627866:23813441",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.toRecord",
+    "qualified_name": "FileAutomationStore.toRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627866,
+    "end_line": 627878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    config: config2,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "97862d8cd9ebf298ccb5bba001e74847f9da7e8947efd413ac604203c9df80ac",
+    "calls": [
+      "automationRecordFromConfig",
+      "earliestAutomationNextRunAt",
+      "this.configPath",
+      "this.readRuns",
+      "this.resolveUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627879:23813791",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.readRuns",
+    "qualified_name": "FileAutomationStore.readRuns",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627879,
+    "end_line": 627888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "17855c76d339b4094c64ab6ca3dab74e811aa6937db01ca8a3de24f3ba640387",
+    "calls": [
+      "parseStoredAutomationRuns",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent",
+      "this.runsPath"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627889:23814042",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.writeRuns",
+    "qualified_name": "FileAutomationStore.writeRuns",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627889,
+    "end_line": 627891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "runs"
+    ],
+    "body_sha256": "9c796d78deafbf837f92777c506279d62ac589729dd65e56af08c30e243835c2",
+    "calls": [
+      "serializeRuns",
+      "this.dir.writeFileAtomic",
+      "this.runsPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627892:23814141",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.readConfig",
+    "qualified_name": "FileAutomationStore.readConfig",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627892,
+    "end_line": 627914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "779786dd113f5a16d554a480c2410c6a79ea90d1167104a16c5f42f8113fa8e0",
+    "calls": [
+      "Date.now",
+      "Math.floor",
+      "migrateAutomationConfigToMinimumInterval",
+      "parseStoredConfig",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent",
+      "this.configPath",
+      "this.writeConfig"
+    ],
+    "writes": [
+      "fallbackCreatedAt",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:627915:23814897",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.writeConfig",
+    "qualified_name": "FileAutomationStore.writeConfig",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627915,
+    "end_line": 627917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "config2"
+    ],
+    "body_sha256": "4264b1c110179c57be5509b887881c56b1ded59fbb342d65a8fc8528c7be41ae",
+    "calls": [
+      "serializeConfig",
+      "this.configPath",
+      "this.dir.writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627918:23815003",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.listIds",
+    "qualified_name": "FileAutomationStore.listIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627918,
+    "end_line": 627920,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "45d2a0403fcdd9aee2d975c68b29f08fd91f05cbdd1635d3330d8db9cd0ed4d4",
+    "calls": [
+      "this.dir.listSubdirectoryNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627921:23815063",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.list",
+    "qualified_name": "FileAutomationStore.list",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627921,
+    "end_line": 627935,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "91137b247295c1a8a04c096c046b4e9a7a4cb902d574679113868903cbc70fa4",
+    "calls": [
+      "automations.push",
+      "automations.sort",
+      "this.listIds",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627936:23815593",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.listDefinitions",
+    "qualified_name": "FileAutomationStore.listDefinitions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627936,
+    "end_line": 627945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "35d6299d45fb5992b51bb8a37d334ccaf247ff61632be9c1031bcdd714236ee8",
+    "calls": [
+      "automations.push",
+      "automations.sort",
+      "this.listIds",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627946:23815918",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.get",
+    "qualified_name": "FileAutomationStore.get",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627946,
+    "end_line": 627950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "1867fc401ef9f125f8154ddc5315048ec48d49679bb5e10d8edbfca35a8e55dd",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627951:23816118",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.count",
+    "qualified_name": "FileAutomationStore.count",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627951,
+    "end_line": 627953,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f979a1e3765f745d356524d042fc40ac0b8291078d2ffd241e7d75b78f1f0d8d",
+    "calls": [
+      ".filter",
+      "this.listIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627954:23816215",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.uniqueId",
+    "qualified_name": "FileAutomationStore.uniqueId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627954,
+    "end_line": 627956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "bdc5170e72095f92150c810097aca6caa2018048b0ad8a01cdc13e919b9ce609",
+    "calls": [
+      "new Set",
+      "this.listIds",
+      "uniqueAutomationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627957:23816302",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.upsert",
+    "qualified_name": "FileAutomationStore.upsert",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627957,
+    "end_line": 627968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "spec",
+      "provenance",
+      "createdAt = Date.now()"
+    ],
+    "body_sha256": "113e1e492c193b8c17c9415f10777b540c93bbc75afcc9ae6dbce6194310aa32",
+    "calls": [
+      "automationConfigFromSpec",
+      "this.count",
+      "this.toRecord",
+      "this.uniqueId",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627969:23816766",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.update",
+    "qualified_name": "FileAutomationStore.update",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627969,
+    "end_line": 627982,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "spec",
+      "provenance"
+    ],
+    "body_sha256": "dec2054879f741393785eb7709fb952201203c2486d58a541041f4a01b3ad992",
+    "calls": [
+      "automationConfigWithSpec",
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627983:23817205",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.markNoticeRaised",
+    "qualified_name": "FileAutomationStore.markNoticeRaised",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627983,
+    "end_line": 627997,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "notice"
+    ],
+    "body_sha256": "8840b37fcb8215f11beea73506b76e5bb39850a2314fc9c49bb4a816e059049a",
+    "calls": [
+      "config2.pendingNotices.filter",
+      "config2.raisedNotices.includes",
+      "isAutomationNoticeId",
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627998:23817807",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setEnabled",
+    "qualified_name": "FileAutomationStore.setEnabled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627998,
+    "end_line": 628008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "isEnabled"
+    ],
+    "body_sha256": "21a070703977903f7668cf04b85d5d8c3d6618442f3514d8e809e823a1d93c00",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628009:23818233",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRun",
+    "qualified_name": "FileAutomationStore.recordRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628009,
+    "end_line": 628011,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "at3 = Date.now()"
+    ],
+    "body_sha256": "40bad036a7c63627692711d92bb010a98083d62e095ac4df6138f4446903f8ed",
+    "calls": [
+      "this.recordRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628012:23818354",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRunDefinition",
+    "qualified_name": "FileAutomationStore.recordRunDefinition",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628012,
+    "end_line": 628014,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "at3 = Date.now()"
+    ],
+    "body_sha256": "6ef12505f13b5d028d29220749772161fee5980a77396177d6433ec32a99b5e3",
+    "calls": [
+      "this.recordRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628015:23818470",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.recordRunWith",
+    "qualified_name": "FileAutomationStore.recordRunWith",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628015,
+    "end_line": 628026,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    at: at3,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "a66203c69e0b674b791d51bd50a594dc20cf63255299c870a6bdd8559bff6b07",
+    "calls": [
+      "isSafeFolderId",
+      "this.readConfig",
+      "this.toRecord",
+      "this.writeConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628027:23818802",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.beginRun",
+    "qualified_name": "FileAutomationStore.beginRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628027,
+    "end_line": 628053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    trigger,\n    at: at3 = Date.now(),\n    event,\n    runId = (0, import_node_crypto54.randomUUID)(),\n    coalescedRunIds\n  }"
+    ],
+    "body_sha256": "2c24b6c75d435ce708008ea5f11ca7879ec48d47dc84c634a7638a3ce64ee5a7",
+    "calls": [
+      ".slice",
+      "clampCoalescedRunIds",
+      "clampRunDetail",
+      "isSafeFolderId",
+      "runs.find",
+      "this.readConfig",
+      "this.readRuns",
+      "this.writeRuns"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628054:23819662",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.setRunRequestIdDefinition",
+    "qualified_name": "FileAutomationStore.setRunRequestIdDefinition",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628054,
+    "end_line": 628069,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    requestId\n  }"
+    ],
+    "body_sha256": "a161adc491eb72818bdebb85f71ff2bc5034f8d83d1bcafce87c2c39ea27418a",
+    "calls": [
+      "isSafeFolderId",
+      "requestId.trim",
+      "runs.findIndex",
+      "this.readConfig",
+      "this.readRuns",
+      "this.writeRuns"
+    ],
+    "writes": [
+      "nextRuns[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628070:23820242",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRun",
+    "qualified_name": "FileAutomationStore.finishRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628070,
+    "end_line": 628079,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "runId",
+      "status",
+      "at3 = Date.now()",
+      "detail"
+    ],
+    "body_sha256": "49070daa21ccaec94aa94fa7cc16a3654ced8e9b0c3db2a408e282f392cf9e50",
+    "calls": [
+      "this.finishRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628080:23820481",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRunDefinition",
+    "qualified_name": "FileAutomationStore.finishRunDefinition",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628080,
+    "end_line": 628099,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    status,\n    at: at3 = Date.now(),\n    detail,\n    errorKind,\n    requestId\n  }"
+    ],
+    "body_sha256": "9d8ffc5640c0175ea315c61b6f96d89ffd45f348f8c0b8dae23cb5a463b11a5f",
+    "calls": [
+      "this.finishRunWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628100:23820879",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.finishRunWith",
+    "qualified_name": "FileAutomationStore.finishRunWith",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628100,
+    "end_line": 628133,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    runId,\n    status,\n    at: at3,\n    detail,\n    errorKind,\n    requestId,\n    deriveNextRunAt\n  }"
+    ],
+    "body_sha256": "ad4b384804497d64faeb1b53146d37b424f70cfb9668f10f24109bf1d81b290e",
+    "calls": [
+      "clampRunDetail",
+      "isSafeFolderId",
+      "requestId.trim",
+      "runs.findIndex",
+      "this.readConfig",
+      "this.readRuns",
+      "this.toRecord",
+      "this.writeRuns"
+    ],
+    "writes": [
+      "nextRuns[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628134:23821993",
+    "artifact": "evaluation",
+    "module": "host/automations/automation-store.ts",
+    "name": "FileAutomationStore.remove",
+    "qualified_name": "FileAutomationStore.remove",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628134,
+    "end_line": 628148,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "c171041f44ce1048caba3866d541bcfe2f235e2c9def2e3c29fedecde8cbd9ce",
+    "calls": [
+      ".isDirectory",
+      "isSafeFolderId",
+      "removeSandDataTreeSync",
+      "reportFallbackUnlessAbsent",
+      "this.dir.scheduleNotify"
+    ],
+    "writes": [
+      "existed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

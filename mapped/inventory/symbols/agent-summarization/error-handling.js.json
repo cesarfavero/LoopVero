@@ -1,0 +1,1074 @@
+[
+  {
+    "id": "host:620083:22986162",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "_NoSummaryResponseError.constructor",
+    "qualified_name": "_NoSummaryResponseError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620083,
+    "end_line": 620087,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6a64f93b80dcfe466d407a992eb78056c4ccc20b98753610fd6d2df0e64e92a1",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620090:22986402",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "SummaryPlaceholderRejectedError.constructor",
+    "qualified_name": "SummaryPlaceholderRejectedError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620090,
+    "end_line": 620096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "details"
+    ],
+    "body_sha256": "b35ab1909206f6cc68cb9929ed8d16008d083f4359e8e3963a977f6c3db1ccf0",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.errorKind",
+      "this.name",
+      "this.summarizerModelId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620106:22986962",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "iterateErrorChain",
+    "qualified_name": "iterateErrorChain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620106,
+    "end_line": 620118,
+    "async": false,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "d97e808bdf24a4ad568a4c81e44bd26dbe8c3ad6f2fba1912dff0bd012ef7967",
+    "calls": [
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620119:22987297",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "hasErrorName",
+    "qualified_name": "hasErrorName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620119,
+    "end_line": 620126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "targetName"
+    ],
+    "body_sha256": "10af3a14dae19d8735bf6132370d83bbe5d6b4f660810157f17f6582a01a5db2",
+    "calls": [
+      "iterateErrorChain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620127:22987513",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "errorMessageIncludes",
+    "qualified_name": "errorMessageIncludes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620127,
+    "end_line": 620135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "needle"
+    ],
+    "body_sha256": "c7c9fcd8fa4cd6e5eb78aa06d63ae54ea0d7ca8bf9abd217d0dca09fdc666642",
+    "calls": [
+      ".includes",
+      "current2.message.toLowerCase",
+      "iterateErrorChain",
+      "needle.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620136:22987811",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "errorTextIncludes",
+    "qualified_name": "errorTextIncludes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620136,
+    "end_line": 620151,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "needle"
+    ],
+    "body_sha256": "92d8d620c68ac1da37c9d7d20ea52dea37a9e0bc3699b52b340517ed052998ee",
+    "calls": [
+      ".includes",
+      "current2.message.toLowerCase",
+      "internalMessage.toLowerCase",
+      "iterateErrorChain",
+      "needle.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620152:22988325",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "hasConnectCode",
+    "qualified_name": "hasConnectCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620152,
+    "end_line": 620159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "targetCode"
+    ],
+    "body_sha256": "d3c98ca8f76b1ac6a0b2df9585785fbd845faa06795dfac9ab2396b111a4b88c",
+    "calls": [
+      "iterateErrorChain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620160:22988589",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isTextFieldsTooLargeError",
+    "qualified_name": "isTextFieldsTooLargeError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620160,
+    "end_line": 620162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "48b3e430e67a831b8243187990c51a6615baaec0cd3ec9b894681b610bf694d5",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620163:22988725",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isInvalidJsonError",
+    "qualified_name": "isInvalidJsonError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620163,
+    "end_line": 620165,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "74c4db4a5838e90f2c24b76c378115e75b909727f5ca7a066189a94a2cf43d7b",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620166:22988867",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isInvalidArgumentError",
+    "qualified_name": "isInvalidArgumentError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620166,
+    "end_line": 620168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f116a2333e148e229a43120156bc8879f176538ba0b692c5e181161099db38ac",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620169:22988969",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isUnsupportedRegionError",
+    "qualified_name": "isUnsupportedRegionError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620169,
+    "end_line": 620171,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "e1c2a8450ccf4ed2032967964406deb1045ecd677d4430d703079e08d1d4c540",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620172:22989085",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isUserApiKeyRateLimitExceededError",
+    "qualified_name": "isUserApiKeyRateLimitExceededError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620172,
+    "end_line": 620174,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "6a762dde1f47094f724e6868a108b24015b27615e29e3f96d24a4688221e026e",
+    "calls": [
+      "errorMessageIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620175:22989218",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isHttpRateLimitError",
+    "qualified_name": "isHttpRateLimitError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620175,
+    "end_line": 620191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "05e0913a79d2a0ca6e1d27a9eb22ef367515601581cb2f9a3d03404d1ea78cb7",
+    "calls": [
+      "new Set",
+      "queue.push",
+      "queue.shift",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620198:22989897",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isTooManyImagesOrDocumentsError",
+    "qualified_name": "isTooManyImagesOrDocumentsError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620198,
+    "end_line": 620200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "402b194f4a77fe26214bab14bbf6e25fea4519c53aa812e25544fbc33ae02dd5",
+    "calls": [
+      "TOO_MANY_IMAGES_OR_DOCUMENTS_MESSAGE_MARKERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620202:22990133",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "CannotTruncatePromptError.constructor",
+    "qualified_name": "CannotTruncatePromptError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620202,
+    "end_line": 620209,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message",
+      "details"
+    ],
+    "body_sha256": "39a2e8766587e7b9c9e53f167419c82de6b676fc0edd1bf8d12fde61a348fd06",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.budgetChars",
+      "this.name",
+      "this.originalChars",
+      "this.totalMessages"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620211:22990421",
+    "artifact": "host",
+    "module": "agent-summarization/error-handling.js",
+    "name": "getRetryDirective",
+    "qualified_name": "getRetryDirective",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620211,
+    "end_line": 620388,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "options2"
+    ],
+    "body_sha256": "1c4d6cb953783a20699ef4497b8af9a5be1479484ecc4f719c849845cb558b13",
+    "calls": [
+      "hasConnectCode",
+      "hasErrorName",
+      "isHttpRateLimitError",
+      "isInvalidArgumentError",
+      "isInvalidJsonError",
+      "isTextFieldsTooLargeError",
+      "isUnsupportedRegionError",
+      "isUserApiKeyRateLimitExceededError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 19,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304437:9890049",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "_NoSummaryResponseError.constructor",
+    "qualified_name": "_NoSummaryResponseError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304437,
+    "end_line": 304441,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6a64f93b80dcfe466d407a992eb78056c4ccc20b98753610fd6d2df0e64e92a1",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304444:9890289",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "SummaryPlaceholderRejectedError.constructor",
+    "qualified_name": "SummaryPlaceholderRejectedError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304444,
+    "end_line": 304450,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "details"
+    ],
+    "body_sha256": "b35ab1909206f6cc68cb9929ed8d16008d083f4359e8e3963a977f6c3db1ccf0",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.errorKind",
+      "this.name",
+      "this.summarizerModelId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304460:9890849",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "iterateErrorChain",
+    "qualified_name": "iterateErrorChain",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304460,
+    "end_line": 304472,
+    "async": false,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "efa4df71b94d8d1c7c3042fd55209203a93dd2acb2a3f83b09c40c1c9e80e46f",
+    "calls": [
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304473:9891184",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "hasErrorName",
+    "qualified_name": "hasErrorName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304473,
+    "end_line": 304480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "targetName"
+    ],
+    "body_sha256": "56eb31c22e7a31c108dcb5178b37d26f877067e527f06218cc98c6e683566613",
+    "calls": [
+      "iterateErrorChain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304481:9891400",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "errorMessageIncludes",
+    "qualified_name": "errorMessageIncludes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304481,
+    "end_line": 304489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "needle"
+    ],
+    "body_sha256": "03a545a89c57659f89ead0f2ff9cf27a236b7182d23c23a92c1920b5c7b6ed9c",
+    "calls": [
+      ".includes",
+      "current2.message.toLowerCase",
+      "iterateErrorChain",
+      "needle.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304490:9891698",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "errorTextIncludes",
+    "qualified_name": "errorTextIncludes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304490,
+    "end_line": 304505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "needle"
+    ],
+    "body_sha256": "e2110bed33e90c2bb5234ac17904dc8104bfbd1e0947e0b9dac96e683af430aa",
+    "calls": [
+      ".includes",
+      "current2.message.toLowerCase",
+      "internalMessage.toLowerCase",
+      "iterateErrorChain",
+      "needle.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304506:9892212",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "hasConnectCode",
+    "qualified_name": "hasConnectCode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304506,
+    "end_line": 304513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "targetCode"
+    ],
+    "body_sha256": "605ba4389b4d5b52b4bc83a2cc5ca7f1dabb019d020fb869b21e0e3f6bb717c1",
+    "calls": [
+      "iterateErrorChain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304514:9892476",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isTextFieldsTooLargeError",
+    "qualified_name": "isTextFieldsTooLargeError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304514,
+    "end_line": 304516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "cc9a0535e2bb768fb5fb01eb2153fb7bb2cdec313c193bbfc33482ae55dfe3e5",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304517:9892612",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isInvalidJsonError",
+    "qualified_name": "isInvalidJsonError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304517,
+    "end_line": 304519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "eff05e5e3347ee55e33b18d293fcdb273972a43e53984437521450f54da15ab0",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304520:9892754",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isInvalidArgumentError",
+    "qualified_name": "isInvalidArgumentError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304520,
+    "end_line": 304522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "d385b667de492e7a314e5124f55e31f93e52873d9e178e5a1dd912b1641a9efd",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304523:9892856",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isUnsupportedRegionError",
+    "qualified_name": "isUnsupportedRegionError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304523,
+    "end_line": 304525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "b3de1773f8650fc6915d93beb258f8fe9f99944bddea486cca316f0842af809a",
+    "calls": [
+      "errorTextIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304526:9892972",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isUserApiKeyRateLimitExceededError",
+    "qualified_name": "isUserApiKeyRateLimitExceededError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304526,
+    "end_line": 304528,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "c4cbe75c6ac7b2ff9894d40b3be43b6e12b14fb0146e29af12c5d19ee30465ff",
+    "calls": [
+      "errorMessageIncludes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304529:9893105",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isHttpRateLimitError",
+    "qualified_name": "isHttpRateLimitError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304529,
+    "end_line": 304545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "c81aa3c2e4356b057e8c4c47ef8c6ec38ac7d567eafa54699d5e8ebefe7229b7",
+    "calls": [
+      "new Set",
+      "queue.push",
+      "queue.shift",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304552:9893784",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "isTooManyImagesOrDocumentsError",
+    "qualified_name": "isTooManyImagesOrDocumentsError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304552,
+    "end_line": 304554,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "c654a52202e7c8d15b8689df49939dcb436c1dfd9e91a3aaf62ca33736272b56",
+    "calls": [
+      "TOO_MANY_IMAGES_OR_DOCUMENTS_MESSAGE_MARKERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304556:9894020",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "CannotTruncatePromptError.constructor",
+    "qualified_name": "CannotTruncatePromptError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304556,
+    "end_line": 304563,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message",
+      "details"
+    ],
+    "body_sha256": "39a2e8766587e7b9c9e53f167419c82de6b676fc0edd1bf8d12fde61a348fd06",
+    "calls": [
+      "Object.setPrototypeOf",
+      "super"
+    ],
+    "writes": [
+      "this.budgetChars",
+      "this.name",
+      "this.originalChars",
+      "this.totalMessages"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304565:9894308",
+    "artifact": "evaluation",
+    "module": "agent-summarization/error-handling.js",
+    "name": "getRetryDirective",
+    "qualified_name": "getRetryDirective",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304565,
+    "end_line": 304742,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "options2"
+    ],
+    "body_sha256": "3f4e21da4368d7fa8a6e9b4647abf0ef8d9692990c2dd503865231093cd3bc83",
+    "calls": [
+      "hasConnectCode",
+      "hasErrorName",
+      "isHttpRateLimitError",
+      "isInvalidArgumentError",
+      "isInvalidJsonError",
+      "isTextFieldsTooLargeError",
+      "isUnsupportedRegionError",
+      "isUserApiKeyRateLimitExceededError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 19,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

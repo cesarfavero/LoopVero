@@ -1,0 +1,1074 @@
+[
+  {
+    "id": "host:721942:27389628",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "insideRanges",
+    "qualified_name": "insideRanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721942,
+    "end_line": 721944,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index",
+      "ranges"
+    ],
+    "body_sha256": "cbf8d5cebdeb853d40d486ed835b616b412f12e1013221cb9b23177141434bed",
+    "calls": [
+      "ranges.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721945:27389740",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "fencedBlockRanges",
+    "qualified_name": "fencedBlockRanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721945,
+    "end_line": 721970,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "1411aab10a9aa344173d5a4fa17fe5733ff92de5b15d730654637b053b57bf2f",
+    "calls": [
+      "FENCE_LINE_PATTERN.exec",
+      "infoString.includes",
+      "input2.split",
+      "line.slice",
+      "line.trim",
+      "ranges.push"
+    ],
+    "writes": [
+      "offset2",
+      "openIndent",
+      "openRun",
+      "openStart"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721971:27390713",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "blankLineGaps",
+    "qualified_name": "blankLineGaps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721971,
+    "end_line": 721986,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "7d1e293f92d3b12541bb416bffcd4f665e9de25115ba5d691571fddd9d59b520",
+    "calls": [
+      "gaps.push",
+      "input2.indexOf"
+    ],
+    "writes": [
+      "at3",
+      "between",
+      "blank",
+      "previous"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721987:27391187",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "isBackslashEscaped",
+    "qualified_name": "isBackslashEscaped",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721987,
+    "end_line": 721991,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2",
+      "index"
+    ],
+    "body_sha256": "4e5a456af8bcb6ec5bb470baf16a2c87d08bcdda5c1caa5cd60fc2ae155e200b",
+    "calls": [],
+    "writes": [
+      "at3",
+      "backslashes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721992:27391376",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "codeSpanRanges",
+    "qualified_name": "codeSpanRanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721992,
+    "end_line": 722054,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2",
+      "fences",
+      "options2 = {}"
+    ],
+    "body_sha256": "a1c50e85efc92f00f34e7f50659224445cae10e719900079af8ca63d074782fe",
+    "calls": [
+      "blankLineGaps",
+      "cursorByLength.get",
+      "cursorByLength.set",
+      "indices.push",
+      "input2.matchAll",
+      "insideRanges",
+      "isBackslashEscaped",
+      "new Map",
+      "new Set",
+      "ranges.push",
+      "runIndicesByLength.get",
+      "runIndicesByLength.set",
+      "runs.entries",
+      "runs.push",
+      "unopenable.add",
+      "unopenable.has"
+    ],
+    "writes": [
+      "cursor",
+      "gapIndex",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 5,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722055:27393384",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "stripInlineFormattingTags",
+    "qualified_name": "stripInlineFormattingTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722055,
+    "end_line": 722093,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "b9be229692e50e1b9bdc36a7b770da035f0a18982cae31462da4755f93c9d839",
+    "calls": [
+      "INLINE_FORMATTING_TAGS.has",
+      "VOID_INLINE_FORMATTING_TAGS.has",
+      "codeSpanRanges",
+      "fencedBlockRanges",
+      "input2.includes",
+      "input2.matchAll",
+      "input2.slice",
+      "insideRanges",
+      "match2[computed].toLowerCase",
+      "openTags.at",
+      "openTags.pop",
+      "openTags.push",
+      "removals.push",
+      "removals.sort"
+    ],
+    "writes": [
+      "cursor",
+      "output2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722096:27395002",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "unwrapTexTextMacros",
+    "qualified_name": "unwrapTexTextMacros",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722096,
+    "end_line": 722099,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tex"
+    ],
+    "body_sha256": "5dafcd0810b363b348e1322086d6b4ee1670cbdb0a36dbe05af655a42419bbf1",
+    "calls": [
+      "tex.replace",
+      "unwrapTexTextMacros"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722100:27395170",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "flattenMathSpans",
+    "qualified_name": "flattenMathSpans",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722100,
+    "end_line": 722107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "66f2e72d2fa5933ea603c3db6b44f6d5a271e87aaf49f163aafc06f99cb70347",
+    "calls": [
+      "codeSpanRanges",
+      "fencedBlockRanges",
+      "input2.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722123:27395888",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "markdownToPreviewText",
+    "qualified_name": "markdownToPreviewText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722123,
+    "end_line": 722129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "dd31c97977d7f80c73c92eb39db80d8121b4670f207c18d43dfd7b477fcbff29",
+    "calls": [
+      ".trim",
+      "PREVIEW_TRANSFORMS.reduce",
+      "flattenMathSpans",
+      "flattened.replace",
+      "stripInlineFormattingTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722130:27396163",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "isHighSurrogate2",
+    "qualified_name": "isHighSurrogate2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722130,
+    "end_line": 722132,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "codeUnit"
+    ],
+    "body_sha256": "f1e3da878a8e77b808729e196c0bd67cec7d4f829fb1a16eec2ec8a1e6caccff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722133:27396252",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "flatCopy",
+    "qualified_name": "flatCopy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722133,
+    "end_line": 722135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "slice"
+    ],
+    "body_sha256": "dca83918e21124fa85c4e20db5bcb2c2946402b9a95b5fcad0da4281c4e8277a",
+    "calls": [
+      ".join",
+      "slice.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722136:27396316",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "boundedPrefix",
+    "qualified_name": "boundedPrefix",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722136,
+    "end_line": 722139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "63f6f9b4701969173262f95c44be885b2c9c7589a95a80daeb8d83fb946e4a28",
+    "calls": [
+      "flatCopy",
+      "isHighSurrogate2",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722140:27396490",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "boundedPreviewSource",
+    "qualified_name": "boundedPreviewSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722140,
+    "end_line": 722142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars = PREVIEW_SOURCE_MAX_CHARS"
+    ],
+    "body_sha256": "f21dd3ea797671a7d014081935b37c1cacc212c22f53cb79dfcf902b177b0c29",
+    "calls": [
+      "boundedPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722143:27396644",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "capPreviewLine",
+    "qualified_name": "capPreviewLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722143,
+    "end_line": 722146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line",
+      "maxChars = PREVIEW_LINE_MAX_CHARS"
+    ],
+    "body_sha256": "7098e7b510556ef0d06f16178339fe510ddbcc17548c25fb477e40bc3d0c0f12",
+    "calls": [
+      ".trimEnd",
+      "boundedPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722147:27396822",
+    "artifact": "host",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "markdownToPreviewLine",
+    "qualified_name": "markdownToPreviewLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722147,
+    "end_line": 722149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdown"
+    ],
+    "body_sha256": "52b59846307dbe59da16ca14292447b16b86bf398557823181149e7c024acb3e",
+    "calls": [
+      "boundedPreviewSource",
+      "capPreviewLine",
+      "markdownToPreviewText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539919:19918090",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "insideRanges",
+    "qualified_name": "insideRanges",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539919,
+    "end_line": 539921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index",
+      "ranges"
+    ],
+    "body_sha256": "cbf8d5cebdeb853d40d486ed835b616b412f12e1013221cb9b23177141434bed",
+    "calls": [
+      "ranges.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539922:19918202",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "fencedBlockRanges",
+    "qualified_name": "fencedBlockRanges",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539922,
+    "end_line": 539947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "1411aab10a9aa344173d5a4fa17fe5733ff92de5b15d730654637b053b57bf2f",
+    "calls": [
+      "FENCE_LINE_PATTERN.exec",
+      "infoString.includes",
+      "input2.split",
+      "line.slice",
+      "line.trim",
+      "ranges.push"
+    ],
+    "writes": [
+      "offset2",
+      "openIndent",
+      "openRun",
+      "openStart"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539948:19919175",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "blankLineGaps",
+    "qualified_name": "blankLineGaps",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539948,
+    "end_line": 539963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "7d1e293f92d3b12541bb416bffcd4f665e9de25115ba5d691571fddd9d59b520",
+    "calls": [
+      "gaps.push",
+      "input2.indexOf"
+    ],
+    "writes": [
+      "at3",
+      "between",
+      "blank",
+      "previous"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539964:19919649",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "isBackslashEscaped",
+    "qualified_name": "isBackslashEscaped",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539964,
+    "end_line": 539968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2",
+      "index"
+    ],
+    "body_sha256": "4e5a456af8bcb6ec5bb470baf16a2c87d08bcdda5c1caa5cd60fc2ae155e200b",
+    "calls": [],
+    "writes": [
+      "at3",
+      "backslashes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539969:19919838",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "codeSpanRanges",
+    "qualified_name": "codeSpanRanges",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539969,
+    "end_line": 540031,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2",
+      "fences",
+      "options2 = {}"
+    ],
+    "body_sha256": "40c8c17378e834888258d588b26eaa7ff0dcd90b1f5f7e60738abd2d7891a0ab",
+    "calls": [
+      "blankLineGaps",
+      "cursorByLength.get",
+      "cursorByLength.set",
+      "indices.push",
+      "input2.matchAll",
+      "insideRanges",
+      "isBackslashEscaped",
+      "new Map",
+      "new Set",
+      "ranges.push",
+      "runIndicesByLength.get",
+      "runIndicesByLength.set",
+      "runs.entries",
+      "runs.push",
+      "unopenable.add",
+      "unopenable.has"
+    ],
+    "writes": [
+      "cursor",
+      "gapIndex",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 5,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540032:19921840",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "stripInlineFormattingTags",
+    "qualified_name": "stripInlineFormattingTags",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540032,
+    "end_line": 540070,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "b9be229692e50e1b9bdc36a7b770da035f0a18982cae31462da4755f93c9d839",
+    "calls": [
+      "INLINE_FORMATTING_TAGS.has",
+      "VOID_INLINE_FORMATTING_TAGS.has",
+      "codeSpanRanges",
+      "fencedBlockRanges",
+      "input2.includes",
+      "input2.matchAll",
+      "input2.slice",
+      "insideRanges",
+      "match2[computed].toLowerCase",
+      "openTags.at",
+      "openTags.pop",
+      "openTags.push",
+      "removals.push",
+      "removals.sort"
+    ],
+    "writes": [
+      "cursor",
+      "output2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540073:19923458",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "unwrapTexTextMacros",
+    "qualified_name": "unwrapTexTextMacros",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540073,
+    "end_line": 540076,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tex"
+    ],
+    "body_sha256": "5dafcd0810b363b348e1322086d6b4ee1670cbdb0a36dbe05af655a42419bbf1",
+    "calls": [
+      "tex.replace",
+      "unwrapTexTextMacros"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540077:19923626",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "flattenMathSpans",
+    "qualified_name": "flattenMathSpans",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540077,
+    "end_line": 540084,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "66f2e72d2fa5933ea603c3db6b44f6d5a271e87aaf49f163aafc06f99cb70347",
+    "calls": [
+      "codeSpanRanges",
+      "fencedBlockRanges",
+      "input2.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540100:19924344",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "markdownToPreviewText",
+    "qualified_name": "markdownToPreviewText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540100,
+    "end_line": 540106,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "dd31c97977d7f80c73c92eb39db80d8121b4670f207c18d43dfd7b477fcbff29",
+    "calls": [
+      ".trim",
+      "PREVIEW_TRANSFORMS.reduce",
+      "flattenMathSpans",
+      "flattened.replace",
+      "stripInlineFormattingTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540107:19924619",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "isHighSurrogate2",
+    "qualified_name": "isHighSurrogate2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540107,
+    "end_line": 540109,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "codeUnit"
+    ],
+    "body_sha256": "f1e3da878a8e77b808729e196c0bd67cec7d4f829fb1a16eec2ec8a1e6caccff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540110:19924708",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "flatCopy",
+    "qualified_name": "flatCopy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540110,
+    "end_line": 540112,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "slice"
+    ],
+    "body_sha256": "dca83918e21124fa85c4e20db5bcb2c2946402b9a95b5fcad0da4281c4e8277a",
+    "calls": [
+      ".join",
+      "slice.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540113:19924772",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "boundedPrefix",
+    "qualified_name": "boundedPrefix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540113,
+    "end_line": 540116,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "63f6f9b4701969173262f95c44be885b2c9c7589a95a80daeb8d83fb946e4a28",
+    "calls": [
+      "flatCopy",
+      "isHighSurrogate2",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540117:19924946",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "boundedPreviewSource",
+    "qualified_name": "boundedPreviewSource",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540117,
+    "end_line": 540119,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars = PREVIEW_SOURCE_MAX_CHARS"
+    ],
+    "body_sha256": "f21dd3ea797671a7d014081935b37c1cacc212c22f53cb79dfcf902b177b0c29",
+    "calls": [
+      "boundedPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540120:19925100",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "capPreviewLine",
+    "qualified_name": "capPreviewLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540120,
+    "end_line": 540123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line",
+      "maxChars = PREVIEW_LINE_MAX_CHARS"
+    ],
+    "body_sha256": "7098e7b510556ef0d06f16178339fe510ddbcc17548c25fb477e40bc3d0c0f12",
+    "calls": [
+      ".trimEnd",
+      "boundedPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540124:19925278",
+    "artifact": "evaluation",
+    "module": "shared/media/markdown-preview.ts",
+    "name": "markdownToPreviewLine",
+    "qualified_name": "markdownToPreviewLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540124,
+    "end_line": 540126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdown"
+    ],
+    "body_sha256": "52b59846307dbe59da16ca14292447b16b86bf398557823181149e7c024acb3e",
+    "calls": [
+      "boundedPreviewSource",
+      "capPreviewLine",
+      "markdownToPreviewText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

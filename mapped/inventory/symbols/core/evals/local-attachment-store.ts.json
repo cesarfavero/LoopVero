@@ -1,0 +1,208 @@
+[
+  {
+    "id": "evaluation:595976:22622552",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "extension3",
+    "qualified_name": "extension3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 595976,
+    "end_line": 595979,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filename"
+    ],
+    "body_sha256": "d2838012a67bbe18316e16e4571bd40d16fe621aebc00d8a7404d27ef6441dd1",
+    "calls": [
+      ".toLowerCase",
+      "import_node_path42.posix.extname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:595980:22622704",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "readFailure",
+    "qualified_name": "readFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 595980,
+    "end_line": 595987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourcePath2",
+      "error63"
+    ],
+    "body_sha256": "8b5a8f626fb6ecd0cbee8cf984ad91f7fcd7f7ce7e4530b0f175b7f6582e4638",
+    "calls": [
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:595988:22623108",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "createLocalAttachmentStore",
+    "qualified_name": "createLocalAttachmentStore",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 595988,
+    "end_line": 596016,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "98ea40dc0f4a937a78f1706c4c84bc6b36d2df1b21d0f524dc15378407388e97",
+    "calls": [
+      "getAgentAttachmentsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:595990:22623231",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "store",
+    "qualified_name": "createLocalAttachmentStore/store",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 595990,
+    "end_line": 595997,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filename",
+      "data2"
+    ],
+    "body_sha256": "a8bd65e6deff861c07f5179c12b90b82f7cb6b57faad04e747b9ef2d02158e69",
+    "calls": [
+      "attachmentByteLimitForName",
+      "extension3",
+      "import_node_path42.posix.join",
+      "new AttachmentTooLargeError",
+      "sha256Hex3"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentTooLargeError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:595999:22623699",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "ingestAttachment",
+    "qualified_name": "createLocalAttachmentStore/ingestAttachment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 595999,
+    "end_line": 596007,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "sourcePath2"
+    ],
+    "body_sha256": "f157f8b2428fd597d4188cd67bc7eb1463bb69f608a5f45e0c0c8fd4ae3a2680",
+    "calls": [
+      "readFailure",
+      "store"
+    ],
+    "writes": [
+      "data2"
+    ],
+    "throw_targets": [
+      "readFailure"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:596008:22623979",
+    "artifact": "evaluation",
+    "module": "core/evals/local-attachment-store.ts",
+    "name": "persistMediaBytes",
+    "qualified_name": "createLocalAttachmentStore/persistMediaBytes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596008,
+    "end_line": 596014,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filename",
+      "data2"
+    ],
+    "body_sha256": "3ab98d62e19330b1504d94528c289427985f1b65fa7d2bf44d43dc386a6c0871",
+    "calls": [
+      "filename.includes",
+      "filename.trim",
+      "new Error",
+      "store"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

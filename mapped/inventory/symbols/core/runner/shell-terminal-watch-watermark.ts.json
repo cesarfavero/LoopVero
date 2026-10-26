@@ -1,0 +1,219 @@
+[
+  {
+    "id": "evaluation:530049:19369909",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "encodeConfirmedUserTurnWatermark",
+    "qualified_name": "encodeConfirmedUserTurnWatermark",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530049,
+    "end_line": 530061,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cache3"
+    ],
+    "body_sha256": "1d06f22af4649fd04a03f6ae04fb60309d08bdc73b1434532813cf2114ac997d",
+    "calls": [
+      ".encode",
+      "JSON.stringify",
+      "new TextEncoder",
+      "toHex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530062:19370314",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "decodeConfirmedUserTurnWatermark",
+    "qualified_name": "decodeConfirmedUserTurnWatermark",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530062,
+    "end_line": 530085,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "efc5f5945518ea378ebeae9185c12756f7866d65ebb5e75500718357f4625fc5",
+    "calls": [
+      ".decode",
+      "JSON.parse",
+      "fromHex",
+      "new TextDecoder",
+      "refPattern.test",
+      "storedWatermarkSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:530086:19371247",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "isConfirmedUserTurnWatermarkValid",
+    "qualified_name": "isConfirmedUserTurnWatermarkValid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530086,
+    "end_line": 530094,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8339b6794469c2fd330c6e51a8aaf608cef37eea7ccb3d0c68a2745e6c080a50",
+    "calls": [
+      "Number.isSafeInteger",
+      "turnRefsEqual"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530095:19371849",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "findConfirmedUserTurnWatermark",
+    "qualified_name": "findConfirmedUserTurnWatermark",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530095,
+    "end_line": 530175,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "state"
+    ],
+    "body_sha256": "74f1a06be14266faef62d9ba5e59e21e53130d509b790b3b403e8c0a9ea38177",
+    "calls": [
+      "ConversationTurnStructure.fromBinary",
+      "UserMessage.fromBinary",
+      "blobStore.getBlob",
+      "cacheResult",
+      "host.getBlobStore",
+      "host.getConfirmedUserTurnWatermarkCache",
+      "isConfirmedUserTurnWatermarkValid",
+      "isGroupTurnPromptText",
+      "isOffRecordMessageId",
+      "new Uint8Array",
+      "startsWithHiddenPromptMarker",
+      "state.turns[computed].slice",
+      "watermarkReads.increment",
+      "withBlobReadKind"
+    ],
+    "writes": [
+      "index",
+      "source",
+      "userMessage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:530110:19372758",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "cacheResult",
+    "qualified_name": "findConfirmedUserTurnWatermark/cacheResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530110,
+    "end_line": 530126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result",
+      "newestTurnSkipped2"
+    ],
+    "body_sha256": "9e1b2b31beb8c111f25356c676023276966e852386b53760b53c9f73785ccac2",
+    "calls": [
+      "host.setConfirmedUserTurnWatermarkCache",
+      "isConfirmedUserTurnWatermarkValid",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530176:19375461",
+    "artifact": "evaluation",
+    "module": "core/runner/shell-terminal-watch-watermark.ts",
+    "name": "turnRefsEqual",
+    "qualified_name": "turnRefsEqual",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530176,
+    "end_line": 530182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "57978390b1222d8dce653f50c4f3597ef3961804ff55e71027523ba29cdd0812",
+    "calls": [],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,639 @@
+[
+  {
+    "id": "host:688590:26157163",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "backendListingKey",
+    "qualified_name": "backendListingKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688590,
+    "end_line": 688592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifiers"
+    ],
+    "body_sha256": "9443d134833d306c66db6ba37aa5508606256c55c1d0ded53ded943ffa97a1e3",
+    "calls": [
+      ".join",
+      ".sort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688594:26157311",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.constructor",
+    "qualified_name": "SandMcpListingCache.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688594,
+    "end_line": 688598,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listBackendTools",
+      "nowMs2 = Date.now",
+      "observer = {}"
+    ],
+    "body_sha256": "804acc6fcc4823513071e2e38021affa609a61adea32e03a368e14b3fd012c1b",
+    "calls": [],
+    "writes": [
+      "this.listBackendTools",
+      "this.nowMs",
+      "this.observer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688609:26157774",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.listBackend",
+    "qualified_name": "SandMcpListingCache.listBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688609,
+    "end_line": 688613,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers"
+    ],
+    "body_sha256": "16b3efc3ee7f1bb8dde2ae1c81b094936471db424bf1c5f10d29756c3d315248",
+    "calls": [
+      "this.startBackendListing"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "outcome.error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688614:26157977",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.joinBackend",
+    "qualified_name": "SandMcpListingCache.joinBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688614,
+    "end_line": 688620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers",
+      "caller"
+    ],
+    "body_sha256": "6cec822856ae53d5c9acc99e0fed35d772b98287129c9431a5e2837ef3726329",
+    "calls": [
+      "backendListingKey",
+      "this.startBackendListing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688621:26158373",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.joinRecentBackend",
+    "qualified_name": "SandMcpListingCache.joinRecentBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688621,
+    "end_line": 688630,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers",
+      "maxAgeMs",
+      "caller"
+    ],
+    "body_sha256": "3dc5600c6b8d32d0b2ff35f824b25d623e6f911075af14b64e4d477dad45682c",
+    "calls": [
+      "Promise.resolve",
+      "backendListingKey",
+      "this.joinBackend",
+      "this.nowMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688631:26158868",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.trackBackend",
+    "qualified_name": "SandMcpListingCache.trackBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688631,
+    "end_line": 688633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers",
+      "listing"
+    ],
+    "body_sha256": "88ef7d7730015e34c6f0e7c80eb97df166e9ba52e0e7ce0c9ebea517f1b6615d",
+    "calls": [
+      "this.startBackendListing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688634:26159004",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.backendEntriesFor",
+    "qualified_name": "SandMcpListingCache.backendEntriesFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688634,
+    "end_line": 688636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rowIdentifier"
+    ],
+    "body_sha256": "fc975f18fbc8e008a57879ce55f8cbd90e9c1f0c68eca7a34ff4249b205ee956",
+    "calls": [
+      "this.backendEntriesByRow.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688637:26159117",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.currentBackendEntriesFor",
+    "qualified_name": "SandMcpListingCache.currentBackendEntriesFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688637,
+    "end_line": 688640,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rowIdentifier"
+    ],
+    "body_sha256": "bdc4cfb6ea6788340a49d1170d9fa742f34cabd225f754db442bc52f789772d9",
+    "calls": [
+      "this.backendEntriesByRow.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688641:26159295",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.listBox",
+    "qualified_name": "SandMcpListingCache.listBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688641,
+    "end_line": 688649,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "run"
+    ],
+    "body_sha256": "8cee2a86cd28a4d62385dbd33251b1a2ddc341e7b347074e37f53c79a2c6a53a",
+    "calls": [
+      "run",
+      "this.boxServersByIdentifier.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688650:26159585",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.forgetBox",
+    "qualified_name": "SandMcpListingCache.forgetBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688650,
+    "end_line": 688654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers"
+    ],
+    "body_sha256": "4dc2a8f40788394c6c573180b9487fd138ca7d29d57bf3fcbb085cc564c94615",
+    "calls": [
+      "this.boxServersByIdentifier.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688655:26159747",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.boxServerFor",
+    "qualified_name": "SandMcpListingCache.boxServerFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688655,
+    "end_line": 688657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "5c9c2ab3a0063b8dd7c5154a2ed85f158c3f1ff195ffdfe44dd8897531e32dd8",
+    "calls": [
+      "this.boxServersByIdentifier.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688658:26159863",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.currentBoxServerFor",
+    "qualified_name": "SandMcpListingCache.currentBoxServerFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688658,
+    "end_line": 688661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "b46d339ae6b44ce63a5ba260484a9efae2298057a1a53f10b4ee9aefb22a0855",
+    "calls": [
+      "this.boxServersByIdentifier.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688662:26160051",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.generationGuard",
+    "qualified_name": "SandMcpListingCache.generationGuard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688662,
+    "end_line": 688665,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4062ec1f23aa646e9a3fe9e0bd7b3864f97b60e88a1bce75ced5c77733eaec96",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688666:26160161",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.invalidate",
+    "qualified_name": "SandMcpListingCache.invalidate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688666,
+    "end_line": 688670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4ccae71a8a0c2ab055abcc08da9b3eab84fa9c9640e77e68a105c7136ea8657b",
+    "calls": [],
+    "writes": [
+      "this.generation",
+      "this.inFlightBackendListing",
+      "this.lastSettledBackendListing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688671:26160293",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.dropBackend",
+    "qualified_name": "SandMcpListingCache.dropBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688671,
+    "end_line": 688674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "dc759f0cc9d171d741f40c0deccca0adb058f4a27e198324700878c858b3baab",
+    "calls": [
+      "this.backendEntriesByRow.clear",
+      "this.invalidate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688675:26160370",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.clear",
+    "qualified_name": "SandMcpListingCache.clear",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688675,
+    "end_line": 688678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b72c21be9084791cc064afd595a4873ff65d224e9549fa5d69c3b7a5f8ec656c",
+    "calls": [
+      "this.boxServersByIdentifier.clear",
+      "this.dropBackend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688679:26160465",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "SandMcpListingCache.startBackendListing",
+    "qualified_name": "SandMcpListingCache.startBackendListing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688679,
+    "end_line": 688740,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers",
+      "caller",
+      "list = () => this.listBackendTools(serverIdentifiers)"
+    ],
+    "body_sha256": "ef821137369def3c61067fc60e576a795f5a9182e38a1e85a18e31ebacc5a279",
+    "calls": [
+      ".then",
+      "backendListingKey",
+      "list",
+      "outcome.then",
+      "this.nowMs"
+    ],
+    "writes": [
+      "this.inFlightBackendListing",
+      "this.startedBackendListings"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688684:26160757",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "reportSweep",
+    "qualified_name": "SandMcpListingCache.startBackendListing/reportSweep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688684,
+    "end_line": 688693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome2",
+      "isLatest"
+    ],
+    "body_sha256": "8941a9917cb78746deab6fffea397048e44194d4c5b3f2008279c4a5a6ff8ab1",
+    "calls": [
+      "this.nowMs",
+      "this.observer.onSweep"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688694:26161017",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "claimLatest",
+    "qualified_name": "SandMcpListingCache.startBackendListing/claimLatest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688694,
+    "end_line": 688700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5d375c4e34ac619eb28a0d970d801b209288d593858b4cafab8823f86f2c4e07",
+    "calls": [],
+    "writes": [
+      "this.latestSettledBackendListing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688735:26162389",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-listing-cache.ts",
+    "name": "clearInFlight",
+    "qualified_name": "SandMcpListingCache.startBackendListing/clearInFlight",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688735,
+    "end_line": 688737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "04a3dbd9d2202f64f7d394143dbf27718fc703df9c2dbd446e56d23e17904970",
+    "calls": [],
+    "writes": [
+      "this.inFlightBackendListing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

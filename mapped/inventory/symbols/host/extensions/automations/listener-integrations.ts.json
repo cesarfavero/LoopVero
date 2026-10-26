@@ -1,0 +1,451 @@
+[
+  {
+    "id": "host:505372:18547004",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "dashboardIntegrationsUrl",
+    "qualified_name": "dashboardIntegrationsUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505372,
+    "end_line": 505374,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend"
+    ],
+    "body_sha256": "f4d97c8c750b1ab6b9abe4f90f3e422823ed26be19564ca934654f1e48f24223",
+    "calls": [
+      "dashboardUrlOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505377:18547208",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "createListenerIntegrationReads",
+    "qualified_name": "createListenerIntegrationReads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505377,
+    "end_line": 505575,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "8cc08fbdca8fafa4f952aa4f1a11a514d83e5068dcc8c32b055960bbd20c8109",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505379:18547352",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "dashboard",
+    "qualified_name": "createListenerIntegrationReads/dashboard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505379,
+    "end_line": 505384,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "421f72026a9ec19fecc359701eb43471fafa577842a9f4250605e696bc006bd8",
+    "calls": [
+      "createClient2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505385:18547581",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "readPlatformConnection",
+    "qualified_name": "createListenerIntegrationReads/readPlatformConnection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505385,
+    "end_line": 505400,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "566662fc0a06d4910828b2798c23ec4d63a60a46596376899d112d919d5ba83d",
+    "calls": [
+      "Number",
+      "client.getScmConnectionStatus",
+      "client.getSlackUserSettings",
+      "dashboard",
+      "new GetScmConnectionStatusRequest",
+      "new GetSlackUserSettingsRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505402:18548379",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "mintScmConnectFlow",
+    "qualified_name": "createListenerIntegrationReads/mintScmConnectFlow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505402,
+    "end_line": 505423,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "62b7d066c7da3e23e9ce12be862f6bca30f08ca366a525e2eaccac1b2651adc5",
+    "calls": [
+      ".catch",
+      ".digest",
+      ".next",
+      ".prepareGithubConnectFlow",
+      ".toString",
+      ".update",
+      "dashboard",
+      "invariant",
+      "new PrepareGithubConnectFlowRequest",
+      "verifierByMintedState.delete",
+      "verifierByMintedState.keys",
+      "verifierByMintedState.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505424:18549367",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "readScmConnections",
+    "qualified_name": "createListenerIntegrationReads/readScmConnections",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505424,
+    "end_line": 505453,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providers"
+    ],
+    "body_sha256": "5f165073b2ae9578586104dba9a40bca8c691bc0ff826336c610c9e9ff329e81",
+    "calls": [
+      ".getScmConnectionStatuses",
+      "dashboard",
+      "new GetScmConnectionStatusesRequest",
+      "new Map",
+      "new Set",
+      "providers.map",
+      "response.statuses.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505426:18549485",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "gheApplicationOf",
+    "qualified_name": "createListenerIntegrationReads/readScmConnections/gheApplicationOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505426,
+    "end_line": 505426,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "cd0425ef20339916b38b424f97a502d9384e6443fe801e734c1bddec7c774f86",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505455:18550535",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "getIntegrations",
+    "qualified_name": "createListenerIntegrationReads/getIntegrations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505455,
+    "end_line": 505495,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "55f8516abddf12c53e095dd55066f80f62b0e6a0be88ffe4020f642f15647860",
+    "calls": [
+      ".catch",
+      ".map",
+      "LISTENER_INTEGRATIONS.map",
+      "Promise.all",
+      "SCM_CONNECT_CARD_INTEGRATIONS.map",
+      "cardPlatforms.filter",
+      "cardPlatforms.map",
+      "countListenerPlatforms",
+      "deps.isDesktopScmConnectEnabled",
+      "deps.transcript.listAllAutomationDefinitions",
+      "readScmConnections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505459:18550718",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "readConnected",
+    "qualified_name": "createListenerIntegrationReads/getIntegrations/readConnected",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505459,
+    "end_line": 505462,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "ac4abbdfa8de6099cd309b3f2d7ccaec8664759aaf6b322cd100e86f5a20b9bb",
+    "calls": [
+      ".catch",
+      "readPlatformConnection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505496:18552527",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "getConnectUrl",
+    "qualified_name": "createListenerIntegrationReads/getConnectUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505496,
+    "end_line": 505519,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "platform2",
+      "options2"
+    ],
+    "body_sha256": "ea1f2d5fb878984c411b7e204390fb59ea3f7c92f568ed2110a20910fd11e93f",
+    "calls": [
+      ".getSlackInstallUrl",
+      "dashboard",
+      "dashboardIntegrationsUrl",
+      "mintScmConnectFlow",
+      "new GetSlackInstallUrlRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505520:18553504",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "disconnectPlatform",
+    "qualified_name": "createListenerIntegrationReads/disconnectPlatform",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505520,
+    "end_line": 505532,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "532d829e658ef2d95aff1784251e81104a0f8849f72685a51e46e6e87a7e2321",
+    "calls": [
+      ".disconnectGithub",
+      "dashboard",
+      "invariant",
+      "new DisconnectGithubRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505533:18554074",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "completeGithubConnect",
+    "qualified_name": "createListenerIntegrationReads/completeGithubConnect",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505533,
+    "end_line": 505565,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3baeadd6ef032a7a281f587a44461d27c09912d7afd54726de59f09a37e0206d",
+    "calls": [
+      ".completeGithubConnectFlow",
+      "dashboard",
+      "deps.log",
+      "errorLogTag",
+      "new CompleteGithubConnectFlowRequest",
+      "verifierByMintedState.delete",
+      "verifierByMintedState.get"
+    ],
+    "writes": [
+      "response"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505566:18555331",
+    "artifact": "host",
+    "module": "host/extensions/automations/listener-integrations.ts",
+    "name": "getAgentChannels",
+    "qualified_name": "createListenerIntegrationReads/getAgentChannels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505566,
+    "end_line": 505573,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "a79fa9a7f04b7405059d13c407ec004711e16e337b25ff2b0b0519aa56b57927",
+    "calls": [
+      "CONNECTOR_MANIFESTS.map",
+      "connections.filter",
+      "deps.transcript.getAgentChannels",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

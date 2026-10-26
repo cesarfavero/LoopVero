@@ -1,0 +1,498 @@
+[
+  {
+    "id": "host:499199:18315773",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "InferenceCredentialStore.setCredential",
+    "qualified_name": "InferenceCredentialStore.setCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499199,
+    "end_line": 499202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "credential"
+    ],
+    "body_sha256": "0e816f0394ffffcbc5950657c3f7412aba3d1219fa6d1e5fa339683eaba9636d",
+    "calls": [],
+    "writes": [
+      "this.credential"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499203:18315900",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "InferenceCredentialStore.getValidAccessToken",
+    "qualified_name": "InferenceCredentialStore.getValidAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499203,
+    "end_line": 499208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "now = Date.now()"
+    ],
+    "body_sha256": "29594220cf123fb05e0489969574d9dcfcac172f9ff9dac3047ea9a6a94dc1b0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499209:18316122",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "InferenceCredentialStore.clear",
+    "qualified_name": "InferenceCredentialStore.clear",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499209,
+    "end_line": 499211,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d9a96d3ae85fa9b4e1a4bfb6f2b3ba387288a9317832f5738cef3c189cb60880",
+    "calls": [],
+    "writes": [
+      "this.credential"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499214:18316351",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "createHostAuthService",
+    "qualified_name": "createHostAuthService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499214,
+    "end_line": 499298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "68e7a138f15255f631ff0bcbb6e35cdb87f9679b5325c4f9f7660fcd7a0df239",
+    "calls": [
+      "new InferenceCredentialStore",
+      "new SandInferenceCredentialRenewer",
+      "new Set",
+      "options2.log",
+      "renewer.start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499219:18316571",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "emit",
+    "qualified_name": "createHostAuthService/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499219,
+    "end_line": 499228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "e0cbb69083e572c6b8db500b74e34938ea82d285be30c8a4b2b8d48d08ea6104",
+    "calls": [
+      "errorLogTag",
+      "listener",
+      "options2.log"
+    ],
+    "writes": [
+      "lastRenewalEvent"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499238:18317432",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "setCredential",
+    "qualified_name": "createHostAuthService/setCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499238,
+    "end_line": 499241,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "credential"
+    ],
+    "body_sha256": "576c9ac076e637fcc83c9d36480510ff626f025896084629e4135def1b426107",
+    "calls": [
+      "store.getValidAccessToken",
+      "store.setCredential"
+    ],
+    "writes": [
+      "wroteFirstCredential"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499242:18317576",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "onResult",
+    "qualified_name": "createHostAuthService/onResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499242,
+    "end_line": 499257,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "2e874e1aa4a712e2e3b9723c86cc0f4ad8e4676cd2283182e328678d41188405",
+    "calls": [
+      "emit",
+      "options2.log"
+    ],
+    "writes": [
+      "wroteFirstCredential"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499273:18318895",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "getOrRenewToken",
+    "qualified_name": "createHostAuthService/getOrRenewToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499273,
+    "end_line": 499282,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "read2"
+    ],
+    "body_sha256": "3776861659e824c927d2022e0290532dc8ff0da3ea8e13e28dec9d4c72dd4306",
+    "calls": [
+      "new SandCredentialsWaitingError",
+      "read2",
+      "renewer.requestImmediateRenewal"
+    ],
+    "writes": [
+      "token"
+    ],
+    "throw_targets": [
+      "SandCredentialsWaitingError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499284:18319256",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "getAccessToken",
+    "qualified_name": "createHostAuthService/getAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499284,
+    "end_line": 499284,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "edc26d50d74fa222beabc2321814855627d1a3c16d5fb0dd2d89633a5963c0b6",
+    "calls": [
+      "getOrRenewToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499285:18319347",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "peekAccessToken",
+    "qualified_name": "createHostAuthService/peekAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499285,
+    "end_line": 499285,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "37861d17bfe909b7094ab911b33686a04a450359b4b7d7b3b2a3cd876fe5fc15",
+    "calls": [
+      "store.getValidAccessToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499286:18319413",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "peekBoxIdentityCredential",
+    "qualified_name": "createHostAuthService/peekBoxIdentityCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499286,
+    "end_line": 499286,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3b70aad274c7b23ebf20b2555a1fd27b42c99248ae39a4a3f07ac6c72ff2e40d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499287:18319509",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "getLastRenewalEvent",
+    "qualified_name": "createHostAuthService/getLastRenewalEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499287,
+    "end_line": 499287,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f31bfc9178df6cb576853f7034da2639f1de0d49380e5be0445501ac1b7675d2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499288:18319551",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "getMachineId",
+    "qualified_name": "createHostAuthService/getMachineId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499288,
+    "end_line": 499288,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7147711284a97d66bad68f1db1a347b346610213adf4cd9540dc7860beb8f9df",
+    "calls": [
+      "getOrCreateHostMachineId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499289:18319609",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "subscribeToRenewal",
+    "qualified_name": "createHostAuthService/subscribeToRenewal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499289,
+    "end_line": 499292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "a092384ad5b264b5fd1a147833e70f15327cd965be575298bec011709385806a",
+    "calls": [
+      "listeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499293:18319723",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "dispose",
+    "qualified_name": "createHostAuthService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499293,
+    "end_line": 499296,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f8b35374ae30a8196219ea27ee40a8bc006c6b5cd352cb987b76452143bd5c7e",
+    "calls": [
+      "listeners.clear",
+      "renewer.close"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499299:18319792",
+    "artifact": "host",
+    "module": "host/extensions/auth/auth-service.ts",
+    "name": "bestEffortAccessToken",
+    "qualified_name": "bestEffortAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499299,
+    "end_line": 499309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "auth2"
+    ],
+    "body_sha256": "482c0067f6005e417e0e547337578f4ccdadc9526e9c7f036ccce3c64f777e95",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

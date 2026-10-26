@@ -1,0 +1,1218 @@
+[
+  {
+    "id": "host:738321:28047829",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "temporalOutcomeToMemberTurnOutcome",
+    "qualified_name": "temporalOutcomeToMemberTurnOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738321,
+    "end_line": 738332,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome",
+      "messages2"
+    ],
+    "body_sha256": "06fd34408f12eef610f459b230482976471e37d16050890cf12f5d2f081766aa",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738334:28048162",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.constructor",
+    "qualified_name": "GroupChatGlue.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738334,
+    "end_line": 738336,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738340:28048326",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.postToGroup",
+    "qualified_name": "GroupChatGlue.postToGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738340,
+    "end_line": 738342,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fromAgentId",
+      "groupId",
+      "text3",
+      "priority = false"
+    ],
+    "body_sha256": "11c705c7b5712ff5b9607646ef7190981734b25895dfcd0c7ad52cb9bb7a6ac3",
+    "calls": [
+      "this.postToGroupWithStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738343:28048511",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.postToGroupWithStatus",
+    "qualified_name": "GroupChatGlue.postToGroupWithStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738343,
+    "end_line": 738415,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "54bcca90054b05857a81b6f534608aea0caabaf5069ce120a5e8611028afb6b1",
+    "calls": [
+      "Date.now",
+      "__callDispose",
+      "__using",
+      "brandedId",
+      "clampAgentMessage",
+      "config2.memberIds.includes",
+      "isAgentAbsent",
+      "isPassContent",
+      "reportFallback",
+      "textGroupPost",
+      "this.deliveryFor",
+      "this.groupIdentityFor",
+      "this.localGroupConfig",
+      "this.postGroupMemberMessage",
+      "this.resolveGroupMembers",
+      "this.tm.backgroundWakes.appendAgentOutboundEntry",
+      "this.tm.productAnalytics.trackEvent",
+      "this.tm.runLifecycle.beginSessionRun",
+      "this.tm.runLifecycle.enqueueExclusiveRun",
+      "this.tm.sendPipeline.nextTurnEpoch",
+      "this.tm.sessions.leaseBackgroundSession"
+    ],
+    "writes": [
+      "leased"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:738416:28051306",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.createGroup",
+    "qualified_name": "GroupChatGlue.createGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738416,
+    "end_line": 738429,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5f8b51f1b4619f86cdeb616aefb6b7909dd95bb8f77f34837ade2b89f2f4c9a5",
+    "calls": [
+      "this.finalizedSummary",
+      "this.resolveGroupMemberIds",
+      "this.sealGroup",
+      "this.tm.createAgent",
+      "this.tm.roster.emitAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738430:28051814",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.createGroupInBackground",
+    "qualified_name": "GroupChatGlue.createGroupInBackground",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738430,
+    "end_line": 738440,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "46e0149642f0906fdd878898f9d6d17a1c2e6342dbfac0c7ef59afdc0b6a434b",
+    "calls": [
+      "this.finalizedSummary",
+      "this.resolveGroupMemberIds",
+      "this.sealGroup",
+      "this.tm.createBackgroundAgent",
+      "this.tm.roster.emitAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738441:28052265",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.resolveGroupMemberIds",
+    "qualified_name": "GroupChatGlue.resolveGroupMemberIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738441,
+    "end_line": 738454,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestedMemberIds"
+    ],
+    "body_sha256": "8b94fe8ce95d8896ef18a70381ff66723072d6c9c4213300c55d4432c435b545",
+    "calls": [
+      ".map",
+      ".slice",
+      "allAgents.filter",
+      "allAgents.map",
+      "assertMembersAreNotGroups",
+      "new SandGroupCreateError",
+      "new Set",
+      "requested.filter",
+      "this.tm.sessionStore.listAgents"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandGroupCreateError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738455:28052914",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.sealGroup",
+    "qualified_name": "GroupChatGlue.sealGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738455,
+    "end_line": 738464,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "groupId",
+      "memberIds"
+    ],
+    "body_sha256": "e1b8e5446b4c2814708b5d13deac3879928f31fdec8059c51f92f794468ae1ca",
+    "calls": [
+      "brandedId",
+      "this.tm.productAnalytics.trackEvent",
+      "this.tm.sessionStore.getAgentDir",
+      "writeSandGroupConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738465:28053254",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.finalizedSummary",
+    "qualified_name": "GroupChatGlue.finalizedSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738465,
+    "end_line": 738469,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "fallback3"
+    ],
+    "body_sha256": "dafea432b5b1364b0cd929b0402cecf74ce7d1c9839941dbdd4c16d1ed9494b7",
+    "calls": [
+      ".find",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.listAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738470:28053547",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.setGroupMembers",
+    "qualified_name": "GroupChatGlue.setGroupMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738470,
+    "end_line": 738502,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "groupId",
+      "memberIds",
+      "options2 = {}"
+    ],
+    "body_sha256": "0fb188f64c9374b9c2cc51d3c2250b2af3298c9ddfd4c3ab86ec2d0dc73443e2",
+    "calls": [
+      ".find",
+      ".map",
+      ".slice",
+      "allAgents.filter",
+      "allAgents.map",
+      "assertMembersAreNotGroups",
+      "currentConfig.memberIds.includes",
+      "new SandGroupMembersUnavailableError",
+      "new Set",
+      "requested.filter",
+      "this.localGroupConfig",
+      "this.tm.roster.emitAgents",
+      "this.tm.roster.finalizeSummaryForRpc",
+      "this.tm.roster.reserveSnapshotStamp",
+      "this.tm.sessionStore.getAgentDir",
+      "this.tm.sessionStore.listAgents",
+      "writeSandGroupConfig"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandGroupMembersUnavailableError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738503:28055015",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.isGroupSession",
+    "qualified_name": "GroupChatGlue.isGroupSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738503,
+    "end_line": 738505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "f9b4c0c3e8eeaaa829e4f2db82616072ee8159cc1034f243c199f8f0157e2d38",
+    "calls": [
+      "isSandGroupDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738506:28055126",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.localGroupConfig",
+    "qualified_name": "GroupChatGlue.localGroupConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738506,
+    "end_line": 738510,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dir"
+    ],
+    "body_sha256": "e3a00ba1f45484f43b2b0af87a8b809dbbad14b27ec24e8757b2815b27a6afa8",
+    "calls": [
+      "getSandProfilePath",
+      "readSandGroupConfig",
+      "readSandProfileHarness"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738511:28055330",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.isGroupAgentId",
+    "qualified_name": "GroupChatGlue.isGroupAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738511,
+    "end_line": 738513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8b0d2073cc675bd177caddbb712fa941abe63cb1da361b55529ae26356af831d",
+    "calls": [
+      "isSandGroupDir",
+      "this.tm.sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738514:28055434",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.groupIdentityFor",
+    "qualified_name": "GroupChatGlue.groupIdentityFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738514,
+    "end_line": 738517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "96d33ba0b6036b5990007ef3b03f51ce19e753341a7eee088941cf9697a131b9",
+    "calls": [
+      "this.tm.roster.resolveAgentProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738518:28055604",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.runGroupTurn",
+    "qualified_name": "GroupChatGlue.runGroupTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738518,
+    "end_line": 738551,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "epoch",
+      "options2 = {}"
+    ],
+    "body_sha256": "d7112a670001a1b431bbccb9f9495794e1353e9e97b6dcd9fcf09ffd6687a385",
+    "calls": [
+      "describeAgentRunError",
+      "hostTrayTitle",
+      "new GroupChatOrchestrator",
+      "orchestrator.run",
+      "this.groupIdentityFor",
+      "this.groupOrchestratorDeps",
+      "this.localGroupConfig",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.runLifecycle.endSessionRun",
+      "this.tm.trayErrors.pushError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "result.failure.error"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:738552:28056906",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.groupOrchestratorDeps",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738552,
+    "end_line": 738572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "epoch",
+      "traceCtx",
+      "lane = \"background\"",
+      "requestSource",
+      "attachments"
+    ],
+    "body_sha256": "c198b158ea3ae27fc47189676ce0129e55b5a1498ae99a0a937b419bb794c83f",
+    "calls": [
+      "this.deliveryFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738553:28057006",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "isCurrent",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps/isCurrent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738553,
+    "end_line": 738553,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "02bdb89292417d9d842a4863e7da14f001ff41bdd74043ead937530ac679d508",
+    "calls": [
+      "this.tm.sendPipeline.currentTurnEpoch",
+      "this.tm.sessions.deletedAgentIds.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738555:28057158",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "resolveMembers",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps/resolveMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738555,
+    "end_line": 738555,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ids"
+    ],
+    "body_sha256": "8baefd86d736370da7b878550a29855bd904965ea7c2bd0c42f53f9d75c26134",
+    "calls": [
+      "this.resolveGroupMembers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738556:28057217",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "readHistory",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps/readHistory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738556,
+    "end_line": 738556,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5c27055f9099ac5590d8091efd99bec70a88f69782d3b4618e678c39e563a3fd",
+    "calls": [
+      "this.readGroupHistory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738558:28057319",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "runMemberTurn",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps/runMemberTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738558,
+    "end_line": 738566,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "28c74afacc656b2159087b856a00b577be2b3bf52260ff2d4eab6312d264eeca",
+    "calls": [
+      "this.runGroupMemberTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738567:28057522",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "postMemberMessages",
+    "qualified_name": "GroupChatGlue.groupOrchestratorDeps/postMemberMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738567,
+    "end_line": 738569,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member",
+      "messages2"
+    ],
+    "body_sha256": "51716dbd1b05486af50a3e5b2ad82695933adbcb7016edd704dde9e7c6704812",
+    "calls": [
+      "this.postGroupMemberMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738573:28057698",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.deliveryFor",
+    "qualified_name": "GroupChatGlue.deliveryFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738573,
+    "end_line": 738581,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "34b5971860170b96e6662e9f913f5beb04dda03056b240a7efc1e2ca39b71c25",
+    "calls": [
+      "delivery.markArrivedBeforeThisRecord",
+      "new RoomDeliveryRecord",
+      "this.deliveriesByGroup.get",
+      "this.deliveriesByGroup.set",
+      "this.readGroupHistory"
+    ],
+    "writes": [
+      "delivery"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738582:28058044",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.resolveGroupMembers",
+    "qualified_name": "GroupChatGlue.resolveGroupMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738582,
+    "end_line": 738605,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memberIds"
+    ],
+    "body_sha256": "0702967042b5e4c0e91a3f41b12229dbab2a50ecfaca6b0d3f20925993d33e37",
+    "calls": [
+      "getSandProfilePath",
+      "isSandGroupDir",
+      "members2.push",
+      "parseAgentId",
+      "profile.name.trim",
+      "readSandProfileFile",
+      "this.tm.hostLog",
+      "this.tm.sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738606:28058876",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.memberKindOf",
+    "qualified_name": "GroupChatGlue.memberKindOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738606,
+    "end_line": 738623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memberId"
+    ],
+    "body_sha256": "f9efb358ef93e321b782044c70b8b216edd6637ee059bb7dfc04afd2dbe29a36",
+    "calls": [
+      "getSandProfilePath",
+      "isRefusedSandDataFile",
+      "new SandGroupMemberHarnessError",
+      "parseProfileJson",
+      "readSandDataFileSync",
+      "this.tm.sessionStore.getAgentDir"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [
+      "SandGroupMemberHarnessError",
+      "error64"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 4,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:738624:28059725",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.reportMemberTurnOutcome",
+    "qualified_name": "GroupChatGlue.reportMemberTurnOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738624,
+    "end_line": 738633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "roomSession",
+      "memberId",
+      "outcome",
+      "error64"
+    ],
+    "body_sha256": "1780c834fc6a7c6054df706e441feec9af63e1570dedd9d2753f3ee7d9cdabe5",
+    "calls": [
+      "classifyAgentError",
+      "this.memberKindOf",
+      "this.tm.telemetry.reportGroupMemberTurnOutcome"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738634:28060098",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.surfaceGroupMemberTurnError",
+    "qualified_name": "GroupChatGlue.surfaceGroupMemberTurnError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738634,
+    "end_line": 738641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "roomSession",
+      "error64"
+    ],
+    "body_sha256": "c17807ea6223a977b7157b117daeba958546a6a9dcbb72fb3dfd4b88d47c3261",
+    "calls": [
+      "describeAgentRunError",
+      "hostTrayTitle",
+      "this.tm.trayErrors.pushError",
+      "turnTrayTitleKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738642:28060410",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.runGroupMemberTurn",
+    "qualified_name": "GroupChatGlue.runGroupMemberTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738642,
+    "end_line": 738651,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "roomSession",
+      "request5",
+      "isRoomTurnCurrent",
+      "traceCtx",
+      "lane = \"background\"",
+      "requestSource",
+      "attachments"
+    ],
+    "body_sha256": "e3563c1212e0bc43f6717189d3234c670d7a292b9993221bf795c365c309cba0",
+    "calls": [
+      "parseAgentId",
+      "this.memberKindOf",
+      "this.reportMemberTurnOutcome",
+      "this.runTemporalGroupMemberTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738652:28060954",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.runTemporalGroupMemberTurn",
+    "qualified_name": "GroupChatGlue.runTemporalGroupMemberTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738652,
+    "end_line": 738702,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "roomSession",
+      "request5",
+      "isRoomTurnCurrent"
+    ],
+    "body_sha256": "6f6f218840a46320cf3eafe428ff28fa5594c886c72b0f8186965bd801697453",
+    "calls": [
+      "delegate.requestTemporalMemberTurn",
+      "isRoomTurnCurrent",
+      "members2.filter",
+      "parseAgentId",
+      "readSandGroupConfig",
+      "temporalOutcomeToMemberTurnOutcome",
+      "this.groupIdentityFor",
+      "this.reportMemberTurnOutcome",
+      "this.resolveGroupMembers",
+      "this.setTemporalMemberWorking",
+      "this.surfaceGroupMemberTurnError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:738703:28063035",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.receiveRoomMemberTurnResult",
+    "qualified_name": "GroupChatGlue.receiveRoomMemberTurnResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738703,
+    "end_line": 738705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "fd54c9e08235d9e8c8e8a145db9bb4bafcbeadd9cdf9c6b1bfd3ceeede67e531",
+    "calls": [
+      "this.tm.temporalMemberDelegate.receiveRoomMemberTurnResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738706:28063152",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.cancelTemporalMemberTurns",
+    "qualified_name": "GroupChatGlue.cancelTemporalMemberTurns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738706,
+    "end_line": 738708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0d67994cb0b6e574a20f8d855df7a4875bd3edbd74a72c61184a956d32b7e7f8",
+    "calls": [
+      "this.tm.temporalMemberDelegate.cancelTemporalMemberTurns"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738709:28063259",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.activeTemporalMemberIdOf",
+    "qualified_name": "GroupChatGlue.activeTemporalMemberIdOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738709,
+    "end_line": 738711,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "groupId"
+    ],
+    "body_sha256": "6ac8be85aa1210240f28d66ca0462a80af908a4dcf16a710b1ff0924e03c3532",
+    "calls": [
+      ".at",
+      "this.workingTemporalMembersByGroup.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738712:28063369",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.setTemporalMemberWorking",
+    "qualified_name": "GroupChatGlue.setTemporalMemberWorking",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738712,
+    "end_line": 738726,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "groupId",
+      "memberId",
+      "working"
+    ],
+    "body_sha256": "53b63d3a6d9c8cb45ec5c4bd0c20963e424b6614067efa72e5cf385e158c1f79",
+    "calls": [
+      ".filter",
+      "this.activeTemporalMemberIdOf",
+      "this.tm.roster.emitAgentUpdate",
+      "this.workingTemporalMembersByGroup.delete",
+      "this.workingTemporalMembersByGroup.get",
+      "this.workingTemporalMembersByGroup.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738727:28063950",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.postGroupMemberMessage",
+    "qualified_name": "GroupChatGlue.postGroupMemberMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738727,
+    "end_line": 738747,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "member",
+      "message"
+    ],
+    "body_sha256": "1dbedd8f8ce5d987da91876a5e763c5b6ec956d7f69e971af00ee4fbd303554d",
+    "calls": [
+      "Date.now",
+      "getTranscript",
+      "nextEntryId",
+      "parseAgentId",
+      "session.db.appendTranscriptEntry",
+      "session.db.getTranscriptEntries",
+      "this.tm.appendEntry",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.markSessionActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:738748:28064682",
+    "artifact": "host",
+    "module": "host/extensions/transcript/group-chat-glue.ts",
+    "name": "GroupChatGlue.readGroupHistory",
+    "qualified_name": "GroupChatGlue.readGroupHistory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 738748,
+    "end_line": 738752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "dc68d02890f1de75afdb456a3a2d199e33dfdd072bbd316e96f4f96a4cc387d0",
+    "calls": [
+      "getTranscript",
+      "groupHistoryFromTranscriptEntries",
+      "session.db.getTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

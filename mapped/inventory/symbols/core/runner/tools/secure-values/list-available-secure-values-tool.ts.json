@@ -1,0 +1,768 @@
+[
+  {
+    "id": "host:767190:29401416",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "secureValueResultCountBucket",
+    "qualified_name": "secureValueResultCountBucket",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767190,
+    "end_line": 767193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "count2"
+    ],
+    "body_sha256": "ab6e1bdfb486213089412d1f3eac31e918ae9d2c29f0b262465523ba63b4bcfe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767194:29401535",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedDomains",
+    "qualified_name": "listedDomains",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767194,
+    "end_line": 767203,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "site"
+    ],
+    "body_sha256": "d6f843f137ddc675d2232c7b265fead13d9ec1ab88c2a9f2fa5f1c01f2d8876e",
+    "calls": [
+      "domains.add",
+      "new Set",
+      "parseSecureValueHttpsSite",
+      "secureValueDomainMatchesSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767204:29401914",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedValueLines",
+    "qualified_name": "listedValueLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767204,
+    "end_line": 767208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "8aa327224b0f475dbf67a8ca9ea09bc5e1ed492b0a94ffe65ca0c286a44587f6",
+    "calls": [
+      ".map",
+      "values.toSorted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767209:29402144",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderAvailableSecureValues",
+    "qualified_name": "renderAvailableSecureValues",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767209,
+    "end_line": 767243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "options2"
+    ],
+    "body_sha256": "10d887a2c943a209ac7fc7f998929ce29d5328f60588c36e593bc247b8ed826d",
+    "calls": [
+      ".sort",
+      "anySite.push",
+      "grouped.get",
+      "grouped.set",
+      "lines2.join",
+      "lines2.push",
+      "listedDomains",
+      "listedValueLines",
+      "new Map",
+      "new Set",
+      "returnedNames.add",
+      "secureValueFillsAnySite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767244:29403477",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderSavedLogins",
+    "qualified_name": "renderSavedLogins",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767244,
+    "end_line": 767256,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "site",
+      "logins"
+    ],
+    "body_sha256": "49871716909e8011f3eea98350c7ceee52128e5fbbb27aa265e0f5593f3a7771",
+    "calls": [
+      ".join",
+      "logins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767258:29404000",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "unlistedLine",
+    "qualified_name": "unlistedLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767258,
+    "end_line": 767260,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "total",
+      "listed"
+    ],
+    "body_sha256": "e4718f26175895f6e9ddbbafe9f4186e348a85cd4c396b27c0b2dff6240d2653",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767270:29404396",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderSavedCards",
+    "qualified_name": "renderSavedCards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767270,
+    "end_line": 767291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cards"
+    ],
+    "body_sha256": "2130191a2b5ab2dd083563723a9f92b301d920897257fce552abf1b14092d619",
+    "calls": [
+      ".flatMap",
+      ".join",
+      "cards.slice",
+      "unlistedLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767292:29405546",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedSite",
+    "qualified_name": "listedSite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767292,
+    "end_line": 767302,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "requested",
+      "liveBrowserHost"
+    ],
+    "body_sha256": "2eeb3b86e994b3bbe0a44395cf4978a3b1564ac79136e33c9499ca0f97be7f87",
+    "calls": [
+      "liveBrowserHost",
+      "new SandToolInputError",
+      "parseSecureValueHttpsSite"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767304:29406439",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "createListAvailableSecureValuesTool",
+    "qualified_name": "createListAvailableSecureValuesTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767304,
+    "end_line": 767349,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d118f78319cc0a93a90e7e70d2190c39a443a6639d838948e85aa6aa51c55dc3",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767310:29406725",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "execute",
+    "qualified_name": "createListAvailableSecureValuesTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767310,
+    "end_line": 767347,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "dc65eede531ca818dfd8489efd9475ce90a9c17e3aeb26391dba04f6b5f051f8",
+    "calls": [
+      ".filter",
+      ".join",
+      ".reduce",
+      "Promise.all",
+      "String",
+      "d.secureValues.listMetadata",
+      "d.secureValues.listSavedCards",
+      "d.secureValues.listSavedLogins",
+      "listedSite",
+      "metadata3.filter",
+      "renderAvailableSecureValues",
+      "renderSavedCards",
+      "renderSavedLogins",
+      "savedCards.slice",
+      "secureValueLists.increment",
+      "secureValueResultCountBucket"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767350:29408678",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listAvailableSecureValuesToolsForTurn",
+    "qualified_name": "listAvailableSecureValuesToolsForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767350,
+    "end_line": 767358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4ce485ef98db28e44a6b184c7df1e685971c086c868b07e51e0223eb30922db9",
+    "calls": [
+      "createListAvailableSecureValuesTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562709:20932018",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "secureValueResultCountBucket",
+    "qualified_name": "secureValueResultCountBucket",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562709,
+    "end_line": 562712,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "count2"
+    ],
+    "body_sha256": "ab6e1bdfb486213089412d1f3eac31e918ae9d2c29f0b262465523ba63b4bcfe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562713:20932137",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedDomains",
+    "qualified_name": "listedDomains",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562713,
+    "end_line": 562722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "site"
+    ],
+    "body_sha256": "370bff667d38d734d60feda151ba911d52b998dee1b0e22b03f2fdc30c4d9327",
+    "calls": [
+      "domains.add",
+      "new Set",
+      "parseSecureValueHttpsSite",
+      "secureValueDomainMatchesSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562723:20932513",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedValueLines",
+    "qualified_name": "listedValueLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562723,
+    "end_line": 562727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "8aa327224b0f475dbf67a8ca9ea09bc5e1ed492b0a94ffe65ca0c286a44587f6",
+    "calls": [
+      ".map",
+      "values.toSorted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562728:20932743",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderAvailableSecureValues",
+    "qualified_name": "renderAvailableSecureValues",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562728,
+    "end_line": 562762,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "options2"
+    ],
+    "body_sha256": "10d887a2c943a209ac7fc7f998929ce29d5328f60588c36e593bc247b8ed826d",
+    "calls": [
+      ".sort",
+      "anySite.push",
+      "grouped.get",
+      "grouped.set",
+      "lines2.join",
+      "lines2.push",
+      "listedDomains",
+      "listedValueLines",
+      "new Map",
+      "new Set",
+      "returnedNames.add",
+      "secureValueFillsAnySite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562763:20934076",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderSavedLogins",
+    "qualified_name": "renderSavedLogins",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562763,
+    "end_line": 562775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "site",
+      "logins"
+    ],
+    "body_sha256": "49871716909e8011f3eea98350c7ceee52128e5fbbb27aa265e0f5593f3a7771",
+    "calls": [
+      ".join",
+      "logins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562777:20934599",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "unlistedLine",
+    "qualified_name": "unlistedLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562777,
+    "end_line": 562779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "total",
+      "listed"
+    ],
+    "body_sha256": "e4718f26175895f6e9ddbbafe9f4186e348a85cd4c396b27c0b2dff6240d2653",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562789:20934995",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "renderSavedCards",
+    "qualified_name": "renderSavedCards",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562789,
+    "end_line": 562810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cards"
+    ],
+    "body_sha256": "2130191a2b5ab2dd083563723a9f92b301d920897257fce552abf1b14092d619",
+    "calls": [
+      ".flatMap",
+      ".join",
+      "cards.slice",
+      "unlistedLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562811:20936145",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listedSite",
+    "qualified_name": "listedSite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562811,
+    "end_line": 562821,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "requested",
+      "liveBrowserHost"
+    ],
+    "body_sha256": "2eeb3b86e994b3bbe0a44395cf4978a3b1564ac79136e33c9499ca0f97be7f87",
+    "calls": [
+      "liveBrowserHost",
+      "new SandToolInputError",
+      "parseSecureValueHttpsSite"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562823:20937038",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "createListAvailableSecureValuesTool",
+    "qualified_name": "createListAvailableSecureValuesTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562823,
+    "end_line": 562868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d118f78319cc0a93a90e7e70d2190c39a443a6639d838948e85aa6aa51c55dc3",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562829:20937324",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "execute",
+    "qualified_name": "createListAvailableSecureValuesTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562829,
+    "end_line": 562866,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "dc65eede531ca818dfd8489efd9475ce90a9c17e3aeb26391dba04f6b5f051f8",
+    "calls": [
+      ".filter",
+      ".join",
+      ".reduce",
+      "Promise.all",
+      "String",
+      "d.secureValues.listMetadata",
+      "d.secureValues.listSavedCards",
+      "d.secureValues.listSavedLogins",
+      "listedSite",
+      "metadata3.filter",
+      "renderAvailableSecureValues",
+      "renderSavedCards",
+      "renderSavedLogins",
+      "savedCards.slice",
+      "secureValueLists.increment",
+      "secureValueResultCountBucket"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562869:20939277",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/list-available-secure-values-tool.ts",
+    "name": "listAvailableSecureValuesToolsForTurn",
+    "qualified_name": "listAvailableSecureValuesToolsForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562869,
+    "end_line": 562877,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4ce485ef98db28e44a6b184c7df1e685971c086c868b07e51e0223eb30922db9",
+    "calls": [
+      "createListAvailableSecureValuesTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

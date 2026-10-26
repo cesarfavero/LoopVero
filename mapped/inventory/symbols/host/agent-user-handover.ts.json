@@ -1,0 +1,110 @@
+[
+  {
+    "id": "host:494824:18155725",
+    "artifact": "host",
+    "module": "host/agent-user-handover.ts",
+    "name": "classifyAgentMediaRootOwnership",
+    "qualified_name": "classifyAgentMediaRootOwnership",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494824,
+    "end_line": 494826,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prepared",
+      "agentUser"
+    ],
+    "body_sha256": "fbbc2c262cd6321ab06454e5417baaab6dc57097e873a15aee4dba8bbbb7ca9e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494827:18155899",
+    "artifact": "host",
+    "module": "host/agent-user-handover.ts",
+    "name": "handPathToAgentUser",
+    "qualified_name": "handPathToAgentUser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494827,
+    "end_line": 494834,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "a4c05c22d4a2a7ae18aa7ec57e057a1729f3124855b853d604f4ec8b146c5e19",
+    "calls": [
+      "chownSandDataEntrySync",
+      "isSandDataPath",
+      "process.getuid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494835:18156374",
+    "artifact": "host",
+    "module": "host/agent-user-handover.ts",
+    "name": "prepareAgentMediaStoreRoots",
+    "qualified_name": "prepareAgentMediaStoreRoots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494835,
+    "end_line": 494876,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "handoff2 = handPathToAgentUser",
+      "options2"
+    ],
+    "body_sha256": "6bab5cc7a20d6b930e58ce16af48a6d32935045253e8b4d683ea89cc7714b80c",
+    "calls": [
+      "classifyAgentMediaRootOwnership",
+      "ensureSandDataDirSync",
+      "errorClassOf",
+      "findSystemErrno",
+      "getAgentAssetsDir",
+      "getAgentAttachmentsDir",
+      "handoff2",
+      "options2.observe"
+    ],
+    "writes": [
+      "agentUser",
+      "agentUserReadErrorClass"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 1,
+      "catches": 2
+    }
+  }
+]

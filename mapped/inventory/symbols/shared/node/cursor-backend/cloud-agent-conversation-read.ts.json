@@ -1,0 +1,360 @@
+[
+  {
+    "id": "host:508675:18666679",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "cloudAgentWakeSourceOf",
+    "qualified_name": "cloudAgentWakeSourceOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508675,
+    "end_line": 508688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "1f041a4ad23c92f7274a543b464ec7558e4b10f2731d64ca8af801f61ce48a10",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508689:18667018",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "trimmedOrNull",
+    "qualified_name": "trimmedOrNull",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508689,
+    "end_line": 508692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "374942f613313be1a616181a670d75f291a50209795ca9c96fab6a22e90fc8f7",
+    "calls": [
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508693:18667137",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "cloudAgentWakeFromSubscriptionMetadata",
+    "qualified_name": "cloudAgentWakeFromSubscriptionMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508693,
+    "end_line": 508702,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "atMs"
+    ],
+    "body_sha256": "618d31d60f60ca27ccdbda748815d9ee47de281df8627d860e383b8d7915826b",
+    "calls": [
+      "cloudAgentWakeSourceOf",
+      "trimmedOrNull"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508703:18667576",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "exchangeConversationReads",
+    "qualified_name": "exchangeConversationReads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508703,
+    "end_line": 508708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bcId"
+    ],
+    "body_sha256": "7317e1119c11e97f6abfb7bb7a72c8f1581bdbf96963d9eec35c3b3d6982f03a",
+    "calls": [
+      "new GetBackgroundComposerConversationRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508709:18667776",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "refusesExchangeProjection",
+    "qualified_name": "refusesExchangeProjection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508709,
+    "end_line": 508711,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "4aa012a912622287e7f5c40175d1cbd89ecd8856244fb7028e757db3774cfd56",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508712:18667948",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "readCloudAgentConversation",
+    "qualified_name": "readCloudAgentConversation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508712,
+    "end_line": 508733,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "rawBcId"
+    ],
+    "body_sha256": "2b0a1dd7d9be60680ae23071f1595d6c83ab52e129eeae4830f04a1576006160",
+    "calls": [
+      "classifyReadFailure",
+      "client.getBackgroundComposerConversation",
+      "exchangeConversationReads",
+      "rawBcId.trim",
+      "reads.entries",
+      "refusesExchangeProjection",
+      "toCloudAgentMessages"
+    ],
+    "writes": [
+      "conversation"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:508734:18668691",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "toCloudAgentMessages",
+    "qualified_name": "toCloudAgentMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508734,
+    "end_line": 508768,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversation"
+    ],
+    "body_sha256": "b6000e594e85df2d059539abc338d146c610fcdefde03349fb6cc3ad4dbb66bc",
+    "calls": [
+      "Math.max",
+      "message.text.trim",
+      "messageKind",
+      "messages2.push",
+      "submitterOf",
+      "toCloudAgentWake"
+    ],
+    "writes": [
+      "turn"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508769:18669623",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "submitterOf",
+    "qualified_name": "submitterOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508769,
+    "end_line": 508773,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "b953a2baaad4742f4127cbb08bd7fd8d0095d397cf9a60a473fc5f8e35212f5a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508774:18669880",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "messageKind",
+    "qualified_name": "messageKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508774,
+    "end_line": 508790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "5f0676a7f922cc55439823cb3f60b47842bac6ff1f997106c1cd8b2c909274f5",
+    "calls": [
+      "message.bubbleId.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508791:18670487",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "createdAtMs",
+    "qualified_name": "createdAtMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508791,
+    "end_line": 508795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "createdAt"
+    ],
+    "body_sha256": "56cd72bd40f500fdeb13b537bd4d270b96e1c68d6e8f930910e035bce51b7cbb",
+    "calls": [
+      "Date.parse",
+      "Number.isFinite",
+      "createdAt.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508796:18670666",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-conversation-read.ts",
+    "name": "toCloudAgentWake",
+    "qualified_name": "toCloudAgentWake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508796,
+    "end_line": 508801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "be7749bcfb542a5bcfb9036c1b821d0eb29bf6d3e9ddf24f55f012599b6b1236",
+    "calls": [
+      "cloudAgentWakeFromSubscriptionMetadata",
+      "createdAtMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

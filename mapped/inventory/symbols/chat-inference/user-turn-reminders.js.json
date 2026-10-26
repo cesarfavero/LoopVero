@@ -1,0 +1,240 @@
+[
+  {
+    "id": "evaluation:285882:9228458",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "withUserTurnReminders",
+    "qualified_name": "withUserTurnReminders",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285882,
+    "end_line": 285891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "reminders"
+    ],
+    "body_sha256": "4c41ed07393cc19d61fa285d09f9c6ba4b695f54502652643abcf817bf2a8cef",
+    "calls": [
+      "appendReminder",
+      "insertBeforeMarker"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285892:9228771",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "isSummaryMessage",
+    "qualified_name": "isSummaryMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285892,
+    "end_line": 285894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "17e7bbd274c4f2d1e6b16d023b7daba9d1273f0c6e5cffc759922a4df621f512",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285895:9228872",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "replaceAt",
+    "qualified_name": "replaceAt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285895,
+    "end_line": 285897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "index",
+      "item"
+    ],
+    "body_sha256": "9627d77ae0be82095f2e196b61bcf0a12b03fc5f8d02b7af6de1c8a46fb8e1dd",
+    "calls": [
+      "items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285898:9228987",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "spliceBeforeLast",
+    "qualified_name": "spliceBeforeLast",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285898,
+    "end_line": 285902,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content",
+      "marker17",
+      "text3"
+    ],
+    "body_sha256": "8e3af0d7373f6c664eac9be006efeb2f73328d48aa36f3cebc374331682b3c01",
+    "calls": [
+      "content.lastIndexOf",
+      "content.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285903:9229177",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "insertBeforeMarker",
+    "qualified_name": "insertBeforeMarker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285903,
+    "end_line": 285916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "text3",
+      "marker17"
+    ],
+    "body_sha256": "045bca4c81256572d2907744f6f9126403014c1069a65995e048607daa68d914",
+    "calls": [
+      "insertIntoContent",
+      "isSummaryMessage",
+      "replaceAt"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285917:9229661",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "insertIntoContent",
+    "qualified_name": "insertIntoContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285917,
+    "end_line": 285929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content",
+      "marker17",
+      "text3"
+    ],
+    "body_sha256": "7d95362b1ab3d8e632c8b1bafb13dce7410a3aaf428bf9836642f636ec63951f",
+    "calls": [
+      "replaceAt",
+      "spliceBeforeLast"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285930:9230132",
+    "artifact": "evaluation",
+    "module": "chat-inference/user-turn-reminders.js",
+    "name": "appendReminder",
+    "qualified_name": "appendReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285930,
+    "end_line": 285938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "text3"
+    ],
+    "body_sha256": "737c6190cfa4092c30650c6d2c3f5a6d4a2cf8aaf397f5f3f8ce4b8da57fd267",
+    "calls": [
+      "isSummaryMessage",
+      "messages.at",
+      "replaceAt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

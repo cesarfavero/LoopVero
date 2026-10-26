@@ -1,0 +1,80 @@
+[
+  {
+    "id": "evaluation:567639:21157430",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-model-selection.ts",
+    "name": "modelCatalogLines",
+    "qualified_name": "modelCatalogLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567639,
+    "end_line": 567654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "catalog"
+    ],
+    "body_sha256": "2fdc8e9aff87af9db04016f3ea290767938a5ba01d1c0f145cb6ba2ccfb3e15f",
+    "calls": [
+      ".join",
+      "describeParamIncompatibilities",
+      "entry.aliases.join",
+      "lines2.push",
+      "param.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567655:21158086",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-model-selection.ts",
+    "name": "validateModelSelection",
+    "qualified_name": "validateModelSelection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567655,
+    "end_line": 567682,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api",
+      "modelId",
+      "modelParams"
+    ],
+    "body_sha256": "087a0de5d5fbc787afa4264827733f02deeb6db6d640a283bd57d3c409bfe637",
+    "calls": [
+      ".join",
+      "Object.keys",
+      "api.listModels",
+      "catalog.map",
+      "errors.join",
+      "findCatalogEntry",
+      "modelId.trim",
+      "resolveModelMaxMode",
+      "validateModelParams"
+    ],
+    "writes": [
+      "catalog"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

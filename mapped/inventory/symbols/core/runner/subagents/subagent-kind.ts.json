@@ -1,0 +1,321 @@
+[
+  {
+    "id": "host:740856:28153923",
+    "artifact": "host",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "subagentKind",
+    "qualified_name": "subagentKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740856,
+    "end_line": 740865,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "201483d64b879ce7cf4824618050e720928e81667423673b205877f15851394f",
+    "calls": [
+      "MEDIA_REVIEW_SUBAGENT_NAMES.find",
+      "NORMALIZED_SUBAGENT_NAMES.find",
+      "normalizeSubagentTypeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740866:28154397",
+    "artifact": "host",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "isBuiltinSubagent",
+    "qualified_name": "isBuiltinSubagent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740866,
+    "end_line": 740870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType",
+      "...names3"
+    ],
+    "body_sha256": "b827b770c17b0c24bb1ed77adb84f0f55ffebff12c67f10b5d39eccd8e90e14d",
+    "calls": [
+      "names3.includes",
+      "subagentKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740872:28154655",
+    "artifact": "host",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "sandSubagentToolName",
+    "qualified_name": "sandSubagentToolName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740872,
+    "end_line": 740874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c77733458e5b3137be238b48e573f73f26a4da529273fb1aa7390b6191098ab8",
+    "calls": [
+      "host.gates.tasks"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479749:17381696",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "isRetiredSubagentTypeByNormalizedName",
+    "qualified_name": "isRetiredSubagentTypeByNormalizedName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479749,
+    "end_line": 479755,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType"
+    ],
+    "body_sha256": "0cb22d551975ddc4eb5772d79c3377147f98dcff35da6f0bae325f84aa84ab39",
+    "calls": [
+      "normalizeSubagentTypeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479756:17381965",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "assertSubagentTypeNotRetired",
+    "qualified_name": "assertSubagentTypeNotRetired",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479756,
+    "end_line": 479762,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType"
+    ],
+    "body_sha256": "2fec01408d6cdc723f3ca53c2f44a66de12f6bb3a06fefb0dd983073bc2c8987",
+    "calls": [
+      "isRetiredSubagentTypeByNormalizedName",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479763:17382240",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "subagentKind",
+    "qualified_name": "subagentKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479763,
+    "end_line": 479772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "201483d64b879ce7cf4824618050e720928e81667423673b205877f15851394f",
+    "calls": [
+      "MEDIA_REVIEW_SUBAGENT_NAMES.find",
+      "NORMALIZED_SUBAGENT_NAMES.find",
+      "normalizeSubagentTypeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479773:17382714",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "isBuiltinSubagent",
+    "qualified_name": "isBuiltinSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479773,
+    "end_line": 479777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType",
+      "...names3"
+    ],
+    "body_sha256": "b827b770c17b0c24bb1ed77adb84f0f55ffebff12c67f10b5d39eccd8e90e14d",
+    "calls": [
+      "names3.includes",
+      "subagentKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479778:17382919",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "isMediaReviewSubagent",
+    "qualified_name": "isMediaReviewSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479778,
+    "end_line": 479780,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType"
+    ],
+    "body_sha256": "622f167706fa8754c5aebdeebb9477cc0b0dc3456b753a5a4a2f7d6504066c69",
+    "calls": [
+      "isBuiltinSubagent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479782:17383095",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "sandSubagentToolName",
+    "qualified_name": "sandSubagentToolName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479782,
+    "end_line": 479784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c77733458e5b3137be238b48e573f73f26a4da529273fb1aa7390b6191098ab8",
+    "calls": [
+      "host.gates.tasks"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:479785:17383186",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-kind.ts",
+    "name": "backgroundSubagentLine",
+    "qualified_name": "backgroundSubagentLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 479785,
+    "end_line": 479787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "8eb1f71e1fd6db196e1de08f52a8390aab01201da347dca2020a8ba349ef8d37",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

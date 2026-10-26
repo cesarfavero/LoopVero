@@ -1,0 +1,407 @@
+[
+  {
+    "id": "host:763462:29227015",
+    "artifact": "host",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "withSubagentLaunchPrefetch",
+    "qualified_name": "withSubagentLaunchPrefetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763462,
+    "end_line": 763472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool",
+      "launchPrefetch",
+      "stateHandler"
+    ],
+    "body_sha256": "62d1dcd1f6f9cce64422471bd0ca92d249932a635525847f5153ab993a58dad7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763466:29227226",
+    "artifact": "host",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "previewStreamingArgs",
+    "qualified_name": "withSubagentLaunchPrefetch/previewStreamingArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763466,
+    "end_line": 763470,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "toolCallId"
+    ],
+    "body_sha256": "490f474200ed3c6e4f6fb9eff7903365ca499a2f2e51c1367f1317d51e6c94a3",
+    "calls": [
+      "launchPrefetch.start",
+      "preview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556428:20629180",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "createSandSubagentLaunchPrefetch",
+    "qualified_name": "createSandSubagentLaunchPrefetch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556428,
+    "end_line": 556442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "f8558de7a943d9be2d0b089e76af8e70a0dd28c86d7f4501421fdaf91e652b6d",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556431:20629308",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "start",
+    "qualified_name": "createSandSubagentLaunchPrefetch/start",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556431,
+    "end_line": 556439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "toolCallId",
+      "stateHandler"
+    ],
+    "body_sha256": "16bb020bf3460e32d97e7f90e315fa74d2c24eae9acbe85b34d7b53ca17dbf4b",
+    "calls": [
+      "ctx.withDetached",
+      "prefetchOutlivingTheArgumentStream",
+      "startedToolCalls.add",
+      "startedToolCalls.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556440:20629601",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "started",
+    "qualified_name": "createSandSubagentLaunchPrefetch/started",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556440,
+    "end_line": 556440,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolCallId"
+    ],
+    "body_sha256": "a06cb27c0f2a61b3c825ba04727cf826b80d57264c829c3de747eedcf6625d7a",
+    "calls": [
+      "startedToolCalls.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556443:20629657",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "prefetchOutlivingTheArgumentStream",
+    "qualified_name": "prefetchOutlivingTheArgumentStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556443,
+    "end_line": 556456,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detachedCtx",
+      "stateHandler",
+      "warmLaunchReviewContext"
+    ],
+    "body_sha256": "ff4c69e4484d8f636a1442358905bed9ab8f367f17a26edffabedf15502ca62e",
+    "calls": [
+      "Promise.allSettled",
+      "__callDispose",
+      "__using",
+      "createSpan",
+      "detachedCtx.withName",
+      "stateHandler.ensureSubagentStatesLoaded",
+      "warmLaunchReviewContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:556457:20630165",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "withSubagentLaunchPrefetch",
+    "qualified_name": "withSubagentLaunchPrefetch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556457,
+    "end_line": 556467,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool",
+      "launchPrefetch",
+      "stateHandler"
+    ],
+    "body_sha256": "62d1dcd1f6f9cce64422471bd0ca92d249932a635525847f5153ab993a58dad7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556461:20630376",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "previewStreamingArgs",
+    "qualified_name": "withSubagentLaunchPrefetch/previewStreamingArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556461,
+    "end_line": 556465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "toolCallId"
+    ],
+    "body_sha256": "490f474200ed3c6e4f6fb9eff7903365ca499a2f2e51c1367f1317d51e6c94a3",
+    "calls": [
+      "launchPrefetch.start",
+      "preview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556469:20630613",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "withDynamicSubagentLaunchPrefetch",
+    "qualified_name": "withDynamicSubagentLaunchPrefetch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556469,
+    "end_line": 556490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "invocationTool",
+      "launchPrefetch",
+      "stateHandler",
+      "subagentToolName"
+    ],
+    "body_sha256": "7cd824e02f725525153ace2dd3d670f2fbd9a3fa984e729c01f5f25f9ce0de13",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556473:20630889",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "previewStreamingArgs",
+    "qualified_name": "withDynamicSubagentLaunchPrefetch/previewStreamingArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556473,
+    "end_line": 556488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "toolCallId"
+    ],
+    "body_sha256": "0f8d0611ab00fb51370fc60fb0fc7f8d23d1923c13d3431f7d932c58513dedf9",
+    "calls": [
+      "preview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556491:20631537",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "streamedDynamicToolTarget",
+    "qualified_name": "streamedDynamicToolTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556491,
+    "end_line": 556495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "envelope"
+    ],
+    "body_sha256": "9a5323dc31bdf9a19fe6411ccc07478f089b12a3e5ef20ed496b3ccf9e480f17",
+    "calls": [
+      "/\"namespace\"\\s*:\\s*\"([^\"\\\\]*)\"/.exec",
+      "/\"toolName\"\\s*:\\s*\"([^\"\\\\]*)\"/.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556496:20631819",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/subagent-launch-prefetch.ts",
+    "name": "loadLaunchReviewContext",
+    "qualified_name": "loadLaunchReviewContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556496,
+    "end_line": 556514,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "prefetched",
+      "load2"
+    ],
+    "body_sha256": "52695e5ba4b550fa7bbae9e8805d093761fd8b4336a1b3eaa48e8722cd0f31e1",
+    "calls": [
+      "String",
+      "__callDispose",
+      "__using",
+      "createSpan",
+      "ctx.withName",
+      "launchReviewContextMs.histogram",
+      "load2",
+      "performance.now",
+      "span.span.setAttribute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

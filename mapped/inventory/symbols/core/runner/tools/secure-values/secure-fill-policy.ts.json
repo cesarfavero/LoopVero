@@ -1,0 +1,460 @@
+[
+  {
+    "id": "host:766674:29379951",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "parseFillSite",
+    "qualified_name": "parseFillSite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766674,
+    "end_line": 766678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d5183dc6e8787dfcc42df47ea203e7851e9a68a87470bf25166c85aa18ec5880",
+    "calls": [
+      "URL.parse",
+      "parseSecureValueHttpsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766679:29380145",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "targetDomainOf",
+    "qualified_name": "targetDomainOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766679,
+    "end_line": 766681,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "site"
+    ],
+    "body_sha256": "8ac05501ac99ba266acfda435a5675e098f2083845c2373232008a2f1d08745f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766682:29380229",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "frameClassification",
+    "qualified_name": "frameClassification",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766682,
+    "end_line": 766688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "frame",
+      "top"
+    ],
+    "body_sha256": "98b3256173ce4042ed0b63a3da00fd5492532e2d75ad155825cba8c3ff60eac6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766689:29380459",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "authorizeSandSecureFillDomain",
+    "qualified_name": "authorizeSandSecureFillDomain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766689,
+    "end_line": 766704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "target",
+      "options2 = {}"
+    ],
+    "body_sha256": "1d6294d4fe7ab3bcb2b9c3116ec6ea7708ad3833943ce96f5ef6c71c8a98404c",
+    "calls": [
+      "frameClassification",
+      "metadata2.domains.some",
+      "parseFillSite",
+      "secureValueFillsAnySite",
+      "targetDomainOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766705:29381237",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "sandSecureFillFieldAccepts",
+    "qualified_name": "sandSecureFillFieldAccepts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766705,
+    "end_line": 766711,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "target"
+    ],
+    "body_sha256": "1849661ec654b01b34bd455f06cbccc0b85c63cda55120d5fe1c16b79a0137b5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766712:29381588",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "authorizeSandSecureFillCardDomain",
+    "qualified_name": "authorizeSandSecureFillCardDomain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766712,
+    "end_line": 766724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d050b287308e8030e1f7ab4bda7b47ab67313a89c7709328aad446bba59d4efb",
+    "calls": [
+      "authorizeSecureValueCardSites",
+      "frameClassification",
+      "parseFillSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766726:29382211",
+    "artifact": "host",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "sandSecureFillCardFieldAccepts",
+    "qualified_name": "sandSecureFillCardFieldAccepts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766726,
+    "end_line": 766733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field",
+      "target"
+    ],
+    "body_sha256": "45294b0b2e628a8360df7067de796d9d3ff4c34557807cdf3b4bdeba0c88691b",
+    "calls": [
+      ".includes",
+      ".replace",
+      ".split",
+      "CARD_SECURITY_CODE_DESCRIPTOR.test",
+      "control.autoComplete.toLowerCase",
+      "userFormControlLooksLikeCardNumber"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562187:20910317",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "parseFillSite",
+    "qualified_name": "parseFillSite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562187,
+    "end_line": 562191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d5183dc6e8787dfcc42df47ea203e7851e9a68a87470bf25166c85aa18ec5880",
+    "calls": [
+      "URL.parse",
+      "parseSecureValueHttpsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562192:20910511",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "targetDomainOf",
+    "qualified_name": "targetDomainOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562192,
+    "end_line": 562194,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "site"
+    ],
+    "body_sha256": "8ac05501ac99ba266acfda435a5675e098f2083845c2373232008a2f1d08745f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562195:20910595",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "frameClassification",
+    "qualified_name": "frameClassification",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562195,
+    "end_line": 562201,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "frame",
+      "top"
+    ],
+    "body_sha256": "98b3256173ce4042ed0b63a3da00fd5492532e2d75ad155825cba8c3ff60eac6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562202:20910825",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "authorizeSandSecureFillDomain",
+    "qualified_name": "authorizeSandSecureFillDomain",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562202,
+    "end_line": 562217,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "metadata2",
+      "target",
+      "options2 = {}"
+    ],
+    "body_sha256": "1d6294d4fe7ab3bcb2b9c3116ec6ea7708ad3833943ce96f5ef6c71c8a98404c",
+    "calls": [
+      "frameClassification",
+      "metadata2.domains.some",
+      "parseFillSite",
+      "secureValueFillsAnySite",
+      "targetDomainOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562218:20911603",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "sandSecureFillFieldAccepts",
+    "qualified_name": "sandSecureFillFieldAccepts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562218,
+    "end_line": 562224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "target"
+    ],
+    "body_sha256": "1849661ec654b01b34bd455f06cbccc0b85c63cda55120d5fe1c16b79a0137b5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562225:20911954",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "authorizeSandSecureFillCardDomain",
+    "qualified_name": "authorizeSandSecureFillCardDomain",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562225,
+    "end_line": 562237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d050b287308e8030e1f7ab4bda7b47ab67313a89c7709328aad446bba59d4efb",
+    "calls": [
+      "authorizeSecureValueCardSites",
+      "frameClassification",
+      "parseFillSite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562239:20912577",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/secure-values/secure-fill-policy.ts",
+    "name": "sandSecureFillCardFieldAccepts",
+    "qualified_name": "sandSecureFillCardFieldAccepts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562239,
+    "end_line": 562246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field",
+      "target"
+    ],
+    "body_sha256": "45294b0b2e628a8360df7067de796d9d3ff4c34557807cdf3b4bdeba0c88691b",
+    "calls": [
+      ".includes",
+      ".replace",
+      ".split",
+      "CARD_SECURITY_CODE_DESCRIPTOR.test",
+      "control.autoComplete.toLowerCase",
+      "userFormControlLooksLikeCardNumber"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

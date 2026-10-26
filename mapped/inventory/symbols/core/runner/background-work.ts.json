@@ -1,0 +1,1570 @@
+[
+  {
+    "id": "host:590195:21792633",
+    "artifact": "host",
+    "module": "core/runner/background-work.ts",
+    "name": "shellRewatchPollMs",
+    "qualified_name": "shellRewatchPollMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 590195,
+    "end_line": 590202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "db0cd86005b6aa1f5b5854097d92cf926d4ebf4eb685a11ff45f8180bb146b11",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseInt",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:590203:21792951",
+    "artifact": "host",
+    "module": "core/runner/background-work.ts",
+    "name": "parseShellTerminalFooter",
+    "qualified_name": "parseShellTerminalFooter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 590203,
+    "end_line": 590221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "04b53c7f98b446bfbc5b207fc292f7b35bda0517e6f702bba341480edcd79566",
+    "calls": [
+      ".trim",
+      "/(?:^|\\n)ended_at:\\s*\\S/.test",
+      "Number",
+      "Number.isInteger",
+      "content.match",
+      "footer.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490393:17808320",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "watchStartedBy",
+    "qualified_name": "watchStartedBy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490393,
+    "end_line": 490396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8fc54a02841836354ce2d821cc2f663e7920e84d019d677ea509704241b0f89a",
+    "calls": [
+      "cloudAgentStartedBy",
+      "cloudAgentWatchArmedBy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490397:17808508",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "spendRequestOwnsProvenance",
+    "qualified_name": "spendRequestOwnsProvenance",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490397,
+    "end_line": 490399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provenance"
+    ],
+    "body_sha256": "c6406ca44402e8f4aa43365d77714708fa6bc7bd6988ab1286c575d10096279b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490401:17808702",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "RevivingBackgroundWorkRegistry.constructor",
+    "qualified_name": "RevivingBackgroundWorkRegistry.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490401,
+    "end_line": 490405,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onShellCompletion",
+      "onShellWorkRegistered"
+    ],
+    "body_sha256": "9b0f7a09b00c4ba64cf045537afe6424a5a1103fa481ace2338d1f07f1731ee1",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.onShellCompletion",
+      "this.onShellWorkRegistered"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490409:17808978",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "RevivingBackgroundWorkRegistry.recordWorkProvenance",
+    "qualified_name": "RevivingBackgroundWorkRegistry.recordWorkProvenance",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490409,
+    "end_line": 490413,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "provenance"
+    ],
+    "body_sha256": "4776dd1b06fc4b558e2c9a251eba28b4c40811e3f870b5f238225a70f26da61e",
+    "calls": [
+      "spendRequestOwnsProvenance",
+      "this.provenance.delete",
+      "this.provenance.get",
+      "this.provenance.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490414:17809181",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "RevivingBackgroundWorkRegistry.enqueue",
+    "qualified_name": "RevivingBackgroundWorkRegistry.enqueue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490414,
+    "end_line": 490423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "wakeup"
+    ],
+    "body_sha256": "ea36f61d10711d825895434644d8c9656f619ca0c2827b55e9196c60fa015b45",
+    "calls": [
+      "super.enqueue",
+      "this.onShellCompletion",
+      "this.provenance.delete",
+      "this.provenance.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490424:17809503",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "RevivingBackgroundWorkRegistry.forTurn",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490424,
+    "end_line": 490450,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "provenance"
+    ],
+    "body_sha256": "85e7f9510b9de12c5a4afc6f71ac36efd28d5dba944e4a176852b2474a179ea5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490427:17809573",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "upsertWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/upsertWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490427,
+    "end_line": 490434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "record4"
+    ],
+    "body_sha256": "05f9e148ffb0ba3cfa8839e86df6a221d2bcb0c834a261c68dc76efe37a519cb",
+    "calls": [
+      "inner.onShellWorkRegistered",
+      "inner.provenance.get",
+      "inner.recordWorkProvenance",
+      "inner.upsertWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490435:17809892",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "clearWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/clearWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490435,
+    "end_line": 490435,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "ade5c2036bfece4228ad5c2aaff37e83759aebc14666ad78d62607a93f0d06dc",
+    "calls": [
+      "inner.clearWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490436:17809938",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "abortWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/abortWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490436,
+    "end_line": 490436,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "43fe1a80ae23e789004e84a36b09049ce733770a6f802c1e0691730ae40ccc43",
+    "calls": [
+      "inner.abortWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490437:17809989",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "hasRunningWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/hasRunningWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490437,
+    "end_line": 490437,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filter3"
+    ],
+    "body_sha256": "00c5edb0a6116de080525bfdaca2ff49224a27424e15665060076ce8d271f63c",
+    "calls": [
+      "inner.hasRunningWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490438:17810053",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "abortAllWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/abortAllWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490438,
+    "end_line": 490438,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filter3"
+    ],
+    "body_sha256": "376cbaeb4960a8e2c8cb387ad3a8b127a1579c4ce973b43598bd97f0b941bf14",
+    "calls": [
+      "inner.abortAllWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490439:17810111",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "listWork",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/listWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490439,
+    "end_line": 490439,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filter3"
+    ],
+    "body_sha256": "e37ab84f797e90e607ad15177b335e83044ee5cc800cd45126fdb0ec35c5c0ee",
+    "calls": [
+      "inner.listWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490440:17810164",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "enqueue",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/enqueue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490440,
+    "end_line": 490440,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "wakeup"
+    ],
+    "body_sha256": "6519a360168ecdf49bddaf0479dfd193d72236db1ed62735f1d1fc73d676f0d4",
+    "calls": [
+      "inner.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490441:17810211",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "pull",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/pull",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490441,
+    "end_line": 490441,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "70dc0b75063ce889d50f78fb708d3228a66b35eacf9485f8cfa996e8daf98b41",
+    "calls": [
+      "inner.pull"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490442:17810270",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "ack",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/ack",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490442,
+    "end_line": 490442,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ids"
+    ],
+    "body_sha256": "c3bbe6c3287db278e492dc688f6ba0403dd96d9116c560abe51b67318eeb857e",
+    "calls": [
+      "inner.ack"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490443:17810307",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "nack",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/nack",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490443,
+    "end_line": 490443,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ids",
+      "opts"
+    ],
+    "body_sha256": "aaa2f243717017f5cebcf9871058b294c327708382a3a9b8835ced81f65f6208",
+    "calls": [
+      "inner.nack"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490444:17810361",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "suppress",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/suppress",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490444,
+    "end_line": 490444,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "conversationId",
+      "id"
+    ],
+    "body_sha256": "55d58f56b7086d47314cd452309997f7ee7eb78249c892228e2e093e2a653a94",
+    "calls": [
+      "inner.suppress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490445:17810446",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "enqueueCompletion",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/enqueueCompletion",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490445,
+    "end_line": 490445,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "57eaac216351ac0f2fe54e97cb08b48b258159cf86f958e187c23f528f316566",
+    "calls": [
+      "inner.enqueueCompletion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490446:17810511",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "drainCompletions",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/drainCompletions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490446,
+    "end_line": 490446,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "406613b5b7cfc8b7f218082292d2d3841f01cec22410650b91353e8a323e10f7",
+    "calls": [
+      "inner.drainCompletions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490447:17810572",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "hasPendingCompletions",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/hasPendingCompletions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490447,
+    "end_line": 490447,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "da2bfaa86a9718f90899cd6a888865790d2c3780078f0e2a0bfc3a03b49d3a9f",
+    "calls": [
+      "inner.hasPendingCompletions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490448:17810666",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "markAwaitedCompletion",
+    "qualified_name": "RevivingBackgroundWorkRegistry.forTurn/markAwaitedCompletion",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490448,
+    "end_line": 490448,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "taskId"
+    ],
+    "body_sha256": "2063cb7678a5e894b9086f16f7ce67d3a93b39f89d728dfb89cb6ab27f02b527",
+    "calls": [
+      "inner.markAwaitedCompletion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490455:17810864",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "shellRewatchPollMs",
+    "qualified_name": "shellRewatchPollMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490455,
+    "end_line": 490462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "1e2084d7bfe29600bf7799da0a7823ce481ab2c6cd44581c165903b285f213fa",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseInt",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490463:17811178",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "parseShellTerminalFooter",
+    "qualified_name": "parseShellTerminalFooter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490463,
+    "end_line": 490481,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "30891b4409f56eca58d8a9903d622d85860e75e4ce50154aaa686b1d94817ee0",
+    "calls": [
+      ".trim",
+      "/(?:^|\\n)ended_at:\\s*\\S/.test",
+      "Number",
+      "Number.isInteger",
+      "content.match",
+      "footer.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490482:17811891",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "parseShellTerminalStartedAtMs",
+    "qualified_name": "parseShellTerminalStartedAtMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490482,
+    "end_line": 490487,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "046c8e0aac8565b38286df7c7e44e2c4270724e9d8d27093c27908d129936dd9",
+    "calls": [
+      "Date.parse",
+      "Number.isFinite",
+      "[computed].trim",
+      "content.match",
+      "header.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490488:17812192",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "deriveBackgroundSubagentTitleFields",
+    "qualified_name": "deriveBackgroundSubagentTitleFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490488,
+    "end_line": 490502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prompt",
+      "id"
+    ],
+    "body_sha256": "e01131214c176addb15714bcd327da66ee4aa53547dafc3d252360a450b745ed",
+    "calls": [
+      ".replace",
+      ".trim",
+      "asyncTaskFallbackLabel",
+      "oneLine2.slice",
+      "withoutSiteDispatchNotes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490503:17812696",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "formatSteerPrompt",
+    "qualified_name": "formatSteerPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490503,
+    "end_line": 490509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "477d01280fe5f40b541bae9bae356e28414c18e279ce5460eb17e13c8e68df01",
+    "calls": [
+      ".join",
+      "message.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490510:17812944",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "createBackgroundWatches",
+    "qualified_name": "createBackgroundWatches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490510,
+    "end_line": 490722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "1105a5d8ddaecec9dda8abc5d2aa1e55fdaaa78f1b1b3f428141dc23db81c7b2",
+    "calls": [
+      "new Map",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490516:17813271",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "notifyShellWorkChanged",
+    "qualified_name": "createBackgroundWatches/notifyShellWorkChanged",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490516,
+    "end_line": 490519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5a233715d1447f43e45e9b89c9743569c952e4b90b794591882e1789904b8892",
+    "calls": [
+      "resolve19",
+      "shellWorkChangedWaiters.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490520:17813423",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "handleShellWorkRegistered",
+    "qualified_name": "createBackgroundWatches/handleShellWorkRegistered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490520,
+    "end_line": 490533,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "record4",
+      "provenance"
+    ],
+    "body_sha256": "ea9e8b59afdbe6fb8c33e14ea4d773a08fd6d5dd13a17ce7b829c4fbe5085f15",
+    "calls": [
+      "asyncTaskFallbackLabel",
+      "cancelShellRewatch",
+      "decodeBackgroundWorkMetadata",
+      "definedProvenance",
+      "host.getConversationId",
+      "host.pendingWakeArmedHandler"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490534:17814043",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "handleShellCompletionItem",
+    "qualified_name": "createBackgroundWatches/handleShellCompletionItem",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490534,
+    "end_line": 490550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item",
+      "provenance"
+    ],
+    "body_sha256": "74c1afe917fbc73797caba01e8213921dcced6dc842de7d863ed2d580fe9a58c",
+    "calls": [
+      "definedProvenance",
+      "handler",
+      "host.backgroundShellSettledHandler",
+      "host.getConversationId",
+      "notifyShellWorkChanged"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490551:17814506",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "registry3",
+    "qualified_name": "createBackgroundWatches/registry3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490551,
+    "end_line": 490559,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bc4ebd092c6d49f74053f87f30660932fbe9a3633f877fa4818187a1a2b69bb0",
+    "calls": [
+      "new RevivingBackgroundWorkRegistry"
+    ],
+    "writes": [
+      "shellRegistry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490560:17814749",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "watchCloudAgent",
+    "qualified_name": "createBackgroundWatches/watchCloudAgent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490560,
+    "end_line": 490618,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "bcId",
+      "options2"
+    ],
+    "body_sha256": "2c029f4d93f8a76942b039c004d86ce3f267718a36657df6c913ee36a81caf55",
+    "calls": [
+      ".catch",
+      ".finally",
+      ".then",
+      "Date.now",
+      "asyncTaskFallbackLabel",
+      "bcId.trim",
+      "cloudAgentSettlements.set",
+      "definedProvenance",
+      "host.cloudAgentWatcher",
+      "host.getConversationId",
+      "host.pendingWakeArmedHandler",
+      "watchStartedBy",
+      "watchedCloudAgentBcIds.has",
+      "watchedCloudAgentBcIds.set",
+      "watcher.awaitCompletion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490592:17815880",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "settle2",
+    "qualified_name": "createBackgroundWatches/watchCloudAgent/settle2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490592,
+    "end_line": 490599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "completion"
+    ],
+    "body_sha256": "037c3183b862421c1397e3be969ea968e20200582891109bef1388da3548c164",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "host.notifyBackgroundWorkSettled",
+      "watchedCloudAgentBcIds.delete",
+      "watchedCloudAgentBcIds.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490619:17816840",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "watchBackgroundShell",
+    "qualified_name": "createBackgroundWatches/watchBackgroundShell",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490619,
+    "end_line": 490672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "shellId",
+      "options2"
+    ],
+    "body_sha256": "4d75db21ddc87b32e6a60c35bc9affa32b3181afabcdf6cd1e5c77c9f818d40c",
+    "calls": [
+      ".listWork",
+      ".some",
+      "asyncTaskFallbackLabel",
+      "definedProvenance",
+      "host.getConversationId",
+      "host.pendingWakeArmedHandler",
+      "host.pollShellTerminalFile",
+      "registry3",
+      "shellId.trim",
+      "shellRewatches.has",
+      "shellRewatches.set"
+    ],
+    "writes": [
+      "labelDescriptor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490651:17817888",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "cancel",
+    "qualified_name": "createBackgroundWatches/watchBackgroundShell/cancel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490651,
+    "end_line": 490655,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ae8eba0e30e81ef398dd8599115009f8ff851575d14da3bd98ce5252544313d8",
+    "calls": [
+      "notifyShellWorkChanged",
+      "shellRewatches.delete"
+    ],
+    "writes": [
+      "cancelled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490657:17818027",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "settle2",
+    "qualified_name": "createBackgroundWatches/watchBackgroundShell/settle2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490657,
+    "end_line": 490670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "status",
+      "detail",
+      "outputPath"
+    ],
+    "body_sha256": "f77eef1f6cca71bc8e1314d31b25883acb6dfa977ae5296cbc81a894f7244219",
+    "calls": [
+      "host.backgroundShellSettledHandler",
+      "host.getConversationId",
+      "notifyShellWorkChanged",
+      "shellRewatches.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490673:17818468",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "cancelShellRewatch",
+    "qualified_name": "createBackgroundWatches/cancelShellRewatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490673,
+    "end_line": 490675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "shellId"
+    ],
+    "body_sha256": "436b6c1039d9af9a9010d5a5af7a14b189396133a4d3bd2b132982756a988fd8",
+    "calls": [
+      ".cancel",
+      "shellRewatches.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490676:17818571",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "hasRunningBackgroundShellWork",
+    "qualified_name": "createBackgroundWatches/hasRunningBackgroundShellWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490676,
+    "end_line": 490676,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7858d7113205eb2354ee5c197ace05ac80d2ba3b3caca0a235debcba6bf8a5be",
+    "calls": [
+      "shellRegistry.hasRunningWork"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490681:17818781",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "pendingCloudAgentWatchBcIds",
+    "qualified_name": "createBackgroundWatches/pendingCloudAgentWatchBcIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490681,
+    "end_line": 490681,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5e6494b975f7eb946a26d9f6eb3f4d03dbc38cc410016aa27fb870db38d4b721",
+    "calls": [
+      "watchedCloudAgentBcIds.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490682:17818851",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "pendingShellRewatchIds",
+    "qualified_name": "createBackgroundWatches/pendingShellRewatchIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490682,
+    "end_line": 490682,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f0a6cd158b53a06183771de62d8ae46799b92cd159295267570666c4b393f9ea",
+    "calls": [
+      "shellRewatches.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490684:17818948",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "drainCloudAgentWatches",
+    "qualified_name": "createBackgroundWatches/drainCloudAgentWatches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490684,
+    "end_line": 490688,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4ba3f4ffb8e1dcbb071b761d33e8fa4b314d6ef94646dd6c265ec792fbfdc943",
+    "calls": [
+      "Promise.all",
+      "cloudAgentSettlements.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490689:17819118",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "drainBackgroundShellWork",
+    "qualified_name": "createBackgroundWatches/drainBackgroundShellWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490689,
+    "end_line": 490699,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4c91d95119a137aef0d48c4aeee4f7bc9d7ed556fb101cc8ae39add1485f1c32",
+    "calls": [
+      "hasRunningBackgroundShellWork",
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490700:17819478",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "cancelBackgroundShellRewatches",
+    "qualified_name": "createBackgroundWatches/cancelBackgroundShellRewatches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490700,
+    "end_line": 490708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2393f00c866fc16e1537e1ffa5fe9e3300fc6cf3476e7c77883dfdbc451ec77a",
+    "calls": [
+      "notifyShellWorkChanged",
+      "rewatch.cancel",
+      "shellRegistry.clearWork",
+      "shellRegistry.listWork",
+      "shellRewatches.clear",
+      "shellRewatches.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490709:17819873",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "abortBackgroundShellWork",
+    "qualified_name": "createBackgroundWatches/abortBackgroundShellWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490709,
+    "end_line": 490716,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d11f0c3ea016a98d104a7cb9271e5e7535cccd7bdeb4fdb7447bd69aefd1a84e",
+    "calls": [
+      "notifyShellWorkChanged",
+      "rewatch.cancel",
+      "shellRegistry.abortAllWork",
+      "shellRewatches.clear",
+      "shellRewatches.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490717:17820127",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "cancelCloudAgentWatches",
+    "qualified_name": "createBackgroundWatches/cancelCloudAgentWatches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490717,
+    "end_line": 490720,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4a810188ced15644fe1c7f3d54d038be1b581b3581a403f33680ea09a6214f6e",
+    "calls": [
+      "cloudAgentSettlements.clear",
+      "watchedCloudAgentBcIds.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490723:17820223",
+    "artifact": "evaluation",
+    "module": "core/runner/background-work.ts",
+    "name": "isBackgroundWorkRunning",
+    "qualified_name": "isBackgroundWorkRunning",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490723,
+    "end_line": 490725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagents",
+      "watches"
+    ],
+    "body_sha256": "839c56e2133b2d699bd63c1255ceff864f88266367ac4e8e40f5b7303f73b0f2",
+    "calls": [
+      "subagents.hasRunningSubagents",
+      "watches.hasRunningBackgroundShellWork",
+      "watches.pendingCloudAgentWatchBcIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

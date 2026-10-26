@@ -1,0 +1,685 @@
+[
+  {
+    "id": "host:490803:17975926",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "parseProfileJson",
+    "qualified_name": "parseProfileJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490803,
+    "end_line": 490812,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "82e07ab6ecfc4b6960578f25e5cd8fc3e71cf7650d0c7e46a8c4b37a42da8093",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:490813:17976133",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileConfigFromJson",
+    "qualified_name": "profileConfigFromJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490813,
+    "end_line": 490822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "7ddd7ef695f1182b7faeb19b3d351fcb2b01d943bf9b3f93be5949b1a01bd9f5",
+    "calls": [
+      "isSandProfileNamedBy",
+      "parsed2.avatarColor.trim",
+      "parsed2.avatarShape.trim",
+      "parsed2.title.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490823:17976681",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileServerIdFromJson",
+    "qualified_name": "profileServerIdFromJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490823,
+    "end_line": 490827,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "ffedd2ecadba9a8ee262499bf91678beb4175042e290b702b9efb10467362312",
+    "calls": [
+      "parsed2.serverId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490828:17976873",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileHarnessFromJson",
+    "qualified_name": "profileHarnessFromJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490828,
+    "end_line": 490830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "0322e929d758ede9905d06353fef6a36247e7aa33b773da5c94414fead76643b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490831:17977013",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileRoleFromJson",
+    "qualified_name": "profileRoleFromJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490831,
+    "end_line": 490835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "6437a57f4067c1e9e6ac39cae632d5d92eb73e8d4e67cd4b56d3533ecc54be0b",
+    "calls": [
+      "parsed2.role.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490836:17977193",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileServerBindingFromJson",
+    "qualified_name": "profileServerBindingFromJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490836,
+    "end_line": 490847,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "94404e62b30cde785334fc91618789bfbdfa6e73dd35b079f6897db753e44e24",
+    "calls": [
+      "isSandAgentOrigin",
+      "isSandAgentPurpose",
+      "profileHarnessFromJson",
+      "profileRoleFromJson",
+      "profileServerIdFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490848:17977692",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "serializeSandProfileFile",
+    "qualified_name": "serializeSandProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490848,
+    "end_line": 490867,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profile",
+      "binding = {}"
+    ],
+    "body_sha256": "2ffbcfa336fbb241876a806629cd332c8fea1509a0a1a2e1fcc1fc1b5bada0c7",
+    "calls": [
+      ".trim",
+      "JSON.stringify",
+      "profile.title.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490872:17978607",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "parseRawSandSettings",
+    "qualified_name": "parseRawSandSettings",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490872,
+    "end_line": 490881,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "399c23122ea785fb3aca943c4aee7c86b6de6c3cb5dc089395de279442af24bc",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:490882:17978814",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "settingsConfigFromRaw",
+    "qualified_name": "settingsConfigFromRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490882,
+    "end_line": 490891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "1ebf79883bc932519f57e45f6dc2bfaf28e56c02f50a74f26e0041567f9359be",
+    "calls": [
+      "normalizeSandVoiceLanguage",
+      "normalizeSandVoiceSpeed",
+      "raw.voiceId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490892:17979482",
+    "artifact": "host",
+    "module": "core/agents/agent-files.ts",
+    "name": "serializeSandSettingsFile",
+    "qualified_name": "serializeSandSettingsFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490892,
+    "end_line": 490895,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "existing",
+      "update"
+    ],
+    "body_sha256": "4a1245e9639d26f6ff00df890a86ed93080e5bfb34a06044c1e64889a21d020f",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629014:23852964",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "parseProfileJson",
+    "qualified_name": "parseProfileJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629014,
+    "end_line": 629023,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "9a7b1da50c49d874679b3ca5213d23e9cbeb3087f2ed5a2c5551513081226c09",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [
+      "parsed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:629024:23853166",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileConfigFromJson",
+    "qualified_name": "profileConfigFromJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629024,
+    "end_line": 629033,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed"
+    ],
+    "body_sha256": "9f66415e89f6d6ada42cad80f8c70dd694cab1c8ceb2aa257d2860ff92055cb0",
+    "calls": [
+      "isSandProfileNamedBy",
+      "parsed.avatarColor.trim",
+      "parsed.avatarShape.trim",
+      "parsed.title.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629034:23853701",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileServerIdFromJson",
+    "qualified_name": "profileServerIdFromJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629034,
+    "end_line": 629038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed"
+    ],
+    "body_sha256": "9170bec1e3a696c8dc5e12c14d7447f05769bd76cc0b7621cbb5e8a9e068b495",
+    "calls": [
+      "parsed.serverId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629039:23853890",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileHarnessFromJson",
+    "qualified_name": "profileHarnessFromJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629039,
+    "end_line": 629041,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed"
+    ],
+    "body_sha256": "07e838a1eb5e731daa7630836b9f42c8ff4f8c8100ed9cc97c28da57c5e0a1fd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629042:23854026",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileRoleFromJson",
+    "qualified_name": "profileRoleFromJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629042,
+    "end_line": 629046,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed"
+    ],
+    "body_sha256": "91510ff7a6f0a9685d8b77af69bfaa6b677222ea13bd28059c64f101b7c31351",
+    "calls": [
+      "parsed.role.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629047:23854203",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "parseSandProfileFile",
+    "qualified_name": "parseSandProfileFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629047,
+    "end_line": 629050,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "7ddfbdf97527a7d55ab00e3918ecd8ba63461bd51ffeabf2791b6c96644cfbac",
+    "calls": [
+      "parseProfileJson",
+      "profileConfigFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629051:23854346",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "profileServerBindingFromJson",
+    "qualified_name": "profileServerBindingFromJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629051,
+    "end_line": 629062,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed"
+    ],
+    "body_sha256": "dcd11359aef048b7b4119a2fa59ce51cc00bfd032da2a88400f83ee3005e0079",
+    "calls": [
+      "isSandAgentOrigin",
+      "isSandAgentPurpose",
+      "profileHarnessFromJson",
+      "profileRoleFromJson",
+      "profileServerIdFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629063:23854837",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "stampProfileServerBinding",
+    "qualified_name": "stampProfileServerBinding",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629063,
+    "end_line": 629075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "17f3a5bdacdbf1d131757a92056676d8071cb5561a4d4b07071d372089fe038b",
+    "calls": [
+      "parseProfileJson",
+      "profileConfigFromJson",
+      "profileServerBindingFromJson",
+      "serializeSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629076:23855356",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "serializeSandProfileFile",
+    "qualified_name": "serializeSandProfileFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629076,
+    "end_line": 629095,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profile",
+      "binding = {}"
+    ],
+    "body_sha256": "2ffbcfa336fbb241876a806629cd332c8fea1509a0a1a2e1fcc1fc1b5bada0c7",
+    "calls": [
+      ".trim",
+      "JSON.stringify",
+      "profile.title.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629096:23856118",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "parseRawSandSettings",
+    "qualified_name": "parseRawSandSettings",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629096,
+    "end_line": 629105,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "de39f4310a390b693dfaad521bb060ec3c107d7f7a0107c780a00c97fef3c36d",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [
+      "parsed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:629106:23856320",
+    "artifact": "evaluation",
+    "module": "core/agents/agent-files.ts",
+    "name": "serializeSandSettingsFile",
+    "qualified_name": "serializeSandSettingsFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629106,
+    "end_line": 629109,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "existing",
+      "update"
+    ],
+    "body_sha256": "4a1245e9639d26f6ff00df890a86ed93080e5bfb34a06044c1e64889a21d020f",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

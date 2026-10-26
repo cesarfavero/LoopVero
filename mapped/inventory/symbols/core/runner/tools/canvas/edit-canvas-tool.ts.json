@@ -1,0 +1,796 @@
+[
+  {
+    "id": "host:775517:29801580",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "countOccurrences",
+    "qualified_name": "countOccurrences",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775517,
+    "end_line": 775526,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ source, needle }"
+    ],
+    "body_sha256": "63356567ba58005bdda6f41d64f08cf487bdd63f47df0302b6514b776604fbee",
+    "calls": [
+      "source.indexOf"
+    ],
+    "writes": [
+      "count2",
+      "from2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775527:29801816",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "applyExactStringEdit",
+    "qualified_name": "applyExactStringEdit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775527,
+    "end_line": 775537,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "edit"
+    ],
+    "body_sha256": "002fe694b354c48a516c9efdd52a287e968896a6b6eec2644088ddfe9829afe3",
+    "calls": [
+      ".join",
+      "countOccurrences",
+      "source.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775538:29802309",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "lineOf",
+    "qualified_name": "lineOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775538,
+    "end_line": 775544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "offset2"
+    ],
+    "body_sha256": "68d6fe7f398d90de776f8261b8e596456340e43f49ecb3263018fe2572c3c5ac",
+    "calls": [
+      "source.charCodeAt"
+    ],
+    "writes": [
+      "i",
+      "line"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775545:29802470",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "occurrenceLines",
+    "qualified_name": "occurrenceLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775545,
+    "end_line": 775555,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ source, needle }"
+    ],
+    "body_sha256": "2ca7e2a7d5c5c50cbd3cc99acdd413fd7bde87fd39c69522601cb914651e3193",
+    "calls": [
+      "lineOf",
+      "lines2.push",
+      "source.indexOf"
+    ],
+    "writes": [
+      "from2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775556:29802780",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeDiagnostic",
+    "qualified_name": "describeDiagnostic",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775556,
+    "end_line": 775560,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "diagnostic"
+    ],
+    "body_sha256": "6404cb4b239fd6a2a95ba49fc3328c49e4ff0fefe93e222f7295dfebb6f231a6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775561:29803006",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeReadFailure",
+    "qualified_name": "describeReadFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775561,
+    "end_line": 775571,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "6afaf2a8a19a5530943dd9a974e42a1cee9996eddc3552ba2d0a34f3bdd37dd5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775572:29803505",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeWriteFailure2",
+    "qualified_name": "describeWriteFailure2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775572,
+    "end_line": 775620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "stored = \"untouched\""
+    ],
+    "body_sha256": "699e19e2cd009b765c6ca5800b1846a2f4caf5903b6210ef344675f46fe08f01",
+    "calls": [
+      ".join",
+      ".map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775621:29805796",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "settleWriteFailure",
+    "qualified_name": "settleWriteFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775621,
+    "end_line": 775638,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "args"
+    ],
+    "body_sha256": "153fa63ae22eb6c56d17bbe008a326c7a841ebd52faa954b979f81f0e150986d",
+    "calls": [
+      "port.read",
+      "port.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775639:29806793",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "executeEditCanvas",
+    "qualified_name": "executeEditCanvas",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775639,
+    "end_line": 775689,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "args"
+    ],
+    "body_sha256": "c770837fec933fb273d038259a463aa16bc56410420eba88d27aff326132b2b3",
+    "calls": [
+      ".join",
+      "applyExactStringEdit",
+      "describeReadFailure",
+      "describeWriteFailure2",
+      "lines2.join",
+      "occurrenceLines",
+      "port.read",
+      "port.write",
+      "settleWriteFailure"
+    ],
+    "writes": [
+      "written"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775690:29808965",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "createEditCanvasTool",
+    "qualified_name": "createEditCanvasTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775690,
+    "end_line": 775704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  port\n}"
+    ],
+    "body_sha256": "d1b39bfa022f58c795b3aadc6a5e8475e40c5a02f166779de073538be1758741",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775700:29809829",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createEditCanvasTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775700,
+    "end_line": 775700,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "889eb2ce23c47ffd478796715405a38736fdeab74e147d19b68407ee6cfb3f6b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775701:29809884",
+    "artifact": "host",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "execute",
+    "qualified_name": "createEditCanvasTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775701,
+    "end_line": 775701,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "84af93359e6f736ff272de589fdccfc875a900b939af649f638236d72321039c",
+    "calls": [
+      "executeEditCanvas"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575161:21527843",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "countOccurrences",
+    "qualified_name": "countOccurrences",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575161,
+    "end_line": 575170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ source, needle }"
+    ],
+    "body_sha256": "63356567ba58005bdda6f41d64f08cf487bdd63f47df0302b6514b776604fbee",
+    "calls": [
+      "source.indexOf"
+    ],
+    "writes": [
+      "count2",
+      "from2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575171:21528079",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "applyExactStringEdit",
+    "qualified_name": "applyExactStringEdit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575171,
+    "end_line": 575181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "edit"
+    ],
+    "body_sha256": "002fe694b354c48a516c9efdd52a287e968896a6b6eec2644088ddfe9829afe3",
+    "calls": [
+      ".join",
+      "countOccurrences",
+      "source.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575182:21528572",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "lineOf",
+    "qualified_name": "lineOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575182,
+    "end_line": 575188,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "offset2"
+    ],
+    "body_sha256": "68d6fe7f398d90de776f8261b8e596456340e43f49ecb3263018fe2572c3c5ac",
+    "calls": [
+      "source.charCodeAt"
+    ],
+    "writes": [
+      "i",
+      "line"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575189:21528733",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "occurrenceLines",
+    "qualified_name": "occurrenceLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575189,
+    "end_line": 575199,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ source, needle }"
+    ],
+    "body_sha256": "2ca7e2a7d5c5c50cbd3cc99acdd413fd7bde87fd39c69522601cb914651e3193",
+    "calls": [
+      "lineOf",
+      "lines2.push",
+      "source.indexOf"
+    ],
+    "writes": [
+      "from2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575200:21529043",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeDiagnostic",
+    "qualified_name": "describeDiagnostic",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575200,
+    "end_line": 575204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "diagnostic"
+    ],
+    "body_sha256": "6404cb4b239fd6a2a95ba49fc3328c49e4ff0fefe93e222f7295dfebb6f231a6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575205:21529269",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeReadFailure",
+    "qualified_name": "describeReadFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575205,
+    "end_line": 575215,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "6afaf2a8a19a5530943dd9a974e42a1cee9996eddc3552ba2d0a34f3bdd37dd5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575216:21529768",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeWriteFailure2",
+    "qualified_name": "describeWriteFailure2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575216,
+    "end_line": 575264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "stored = \"untouched\""
+    ],
+    "body_sha256": "699e19e2cd009b765c6ca5800b1846a2f4caf5903b6210ef344675f46fe08f01",
+    "calls": [
+      ".join",
+      ".map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575265:21532059",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "settleWriteFailure",
+    "qualified_name": "settleWriteFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575265,
+    "end_line": 575282,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "args"
+    ],
+    "body_sha256": "153fa63ae22eb6c56d17bbe008a326c7a841ebd52faa954b979f81f0e150986d",
+    "calls": [
+      "port.read",
+      "port.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575283:21533056",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "executeEditCanvas",
+    "qualified_name": "executeEditCanvas",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575283,
+    "end_line": 575333,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "args"
+    ],
+    "body_sha256": "c770837fec933fb273d038259a463aa16bc56410420eba88d27aff326132b2b3",
+    "calls": [
+      ".join",
+      "applyExactStringEdit",
+      "describeReadFailure",
+      "describeWriteFailure2",
+      "lines2.join",
+      "occurrenceLines",
+      "port.read",
+      "port.write",
+      "settleWriteFailure"
+    ],
+    "writes": [
+      "written"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575334:21535228",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "createEditCanvasTool",
+    "qualified_name": "createEditCanvasTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575334,
+    "end_line": 575348,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  port\n}"
+    ],
+    "body_sha256": "d1b39bfa022f58c795b3aadc6a5e8475e40c5a02f166779de073538be1758741",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575344:21536092",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createEditCanvasTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575344,
+    "end_line": 575344,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "889eb2ce23c47ffd478796715405a38736fdeab74e147d19b68407ee6cfb3f6b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575345:21536147",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/canvas/edit-canvas-tool.ts",
+    "name": "execute",
+    "qualified_name": "createEditCanvasTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575345,
+    "end_line": 575345,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "84af93359e6f736ff272de589fdccfc875a900b939af649f638236d72321039c",
+    "calls": [
+      "executeEditCanvas"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

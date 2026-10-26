@@ -1,0 +1,255 @@
+[
+  {
+    "id": "evaluation:583698:21946253",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "createMcpSendHolds",
+    "qualified_name": "createMcpSendHolds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583698,
+    "end_line": 583705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "7f731f8a67e882648cb246466162173f96cc77b836b627694f204c529af76bf8",
+    "calls": [
+      "createForwardedAttachmentHold",
+      "createUncoveredSendHold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583702:21946447",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "holdAllowed",
+    "qualified_name": "createMcpSendHolds/holdAllowed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583702,
+    "end_line": 583702,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target",
+      "appliedRules"
+    ],
+    "body_sha256": "ed52c7d6c7597249d7631e7dd1aba123d17cf098d9289442116cdf46e35a3b06",
+    "calls": [
+      "forwardedAttachmentHold",
+      "uncoveredSendHold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583706:21946603",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "createTurnApprovalProviders",
+    "qualified_name": "createTurnApprovalProviders",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583706,
+    "end_line": 583770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turnToolHost",
+      "turn"
+    ],
+    "body_sha256": "8ea086777bcfab850528431b5053047a408ddb0d54720d2aa3df1129f9543958",
+    "calls": [
+      "allowsSystemReminder",
+      "createBlockedSendDraftReminder",
+      "createMcpSendHolds",
+      "createSandMcpApprovalProvider",
+      "createSandShellApprovalProvider",
+      "turnToolHost.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583726:21947444",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "beforeApproval",
+    "qualified_name": "createTurnApprovalProviders/beforeApproval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583726,
+    "end_line": 583733,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request3"
+    ],
+    "body_sha256": "b6064b5d205f97363f7b6d82259e08b7dbe3a366f95efcb2a3a8c5b4d07facef",
+    "calls": [
+      "localToolPermission.awaitDesktopStandingDecision",
+      "turnToolHost.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583746:21948377",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "resolveServerHost",
+    "qualified_name": "createTurnApprovalProviders/resolveServerHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583746,
+    "end_line": 583746,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "517398b34193bb9b19f8578e71f9eb2e18b40b7f650317b9f7527017a561288b",
+    "calls": [
+      "turnToolHost.mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583747:21948452",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "connectors",
+    "qualified_name": "createTurnApprovalProviders/connectors",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583747,
+    "end_line": 583747,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "545bd1432d3bbd245b00816b159ddb25cbb12ef339f2fb2400daf717036c0cc9",
+    "calls": [
+      "host.inference.allExternalSendConnectors"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583759:21949112",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "alwaysSendPermitted",
+    "qualified_name": "createTurnApprovalProviders/alwaysSendPermitted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583759,
+    "end_line": 583759,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5fa527dfea05405bdbfbe819aff3fde4d6e9162726a3caf9dd12a61e1de3e4b7",
+    "calls": [
+      "turnToolHost.alwaysSendPermitted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:583760:21949191",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/approval-providers.ts",
+    "name": "personalAllowRules",
+    "qualified_name": "createTurnApprovalProviders/personalAllowRules",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 583760,
+    "end_line": 583763,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9b06ea5b75d6eb8e0fb8bf27b285f57bd98e6347dfec45ad8a0f6b9dd9e380bf",
+    "calls": [
+      "turnToolHost.getAutoReviewInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

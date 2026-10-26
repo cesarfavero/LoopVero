@@ -1,0 +1,751 @@
+[
+  {
+    "id": "state-worker:22301:765774",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "toHex2",
+    "qualified_name": "toHex2",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22301,
+    "end_line": 22303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "d6bb59a9f982352cd8e0a27b55e1e3c6a6610017ca4d11045ddda1f1aa731539",
+    "calls": [
+      ".toString",
+      "Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22304:765889",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "rowBlobBytes",
+    "qualified_name": "rowBlobBytes",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22304,
+    "end_line": 22307,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row"
+    ],
+    "body_sha256": "3c2ea967b1a85c217712ddc1e8ec59206e2d1101956328795c1765bbcae5abd2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22308:766062",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "rowLength",
+    "qualified_name": "rowLength",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22308,
+    "end_line": 22311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row"
+    ],
+    "body_sha256": "b3e03a2448ebb5a9d41808ea634e25becc9dc5270dd58b74f481950780af660d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22312:766227",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "scoreRootCandidate",
+    "qualified_name": "scoreRootCandidate",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22312,
+    "end_line": 22330,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "data",
+      "presentIds"
+    ],
+    "body_sha256": "6f815c1acc1a067871280e47f79794ed7dc2788efd26abe7077da9a167af6ece",
+    "calls": [
+      "ConversationStateStructure.fromBinary",
+      "presentIds.has",
+      "toHex2"
+    ],
+    "writes": [
+      "structure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:22331:766734",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "isBetterRoot",
+    "qualified_name": "isBetterRoot",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22331,
+    "end_line": 22338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate",
+      "best"
+    ],
+    "body_sha256": "36a17812f7a04bb94e0ce8248484f637b53719a1cc5a9f84979c822007688fc7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22339:767033",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "findLatestRootBlobIdInDatabase",
+    "qualified_name": "findLatestRootBlobIdInDatabase",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22339,
+    "end_line": 22359,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "e397bc6cc0ed29e34ecba71616a33a9df2403a331d50888ccb218fcb97e6ce84",
+    "calls": [
+      "blobStatement.iterate",
+      "db.prepare",
+      "fromHex",
+      "idStatement.iterate",
+      "isBetterRoot",
+      "new Set",
+      "presentIds.add",
+      "scoreRootCandidate"
+    ],
+    "writes": [
+      "bestId",
+      "bestScore"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22380:768560",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.constructor",
+    "qualified_name": "ConversationBlobStoreDb.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22380,
+    "end_line": 22399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "243082e2b37cc54f636964c45fbafe26f9b573b8c9ba280612fe951c115b3e25",
+    "calls": [
+      "openConversationBlobDb",
+      "this.adoptLegacyBlobs",
+      "this.db.prepare"
+    ],
+    "writes": [
+      "this.blobLengthStmt",
+      "this.clearBlobsStmt",
+      "this.db",
+      "this.getBlobStmt",
+      "this.log",
+      "this.scanBlobIndexStmt",
+      "this.setBlobStmt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22400:769400",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.adoptLegacyBlobs",
+    "qualified_name": "ConversationBlobStoreDb.adoptLegacyBlobs",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22400,
+    "end_line": 22418,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "legacyBlobDbPath",
+      "log"
+    ],
+    "body_sha256": "07457473262d493b8d04c7694482a0d91cddce4523a409ac0fdb835a331959fc",
+    "calls": [
+      ".run",
+      "String",
+      "log",
+      "readConversationBlobMigrationState",
+      "this.db.exec",
+      "this.db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:22419:770157",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.getBlob",
+    "qualified_name": "ConversationBlobStoreDb.getBlob",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22419,
+    "end_line": 22423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobId"
+    ],
+    "body_sha256": "0bc2e8f9f45bf40e09784f7235ab7a1c00e6e8e296b3ea09b8e1c9ea0c247558",
+    "calls": [
+      "this.getBlobStmt.get",
+      "toHex2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22424:770350",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.findLatestRootBlobId",
+    "qualified_name": "ConversationBlobStoreDb.findLatestRootBlobId",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22424,
+    "end_line": 22427,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f97245300feb32868bcab6e6b74f7f04325a8f5e9148892cb17e39d1a6a17d72",
+    "calls": [
+      "findLatestRootBlobIdInDatabase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22428:770478",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.walkExportClosure",
+    "qualified_name": "ConversationBlobStoreDb.walkExportClosure",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22428,
+    "end_line": 22485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "retainedRootIdHex",
+      "limits = {}",
+      "onProgress"
+    ],
+    "body_sha256": "392dabd248243ae89656233685cacedea99ba9086660e43741506469c5c96e1e",
+    "calls": [
+      ".digest",
+      ".update",
+      "collectReachableBlobHexIds",
+      "errorLogTag",
+      "new Uint8Array",
+      "reportProgress",
+      "rowBlobBytes",
+      "rowLength",
+      "this.blobLengthStmt.get",
+      "this.getBlobStmt.get",
+      "this.log",
+      "walk.blobTypeByHexId.keys"
+    ],
+    "writes": [
+      "walk"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:22438:770958",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "reportProgress",
+    "qualified_name": "ConversationBlobStoreDb.walkExportClosure/reportProgress",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22438,
+    "end_line": 22445,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "force = false"
+    ],
+    "body_sha256": "369f09dca948c558b8efe8cc6a374e898656817fa374670392e48fce481785a9",
+    "calls": [
+      "onProgress"
+    ],
+    "writes": [
+      "reportedBlobCount",
+      "reportedByteSize"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22457:771947",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "getBlobByHexId",
+    "qualified_name": "ConversationBlobStoreDb.walkExportClosure/getBlobByHexId",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22457,
+    "end_line": 22457,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "hexId"
+    ],
+    "body_sha256": "6b6dcb1e275b762e2c72aa90169115523d583852be5403500cf438c86889c00a",
+    "calls": [
+      "rowBlobBytes",
+      "this.getBlobStmt.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22458:772026",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "onBlobReference",
+    "qualified_name": "ConversationBlobStoreDb.walkExportClosure/onBlobReference",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22458,
+    "end_line": 22465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "hexId"
+    ],
+    "body_sha256": "8594576603d211ae8a206f93c724bea772d9b58fcdaa17257d09444bb1a9fa2f",
+    "calls": [
+      "new ExportClosureLimitExceededError",
+      "reportProgress",
+      "rowLength",
+      "this.blobLengthStmt.get"
+    ],
+    "writes": [
+      "closureBlobCount",
+      "closureByteSize"
+    ],
+    "throw_targets": [
+      "ExportClosureLimitExceededError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22486:773108",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.getBlobsByHexIds",
+    "qualified_name": "ConversationBlobStoreDb.getBlobsByHexIds",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22486,
+    "end_line": 22492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "hexIds"
+    ],
+    "body_sha256": "fecaa4152982e58f49b21305349442584d170dce0d256e401847ae496fc42dd4",
+    "calls": [
+      "hexIds.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22493:773355",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.setBlob",
+    "qualified_name": "ConversationBlobStoreDb.setBlob",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22493,
+    "end_line": 22504,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "d7e053587e74cd30ab7273fc1b99d57fd0b8d5a90b017cd0beb039bdcf6fc01b",
+    "calls": [
+      ".next",
+      "Date.now",
+      "this.recentWriteMsByHexId.delete",
+      "this.recentWriteMsByHexId.keys",
+      "this.recentWriteMsByHexId.set",
+      "this.setBlobStmt.run",
+      "toHex2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22505:773827",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.clearBlobs",
+    "qualified_name": "ConversationBlobStoreDb.clearBlobs",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22505,
+    "end_line": 22508,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5fc5fa03381fd0bf21685b97f2bcfec13d68be1231ae11f3957df54bb5130ede",
+    "calls": [
+      "this.clearBlobsStmt.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22509:773925",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.clearStaleCheckpointRoots",
+    "qualified_name": "ConversationBlobStoreDb.clearStaleCheckpointRoots",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22509,
+    "end_line": 22554,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "retainedRootIdHex"
+    ],
+    "body_sha256": "23b3762968a0a241d8529290942206ead1561d1b219a28eb6e4ae506dde98099",
+    "calls": [
+      ".digest",
+      ".update",
+      "ConversationStateStructure.fromBinary",
+      "Number",
+      "candidateIds.push",
+      "deleteBlobStmt.run",
+      "new Set",
+      "presentIds.add",
+      "staleRootIds.push",
+      "structure.turns.every",
+      "this.db.exec",
+      "this.db.prepare",
+      "this.getBlobStmt.get",
+      "this.scanBlobIndexStmt.iterate"
+    ],
+    "writes": [
+      "deleted",
+      "inTransaction",
+      "structure"
+    ],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:22555:775571",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.collectGarbage",
+    "qualified_name": "ConversationBlobStoreDb.collectGarbage",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22555,
+    "end_line": 22642,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    retainedRootIdHex,\n    pendingWriteRetentionMs\n  }"
+    ],
+    "body_sha256": "d58d974cafd0a89f26ae727fdc5139841ddee92cc5fe18e6cb6c980c6aecb1e4",
+    "calls": [
+      "Date.now",
+      "collectReachableBlobHexIds",
+      "deletableHexIds.push",
+      "deleteBlobStmt.run",
+      "liveBlobTypeNameOf",
+      "this.db.exec",
+      "this.db.prepare",
+      "this.getBlobStmt.get",
+      "this.recentWriteMsByHexId.get",
+      "this.scanBlobIndexStmt.iterate",
+      "walk.blobTypeByHexId.get"
+    ],
+    "writes": [
+      "deletedBytes",
+      "inTransaction",
+      "liveBytes",
+      "liveBytesByType.pending",
+      "liveBytesByType[computed]",
+      "liveRows",
+      "retainedPendingRows",
+      "walk"
+    ],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:22570:776015",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "getBlobByHexId",
+    "qualified_name": "ConversationBlobStoreDb.collectGarbage/getBlobByHexId",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22570,
+    "end_line": 22573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "hexId"
+    ],
+    "body_sha256": "15189a9a64bce9df19dd918b7eb3d5f4e8ef855061543bb56f4476d64e8464f4",
+    "calls": [
+      "this.getBlobStmt.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22643:778514",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-store.ts",
+    "name": "ConversationBlobStoreDb.close",
+    "qualified_name": "ConversationBlobStoreDb.close",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22643,
+    "end_line": 22647,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "83fd6bb15eadc1d6dc6c3ac35ad8fbf4d6f61522bb4f9f8369e459746e677294",
+    "calls": [
+      "this.db.close"
+    ],
+    "writes": [
+      "this.isClosed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

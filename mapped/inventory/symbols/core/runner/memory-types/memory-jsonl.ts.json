@@ -1,0 +1,354 @@
+[
+  {
+    "id": "host:754609:28787782",
+    "artifact": "host",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "parseLine",
+    "qualified_name": "parseLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754609,
+    "end_line": 754618,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b687bcccde2fc0b3de7a542be27c0fbd73a8167b8c67b1775a1b636a76c95c6d",
+    "calls": [
+      "JSON.parse",
+      "memoryJsonlLineSchema.safeParse"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:754619:28788003",
+    "artifact": "host",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "parseMemoryJsonlFile",
+    "qualified_name": "parseMemoryJsonlFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754619,
+    "end_line": 754621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "ac4432fe234b10c373ea0f76b1dc563e0b9fdf03a3de6ce03ebcf86ac67db7a4",
+    "calls": [
+      ".filter",
+      ".map",
+      "raw.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754622:28788165",
+    "artifact": "host",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "memoryJsonlFolderMemories",
+    "qualified_name": "memoryJsonlFolderMemories",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754622,
+    "end_line": 754630,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "86ae9e9b72b4738dc2e472766e626eebe4002582b343342a9ba3b940bc7e2f2f",
+    "calls": [
+      "out.push",
+      "parseMemoryJsonlFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754631:28788430",
+    "artifact": "host",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "slugifyMemoryPathField",
+    "qualified_name": "slugifyMemoryPathField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754631,
+    "end_line": 754633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "0fae1278875c6407eb2bb726c2baa7a725ddad35edaa14fc74ed8957418f7ee8",
+    "calls": [
+      ".replace",
+      ".slice",
+      ".toLowerCase",
+      "value.normalize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754634:28788664",
+    "artifact": "host",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "memoryTypeFilePath",
+    "qualified_name": "memoryTypeFilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754634,
+    "end_line": 754671,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memoryType",
+      "meta3"
+    ],
+    "body_sha256": "017918fdc8f485c48ef5bb1aa69ed2f120619be1cc14f212cc70a9725b094999",
+    "calls": [
+      ".join",
+      "Object.keys",
+      "PATH_FIELD_SEGMENT2.exec",
+      "String",
+      "isJsonValue",
+      "isUnknownRecord2",
+      "memoryType.meta.safeParse",
+      "memoryType.path.split",
+      "parsed2.error.issues.map",
+      "segments.join",
+      "segments.push",
+      "slugifyMemoryPathField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:537576:19779535",
+    "artifact": "evaluation",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "parseLine",
+    "qualified_name": "parseLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 537576,
+    "end_line": 537585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "4f2d1c73cda216746f13a930cce00217aea571f95642f2101f9f9d24a0d6bca7",
+    "calls": [
+      "JSON.parse",
+      "memoryJsonlLineSchema.safeParse"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:537586:19779753",
+    "artifact": "evaluation",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "parseMemoryJsonlFile",
+    "qualified_name": "parseMemoryJsonlFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 537586,
+    "end_line": 537588,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "ac4432fe234b10c373ea0f76b1dc563e0b9fdf03a3de6ce03ebcf86ac67db7a4",
+    "calls": [
+      ".filter",
+      ".map",
+      "raw.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:537589:19779915",
+    "artifact": "evaluation",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "memoryJsonlFolderMemories",
+    "qualified_name": "memoryJsonlFolderMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 537589,
+    "end_line": 537597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "86ae9e9b72b4738dc2e472766e626eebe4002582b343342a9ba3b940bc7e2f2f",
+    "calls": [
+      "out.push",
+      "parseMemoryJsonlFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:537598:19780180",
+    "artifact": "evaluation",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "slugifyMemoryPathField",
+    "qualified_name": "slugifyMemoryPathField",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 537598,
+    "end_line": 537600,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "0fae1278875c6407eb2bb726c2baa7a725ddad35edaa14fc74ed8957418f7ee8",
+    "calls": [
+      ".replace",
+      ".slice",
+      ".toLowerCase",
+      "value.normalize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:537601:19780414",
+    "artifact": "evaluation",
+    "module": "core/runner/memory-types/memory-jsonl.ts",
+    "name": "memoryTypeFilePath",
+    "qualified_name": "memoryTypeFilePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 537601,
+    "end_line": 537638,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memoryType",
+      "meta3"
+    ],
+    "body_sha256": "a9be79da53178734d18c889c869b7276dffbbb0c9d5afe4710111d34e68a9d35",
+    "calls": [
+      ".join",
+      "Object.keys",
+      "PATH_FIELD_SEGMENT2.exec",
+      "String",
+      "isJsonValue",
+      "isUnknownRecord2",
+      "memoryType.meta.safeParse",
+      "memoryType.path.split",
+      "parsed.error.issues.map",
+      "segments.join",
+      "segments.push",
+      "slugifyMemoryPathField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,263 @@
+[
+  {
+    "id": "host:694016:26357436",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "optionalString",
+    "qualified_name": "optionalString",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694016,
+    "end_line": 694018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "a5b917bec50c14a5c27f85aeb31eb7553d6efaed66d70b47b45b03f3665df6ed",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694019:26357544",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "instant",
+    "qualified_name": "instant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694019,
+    "end_line": 694021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8a2a8e9d71e4f8877d643b4e05b54121751797c44fc4bccc0ee05138b2e21509",
+    "calls": [
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694022:26357651",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "wholeNumber",
+    "qualified_name": "wholeNumber",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694022,
+    "end_line": 694024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8964acc6614e530e9ec60289b875a146c534bebd9b0cec6f0fcea8793669f70a",
+    "calls": [
+      "Number.isInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694025:26357760",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "isWeekday",
+    "qualified_name": "isWeekday",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694025,
+    "end_line": 694027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "day"
+    ],
+    "body_sha256": "96c39bf9b1add96b96a867d8f5adfa70a11b9d18a48ad1ab143e4c4ff17cc16f",
+    "calls": [
+      "MeetingRepeatValues.isOneOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694028:26357849",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "parseMeetingRepeat",
+    "qualified_name": "parseMeetingRepeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694028,
+    "end_line": 694049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3370a664cc9555cfff00ef3cf25ae905f0f5ef3951c924b9d4635be951862325",
+    "calls": [
+      "Array.isArray",
+      "MEETING_REPEAT_TIME.test",
+      "MeetingRepeatValues.isOneOf",
+      "MeetingRepeatValues.isTimeZone",
+      "days.every",
+      "days.filter",
+      "isUnknownRecord2",
+      "isWeekday",
+      "wholeNumber"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694050:26359174",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "parseMeetingJoinSchedule",
+    "qualified_name": "parseMeetingJoinSchedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694050,
+    "end_line": 694075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e0fdcc0d2ac243647b124189b8a8afcddb247d14f20e249ca13f7eacdb00b5e4",
+    "calls": [
+      "instant",
+      "isUnknownRecord2",
+      "parseMeetingRepeat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694076:26360095",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "parseSandAutoReviewSummaryCopy",
+    "qualified_name": "parseSandAutoReviewSummaryCopy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694076,
+    "end_line": 694146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8d47c3b7f07743e01a2be84dc323b4e1277316b4340465e7614d22b128884665",
+    "calls": [
+      "MeetingRepeatValues.isOneOf",
+      "isUnknownRecord2",
+      "optionalString",
+      "parseMeetingJoinSchedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 25,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 14,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:694147:26363006",
+    "artifact": "host",
+    "module": "shared/auto-review/sand-auto-review-copy-types.ts",
+    "name": "parseSandAutoReviewAwaitingCopy",
+    "qualified_name": "parseSandAutoReviewAwaitingCopy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 694147,
+    "end_line": 694161,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fb8b843378bcb869284bca8e7e7f58aba0e5b233712f6dd46aa7f306498c5e03",
+    "calls": [
+      "isUnknownRecord2",
+      "optionalString",
+      "parseSandAutoReviewSummaryCopy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

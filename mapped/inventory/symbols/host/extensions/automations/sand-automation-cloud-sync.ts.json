@@ -1,0 +1,371 @@
+[
+  {
+    "id": "host:505580:18555788",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "errorIdentity",
+    "qualified_name": "errorIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505580,
+    "end_line": 505584,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "3694350f7a2627444ee7c1cffbb7701cce81f254c487e15b54aba05d8113dc3a",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505586:18556154",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.constructor",
+    "qualified_name": "SandAutomationCloudSync.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505586,
+    "end_line": 505588,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505594:18556339",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.reconcileNow",
+    "qualified_name": "SandAutomationCloudSync.reconcileNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505594,
+    "end_line": 505609,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "76a48b7bc86efec07d947c0288134ca7d8bef8c05da0683effe5a170d77c6730",
+    "calls": [
+      ".catch",
+      ".finally",
+      "this.retryPendingAgentDeletions"
+    ],
+    "writes": [
+      "this.inFlight",
+      "this.rerun"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505610:18556788",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.deleteAgent",
+    "qualified_name": "SandAutomationCloudSync.deleteAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505610,
+    "end_line": 505642,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8826cc7f9e976dc266437f37bc30bf511a1fb718cde846aec1250e63e8255142",
+    "calls": [
+      "initial.workflows.flatMap",
+      "new Error",
+      "readback.workflows.some",
+      "this.deleteRemote",
+      "this.deps.dropWebhookKeys",
+      "this.finishAgentDeletion",
+      "this.listRemote",
+      "this.pendingAgentDeletions.add",
+      "this.recordFailure"
+    ],
+    "writes": [
+      "deleteFailed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505643:18558004",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.retryPendingAgentDeletions",
+    "qualified_name": "SandAutomationCloudSync.retryPendingAgentDeletions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505643,
+    "end_line": 505648,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "75230c364f2e989935c0523eb6c4fc4537cfe6a10e882029b5f385b014592f67",
+    "calls": [
+      "this.deleteAgent",
+      "this.deps.hasCredential"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505649:18558181",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.listRemote",
+    "qualified_name": "SandAutomationCloudSync.listRemote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505649,
+    "end_line": 505658,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "3d33cbd5e56a86aa56af86c7f62d26caad5e3e10a5593eb89a0a98b1de779620",
+    "calls": [
+      "new ListSandAutomationsRequest",
+      "this.deps.client.listSandAutomations",
+      "this.recordFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505659:18558490",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.deleteRemote",
+    "qualified_name": "SandAutomationCloudSync.deleteRemote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505659,
+    "end_line": 505667,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId"
+    ],
+    "body_sha256": "d54afa7e68a349a77c5bf5205c3349b6b2c3c1b2a92735c40e8a7cc7c7e72d69",
+    "calls": [
+      "new DeleteAutomationRequest",
+      "this.deps.client.deleteSandAutomation",
+      "this.recordFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505668:18558788",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.recordFailure",
+    "qualified_name": "SandAutomationCloudSync.recordFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505668,
+    "end_line": 505684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "88d13d5d8b1e6bb21798136ea35e15d3966c84b97366b92720a902b1697e970a",
+    "calls": [
+      "errorIdentity",
+      "this.deps.hasCredential",
+      "this.deps.onFailure",
+      "this.deps.reportDiagnostic",
+      "this.failedAgentIds.add",
+      "this.logCallbackFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505685:18559301",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.recordRecovery",
+    "qualified_name": "SandAutomationCloudSync.recordRecovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505685,
+    "end_line": 505692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "06b36d7c46a263de66c2574822536768df6c5028416ed94dbb3fb4f699c5f384",
+    "calls": [
+      "this.deps.onRecovery",
+      "this.failedAgentIds.delete",
+      "this.logCallbackFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:505693:18559532",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.finishAgentDeletion",
+    "qualified_name": "SandAutomationCloudSync.finishAgentDeletion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505693,
+    "end_line": 505696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "644da1f64f939275a1332505decbd1b7d76bb9a634fe19ea8ee516b86e9f667a",
+    "calls": [
+      "this.pendingAgentDeletions.delete",
+      "this.recordRecovery"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505697:18559650",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-cloud-sync.ts",
+    "name": "SandAutomationCloudSync.logCallbackFailure",
+    "qualified_name": "SandAutomationCloudSync.logCallbackFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505697,
+    "end_line": 505704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "callback",
+      "agentId",
+      "error64"
+    ],
+    "body_sha256": "3a9bf3f68dcdc0433e9b9ef1e24a81e35bec13d49564630c599d36471f7bb282",
+    "calls": [
+      "errorIdentity",
+      "this.deps.reportDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

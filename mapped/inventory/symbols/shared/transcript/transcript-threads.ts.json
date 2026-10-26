@@ -1,0 +1,138 @@
+[
+  {
+    "id": "host:490374:17958558",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-threads.ts",
+    "name": "replyToOf",
+    "qualified_name": "replyToOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490374,
+    "end_line": 490376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "febe3515a09e0f89edafaaf71ffe1bc9e1131cd29b881fb15530d57ae9b1943e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490377:17958642",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-threads.ts",
+    "name": "resolveBranchRoot2",
+    "qualified_name": "resolveBranchRoot2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490377,
+    "end_line": 490389,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "branchedById"
+    ],
+    "body_sha256": "f26dce45715e20d777a616214f8bcc0c789796abe6ca5e3d28f7ba98ae85c0f3",
+    "calls": [
+      "branchedById.get",
+      "new Set",
+      "replyToOf",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490390:17959057",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-threads.ts",
+    "name": "branchReplyCounts",
+    "qualified_name": "branchReplyCounts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490390,
+    "end_line": 490399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "branched"
+    ],
+    "body_sha256": "1e92d35afd0f3e920d1bc018e3505c1eb571fef195c9a6ff9c396e31c83d0683",
+    "calls": [
+      "branched.map",
+      "counts.get",
+      "counts.set",
+      "new Map",
+      "resolveBranchRoot2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490400:17959401",
+    "artifact": "host",
+    "module": "shared/transcript/transcript-threads.ts",
+    "name": "threadDescendants",
+    "qualified_name": "threadDescendants",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490400,
+    "end_line": 490403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rootId",
+      "branched"
+    ],
+    "body_sha256": "95049b73b0c5be4a4478469b2c07fb920ef0dd250e029dadb50fd0bd69d991c5",
+    "calls": [
+      "branched.filter",
+      "branched.map",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

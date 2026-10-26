@@ -1,0 +1,704 @@
+[
+  {
+    "id": "host:771352:29602038",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "clip",
+    "qualified_name": "clip",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771352,
+    "end_line": 771355,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "6f223b68155465b500f97a5e14dcb16c0b6c8affae37287d839b1d72fc3dfc52",
+    "calls": [
+      ".join",
+      "Array.from",
+      "chars.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771356:29602199",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "renderTranscriptSearch",
+    "qualified_name": "renderTranscriptSearch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771356,
+    "end_line": 771376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8cae24729bfc7ea985b8002377a6470701a0389c77b7ae33e79beac1cc82ed9d",
+    "calls": [
+      "String",
+      "clip",
+      "lines2.join",
+      "lines2.push"
+    ],
+    "writes": [
+      "budget",
+      "shown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771377:29603064",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "searchTranscripts",
+    "qualified_name": "searchTranscripts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771377,
+    "end_line": 771390,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "search",
+      "args"
+    ],
+    "body_sha256": "82618a0c8cfc88a6b484f40c9551d3950d4b72df30ae00f39eeb18c174a0a3a7",
+    "calls": [
+      "Math.min",
+      "args.query.trim",
+      "loaded.search",
+      "renderTranscriptSearch",
+      "search.load"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771391:29603518",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "renderTranscriptFilePage",
+    "qualified_name": "renderTranscriptFilePage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771391,
+    "end_line": 771416,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "6fafbdc9db5f1a25dc2b28a8263a147b11328c1e646c188d22c903a68f7e7808",
+    "calls": [
+      ".join",
+      "String",
+      "args.text.split",
+      "lines2.at",
+      "lines2.pop",
+      "new SandModelVisibleError",
+      "page.push"
+    ],
+    "writes": [
+      "budget",
+      "number6"
+    ],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771417:29604559",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "readTranscriptFile",
+    "qualified_name": "readTranscriptFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771417,
+    "end_line": 771439,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "search",
+      "args"
+    ],
+    "body_sha256": "2d6f3bd2719fb5def8733ad20f68013db2fb6308c695644b812edaa6a510e7de",
+    "calls": [
+      ".join",
+      ".sort",
+      "Math.min",
+      "String",
+      "args.path.trim",
+      "known.slice",
+      "loaded.files.get",
+      "loaded.files.keys",
+      "new SandModelVisibleError",
+      "renderTranscriptFilePage",
+      "resolveFilePath",
+      "search.load"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771440:29605500",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "createTranscriptSearchTools",
+    "qualified_name": "createTranscriptSearchTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771440,
+    "end_line": 771460,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "search"
+    ],
+    "body_sha256": "138aacaa79f8e3e8c4a2276ca926b783def6c9f7c045e1d0f3f703f955206542",
+    "calls": [
+      "defineZod4CommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771448:29605830",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTranscriptSearchTools/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771448,
+    "end_line": 771448,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771449:29605881",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "execute",
+    "qualified_name": "createTranscriptSearchTools/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771449,
+    "end_line": 771449,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "c5df79c9d44c5b8c09101b940b3e2e4757af928687d37f547dff63c5ee54495f",
+    "calls": [
+      "searchTranscripts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771456:29606202",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTranscriptSearchTools/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771456,
+    "end_line": 771456,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8ef46cbdd551897b4adf626b167b35dced7ab4623009dc80c1eecb66d95912dd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:771457:29606252",
+    "artifact": "host",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "execute",
+    "qualified_name": "createTranscriptSearchTools/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 771457,
+    "end_line": 771457,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "111b071073154cfb849e8bf1925131e5a28b4a10686e98e3fa70406e79e3c34e",
+    "calls": [
+      "readTranscriptFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570586:21313297",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "clip",
+    "qualified_name": "clip",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570586,
+    "end_line": 570589,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "6f223b68155465b500f97a5e14dcb16c0b6c8affae37287d839b1d72fc3dfc52",
+    "calls": [
+      ".join",
+      "Array.from",
+      "chars.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570590:21313458",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "renderTranscriptSearch",
+    "qualified_name": "renderTranscriptSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570590,
+    "end_line": 570610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8cae24729bfc7ea985b8002377a6470701a0389c77b7ae33e79beac1cc82ed9d",
+    "calls": [
+      "String",
+      "clip",
+      "lines2.join",
+      "lines2.push"
+    ],
+    "writes": [
+      "budget",
+      "shown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570611:21314323",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "searchTranscripts",
+    "qualified_name": "searchTranscripts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570611,
+    "end_line": 570624,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "search",
+      "args"
+    ],
+    "body_sha256": "82618a0c8cfc88a6b484f40c9551d3950d4b72df30ae00f39eeb18c174a0a3a7",
+    "calls": [
+      "Math.min",
+      "args.query.trim",
+      "loaded.search",
+      "renderTranscriptSearch",
+      "search.load"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570625:21314777",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "renderTranscriptFilePage",
+    "qualified_name": "renderTranscriptFilePage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570625,
+    "end_line": 570650,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "6fafbdc9db5f1a25dc2b28a8263a147b11328c1e646c188d22c903a68f7e7808",
+    "calls": [
+      ".join",
+      "String",
+      "args.text.split",
+      "lines2.at",
+      "lines2.pop",
+      "new SandModelVisibleError",
+      "page.push"
+    ],
+    "writes": [
+      "budget",
+      "number6"
+    ],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570651:21315818",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "readTranscriptFile",
+    "qualified_name": "readTranscriptFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570651,
+    "end_line": 570673,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "search",
+      "args"
+    ],
+    "body_sha256": "2d6f3bd2719fb5def8733ad20f68013db2fb6308c695644b812edaa6a510e7de",
+    "calls": [
+      ".join",
+      ".sort",
+      "Math.min",
+      "String",
+      "args.path.trim",
+      "known.slice",
+      "loaded.files.get",
+      "loaded.files.keys",
+      "new SandModelVisibleError",
+      "renderTranscriptFilePage",
+      "resolveFilePath",
+      "search.load"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570674:21316759",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "createTranscriptSearchTools",
+    "qualified_name": "createTranscriptSearchTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570674,
+    "end_line": 570694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "search"
+    ],
+    "body_sha256": "138aacaa79f8e3e8c4a2276ca926b783def6c9f7c045e1d0f3f703f955206542",
+    "calls": [
+      "defineZod4CommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570682:21317089",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTranscriptSearchTools/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570682,
+    "end_line": 570682,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570683:21317140",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "execute",
+    "qualified_name": "createTranscriptSearchTools/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570683,
+    "end_line": 570683,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "c5df79c9d44c5b8c09101b940b3e2e4757af928687d37f547dff63c5ee54495f",
+    "calls": [
+      "searchTranscripts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570690:21317461",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTranscriptSearchTools/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570690,
+    "end_line": 570690,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8ef46cbdd551897b4adf626b167b35dced7ab4623009dc80c1eecb66d95912dd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:570691:21317511",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/transcript-search/transcript-search-tools.ts",
+    "name": "execute",
+    "qualified_name": "createTranscriptSearchTools/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 570691,
+    "end_line": 570691,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "111b071073154cfb849e8bf1925131e5a28b4a10686e98e3fa70406e79e3c34e",
+    "calls": [
+      "readTranscriptFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

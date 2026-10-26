@@ -1,0 +1,530 @@
+[
+  {
+    "id": "evaluation:569354:21248913",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "turnMcpReviewOptions",
+    "qualified_name": "turnMcpReviewOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569354,
+    "end_line": 569367,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turn",
+      "props",
+      "extractConversationContext"
+    ],
+    "body_sha256": "527e12b082e328665635870b6706800f7fcafa0c5062a3c23728bb233981e1e2",
+    "calls": [
+      "host.getAutoReviewInstructions",
+      "host.getConversationId",
+      "turn.getAutoReviewUserInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569362:21249286",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "getApprovalExpiryPolicy",
+    "qualified_name": "turnMcpReviewOptions/getApprovalExpiryPolicy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569362,
+    "end_line": 569362,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cdb111e098d2834bc8f46bd073f0f06ad26db84f8c67586821d1f2cdb59e06a3",
+    "calls": [
+      "host.activeTurnApprovalExpiryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569368:21249498",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "createTurnDynamicToolRegistry",
+    "qualified_name": "createTurnDynamicToolRegistry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569368,
+    "end_line": 569380,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "decisions",
+      "{\n  compactConnectorCatalog,\n  keepsNativeToolsStatic = false\n}"
+    ],
+    "body_sha256": "6172d5daa096b8acfb73993365d8c9bbca6bba7839e6a971f7c2cde8e50c21c3",
+    "calls": [
+      "compactConnectorCatalog",
+      "new DynamicToolRegistry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569381:21250155",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "createTurnToolContext",
+    "qualified_name": "createTurnToolContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569381,
+    "end_line": 569440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turn",
+      "props",
+      "decisions"
+    ],
+    "body_sha256": "fb4a757f8a3a9d24b320b1d46dac523ae86de0493c6f75aaf05bfabbec811a95",
+    "calls": [
+      "BigInt",
+      "createMessageDeliveryRecorder",
+      "createSandAutoReviewClassifierContextExtractor",
+      "createToolHandoff",
+      "createTurnDynamicToolRegistry",
+      "createTurnMachineTools",
+      "host.getConversationId",
+      "isLargeOutputSpillEnabled",
+      "sandAutoReviewClassifierContextOptions",
+      "sandMcpMetaToolNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569387:21250517",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "compactConnectorCatalog",
+    "qualified_name": "createTurnToolContext/compactConnectorCatalog",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569387,
+    "end_line": 569387,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "beb0d0c3b33776a9da764f666bf35aa3f56ded70899df17dfb3eadf3c0a15b95",
+    "calls": [
+      "host.gates.compactConnectorCatalog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569391:21250709",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "scopeLocalTool",
+    "qualified_name": "createTurnToolContext/scopeLocalTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569391,
+    "end_line": 569391,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "tool",
+      "action"
+    ],
+    "body_sha256": "35c48700b4fe21a62f6f7cbc5229fd33c44bfd54acd01975ecc682a08c0fb621",
+    "calls": [
+      "withLocalToolScope"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569393:21250957",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "resolveAgentDisplay",
+    "qualified_name": "createTurnToolContext/resolveAgentDisplay",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569393,
+    "end_line": 569393,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "fd4af10f46b9bd922867dfb42e740cd36ea404eb2b9bf22cdc0afaa274136ee8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569406:21251576",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "getAgentId",
+    "qualified_name": "createTurnToolContext/getAgentId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569406,
+    "end_line": 569406,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0bf2e2c259a056dfd4f16fa526e18a6b0cf5e9e6664a5e48ccd017580eea8eb1",
+    "calls": [
+      "host.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569407:21251628",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "resolveBoxId",
+    "qualified_name": "createTurnToolContext/resolveBoxId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569407,
+    "end_line": 569407,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b8eb63b39fbf5ab3224326a4a4cc42312a6c1f3dafc1b5a49148a1f6a666d091",
+    "calls": [
+      "host.resolveBoxId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569415:21251919",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "resolveBoxAttachment",
+    "qualified_name": "createTurnToolContext/resolveBoxAttachment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569415,
+    "end_line": 569423,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "boxPath"
+    ],
+    "body_sha256": "4632e970277aea45c55c09c3da014c21dae61833c076ccc1b152f35064e98c60",
+    "calls": [
+      "host.resolveBoxId",
+      "resolveBoxMediaAttachment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569424:21252222",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "mcpReviewOptions",
+    "qualified_name": "createTurnToolContext/mcpReviewOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569424,
+    "end_line": 569424,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "71dca46f2250a240adad88d05edd089e090e0e4abd84f2d066c9493e91822b5b",
+    "calls": [
+      "turnMcpReviewOptions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569427:21252384",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "gateOnCredentialFillLease",
+    "qualified_name": "createTurnToolContext/gateOnCredentialFillLease",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569427,
+    "end_line": 569427,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "tool",
+      "reason"
+    ],
+    "body_sha256": "d6b1d904353bb082c8a06bda5ba2f18bfff3e43aca5c63f8a84d3e4802b3cffa",
+    "calls": [
+      "gateToolOnCredentialFillLease",
+      "resolveAgentDisplay"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569428:21252508",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "emitCard",
+    "qualified_name": "createTurnToolContext/emitCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569428,
+    "end_line": 569438,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "timestampMs"
+    ],
+    "body_sha256": "30d050afbf90ab7356bd996dcf740f03a9be81df8d93e9650bfcd7ca6b7df738",
+    "calls": [
+      "host.emitUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569441:21252775",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "createTurnMachineTools",
+    "qualified_name": "createTurnMachineTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569441,
+    "end_line": 569540,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turn",
+      "props",
+      "shared"
+    ],
+    "body_sha256": "a33be9459221c97bf076b16e0506f01f70f32daccd53a8c5995129103fd6fb8f",
+    "calls": [
+      "createAwaitTool",
+      "createFileTransferAudit",
+      "createReadTool",
+      "createSandAutoReviewShellGate",
+      "createShellTool",
+      "host.createFileTransferController",
+      "host.getConversationId",
+      "host.hasShellUserComputer",
+      "host.hasUserComputer",
+      "new CombinedResourceAccessor",
+      "props.resourceAccessor.get",
+      "readonlyWakeUserMachineOffers",
+      "resourceEntry",
+      "sandMaxBlockUntilMs",
+      "scopeLocalTool",
+      "turn.getAutoReviewUserInstructions",
+      "withRecordedToolCallNames",
+      "wrapReadExecutorForFileTransferAudit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569450:21253150",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "resolveBoxId",
+    "qualified_name": "createTurnMachineTools/resolveBoxId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569450,
+    "end_line": 569450,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b8eb63b39fbf5ab3224326a4a4cc42312a6c1f3dafc1b5a49148a1f6a666d091",
+    "calls": [
+      "host.resolveBoxId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569454:21253376",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/turn-tool-context.ts",
+    "name": "resolveMachineTerminalsFolder",
+    "qualified_name": "createTurnMachineTools/resolveMachineTerminalsFolder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569454,
+    "end_line": 569457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "machineId"
+    ],
+    "body_sha256": "63a6de0859480aec07d109b374ae00a591d1989fe62955dcfcf100f23581675c",
+    "calls": [
+      ".terminalsFolder",
+      "userComputers.resolve"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

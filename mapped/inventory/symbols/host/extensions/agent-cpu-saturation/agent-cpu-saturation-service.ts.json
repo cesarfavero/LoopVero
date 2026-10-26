@@ -1,0 +1,192 @@
+[
+  {
+    "id": "host:494367:18139601",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "parseCgroupCpuUsageUsec",
+    "qualified_name": "parseCgroupCpuUsageUsec",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494367,
+    "end_line": 494375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "fb77167852bafd208baf5b8ed1d5adf105500bc637a6c6ee60ccf1dce2bae2c8",
+    "calls": [
+      ".split",
+      "Number.isFinite",
+      "Number.parseInt",
+      "line.trim",
+      "raw.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494376:18139921",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "readAgentCgroupCpuStat",
+    "qualified_name": "readAgentCgroupCpuStat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494376,
+    "end_line": 494382,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33 = AGENT_CGROUP_CPU_STAT_PATH"
+    ],
+    "body_sha256": "218d3d0c4f65f09fe4a52fb27bd955538e8ee759cfe908b03d24f729e1f2a913",
+    "calls": [
+      "errorLogTag",
+      "isMissingPathError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:494383:18140243",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "createAgentCpuSaturationService",
+    "qualified_name": "createAgentCpuSaturationService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494383,
+    "end_line": 494415,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "8a177d53daf5ae0c6b2e4fc373b3301b225fad1cb0d7e805bbd1d680c78f298a",
+    "calls": [
+      "deps.samplePolicy.start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494387:18140376",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "sample",
+    "qualified_name": "createAgentCpuSaturationService/sample",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494387,
+    "end_line": 494409,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e8085680615fdeddbe90170736b203df579d6d48d46c505f1fe74f170df50763",
+    "calls": [
+      "deps.clock.now",
+      "deps.log",
+      "deps.readCpuStat",
+      "parseCgroupCpuUsageUsec"
+    ],
+    "writes": [
+      "lastReadKind",
+      "previous",
+      "saturatedSinceMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494412:18141412",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "saturatedSinceMs",
+    "qualified_name": "createAgentCpuSaturationService/saturatedSinceMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494412,
+    "end_line": 494412,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b06e081f6eb802431b640a4b853402d25f5ec40d94382846a15496c53af05c2b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494413:18141451",
+    "artifact": "host",
+    "module": "host/extensions/agent-cpu-saturation/agent-cpu-saturation-service.ts",
+    "name": "dispose",
+    "qualified_name": "createAgentCpuSaturationService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494413,
+    "end_line": 494413,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d27a14325eb6f013da2431233fa5e0216f623a347c433285971a62b4a65177f3",
+    "calls": [
+      "run.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

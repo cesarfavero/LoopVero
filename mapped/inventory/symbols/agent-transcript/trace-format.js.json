@@ -1,0 +1,151 @@
+[
+  {
+    "id": "host:509587:18703809",
+    "artifact": "host",
+    "module": "agent-transcript/trace-format.js",
+    "name": "tryParseJson",
+    "qualified_name": "tryParseJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509587,
+    "end_line": 509595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "str3"
+    ],
+    "body_sha256": "974530c43a5968875210104a2a6a8e46f2491136cdea512aae6cf44f0e575165",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509596:18703943",
+    "artifact": "host",
+    "module": "agent-transcript/trace-format.js",
+    "name": "applyToolCallTimestamps",
+    "qualified_name": "applyToolCallTimestamps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509596,
+    "end_line": 509608,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "toolResult2"
+    ],
+    "body_sha256": "756566472b82eba4de7545ef3d33c7754702feb4315dc006e79847f5ad3cca5f",
+    "calls": [
+      "Number"
+    ],
+    "writes": [
+      "target.completed_at_ms",
+      "target.duration_ms",
+      "target.started_at_ms"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509609:18704485",
+    "artifact": "host",
+    "module": "agent-transcript/trace-format.js",
+    "name": "extractToolResultContent",
+    "qualified_name": "extractToolResultContent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509609,
+    "end_line": 509620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolResult2"
+    ],
+    "body_sha256": "1fdcaf97302a14add74c64af0da4d8da957d9392c7e488fe89dac63031c7d64d",
+    "calls": [
+      "tryParseJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509621:18704837",
+    "artifact": "host",
+    "module": "agent-transcript/trace-format.js",
+    "name": "convertConversationMessagesToTrace",
+    "qualified_name": "convertConversationMessagesToTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509621,
+    "end_line": 509693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2",
+      "visibilityMode"
+    ],
+    "body_sha256": "12149a11ffa871524efe7ca936250343342ab68050138e1c15bcc309244d4c69",
+    "calls": [
+      "applyToolCallTimestamps",
+      "extractToolResultContent",
+      "message.text.trim",
+      "message.thinking.text.trim",
+      "result.push",
+      "toolCalls2.push",
+      "tryParseJson"
+    ],
+    "writes": [
+      "i",
+      "role",
+      "toolCall2.tool_args",
+      "toolCall2.tool_call_id",
+      "toolCall2.tool_name",
+      "toolMessage.tool_args",
+      "toolMessage.tool_call_id",
+      "toolMessage.tool_name",
+      "toolMessage.tool_result",
+      "traceMessage.text",
+      "traceMessage.thinking",
+      "traceMessage.tool_calls"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 17,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

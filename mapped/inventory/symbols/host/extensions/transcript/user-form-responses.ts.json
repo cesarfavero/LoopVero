@@ -1,0 +1,465 @@
+[
+  {
+    "id": "host:740557:28141687",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.constructor",
+    "qualified_name": "UserFormResponses.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740557,
+    "end_line": 740560,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm",
+      "userForms"
+    ],
+    "body_sha256": "584496eebf94a64884f40cfe3a552a9897c68afe4888d526fc6ab07d4e202e94",
+    "calls": [],
+    "writes": [
+      "this.tm",
+      "this.userForms"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740564:28141867",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.submitUserForm",
+    "qualified_name": "UserFormResponses.submitUserForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740564,
+    "end_line": 740633,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "bb19037b75606e64b6372b7d5bdb947cbc6891db6e1d7a0b13b9cdaf5d7a82f3",
+    "calls": [
+      "Date.now",
+      "buildUserFormSubmittedAck",
+      "isOneShotSubmitUserForm",
+      "remapHoldFor",
+      "settle3",
+      "this.entryIdsLatchedUntilResolutionStamp.add",
+      "this.entryIdsLatchedUntilResolutionStamp.delete",
+      "this.entryIdsLatchedUntilResolutionStamp.has",
+      "this.locatePendingForm",
+      "this.userForms.fill",
+      "this.userForms.holdForRemap",
+      "this.userForms.settleRemap",
+      "this.wakeFormAuthor",
+      "userFormFieldOutcomesOf",
+      "userFormFillValuesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740582:28142686",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "settle3",
+    "qualified_name": "UserFormResponses.submitUserForm/settle3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740582,
+    "end_line": 740594,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result",
+      "options2"
+    ],
+    "body_sha256": "234dc7b22e57d06772926e4d9481427b4e7e53d90dc772b665038ab1ab98830c",
+    "calls": [
+      "this.settleSubmittedForm"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740634:28144481",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.settleSubmittedForm",
+    "qualified_name": "UserFormResponses.settleSubmittedForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740634,
+    "end_line": 740661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ff70b4fcf742799b877d20dd11a8b0b0cc0060a9b7b6c73bb36163d24ce44d13",
+    "calls": [
+      "allOutcomes.some",
+      "fillValues.filter",
+      "this.finishUserForm",
+      "this.stampResolution",
+      "userFormFieldOutcomesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740662:28145498",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.dismissUserForm",
+    "qualified_name": "UserFormResponses.dismissUserForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740662,
+    "end_line": 740696,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "80feb03e4fbf504140039fba7efba96abe832d8fec7d2413a3e75609e3cf184c",
+    "calls": [
+      "Date.now",
+      "buildUserFormDismissedAck",
+      "this.entryIdsLatchedUntilResolutionStamp.add",
+      "this.entryIdsLatchedUntilResolutionStamp.delete",
+      "this.entryIdsLatchedUntilResolutionStamp.has",
+      "this.finishUserForm",
+      "this.locatePendingForm",
+      "this.openBoxDirectlyAndLeaveAgentParkedForHandBack",
+      "this.stampResolution",
+      "this.wakeFormAuthor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740697:28146776",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.wakeFormAuthor",
+    "qualified_name": "UserFormResponses.wakeFormAuthor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740697,
+    "end_line": 740710,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "located",
+      "prompt",
+      "options2"
+    ],
+    "body_sha256": "781e23ad8195a49a0a7f1f004acdced3ce1189e6a34ef50f2032ede59d3c1808",
+    "calls": [
+      "this.tm.runLifecycle.beginSessionRun",
+      "this.tm.runLifecycle.enqueueExclusiveRun",
+      "this.tm.sendPipeline.nextTurnEpoch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740711:28147343",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.openBoxDirectlyAndLeaveAgentParkedForHandBack",
+    "qualified_name": "UserFormResponses.openBoxDirectlyAndLeaveAgentParkedForHandBack",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740711,
+    "end_line": 740733,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sessionId",
+      "form"
+    ],
+    "body_sha256": "6a1759870e7ff78774f92999df0e1a1f8652a42659fd03bfab6e99ff7dd7e428",
+    "calls": [
+      "Date.now",
+      "createSendMessageEntry",
+      "form.instruction.trim",
+      "getTranscript",
+      "nextEntryId",
+      "stampBoxRequestEntry",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sendPipeline.appendSendMessageEntry",
+      "this.userForms.startHandoff"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740734:28148213",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.locatePendingForm",
+    "qualified_name": "UserFormResponses.locatePendingForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740734,
+    "end_line": 740749,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryId",
+      "agentId"
+    ],
+    "body_sha256": "3b8e411389d785d068ddd23e33c5a2f45bb481f45a168084a2f17b8892701cdd",
+    "calls": [
+      "findEntry",
+      "parseAgentId",
+      "this.tm.groupChat.isGroupSession",
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740750:28148862",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.stampResolution",
+    "qualified_name": "UserFormResponses.stampResolution",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740750,
+    "end_line": 740770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    entryId,\n    session,\n    resolution,\n    outcomes,\n    wakeOutcomeUnseen\n  }"
+    ],
+    "body_sha256": "0d89494ce064f87e6350e24ef618d0a77618dd4a903e923ae01b67e77ababf1a",
+    "calls": [
+      "session.db.updateTranscriptEntry",
+      "this.tm.roster.emit",
+      "updateEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740757:28148968",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "apply",
+    "qualified_name": "UserFormResponses.stampResolution/apply",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740757,
+    "end_line": 740765,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "b33a53fd7ec2dbf919ea283d933035b38fc4d0bb06aa7ebb13a0c6c101ccfe67",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740771:28149678",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "UserFormResponses.finishUserForm",
+    "qualified_name": "UserFormResponses.finishUserForm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740771,
+    "end_line": 740819,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5f064b5c8b12f191a75da8d86a250041fbe708dd0535461e7faceb96da4cacb2",
+    "calls": [
+      "args.form.fields.filter",
+      "brandedHost",
+      "brandedId",
+      "classifyUserFormFailureReason",
+      "fill.outcomes.filter",
+      "this.tm.productAnalytics.trackEvent",
+      "this.userForms.recordResolution",
+      "userFormResolutionTiming"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740821:28152400",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "remapHoldFor",
+    "qualified_name": "remapHoldFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740821,
+    "end_line": 740830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "fillValues",
+      "requestId2",
+      "consentedHost"
+    ],
+    "body_sha256": "a0310d13fd2718fe28a33ffa502a914acc00848ae925c9ffa0e50809eb386630",
+    "calls": [
+      ".map",
+      "fillValues.filter",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740831:28152892",
+    "artifact": "host",
+    "module": "host/extensions/transcript/user-form-responses.ts",
+    "name": "userFormResolutionTiming",
+    "qualified_name": "userFormResolutionTiming",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740831,
+    "end_line": 740835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entryTimestampMs",
+      "resolvedAtMs = Date.now()"
+    ],
+    "body_sha256": "cfefc2930ebc85f65ff4cf5d92681cc6e58d4ed20810f03e6d9ee253e907967b",
+    "calls": [
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

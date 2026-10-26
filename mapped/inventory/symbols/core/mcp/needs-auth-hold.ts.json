@@ -1,0 +1,172 @@
+[
+  {
+    "id": "evaluation:584796:22000173",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-hold.ts",
+    "name": "createNeedsAuthHold",
+    "qualified_name": "createNeedsAuthHold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584796,
+    "end_line": 584858,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "3a2f1770ba43a9f70e0a98d00117f10bf70f79ce9d86180b1ccc220b7cd2b3ca",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584800:22000374",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-hold.ts",
+    "name": "release",
+    "qualified_name": "createNeedsAuthHold/release",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584800,
+    "end_line": 584803,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "79149113a4100ef8157b614c6504df0836e0be0f73e39f007f0ac2170cb01310",
+    "calls": [
+      "errors.delete",
+      "onComputerSignInSinceMs.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584804:22000532",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-hold.ts",
+    "name": "boxStillReportsSignIn",
+    "qualified_name": "createNeedsAuthHold/boxStillReportsSignIn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584804,
+    "end_line": 584834,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "c0ead0e9ecf14e467843fd1e69fd5f233452c350cea73ea8bc80c4ea68d8e1e5",
+    "calls": [
+      ".then",
+      "Promise.race",
+      "delayWith",
+      "deps.onProbeFailed",
+      "deps.resolvePendingSignInSlot",
+      "done.abort",
+      "new AbortController",
+      "new Error",
+      "probe.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584837:22001636",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-hold.ts",
+    "name": "hold",
+    "qualified_name": "createNeedsAuthHold/hold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584837,
+    "end_line": 584845,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "{ providerIdentifier, note, failedCallError, computerSignIn }"
+    ],
+    "body_sha256": "3b536bc6d31ce48e70ccba6d2370c144ca5ff171a42ff0dbabc60fdd8ddfb7d4",
+    "calls": [
+      "clock.now",
+      "errors.set",
+      "onComputerSignInSinceMs.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584846:22001977",
+    "artifact": "evaluation",
+    "module": "core/mcp/needs-auth-hold.ts",
+    "name": "heldError",
+    "qualified_name": "createNeedsAuthHold/heldError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584846,
+    "end_line": 584856,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "5cffc7ec82f54b495978f3e24b2fe5c2e89bc6f65521d67794f2407c5090d15e",
+    "calls": [
+      "boxStillReportsSignIn",
+      "clock.now",
+      "errors.get",
+      "onComputerSignInSinceMs.get",
+      "release"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

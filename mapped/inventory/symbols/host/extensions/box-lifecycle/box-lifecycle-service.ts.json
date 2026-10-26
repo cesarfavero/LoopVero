@@ -1,0 +1,130 @@
+[
+  {
+    "id": "host:506315:18581789",
+    "artifact": "host",
+    "module": "host/extensions/box-lifecycle/box-lifecycle-service.ts",
+    "name": "BoxLifecycleService.constructor",
+    "qualified_name": "BoxLifecycleService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506315,
+    "end_line": 506317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "client"
+    ],
+    "body_sha256": "3f54c0846cb88bf5c99637e9f4986d16a6cd0748641496b8df52c38980a46dbe",
+    "calls": [],
+    "writes": [
+      "this.client"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506321:18581919",
+    "artifact": "host",
+    "module": "host/extensions/box-lifecycle/box-lifecycle-service.ts",
+    "name": "BoxLifecycleService.fetchImageUpdateAvailable",
+    "qualified_name": "BoxLifecycleService.fetchImageUpdateAvailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506321,
+    "end_line": 506324,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "signal"
+    ],
+    "body_sha256": "08c5c45d6d8742d42fd7373980e460a3529d49f3215e401e6b598c156db94d20",
+    "calls": [
+      "this.client.getSandBoxRunState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506325:18582072",
+    "artifact": "host",
+    "module": "host/extensions/box-lifecycle/box-lifecycle-service.ts",
+    "name": "BoxLifecycleService.recreateInBox",
+    "qualified_name": "BoxLifecycleService.recreateInBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506325,
+    "end_line": 506331,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "245f4eca1ec548118d03a1594dbaa31af097de63b0db59a676b5474796bc4d62",
+    "calls": [
+      "this.client.recreateSandBox"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506332:18582324",
+    "artifact": "host",
+    "module": "host/extensions/box-lifecycle/box-lifecycle-service.ts",
+    "name": "BoxLifecycleService.reportHostState",
+    "qualified_name": "BoxLifecycleService.reportHostState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506332,
+    "end_line": 506346,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "1057b60bcb208bf2f69c7c60f4ef45868d9a14f337b16b2a238d4b63b0362ff6",
+    "calls": [
+      "JSON.stringify",
+      "this.client.reportSandBoxHostState"
+    ],
+    "writes": [
+      "this.inFlightHostState",
+      "this.lastReportedHostState"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

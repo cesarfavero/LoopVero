@@ -1,0 +1,3082 @@
+[
+  {
+    "id": "evaluation:629212:23859553",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "brainDocsAgentDir",
+    "qualified_name": "brainDocsAgentDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629212,
+    "end_line": 629214,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "layout"
+    ],
+    "body_sha256": "a1c5967b80fbbb21133fa425fdda6286e244c652696de50065d2eff8d03d20fe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629215:23859674",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "conventionalAvatarPaths",
+    "qualified_name": "conventionalAvatarPaths",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629215,
+    "end_line": 629217,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "4f56812da780c618203dfab805552e0a30ca4e605a935d9fc474f6ff87420f16",
+    "calls": [
+      "CONVENTIONAL_AVATAR_EXTENSIONS.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629230:23860041",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "brainDocsRootsByFamily",
+    "qualified_name": "brainDocsRootsByFamily",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629230,
+    "end_line": 629241,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "layout"
+    ],
+    "body_sha256": "d5cce97531cfb9068d43a692051b4350425f691a6b7163687291309407f11ea4",
+    "calls": [
+      "brainDocsAgentDir",
+      "conventionalAvatarPaths",
+      "getAgentAutomationsDir",
+      "getAgentMemoryDir",
+      "getUserMemoryShardsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629242:23860586",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "effectiveBrainDocsFamilies",
+    "qualified_name": "effectiveBrainDocsFamilies",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629242,
+    "end_line": 629246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "7c222a0370ec2b9b7b285a01d7d4d159965ab7ebcdfb18fe3c59cea0eb5f60d7",
+    "calls": [
+      ".filter",
+      "families.has",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629247:23860868",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "brainDocsRoots",
+    "qualified_name": "brainDocsRoots",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629247,
+    "end_line": 629252,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "layout",
+      "families = effectiveBrainDocsFamilies(layout)"
+    ],
+    "body_sha256": "b6d1e9755f36c8bb0320084f8b9324f4bae621d45d6a8f1495d3147f27319aa2",
+    "calls": [
+      ".flatMap",
+      "SAND_BRAIN_DOCS_FAMILIES.filter",
+      "brainDocsRootsByFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629254:23861198",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsFamilyExcludedError.constructor",
+    "qualified_name": "SandBrainDocsFamilyExcludedError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629254,
+    "end_line": 629258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "family"
+    ],
+    "body_sha256": "56440db94ea6780e5ba23c9ade94d2c275c000fa825a661fb9ffe7974b9904fc",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.family",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629262:23861434",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.constructor",
+    "qualified_name": "MemoryFolderView.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629262,
+    "end_line": 629267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memoryDir",
+      "files",
+      "write2",
+      "deferUntilLoaded"
+    ],
+    "body_sha256": "acc09e03b2f187e2b531b703409ef7c8def2eece4a59f7f621c79fe376da7112",
+    "calls": [],
+    "writes": [
+      "this.deferUntilLoaded",
+      "this.files",
+      "this.memoryDir",
+      "this.write"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629272:23861670",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.facts",
+    "qualified_name": "MemoryFolderView.facts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629272,
+    "end_line": 629274,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7a148f11c5b21bad95bf7740601b29090f07ee498ffdfd5381203d0e0c5ccdc",
+    "calls": [
+      "parseMemoryFolder",
+      "this.files"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629275:23861747",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.recall",
+    "qualified_name": "MemoryFolderView.recall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629275,
+    "end_line": 629277,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "recentLimit"
+    ],
+    "body_sha256": "3c63627b2b26e2090168b0c42dfe913af60dce686a20b093ac5c44e9ffb90aed",
+    "calls": [
+      "recallMemoryFolder",
+      "this.facts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629278:23861839",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.listMemories",
+    "qualified_name": "MemoryFolderView.listMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629278,
+    "end_line": 629284,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "limit3"
+    ],
+    "body_sha256": "3c1ffb34f05496d57c06933d371602527aef50bbf1eb7ce6b83efea579b9d0dd",
+    "calls": [
+      ".map",
+      ".slice",
+      ".sort",
+      "Math.floor",
+      "Number.isFinite",
+      "this.facts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629282:23862040",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "recent",
+    "qualified_name": "MemoryFolderView.listMemories/recent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629282,
+    "end_line": 629282,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "64b0f3930c47ff07283d14a3028bdb8c7fd5171ddfda4ebf759ce9bf12d9f305",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629285:23862208",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.addMemory",
+    "qualified_name": "MemoryFolderView.addMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629285,
+    "end_line": 629308,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "content",
+      "createdAt",
+      "kind",
+      "provenance"
+    ],
+    "body_sha256": "e35fc74403aa83658f86324f9ea839db10b4077349df59042d7d226b91abd1f4",
+    "calls": [
+      ".some",
+      "appendMemoryFactToFile",
+      "files.logs.get",
+      "memoryDedupeKey",
+      "memoryIdFor",
+      "memoryLogFileName",
+      "normalizeMemoryContent",
+      "this.deferUntilLoaded",
+      "this.facts",
+      "this.files",
+      "this.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629309:23863337",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.removeMemoryByContent",
+    "qualified_name": "MemoryFolderView.removeMemoryByContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629309,
+    "end_line": 629321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "37075c5b94048970715a1f1e40c4154f634df7ca76f5e6713dbe4703105420dd",
+    "calls": [
+      ".find",
+      "files.logs.get",
+      "memoryIdFor",
+      "normalizeMemoryContent",
+      "removeMemoryFactFromFile",
+      "this.deferUntilLoaded",
+      "this.facts",
+      "this.files",
+      "this.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629322:23863994",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "MemoryFolderView.getLocation",
+    "qualified_name": "MemoryFolderView.getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629322,
+    "end_line": 629324,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d47af7a5198879d750486e538f20e5c3ac040977704ce63cee56d938624e6f20",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629326:23864033",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "parseChannelConfigFile",
+    "qualified_name": "parseChannelConfigFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629326,
+    "end_line": 629333,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "72d8c9f00029fa30b52b202988161d9cdf097785ba51ac80f7163848aca39da3",
+    "calls": [
+      "JSON.parse",
+      "new TypeError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "TypeError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629336:23864710",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "memoryPausedRefusal",
+    "qualified_name": "memoryPausedRefusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629336,
+    "end_line": 629338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scopes"
+    ],
+    "body_sha256": "c6727a31055994464c5f0691a767105266f5450bb4c39b77997e3f86d68f69ba",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629340:23864905",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.constructor",
+    "qualified_name": "SandBrainDocsStore.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629340,
+    "end_line": 629347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "6624d33d6dd100682ec79a2462218c11c20ee9226ae25993afda5f4d0c8e2bc1",
+    "calls": [
+      "brainDocsAgentDir",
+      "effectiveBrainDocsFamilies"
+    ],
+    "writes": [
+      "this.agentDir",
+      "this.boxFamilies",
+      "this.now",
+      "this.options",
+      "this.resolveAgentName",
+      "this.resolveUserTimeZone"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629356:23865402",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.isLoaded",
+    "qualified_name": "SandBrainDocsStore.isLoaded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629356,
+    "end_line": 629358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "22b7c36d23689440cefe479b97237645fb73ed2588d154eb5f7cd56edfc12907",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629359:23865449",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.hasBoxFamily",
+    "qualified_name": "SandBrainDocsStore.hasBoxFamily",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629359,
+    "end_line": 629361,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "family"
+    ],
+    "body_sha256": "dfa153a6dddafbe186ddf81b3c972ca175d346fcf1b4f2b209fb8d720998dc45",
+    "calls": [
+      "this.boxFamilies.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629362:23865520",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.requireFamily",
+    "qualified_name": "SandBrainDocsStore.requireFamily",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629362,
+    "end_line": 629364,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "family"
+    ],
+    "body_sha256": "6f13b5fb9d7ee58d9d1266f4f3ec8be2a094cd5ccabe3ad9fc7909bc510a16a8",
+    "calls": [
+      "new SandBrainDocsFamilyExcludedError",
+      "this.boxFamilies.has"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBrainDocsFamilyExcludedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629366:23865649",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.load",
+    "qualified_name": "SandBrainDocsStore.load",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629366,
+    "end_line": 629380,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "e74eded193ac55495dea98ac50a77bfc360067332022d8dbb331fd44d9ae9efe",
+    "calls": [
+      ".finally",
+      ".then",
+      "brainDocsRoots",
+      "new BrainDocsTree",
+      "this.options.fs.readTree"
+    ],
+    "writes": [
+      "this.loaded",
+      "this.loading",
+      "this.tree"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629381:23866108",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.ensureLoaded",
+    "qualified_name": "SandBrainDocsStore.ensureLoaded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629381,
+    "end_line": 629383,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "eecb4a27ad4ef226edde0d8c19fcf42546e3264da8f509b982728d8c3a337ea1",
+    "calls": [
+      "this.load"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629384:23866164",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.read",
+    "qualified_name": "SandBrainDocsStore.read",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629384,
+    "end_line": 629386,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "61cf63e00bf9501477b2cedba8f8eea2d3ef3cbb17fdb1fe17685d4ed342f2e6",
+    "calls": [
+      "this.tree.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629387:23866235",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.filesUnder",
+    "qualified_name": "SandBrainDocsStore.filesUnder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629387,
+    "end_line": 629389,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root"
+    ],
+    "body_sha256": "5b4931a04b78d234aaf6a67f9d2dcd4ade258f6e9f8269ea44b3d8f046e3a49e",
+    "calls": [
+      "this.tree.filesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629390:23866303",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.textFilesUnder",
+    "qualified_name": "SandBrainDocsStore.textFilesUnder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629390,
+    "end_line": 629392,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root"
+    ],
+    "body_sha256": "145def52148114fa2399f8dcb3f0aa056730c08b529f2b5b94502793b3199bf7",
+    "calls": [
+      ".filter",
+      "this.filesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629393:23866403",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.subdirectories",
+    "qualified_name": "SandBrainDocsStore.subdirectories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629393,
+    "end_line": 629395,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root"
+    ],
+    "body_sha256": "62fc99f3e5ce9746adfadbd12c735bc9b34831ba74dbf1ca54b5f0b2bfb31ccf",
+    "calls": [
+      ".filter",
+      ".sort",
+      "this.tree.directoryNamesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629396:23866531",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.writeFile",
+    "qualified_name": "SandBrainDocsStore.writeFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629396,
+    "end_line": 629406,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "content"
+    ],
+    "body_sha256": "5f67b1f0c718aa63ddcd86d24c6a44d93398d99259c69f3e280543d80b34cbed",
+    "calls": [
+      "this.options.fs.writeFile",
+      "this.tree.delete",
+      "this.tree.get",
+      "this.tree.set"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:629407:23866871",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.removeTree",
+    "qualified_name": "SandBrainDocsStore.removeTree",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629407,
+    "end_line": 629412,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "0edcf315551bc16367b1736f8b58894214c2a16d8f36f295316c816fa0d82d46",
+    "calls": [
+      "this.filesUnder",
+      "this.options.fs.removePath",
+      "this.tree.delete",
+      "this.tree.hasFilesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629413:23867123",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.memoryFiles",
+    "qualified_name": "SandBrainDocsStore.memoryFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629413,
+    "end_line": 629420,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memoryDir"
+    ],
+    "body_sha256": "8a55618dab1b0119ef0e34af77f212922d421fa734ed0454aa9c53ca9591d282",
+    "calls": [
+      "logs.set",
+      "new Map",
+      "this.read",
+      "this.textFilesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629424:23867690",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.memoryFolder",
+    "qualified_name": "SandBrainDocsStore.memoryFolder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629424,
+    "end_line": 629460,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memoryDir"
+    ],
+    "body_sha256": "a6c6b8c97718f994478b0adc04020c444fb420cef6d16b41818ee0582ea9308e",
+    "calls": [
+      "new MemoryFolderView"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629461:23868953",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.flush",
+    "qualified_name": "SandBrainDocsStore.flush",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629461,
+    "end_line": 629471,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1fe3c996f9efbd0d5e3722d1401e5372d67b4703ad5b8508dc1823bbaa3523f9",
+    "calls": [
+      "Promise.allSettled",
+      "Promise.resolve",
+      "agentMemory.flush",
+      "settled.find",
+      "this.flushBoxWrites",
+      "this.options.agentMemory",
+      "this.options.userMemory",
+      "userMemory.own.flush"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "failed.reason"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629472:23869444",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.flushBoxWrites",
+    "qualified_name": "SandBrainDocsStore.flushBoxWrites",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629472,
+    "end_line": 629483,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "45c246c341dfdb8b460c7bacd75c97433ff82709b8c8ed4debff74d8004dfec7",
+    "calls": [],
+    "writes": [
+      "tail",
+      "this.pendingWriteError"
+    ],
+    "throw_targets": [
+      "failed.error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629484:23869725",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.memory",
+    "qualified_name": "SandBrainDocsStore.memory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629484,
+    "end_line": 629489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2a7a2103052a15cafb8647da5653a5853bccfb36b7ba71a93b2eb3ee9fe81591",
+    "calls": [
+      "getAgentMemoryDir",
+      "this.memoryFolder",
+      "this.options.agentMemory",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629490:23869959",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.boxAgentMemoryFiles",
+    "qualified_name": "SandBrainDocsStore.boxAgentMemoryFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629490,
+    "end_line": 629493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "69cad5b72d95c57512ec22183e6a1d1d7e51a2954dc8a78051391e360efeec0d",
+    "calls": [
+      "getAgentMemoryDir",
+      "this.boxFamilies.has",
+      "this.memoryFiles"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629494:23870126",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.boxUserMemoryShardFiles",
+    "qualified_name": "SandBrainDocsStore.boxUserMemoryShardFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629494,
+    "end_line": 629497,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5793a18615ce459537caa5ea574d500a1d1cf4810c7e690d6b58be7ad095fe7c",
+    "calls": [
+      "getUserMemoryShardDir",
+      "this.boxFamilies.has",
+      "this.memoryFiles"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629498:23870329",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.boxUserMemoryShardIds",
+    "qualified_name": "SandBrainDocsStore.boxUserMemoryShardIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629498,
+    "end_line": 629501,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c69777fef746d5411884f135c70738f4f462e243d93fc716cc7187c35eb1a847",
+    "calls": [
+      "getUserMemoryShardsDir",
+      "this.boxFamilies.has",
+      "this.subdirectories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629502:23870483",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.shardVia",
+    "qualified_name": "SandBrainDocsStore.shardVia",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629502,
+    "end_line": 629505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d88c10d29d3f0c756d390d81e15482cff4fb3f1070930a164bb23a85335b5eae",
+    "calls": [
+      ".trim",
+      "this.resolveAgentName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629506:23870646",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.shardStores",
+    "qualified_name": "SandBrainDocsStore.shardStores",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629506,
+    "end_line": 629513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "shardsDir",
+      "overrides"
+    ],
+    "body_sha256": "fad03852321e2984aa1986aaebc878ea51d53813ae2bf83689e3a72459d7e30a",
+    "calls": [
+      ".map",
+      ".sort",
+      "ids.add",
+      "new Set",
+      "overrides.keys",
+      "this.boxFamilies.has",
+      "this.subdirectories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629514:23871017",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.shardRecalls",
+    "qualified_name": "SandBrainDocsStore.shardRecalls",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629514,
+    "end_line": 629522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "shardsDir",
+      "recentLimit",
+      "overrides"
+    ],
+    "body_sha256": "3a00434a2ae7749ebf40ced0a5f1966b61264663a16118201c46c67fb9165565",
+    "calls": [
+      "shards.push",
+      "store.recall",
+      "this.shardStores",
+      "this.shardVia"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629523:23871421",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.shardRecords",
+    "qualified_name": "SandBrainDocsStore.shardRecords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629523,
+    "end_line": 629529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "shardsDir",
+      "overrides"
+    ],
+    "body_sha256": "b93c92fd84e1efb9842374a757a4a5241148cf73c05d955f6b0df756c6498f49",
+    "calls": [
+      ".map",
+      "this.shardStores"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629530:23871670",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.userMemory",
+    "qualified_name": "SandBrainDocsStore.userMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629530,
+    "end_line": 629546,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cd16721ea3c9dbc8a5ef5e267b8ca3c72fa6f01b1ae34df8ccff8e39fa114df8",
+    "calls": [
+      "getUserMemoryShardsDir",
+      "this.boxFamilies.has",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629535:23871934",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "server",
+    "qualified_name": "SandBrainDocsStore.userMemory/server",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629535,
+    "end_line": 629535,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "db4ce61883a96c5c4085d25027a2b309ce424e2c5cd588fc638ebbfc0843df34",
+    "calls": [
+      "this.options.userMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629537:23871996",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "recall",
+    "qualified_name": "SandBrainDocsStore.userMemory/recall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629537,
+    "end_line": 629541,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "limits"
+    ],
+    "body_sha256": "0f9cf5b76d39e59fd15b0d2c40ba15934da763f656309869f2005ab5211753f7",
+    "calls": [
+      "mergeUserMemoryShards",
+      "server",
+      "this.shardRecalls"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629542:23872163",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "listAll",
+    "qualified_name": "SandBrainDocsStore.userMemory/listAll",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629542,
+    "end_line": 629542,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2cf927a724d1ed6c408fdc0ddefd7ae4cc031cc214b51ba2c7f0e1581832f2ed",
+    "calls": [
+      "mergeUserMemoryShardRecords",
+      "server",
+      "this.shardRecords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629543:23872265",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "getLocation",
+    "qualified_name": "SandBrainDocsStore.userMemory/getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629543,
+    "end_line": 629543,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4a71425e7f09f0abf6d1b2b65959a10d4b9a3c02dbd7798998f0a5ee509e1fb5",
+    "calls": [
+      "getUserMemoryDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629544:23872345",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "getOwnShardLocation",
+    "qualified_name": "SandBrainDocsStore.userMemory/getOwnShardLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629544,
+    "end_line": 629544,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "da6aa904ac5d55607befe97756b2fae0ecf678d0c8ce1568b815cbc27288f6b7",
+    "calls": [
+      "getUserMemoryShardDir",
+      "server"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629547:23872461",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.automationsDir",
+    "qualified_name": "SandBrainDocsStore.automationsDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629547,
+    "end_line": 629549,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c1a9847af78413ae1df5370192c58e1c9e6dd52cb8ed3c6360408444bb12988b",
+    "calls": [
+      "getAgentAutomationsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629550:23872542",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.readAutomationConfig",
+    "qualified_name": "SandBrainDocsStore.readAutomationConfig",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629550,
+    "end_line": 629553,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "e102e3cb3c6811e4d23d35626a7858818eb38597007e083514d530aeccf94048",
+    "calls": [
+      "parseStoredAutomationConfig",
+      "this.automationsDir",
+      "this.now",
+      "this.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629554:23872764",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.automationRecord",
+    "qualified_name": "SandBrainDocsStore.automationRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629554,
+    "end_line": 629563,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "config2",
+      "deriveNextRunAt"
+    ],
+    "body_sha256": "1dd1ce6cb98724d61a6dfa49e6735fcefc2ab27255de4a2de706987c2eb31fcd",
+    "calls": [
+      "automationRecordFromConfig",
+      "earliestAutomationNextRunAt",
+      "parseStoredAutomationRuns",
+      "this.automationsDir",
+      "this.read",
+      "this.resolveUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629564:23873322",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.listAutomationConfigs",
+    "qualified_name": "SandBrainDocsStore.listAutomationConfigs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629564,
+    "end_line": 629571,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "eb60334e6b5b4c0e870b3a6982801c76ed4132a29784404cc37bceb73870fcbc",
+    "calls": [
+      "entries.push",
+      "this.automationsDir",
+      "this.readAutomationConfig",
+      "this.subdirectories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629572:23873584",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.automations",
+    "qualified_name": "SandBrainDocsStore.automations",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629572,
+    "end_line": 629589,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "db955adff88aa789dd10f6a1535e5741f6c8fa7acfb3d6604b0e1418534a681c",
+    "calls": [
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629575:23873653",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "list",
+    "qualified_name": "SandBrainDocsStore.automations/list",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629575,
+    "end_line": 629580,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3738835e348b1df9a8ee2721a8555cf051f9d179dded79e0089e2d27db3c7d8b",
+    "calls": [
+      ".map",
+      ".sort",
+      "this.listAutomationConfigs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629581:23874035",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "listDefinitions",
+    "qualified_name": "SandBrainDocsStore.automations/listDefinitions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629581,
+    "end_line": 629581,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bfddb47647b4309fe55315c9848f8a299c4c6ba13deba2030a82174e0d62b5f6",
+    "calls": [
+      ".map",
+      ".sort",
+      "this.listAutomationConfigs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629582:23874202",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "get",
+    "qualified_name": "SandBrainDocsStore.automations/get",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629582,
+    "end_line": 629586,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "47093dabfb2e73697802dd6f02ae275a07f69f9d174b192578ce3e597607751f",
+    "calls": [
+      "isSafeFolderId",
+      "this.automationRecord",
+      "this.readAutomationConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629587:23874423",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "getLocation",
+    "qualified_name": "SandBrainDocsStore.automations/getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629587,
+    "end_line": 629587,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d545cd67ff388f4c94f35375c5fceccb585fde86f0f69d04a75bb601391eb1a7",
+    "calls": [
+      "this.automationsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629590:23874491",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.writeAutomationConfig",
+    "qualified_name": "SandBrainDocsStore.writeAutomationConfig",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629590,
+    "end_line": 629621,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    config: config2\n  }"
+    ],
+    "body_sha256": "4e52a38fdc2f6d46df361f60842b19ca1b8368290d8f90d8374d7907476e20d1",
+    "calls": [
+      "diffAuthoredAutomationAction",
+      "serializeStoredAutomationConfig",
+      "snapshotAuthoredAutomation",
+      "this.automationsDir",
+      "this.options.onAutomationChanged",
+      "this.readAutomationConfig",
+      "this.writeFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629622:23875452",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.removeAutomation",
+    "qualified_name": "SandBrainDocsStore.removeAutomation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629622,
+    "end_line": 629636,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    config: config2\n  }"
+    ],
+    "body_sha256": "6e87b3c25e93eadb168b8e45065fbb0b3bd7704373550eb22900b536fe9af702",
+    "calls": [
+      "snapshotAuthoredAutomation",
+      "this.automationsDir",
+      "this.options.onAutomationChanged",
+      "this.removeTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629637:23875886",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.skillsDir",
+    "qualified_name": "SandBrainDocsStore.skillsDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629637,
+    "end_line": 629639,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "297bf0920f37454d12b1bcc962d95e0e524e5a36494905177d4f3e4fba024d40",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629640:23875988",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.skillRecord",
+    "qualified_name": "SandBrainDocsStore.skillRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629640,
+    "end_line": 629666,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "8fe4ca0e432a224fbdc8af1c1bff77b0db6fa7bc95a68aef79920bc91241126e",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "parseSkillFile",
+      "this.filesUnder",
+      "this.now",
+      "this.read",
+      "this.skillsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629667:23877074",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.listSkills",
+    "qualified_name": "SandBrainDocsStore.listSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629667,
+    "end_line": 629674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "968b00ad0daef84fc9fe036a9dbe3a260cf9f6c21ac3cec748c214966ecbea9f",
+    "calls": [
+      "skills.push",
+      "this.skillRecord",
+      "this.skillsDir",
+      "this.subdirectories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629675:23877298",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.skills",
+    "qualified_name": "SandBrainDocsStore.skills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629675,
+    "end_line": 629684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d11264257c3c57de21208f37193b971c2b99ada6d6b68ac8fcedccacae67c302",
+    "calls": [
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629678:23877362",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "list",
+    "qualified_name": "SandBrainDocsStore.skills/list",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629678,
+    "end_line": 629681,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3ff12e6399ef2c6c1947c866fbf43aeadc7e79e2384a3ea93a7ab19a846ac59a",
+    "calls": [
+      ".map",
+      "this.automations.listDefinitions",
+      "this.boxFamilies.has",
+      "this.listSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629682:23877540",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "getLocation",
+    "qualified_name": "SandBrainDocsStore.skills/getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629682,
+    "end_line": 629682,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f6e7c48048282bc2a12a8d1ceeb9096f38ba450385e1d063236f32420db4df0c",
+    "calls": [
+      "this.skillsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629685:23877593",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.loadedSkillsFiles",
+    "qualified_name": "SandBrainDocsStore.loadedSkillsFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629685,
+    "end_line": 629688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f4d28503511613a6703393c9f1b6ccef8e2c7390aa44fdf7452c811d79673429",
+    "calls": [
+      "new Map",
+      "this.filesUnder",
+      "this.requireFamily",
+      "this.skillsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629689:23877715",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.writeSkillRecord",
+    "qualified_name": "SandBrainDocsStore.writeSkillRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629689,
+    "end_line": 629695,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id",
+      "spec"
+    ],
+    "body_sha256": "f3bfe90def4a2141ac02f4e41754dfb7f96e6ec99213f72410a05980949df534",
+    "calls": [
+      "parseSkillFile",
+      "serializeSkillFile",
+      "this.read",
+      "this.skillRecord",
+      "this.skillsDir",
+      "this.writeFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629697:23878156",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.channelConnection",
+    "qualified_name": "SandBrainDocsStore.channelConnection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629697,
+    "end_line": 629717,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform",
+      "raw"
+    ],
+    "body_sha256": "7ed81dfbfb27c22f68fb7d07171e3d3eca721df9c92462ec1dd05de1c9546d07",
+    "calls": [
+      "clampChannelLabel",
+      "errorLogTag",
+      "findConnectorManifest",
+      "parseChannelConfigFile",
+      "reportHostDiagnostic",
+      "this.reportedCorruptChannelConfigs.add",
+      "this.reportedCorruptChannelConfigs.has"
+    ],
+    "writes": [
+      "label"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:629718:23878980",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.channels",
+    "qualified_name": "SandBrainDocsStore.channels",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629718,
+    "end_line": 629732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "767ace42bdd208adf966ab95361809c3004bb3d4ceb09022f4bdebcb9f66341e",
+    "calls": [
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629722:23879144",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "listConnections",
+    "qualified_name": "SandBrainDocsStore.channels/listConnections",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629722,
+    "end_line": 629729,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "df043fc59411f357d0a580ababa7341968741b025dc3360ef783b6f8ac68c8d8",
+    "calls": [
+      "connections.push",
+      "this.channelConnection",
+      "this.read",
+      "this.subdirectories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629730:23879515",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "getLocation",
+    "qualified_name": "SandBrainDocsStore.channels/getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629730,
+    "end_line": 629730,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "46c84257769e82e1da6a6e09e08eeaf74fc034be1378adbce048c6b40c7444a5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629733:23879557",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.readProfile",
+    "qualified_name": "SandBrainDocsStore.readProfile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629733,
+    "end_line": 629737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "132a18742007147dd2908fce95c57e4acce3f3d981545b9a3eb99f70dab11d20",
+    "calls": [
+      "parseSandProfileFile",
+      "this.read",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629738:23879791",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.stampProfileServerBinding",
+    "qualified_name": "SandBrainDocsStore.stampProfileServerBinding",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629738,
+    "end_line": 629750,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "644de562f3f0f9148fad3299a2ab8f6401da633a202b3fca27677119a828c545",
+    "calls": [
+      "stampProfileServerBinding",
+      "this.ensureLoaded",
+      "this.read",
+      "this.requireFamily",
+      "this.writeFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629751:23880225",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.rawSettings",
+    "qualified_name": "SandBrainDocsStore.rawSettings",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629751,
+    "end_line": 629754,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "60abab8dda5b12af718c6afbec45fff17eca99e3a63d1a2d4a9b9d6a109e3d7b",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "parseRawSandSettings",
+      "this.options.fs.readFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629755:23880455",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.memoryShardFor",
+    "qualified_name": "SandBrainDocsStore.memoryShardFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629755,
+    "end_line": 629800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "scope"
+    ],
+    "body_sha256": "536b5e7a0c39f40c7c26fc3720bff0498965dcc5aad494fd557ce668af3d6c7e",
+    "calls": [
+      "getUserMemoryShardDir",
+      "memoryPausedRefusal",
+      "new SandToolInputError",
+      "stateWriteFailed",
+      "this.memoryFolder",
+      "this.options.userMemory",
+      "this.options.userMemoryWritable",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629801:23882500",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.defaultMemoryScope",
+    "qualified_name": "SandBrainDocsStore.defaultMemoryScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629801,
+    "end_line": 629803,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9330ae403fad5a278243e7178fb3a2589eb845ec2245122deb9269272614252b",
+    "calls": [
+      "this.options.agentMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629804:23882601",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.lookupHint",
+    "qualified_name": "SandBrainDocsStore.lookupHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629804,
+    "end_line": 629806,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "store"
+    ],
+    "body_sha256": "c3f043a195f7ba2ef6d7c2240f6f31f210d8c4bda82326b8b2ce1f104e9c7700",
+    "calls": [
+      "store.getLocation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629807:23882750",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.writeMemory",
+    "qualified_name": "SandBrainDocsStore.writeMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629807,
+    "end_line": 629824,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "write2"
+    ],
+    "body_sha256": "4fa8e24fa2990502728530c59af20c8738c77ef01aa1abedb52fffa3e8283bea",
+    "calls": [
+      "content.trim",
+      "shard.store.addMemory",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.defaultMemoryScope",
+      "this.ensureLoaded",
+      "this.flush",
+      "this.lookupHint",
+      "this.memoryShardFor",
+      "this.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629825:23883688",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.removeMemory",
+    "qualified_name": "SandBrainDocsStore.removeMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629825,
+    "end_line": 629842,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    content,\n    scope = this.defaultMemoryScope(),\n    folder\n  }"
+    ],
+    "body_sha256": "69f2ad902f16bfb93716644f48dca3c6de2a09c70d447ff1632de06ec2ab77fb",
+    "calls": [
+      "normalizeMemoryContent",
+      "shard.store.removeMemoryByContent",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.flush",
+      "this.lookupHint",
+      "this.memoryShardFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629843:23884663",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.describeAutomationWrite",
+    "qualified_name": "SandBrainDocsStore.describeAutomationWrite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629843,
+    "end_line": 629854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "automation",
+      "verb"
+    ],
+    "body_sha256": "7cef95802403d00ac69f3f96c4752d8b0b889bbed0787c41781cfd072063405b",
+    "calls": [
+      "describeTrigger",
+      "stateWriteFailed",
+      "stateWriteOk"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629855:23885107",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.createAutomation",
+    "qualified_name": "SandBrainDocsStore.createAutomation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629855,
+    "end_line": 629873,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    spec,\n    provenance,\n    sessionId\n  }"
+    ],
+    "body_sha256": "2be64c49669ff2cf412ed520fd742ea202c6c3f9f45ac385a3ddbef238e8e5de",
+    "calls": [
+      "automationConfigFromSpec",
+      "new Set",
+      "this.automationRecord",
+      "this.automationsDir",
+      "this.describeAutomationWrite",
+      "this.ensureLoaded",
+      "this.listAutomationConfigs",
+      "this.now",
+      "this.requireFamily",
+      "this.subdirectories",
+      "this.writeAutomationConfig",
+      "uniqueAutomationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629874:23885829",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.updateAutomation",
+    "qualified_name": "SandBrainDocsStore.updateAutomation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629874,
+    "end_line": 629890,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    spec,\n    provenance\n  }"
+    ],
+    "body_sha256": "d43b969fa1d7fd49adfe2a8c38570185b710fa1a044977e8b5fd4fbc5cffb4da",
+    "calls": [
+      "automationConfigWithSpec",
+      "isSafeFolderId",
+      "stateWriteFailed",
+      "this.automationRecord",
+      "this.describeAutomationWrite",
+      "this.ensureLoaded",
+      "this.readAutomationConfig",
+      "this.requireFamily",
+      "this.writeAutomationConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629891:23886453",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.setAutomationEnabled",
+    "qualified_name": "SandBrainDocsStore.setAutomationEnabled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629891,
+    "end_line": 629906,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    id,\n    isEnabled\n  }"
+    ],
+    "body_sha256": "2b4a1b32b3b2e0315fad5bfde02b967e900c50c6aba9d87518fb53ce7599103b",
+    "calls": [
+      "isSafeFolderId",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.readAutomationConfig",
+      "this.requireFamily",
+      "this.writeAutomationConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629907:23887059",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.deleteAutomation",
+    "qualified_name": "SandBrainDocsStore.deleteAutomation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629907,
+    "end_line": 629915,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ id }"
+    ],
+    "body_sha256": "bc9830a5a5dcad939093cf019930cb74f3e6839ca5a64d73a18b417956566248",
+    "calls": [
+      "isSafeFolderId",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.readAutomationConfig",
+      "this.removeAutomation",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629916:23887486",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.writeSkill",
+    "qualified_name": "SandBrainDocsStore.writeSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629916,
+    "end_line": 629957,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "23f5c2619de36ff08ed0835bb59cb589f2aa722c89e48e4691313bbf8fdd7d10",
+    "calls": [
+      "Date.now",
+      "clampSkillBody",
+      "clampSkillDescription",
+      "clampSkillName",
+      "existing.has",
+      "isSafeFolderId",
+      "new Set",
+      "slugifySkillName",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.listSkills",
+      "this.requireFamily",
+      "this.skillRecord",
+      "this.skillsDir",
+      "this.subdirectories",
+      "this.writeSkillRecord"
+    ],
+    "writes": [
+      "id",
+      "suffix",
+      "written"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629958:23889106",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.deleteSkill",
+    "qualified_name": "SandBrainDocsStore.deleteSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629958,
+    "end_line": 629973,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ id }"
+    ],
+    "body_sha256": "ac245a04c0009efa44167e8ebeb46d9b60378b13f225f631542d029cf4302913",
+    "calls": [
+      "isSafeFolderId",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.boxFamilies.has",
+      "this.ensureLoaded",
+      "this.readAutomationConfig",
+      "this.removeAutomation",
+      "this.removeTree",
+      "this.requireFamily",
+      "this.skillRecord",
+      "this.skillsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629974:23889814",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.updateProfile",
+    "qualified_name": "SandBrainDocsStore.updateProfile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629974,
+    "end_line": 629997,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "04ccc352995d0517a54b30d9a9efd1333e1ecff2d9a077e07acd776fb6d08c8a",
+    "calls": [
+      "args.avatarColor.trim",
+      "args.avatarShape.trim",
+      "args.description.trim",
+      "args.name.trim",
+      "args.title.trim",
+      "describeSandProfileUpdate",
+      "parseProfileJson",
+      "profileServerBindingFromJson",
+      "refuseSandProfileUpdate",
+      "serializeSandProfileFile",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.read",
+      "this.readProfile",
+      "this.requireFamily",
+      "this.writeFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:629998:23890938",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.updateSettings",
+    "qualified_name": "SandBrainDocsStore.updateSettings",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 629998,
+    "end_line": 630014,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5e95bf1c854c3241bf9da671d58381f37e88f69086dbce78f5f27bdc67b90745",
+    "calls": [
+      "Object.keys",
+      "fields3.join",
+      "serializeSandSettingsFile",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.options.fs.writeFile",
+      "this.rawSettings",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:630015:23891760",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.disconnectChannel",
+    "qualified_name": "SandBrainDocsStore.disconnectChannel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 630015,
+    "end_line": 630028,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    platform\n  }"
+    ],
+    "body_sha256": "3abf345d0063a1f78099405121b0db6f0dd2350f739228e359a91727076cc39b",
+    "calls": [
+      "isSafeFolderId",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.ensureLoaded",
+      "this.removeTree",
+      "this.requireFamily",
+      "this.tree.hasFilesUnder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:630029:23892261",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.avatarFilenames",
+    "qualified_name": "SandBrainDocsStore.avatarFilenames",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 630029,
+    "end_line": 630033,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a751b06c478c00bf410d050cc06ee7c5c8db585bc3448daea5d9c9e0a5aca11c",
+    "calls": [
+      ".filter",
+      ".map",
+      "conventionalAvatarPaths",
+      "sortConventionalAvatarFilenames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:630034:23892494",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.setAvatar",
+    "qualified_name": "SandBrainDocsStore.setAvatar",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 630034,
+    "end_line": 630071,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ path: sourcePath2 }"
+    ],
+    "body_sha256": "0e313b172cace7dc0c620168f29a36a843ad48af043acef8cf2b6bf531cef756",
+    "calls": [
+      ".catch",
+      ".filter",
+      "Buffer.from",
+      "avatarFilenameForExtension",
+      "extensionForMime",
+      "isBoxRootPath",
+      "leftover.join",
+      "sniffAvatarMimeType",
+      "sourcePath2.trim",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.avatarFilenames",
+      "this.ensureLoaded",
+      "this.options.fs.readFile",
+      "this.options.fs.writeFile",
+      "this.removeAvatarFiles",
+      "this.requireFamily",
+      "this.tree.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:630072:23894613",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.removeAvatarFiles",
+    "qualified_name": "SandBrainDocsStore.removeAvatarFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 630072,
+    "end_line": 630083,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "names3"
+    ],
+    "body_sha256": "d0a7917da8fadd8c8c2d9c7e181c5d8996169dc82745abb4254f39deff03f79b",
+    "calls": [
+      "leftover.push",
+      "this.options.fs.removePath",
+      "this.tree.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:630084:23894975",
+    "artifact": "evaluation",
+    "module": "core/brain-docs/brain-docs-store.ts",
+    "name": "SandBrainDocsStore.clearAvatar",
+    "qualified_name": "SandBrainDocsStore.clearAvatar",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 630084,
+    "end_line": 630098,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ce1122de738600fcdf0b58bf1d03ae780cbde0374a68d372dfc293a54f4a3f54",
+    "calls": [
+      "leftover.join",
+      "stateWriteFailed",
+      "stateWriteOk",
+      "this.avatarFilenames",
+      "this.ensureLoaded",
+      "this.removeAvatarFiles",
+      "this.requireFamily"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

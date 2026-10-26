@@ -1,0 +1,948 @@
+[
+  {
+    "id": "host:616020:22842894",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "generateBlobEncryptionKeyHex",
+    "qualified_name": "generateBlobEncryptionKeyHex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616020,
+    "end_line": 616024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "bf1ae56d2fc263540af2da1af3d37ef1874974970aa225c6c07520800c005442",
+    "calls": [
+      "crypto.getRandomValues",
+      "new Uint8Array",
+      "toHex3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616025:22843061",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "isValidBlobEncryptionKeyHex",
+    "qualified_name": "isValidBlobEncryptionKeyHex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616025,
+    "end_line": 616027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "21897bb86c17ae8d94acf0dcf8a09b27cb5927b85e3a082a3f1b3ecb763417ae",
+    "calls": [
+      "BLOB_ENCRYPTION_KEY_HEX_PATTERN.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616029:22843282",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "getAgentMetadataSchema",
+    "qualified_name": "getAgentMetadataSchema",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616029,
+    "end_line": 616054,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "37074acb3dafe953e3fb7d9948f41c4d3c7ee8cfa4e10dd92c20946fd6a9eff5",
+    "calls": [
+      ".int",
+      ".min",
+      ".optional",
+      ".positive",
+      "_enum2",
+      "boolean2",
+      "custom",
+      "number2",
+      "object",
+      "string2"
+    ],
+    "writes": [
+      "_agentMetadataSchema"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616055:22844197",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "getDefaultAgentMetadata",
+    "qualified_name": "getDefaultAgentMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616055,
+    "end_line": 616068,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "9a6dc213e73352905f42a89e6bcf43f52a9e09ca084d8c233bfcc2b5ac0bbe47",
+    "calls": [
+      "Date.now",
+      "crypto.randomUUID",
+      "generateBlobEncryptionKeyHex",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616070:22844611",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "isAgentMode",
+    "qualified_name": "isAgentMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616070,
+    "end_line": 616072,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1a76af1012f1c78862e9687a355e43d28c3ee78ad02c194055151b2d1249b70c",
+    "calls": [
+      "agentModeSet.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616074:22844737",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "isApprovalModeSetting",
+    "qualified_name": "isApprovalModeSetting",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616074,
+    "end_line": 616076,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "84396b4f1c9e1d0c5f44c190d1111590f7032d71aa9741c952632403852eb4d7",
+    "calls": [
+      "approvalModeSettingSet.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616077:22844823",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "parseAgentSubagentInfo",
+    "qualified_name": "parseAgentSubagentInfo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616077,
+    "end_line": 616091,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1a6aa6d68db7c720bc9067b75055fb77ff70639b4bf05b756c32b722043e6bcd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616093:22845557",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentMetadataSerde.serialize",
+    "qualified_name": "AgentMetadataSerde.serialize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616093,
+    "end_line": 616099,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "d1f12b52f374a70e052aabf7d0d0d303276eafa20f9ae703db39dd8a2b9e2a7c",
+    "calls": [
+      "JSON.stringify",
+      "toHex3",
+      "utf8Serde.serialize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616100:22845779",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentMetadataSerde.deserialize",
+    "qualified_name": "AgentMetadataSerde.deserialize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616100,
+    "end_line": 616125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blob"
+    ],
+    "body_sha256": "1690f8b2b34ec48182736745061940b2549780e2b018345c39ad9f34ee8a3dbb",
+    "calls": [
+      ".parse",
+      "JSON.parse",
+      "fromHex",
+      "getAgentMetadataSchema",
+      "getDefaultAgentMetadata",
+      "isAgentMode",
+      "isApprovalModeSetting",
+      "isValidBlobEncryptionKeyHex",
+      "parseAgentSubagentInfo",
+      "utf8Serde.deserialize"
+    ],
+    "writes": [
+      "isRunEverything",
+      "rawMode"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616126:22846938",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentMetadataSerde.getBlobType",
+    "qualified_name": "AgentMetadataSerde.getBlobType",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616126,
+    "end_line": 616128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1eb79bb8c1d35af1bf6178eadd2ccc63294ca3c1857fba33093d561a8c2b144a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616137:22847393",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "deriveConversationStateFromStructure",
+    "qualified_name": "deriveConversationStateFromStructure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616137,
+    "end_line": 616210,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "3f5ad4a496355ee1bd22b58c351d29c4f78cf725818989641c12876f233198bb",
+    "calls": [
+      "blobStore.getBlob",
+      "conversationStepSerde.deserialize",
+      "conversationSummarySerde.deserialize",
+      "conversationTurnStructureSerde.deserialize",
+      "new AgentConversationTurn",
+      "new ConversationState",
+      "new ConversationTurn",
+      "new ShellConversationTurn",
+      "shellCommandSerde.deserialize",
+      "shellOutputSerde.deserialize",
+      "steps.push",
+      "todoItemSerde.deserialize",
+      "todos.push",
+      "turns.push",
+      "userMessageSerde.deserialize"
+    ],
+    "writes": [
+      "conversationTurn",
+      "newState.summary",
+      "newState.todos",
+      "newState.turns"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 3,
+      "awaits": 7,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616212:22850211",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.constructor",
+    "qualified_name": "AgentStore2.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616212,
+    "end_line": 616218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobStore",
+      "metadataStore",
+      "options2 = {}"
+    ],
+    "body_sha256": "b9235dc91d8c46e50bf22bfd30e596a2f8ef0a51f51475201c144349ff10b909",
+    "calls": [
+      "new ConversationStateStructure",
+      "new ProtoSerde"
+    ],
+    "writes": [
+      "this.blobStore",
+      "this.conversationStateStructure",
+      "this.fixedRootBlobId",
+      "this.metadataStore",
+      "this.serde"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616219:22850538",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.subscribeToMetadata",
+    "qualified_name": "AgentStore2.subscribeToMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616219,
+    "end_line": 616223,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "callback"
+    ],
+    "body_sha256": "08e12459aaf26c9e0556865c171ee92a56e057f9254b877157bdafcf310855d1",
+    "calls": [
+      "this.metadataStore.subscribe"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616224:22850679",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.setMetadata",
+    "qualified_name": "AgentStore2.setMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616224,
+    "end_line": 616226,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "value"
+    ],
+    "body_sha256": "46fb767c4c2afe396282555ce4fa627af3c71261d1c6ef21b084182a9d12e8fe",
+    "calls": [
+      "this.metadataStore.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616227:22850751",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getMetadata",
+    "qualified_name": "AgentStore2.getMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616227,
+    "end_line": 616229,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "8f8687e502cc87d7b1f05e7b8dd009eb26431a9b6c230a77f29c07727ba8c8d8",
+    "calls": [
+      "this.metadataStore.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616230:22850810",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getId",
+    "qualified_name": "AgentStore2.getId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616230,
+    "end_line": 616232,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cf891f43895836628715af2ca9581a62ce35ed8ee8dadfd0008172eabe3afd26",
+    "calls": [
+      "this.getMetadata"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616233:22850873",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getBlobStore",
+    "qualified_name": "AgentStore2.getBlobStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616233,
+    "end_line": 616235,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "94a78ee4f3a34e86e49cc5020ff75d00a457860423f9db4eacaa79a14c08c409",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616236:22850940",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getConversationStateStructure",
+    "qualified_name": "AgentStore2.getConversationStateStructure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616236,
+    "end_line": 616238,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c0a78015946967680044bf46d80aaa6ed1b66d920d9b4920a6df5b42f281a08a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616240:22851080",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getLastRequestIdFromConversation",
+    "qualified_name": "AgentStore2.getLastRequestIdFromConversation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616240,
+    "end_line": 616256,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "f6ac655095ec0da16fd87b1f985feac0f62b2bf8f5625e9bebcdcc386d493688",
+    "calls": [
+      "conversationTurnStructureSerde.deserialize",
+      "this.blobStore.getBlob"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616257:22851693",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getFullConversation",
+    "qualified_name": "AgentStore2.getFullConversation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616257,
+    "end_line": 616259,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "380f94a4e58c7fa4b424b16c4c7d9dde30c4c5f62c7a166a0b7791ade0796cb1",
+    "calls": [
+      "this.deserializeConversationStateStructure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616264:22851977",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.deserializeConversationStateStructure",
+    "qualified_name": "AgentStore2.deserializeConversationStateStructure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616264,
+    "end_line": 616266,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "structure"
+    ],
+    "body_sha256": "9d273129895757067f0f7e55952737736beb8129c817193b4067de7bfde46e5c",
+    "calls": [
+      "deriveConversationStateFromStructure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616272:22852366",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getFullConversationWithSubagents",
+    "qualified_name": "AgentStore2.getFullConversationWithSubagents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616272,
+    "end_line": 616292,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4ecae6b87995bfb020c07f079d5c5dc8fef2ff9fdea1e8bc07c7bebe5845346a",
+    "calls": [
+      "Object.entries",
+      "resolveSubagentPersistedStates",
+      "this.deserializeConversationStateStructure"
+    ],
+    "writes": [
+      "subagentStates[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616293:22853332",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.getLatestCheckpoint",
+    "qualified_name": "AgentStore2.getLatestCheckpoint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616293,
+    "end_line": 616295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9645eae6fb72a2113dd31888a71415d391bda015a72fe83648f6f40f477df60f",
+    "calls": [
+      "this.getConversationStateStructure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616296:22853414",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.handleCheckpoint",
+    "qualified_name": "AgentStore2.handleCheckpoint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616296,
+    "end_line": 616302,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "checkpoint"
+    ],
+    "body_sha256": "3b1090eb103b069caa3ab1632c4522ed61c6b1e83979778097d20d8e2be0e641",
+    "calls": [
+      "getBlobId",
+      "this.blobStore.setBlob",
+      "this.serde.serialize",
+      "this.setMetadata"
+    ],
+    "writes": [
+      "this.conversationStateStructure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616303:22853730",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.resetFromDb",
+    "qualified_name": "AgentStore2.resetFromDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616303,
+    "end_line": 616305,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "6ca69d2278ac006f910e465897d38f8c083a0abc82304023e880cd126ce8f2db",
+    "calls": [
+      "this.tryResetFromDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616306:22853800",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.tryResetFromDb",
+    "qualified_name": "AgentStore2.tryResetFromDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616306,
+    "end_line": 616325,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4b35c0c47ee7e05c124a0ef8d87e8f353904a88f191a2908ef0ae3135c99d907",
+    "calls": [
+      "new ConversationStateStructure",
+      "this.blobStore.getBlob",
+      "this.getMetadata",
+      "this.serde.deserialize"
+    ],
+    "writes": [
+      "this.conversationStateStructure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:616326:22854496",
+    "artifact": "host",
+    "module": "agent-kv/agent-store.js",
+    "name": "AgentStore2.dispose",
+    "qualified_name": "AgentStore2.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616326,
+    "end_line": 616330,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a0ca92a3ed7051686068a51961cf808d60d383c62b033a059b60aa593b1930c6",
+    "calls": [
+      "this.blobStore.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284798:9186493",
+    "artifact": "evaluation",
+    "module": "agent-kv/agent-store.js",
+    "name": "deriveConversationStateFromStructure",
+    "qualified_name": "deriveConversationStateFromStructure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284798,
+    "end_line": 284871,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "8be93fbf5f289d294a20f8e7aacf85d863a5a6f0b6e200527ecf823487b51c8b",
+    "calls": [
+      "blobStore.getBlob",
+      "conversationStepSerde.deserialize",
+      "conversationSummarySerde.deserialize",
+      "conversationTurnStructureSerde.deserialize",
+      "new AgentConversationTurn",
+      "new ConversationState",
+      "new ConversationTurn",
+      "new ShellConversationTurn",
+      "shellCommandSerde.deserialize",
+      "shellOutputSerde.deserialize",
+      "steps.push",
+      "todoItemSerde.deserialize",
+      "todos.push",
+      "turns.push",
+      "userMessageSerde.deserialize"
+    ],
+    "writes": [
+      "conversationTurn",
+      "newState.summary",
+      "newState.todos",
+      "newState.turns"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 3,
+      "awaits": 7,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

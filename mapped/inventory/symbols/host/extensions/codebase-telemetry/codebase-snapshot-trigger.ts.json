@@ -1,0 +1,134 @@
+[
+  {
+    "id": "host:540811:19847711",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-snapshot-trigger.ts",
+    "name": "CodebaseSnapshotTrigger.constructor",
+    "qualified_name": "CodebaseSnapshotTrigger.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540811,
+    "end_line": 540814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ getSession, logger: logger132 }"
+    ],
+    "body_sha256": "46040f2b021d370868d19c6e6b6c377b0b7002ea33799d24db99b65ee2cdb6b6",
+    "calls": [],
+    "writes": [
+      "this.getSession",
+      "this.logger"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540815:19847824",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-snapshot-trigger.ts",
+    "name": "CodebaseSnapshotTrigger.handle",
+    "qualified_name": "CodebaseSnapshotTrigger.handle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540815,
+    "end_line": 540837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "e1041974aba3d9b7b7615833c5553971245b3992935fd8d14a327e285ab111e3",
+    "calls": [
+      ".catch",
+      "session.snapshot",
+      "snapshotReasonKey",
+      "this.getSession",
+      "this.handledReasonKeys.add",
+      "this.handledReasonKeys.has",
+      "this.logger.debug",
+      "this.pruneIfNeeded"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540838:19848601",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-snapshot-trigger.ts",
+    "name": "CodebaseSnapshotTrigger.pruneIfNeeded",
+    "qualified_name": "CodebaseSnapshotTrigger.pruneIfNeeded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540838,
+    "end_line": 540846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2149a2b64f26669151657afc8b14089cae9b468bccffb1b5f1eccdfe9d58d359",
+    "calls": [
+      ".next",
+      "this.handledReasonKeys.delete",
+      "this.handledReasonKeys.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:540848:19848835",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-snapshot-trigger.ts",
+    "name": "snapshotReasonKey",
+    "qualified_name": "snapshotReasonKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540848,
+    "end_line": 540854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "4bec41385cca103c25288fd328401dfbcf79b5de37b9680d23e2864d92b01288",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

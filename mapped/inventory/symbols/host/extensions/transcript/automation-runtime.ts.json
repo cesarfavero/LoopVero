@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "host:733983:27883788",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.constructor",
+    "qualified_name": "AutomationRuntime.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733983,
+    "end_line": 733985,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733990:27883987",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.watchSessionAutomations",
+    "qualified_name": "AutomationRuntime.watchSessionAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733990,
+    "end_line": 734004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "c3766d743e72781420e6c0d2a7207372953876621114db770542eb6f3a52da39",
+    "calls": [
+      "session.automations.setOnChange",
+      "this.seedKnownAutomations",
+      "this.watchedAutomations.setOnChange"
+    ],
+    "writes": [
+      "this.watchedAutomations"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733998:27884349",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "mutation",
+    "qualified_name": "AutomationRuntime.watchSessionAutomations/<callback>/mutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733998,
+    "end_line": 734001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "84d2ec8aec65f9cf0b31aed6da07fd386ba3641edfa7632687ac3f001ecb2152",
+    "calls": [
+      "this.emitAutomations",
+      "this.recordAutomationChangeEvents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734005:27884515",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.seedKnownAutomations",
+    "qualified_name": "AutomationRuntime.seedKnownAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734005,
+    "end_line": 734011,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "1d5824e00f5450cd4e34f382a3bcff2a17a06d11a6cf2b001d91a495c9c299fe",
+    "calls": [
+      "session.automations.listDefinitions",
+      "snapshotAutomations",
+      "this.lastKnownAutomations.has",
+      "this.lastKnownAutomations.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734012:27884745",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.recordAutomationChangeEvents",
+    "qualified_name": "AutomationRuntime.recordAutomationChangeEvents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734012,
+    "end_line": 734056,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "source"
+    ],
+    "body_sha256": "7388a127a2e9ebf814e97d5ddc0b6ee8694df33a9b5db8944d00e8f48f9c609c",
+    "calls": [
+      "current2.has",
+      "diffAutomationAction",
+      "previous.get",
+      "session.automations.listDefinitions",
+      "snapshotAutomations",
+      "this.emitAutomationChange",
+      "this.lastKnownAutomations.get",
+      "this.lastKnownAutomations.set",
+      "this.tm.sessions.isAgentGone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734057:27886140",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.enqueueAutomationLifecycleMutation",
+    "qualified_name": "AutomationRuntime.enqueueAutomationLifecycleMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734057,
+    "end_line": 734062,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    mutation\n  }"
+    ],
+    "body_sha256": "6f6ac87081d77280dc0a2a8f3df283ae2064ee86af6648cff4089039d7f0aa7a",
+    "calls": [
+      "this.runOnPerAgentChain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734063:27886295",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.runOnPerAgentChain",
+    "qualified_name": "AutomationRuntime.runOnPerAgentChain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734063,
+    "end_line": 734077,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "chains",
+      "agentId",
+      "task"
+    ],
+    "body_sha256": "59ee4346bb42d3dd39c832de823734e01bf5ae0a53e0418171da21e176b7fa9e",
+    "calls": [
+      "Promise.resolve",
+      "chains.get",
+      "chains.set",
+      "previous.then",
+      "result.then",
+      "settled.then"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734078:27886716",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.enqueueAutomationMutation",
+    "qualified_name": "AutomationRuntime.enqueueAutomationMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734078,
+    "end_line": 734112,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    activeMutation,\n    inactiveMutation\n  }"
+    ],
+    "body_sha256": "5d81e6175c854d0a71ab598680b362c08c72ca660c1d80f9126ed8fabbd28fc4",
+    "calls": [
+      "this.enqueueAutomationLifecycleMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734085:27886864",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "mutation",
+    "qualified_name": "AutomationRuntime.enqueueAutomationMutation/mutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734085,
+    "end_line": 734110,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "02a7a43e157e7308e4dff76ae6c106694eb92148ca76aa19f855f5616eca859d",
+    "calls": [
+      "activeMutation",
+      "inactiveMutation",
+      "this.publishAutomations",
+      "this.recordAutomationChangeEvents",
+      "this.recordInactiveAutomationChanges",
+      "this.tm.sessionStore.listAgentAutomations"
+    ],
+    "writes": [
+      "after"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734113:27887744",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.recordInactiveAutomationChanges",
+    "qualified_name": "AutomationRuntime.recordInactiveAutomationChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734113,
+    "end_line": 734153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    before,\n    after,\n    source\n  }"
+    ],
+    "body_sha256": "28c9d47b1afa14e57033c241527a2472d6818122640adbc82eb3622197a4185e",
+    "calls": [
+      "current2.has",
+      "diffAutomationAction",
+      "previous.get",
+      "snapshotAutomations",
+      "this.emitAutomationLifecycle",
+      "this.lastKnownAutomations.get",
+      "this.lastKnownAutomations.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734154:27888789",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.emitAutomationChange",
+    "qualified_name": "AutomationRuntime.emitAutomationChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734154,
+    "end_line": 734169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    action,\n    automationId,\n    automationName,\n    automation,\n    source\n  }"
+    ],
+    "body_sha256": "785fc843e94ad8cad80462fc026a655bae64f50716f2e5db4cc1aed8b830f554",
+    "calls": [
+      "this.emitAutomationLifecycle",
+      "this.tm.emitTimelineEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734170:27889131",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.emitAutomationLifecycle",
+    "qualified_name": "AutomationRuntime.emitAutomationLifecycle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734170,
+    "end_line": 734223,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    action,\n    automation,\n    source\n  }"
+    ],
+    "body_sha256": "3682fcae79613de7cc6364caff1ee7f2ecba310d8ac706ae09ca2b057a052aa5",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "brandedId",
+      "stableAutomationId",
+      "summarizeAutomationScheduleForTelemetry",
+      "this.tm.productAnalytics.trackEvent",
+      "this.tm.sessionStore.getUserTimeZone",
+      "this.tm.telemetry.reportAutomationLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734224:27890929",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.emitAutomations",
+    "qualified_name": "AutomationRuntime.emitAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734224,
+    "end_line": 734229,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "f359fee2f8aafd6834539196eebf69c1e36fb147318bed499b78df25f3f36ac8",
+    "calls": [
+      ".slice",
+      "session.automations.list",
+      "this.publishAutomations",
+      "this.tm.shouldEmitAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734230:27891181",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.publishAutomations",
+    "qualified_name": "AutomationRuntime.publishAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734230,
+    "end_line": 734236,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automations"
+    ],
+    "body_sha256": "11ab98d584793fd9651f2d8648a479f6d07d45b39ae0af6a53ea9f5a4c213066",
+    "calls": [
+      "this.tm.roster.emitter.emit",
+      "this.tm.shouldEmitAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734237:27891372",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.subscribeAutomations",
+    "qualified_name": "AutomationRuntime.subscribeAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734237,
+    "end_line": 734242,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "a5486d649f9fec7d709a100048d6a7192fea2d897ef2d80d6ba748782fd9c1e2",
+    "calls": [
+      "this.tm.roster.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734243:27891557",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.getAgentAutomations",
+    "qualified_name": "AutomationRuntime.getAgentAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734243,
+    "end_line": 734249,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8ac2276783c0f8db5b372ad41ef00d385d40a57fdc0960d97b20fd9a858b29a9",
+    "calls": [
+      ".slice",
+      "active.automations.list",
+      "this.tm.sessionStore.listAgentAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734250:27891840",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.listAllAutomations",
+    "qualified_name": "AutomationRuntime.listAllAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734250,
+    "end_line": 734252,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a0a3d077e564a44af45a247bc38408052ed487e41658b3fa6271b6a415d37a8e",
+    "calls": [
+      "this.tm.sessionStore.listAllAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734253:27891939",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.listAllAutomationDefinitions",
+    "qualified_name": "AutomationRuntime.listAllAutomationDefinitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734253,
+    "end_line": 734255,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "94af4f57c7154afab5b67299891551263abaffafa9155b04ef502c252aa1775c",
+    "calls": [
+      "this.tm.sessionStore.listAllAutomationDefinitions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734256:27892039",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.setAgentAutomationEnabled",
+    "qualified_name": "AutomationRuntime.setAgentAutomationEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734256,
+    "end_line": 734265,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId",
+      "isEnabled"
+    ],
+    "body_sha256": "2a392b251be96a3b1565bf037495e6da1dd37c80803e93b03f6bf415fcce9dee",
+    "calls": [
+      "this.enqueueAutomationMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734259:27892157",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "activeMutation",
+    "qualified_name": "AutomationRuntime.setAgentAutomationEnabled/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734259,
+    "end_line": 734262,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "734bfb6bae95e30a4292759a6a48c754403723ad0a99fe88ca8b933f0c279984",
+    "calls": [
+      ".slice",
+      "active.automations.list",
+      "active.automations.setEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734263:27892340",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "AutomationRuntime.setAgentAutomationEnabled/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734263,
+    "end_line": 734263,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "131cc3082399674c196804a4cf3f72bcf501412e52495cbd68e48e3a482a10a6",
+    "calls": [
+      "this.tm.sessionStore.setAgentAutomationEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734266:27892462",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.createAgentAutomation",
+    "qualified_name": "AutomationRuntime.createAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734266,
+    "end_line": 734275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "spec",
+      "provenance = \"user\""
+    ],
+    "body_sha256": "b55c4e84711c389908ce74900385e0477402c1f702b355f69f9c8ae9157c5417",
+    "calls": [
+      "this.enqueueAutomationMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734269:27892582",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "activeMutation",
+    "qualified_name": "AutomationRuntime.createAgentAutomation/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734269,
+    "end_line": 734272,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "3399eca842146eac08ceed7781640d731312b21a42eabb3f244f5a7c260a262f",
+    "calls": [
+      ".slice",
+      "active.automations.list",
+      "active.automations.upsert"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734273:27892754",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "AutomationRuntime.createAgentAutomation/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734273,
+    "end_line": 734273,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "352b660854bfd100fdfc0acc6a4195e394bbebd974aa3a4db86c68f8f226b330",
+    "calls": [
+      "this.tm.sessionStore.createAgentAutomation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734276:27892865",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.updateAgentAutomation",
+    "qualified_name": "AutomationRuntime.updateAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734276,
+    "end_line": 734285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId",
+      "spec"
+    ],
+    "body_sha256": "c6868583c2700c08afb5ed898dbd062eae3906debdc41955011a039f26ad34c6",
+    "calls": [
+      "this.enqueueAutomationMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734279:27892978",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "activeMutation",
+    "qualified_name": "AutomationRuntime.updateAgentAutomation/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734279,
+    "end_line": 734282,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "64d8c3d8016eefe8310a136d9ce2b633cc6e8099f3733e20dfb0e01929819902",
+    "calls": [
+      ".slice",
+      "active.automations.list",
+      "active.automations.update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734283:27893160",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "AutomationRuntime.updateAgentAutomation/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734283,
+    "end_line": 734283,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f1a0b0bff4f1a0ac8c4debe516dbdfb59f672ae6943da77c795234fd03f58c6d",
+    "calls": [
+      "this.tm.sessionStore.updateAgentAutomation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734286:27893273",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.deleteAgentAutomation",
+    "qualified_name": "AutomationRuntime.deleteAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734286,
+    "end_line": 734295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId"
+    ],
+    "body_sha256": "4e78a4b620c64a48834a7d7a122d23d12d73a76a3a95c9f1ca9de847e4dab3bc",
+    "calls": [
+      "this.enqueueAutomationMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734289:27893380",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "activeMutation",
+    "qualified_name": "AutomationRuntime.deleteAgentAutomation/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734289,
+    "end_line": 734292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "20dbfe938f4f355b95dc2f76b7adba90a634683c867b44fc15f7847107153a65",
+    "calls": [
+      ".slice",
+      "active.automations.list",
+      "active.automations.remove"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734293:27893548",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "AutomationRuntime.deleteAgentAutomation/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734293,
+    "end_line": 734293,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "92262b6b3fddfa1b634c4737161a91c09e06871f0b13df2304137cb3a56f88e1",
+    "calls": [
+      "this.tm.sessionStore.removeAgentAutomation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734296:27893661",
+    "artifact": "host",
+    "module": "host/extensions/transcript/automation-runtime.ts",
+    "name": "AutomationRuntime.runAgentAutomationNow",
+    "qualified_name": "AutomationRuntime.runAgentAutomationNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734296,
+    "end_line": 734298,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "1caa691f91456c15e3a449a486906bacdfa9bab5b6fda1d08ce48c4885e6f7a3",
+    "calls": [
+      "this.tm.sendPipeline.refuseBoxTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,4208 @@
+[
+  {
+    "id": "host:723016:27429468",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.constructor",
+    "qualified_name": "SandAgentSessionStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723016,
+    "end_line": 723090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reportHostLog",
+      "rootDir = getSandAgentsRootDir()",
+      "resolveUserTimeZone = () => void 0",
+      "createBlobWorkerPool = () => new AgentWorkerPool({ reportHostLog })",
+      "seams = {}"
+    ],
+    "body_sha256": "9dda1742589ea79fa18eab92cb935d45aa66f36922676fa9e1c073a7e143c01d",
+    "calls": [
+      "createSandDurableFileOwner",
+      "getConnectorSecretsRoot",
+      "new SandConnectorSecretStore",
+      "new SandSessionConversationState",
+      "new SandSessionMaterialization"
+    ],
+    "writes": [
+      "this.connectorSecrets",
+      "this.conversationState",
+      "this.createAgentDb",
+      "this.materialization",
+      "this.reportHostLog",
+      "this.resolveUserTimeZone",
+      "this.rootDir",
+      "this.statIfExists"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723021:27429890",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "this.createAgentDb",
+    "qualified_name": "SandAgentSessionStore.constructor/this.createAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723021,
+    "end_line": 723060,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dbPath",
+      "options2"
+    ],
+    "body_sha256": "bdcb908a895f8ccbfbc50c16c07c70d0182fbaf44300f3f77f43ad6a01f70c71",
+    "calls": [
+      "agentIdFromDbPath",
+      "createAgentDb",
+      "new SandAgentMissingError",
+      "this.deletedAgents.has"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentMissingError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723028:27430226",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "onFailure",
+    "qualified_name": "SandAgentSessionStore.constructor/this.createAgentDb/onFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723028,
+    "end_line": 723054,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "207ba725f7df0b32cb117d52750adf766dd9b367b42c82f7bafecd420c3d7dc4",
+    "calls": [
+      "errorLogTag",
+      "options2.onFailure",
+      "reportHostLog"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723055:27431584",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "log",
+    "qualified_name": "SandAgentSessionStore.constructor/this.createAgentDb/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723055,
+    "end_line": 723058,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "e7de484913965c513278d97f3d2e3da461210cd6a7dcbe5dc5d95e51eb9329fa",
+    "calls": [
+      "options2.log",
+      "reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723065:27431958",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "log",
+    "qualified_name": "SandAgentSessionStore.constructor/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723065,
+    "end_line": 723065,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "c5ff89d25c8f81f83ab69309563d0184dd9b02b806a6e767374be9783aebb76f",
+    "calls": [
+      "reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723072:27432210",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "createAgentDb",
+    "qualified_name": "SandAgentSessionStore.constructor/createAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723072,
+    "end_line": 723072,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dbPath",
+      "options2"
+    ],
+    "body_sha256": "a8617e22d1c1c99aeb9eb7c4a82906d3838acf7be066702f25df72d1d64fee18",
+    "calls": [
+      "this.createAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723074:27432312",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "memory",
+    "qualified_name": "SandAgentSessionStore.constructor/memory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723074,
+    "end_line": 723074,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b449d73320bc042a722231ff50fb337d609143fc958d5e463813de0d502959fd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723075:27432358",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "resolveUserTimeZone",
+    "qualified_name": "SandAgentSessionStore.constructor/resolveUserTimeZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723075,
+    "end_line": 723075,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c722020c6e4321923eb61fff21c7aa7fd813fa153dfb59b596a071bb670bdc6a",
+    "calls": [
+      "this.resolveUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723077:27432473",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "maintenanceHost",
+    "qualified_name": "SandAgentSessionStore.constructor/maintenanceHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723077,
+    "end_line": 723077,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7440a10a0912a180fadbc5252e5eb53bc63dd7127bf24b698c36a7a67189f2a0",
+    "calls": [
+      "this.maintenanceHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723078:27432522",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "agentExists",
+    "qualified_name": "SandAgentSessionStore.constructor/agentExists",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723078,
+    "end_line": 723078,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "27c1cf58c0622261d547532a0f129c786c656ad00e008b76e9323c914daff94f",
+    "calls": [
+      "this.agentExists"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723079:27432581",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "getAgentDir",
+    "qualified_name": "SandAgentSessionStore.constructor/getAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723079,
+    "end_line": 723079,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "1f797d0d9f8ad63e7d9e7fd3388a03194316276fc27910fd2d13726c1d5a96cd",
+    "calls": [
+      "this.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723082:27432797",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "observeAgentMediaRootPreparation",
+    "qualified_name": "SandAgentSessionStore.constructor/observeAgentMediaRootPreparation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723082,
+    "end_line": 723082,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "1f082f561ecf16d48acee1722a6fc30e7ad288426da090a60a89fa835413038f",
+    "calls": [
+      "this.mediaRootPreparationObserver"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723087:27432980",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "createAgentDb",
+    "qualified_name": "SandAgentSessionStore.constructor/createAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723087,
+    "end_line": 723087,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dbPath",
+      "options2"
+    ],
+    "body_sha256": "a8617e22d1c1c99aeb9eb7c4a82906d3838acf7be066702f25df72d1d64fee18",
+    "calls": [
+      "this.createAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723088:27433059",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "openSession",
+    "qualified_name": "SandAgentSessionStore.constructor/openSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723088,
+    "end_line": 723088,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "9920b34d50e7ce90221c6120435ef8cf7667c62fabe16fcf3dc412abec969a8f",
+    "calls": [
+      "this.openSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723096:27433249",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.mediaRootPreparationObserver",
+    "qualified_name": "SandAgentSessionStore.mediaRootPreparationObserver",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723096,
+    "end_line": 723097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a4ea409bf05f706f32fb8a264110cd4a92d039cd051d9c20d470e6cb97dc5b24",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723100:27433350",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.isTranscriptDeleting",
+    "qualified_name": "SandAgentSessionStore.isTranscriptDeleting",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723100,
+    "end_line": 723100,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "28a21f75dc2cf097876424d53bf5bf062c83312ddcda54b87e88d6efbb3c1529",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723107:27433535",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.closeWorkerPool",
+    "qualified_name": "SandAgentSessionStore.closeWorkerPool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723107,
+    "end_line": 723109,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6e9c2b967a17537cc52a0daeb1e04d941407406e112a5c61845a027f055787fd",
+    "calls": [
+      "this.materialization.closeWorkerPool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723110:27433606",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getRootDir",
+    "qualified_name": "SandAgentSessionStore.getRootDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723110,
+    "end_line": 723112,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c51df71b0a8fa3430257b93f7426d954ba033a8e2717a941113c92c0ee1128af",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723113:27433651",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setMemory",
+    "qualified_name": "SandAgentSessionStore.setMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723113,
+    "end_line": 723115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memory"
+    ],
+    "body_sha256": "441d2db71f5b4e961fa6466b9764b33f7dccf90ce53244c4a4dae3e4e0e83f8a",
+    "calls": [],
+    "writes": [
+      "this.memory"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723116:27433725",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setMediaRootPreparationObserver",
+    "qualified_name": "SandAgentSessionStore.setMediaRootPreparationObserver",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723116,
+    "end_line": 723118,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "observer"
+    ],
+    "body_sha256": "537e96b2bfae2337d10299ad682fa6a631ce2d256eb9e6eb5e2e568ad4a38f09",
+    "calls": [],
+    "writes": [
+      "this.mediaRootPreparationObserver"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723119:27433829",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.observeAgentMediaRootPreparation",
+    "qualified_name": "SandAgentSessionStore.observeAgentMediaRootPreparation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723119,
+    "end_line": 723121,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "047400be7ec758f8a0c5b28781e1dc1c174fffc235e631659cf523d86762cf58",
+    "calls": [
+      "this.mediaRootPreparationObserver"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723122:27433921",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setBeingDeletedPredicate",
+    "qualified_name": "SandAgentSessionStore.setBeingDeletedPredicate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723122,
+    "end_line": 723124,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "isBeingDeleted"
+    ],
+    "body_sha256": "1434bddca9cc6fde099f1eb9ede6104b6ef13853582e6b8dba85873685ed344b",
+    "calls": [],
+    "writes": [
+      "this.isTranscriptDeleting"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723125:27434015",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setDeletedAgentRecord",
+    "qualified_name": "SandAgentSessionStore.setDeletedAgentRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723125,
+    "end_line": 723127,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deletedAgents"
+    ],
+    "body_sha256": "77cb2468ee19343e2cc84bd240a0be10f16af4287072145bc949e76881c4998f",
+    "calls": [],
+    "writes": [
+      "this.deletedAgents"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723128:27434101",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.removeDeletedAgentDirs",
+    "qualified_name": "SandAgentSessionStore.removeDeletedAgentDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723128,
+    "end_line": 723133,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d48bad1ddcf9eedf4f77b9e376a6269c6c52f96dada281195b87529fd53604ed",
+    "calls": [
+      "this.deletedAgents.removeAgentDirs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723134:27434268",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.isAgentBeingDeleted",
+    "qualified_name": "SandAgentSessionStore.isAgentBeingDeleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723134,
+    "end_line": 723136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "986f8010772cf8778634a29287c95daa66a7d741e1aa165b9a4bbb0abcd16476",
+    "calls": [
+      "this.deletedAgents.isDone",
+      "this.isTranscriptDeleting"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723137:27434396",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getUserTimeZone",
+    "qualified_name": "SandAgentSessionStore.getUserTimeZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723137,
+    "end_line": 723139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3ab156497993a2b2656c4e17fb367622c21a1c8e580389ea497f8653756e1d8f",
+    "calls": [
+      "this.resolveUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723140:27434470",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgentRecordIds",
+    "qualified_name": "SandAgentSessionStore.listAgentRecordIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723140,
+    "end_line": 723142,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2fc1c07c47af61b3a6905a7969e1cd2075a9f2545dd2efb8e05d686864b3c4ce",
+    "calls": [
+      "this.materialization.listAgentRecordIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723143:27434556",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.mintAgent",
+    "qualified_name": "SandAgentSessionStore.mintAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723143,
+    "end_line": 723145,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "mint2",
+      "providedId"
+    ],
+    "body_sha256": "f4f0ab562e4c1b3f85a80f01933b33689837e9b18041864f349a46087ef0fcc4",
+    "calls": [
+      "this.materialization.mintAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723146:27434671",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.createSession",
+    "qualified_name": "SandAgentSessionStore.createSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723146,
+    "end_line": 723148,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "profile",
+      "origin = \"user\"",
+      "options2 = {}"
+    ],
+    "body_sha256": "b50b2a3f41faf922cbf04abae45b4d766bb907d59677c1a7a7f4a7415df33325",
+    "calls": [
+      "this.materialization.createSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723149:27434818",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.openSession",
+    "qualified_name": "SandAgentSessionStore.openSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723149,
+    "end_line": 723151,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "55f94e12a5cdb2073fcc07e005aa844dff9ed057818a3859ba59a9d188fa1c72",
+    "calls": [
+      "this.materialization.openSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723152:27434935",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.ensureConversationCapacityForTurn",
+    "qualified_name": "SandAgentSessionStore.ensureConversationCapacityForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723152,
+    "end_line": 723154,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "af8d47b357732f8f2734e72a73e648b8337790279bb07c18c0cd755d22ecb957",
+    "calls": [
+      "ensureConversationCapacityForTurn",
+      "this.maintenanceHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723155:27435086",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readWorkingStateExportSnapshot",
+    "qualified_name": "SandAgentSessionStore.readWorkingStateExportSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723155,
+    "end_line": 723188,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "limits = {}",
+      "onProgress"
+    ],
+    "body_sha256": "a4bd8635431247e1782250987cb56f83a6c2d0b24e1cccfa37491169488f1713",
+    "calls": [
+      "getAgentDbPath",
+      "this.agentExists",
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723179:27436312",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "onProgress",
+    "qualified_name": "SandAgentSessionStore.readWorkingStateExportSnapshot/<callback>/onProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723179,
+    "end_line": 723179,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "progress"
+    ],
+    "body_sha256": "361ba3c3d43f8d1206254cd497170aaf0de1b79b540357652c3f1918d79baa32",
+    "calls": [
+      "onProgress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723189:27436588",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readConversationBlobsByHexIds",
+    "qualified_name": "SandAgentSessionStore.readConversationBlobsByHexIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723189,
+    "end_line": 723199,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "blobIdsHex"
+    ],
+    "body_sha256": "8c75c90f0a7beec3b064f7f48750204c15bc14cbaee0475585650df7273ff8b3",
+    "calls": [
+      ".getConversationBlobsByHexIds",
+      "getAgentDbPath",
+      "this.materialization.requireWorkerPool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723200:27436993",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentDir",
+    "qualified_name": "SandAgentSessionStore.getAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723200,
+    "end_line": 723202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0c77aa1bc94b3d9fc0df003bba79af6ea8a729c007f7659d13ad04e14925c1e1",
+    "calls": [
+      "getAgentDbPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723203:27437106",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.agentExists",
+    "qualified_name": "SandAgentSessionStore.agentExists",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723203,
+    "end_line": 723205,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "fd0302d821d59d3bdd530b2460d8fdd023bc60c109cbebe11de88bf67fa52c2b",
+    "calls": [
+      "getAgentDbPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723206:27437222",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.agentDirExists",
+    "qualified_name": "SandAgentSessionStore.agentDirExists",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723206,
+    "end_line": 723208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "07a0bd46ecfd9de27a762e27f2670fa6e28a07f9150bb5f3ea5d204ff2a5e7c9",
+    "calls": [
+      "this.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723209:27437325",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.cloneAgentDir",
+    "qualified_name": "SandAgentSessionStore.cloneAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723209,
+    "end_line": 723211,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sourceDir",
+      "targetDir",
+      "newAgentId",
+      "profile"
+    ],
+    "body_sha256": "a313b2eb23c59328ffd738c925f59605dd765365926016aed44202fa599f66cc",
+    "calls": [
+      "cloneAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723212:27437480",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.writeAgentProfileFile",
+    "qualified_name": "SandAgentSessionStore.writeAgentProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723212,
+    "end_line": 723214,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "profile"
+    ],
+    "body_sha256": "4f3be439d8c44aeefc9d789b56974fa177eb535543699474df0d1c60f2721e26",
+    "calls": [
+      "editSandProfile",
+      "this.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723215:27437581",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.withAgentDb",
+    "qualified_name": "SandAgentSessionStore.withAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723215,
+    "end_line": 723223,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "fn"
+    ],
+    "body_sha256": "cf1c620221e6caafe2de11797fd826ff45d93cfc12bdef22fb12de18991caf1e",
+    "calls": [
+      "db.close",
+      "fn",
+      "getAgentDbPath",
+      "this.createAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723224:27437808",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.deleteSession",
+    "qualified_name": "SandAgentSessionStore.deleteSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723224,
+    "end_line": 723230,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "606c7b90b347224aa3fcc2d0ae6a855d7c6ccbb594edffea29a687c83c5d5810",
+    "calls": [
+      "deleteSandAgentDbWriteGeneration",
+      "getAgentDbPath",
+      "publishTranscriptMutation",
+      "removeSandDataTree",
+      "this.extrasCache.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723231:27438129",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.activeAgentPointerPath",
+    "qualified_name": "SandAgentSessionStore.activeAgentPointerPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723231,
+    "end_line": 723233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ab126e80996bfc04d5a92cc2e81dd42e508c185bfb2eaf0c48dedc744031527f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723234:27438236",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readActiveAgentId",
+    "qualified_name": "SandAgentSessionStore.readActiveAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723234,
+    "end_line": 723251,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a5db6b18656a6c6b953e08adae09cdea946ac1578f034a508cefbb3708b1bfbb",
+    "calls": [
+      "JSON.parse",
+      "parseAgentId",
+      "readSandDataFileIfPresentSync",
+      "reportFallbackUnlessAbsent",
+      "this.activeAgentPointerPath"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:723252:27438700",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.writeActiveAgentId",
+    "qualified_name": "SandAgentSessionStore.writeActiveAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723252,
+    "end_line": 723258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "02b4bf264048a1e36ceeaed0e2f05dffce95f9ddf35ccffa658f11baf802fe12",
+    "calls": [
+      "JSON.stringify",
+      "this.activeAgentPointerPath",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723259:27438909",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.updateAgentProfile",
+    "qualified_name": "SandAgentSessionStore.updateAgentProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723259,
+    "end_line": 723261,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "profile"
+    ],
+    "body_sha256": "74a15ec32a3da7dcc71285d7ef7465312f943823eb41df724bdb203f3a649873",
+    "calls": [
+      "this.profileFilesHost",
+      "updateAgentProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723262:27439041",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setAgentAvatarBytes",
+    "qualified_name": "SandAgentSessionStore.setAgentAvatarBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723262,
+    "end_line": 723271,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "db",
+      "dbPath",
+      "agentId",
+      "pngBytes",
+      "activeAgentId"
+    ],
+    "body_sha256": "4e3c3f3cd6514df374e893cfad0480f33da3425aa4b8f1a4b0803eebe17afdf5",
+    "calls": [
+      "setAgentAvatarBytes",
+      "this.mutationsHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723272:27439273",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setAgentAvatarBytesById",
+    "qualified_name": "SandAgentSessionStore.setAgentAvatarBytesById",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723272,
+    "end_line": 723277,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "pngBytes"
+    ],
+    "body_sha256": "90acedf2531b434d329af5b03b78cc152fd0b7cf0932e567c53b730897facfe4",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723278:27439469",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentProfileText",
+    "qualified_name": "SandAgentSessionStore.getAgentProfileText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723278,
+    "end_line": 723280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "b3c9bfdb5040ce1f001d2c9340d0d93eeef1a09ca9eb29451cd79f49ed8d6e3b",
+    "calls": [
+      "getAgentProfileText",
+      "this.profileFilesHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723281:27439573",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentAvatar",
+    "qualified_name": "SandAgentSessionStore.getAgentAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723281,
+    "end_line": 723283,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "71fde0e90d386d06f474ed31680369bf30a0447274f9facb184b34d3c20dc376",
+    "calls": [
+      "getAgentAvatar",
+      "this.profileFilesHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723284:27439681",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentAvatarPng",
+    "qualified_name": "SandAgentSessionStore.getAgentAvatarPng",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723284,
+    "end_line": 723286,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "b9ceb80d32804ecb0ce13751f66a52f0313e2a78ee93610dc761ce78407ccd82",
+    "calls": [
+      "getAgentAvatarPng",
+      "this.profileFilesHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723287:27439801",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentNotificationAvatar",
+    "qualified_name": "SandAgentSessionStore.getAgentNotificationAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723287,
+    "end_line": 723289,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "e7ece770284e7f0646824501a7e2311d5d966b5700d3da1fc7037a89e82de82a",
+    "calls": [
+      "getAgentNotificationAvatar",
+      "this.profileFilesHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723290:27439924",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.summarizeOpenSession",
+    "qualified_name": "SandAgentSessionStore.summarizeOpenSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723290,
+    "end_line": 723302,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "7d18d34bd6fabd159d64e4797d241ce4307b1023e60e57b38e828b5a13fa4158",
+    "calls": [
+      "buildSummary",
+      "loadAgentDbExtras",
+      "this.isAgentBeingDeleted",
+      "this.statIfExists"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723300:27440323",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "agentHasMemory",
+    "qualified_name": "SandAgentSessionStore.summarizeOpenSession/agentHasMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723300,
+    "end_line": 723300,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "5edb06aa52a1a40933f5a84028a8ece58afe827ab6a8cf66db8fff72ccedfd7d",
+    "calls": [
+      "this.memory.agentHasContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723303:27440413",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.summarizeSession",
+    "qualified_name": "SandAgentSessionStore.summarizeSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723303,
+    "end_line": 723323,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "activeAgentId"
+    ],
+    "body_sha256": "b6d6cbca6ad9169c5bc320d36de7218ea8ffd4d2dd026794ad7c42e538f6693d",
+    "calls": [
+      "buildSummary",
+      "loadAgentDbExtras",
+      "this.isAgentBeingDeleted",
+      "this.loadCachedExtras",
+      "this.statIfExists"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723310:27440786",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "readExtras",
+    "qualified_name": "SandAgentSessionStore.summarizeSession/readExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723310,
+    "end_line": 723310,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1bf803d1f9cded193fde0c6ceb257c829c41269060b75b076b20c8b48f3cf877",
+    "calls": [
+      "loadAgentDbExtras"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723321:27441154",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "agentHasMemory",
+    "qualified_name": "SandAgentSessionStore.summarizeSession/agentHasMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723321,
+    "end_line": 723321,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "5edb06aa52a1a40933f5a84028a8ece58afe827ab6a8cf66db8fff72ccedfd7d",
+    "calls": [
+      "this.memory.agentHasContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723324:27441251",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.reseedMinimalStoreDbIfMissing",
+    "qualified_name": "SandAgentSessionStore.reseedMinimalStoreDbIfMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723324,
+    "end_line": 723338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "e6744e9f72c3fecde9d97aa98974354eff95292819ffcaa8d9df508ea9117e83",
+    "calls": [
+      "db.close",
+      "errorLogTag",
+      "hasLiveSandAgentDbHandle",
+      "reportSessionDiagnostic",
+      "this.createAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723339:27441739",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.summarizeAgentById",
+    "qualified_name": "SandAgentSessionStore.summarizeAgentById",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723339,
+    "end_line": 723341,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "activeAgentId"
+    ],
+    "body_sha256": "c8d79ef655797e60fc07ed32989069b4b433b3315f3893e20ec6f1ba4e8304ed",
+    "calls": [
+      "summarizeAgentById",
+      "this.rosterHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723342:27441886",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.cleanupLegacyGroupMemberDirs",
+    "qualified_name": "SandAgentSessionStore.cleanupLegacyGroupMemberDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723342,
+    "end_line": 723344,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e1a23d580f4dd9e16d06195deb778938f7783ff3597d96aab027206830d1b799",
+    "calls": [
+      "cleanupLegacyGroupMemberDirs",
+      "this.maintenanceHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723345:27441983",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.loadCachedExtras",
+    "qualified_name": "SandAgentSessionStore.loadCachedExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723345,
+    "end_line": 723361,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4258ce65250d9d31981a8d6ede002ac157d1c1dc548fd0fab3ee4bc38d2e3f2a",
+    "calls": [
+      "getSandAgentDbWriteGeneration",
+      "getSandProfilePath",
+      "readExtras",
+      "this.extrasCache.get",
+      "this.extrasCache.set",
+      "this.isAgentBeingDeleted",
+      "this.statIfExists"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723362:27442836",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readExtrasFromDisk",
+    "qualified_name": "SandAgentSessionStore.readExtrasFromDisk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723362,
+    "end_line": 723380,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath",
+      "dirName",
+      "dbStats"
+    ],
+    "body_sha256": "ef06834759c42d4c5e953a2ffcf8a8578565ff8314e502d72f259bad83085473",
+    "calls": [
+      "db.close",
+      "errorLogTag",
+      "loadAgentDbExtras",
+      "reportSessionDiagnostic",
+      "this.createAgentDb"
+    ],
+    "writes": [
+      "db"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723381:27443373",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.maintenanceHost",
+    "qualified_name": "SandAgentSessionStore.maintenanceHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723381,
+    "end_line": 723389,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b91507ab20dda268f9f4e145e818a6823b19db9b6cfc122a9bdc61e499c2392f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723386:27443507",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "requireWorkerPool",
+    "qualified_name": "SandAgentSessionStore.maintenanceHost/requireWorkerPool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723386,
+    "end_line": 723386,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "85ad52bc399b8a27733ea0485c4d327a587e720ee2511c0db6bdf4a601557dfb",
+    "calls": [
+      "this.materialization.requireWorkerPool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723387:27443587",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "resolveConversationState",
+    "qualified_name": "SandAgentSessionStore.maintenanceHost/resolveConversationState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723387,
+    "end_line": 723387,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "1796673affcece779d09dcc7b28d7c5028e9177f1a765f6b54d4c13b7f57c242",
+    "calls": [
+      "this.conversationState.resolveConversationState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723390:27443706",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.rosterHost",
+    "qualified_name": "SandAgentSessionStore.rosterHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723390,
+    "end_line": 723404,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "beb78408f51f793d8c99fd2606eb66abf13002df24bc75ada809b5ee3e982f92",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723394:27443804",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "loadCachedExtras",
+    "qualified_name": "SandAgentSessionStore.rosterHost/loadCachedExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723394,
+    "end_line": 723394,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "00c6f5feda94dc577b3bceffc674e2cc0735bcb129de4ea945c5b443e1b4df45",
+    "calls": [
+      "this.loadCachedExtras"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723395:27443867",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "pruneExtrasCache",
+    "qualified_name": "SandAgentSessionStore.rosterHost/pruneExtrasCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723395,
+    "end_line": 723399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "present"
+    ],
+    "body_sha256": "e200489a62c54929b293526bd5068adafc4c8acec7940768ae12eaeab835b88b",
+    "calls": [
+      "present.has",
+      "this.extrasCache.delete",
+      "this.extrasCache.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723400:27444050",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "recoverAgentWithMissingDb",
+    "qualified_name": "SandAgentSessionStore.rosterHost/recoverAgentWithMissingDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723400,
+    "end_line": 723400,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2ad6ad010c250431f6dcb8d049f185566da81272f6905609c388e045d96db68f",
+    "calls": [
+      "recoverAgentWithMissingDb",
+      "this.mutationsHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723401:27444142",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "isAgentBeingDeleted",
+    "qualified_name": "SandAgentSessionStore.rosterHost/isAgentBeingDeleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723401,
+    "end_line": 723401,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d9bbdde701efcc52ddaff917539d1469c68fb1c837a2ed6c4f1a9f23edbfd0eb",
+    "calls": [
+      "this.isAgentBeingDeleted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723405:27444274",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.mutationsHost",
+    "qualified_name": "SandAgentSessionStore.mutationsHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723405,
+    "end_line": 723411,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f6009b9389de0ef788e8f42f0ff6335e6cf70e7109c5f65b13257ee539c7b4d0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723408:27444346",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "isAgentBeingDeleted",
+    "qualified_name": "SandAgentSessionStore.mutationsHost/isAgentBeingDeleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723408,
+    "end_line": 723408,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d9bbdde701efcc52ddaff917539d1469c68fb1c837a2ed6c4f1a9f23edbfd0eb",
+    "calls": [
+      "this.isAgentBeingDeleted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723409:27444431",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "reseedMinimalStoreDbIfMissing",
+    "qualified_name": "SandAgentSessionStore.mutationsHost/reseedMinimalStoreDbIfMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723409,
+    "end_line": 723409,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "ba1b506a6f0f5f8c2f97c9a06d3f4c44290f35936b5be9a6e3e17718dee39d70",
+    "calls": [
+      "this.reseedMinimalStoreDbIfMissing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723412:27444515",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.profileFilesHost",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723412,
+    "end_line": 723421,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0081a40303b4c52573c2e64f3d8223cc6b96ed49b70db2e704a59aa3ec74f56f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723415:27444579",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "getAgentDir",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost/getAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723415,
+    "end_line": 723415,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "1f797d0d9f8ad63e7d9e7fd3388a03194316276fc27910fd2d13726c1d5a96cd",
+    "calls": [
+      "this.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723416:27444638",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "agentExists",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost/agentExists",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723416,
+    "end_line": 723416,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "27c1cf58c0622261d547532a0f129c786c656ad00e008b76e9323c914daff94f",
+    "calls": [
+      "this.agentExists"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723417:27444697",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "withAgentDb",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost/withAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723417,
+    "end_line": 723417,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "fn"
+    ],
+    "body_sha256": "5815a7a01fe1114a2051ec9d04a9b0950b071244b5bdde8e16dba75d93b5a703",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723418:27444763",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "statOpenDb",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost/statOpenDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723418,
+    "end_line": 723418,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2d356aa47cdb40ae7c9b4fc9e6272150e75b1a452417d2af3645aa6e2d57e7ba",
+    "calls": [
+      "this.statOpenDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723419:27444825",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "writeAgentProfileFile",
+    "qualified_name": "SandAgentSessionStore.profileFilesHost/writeAgentProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723419,
+    "end_line": 723419,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "profile"
+    ],
+    "body_sha256": "c8982cbc0df4d78ab90549f3731436b1109966ae38b10243666a4f9f6e573f60",
+    "calls": [
+      "this.writeAgentProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723422:27444921",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgents",
+    "qualified_name": "SandAgentSessionStore.listAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723422,
+    "end_line": 723424,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "activeAgentId"
+    ],
+    "body_sha256": "f263a90336a42d319f2d2a6ad7835f1db68d36e1e0b1f51456e670d830609ded",
+    "calls": [
+      "listAgents",
+      "this.rosterHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723425:27445034",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getTranscriptEntries",
+    "qualified_name": "SandAgentSessionStore.getTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723425,
+    "end_line": 723427,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "11ae630e6b3c83ffc85633ea39e6247fddbff6c3a9514e83ba8b7eaaa33b6328",
+    "calls": [
+      "this.conversationState.getTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723428:27445146",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getSessionOutline",
+    "qualified_name": "SandAgentSessionStore.getSessionOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723428,
+    "end_line": 723430,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "bba554f79cad5042bb830d074e047078ea50de7787b34604d09a7bd85854508d",
+    "calls": [
+      "this.conversationState.getSessionOutline"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723431:27445253",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentOutline",
+    "qualified_name": "SandAgentSessionStore.getAgentOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723431,
+    "end_line": 723433,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "bb05cf16105661c688349dc435a14a7215417a7ddb69975dccb1499091795840",
+    "calls": [
+      "this.conversationState.getAgentOutline"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723434:27445363",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readAgentTranscriptEntries",
+    "qualified_name": "SandAgentSessionStore.readAgentTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723434,
+    "end_line": 723436,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "900ba8caa22c63d5868d1a971e7d0b8f70e9577aed4b4228b74d7bc91584d590",
+    "calls": [
+      "this.conversationState.readAgentTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723437:27445475",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readAgentTranscriptPage",
+    "qualified_name": "SandAgentSessionStore.readAgentTranscriptPage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723437,
+    "end_line": 723439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "cfc88926f9d54c98cf0e05c270ecba9cde75ecb6081937b1f5db71f9c2b74d06",
+    "calls": [
+      "this.conversationState.readAgentTranscriptPage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723440:27445602",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readAgentTranscriptWindow",
+    "qualified_name": "SandAgentSessionStore.readAgentTranscriptWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723440,
+    "end_line": 723442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "309d279f8d4a13b827feeb3b969a3d95f9f331d9c0300501a1e2d88831fd73ed",
+    "calls": [
+      "this.conversationState.readAgentTranscriptWindow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723443:27445729",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readAgentTranscriptTail",
+    "qualified_name": "SandAgentSessionStore.readAgentTranscriptTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723443,
+    "end_line": 723445,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "653c0e398bf03c3f02e2c4030b68c7c7634e2e676006f9def15b021bfe62f55d",
+    "calls": [
+      "this.conversationState.readAgentTranscriptTail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723446:27445846",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.readAgentThread",
+    "qualified_name": "SandAgentSessionStore.readAgentThread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723446,
+    "end_line": 723448,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "rootId"
+    ],
+    "body_sha256": "d29af065df16bfe9cd4cd613484f5b305a3f39cad23467eaeb97ca84143933f5",
+    "calls": [
+      "this.conversationState.readAgentThread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723449:27445971",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentTranscriptEntries",
+    "qualified_name": "SandAgentSessionStore.getAgentTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723449,
+    "end_line": 723451,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "a509190694d150eddb7a88d948f57e830ccb99dc603f72fb90f697f871d43afb",
+    "calls": [
+      "this.conversationState.getAgentTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723452:27446088",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.markSessionViewed",
+    "qualified_name": "SandAgentSessionStore.markSessionViewed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723452,
+    "end_line": 723455,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "at3 = Date.now()",
+      "options2 = {}"
+    ],
+    "body_sha256": "357f44d423fc8ae7474ff472db34bce62c97a0866c98dd87e369487eeb4f6da5",
+    "calls": [
+      "session.db.markViewed",
+      "this.seedSessionActivityFromDbMtime"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723456:27446256",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.markSessionActivity",
+    "qualified_name": "SandAgentSessionStore.markSessionActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723456,
+    "end_line": 723458,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "options2 = {}"
+    ],
+    "body_sha256": "fc37fead67b18987bfa8db71bab2dfbefb48d3857023dc1430133d772896fc61",
+    "calls": [
+      "session.db.markActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723459:27446361",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.markSessionViewedNow",
+    "qualified_name": "SandAgentSessionStore.markSessionViewedNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723459,
+    "end_line": 723461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "at3 = Date.now()",
+      "options2 = {}"
+    ],
+    "body_sha256": "2b2ed2d7a632c39bedd9b1867d9eddcf1452f2e2a69a591e1af08ed6208e8a51",
+    "calls": [
+      "session.db.markViewed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723462:27446469",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.markAgentViewed",
+    "qualified_name": "SandAgentSessionStore.markAgentViewed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723462,
+    "end_line": 723472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "at3 = Date.now()",
+      "options2 = {}"
+    ],
+    "body_sha256": "a1034f2f78956b5bdbc6cb9a6bc5af687d4d2960430c42642f9c8e7a35cc4eb7",
+    "calls": [
+      "db.close",
+      "db.markViewed",
+      "getAgentDbPath",
+      "this.createAgentDb"
+    ],
+    "writes": [
+      "db"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723473:27446784",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setSessionUnread",
+    "qualified_name": "SandAgentSessionStore.setSessionUnread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723473,
+    "end_line": 723483,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isUnread",
+      "at3 = Date.now()"
+    ],
+    "body_sha256": "f34b24284202087f8ad557bdf6c65987cf5473dec32f31af20b5f096a52006bc",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723484:27447143",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setSessionNotifyOnUpdates",
+    "qualified_name": "SandAgentSessionStore.setSessionNotifyOnUpdates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723484,
+    "end_line": 723488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isEnabled"
+    ],
+    "body_sha256": "8e18652ace237711fd5802745bd33a173ee232ed9c6ae400220487071a0abae4",
+    "calls": [
+      "getSandSettingsPath",
+      "this.getAgentDir",
+      "writeSandSettingsFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723489:27447320",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setSessionDraftingDisabled",
+    "qualified_name": "SandAgentSessionStore.setSessionDraftingDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723489,
+    "end_line": 723493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isDisabled"
+    ],
+    "body_sha256": "da34dd7d9ae0136cc1786dce8d2ed2de46e8463c1482d7a6a8273621201f10ed",
+    "calls": [
+      "getSandSettingsPath",
+      "this.getAgentDir",
+      "writeSandSettingsFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723494:27447484",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setSessionVoice",
+    "qualified_name": "SandAgentSessionStore.setSessionVoice",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723494,
+    "end_line": 723500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ agentId, voiceId, voiceSpeed, voiceLanguage }"
+    ],
+    "body_sha256": "e0d5bd21b6c6eb88763f3f81579689fc8718cbe546640c3b56ecbc5759482d9d",
+    "calls": [
+      "getSandSettingsPath",
+      "this.getAgentDir",
+      "writeSandSettingsFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723501:27447814",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setSessionHiddenFromSidebar",
+    "qualified_name": "SandAgentSessionStore.setSessionHiddenFromSidebar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723501,
+    "end_line": 723505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isHidden"
+    ],
+    "body_sha256": "e5b4e94bae9877386a2e3b1f4a85c0dc30df6392b8fa2f2aecc03c4068bfcb3c",
+    "calls": [
+      "getSandSettingsPath",
+      "this.getAgentDir",
+      "writeSandSettingsFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723506:27447989",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setAwaitingUserResponse",
+    "qualified_name": "SandAgentSessionStore.setAwaitingUserResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723506,
+    "end_line": 723510,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "state"
+    ],
+    "body_sha256": "9cd4b83044bd2a277f4c6ee9c0c574c96592b1343644a351f8ee09cc94c93fd8",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723511:27448153",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.expirePendingAutoReviewApprovals",
+    "qualified_name": "SandAgentSessionStore.expirePendingAutoReviewApprovals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723511,
+    "end_line": 723516,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "onlyRequestId"
+    ],
+    "body_sha256": "ec3ef1030fa50c75e747a6bd9cea011ba3f062853f2a0b5b95108cb860a9127d",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723517:27448361",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.expirePendingCookieOriginApprovals",
+    "qualified_name": "SandAgentSessionStore.expirePendingCookieOriginApprovals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723517,
+    "end_line": 723526,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "91ff0f271ca1c005c64f6506a00cba3259b005ceee84d0fb159f49b10a9c3903",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723527:27448696",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.expirePendingLocalToolPermissionAsks",
+    "qualified_name": "SandAgentSessionStore.expirePendingLocalToolPermissionAsks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723527,
+    "end_line": 723537,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b642a8d86b9a64a5f760544cc0d32bfb1c547f1ce2d16b705ff8b7049b848e9d",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723538:27449059",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.expirePendingVirtualCardApprovals",
+    "qualified_name": "SandAgentSessionStore.expirePendingVirtualCardApprovals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723538,
+    "end_line": 723547,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5752e2d82709628051be3e2c509cfdb26a394efd739535678fbabecab583c970",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723548:27449382",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.settleVirtualCardApproval",
+    "qualified_name": "SandAgentSessionStore.settleVirtualCardApproval",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723548,
+    "end_line": 723559,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9fde75930a46332f4dafede9986e403e4ae73e0e340f18a9387e600bef7c765c",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723560:27449874",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.settleStrandedDraftSends",
+    "qualified_name": "SandAgentSessionStore.settleStrandedDraftSends",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723560,
+    "end_line": 723562,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "isInFlight"
+    ],
+    "body_sha256": "731e8f3dafb19f88fa43854b49a98fd84c5366794b6774c1efdaea947d884c38",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723563:27450038",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setAwaitingUserResponseForTab",
+    "qualified_name": "SandAgentSessionStore.setAwaitingUserResponseForTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723563,
+    "end_line": 723568,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "tabId",
+      "state",
+      "options2"
+    ],
+    "body_sha256": "afe9842b6056e4e6e9c666d1ae52a2ef54e3400eac41505f941d156e3fee2aa7",
+    "calls": [
+      "this.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723569:27450232",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.automationStoreFor",
+    "qualified_name": "SandAgentSessionStore.automationStoreFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723569,
+    "end_line": 723574,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "10c88eb6963ac6d9731e6d0aa37eadcfce747f26f25d5c27c2927b2b2e14e596",
+    "calls": [
+      "automationStoreForDbPath",
+      "getAgentDbPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723575:27450390",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgentAutomations",
+    "qualified_name": "SandAgentSessionStore.listAgentAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723575,
+    "end_line": 723577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "7dd222108b91a051aa4fc1b2733bbd80bb67e2ac790be770dd7c05878d77ff0e",
+    "calls": [
+      ".list",
+      ".slice",
+      "this.automationStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723578:27450515",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.setAgentAutomationEnabled",
+    "qualified_name": "SandAgentSessionStore.setAgentAutomationEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723578,
+    "end_line": 723582,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId",
+      "isEnabled"
+    ],
+    "body_sha256": "b745e99d30cb56cb341410c4e0935de8791669aa7a137242d2da33648215c6c2",
+    "calls": [
+      ".slice",
+      "store.list",
+      "store.setEnabled",
+      "this.automationStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723583:27450733",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.createAgentAutomation",
+    "qualified_name": "SandAgentSessionStore.createAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723583,
+    "end_line": 723587,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "spec",
+      "provenance = \"user\""
+    ],
+    "body_sha256": "798b1fb24258d2e9618bf89d987123683a4928e8dcf40a60d3befae3ec795287",
+    "calls": [
+      ".slice",
+      "store.list",
+      "store.upsert",
+      "this.automationStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723588:27450942",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.updateAgentAutomation",
+    "qualified_name": "SandAgentSessionStore.updateAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723588,
+    "end_line": 723592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId",
+      "spec"
+    ],
+    "body_sha256": "53d095ba396a6e7b59eb212610a80d813aed103a292aa553b9161ed9ebdf9091",
+    "calls": [
+      ".slice",
+      "store.list",
+      "store.update",
+      "this.automationStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723593:27451154",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.removeAgentAutomation",
+    "qualified_name": "SandAgentSessionStore.removeAgentAutomation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723593,
+    "end_line": 723597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "automationId"
+    ],
+    "body_sha256": "c578e108fbc43dcf7ce06bbe79c5610a8bb07b86eab86b1e58c6c49396973f36",
+    "calls": [
+      ".slice",
+      "store.list",
+      "store.remove",
+      "this.automationStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723598:27451338",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.skillStoreFor",
+    "qualified_name": "SandAgentSessionStore.skillStoreFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723598,
+    "end_line": 723600,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "33984f4dd6aa930b991954d19368f3a2e26b845e26311682e3e46f644057bf2c",
+    "calls": [
+      "getAgentDbPath",
+      "skillStoreForDbPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723601:27451474",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgentSkills",
+    "qualified_name": "SandAgentSessionStore.listAgentSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723601,
+    "end_line": 723603,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "cc06e53cea49aaafde14b48db83b05fc31002839e79ef3c3e64d5885325677cc",
+    "calls": [
+      ".listAll",
+      "limitSurfacedSkills",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723604:27451582",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.getAgentSkill",
+    "qualified_name": "SandAgentSessionStore.getAgentSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723604,
+    "end_line": 723606,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId"
+    ],
+    "body_sha256": "0cc62e6b301b78cfe07b287a91df1976588ca94ea3661e43a398e1f2df19cbd0",
+    "calls": [
+      ".get",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723607:27451687",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.createAgentWorkflow",
+    "qualified_name": "SandAgentSessionStore.createAgentWorkflow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723607,
+    "end_line": 723611,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "spec"
+    ],
+    "body_sha256": "04486352201ff600dac510eb80a48338598fde4a42622bb05a7df56c46d5bda6",
+    "calls": [
+      "limitSurfacedSkills",
+      "store.create",
+      "store.listAll",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723612:27451858",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.updateAgentWorkflow",
+    "qualified_name": "SandAgentSessionStore.updateAgentWorkflow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723612,
+    "end_line": 723616,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId",
+      "spec"
+    ],
+    "body_sha256": "a868437c823d0e9fcdd1155d59de9c1eeb47a1f1072b0ac00637dfc28ee3c009",
+    "calls": [
+      "limitSurfacedSkills",
+      "store.listAll",
+      "store.update",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723617:27452050",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.removeAgentSkill",
+    "qualified_name": "SandAgentSessionStore.removeAgentSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723617,
+    "end_line": 723621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId"
+    ],
+    "body_sha256": "e467e50e7994aca2a692b129084d17dc63859dbd965c1613369349f28a88b302",
+    "calls": [
+      "limitSurfacedSkills",
+      "store.listAll",
+      "store.remove",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723622:27452236",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.importAgentSkillMarkdown",
+    "qualified_name": "SandAgentSessionStore.importAgentSkillMarkdown",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723622,
+    "end_line": 723630,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "markdown",
+      "fallbackName"
+    ],
+    "body_sha256": "3183349129ab73a98c06025e5b01b6127838141ea485791bc2b3e3d073c55374",
+    "calls": [
+      "limitSurfacedSkills",
+      "store.importMarkdown",
+      "store.listAll",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723631:27452671",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.importAgentSkillSource",
+    "qualified_name": "SandAgentSessionStore.importAgentSkillSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723631,
+    "end_line": 723639,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "source",
+      "fallbackName"
+    ],
+    "body_sha256": "695f1918a2dbf089da0504d6f1c2cdb69ec41d09ca02c09ed3616f053b1a0ac3",
+    "calls": [
+      "limitSurfacedSkills",
+      "store.importLiveSource",
+      "store.listAll",
+      "this.skillStoreFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723640:27453074",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.openChannelStore",
+    "qualified_name": "SandAgentSessionStore.openChannelStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723640,
+    "end_line": 723642,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "f82a0e6341ed57d2b53900fee252ea007f41aab50fcc59032257ef3dc8dee4ac",
+    "calls": [
+      "channelStoreForDbPath",
+      "getAgentDbPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723643:27453182",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgentChannels",
+    "qualified_name": "SandAgentSessionStore.listAgentChannels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723643,
+    "end_line": 723647,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "eb9a5ff0d98c2379caa22820b3ce54f03e4ca0c131b841637c4c8e4928d8d2e3",
+    "calls": [
+      ".filter",
+      ".listConnections",
+      "this.openChannelStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723648:27453411",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listChannelConfigs",
+    "qualified_name": "SandAgentSessionStore.listChannelConfigs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723648,
+    "end_line": 723661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "bbefbb1a790f7b465f8940144306a095a5d843b906acc202055c04a1733ea029",
+    "calls": [
+      "configs.push",
+      "store.listPlatforms",
+      "store.readLabel",
+      "this.connectorSecrets.getSecret",
+      "this.openChannelStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723662:27453870",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.storeConnectorCredential",
+    "qualified_name": "SandAgentSessionStore.storeConnectorCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723662,
+    "end_line": 723692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "platform2",
+      "field",
+      "value"
+    ],
+    "body_sha256": "7f9af3f03e196ca71d6ee4f76a1ddb9e3aa90a7bc059f549b37537b48b65a56c",
+    "calls": [
+      "channels.metadataPresence",
+      "channels.remove",
+      "channels.writeMetadata",
+      "isSafeFolderId",
+      "reportFallback",
+      "this.connectorSecrets.setSecret",
+      "this.openChannelStore"
+    ],
+    "writes": [
+      "write4"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:723693:27454901",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.disconnectChannel",
+    "qualified_name": "SandAgentSessionStore.disconnectChannel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723693,
+    "end_line": 723703,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "platform2"
+    ],
+    "body_sha256": "433d84c11b5573c76c8dda27f2ddd9e10781236e617c73687630ff63e2ed4b55",
+    "calls": [
+      "channels.remove",
+      "channels.writeMetadata",
+      "this.connectorSecrets.removeAgentPlatform",
+      "this.openChannelStore"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723704:27455253",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAgentIds",
+    "qualified_name": "SandAgentSessionStore.listAgentIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723704,
+    "end_line": 723713,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2f0f2a15cf8bdb3119e5f87d517c3ff6df1e1c2d80b598b76e58d10cd981df2c",
+    "calls": [
+      "keepAgentDirs"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:723714:27455571",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAllAutomations",
+    "qualified_name": "SandAgentSessionStore.listAllAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723714,
+    "end_line": 723716,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c562d964727f9538858a7b2ac70fca454bab225ccc15d3268f01111abf0c1f01",
+    "calls": [
+      "this.listAllAutomationsFrom"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723717:27455684",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAllAutomationDefinitions",
+    "qualified_name": "SandAgentSessionStore.listAllAutomationDefinitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723717,
+    "end_line": 723719,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "04782377fc3b92fd93f1e91ce111a1ad9f7d0fddf9ce470d944dea85be1ca52c",
+    "calls": [
+      "this.listAllAutomationsFrom"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723720:27455790",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.listAllAutomationsFrom",
+    "qualified_name": "SandAgentSessionStore.listAllAutomationsFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723720,
+    "end_line": 723746,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    definitionsOnly\n  }"
+    ],
+    "body_sha256": "a8291ba412ca4cfcdb20fd1e42c78647c6ca9bec8dbd1d617e9a23cd7de64c23",
+    "calls": [
+      "entry.isDirectory",
+      "parseAgentId",
+      "result.push",
+      "store.list",
+      "store.listDefinitions",
+      "this.automationStoreFor"
+    ],
+    "writes": [
+      "automations",
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:723747:27456591",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.seedSessionActivityFromDbMtime",
+    "qualified_name": "SandAgentSessionStore.seedSessionActivityFromDbMtime",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723747,
+    "end_line": 723750,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "3dfeab28367af6df0156d92d85dacdf91c37aa8fb8eda63e0e1b90a1f8b1605f",
+    "calls": [
+      "seedActivityFromMtime",
+      "this.statOpenDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:723751:27456777",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-session.ts",
+    "name": "SandAgentSessionStore.statOpenDb",
+    "qualified_name": "SandAgentSessionStore.statOpenDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 723751,
+    "end_line": 723761,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b3ed6998de0cdb508967869cf80c6f1531a5ba1c37a2467edd1c4e67d5008124",
+    "calls": [
+      ".catch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

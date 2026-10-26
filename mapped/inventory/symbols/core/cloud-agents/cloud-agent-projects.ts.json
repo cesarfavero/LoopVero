@@ -1,0 +1,254 @@
+[
+  {
+    "id": "host:508968:18676695",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "projectFilterForKind",
+    "qualified_name": "projectFilterForKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508968,
+    "end_line": 508970,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind"
+    ],
+    "body_sha256": "fad3975fb038e37e8676a7e4925342b646b519dde2929d56b6582778d0c57426",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508971:18676783",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "readWorkerRows",
+    "qualified_name": "readWorkerRows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508971,
+    "end_line": 508989,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "workerBcIds"
+    ],
+    "body_sha256": "c9f7fd6760a19dd539b29b557a6dfe1c41a5bd84ee87b4b7d4e7f84fd8557852",
+    "calls": [
+      "backend.listDetailedBackgroundComposers",
+      "new ListDetailedBackgroundComposersRequest",
+      "new Map",
+      "rows.set",
+      "workerBcIds.slice"
+    ],
+    "writes": [
+      "offset2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:508990:18677513",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "listCloudAgentProjectThreads",
+    "qualified_name": "listCloudAgentProjectThreads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 508990,
+    "end_line": 509012,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "bcId",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "1493195d166db2154b8be140fa361320726a9db4c645b51d3f50e71b3783b57b",
+    "calls": [
+      ".slice",
+      ".sort",
+      "backend.listWorkersForManager",
+      "bcId.trim",
+      "memberships.memberships.map",
+      "new ListWorkersForManagerRequest",
+      "readWorkerRows"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509013:18678517",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "toProjectTree",
+    "qualified_name": "toProjectTree",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509013,
+    "end_line": 509041,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subtree",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "a598dd5481fc7294ac751478d07c554e5807e3d44bd5dce4ecc431c5103b2cf1",
+    "calls": [
+      ".map",
+      "counts.get",
+      "counts.set",
+      "mapRunStatus",
+      "new Map",
+      "subtree.nodes.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509042:18679638",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "listCloudAgentProjectTrees",
+    "qualified_name": "listCloudAgentProjectTrees",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509042,
+    "end_line": 509056,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "bcIds",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "1e975ed8d03669ebf368f649037a5fe1bea44a42169a6ffb0a1901e179a47d39",
+    "calls": [
+      ".filter",
+      "backend.listProjectSubtrees",
+      "bcIds.map",
+      "new ListProjectSubtreesRequest",
+      "new Map",
+      "new Set",
+      "rootBcIds.slice",
+      "toProjectTree",
+      "trees.set"
+    ],
+    "writes": [
+      "offset2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566553:21095663",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "isProjectTreeReadTurnedOff",
+    "qualified_name": "isProjectTreeReadTurnedOff",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566553,
+    "end_line": 566555,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "85267f3674470b2c74d9dbabec7f1512646ba30494596d51e1be2be5510b970b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566556:21095798",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-projects.ts",
+    "name": "readCloudAgentProjectTrees",
+    "qualified_name": "readCloudAgentProjectTrees",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566556,
+    "end_line": 566566,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api",
+      "rows"
+    ],
+    "body_sha256": "aef0eb48d55d3d51774e6f1fcb571fe1e74039a9f2f5bd0285a9f654f6911648",
+    "calls": [
+      ".map",
+      "api.listProjectTrees",
+      "classifyReadFailure2",
+      "isProjectTreeReadTurnedOff",
+      "new Map",
+      "rows.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "host:478857:17526242",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "applyStorePragmas",
+    "qualified_name": "applyStorePragmas",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478857,
+    "end_line": 478868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "options2"
+    ],
+    "body_sha256": "5bc9fb9bf6dec730b134248a307b0eda2867b26194b6fee1cae859b8b9b87300",
+    "calls": [
+      "db.exec"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478870:17526703",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "getSandAgentDbWriteGeneration",
+    "qualified_name": "getSandAgentDbWriteGeneration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478870,
+    "end_line": 478872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "bee6c2690318ced733d766f50a677e93b60cfe27b2a49fac4ba7ec1e5b903acd",
+    "calls": [
+      "dbWriteGenerations.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478873:17526833",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "bumpDbWriteGeneration",
+    "qualified_name": "bumpDbWriteGeneration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478873,
+    "end_line": 478875,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolvedDbPath"
+    ],
+    "body_sha256": "01bb84f33a313831506ea0781b8b42bf817af6b05b0d74c61c0b7dbb7fb23852",
+    "calls": [
+      "dbWriteGenerations.get",
+      "dbWriteGenerations.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478876:17526977",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "deleteSandAgentDbWriteGeneration",
+    "qualified_name": "deleteSandAgentDbWriteGeneration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478876,
+    "end_line": 478878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "cbc4141d8c293432be20bec47805c4cf3f0275f60c8d0e76e48a6a0c425b72ca",
+    "calls": [
+      "dbWriteGenerations.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478880:17527154",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "liveDbHandleCount",
+    "qualified_name": "liveDbHandleCount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478880,
+    "end_line": 478882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolvedDbPath"
+    ],
+    "body_sha256": "c20c3859a9b5d3640fa79913063a224156f3e849b33ecedbe16035c5f24ec277",
+    "calls": [
+      "liveDbHandlesByPath.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478883:17527256",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "registerLiveDbHandle",
+    "qualified_name": "registerLiveDbHandle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478883,
+    "end_line": 478885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolvedDbPath"
+    ],
+    "body_sha256": "501a4c6ae6e4d8744633978dd1fcb381527a40462f7d29b51185b52253af3e62",
+    "calls": [
+      "liveDbHandleCount",
+      "liveDbHandlesByPath.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478886:17527388",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "releaseLiveDbHandle",
+    "qualified_name": "releaseLiveDbHandle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478886,
+    "end_line": 478890,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolvedDbPath"
+    ],
+    "body_sha256": "9173f8031f462282510d62aa48800c872c310f1592aeba074f2fd67e526a72ce",
+    "calls": [
+      "liveDbHandleCount",
+      "liveDbHandlesByPath.delete",
+      "liveDbHandlesByPath.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478891:17527606",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "hasLiveSandAgentDbHandle",
+    "qualified_name": "hasLiveSandAgentDbHandle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478891,
+    "end_line": 478893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "dcfbd8cc8889b7880e8655915340f0c5a6a26dc1227461228a61b9e75b9be6d7",
+    "calls": [
+      "liveDbHandleCount"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478894:17527725",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "walFramesFullyFolded",
+    "qualified_name": "walFramesFullyFolded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478894,
+    "end_line": 478900,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row"
+    ],
+    "body_sha256": "b56df1000174fcebdf528be070292629413122f93d9e31fd328815c86d33aeae",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478901:17528065",
+    "artifact": "host",
+    "module": "host/storage/store-db.ts",
+    "name": "checkpointSandAgentDb",
+    "qualified_name": "checkpointSandAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478901,
+    "end_line": 478926,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "busyTimeoutMs = DB_BUSY_TIMEOUT_MS"
+    ],
+    "body_sha256": "39507a6d6ec5e20ac79d0883ea7fb32fece9194116549323a1c33f19749445ef",
+    "calls": [
+      ".get",
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "db.prepare",
+      "new import_node_sqlite.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync",
+      "reportFallback",
+      "walFramesFullyFolded"
+    ],
+    "writes": [
+      "db",
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:734:26823",
+    "artifact": "state-worker",
+    "module": "host/storage/store-db.ts",
+    "name": "applyStorePragmas",
+    "qualified_name": "applyStorePragmas",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 734,
+    "end_line": 745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "options"
+    ],
+    "body_sha256": "4193d56e82bf733332fc677f30eab26c5e33a2da9b23f67f414460490626d909",
+    "calls": [
+      "db.exec"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

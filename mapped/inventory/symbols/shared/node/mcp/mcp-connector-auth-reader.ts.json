@@ -1,0 +1,192 @@
+[
+  {
+    "id": "host:686462:26078752",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "mcpOAuthAccountIdentifiers",
+    "qualified_name": "mcpOAuthAccountIdentifiers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686462,
+    "end_line": 686472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "servers"
+    ],
+    "body_sha256": "49c0602f35fd350de94320c5a7bc7f732ddb2736f0603be17caff53f92d5d0fd",
+    "calls": [
+      "servers.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:686474:26079401",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "SandMcpConnectorAuthReader.constructor",
+    "qualified_name": "SandMcpConnectorAuthReader.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686474,
+    "end_line": 686476,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "42b0537ec00814fa0995c3815a21d47870594d6c65e12fd4548df8e856238acb",
+    "calls": [],
+    "writes": [
+      "this.provider"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:686480:26079519",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "SandMcpConnectorAuthReader.read",
+    "qualified_name": "SandMcpConnectorAuthReader.read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686480,
+    "end_line": 686485,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "servers"
+    ],
+    "body_sha256": "8eb3c1538ea76d1b6319527dff4621e85c908380fa09bf4589b06e5f115d5ad5",
+    "calls": [
+      "mcpOAuthAccountIdentifiers",
+      "this.fetch"
+    ],
+    "writes": [
+      "this.latest",
+      "this.readsStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:686486:26079737",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "SandMcpConnectorAuthReader.latestFor",
+    "qualified_name": "SandMcpConnectorAuthReader.latestFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686486,
+    "end_line": 686488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "d1dbf84560f472d2e8cfedced76138eb8af66a65c36229213fe5bd9a6105617f",
+    "calls": [
+      "this.latest.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:686489:26079815",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "SandMcpConnectorAuthReader.clear",
+    "qualified_name": "SandMcpConnectorAuthReader.clear",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686489,
+    "end_line": 686492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "52997810c7651890faee9064921f9a15f75c1a3500ca5328a53ab1410ab8d6df",
+    "calls": [],
+    "writes": [
+      "this.latest",
+      "this.readsStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:686493:26079896",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-connector-auth-reader.ts",
+    "name": "SandMcpConnectorAuthReader.fetch",
+    "qualified_name": "SandMcpConnectorAuthReader.fetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 686493,
+    "end_line": 686501,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverIdentifiers"
+    ],
+    "body_sha256": "c54caff8579b7b0846e12f2ec30e84b14051c67b7cd2532fd98140bf50a1bd59",
+    "calls": [
+      "reportMcpHostEdgeFailure",
+      "this.provider"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

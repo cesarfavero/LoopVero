@@ -1,0 +1,2090 @@
+[
+  {
+    "id": "host:616806:22874669",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toCompactionSegmentTurns",
+    "qualified_name": "toCompactionSegmentTurns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616806,
+    "end_line": 616828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "5a367565f5891feb9ec6fc631488b972ebd01d753dfb715a93dc5669933540b8",
+    "calls": [
+      "assistantTurn",
+      "fromRedactedCoreMessage",
+      "toolResultText",
+      "turns.push",
+      "userText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616829:22875391",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "userText",
+    "qualified_name": "userText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616829,
+    "end_line": 616843,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "1650d7dfa46bf8010654c894a067a2a40f71fa554af26968ae26ff44ce5d3881",
+    "calls": [
+      ".join",
+      "content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616844:22875748",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "assistantTurn",
+    "qualified_name": "assistantTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616844,
+    "end_line": 616858,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "93b88e468fb78236d5b29f51655902fc2d0ef15f867de3072eb5f9cc99251c30",
+    "calls": [
+      "toolArgs",
+      "toolCalls2.push"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616859:22876219",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toolArgs",
+    "qualified_name": "toolArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616859,
+    "end_line": 616869,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "16ce600b5b7d9838433f06254ed822aba34c461012a50504705c5ad568871c6c",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:616870:22876478",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toolResultText",
+    "qualified_name": "toolResultText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616870,
+    "end_line": 616875,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "6e2dd633d3a32aebbbd27256e1dde2c6bd37e7c366518d184f9277d4e54e4a7b",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616876:22876637",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "segmentLabel",
+    "qualified_name": "segmentLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616876,
+    "end_line": 616878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index"
+    ],
+    "body_sha256": "59d47878cc6bca93c5c2bf763a81f9305e6a8567b50e4e025927766432a9e955",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616879:22876711",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compactionSegmentFilename",
+    "qualified_name": "compactionSegmentFilename",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616879,
+    "end_line": 616881,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index"
+    ],
+    "body_sha256": "8815d0428bcc86c2dbdcc60dbbe74ac4cc18043546aad8d96ef956b536395387",
+    "calls": [
+      "segmentLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616882:22876812",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "parseCompactionSegmentIndex",
+    "qualified_name": "parseCompactionSegmentIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616882,
+    "end_line": 616888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filename"
+    ],
+    "body_sha256": "b06398ac93da2e5fbf595d72b649a25c284106ef2d1744e63b2c8e3af9d29ba5",
+    "calls": [
+      "/^\\+?\\d+$/.test",
+      "Number",
+      "filename.endsWith",
+      "filename.slice",
+      "filename.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616889:22877092",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "formatCompactionSegmentsHint",
+    "qualified_name": "formatCompactionSegmentsHint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616889,
+    "end_line": 616893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "compactionDir"
+    ],
+    "body_sha256": "29e933a9cc8fc2c56f08ec5352910b1a34c8900c5d64eddae80b232ed98ed98c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616894:22877478",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "utf8ByteLength",
+    "qualified_name": "utf8ByteLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616894,
+    "end_line": 616896,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fb9aa59605a57eca273c2a72781a4ac20c5db3512e829a1b583c54ea0e771b01",
+    "calls": [
+      "Buffer.byteLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616897:22877556",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "isLowSurrogate2",
+    "qualified_name": "isLowSurrogate2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616897,
+    "end_line": 616899,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "7f585427efccd699501c8662427e1df9c72d365ff7fb9723751fd51595ce9e25",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616900:22877632",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "truncateChars",
+    "qualified_name": "truncateChars",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616900,
+    "end_line": 616909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "max",
+      "marker17"
+    ],
+    "body_sha256": "e306cf0ab036fec546c37af3361a957d3eac555986c023852c0a23d26c64a3fd",
+    "calls": [
+      "text3.codePointAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "count2",
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616910:22877889",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "lastCodePoints",
+    "qualified_name": "lastCodePoints",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616910,
+    "end_line": 616916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "max"
+    ],
+    "body_sha256": "e781f393ec8ab6f717a2708870b83adbdfccb4360f4241fcc154925b251baeb8",
+    "calls": [
+      "isLowSurrogate2",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "count2",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616917:22878213",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "withThousands",
+    "qualified_name": "withThousands",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616917,
+    "end_line": 616919,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "n"
+    ],
+    "body_sha256": "31f37c24ee63a3061de08aef520ae21426f65b7b3b7140b4484b3fd9e78ce92d",
+    "calls": [
+      ".replace",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616920:22878301",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compareOrdinal",
+    "qualified_name": "compareOrdinal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616920,
+    "end_line": 616922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "b89a316ecf2e6e285a654e47c962275aa8254f6cc2bf9fcdcffa8a18197e5526",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616923:22878375",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "argValuePlain",
+    "qualified_name": "argValuePlain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616923,
+    "end_line": 616925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e74fc72f6a498d92baff085075b5e648700c9aee60e5921ac84c1e5e257c4a1b",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616926:22878487",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "quoteDebug",
+    "qualified_name": "quoteDebug",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616926,
+    "end_line": 616955,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6bcc25c9c8525eb94428f11c0bfd540ff595dc44cffc4b34ed435e62b39345bc",
+    "calls": [
+      "ch.codePointAt",
+      "code.toString"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616958:22879221",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "computeTurnStats",
+    "qualified_name": "computeTurnStats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616958,
+    "end_line": 616998,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turns"
+    ],
+    "body_sha256": "9502d71df3b10d65a78ec22b6cfb0e64a7564b24108303baa8db4491b7b83c1c",
+    "calls": [
+      ".sort",
+      ".trim",
+      "FILE_ARG_KEYS.find",
+      "Object.entries",
+      "argValuePlain",
+      "lastCodePoints",
+      "new Map",
+      "new Set",
+      "roleCounts.get",
+      "roleCounts.set",
+      "toolCounts.get",
+      "toolCounts.set",
+      "turn.text.includes",
+      "turn.text.startsWith",
+      "uniqueFiles.add",
+      "utf8ByteLength"
+    ],
+    "writes": [
+      "lastAssistant",
+      "toolErrorCount",
+      "verboseByteEstimate"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616999:22880950",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderStatsBlock",
+    "qualified_name": "renderStatsBlock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616999,
+    "end_line": 617022,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stats"
+    ],
+    "body_sha256": "ce5c26401ba03e7a073d545b6446becd482f7fef135366d03c15f6c35e5565b9",
+    "calls": [
+      ".join",
+      "files.join",
+      "files.slice",
+      "stats.lastAssistantExcerpt.replaceAll",
+      "stats.roleCounts.map",
+      "stats.toolCounts.map",
+      "truncateChars",
+      "withThousands"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617023:22881957",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnVerbose",
+    "qualified_name": "renderTurnVerbose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617023,
+    "end_line": 617025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "a2b7a28908950ba940f152ca23dcf425b98d70dbc3dbad061e9fb8060cf0fa4e",
+    "calls": [
+      "renderTurnParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617026:22882058",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnBalanced",
+    "qualified_name": "renderTurnBalanced",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617026,
+    "end_line": 617028,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "a0e269d463e06e3b91151ee6266df62c4c84c19ff17661661e54a486c90db68f",
+    "calls": [
+      "renderTurnParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617029:22882265",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnParts",
+    "qualified_name": "renderTurnParts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617029,
+    "end_line": 617058,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index",
+      "shape2"
+    ],
+    "body_sha256": "31514d4e19013d4f5165270b4d55ab2c9212a5a218dccf7b49c0ff6e5ff35bf0",
+    "calls": [
+      "Object.entries",
+      "argValuePlain",
+      "parts.join",
+      "parts.push",
+      "shape2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617059:22883106",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnSignature",
+    "qualified_name": "renderTurnSignature",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617059,
+    "end_line": 617082,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "4106e8e9be12c86cd16fdc41350b2270a3eb6a578167858218a7e15b19157599",
+    "calls": [
+      "signatures.join",
+      "turn.toolCalls.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617088:22884233",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderCompactionSegment",
+    "qualified_name": "renderCompactionSegment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617088,
+    "end_line": 617134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "91cae64e97a0a1130767ed9258d2bdc22b4fd63aae86af67abf66cc77ea6d24e",
+    "calls": [
+      ".replace",
+      "Math.max",
+      "String",
+      "TRUNCATION_NOTICE.replace",
+      "args.summary.trim",
+      "args.turns.entries",
+      "blocks.join",
+      "blocks.push",
+      "computeTurnStats",
+      "renderStatsBlock",
+      "section.render",
+      "segmentLabel",
+      "utf8ByteLength"
+    ],
+    "writes": [
+      "body",
+      "truncatedAt",
+      "used"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617136:22885970",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderCompactionIndexRow",
+    "qualified_name": "renderCompactionIndexRow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617136,
+    "end_line": 617140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ index, turnCount, approxBytes, keywords: keywords2 }"
+    ],
+    "body_sha256": "452b563efea6ff1f5aee837a497b04cfafc934f3a92b552847ae7c6b898c2eb5",
+    "calls": [
+      ".join",
+      "compactionSegmentFilename",
+      "keywords2.map",
+      "segmentLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617141:22886268",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compactionSegmentByteLength",
+    "qualified_name": "compactionSegmentByteLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617141,
+    "end_line": 617143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdown"
+    ],
+    "body_sha256": "bfc35a83bb88eccbcd5f6d360c2fef5340f2ed4ef6cb287a34f60fd4132ad59c",
+    "calls": [
+      "utf8ByteLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617174:22886783",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "extractCompactionKeywords",
+    "qualified_name": "extractCompactionKeywords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617174,
+    "end_line": 617195,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "587e14601fb1e60995e39ec48826838f22a050b05acd52973ead09a0b3955d4c",
+    "calls": [
+      "/^#{0,6}\\s*8\\.\\s+Current Work/m.exec",
+      "KEYWORD_STOPWORDS.has",
+      "keyword.toLowerCase",
+      "nextHeader.exec",
+      "seen.includes",
+      "seen.push",
+      "summary.slice",
+      "text3.matchAll"
+    ],
+    "writes": [
+      "nextHeader.lastIndex",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617196:22887510",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "formatCompactSummary",
+    "qualified_name": "formatCompactSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617196,
+    "end_line": 617227,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "bce3a1709900fdb0ba82b77006e7ae97795c9bcd2a036e01aec63386b19e7840",
+    "calls": [
+      ".trim",
+      "neutralizeCompactionControlTokens",
+      "result.includes",
+      "result.indexOf",
+      "result.lastIndexOf",
+      "result.replaceAll",
+      "result.slice",
+      "result.trim",
+      "stripLeadingScratchpad"
+    ],
+    "writes": [
+      "result",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617228:22889015",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "stripLeadingScratchpad",
+    "qualified_name": "stripLeadingScratchpad",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617228,
+    "end_line": 617239,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "inner"
+    ],
+    "body_sha256": "9c86d085d25a3db0228a01116695d1ef1d1d126f798eb35770cba3791b579681",
+    "calls": [
+      ".trimStart",
+      "/^[0-9]/.test",
+      "inner.trim",
+      "text3.lastIndexOf",
+      "text3.replace",
+      "text3.slice",
+      "text3.startsWith"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617240:22889443",
+    "artifact": "host",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "neutralizeCompactionControlTokens",
+    "qualified_name": "neutralizeCompactionControlTokens",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617240,
+    "end_line": 617242,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "09cf1e6fc9525ce1a050985592fd025ea2e15384d903daa815e15fb1e0eaa6b6",
+    "calls": [
+      ".replaceAll",
+      "text3.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285346:9209312",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toCompactionSegmentTurns",
+    "qualified_name": "toCompactionSegmentTurns",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285346,
+    "end_line": 285368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "bd2a3c1f6926914321ac8506315f2cf54fc2586d8371f34b876897b2253fda83",
+    "calls": [
+      "assistantTurn",
+      "fromRedactedCoreMessage",
+      "toolResultText",
+      "turns.push",
+      "userText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285369:9210032",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "userText",
+    "qualified_name": "userText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285369,
+    "end_line": 285383,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "1650d7dfa46bf8010654c894a067a2a40f71fa554af26968ae26ff44ce5d3881",
+    "calls": [
+      ".join",
+      "content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285384:9210389",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "assistantTurn",
+    "qualified_name": "assistantTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285384,
+    "end_line": 285398,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "064dca20c57848a313899791b86e11af18e69ded3ff18dd4e658ea506af4431c",
+    "calls": [
+      "toolArgs",
+      "toolCalls3.push"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285399:9210860",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toolArgs",
+    "qualified_name": "toolArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285399,
+    "end_line": 285409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "16ce600b5b7d9838433f06254ed822aba34c461012a50504705c5ad568871c6c",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:285410:9211119",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "toolResultText",
+    "qualified_name": "toolResultText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285410,
+    "end_line": 285415,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "6e2dd633d3a32aebbbd27256e1dde2c6bd37e7c366518d184f9277d4e54e4a7b",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285416:9211278",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "segmentLabel",
+    "qualified_name": "segmentLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285416,
+    "end_line": 285418,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index"
+    ],
+    "body_sha256": "59d47878cc6bca93c5c2bf763a81f9305e6a8567b50e4e025927766432a9e955",
+    "calls": [
+      ".padStart",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285419:9211352",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compactionSegmentFilename",
+    "qualified_name": "compactionSegmentFilename",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285419,
+    "end_line": 285421,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index"
+    ],
+    "body_sha256": "8815d0428bcc86c2dbdcc60dbbe74ac4cc18043546aad8d96ef956b536395387",
+    "calls": [
+      "segmentLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285422:9211453",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "parseCompactionSegmentIndex",
+    "qualified_name": "parseCompactionSegmentIndex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285422,
+    "end_line": 285428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filename"
+    ],
+    "body_sha256": "b06398ac93da2e5fbf595d72b649a25c284106ef2d1744e63b2c8e3af9d29ba5",
+    "calls": [
+      "/^\\+?\\d+$/.test",
+      "Number",
+      "filename.endsWith",
+      "filename.slice",
+      "filename.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285429:9211733",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "formatCompactionSegmentsHint",
+    "qualified_name": "formatCompactionSegmentsHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285429,
+    "end_line": 285433,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "compactionDir"
+    ],
+    "body_sha256": "29e933a9cc8fc2c56f08ec5352910b1a34c8900c5d64eddae80b232ed98ed98c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285434:9212119",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "utf8ByteLength",
+    "qualified_name": "utf8ByteLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285434,
+    "end_line": 285436,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fb9aa59605a57eca273c2a72781a4ac20c5db3512e829a1b583c54ea0e771b01",
+    "calls": [
+      "Buffer.byteLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285437:9212197",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "isLowSurrogate",
+    "qualified_name": "isLowSurrogate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285437,
+    "end_line": 285439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "26ca1326f3e92b9b63898fbba25274d4d8e72cb1bf09bac661dba2f4d6cf4f56",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285440:9212272",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "truncateChars",
+    "qualified_name": "truncateChars",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285440,
+    "end_line": 285449,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "max",
+      "marker17"
+    ],
+    "body_sha256": "e306cf0ab036fec546c37af3361a957d3eac555986c023852c0a23d26c64a3fd",
+    "calls": [
+      "text3.codePointAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "count2",
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285450:9212529",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "lastCodePoints",
+    "qualified_name": "lastCodePoints",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285450,
+    "end_line": 285456,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "max"
+    ],
+    "body_sha256": "14c589e237f20a8de97ed78adbbc11fd71fb9a2f75baa21029c2ae3d9070ddea",
+    "calls": [
+      "isLowSurrogate",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "count2",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285457:9212852",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "withThousands",
+    "qualified_name": "withThousands",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285457,
+    "end_line": 285459,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "n"
+    ],
+    "body_sha256": "31f37c24ee63a3061de08aef520ae21426f65b7b3b7140b4484b3fd9e78ce92d",
+    "calls": [
+      ".replace",
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285460:9212940",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compareOrdinal",
+    "qualified_name": "compareOrdinal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285460,
+    "end_line": 285462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "b89a316ecf2e6e285a654e47c962275aa8254f6cc2bf9fcdcffa8a18197e5526",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285463:9213014",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "argValuePlain",
+    "qualified_name": "argValuePlain",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285463,
+    "end_line": 285465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e74fc72f6a498d92baff085075b5e648700c9aee60e5921ac84c1e5e257c4a1b",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285466:9213126",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "quoteDebug",
+    "qualified_name": "quoteDebug",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285466,
+    "end_line": 285495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6bcc25c9c8525eb94428f11c0bfd540ff595dc44cffc4b34ed435e62b39345bc",
+    "calls": [
+      "ch.codePointAt",
+      "code.toString"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285498:9213860",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "computeTurnStats",
+    "qualified_name": "computeTurnStats",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285498,
+    "end_line": 285538,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turns"
+    ],
+    "body_sha256": "9502d71df3b10d65a78ec22b6cfb0e64a7564b24108303baa8db4491b7b83c1c",
+    "calls": [
+      ".sort",
+      ".trim",
+      "FILE_ARG_KEYS.find",
+      "Object.entries",
+      "argValuePlain",
+      "lastCodePoints",
+      "new Map",
+      "new Set",
+      "roleCounts.get",
+      "roleCounts.set",
+      "toolCounts.get",
+      "toolCounts.set",
+      "turn.text.includes",
+      "turn.text.startsWith",
+      "uniqueFiles.add",
+      "utf8ByteLength"
+    ],
+    "writes": [
+      "lastAssistant",
+      "toolErrorCount",
+      "verboseByteEstimate"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285539:9215589",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderStatsBlock",
+    "qualified_name": "renderStatsBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285539,
+    "end_line": 285562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stats"
+    ],
+    "body_sha256": "ce5c26401ba03e7a073d545b6446becd482f7fef135366d03c15f6c35e5565b9",
+    "calls": [
+      ".join",
+      "files.join",
+      "files.slice",
+      "stats.lastAssistantExcerpt.replaceAll",
+      "stats.roleCounts.map",
+      "stats.toolCounts.map",
+      "truncateChars",
+      "withThousands"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285563:9216596",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnVerbose",
+    "qualified_name": "renderTurnVerbose",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285563,
+    "end_line": 285565,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "a2b7a28908950ba940f152ca23dcf425b98d70dbc3dbad061e9fb8060cf0fa4e",
+    "calls": [
+      "renderTurnParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285566:9216697",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnBalanced",
+    "qualified_name": "renderTurnBalanced",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285566,
+    "end_line": 285568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "a0e269d463e06e3b91151ee6266df62c4c84c19ff17661661e54a486c90db68f",
+    "calls": [
+      "renderTurnParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285569:9216904",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnParts",
+    "qualified_name": "renderTurnParts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285569,
+    "end_line": 285598,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index",
+      "shape2"
+    ],
+    "body_sha256": "31514d4e19013d4f5165270b4d55ab2c9212a5a218dccf7b49c0ff6e5ff35bf0",
+    "calls": [
+      "Object.entries",
+      "argValuePlain",
+      "parts.join",
+      "parts.push",
+      "shape2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285599:9217745",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderTurnSignature",
+    "qualified_name": "renderTurnSignature",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285599,
+    "end_line": 285622,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn",
+      "index"
+    ],
+    "body_sha256": "4106e8e9be12c86cd16fdc41350b2270a3eb6a578167858218a7e15b19157599",
+    "calls": [
+      "signatures.join",
+      "turn.toolCalls.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285628:9218872",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderCompactionSegment",
+    "qualified_name": "renderCompactionSegment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285628,
+    "end_line": 285674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "91cae64e97a0a1130767ed9258d2bdc22b4fd63aae86af67abf66cc77ea6d24e",
+    "calls": [
+      ".replace",
+      "Math.max",
+      "String",
+      "TRUNCATION_NOTICE.replace",
+      "args.summary.trim",
+      "args.turns.entries",
+      "blocks.join",
+      "blocks.push",
+      "computeTurnStats",
+      "renderStatsBlock",
+      "section.render",
+      "segmentLabel",
+      "utf8ByteLength"
+    ],
+    "writes": [
+      "body",
+      "truncatedAt",
+      "used"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285676:9220609",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "renderCompactionIndexRow",
+    "qualified_name": "renderCompactionIndexRow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285676,
+    "end_line": 285680,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ index, turnCount, approxBytes, keywords: keywords2 }"
+    ],
+    "body_sha256": "452b563efea6ff1f5aee837a497b04cfafc934f3a92b552847ae7c6b898c2eb5",
+    "calls": [
+      ".join",
+      "compactionSegmentFilename",
+      "keywords2.map",
+      "segmentLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285681:9220907",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "compactionSegmentByteLength",
+    "qualified_name": "compactionSegmentByteLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285681,
+    "end_line": 285683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdown"
+    ],
+    "body_sha256": "bfc35a83bb88eccbcd5f6d360c2fef5340f2ed4ef6cb287a34f60fd4132ad59c",
+    "calls": [
+      "utf8ByteLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285714:9221422",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "extractCompactionKeywords",
+    "qualified_name": "extractCompactionKeywords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285714,
+    "end_line": 285735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "587e14601fb1e60995e39ec48826838f22a050b05acd52973ead09a0b3955d4c",
+    "calls": [
+      "/^#{0,6}\\s*8\\.\\s+Current Work/m.exec",
+      "KEYWORD_STOPWORDS.has",
+      "keyword.toLowerCase",
+      "nextHeader.exec",
+      "seen.includes",
+      "seen.push",
+      "summary.slice",
+      "text3.matchAll"
+    ],
+    "writes": [
+      "nextHeader.lastIndex",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285736:9222149",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "formatCompactSummary",
+    "qualified_name": "formatCompactSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285736,
+    "end_line": 285767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "bce3a1709900fdb0ba82b77006e7ae97795c9bcd2a036e01aec63386b19e7840",
+    "calls": [
+      ".trim",
+      "neutralizeCompactionControlTokens",
+      "result.includes",
+      "result.indexOf",
+      "result.lastIndexOf",
+      "result.replaceAll",
+      "result.slice",
+      "result.trim",
+      "stripLeadingScratchpad"
+    ],
+    "writes": [
+      "result",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285768:9223654",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "stripLeadingScratchpad",
+    "qualified_name": "stripLeadingScratchpad",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285768,
+    "end_line": 285779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "inner"
+    ],
+    "body_sha256": "9c86d085d25a3db0228a01116695d1ef1d1d126f798eb35770cba3791b579681",
+    "calls": [
+      ".trimStart",
+      "/^[0-9]/.test",
+      "inner.trim",
+      "text3.lastIndexOf",
+      "text3.replace",
+      "text3.slice",
+      "text3.startsWith"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285780:9224082",
+    "artifact": "evaluation",
+    "module": "agent-summarization/compaction-segments.js",
+    "name": "neutralizeCompactionControlTokens",
+    "qualified_name": "neutralizeCompactionControlTokens",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285780,
+    "end_line": 285782,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "09cf1e6fc9525ce1a050985592fd025ea2e15384d903daa815e15fb1e0eaa6b6",
+    "calls": [
+      ".replaceAll",
+      "text3.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

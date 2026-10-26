@@ -1,0 +1,342 @@
+[
+  {
+    "id": "host:765396:29323533",
+    "artifact": "host",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "formatAgentActivityAge",
+    "qualified_name": "formatAgentActivityAge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765396,
+    "end_line": 765402,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "iso",
+      "nowMs2"
+    ],
+    "body_sha256": "b75ae3d972a9254544cb5eb705282ca5d1743f42e769fb20679f067acaf9a696",
+    "calls": [
+      "Date.parse",
+      "Number.isNaN",
+      "formatDurationMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765403:29323808",
+    "artifact": "host",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "renderSummary",
+    "qualified_name": "renderSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765403,
+    "end_line": 765427,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary",
+      "nowMs2"
+    ],
+    "body_sha256": "a36ec9f2c61298d68f4436f9a03cb2dad9b36663d7afe2ec3d9cac1695bb722e",
+    "calls": [
+      "formatAgentActivityAge",
+      "lines2.join",
+      "lines2.push",
+      "summary.description.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765428:29325042",
+    "artifact": "host",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "renderAgentActivity",
+    "qualified_name": "renderAgentActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765428,
+    "end_line": 765439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "bounds2",
+      "nowMs2"
+    ],
+    "body_sha256": "a4d8ccd3942639e3a742783bb29c0cb3971d71d1f6291f17c4073efa4633c5de",
+    "calls": [
+      ".join",
+      "result.agents.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765440:29325967",
+    "artifact": "host",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "createReadAgentActivityTool",
+    "qualified_name": "createReadAgentActivityTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765440,
+    "end_line": 765468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "284adf221ac63675fa340717eae8934fa54ae06bf31f590ccf4f31ae7ee8c162",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765446:29326236",
+    "artifact": "host",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadAgentActivityTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765446,
+    "end_line": 765466,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "toolDeps"
+    ],
+    "body_sha256": "cd4685b438af1b376dc3eeb8cab5bc16633a5e718635523a95b3f0dd8ba6d302",
+    "calls": [
+      "clampAgentActivityRequest",
+      "deps.agentActivity.readOwnedAgentActivity",
+      "deps.review",
+      "renderAgentActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558763:20743699",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "formatAgentActivityAge",
+    "qualified_name": "formatAgentActivityAge",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558763,
+    "end_line": 558769,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "iso",
+      "nowMs"
+    ],
+    "body_sha256": "ca46ae522810a287d15b7df94b6a160e97f4257f2f0d54d49fc3db480310828e",
+    "calls": [
+      "Date.parse",
+      "Number.isNaN",
+      "formatDurationMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558770:20743972",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "renderSummary",
+    "qualified_name": "renderSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558770,
+    "end_line": 558794,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary",
+      "nowMs"
+    ],
+    "body_sha256": "28df0e9bd67a2c95cfa485a8aa681edabc49b5504d824d9d2a6da3cd85c0da8c",
+    "calls": [
+      "formatAgentActivityAge",
+      "lines2.join",
+      "lines2.push",
+      "summary.description.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558795:20745202",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "renderAgentActivity",
+    "qualified_name": "renderAgentActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558795,
+    "end_line": 558806,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "bounds2",
+      "nowMs"
+    ],
+    "body_sha256": "75d94246e5600c14e98780fc69378157415a6bedabc55a098bfa646dd93194da",
+    "calls": [
+      ".join",
+      "result.agents.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558807:20746125",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "createReadAgentActivityTool",
+    "qualified_name": "createReadAgentActivityTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558807,
+    "end_line": 558835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "284adf221ac63675fa340717eae8934fa54ae06bf31f590ccf4f31ae7ee8c162",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558813:20746394",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-agent-activity-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadAgentActivityTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558813,
+    "end_line": 558833,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "toolDeps"
+    ],
+    "body_sha256": "cd4685b438af1b376dc3eeb8cab5bc16633a5e718635523a95b3f0dd8ba6d302",
+    "calls": [
+      "clampAgentActivityRequest",
+      "deps.agentActivity.readOwnedAgentActivity",
+      "deps.review",
+      "renderAgentActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

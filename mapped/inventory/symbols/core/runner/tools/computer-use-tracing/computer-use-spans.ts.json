@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "host:742961:28254047",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "isComputerUseTimeout",
+    "qualified_name": "isComputerUseTimeout",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742961,
+    "end_line": 742963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "4be4230ac6c420c806de1d0a9f9286faf27ec80c4d7abaf708d819be8343cdab",
+    "calls": [
+      "isFusedStepGuardTimeoutReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742964:28254374",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "computerUseSpanOutcomeOf",
+    "qualified_name": "computerUseSpanOutcomeOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742964,
+    "end_line": 742973,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "signal"
+    ],
+    "body_sha256": "e5523157d3f774ed110d29e21d7272266657e8138653b0885f3b06a21bfabf4c",
+    "calls": [
+      "isComputerUseTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742974:28254821",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "isTraced",
+    "qualified_name": "isTraced",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742974,
+    "end_line": 742976,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "229210e3f74beecc90628b907a1bb942adec8a588f0cee8209bc239da632622e",
+    "calls": [
+      "ctx.get",
+      "getSpan2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742977:28254929",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "endSpan",
+    "qualified_name": "endSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742977,
+    "end_line": 742983,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span",
+      "outcome",
+      "timedOut",
+      "endTime"
+    ],
+    "body_sha256": "e38fa250e598d9133141c71e04eba083a13dc563d46a5928b5fb1bbc232db009",
+    "calls": [
+      "span.end",
+      "span.setAttributes",
+      "span.setStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742985:28255241",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.constructor",
+    "qualified_name": "TracedComputerUseSpan.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742985,
+    "end_line": 742990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "span"
+    ],
+    "body_sha256": "40638665ecdd5e74806dd681b97ce081b49672d16ee396b3c02740cd4eced699",
+    "calls": [
+      "ctx.signal.addEventListener",
+      "this.endAtAbort"
+    ],
+    "writes": [
+      "this.ctx",
+      "this.span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742996:28255501",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.endAtAbort",
+    "qualified_name": "TracedComputerUseSpan.endAtAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742996,
+    "end_line": 742998,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0f7c5699e8054ecc5f207f7f7479974e3f101b5d2aa464a917e52914a9fc2b08",
+    "calls": [
+      "computerUseSpanOutcomeOf",
+      "this.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742999:28255594",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.setAttributes",
+    "qualified_name": "TracedComputerUseSpan.setAttributes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742999,
+    "end_line": 743001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "attributes"
+    ],
+    "body_sha256": "fcfd73a73e1dc1728c9fce1b4ea19171c10724b0109131fedb08c08c8ab4feca",
+    "calls": [
+      "this.span.setAttributes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743002:28255683",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.setOutcome",
+    "qualified_name": "TracedComputerUseSpan.setOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743002,
+    "end_line": 743005,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome",
+      "options2"
+    ],
+    "body_sha256": "a02f22eca468f6966044a48bd5a4701b09860b35b6b1eea03dfabbd3ee304f33",
+    "calls": [],
+    "writes": [
+      "this.outcome",
+      "this.timedOut"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743006:28255803",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.failIfNoOutcome",
+    "qualified_name": "TracedComputerUseSpan.failIfNoOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743006,
+    "end_line": 743008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fca3be001ec8f365049892363508fe2e1a12cab640a2fc0722d070422cf326d9",
+    "calls": [
+      "computerUseSpanOutcomeOf"
+    ],
+    "writes": [
+      "this.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743009:28255910",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.Symbol.dispose",
+    "qualified_name": "TracedComputerUseSpan.Symbol.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743009,
+    "end_line": 743011,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "460388d44807b826a78ce4130a6d8e201d47c18884f486c4fce373200d7323b6",
+    "calls": [
+      "this.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743012:28255960",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.end",
+    "qualified_name": "TracedComputerUseSpan.end",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743012,
+    "end_line": 743017,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "71d26d2b7ec2b1402e8e5d549f4ec56fb64d5a591e01d506b770d44daf98f845",
+    "calls": [
+      "endSpan",
+      "this.ctx.signal.removeEventListener"
+    ],
+    "writes": [
+      "this.ended"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743020:28256221",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.constructor",
+    "qualified_name": "UntracedComputerUseSpan.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743020,
+    "end_line": 743022,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "ccbe75413e214965f30a4f943b823cbc36b653a8fde1f3404f29dc00596c32c9",
+    "calls": [],
+    "writes": [
+      "this.ctx"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743024:28256275",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.setAttributes",
+    "qualified_name": "UntracedComputerUseSpan.setAttributes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743024,
+    "end_line": 743025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743026:28256296",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.setOutcome",
+    "qualified_name": "UntracedComputerUseSpan.setOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743026,
+    "end_line": 743027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743028:28256322",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.failIfNoOutcome",
+    "qualified_name": "UntracedComputerUseSpan.failIfNoOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743028,
+    "end_line": 743029,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743030:28256349",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.Symbol.dispose",
+    "qualified_name": "UntracedComputerUseSpan.Symbol.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743030,
+    "end_line": 743031,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743033:28256361",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "startComputerUseSpan",
+    "qualified_name": "startComputerUseSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743033,
+    "end_line": 743038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "attributes = {}"
+    ],
+    "body_sha256": "ed0c9538884873599427363c8bf2a6b39949268156a6c9fcd738f00acbb6efb5",
+    "calls": [
+      "ctx.withName",
+      "getSpan2",
+      "isTraced",
+      "new TracedComputerUseSpan",
+      "new UntracedComputerUseSpan",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743039:28256692",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "traceComputerUseSpan",
+    "qualified_name": "traceComputerUseSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743039,
+    "end_line": 743054,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "attributes",
+      "run"
+    ],
+    "body_sha256": "3191205894729efc329728fcbf4af1e205620512294c78601506caf8776a1823",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "run",
+      "span.failIfNoOutcome",
+      "startComputerUseSpan"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:743055:28257118",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "recordCompletedComputerUseSpan",
+    "qualified_name": "recordCompletedComputerUseSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743055,
+    "end_line": 743063,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "args"
+    ],
+    "body_sha256": "5ea9ec1f1432e0997f9880b798aecefe45187002a5d9f3b11d46a73529d2bb03",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "recordComputerUseSpanAt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:743064:28257394",
+    "artifact": "host",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "recordComputerUseSpanAt",
+    "qualified_name": "recordComputerUseSpanAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 743064,
+    "end_line": 743074,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "args"
+    ],
+    "body_sha256": "dd195a25608476455e564252f21b30ce81c34cca497ef3e42d712d1266cf1459",
+    "calls": [
+      "Math.max",
+      "ctx.withName",
+      "endSpan",
+      "getSpan2",
+      "isTraced",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515812:18738733",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "isComputerUseTimeout",
+    "qualified_name": "isComputerUseTimeout",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515812,
+    "end_line": 515814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "ceae6899860469801f8da731aebc2c32f7eaff5459c82d3bd43e7248cbe07bae",
+    "calls": [
+      "isFusedStepGuardTimeoutReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515815:18739060",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "computerUseSpanOutcomeOf",
+    "qualified_name": "computerUseSpanOutcomeOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515815,
+    "end_line": 515824,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "signal"
+    ],
+    "body_sha256": "67d83b5179eea9fec84a3f06555fb99b069b48ce5e52c68eef31a04613e20889",
+    "calls": [
+      "isComputerUseTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515825:18739507",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "isTraced",
+    "qualified_name": "isTraced",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515825,
+    "end_line": 515827,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "229210e3f74beecc90628b907a1bb942adec8a588f0cee8209bc239da632622e",
+    "calls": [
+      "ctx.get",
+      "getSpan2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515828:18739615",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "endSpan",
+    "qualified_name": "endSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515828,
+    "end_line": 515834,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span",
+      "outcome",
+      "timedOut",
+      "endTime"
+    ],
+    "body_sha256": "e38fa250e598d9133141c71e04eba083a13dc563d46a5928b5fb1bbc232db009",
+    "calls": [
+      "span.end",
+      "span.setAttributes",
+      "span.setStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515836:18739927",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.constructor",
+    "qualified_name": "TracedComputerUseSpan.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515836,
+    "end_line": 515841,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "span"
+    ],
+    "body_sha256": "40638665ecdd5e74806dd681b97ce081b49672d16ee396b3c02740cd4eced699",
+    "calls": [
+      "ctx.signal.addEventListener",
+      "this.endAtAbort"
+    ],
+    "writes": [
+      "this.ctx",
+      "this.span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515847:18740187",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.endAtAbort",
+    "qualified_name": "TracedComputerUseSpan.endAtAbort",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515847,
+    "end_line": 515849,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0f7c5699e8054ecc5f207f7f7479974e3f101b5d2aa464a917e52914a9fc2b08",
+    "calls": [
+      "computerUseSpanOutcomeOf",
+      "this.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515850:18740280",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.setAttributes",
+    "qualified_name": "TracedComputerUseSpan.setAttributes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515850,
+    "end_line": 515852,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "attributes"
+    ],
+    "body_sha256": "fcfd73a73e1dc1728c9fce1b4ea19171c10724b0109131fedb08c08c8ab4feca",
+    "calls": [
+      "this.span.setAttributes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515853:18740369",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.setOutcome",
+    "qualified_name": "TracedComputerUseSpan.setOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515853,
+    "end_line": 515856,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome",
+      "options2"
+    ],
+    "body_sha256": "a02f22eca468f6966044a48bd5a4701b09860b35b6b1eea03dfabbd3ee304f33",
+    "calls": [],
+    "writes": [
+      "this.outcome",
+      "this.timedOut"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515857:18740489",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.failIfNoOutcome",
+    "qualified_name": "TracedComputerUseSpan.failIfNoOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515857,
+    "end_line": 515859,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "6606d4f71224cf2b1f3e7d1aeefa0f596d08cefa31cddcb2c3c2b298143ccea2",
+    "calls": [
+      "computerUseSpanOutcomeOf"
+    ],
+    "writes": [
+      "this.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515860:18740596",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.Symbol.dispose",
+    "qualified_name": "TracedComputerUseSpan.Symbol.dispose",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515860,
+    "end_line": 515862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "460388d44807b826a78ce4130a6d8e201d47c18884f486c4fce373200d7323b6",
+    "calls": [
+      "this.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515863:18740646",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "TracedComputerUseSpan.end",
+    "qualified_name": "TracedComputerUseSpan.end",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515863,
+    "end_line": 515868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "71d26d2b7ec2b1402e8e5d549f4ec56fb64d5a591e01d506b770d44daf98f845",
+    "calls": [
+      "endSpan",
+      "this.ctx.signal.removeEventListener"
+    ],
+    "writes": [
+      "this.ended"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515871:18740907",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.constructor",
+    "qualified_name": "UntracedComputerUseSpan.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515871,
+    "end_line": 515873,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "ccbe75413e214965f30a4f943b823cbc36b653a8fde1f3404f29dc00596c32c9",
+    "calls": [],
+    "writes": [
+      "this.ctx"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515875:18740961",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.setAttributes",
+    "qualified_name": "UntracedComputerUseSpan.setAttributes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515875,
+    "end_line": 515876,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515877:18740982",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.setOutcome",
+    "qualified_name": "UntracedComputerUseSpan.setOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515877,
+    "end_line": 515878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515879:18741008",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.failIfNoOutcome",
+    "qualified_name": "UntracedComputerUseSpan.failIfNoOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515879,
+    "end_line": 515880,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515881:18741035",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "UntracedComputerUseSpan.Symbol.dispose",
+    "qualified_name": "UntracedComputerUseSpan.Symbol.dispose",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515881,
+    "end_line": 515882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d7fd373866a0ec52e9e628f6b4e876da461ff0ce1c8fb4fa3093ceed956e75a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515884:18741047",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "startComputerUseSpan",
+    "qualified_name": "startComputerUseSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515884,
+    "end_line": 515889,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "attributes = {}"
+    ],
+    "body_sha256": "ed0c9538884873599427363c8bf2a6b39949268156a6c9fcd738f00acbb6efb5",
+    "calls": [
+      "ctx.withName",
+      "getSpan2",
+      "isTraced",
+      "new TracedComputerUseSpan",
+      "new UntracedComputerUseSpan",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515890:18741378",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "traceComputerUseSpan",
+    "qualified_name": "traceComputerUseSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515890,
+    "end_line": 515905,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "attributes",
+      "run"
+    ],
+    "body_sha256": "528524fc9ad3c8a22d372ccaea7c9bb8c104445a556b5fdc542b3ab071eee6f0",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "run",
+      "span.failIfNoOutcome",
+      "startComputerUseSpan"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:515906:18741804",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "recordCompletedComputerUseSpan",
+    "qualified_name": "recordCompletedComputerUseSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515906,
+    "end_line": 515914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "args"
+    ],
+    "body_sha256": "5ea9ec1f1432e0997f9880b798aecefe45187002a5d9f3b11d46a73529d2bb03",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "recordComputerUseSpanAt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515915:18742080",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/computer-use-tracing/computer-use-spans.ts",
+    "name": "recordComputerUseSpanAt",
+    "qualified_name": "recordComputerUseSpanAt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515915,
+    "end_line": 515925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "args"
+    ],
+    "body_sha256": "dd195a25608476455e564252f21b30ce81c34cca497ef3e42d712d1266cf1459",
+    "calls": [
+      "Math.max",
+      "ctx.withName",
+      "endSpan",
+      "getSpan2",
+      "isTraced",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

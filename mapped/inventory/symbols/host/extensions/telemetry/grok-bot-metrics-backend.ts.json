@@ -1,0 +1,471 @@
+[
+  {
+    "id": "host:730070:27735261",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "metricKey",
+    "qualified_name": "metricKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730070,
+    "end_line": 730079,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18",
+      "tags"
+    ],
+    "body_sha256": "17dd77dafffe60aadb7d92629db2feb33df3fe4587acc7818a79b642b253ea67",
+    "calls": [
+      "Object.keys",
+      "keys.sort"
+    ],
+    "writes": [
+      "key"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730080:27735497",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "reservoirSample",
+    "qualified_name": "reservoirSample",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730080,
+    "end_line": 730090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "value"
+    ],
+    "body_sha256": "c114dacd2ed92dc8ba8f61ac5a8b3aae6850329a68449f5ef0a658808afc2248",
+    "calls": [
+      "Math.floor",
+      "Math.random",
+      "entry.samples.push"
+    ],
+    "writes": [
+      "entry.observed",
+      "entry.samples[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730092:27735869",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.constructor",
+    "qualified_name": "GrokBotMetricsBackend.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730092,
+    "end_line": 730101,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "ca6c4c59180d95a268399247fbd67782033130c5447e7a14ee6066853cb6f65d",
+    "calls": [
+      "options2.flushPolling.start"
+    ],
+    "writes": [
+      "this.commonTags",
+      "this.options",
+      "this.polling"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730109:27736320",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.record",
+    "qualified_name": "GrokBotMetricsBackend.record",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730109,
+    "end_line": 730111,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "metric",
+      "value",
+      "labels"
+    ],
+    "body_sha256": "3fbb6b7cce531e7411724cc87d3c218ef7168be1afb7e3fb6116574fbd8d0c94",
+    "calls": [
+      "this.gauge"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730112:27736410",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.increment",
+    "qualified_name": "GrokBotMetricsBackend.increment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730112,
+    "end_line": 730123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "metric",
+      "value",
+      "labels"
+    ],
+    "body_sha256": "cbba97686aa2fd9bef1b5a0c020f62195124a777f34adce046d47c6ac5214f1b",
+    "calls": [
+      "metricKey",
+      "this.boundedTags",
+      "this.incrementBuffer.get",
+      "this.incrementBuffer.set",
+      "this.options.isEnabled"
+    ],
+    "writes": [
+      "existing.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730124:27736880",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.gauge",
+    "qualified_name": "GrokBotMetricsBackend.gauge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730124,
+    "end_line": 730135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "metric",
+      "value",
+      "labels"
+    ],
+    "body_sha256": "f63500f9b58c96c36f96d272f13069128f80fd0ea237863173949f08cf957258",
+    "calls": [
+      "metricKey",
+      "this.boundedTags",
+      "this.gaugeBuffer.get",
+      "this.gaugeBuffer.set",
+      "this.options.isEnabled"
+    ],
+    "writes": [
+      "existing.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730136:27737324",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.histogram",
+    "qualified_name": "GrokBotMetricsBackend.histogram",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730136,
+    "end_line": 730152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "metric",
+      "value",
+      "labels"
+    ],
+    "body_sha256": "e00a4711b90cb0c3b547c2726e34bff93b8140f54da970ca83459d3d3ed984e5",
+    "calls": [
+      "metricKey",
+      "reservoirSample",
+      "this.boundedTags",
+      "this.distributionBuffer.get",
+      "this.distributionBuffer.set",
+      "this.options.isEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730153:27737855",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.dispose",
+    "qualified_name": "GrokBotMetricsBackend.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730153,
+    "end_line": 730156,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "799cba3889185225914b19ea9f4efa6d7b142dc31baac6cc664524516c29a757",
+    "calls": [
+      "this.flush",
+      "this.polling.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730157:27737929",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.boundedTags",
+    "qualified_name": "GrokBotMetricsBackend.boundedTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730157,
+    "end_line": 730164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "labels"
+    ],
+    "body_sha256": "3516255a32995015bed51382bf90cff39c23c009af6749f190cf04fef1af808d",
+    "calls": [
+      "Object.entries",
+      "value.slice"
+    ],
+    "writes": [
+      "tags[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730165:27738220",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.flush",
+    "qualified_name": "GrokBotMetricsBackend.flush",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730165,
+    "end_line": 730189,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e442d849e5dbbe4323111ecb5062fbf852cfeeeba8eed89b5ee592983db0355f",
+    "calls": [
+      "Promise.allSettled",
+      "client.reportDistribution",
+      "client.reportGauge",
+      "client.reportIncrement",
+      "drainDistributions",
+      "drainNamedMetrics",
+      "sends.push",
+      "this.distributionBuffer.clear",
+      "this.distributionBuffer.values",
+      "this.gaugeBuffer.clear",
+      "this.gaugeBuffer.values",
+      "this.getOrCreateClient",
+      "this.incrementBuffer.clear",
+      "this.incrementBuffer.values",
+      "this.options.onFlushError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 4,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730190:27739155",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "GrokBotMetricsBackend.getOrCreateClient",
+    "qualified_name": "GrokBotMetricsBackend.getOrCreateClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730190,
+    "end_line": 730198,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0244a93eb4d2a481961d4ded52ade1d4c320aa0b5f4716c9035aaad126652fcb",
+    "calls": [
+      "createSandCursorBackendClient",
+      "this.options.createClient"
+    ],
+    "writes": [
+      "this.client"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730200:27739475",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "drainNamedMetrics",
+    "qualified_name": "drainNamedMetrics",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730200,
+    "end_line": 730218,
+    "async": false,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "90f0a7e7cb75f86ccd820f2c91531c0e4b7e95c9d735e0966ac789337d040edb",
+    "calls": [
+      "metricsList.push",
+      "new ReportMetricsRequest",
+      "new ReportMetricsRequest_NamedMetric"
+    ],
+    "writes": [
+      "metricsList"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730219:27739970",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/grok-bot-metrics-backend.ts",
+    "name": "drainDistributions",
+    "qualified_name": "drainDistributions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730219,
+    "end_line": 730239,
+    "async": false,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "215875aecf5ecd4bc4a578b9e5bffbf08e57ba7790a1a82f49e1e1f91a98c061",
+    "calls": [
+      "metricsList.push",
+      "new ReportMetricsRequest",
+      "new ReportMetricsRequest_NamedMetric"
+    ],
+    "writes": [
+      "metricsList"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,321 @@
+[
+  {
+    "id": "evaluation:552498:20454563",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "sandExecutorLeanToolFacts",
+    "qualified_name": "sandExecutorLeanToolFacts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552498,
+    "end_line": 552511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "policy",
+      "mounted"
+    ],
+    "body_sha256": "ac49230f312ecd0296b2fe5898acd5c0e5b22410677b193ef8d92a92efed70c9",
+    "calls": [
+      "policy.offers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552514:20455676",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "sendRulesLines",
+    "qualified_name": "sendRulesLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552514,
+    "end_line": 552521,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "6992a3c96134425927b21e0d41c85f9e33963ddaf7af2b817d3f469cf5df63ad",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552522:20455910",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "draftHandoff",
+    "qualified_name": "draftHandoff",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552522,
+    "end_line": 552525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "holdsWakeParent"
+    ],
+    "body_sha256": "70b3520e0e5ffbd293887164b95636544d5a166a1f26aeb8f74efade97a215e9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552526:20456352",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "autoReviewSection",
+    "qualified_name": "autoReviewSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552526,
+    "end_line": 552535,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  holdsCloudAgent,\n  webTools: webTools2\n}"
+    ],
+    "body_sha256": "25a64ac95d8b3dc2ed7853b14e4938b8a41940ed1ebedc08fc8e0a85cc7eda90",
+    "calls": [
+      ".join",
+      "webToolException"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552536:20457844",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "webToolException",
+    "qualified_name": "webToolException",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552536,
+    "end_line": 552544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "webTools2"
+    ],
+    "body_sha256": "fe63fc9ce186c4911d33bff815d4adf3e5db5d84c197baac9df92603fd45f417",
+    "calls": [
+      ".join",
+      "offeredWebToolNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552545:20458361",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "buildSandExecutorLeanBasePrompt",
+    "qualified_name": "buildSandExecutorLeanBasePrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552545,
+    "end_line": 552560,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "f5e43e2f98bd07183ff88ae1562089c4a97175dddf7b4c835a6dbabb0be7a977",
+    "calls": [
+      ".join",
+      "autoReviewSection",
+      "draftHandoff",
+      "sandSubagentEmailPromptLine",
+      "sendRulesLines"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552565:20459669",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "renderSandExecutorLeanUserIdentity",
+    "qualified_name": "renderSandExecutorLeanUserIdentity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552565,
+    "end_line": 552569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fullName"
+    ],
+    "body_sha256": "6aebf3314f7e65c2c6d9bd9fde77239d3b02b8712831d89fd468a00777e2fd13",
+    "calls": [
+      "normalizeSandUserFullName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552570:20460002",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "renderSandExecutorLeanTimeZone",
+    "qualified_name": "renderSandExecutorLeanTimeZone",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552570,
+    "end_line": 552576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "timeZone",
+      "now = /* @__PURE__ */ new Date()"
+    ],
+    "body_sha256": "cf402604fd6933f4ff41ec832a184699949bb26bbc890ce6305593aefa3d2848",
+    "calls": [
+      ".join",
+      "formatSandTimeZoneWithOffset"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552577:20460481",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "renderSandExecutorLeanBoxSection",
+    "qualified_name": "renderSandExecutorLeanBoxSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552577,
+    "end_line": 552583,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "c1490bdab182594600389f8be617c7cfe85092a18d7bc5823e8de1482bbe1330",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:552587:20462142",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-lean-prompt.ts",
+    "name": "renderSandExecutorLeanMemoryLine",
+    "qualified_name": "renderSandExecutorLeanMemoryLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 552587,
+    "end_line": 552604,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "22adb77bc1762b6c8f827f2aecfc1216e1107ad2893c6431ba03ad56c408af07",
+    "calls": [
+      ".filter",
+      ".join",
+      ".toUpperCase",
+      "lookups.charAt",
+      "lookups.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

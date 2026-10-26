@@ -1,0 +1,533 @@
+[
+  {
+    "id": "evaluation:483064:17525113",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "isSandUserDeliveryToolCall",
+    "qualified_name": "isSandUserDeliveryToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483064,
+    "end_line": 483066,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "768f5e533b11fa57509d1fa19cb0385d2de65e4cb81f1efe3d42c99369cc4c7c",
+    "calls": [
+      "invokesFirstPartyTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483082:17527026",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "getUserMessageText",
+    "qualified_name": "getUserMessageText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483082,
+    "end_line": 483092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "a76bcc1fa1e60441652ec46a1660b4ef12c569161e05b52af7a61e53bfa34f02",
+    "calls": [
+      ".join",
+      ".map",
+      "message.content.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483093:17527340",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "isSendMessageReminderMessage",
+    "qualified_name": "isSendMessageReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483093,
+    "end_line": 483096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "97f52dcf9c74df5df93afc022e39845975df116566ed4cefc1da42d833f50852",
+    "calls": [
+      "getUserMessageText",
+      "text3.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483097:17527501",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "hasSendMessageCall",
+    "qualified_name": "hasSendMessageCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483097,
+    "end_line": 483104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "d28ef708e65a53487041c5798bb04dedc7cf8a06231b78a2d106d9467f9ef857",
+    "calls": [
+      "message.content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483105:17527753",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "countNonSendMessageToolCalls",
+    "qualified_name": "countNonSendMessageToolCalls",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483105,
+    "end_line": 483112,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "2b2f79f19aa0f6c4263beacf7d19cb0ac42b5b4f2dc70eaaa362660d6c1f9a51",
+    "calls": [
+      "message.content.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483113:17528021",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "countToolCallsSinceLastSendMessage",
+    "qualified_name": "countToolCallsSinceLastSendMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483113,
+    "end_line": 483129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "f37d23e0933b4fefd2b4115e99c9b32717550a2e238c296c51bd14dc88be1b03",
+    "calls": [
+      "countNonSendMessageToolCalls",
+      "hasSendMessageCall",
+      "isAgentStatusReminderMessage",
+      "isSlackStatusReminderMessage",
+      "isTeamsStatusReminderMessage"
+    ],
+    "writes": [
+      "count2",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483130:17528565",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "createSendMessageReminderMessage",
+    "qualified_name": "createSendMessageReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483130,
+    "end_line": 483135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "a5dd0ec01d77769d1985e0c91237352b1ea7a640b0ad9156b1cbfe437197219d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483137:17528861",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "DiskPressureReminderMiddleware.constructor",
+    "qualified_name": "DiskPressureReminderMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483137,
+    "end_line": 483140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "episodeId"
+    ],
+    "body_sha256": "6c30ab2b9875794b76ded83e6e2fa49b13b05b9cc4fd18f2020c24f228669706",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.episodeId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483142:17528973",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "DiskPressureReminderMiddleware.stream",
+    "qualified_name": "DiskPressureReminderMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483142,
+    "end_line": 483158,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "c3fdc2a9ea326a7bde4813d706ed7cdce44e88bec5e3117f021cda883d960ef9",
+    "calls": [
+      ".some",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483160:17529560",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "createDiskPressureReminderMiddleware",
+    "qualified_name": "createDiskPressureReminderMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483160,
+    "end_line": 483162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "episodeId"
+    ],
+    "body_sha256": "1e7fc653fa70848fb0504c9d5779883b80fc0796630e78cfec8c7bbde3e092da",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483163:17529701",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "reminderNextStep",
+    "qualified_name": "reminderNextStep",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483163,
+    "end_line": 483166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response",
+      "complied"
+    ],
+    "body_sha256": "0f81adb76c9219ac61881258a6d4868d7bbdf51ada392ff77419d59f49ddf3be",
+    "calls": [
+      "response.messages.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483167:17529869",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "logReminderShimOnSettle",
+    "qualified_name": "logReminderShimOnSettle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483167,
+    "end_line": 483173,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "result",
+      "shim",
+      "complied",
+      "log5"
+    ],
+    "body_sha256": "e5e2843326d7b13351d6c416b35664f6a5cbe7d86302e563df42e6c758ac28ef",
+    "calls": [
+      "result.response.then"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483168:17529954",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "fire",
+    "qualified_name": "logReminderShimOnSettle/fire",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483168,
+    "end_line": 483168,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nextStep"
+    ],
+    "body_sha256": "ce375f51685d4c37394f151a23c94812c3880b86cf89b93de60c38f384d797e1",
+    "calls": [
+      "logShimFiring",
+      "shim.applied"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483178:17530362",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "SendMessageReminderMiddleware.constructor",
+    "qualified_name": "SendMessageReminderMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483178,
+    "end_line": 483182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "thresholds"
+    ],
+    "body_sha256": "ca70a5bf2c78bd4080aee18370c317fad20c2940fa1f0af97ccd12a66e27466e",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.delegationWording",
+      "this.threshold"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483183:17530532",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "SendMessageReminderMiddleware.stream",
+    "qualified_name": "SendMessageReminderMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483183,
+    "end_line": 483207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "7adfd3c3b3c26d1cc051a784abb48f1441540cc799b279411a6e657830f37c01",
+    "calls": [
+      "countToolCallsSinceLastSendMessage",
+      "createSendMessageReminderMessage",
+      "isSendMessageReminderMessage",
+      "logReminderShimOnSettle",
+      "logger88.info",
+      "messages.at",
+      "this.delegationWording",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:483209:17531699",
+    "artifact": "evaluation",
+    "module": "core/runner/send-message-reminder-middleware.ts",
+    "name": "createSendMessageReminderMiddleware",
+    "qualified_name": "createSendMessageReminderMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 483209,
+    "end_line": 483215,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "1bc9c8e78d20eaf0d521357562d11fab45045529018e13275237ae2f2572a4ca",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,340 @@
+[
+  {
+    "id": "host:687238:26106964",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "clampMcpCustomInstruction",
+    "qualified_name": "clampMcpCustomInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687238,
+    "end_line": 687240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3b19f80b7add659126bccb769f42780557d3ec4bc853dfe0e881e3ef896451ac",
+    "calls": [
+      "raw.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687255:26108426",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "getDefaultMcpCustomInstruction",
+    "qualified_name": "getDefaultMcpCustomInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687255,
+    "end_line": 687257,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName"
+    ],
+    "body_sha256": "93b939cda71bc324423094b466d3eaf65192932ef7358e6ac83c68461f99b640",
+    "calls": [
+      ".toLowerCase",
+      "DEFAULT_MCP_CONNECTOR_INSTRUCTIONS.get",
+      "serverName.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687258:26108570",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "resolveMcpCustomInstruction",
+    "qualified_name": "resolveMcpCustomInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687258,
+    "end_line": 687263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName",
+      "storedInstruction"
+    ],
+    "body_sha256": "4a11ba743a31c54546b4160ce09a676e97a264d22c4f25a3323fdd55ec9f8576",
+    "calls": [
+      "getDefaultMcpCustomInstruction",
+      "storedInstruction.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687264:26108774",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "formatMcpCustomInstructionToolNote",
+    "qualified_name": "formatMcpCustomInstructionToolNote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687264,
+    "end_line": 687267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName",
+      "instructions"
+    ],
+    "body_sha256": "91464772a75bd1414ba7bee91374b01ba352acf25641da02ba0e1c24ec055de2",
+    "calls": [
+      "instructions.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687268:26108980",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "normalizeMcpCustomInstructions",
+    "qualified_name": "normalizeMcpCustomInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687268,
+    "end_line": 687279,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "c4e40cb73b9017ff9041f8dc23ece206b2f1c702b1f4228235d3def53754d76a",
+    "calls": [
+      "Object.entries",
+      "clampMcpCustomInstruction",
+      "clamped.trim",
+      "getDefaultMcpCustomInstruction"
+    ],
+    "writes": [
+      "normalized[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687281:26109414",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "normalizeMcpCustomInstructionsByServerId",
+    "qualified_name": "normalizeMcpCustomInstructionsByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687281,
+    "end_line": 687288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "1805548e76efb381930482e3e374242be0f25b82d84fb515d860ce18d9101c1b",
+    "calls": [
+      "MCP_DISPLAY_SERVER_ID_KEY.test",
+      "Object.entries",
+      "clampMcpCustomInstruction"
+    ],
+    "writes": [
+      "normalized[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687289:26109702",
+    "artifact": "host",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "normalizeMcpDisabledToolsByServerId",
+    "qualified_name": "normalizeMcpDisabledToolsByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687289,
+    "end_line": 687298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "53eed254eb5082aa81be0cf7f3e5b76339ea25ca6dac3343401ef4bbe13dc513",
+    "calls": [
+      "MCP_DISPLAY_SERVER_ID_KEY.test",
+      "Object.entries",
+      "new Set",
+      "toolNames.filter"
+    ],
+    "writes": [
+      "normalized[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529141:19323114",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "getDefaultMcpCustomInstruction",
+    "qualified_name": "getDefaultMcpCustomInstruction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529141,
+    "end_line": 529143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName"
+    ],
+    "body_sha256": "93b939cda71bc324423094b466d3eaf65192932ef7358e6ac83c68461f99b640",
+    "calls": [
+      ".toLowerCase",
+      "DEFAULT_MCP_CONNECTOR_INSTRUCTIONS.get",
+      "serverName.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529144:19323258",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "resolveMcpCustomInstruction",
+    "qualified_name": "resolveMcpCustomInstruction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529144,
+    "end_line": 529149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName",
+      "storedInstruction"
+    ],
+    "body_sha256": "4a11ba743a31c54546b4160ce09a676e97a264d22c4f25a3323fdd55ec9f8576",
+    "calls": [
+      "getDefaultMcpCustomInstruction",
+      "storedInstruction.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529150:19323462",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-custom-instructions.ts",
+    "name": "selectConnectedMcpCustomInstructions",
+    "qualified_name": "selectConnectedMcpCustomInstructions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529150,
+    "end_line": 529159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "connectedServerNames",
+      "instructionsByServer"
+    ],
+    "body_sha256": "9c78c3e580362085792fc382d3b198cf026b08d242e8bda379e19a256c69a637",
+    "calls": [
+      "entries.push",
+      "entries.sort",
+      "instructionsByServer.get",
+      "new Set",
+      "resolveMcpCustomInstruction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

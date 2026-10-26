@@ -1,0 +1,305 @@
+[
+  {
+    "id": "host:509877:18713744",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "isRepoSkillDescriptor",
+    "qualified_name": "isRepoSkillDescriptor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509877,
+    "end_line": 509879,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "af949ba4e5eefed3dad7994d80612c6dbaa6ab84dba0703835ce72d819879fd3",
+    "calls": [
+      "skill.sourcePath.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509880:18713841",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "cloudAgentCustomModeCandidates",
+    "qualified_name": "cloudAgentCustomModeCandidates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509880,
+    "end_line": 509898,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "faf98a086324e8d9a1ac6d3a8cd666a523140c4d67c10222cb8cb9f4581722e9",
+    "calls": [
+      "candidates.push",
+      "isRepoSkillDescriptor",
+      "new Set",
+      "nonRepo.add",
+      "nonRepo.has",
+      "normalizeCustomModeName",
+      "rawName.trim",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509901:18714561",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "stripCustomModePrefixes",
+    "qualified_name": "stripCustomModePrefixes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509901,
+    "end_line": 509910,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8708949b1206ab954c03167f222585cbceaaad32e3181f96dcc1ed38c4c6a13d",
+    "calls": [
+      "name18.slice",
+      "name18.startsWith",
+      "name18.trim",
+      "value.trim"
+    ],
+    "writes": [
+      "name18"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509911:18714837",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "customModeSlashName",
+    "qualified_name": "customModeSlashName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509911,
+    "end_line": 509914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "07bb777dd25b79579444132f93aedd32cdde15e7b4433ac988a063c3e54ec409",
+    "calls": [
+      "SLASH_NAME_RE.test",
+      "stripCustomModePrefixes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509915:18714981",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "normalizeCustomModeName",
+    "qualified_name": "normalizeCustomModeName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509915,
+    "end_line": 509917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "97085562d7e18184afcbf6ff4e3320ec4cf451419b3d82e2bf715aef97f005b8",
+    "calls": [
+      ".toLowerCase",
+      "stripCustomModePrefixes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509919:18715162",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "canListRepoSkillsForCustomMode",
+    "qualified_name": "canListRepoSkillsForCustomMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509919,
+    "end_line": 509922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "059f85b8d6473b6719aa06726465a7b6b86b311334847bb3a8c77099946482a6",
+    "calls": [
+      "REPO_SKILL_LISTING_PROVIDERS.has",
+      "detectScmProviderForRepoUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509923:18715400",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "resolveCloudAgentCustomMode",
+    "qualified_name": "resolveCloudAgentCustomMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509923,
+    "end_line": 509927,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested",
+      "candidates"
+    ],
+    "body_sha256": "b3b499f34e485dc4269e10278bd22f3681bb59dd92f9741f8708a283279835c0",
+    "calls": [
+      "candidates.find",
+      "normalizeCustomModeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509928:18715638",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "describeUnknownCloudAgentCustomMode",
+    "qualified_name": "describeUnknownCloudAgentCustomMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509928,
+    "end_line": 509930,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c8348c4ee02efeb2c0662591b9dd35e566109f2f8a19fbec3f84567b69d4102c",
+    "calls": [
+      "args.candidates.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509931:18715832",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-custom-mode.ts",
+    "name": "buildCloudAgentCustomModeMessageFields",
+    "qualified_name": "buildCloudAgentCustomModeMessageFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509931,
+    "end_line": 509947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "slashName"
+    ],
+    "body_sha256": "2b8d4194094b0418d5a9da6f1e04ce1c8b77d82ef0b7fc5d216dfad714bd64e8",
+    "calls": [
+      "encodeUnhydratedCustomModeSourcePath",
+      "getCustomModeId",
+      "name18.toLowerCase",
+      "new CustomModeIntent",
+      "new SubmittedCustomMode",
+      "slashName.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

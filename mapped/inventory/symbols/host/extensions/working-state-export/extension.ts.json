@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "host:786043:30292731",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "workingStateBlobHexIds",
+    "qualified_name": "workingStateBlobHexIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786043,
+    "end_line": 786045,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "keys"
+    ],
+    "body_sha256": "8085f29ed76739d9c9b04db27fc6f0beec73d5f55f5661b138f20c585fdcd24e",
+    "calls": [
+      ".map",
+      "keys.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786056:30293143",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "start",
+    "qualified_name": "start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786056,
+    "end_line": 786056,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "f3f38eeff9929bc81b3a4bc50c5ff4c85909880387afd6c7bb2a4578c890a6a2",
+    "calls": [
+      "startWorkingStateExport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786058:30293195",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "startWorkingStateExport",
+    "qualified_name": "startWorkingStateExport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786058,
+    "end_line": 786170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "007c70a1aa25d52f4d389b2f355340b631ee6280f8bc829adf43204c18282572",
+    "calls": [
+      ".with",
+      "context2.onStop",
+      "createContext",
+      "createDebouncePolicy",
+      "createIdleWatchdogPolicy",
+      "new WorkingStateExporter",
+      "new WorkingStateWarmer",
+      "subscribeTranscriptMutations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786063:30293525",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "readWarmingConfig",
+    "qualified_name": "startWorkingStateExport/readWarmingConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786063,
+    "end_line": 786065,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b55f19f505ff15d07fc6a6b66d6daf5a8fe4c4864f4415f08ec1aa34871904bf",
+    "calls": [
+      "context2.deps.experiments.getDynamicConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786066:30293671",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "agentHarness",
+    "qualified_name": "startWorkingStateExport/agentHarness",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786066,
+    "end_line": 786066,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "222cfd53283a087e7b463d34ce996b336f6fab15825d5576b3b29967d4555477",
+    "calls": [
+      "getSandProfilePath",
+      "readSandProfileHarness",
+      "sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786067:30293784",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isBoxAgent",
+    "qualified_name": "startWorkingStateExport/isBoxAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786067,
+    "end_line": 786067,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "6583a32179dbb32c22040f8e0c9e84548d4c693ed11e9d26e38a295e46cb258a",
+    "calls": [
+      "agentHarness"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786068:30293860",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "readClientStateSeed",
+    "qualified_name": "startWorkingStateExport/readClientStateSeed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786068,
+    "end_line": 786070,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "6ff6a71fe351b26eb0ae3904764a295918351eead4c577922031b0b61549d978",
+    "calls": [
+      "sessionStore.summarizeAgentById",
+      "workingStateExportClientStateSeedFromSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786072:30294056",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isTemporalAgent",
+    "qualified_name": "startWorkingStateExport/isTemporalAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786072,
+    "end_line": 786072,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0b7b9c9b5e86ac27a74d02bc334063202e9fa2322bc5ac89aa092fad5b99cb26",
+    "calls": [
+      "agentHarness"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786073:30294125",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "readServerId",
+    "qualified_name": "startWorkingStateExport/readServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786073,
+    "end_line": 786073,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "e67a1060cdc713833e2cde0f12c55b7449f2297eb96d1827dea0c092da29ba96",
+    "calls": [
+      "getSandProfilePath",
+      "readSandProfileServerId",
+      "sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786074:30294238",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isStoreEnabled",
+    "qualified_name": "startWorkingStateExport/isStoreEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786074,
+    "end_line": 786074,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "69e604e38be4e1c42881c083a8897c041152b2c3d49fb5e621397c5b52061de6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786075:30294288",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isTurnInFlight",
+    "qualified_name": "startWorkingStateExport/isTurnInFlight",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786075,
+    "end_line": 786075,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0129ab8d61c9698130b98293cc82ec969cce49ec5f46ca081beccb1c7ffd6402",
+    "calls": [
+      ".has",
+      "context2.deps.transcript.liveRunningAgentIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786076:30294383",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "parallelListing",
+    "qualified_name": "startWorkingStateExport/parallelListing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786076,
+    "end_line": 786076,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "52b9fa6f9ccceac7fdb1e81dbe94d9320b13778272e7967c12459f2d038b8764",
+    "calls": [
+      "readWarmingConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786078:30294497",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "readSnapshot",
+    "qualified_name": "startWorkingStateExport/readSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786078,
+    "end_line": 786078,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "limits",
+      "onProgress"
+    ],
+    "body_sha256": "0f2d465f93a10f296207a169956926f846ad968c9a2f33171cbc538093c06cfd",
+    "calls": [
+      "sessionStore.readWorkingStateExportSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786079:30294619",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "readBlobs",
+    "qualified_name": "startWorkingStateExport/readBlobs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786079,
+    "end_line": 786079,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "blobIdsHex"
+    ],
+    "body_sha256": "982bca3af6c4b9b049e328d87683839b252cebcfed9a514e157da2ce029c0500",
+    "calls": [
+      "sessionStore.readConversationBlobsByHexIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786080:30294722",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "putBlob",
+    "qualified_name": "startWorkingStateExport/putBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786080,
+    "end_line": 786086,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "blobIdHex",
+      "bytes",
+      "signal"
+    ],
+    "body_sha256": "6cf0e60a2a418b82ac4b328740b799bbbc88271cd5e5797a0104ef96bc6b5f5b",
+    "calls": [
+      ".put",
+      "boxStoreSync.getStoreId",
+      "boxStoreSync.objectStoreProvider.forStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786087:30295012",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "log",
+    "qualified_name": "startWorkingStateExport/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786087,
+    "end_line": 786087,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786088:30295062",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "now",
+    "qualified_name": "startWorkingStateExport/now",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786088,
+    "end_line": 786088,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "60a44327913f98066a6c1c46c6e0724a2c007cc954a696ccd012fe7b81eee7e7",
+    "calls": [
+      "performance.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786089:30295099",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "report",
+    "qualified_name": "startWorkingStateExport/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786089,
+    "end_line": 786092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "1f35ee0def2dc1176bb93ccec5a9a84aa2d6d0c4999f680d30603580f782bea0",
+    "calls": [
+      "context2.deps.telemetry.logs.reportWorkingStateExport",
+      "recordWorkingStateExportMetrics"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786093:30295268",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "reportWarm",
+    "qualified_name": "startWorkingStateExport/reportWarm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786093,
+    "end_line": 786096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "355f442907922a1a593fa3485c7db3e0c2a980b706eb4810cec78fc4cadf63a6",
+    "calls": [
+      "context2.deps.telemetry.logs.reportWorkingStateWarm",
+      "recordWorkingStateWarmMetrics"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786097:30295444",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "listDurableBlobHexIds",
+    "qualified_name": "startWorkingStateExport/listDurableBlobHexIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786097,
+    "end_line": 786106,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "9cd041d0169c473c1271c6d17315f981967fd12ff16bb328c070c09a3ac36824",
+    "calls": [
+      "boxStoreSync.getStoreId",
+      "boxStoreSync.objectStoreProvider.forStore",
+      "new Set",
+      "store.list",
+      "workingStateBlobHexIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786103:30295879",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "onPage",
+    "qualified_name": "startWorkingStateExport/listDurableBlobHexIds/onPage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786103,
+    "end_line": 786103,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "page"
+    ],
+    "body_sha256": "7cb763e008c408d0d04a52fdbbd7e849954231e6ee4e853fb8b70c38fb32f065",
+    "calls": [
+      "options2.onPage",
+      "workingStateBlobHexIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786109:30296081",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "listAgentPopulation",
+    "qualified_name": "startWorkingStateExport/listAgentPopulation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786109,
+    "end_line": 786113,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "28892db276f5f8c25ba04c6937edb6aa19907082cbc7db63f245229411221c55",
+    "calls": [
+      "boxAgentPopulation",
+      "context2.deps.transcript.liveRunningAgentIds",
+      "sessionStore.listAgentIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786114:30296326",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isEligible",
+    "qualified_name": "startWorkingStateExport/isEligible",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786114,
+    "end_line": 786123,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "logExposure"
+    ],
+    "body_sha256": "779d28451fceef004eb17aced7c50ef5471c70dade0afc84610babd96fbe13d3",
+    "calls": [
+      "isWorkingStateWarmEligible"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786115:30296412",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isStoreEnabled",
+    "qualified_name": "startWorkingStateExport/isEligible/isStoreEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786115,
+    "end_line": 786115,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "69e604e38be4e1c42881c083a8897c041152b2c3d49fb5e621397c5b52061de6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786116:30296466",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "isV2StoreEnabled",
+    "qualified_name": "startWorkingStateExport/isEligible/isV2StoreEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786116,
+    "end_line": 786116,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "31de251374ac76389c59f1bdb98cc99f46b1d7110110f05e0039da9509e690be",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786117:30296520",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "hasActivePause",
+    "qualified_name": "startWorkingStateExport/isEligible/hasActivePause",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786117,
+    "end_line": 786117,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1bfc90ca1987091ef8c32e6c0f71015c0c55a1707b7c1ae170c9e83181e09c09",
+    "calls": [
+      "context2.deps.transcript.getPauseState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786118:30296616",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "hasAuthenticatedBootstrap",
+    "qualified_name": "startWorkingStateExport/isEligible/hasAuthenticatedBootstrap",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786118,
+    "end_line": 786118,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7b08c4f438492b3e35cd32c67540d295426c621799ab303d34bd8f0b10fb2fb7",
+    "calls": [
+      "context2.deps.experiments.hasAuthenticatedStatsigBootstrap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786120:30296719",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "checkGate",
+    "qualified_name": "startWorkingStateExport/isEligible/checkGate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786120,
+    "end_line": 786122,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "787e8a06151ccd507bb337dde17dbfb00910fdae422079408bd95c90446f8212",
+    "calls": [
+      "context2.deps.experiments.checkFeatureGate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786124:30296865",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "config",
+    "qualified_name": "startWorkingStateExport/config",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786124,
+    "end_line": 786133,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3927abb62f716c6266206069cc324d60f0d1695c6ffdc429564501c377cb87a9",
+    "calls": [
+      "readWarmingConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786134:30297141",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "warmAgent",
+    "qualified_name": "startWorkingStateExport/warmAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786134,
+    "end_line": 786134,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "limits",
+      "control"
+    ],
+    "body_sha256": "ea92925440a44861d0bf3ef76b30bc9bfd21999968fbe9f3eb3189e7a71ec770",
+    "calls": [
+      "exporter.warmAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786143:30297511",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "log",
+    "qualified_name": "startWorkingStateExport/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786143,
+    "end_line": 786143,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786158:30297943",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "exportAgent",
+    "qualified_name": "startWorkingStateExport/exportAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786158,
+    "end_line": 786166,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "limits"
+    ],
+    "body_sha256": "4d1d1d279a3b99cd1231e65cb1ec6cca94705ee5d692e99c02ab818a5b4b4c8e",
+    "calls": [
+      "agentHarness",
+      "agentIdentity.adoptServerAgentById",
+      "exporter.exportAgent",
+      "getSandProfilePath",
+      "readSandProfileFile",
+      "readSandProfileServerId",
+      "sessionStore.getAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786168:30298437",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/extension.ts",
+    "name": "scheduleWarm",
+    "qualified_name": "startWorkingStateExport/scheduleWarm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786168,
+    "end_line": 786168,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "2c3d5ea3c8b356793132577dd98784358c8d78b3adcf81c035c60ba0b2927a51",
+    "calls": [
+      "warmer.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

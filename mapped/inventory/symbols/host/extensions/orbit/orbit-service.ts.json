@@ -1,0 +1,514 @@
+[
+  {
+    "id": "host:706210:26824212",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "createOrbitService",
+    "qualified_name": "createOrbitService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706210,
+    "end_line": 706378,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "793957cf618db42c70e1d4ea82cc05fbda66e91dfc743e42edca97cb651381ae",
+    "calls": [
+      "new AbortController"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706224:26824627",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "publishSessionTarget",
+    "qualified_name": "createOrbitService/publishSessionTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706224,
+    "end_line": 706233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "32bbff1f705fba8b4a454f3e9d0f6df2e743a5f6c39e2d56e26dbf0288fca57d",
+    "calls": [
+      "deps.sessionController.setTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706234:26824956",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "disableCapture",
+    "qualified_name": "createOrbitService/disableCapture",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706234,
+    "end_line": 706242,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a29ba723cebdf6cc42b7c5eb5544a1cdb8e2262eb2db0e129b1e975f98056251",
+    "calls": [
+      "publishSessionTarget",
+      "resetChromeDiscovery",
+      "state.discoveryPolling.dispose"
+    ],
+    "writes": [
+      "state.cdpPorts",
+      "state.discoveryFailureClass",
+      "state.discoveryPolling",
+      "state.sessionCredentials"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706243:26825238",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "resetChromeDiscovery",
+    "qualified_name": "createOrbitService/resetChromeDiscovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706243,
+    "end_line": 706247,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "853bcc16d9ab7ea42003c97b0e79c9d34445641fea803f96a22abad09c2de6ea",
+    "calls": [
+      "new AbortController",
+      "state.discoveryAbortController.abort"
+    ],
+    "writes": [
+      "state.discoveryAbortController",
+      "state.inFlightChromeDiscovery"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706248:26825436",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "reportDiscoveryUnavailable",
+    "qualified_name": "createOrbitService/reportDiscoveryUnavailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706248,
+    "end_line": 706254,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "errorClass"
+    ],
+    "body_sha256": "4bcf666a824ca5854abc6d3951183f76605ea75fa590062b131de3cd9a2add3b",
+    "calls": [
+      "deps.log"
+    ],
+    "writes": [
+      "state.discoveryFailureClass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706255:26825680",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "refreshChromePorts",
+    "qualified_name": "createOrbitService/refreshChromePorts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706255,
+    "end_line": 706275,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "discoveryGeneration",
+      "signal"
+    ],
+    "body_sha256": "2eefa739712026c39451b90039e7196d23389628b6c964384c381af7e958afc8",
+    "calls": [
+      "deps.discoverChromeCdpPorts",
+      "publishSessionTarget",
+      "reportDiscoveryUnavailable",
+      "samePorts2"
+    ],
+    "writes": [
+      "state.cdpPorts",
+      "state.discoveryFailureClass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706276:26826387",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "requestChromeDiscovery",
+    "qualified_name": "createOrbitService/requestChromeDiscovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706276,
+    "end_line": 706295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "discoveryGeneration"
+    ],
+    "body_sha256": "a8bb5733261de9ce71de2f6c35a8d014e2b1d808d47963d1d3bfd8f28d45eb2b",
+    "calls": [
+      ".catch",
+      ".finally",
+      "Promise.resolve",
+      "refreshChromePorts"
+    ],
+    "writes": [
+      "state.inFlightChromeDiscovery"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706296:26827185",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "reconcile",
+    "qualified_name": "createOrbitService/reconcile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706296,
+    "end_line": 706323,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "431961d901bc27509e320c638020a775c0b2b38fc2b6ed8c7944b337c88de1d5",
+    "calls": [
+      "deps.auth.getMachineId",
+      "deps.policies.chromeDiscovery.start",
+      "disableCapture",
+      "publishSessionTarget",
+      "requestChromeDiscovery",
+      "resetChromeDiscovery",
+      "resolveOrbitCaptureEligibility"
+    ],
+    "writes": [
+      "state.discoveryPolling",
+      "state.generation",
+      "state.sessionCredentials"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706324:26828128",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "requestReconciliation",
+    "qualified_name": "createOrbitService/requestReconciliation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706324,
+    "end_line": 706328,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a66f9a7f31eb8c4889f8a85870efeadeedf3b4e910d487abe8beccff022bbc78",
+    "calls": [
+      ".catch",
+      "reconcile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706329:26828309",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "performStart",
+    "qualified_name": "createOrbitService/performStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706329,
+    "end_line": 706338,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e20bcf0af4425b2105679f836c6bbc5e3ea74f2595e6dcabcef6eed130ad45e2",
+    "calls": [
+      "deps.auth.subscribeToRenewal",
+      "deps.experiments.subscribe",
+      "deps.privacyMode.subscribe",
+      "deps.proxySupervisor.start",
+      "requestReconciliation",
+      "unsubscribes.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706339:26828686",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "performDispose",
+    "qualified_name": "createOrbitService/performDispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706339,
+    "end_line": 706365,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "34bd39de7e16daa657936b37c5d6a6dc6dbeee83d44bd31d05e786ac1cf7b397",
+    "calls": [
+      ".map",
+      "Promise.allSettled",
+      "deps.log",
+      "deps.proxySupervisor.dispose",
+      "deps.sessionController.dispose",
+      "errorLogTag",
+      "new AggregateError",
+      "resetChromeDiscovery",
+      "results.filter",
+      "state.discoveryPolling.dispose",
+      "unsubscribe"
+    ],
+    "writes": [
+      "state.disposed",
+      "state.generation"
+    ],
+    "throw_targets": [
+      "AggregateError",
+      "failures2[computed]"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:706366:26829558",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "dispose",
+    "qualified_name": "createOrbitService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706366,
+    "end_line": 706369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "262d8421d934c164e6ec7d93f973c8aefc5e6bba41aea18f11f48c7545690c4d",
+    "calls": [
+      "performDispose"
+    ],
+    "writes": [
+      "state.disposePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706372:26829684",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "start",
+    "qualified_name": "createOrbitService/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706372,
+    "end_line": 706375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "3576fe2bf1acc1c5c82c2e3f5f931f8e50bdd94afb4ce08f8ba9d95396a03011",
+    "calls": [
+      "performStart"
+    ],
+    "writes": [
+      "state.startPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706379:26829793",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "resolveOrbitCaptureEligibility",
+    "qualified_name": "resolveOrbitCaptureEligibility",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706379,
+    "end_line": 706402,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "81f3a919a19d6ed7e55db2dca8b67e1622803fa858b6f999efd43f0c9fe57f75",
+    "calls": [
+      "deps.auth.peekAccessToken",
+      "deps.experiments.checkFeatureGate",
+      "deps.privacyMode.get",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706403:26830476",
+    "artifact": "host",
+    "module": "host/extensions/orbit/orbit-service.ts",
+    "name": "samePorts2",
+    "qualified_name": "samePorts2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706403,
+    "end_line": 706405,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "46b75c96ce66d5c886cbdc639a6af20c65c3efa917cc6213a96f9b65be23f7b8",
+    "calls": [
+      "left.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

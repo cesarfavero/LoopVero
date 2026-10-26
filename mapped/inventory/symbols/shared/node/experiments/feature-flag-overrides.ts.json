@@ -1,0 +1,485 @@
+[
+  {
+    "id": "host:552121:20295289",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "isStoredFeatureFlagOverride",
+    "qualified_name": "isStoredFeatureFlagOverride",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552121,
+    "end_line": 552123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "80c2139a95bb98d710f5a46aa09ee332668ffbe2f0c4d6021452a37a1845a6f0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552125:20295569",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.constructor",
+    "qualified_name": "SandFeatureFlagOverrideStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552125,
+    "end_line": 552131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "getCacheDir",
+      "flags",
+      "clock = realClock",
+      "readFile31 = (path33) => (0, import_node_fs49.readFileSync)(path33, \"utf-8\")",
+      "writeFile18 = writeFileAtomic"
+    ],
+    "body_sha256": "eba83c89698697470d8d0f0f73f80c9082b3530cafa2ff68c94ef535c1a0ac6b",
+    "calls": [],
+    "writes": [
+      "this.clock",
+      "this.flags",
+      "this.getCacheDir",
+      "this.readFile",
+      "this.writeFile"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552138:20295985",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.isFlagName",
+    "qualified_name": "SandFeatureFlagOverrideStore.isFlagName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552138,
+    "end_line": 552140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "db68ba29bf65e7c058fdbcf9c18b6f379bb056a2ea844196a91115310b364216",
+    "calls": [
+      "isKeyOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552141:20296058",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.getOverridesPath",
+    "qualified_name": "SandFeatureFlagOverrideStore.getOverridesPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552141,
+    "end_line": 552143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b0f9f0d35d59629afff33c8b7f45477535ae86a878f1abd1c205b35338beb348",
+    "calls": [
+      "this.getCacheDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552144:20296178",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.hydrateFromDisk",
+    "qualified_name": "SandFeatureFlagOverrideStore.hydrateFromDisk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552144,
+    "end_line": 552168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2e5b9af43beaa6bcf74e2da70d867330daad1110fac33164f69e099116da13ef",
+    "calls": [
+      "JSON.parse",
+      "Object.entries",
+      "errorLogTag",
+      "isStoredFeatureFlagOverride",
+      "reportExperimentsDiagnostic",
+      "this.clock.now",
+      "this.getOverridesPath",
+      "this.isFlagName",
+      "this.overrides.set",
+      "this.readFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:552169:20297124",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.persist",
+    "qualified_name": "SandFeatureFlagOverrideStore.persist",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552169,
+    "end_line": 552183,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b5f344264706ffc6dad23d267190850cf5e098ad8d49f8654b6181dae87dce16",
+    "calls": [
+      "JSON.stringify",
+      "errorLogTag",
+      "reportExperimentsDiagnostic",
+      "this.getOverridesPath",
+      "this.writeFile"
+    ],
+    "writes": [
+      "overrides[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:552184:20297546",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.read",
+    "qualified_name": "SandFeatureFlagOverrideStore.read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552184,
+    "end_line": 552192,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "bc5c6332cf1c9e0bf079e34e4a0bb8eb5a36cb42971763b62d48e70099be8c5a",
+    "calls": [
+      "this.clock.now",
+      "this.overrides.delete",
+      "this.overrides.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552193:20297799",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.activeOverrides",
+    "qualified_name": "SandFeatureFlagOverrideStore.activeOverrides",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552193,
+    "end_line": 552200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ef8ea3bb0e83051f9c07523b7a753dffda1735c228f151836c1f14ce536da9df",
+    "calls": [
+      "new Map",
+      "result.set",
+      "this.clock.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552201:20298047",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.activeRecord",
+    "qualified_name": "SandFeatureFlagOverrideStore.activeRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552201,
+    "end_line": 552207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "29f21fb062b9502d1d3cf78402143f6edf2d80abbb91093435b3fcb0755508ec",
+    "calls": [
+      "this.activeOverrides"
+    ],
+    "writes": [
+      "record3[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552208:20298207",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.size",
+    "qualified_name": "SandFeatureFlagOverrideStore.size",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552208,
+    "end_line": 552210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0550d1643041c323c34a463791c41c4f26f41b1761f84023bc20d41829fa37e9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552211:20298253",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.set",
+    "qualified_name": "SandFeatureFlagOverrideStore.set",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552211,
+    "end_line": 552218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18",
+      "value"
+    ],
+    "body_sha256": "4d0c85afe93dd7388e6f4bb66f9f149f9d22785c6886d64b5d9a0771364d7c12",
+    "calls": [
+      "this.clock.now",
+      "this.overrides.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552219:20298470",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.clear",
+    "qualified_name": "SandFeatureFlagOverrideStore.clear",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552219,
+    "end_line": 552221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "6b01fab51bcc45ad315921e4f9256f66f8fa1646e7dbe5d83f69facbae27ec99",
+    "calls": [
+      "this.overrides.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552222:20298537",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.clearAll",
+    "qualified_name": "SandFeatureFlagOverrideStore.clearAll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552222,
+    "end_line": 552224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0a66884ab27008f3a6f91699d365bcacfd04efd567a291ba8bcbc1560e39a4e7",
+    "calls": [
+      "this.overrides.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552225:20298599",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.setAllToBundledDefaults",
+    "qualified_name": "SandFeatureFlagOverrideStore.setAllToBundledDefaults",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552225,
+    "end_line": 552234,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "75e9d2499a2f3d876ac8da39259dbf14e0cb33ea54a320d4e40f18d988fb3e32",
+    "calls": [
+      "Object.keys",
+      "this.clock.now",
+      "this.isFlagName",
+      "this.overrides.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:552235:20298915",
+    "artifact": "host",
+    "module": "shared/node/experiments/feature-flag-overrides.ts",
+    "name": "SandFeatureFlagOverrideStore.replaceAll",
+    "qualified_name": "SandFeatureFlagOverrideStore.replaceAll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 552235,
+    "end_line": 552242,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "overrides"
+    ],
+    "body_sha256": "4dc1a41d0d3f6695f5dcb1db7275ea481941f4aae77a78ac644a51a3ec7f6780",
+    "calls": [
+      "Object.entries",
+      "this.clock.now",
+      "this.isFlagName",
+      "this.overrides.clear",
+      "this.overrides.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

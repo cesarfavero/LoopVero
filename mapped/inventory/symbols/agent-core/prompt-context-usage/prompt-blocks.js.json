@@ -1,0 +1,468 @@
+[
+  {
+    "id": "host:476144:17429264",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isMcpBlockTag",
+    "qualified_name": "isMcpBlockTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476144,
+    "end_line": 476146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName2"
+    ],
+    "body_sha256": "a6ebdf5ef254133e32fa74ffb7c3551bd61b54f66bcc26854e5d777c378d1f63",
+    "calls": [
+      "tagName2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476147:17429339",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isDynamicToolBlockTag",
+    "qualified_name": "isDynamicToolBlockTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476147,
+    "end_line": 476149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName2"
+    ],
+    "body_sha256": "d7994c08da08649f7899d9acb54ad36c8f90e6bbb5a1e9d27863956550deef6c",
+    "calls": [
+      "tagName2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476150:17429430",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isToolDiscoveryBlockTag",
+    "qualified_name": "isToolDiscoveryBlockTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476150,
+    "end_line": 476152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName2"
+    ],
+    "body_sha256": "ec1aba96f71693be68e7327a1bbd5bf6b6e485f1187565067764d0f0209bffb3",
+    "calls": [
+      "isDynamicToolBlockTag",
+      "isMcpBlockTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476160:17429698",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isInitialPromptScaffoldTag",
+    "qualified_name": "isInitialPromptScaffoldTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476160,
+    "end_line": 476162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName2"
+    ],
+    "body_sha256": "5f06d3ffda0ed3b5e866fa271f16da7a08d920709014119746e9fd99c7637a4a",
+    "calls": [
+      "INITIAL_PROMPT_SCAFFOLD_TAGS_NON_MCP.some",
+      "isToolDiscoveryBlockTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476164:17429922",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "subagentTypeLines",
+    "qualified_name": "subagentTypeLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476164,
+    "end_line": 476177,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "51e51d483539fa0cd8498aa777b318a94589f6ba99b8116d823b92270e7893f6",
+    "calls": [
+      "SUBAGENT_TYPE_LINE_PATTERN.exec",
+      "line.trim",
+      "line.trimStart",
+      "lines2.push",
+      "text3.split"
+    ],
+    "writes": [
+      "lineStart"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476178:17430377",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "rangesOutsideTagBlocks",
+    "qualified_name": "rangesOutsideTagBlocks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476178,
+    "end_line": 476191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "matchesStrippedTag"
+    ],
+    "body_sha256": "e42de36a0402c368f8ef1545eb6f24b25b7f73e9f8bec272774c85abbe936faa",
+    "calls": [
+      "extractCompleteTagRangesMatching",
+      "kept.push",
+      "selectOutermostRanges"
+    ],
+    "writes": [
+      "cursor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476192:17430812",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "selectOutermostRanges",
+    "qualified_name": "selectOutermostRanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476192,
+    "end_line": 476209,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ranges"
+    ],
+    "body_sha256": "1fba5bb07e63801e05e10f9236600427fd02a4db30074bc85c8b2138185fa955",
+    "calls": [
+      ".sort",
+      "selected.push"
+    ],
+    "writes": [
+      "coveredUntil"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255454:8003962",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isMcpBlockTag",
+    "qualified_name": "isMcpBlockTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255454,
+    "end_line": 255456,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName"
+    ],
+    "body_sha256": "491aa3ed7836d5f12e15d631c9731220b69cd2bbb8e563530ed8926c1c7b24f8",
+    "calls": [
+      "tagName.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255457:8004035",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isDynamicToolBlockTag",
+    "qualified_name": "isDynamicToolBlockTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255457,
+    "end_line": 255459,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName"
+    ],
+    "body_sha256": "676a239bbda1d9374591e27dd0b9820a89fb968f2311db8dd5d9bbfb15482f28",
+    "calls": [
+      "tagName.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255460:8004124",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isToolDiscoveryBlockTag",
+    "qualified_name": "isToolDiscoveryBlockTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255460,
+    "end_line": 255462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName"
+    ],
+    "body_sha256": "0b50bd590f79580d3234c6a9866cb9e733f5199bfbc12f5143c4119a834f024f",
+    "calls": [
+      "isDynamicToolBlockTag",
+      "isMcpBlockTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255470:8004389",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "isInitialPromptScaffoldTag",
+    "qualified_name": "isInitialPromptScaffoldTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255470,
+    "end_line": 255472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tagName"
+    ],
+    "body_sha256": "f0a381a0b97e398ffe590b9ace1376a51182ae1870616a88492413cf4c1a4b64",
+    "calls": [
+      "INITIAL_PROMPT_SCAFFOLD_TAGS_NON_MCP.some",
+      "isToolDiscoveryBlockTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255474:8004610",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "subagentTypeLines",
+    "qualified_name": "subagentTypeLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255474,
+    "end_line": 255487,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "51e51d483539fa0cd8498aa777b318a94589f6ba99b8116d823b92270e7893f6",
+    "calls": [
+      "SUBAGENT_TYPE_LINE_PATTERN.exec",
+      "line.trim",
+      "line.trimStart",
+      "lines2.push",
+      "text3.split"
+    ],
+    "writes": [
+      "lineStart"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255488:8005065",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "rangesOutsideTagBlocks",
+    "qualified_name": "rangesOutsideTagBlocks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255488,
+    "end_line": 255501,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "matchesStrippedTag"
+    ],
+    "body_sha256": "e42de36a0402c368f8ef1545eb6f24b25b7f73e9f8bec272774c85abbe936faa",
+    "calls": [
+      "extractCompleteTagRangesMatching",
+      "kept.push",
+      "selectOutermostRanges"
+    ],
+    "writes": [
+      "cursor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255502:8005500",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-blocks.js",
+    "name": "selectOutermostRanges",
+    "qualified_name": "selectOutermostRanges",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255502,
+    "end_line": 255519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ranges"
+    ],
+    "body_sha256": "1fba5bb07e63801e05e10f9236600427fd02a4db30074bc85c8b2138185fa955",
+    "calls": [
+      ".sort",
+      "selected.push"
+    ],
+    "writes": [
+      "coveredUntil"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

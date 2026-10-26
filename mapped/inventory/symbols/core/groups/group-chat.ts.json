@@ -1,0 +1,723 @@
+[
+  {
+    "id": "host:491267:17996724",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "SandGroupNestingError.constructor",
+    "qualified_name": "SandGroupNestingError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491267,
+    "end_line": 491273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "nestedGroupIds"
+    ],
+    "body_sha256": "3c3571da693144edb38d8e004dae20e43c99a97d38b361e44eede3d57825fd3b",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name",
+      "this.nestedGroupIds"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491275:17997021",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "assertMembersAreNotGroups",
+    "qualified_name": "assertMembersAreNotGroups",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491275,
+    "end_line": 491278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requestedMemberIds",
+      "isGroupId"
+    ],
+    "body_sha256": "37c2248d3f6eabec9a8a3a9fe5767b7b80b3ec3fbd1d413035475bdcbadf6334",
+    "calls": [
+      ".filter",
+      "new SandGroupNestingError",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandGroupNestingError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491279:17997226",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "memberMentionHandles",
+    "qualified_name": "memberMentionHandles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491279,
+    "end_line": 491286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "2b2ef8fd17e0f3e1837300cdf9a46d2eb18c582ed38490e1f416445d2c56b54d",
+    "calls": [
+      ".toLowerCase",
+      "handles.add",
+      "lower.replace",
+      "lower.split",
+      "name18.trim",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491288:17997611",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "isWordChar",
+    "qualified_name": "isWordChar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491288,
+    "end_line": 491290,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "char"
+    ],
+    "body_sha256": "0ef4b81b0b6b6cdef560f8cad5ff29f9d55116263de715f60fe2d39f54e27d38",
+    "calls": [
+      "/[a-z0-9]/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491291:17997692",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "hasMentionAt",
+    "qualified_name": "hasMentionAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491291,
+    "end_line": 491301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lower",
+      "handle"
+    ],
+    "body_sha256": "d2f6676cd169ee1dceb5cbbdd0a43781ceedacf97dc4b18bb4f913f64530e91e",
+    "calls": [
+      "isWordChar",
+      "lower.indexOf"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491302:17998039",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "parseGroupMentions",
+    "qualified_name": "parseGroupMentions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491302,
+    "end_line": 491318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "members2"
+    ],
+    "body_sha256": "90544bd1ac70fe326480773744fa78d9f773f01f8ba69cef7a7dd59beb3dbe13",
+    "calls": [
+      "EVERYONE_MENTION.test",
+      "hasMentionAt",
+      "memberIds.push",
+      "memberMentionHandles",
+      "new Set",
+      "seen.add",
+      "seen.has",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491320:17998656",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "isDistinctNameWord",
+    "qualified_name": "isDistinctNameWord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491320,
+    "end_line": 491322,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "word"
+    ],
+    "body_sha256": "caa537190f5720b547fe504d328b6ae03afce446048cad5c8c62790f0d9d6b0a",
+    "calls": [
+      "GENERIC_NAME_WORDS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491323:17998773",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "memberNameHandles",
+    "qualified_name": "memberNameHandles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491323,
+    "end_line": 491331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "8ce74dcdb683477da9fb174a9d7c33ed351b41e9a4647e3eb193787c5775ee72",
+    "calls": [
+      ".replace",
+      ".toLowerCase",
+      "handles.add",
+      "isDistinctNameWord",
+      "lower.split",
+      "name18.trim",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491332:17999125",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "isNameChar",
+    "qualified_name": "isNameChar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491332,
+    "end_line": 491334,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "char"
+    ],
+    "body_sha256": "a5b42580d8e923f8d7bbb663ab9586658650677cda5103d7ef328f0425b545e1",
+    "calls": [
+      "/[\\p{L}\\p{N}]/u.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491335:17999211",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "isEmailPathOrHandleGlue",
+    "qualified_name": "isEmailPathOrHandleGlue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491335,
+    "end_line": 491337,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "char"
+    ],
+    "body_sha256": "61de6243766ec7df88aec3903ba9c790f72090b07d56de6818c875c69ac7dd8e",
+    "calls": [
+      "isNameChar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491338:17999361",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "hasWordAt",
+    "qualified_name": "hasWordAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491338,
+    "end_line": 491349,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lower",
+      "handle"
+    ],
+    "body_sha256": "4886c8732afcadfea435f4a9c8e8d71275a7b80c50e37fea56661a8cbdc6d1e1",
+    "calls": [
+      "isEmailPathOrHandleGlue",
+      "isNameChar",
+      "lower.indexOf"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491350:17999887",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "parseGroupAddressees",
+    "qualified_name": "parseGroupAddressees",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491350,
+    "end_line": 491360,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "members2"
+    ],
+    "body_sha256": "f548a27b441f5525bf92713dbd18ce8860092ecdd493a3cf47b80feabae0de2f",
+    "calls": [
+      ".replace",
+      ".some",
+      "memberIds.add",
+      "memberNameHandles",
+      "new Set",
+      "parseGroupMentions",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491361:18000339",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "groupLineAudience",
+    "qualified_name": "groupLineAudience",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491361,
+    "end_line": 491370,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line",
+      "members2"
+    ],
+    "body_sha256": "e88f7924c238b30cabc90e5796390ea7e1c71260f2727f4dc591205eb93d3d89",
+    "calls": [
+      ".map",
+      "members2.filter",
+      "named2.add",
+      "named2.delete",
+      "new Set",
+      "parseGroupAddressees",
+      "parseGroupMentions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491371:18000985",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "isPassContent",
+    "qualified_name": "isPassContent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491371,
+    "end_line": 491375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "32f5e49cefafd3db60da694a8d5528a5ea59e41acd958dc13e2140fff04e0774",
+    "calls": [
+      "/^\\(?\\s*pass\\s*\\)?\\.?$/i.test",
+      "content.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491377:18001223",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "stripLeadingPass",
+    "qualified_name": "stripLeadingPass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491377,
+    "end_line": 491384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "a35e9bb63546ebe3600d16f4b215e4bc712c947b2bc16fd99d20ee54d050da8c",
+    "calls": [
+      ".trim",
+      "/\\w/.test",
+      "LEADING_PARENTHESIZED_PASS.exec",
+      "isPassContent",
+      "text3.trim",
+      "trimmed.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491385:18001538",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "groupSpeakerLabel",
+    "qualified_name": "groupSpeakerLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491385,
+    "end_line": 491391,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "speaker",
+      "viewerId"
+    ],
+    "body_sha256": "bab78285e59e05681ee1faa6399dc664087906723c6877c1fc65f991eb1cb6f7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491392:18001816",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "formatGroupLine",
+    "qualified_name": "formatGroupLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491392,
+    "end_line": 491395,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "viewerId"
+    ],
+    "body_sha256": "0e09786ac37fbd8464b8d8d1f40fb74e0ff96803bd93664031b39bb4caf2f756",
+    "calls": [
+      "groupSpeakerLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491396:18002109",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "formatGroupHistory",
+    "qualified_name": "formatGroupHistory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491396,
+    "end_line": 491400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "history",
+      "viewerId",
+      "limit3 = GROUP_PROMPT_HISTORY_LIMIT"
+    ],
+    "body_sha256": "ce967c55a7a1218fad892260f2862dd9695f67f2b934b1c011e66087fc792bda",
+    "calls": [
+      ".join",
+      "history.slice",
+      "recent.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491401:18002374",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "groupDisplayName",
+    "qualified_name": "groupDisplayName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491401,
+    "end_line": 491403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "group"
+    ],
+    "body_sha256": "5c929c8f768216dd493ae12dc1bdb330c8f122861e863916fa51b5a50b4c8ebb",
+    "calls": [
+      "group.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491404:18002484",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "formatGroupChatTag",
+    "qualified_name": "formatGroupChatTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491404,
+    "end_line": 491407,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "group",
+      "peers"
+    ],
+    "body_sha256": "2fdd3f3185c64e340ab2d8cf7aa40ccc03379b60d637ecaf3d97e131423af4ce",
+    "calls": [
+      ".join",
+      "groupDisplayName",
+      "peers.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491408:18002710",
+    "artifact": "host",
+    "module": "core/groups/group-chat.ts",
+    "name": "buildGroupTurnPrompt",
+    "qualified_name": "buildGroupTurnPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491408,
+    "end_line": 491434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "87dc1f63c83cbe20207ca9deb70255b3820887b26ae1354bff318d49e1a30135",
+    "calls": [
+      ".join",
+      "describedPeers.map",
+      "formatGroupChatTag",
+      "formatGroupHistory",
+      "group.description.trim",
+      "lines2.join",
+      "lines2.push",
+      "peers.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

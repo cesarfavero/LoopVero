@@ -1,0 +1,373 @@
+[
+  {
+    "id": "host:679000:25800294",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "createBoxTransport",
+    "qualified_name": "createBoxTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679000,
+    "end_line": 679021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "endpoint"
+    ],
+    "body_sha256": "e38916bc657b62868ae31dfc268d698d6f565466c5ff65f38915dab13ab28516",
+    "calls": [
+      "createNodeHttpClient",
+      "createTransport",
+      "validateReadWriteMaxBytes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679004:25800501",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "httpClient",
+    "qualified_name": "createBoxTransport/httpClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679004,
+    "end_line": 679006,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "440c244451e086c108fb922c34dab21c2f3fcc510df97f8e742e289673bebaba",
+    "calls": [
+      "httpClient",
+      "new AbortController"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679023:25801186",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "BoxRemoteExecManager.constructor",
+    "qualified_name": "BoxRemoteExecManager.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679023,
+    "end_line": 679025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "client"
+    ],
+    "body_sha256": "3f54c0846cb88bf5c99637e9f4986d16a6cd0748641496b8df52c38980a46dbe",
+    "calls": [],
+    "writes": [
+      "this.client"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679028:25801278",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "BoxRemoteExecManager.createExecInstance",
+    "qualified_name": "BoxRemoteExecManager.createExecInstance",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679028,
+    "end_line": 679042,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "argsSerializer"
+    ],
+    "body_sha256": "ed953ddf7aafe9b78808599ebd30cb7ee30fa72a9ca6eeb82310e9cb4161481f",
+    "calls": [
+      "argsSerializer",
+      "new Error",
+      "this.client.exec"
+    ],
+    "writes": [
+      "error64.stack",
+      "this.nextId"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679044:25801922",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "createBoxRemoteResourceAccessorFromTransport",
+    "qualified_name": "createBoxRemoteResourceAccessorFromTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679044,
+    "end_line": 679052,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "transport"
+    ],
+    "body_sha256": "63353316936cddf5493e8b955089d8d795ddab8a29e2ca332b08329ad56391b5",
+    "calls": [
+      "createContextPropagatingClient",
+      "new BoxRemoteExecManager",
+      "new RemoteResourceAccessor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679053:25802196",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "createBoxRemoteResourceAccessor",
+    "qualified_name": "createBoxRemoteResourceAccessor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679053,
+    "end_line": 679055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "endpoint"
+    ],
+    "body_sha256": "73ae07722e7c6aef9a0ef7cae1c58ff67b0632f4965d1621fcf5c7ea5a7585ba",
+    "calls": [
+      "createBoxRemoteResourceAccessorFromTransport",
+      "createBoxTransport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679056:25802336",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "classifyPingFailure",
+    "qualified_name": "classifyPingFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679056,
+    "end_line": 679068,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "7d359acfe1e71331f4c26b1cfe9576348c4a05e644b5c62d8f84e773495c56f1",
+    "calls": [
+      "/ECONNREFUSED/i.test",
+      "ConnectError.from",
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679069:25802930",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "pingBoxTransportClassified",
+    "qualified_name": "pingBoxTransportClassified",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679069,
+    "end_line": 679079,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "transport",
+      "timeoutMs = 1500"
+    ],
+    "body_sha256": "9c66b8c52e943acad55350206020dbea6ddf82e5e320440fff61fe38214b13bf",
+    "calls": [
+      "Date.now",
+      "classifyPingFailure",
+      "control.ping",
+      "createContextPropagatingClient",
+      "new PingRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679080:25803410",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "pingBoxClassified",
+    "qualified_name": "pingBoxClassified",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679080,
+    "end_line": 679082,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "endpoint",
+      "timeoutMs = 1500"
+    ],
+    "body_sha256": "78e7a3e953f3b7e59ada851dc3feb3a1cc8c8cbd2f0943549fffe8617dad99b1",
+    "calls": [
+      "createBoxTransport",
+      "pingBoxTransportClassified"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679083:25803569",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "pingBoxTransport",
+    "qualified_name": "pingBoxTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679083,
+    "end_line": 679085,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "transport",
+      "timeoutMs = 1500"
+    ],
+    "body_sha256": "ea5c80419e176b5f670cb9d5b0ebd592bb0878208c39b15b6c6196b45b5cdb6c",
+    "calls": [
+      "pingBoxTransportClassified"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679086:25803728",
+    "artifact": "host",
+    "module": "host/box/box-remote-accessor.ts",
+    "name": "pingBox",
+    "qualified_name": "pingBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679086,
+    "end_line": 679088,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "endpoint",
+      "timeoutMs = 1500"
+    ],
+    "body_sha256": "1654aa2326daa98518db209d5dd58c13a984fade22344576c422d9af24814f5a",
+    "calls": [
+      "createBoxTransport",
+      "pingBoxTransport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

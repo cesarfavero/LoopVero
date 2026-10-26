@@ -1,0 +1,530 @@
+[
+  {
+    "id": "host:509488:18700462",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "compileContextTagPattern",
+    "qualified_name": "compileContextTagPattern",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509488,
+    "end_line": 509490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "574d6eaef0e240f663c6f1fec9da11edef86179039df10c3635a4a328b7dd010",
+    "calls": [
+      "new RegExp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509492:18700656",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "stripContextTags",
+    "qualified_name": "stripContextTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509492,
+    "end_line": 509494,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b590116bad4636d47d310b9b7a2916096a9cf20e22dcfa28020cda600622207c",
+    "calls": [
+      "stripTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509501:18700953",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "stripTags",
+    "qualified_name": "stripTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509501,
+    "end_line": 509510,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "patterns"
+    ],
+    "body_sha256": "336d355e20a499d7a87ae595b00ad0502892b8f64a0cfea0f8017f7abe43bb08",
+    "calls": [
+      "collapsed.trim",
+      "result.includes",
+      "result.replace"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509515:18701443",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "isHighSurrogate",
+    "qualified_name": "isHighSurrogate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509515,
+    "end_line": 509517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "4a48097444cc26b01873c575e44a8da3d97b0078cd37eda27ec745dcf218d113",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509518:18701519",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "isLowSurrogate",
+    "qualified_name": "isLowSurrogate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509518,
+    "end_line": 509520,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "26ca1326f3e92b9b63898fbba25274d4d8e72cb1bf09bac661dba2f4d6cf4f56",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509521:18701594",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "sliceHeadSafe",
+    "qualified_name": "sliceHeadSafe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509521,
+    "end_line": 509540,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxUnits"
+    ],
+    "body_sha256": "c6bcfd1265598c80096f5e7f197f643fbb6adb20a83b9f931bb7e3ce4b19cfde",
+    "calls": [
+      "graphemeSegmenter.segment",
+      "isHighSurrogate",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509541:18702089",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "sliceTailSafe",
+    "qualified_name": "sliceTailSafe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509541,
+    "end_line": 509558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxUnits"
+    ],
+    "body_sha256": "1c1701e14d7cd94b963857ca6f4648a63b2d51cc49f62fdca3623b0d13223d49",
+    "calls": [
+      ".containing",
+      "graphemeSegmenter.segment",
+      "isLowSurrogate",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509559:18702689",
+    "artifact": "host",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "truncateMiddle",
+    "qualified_name": "truncateMiddle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509559,
+    "end_line": 509566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "31085f63c2d58fcdb85b8820d331213ad16c300378919bd1d53307c1de87c06c",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "sliceHeadSafe",
+      "sliceTailSafe"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294666:9513898",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "compileContextTagPattern",
+    "qualified_name": "compileContextTagPattern",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294666,
+    "end_line": 294668,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "574d6eaef0e240f663c6f1fec9da11edef86179039df10c3635a4a328b7dd010",
+    "calls": [
+      "new RegExp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294670:9514092",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "stripContextTags",
+    "qualified_name": "stripContextTags",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294670,
+    "end_line": 294672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b590116bad4636d47d310b9b7a2916096a9cf20e22dcfa28020cda600622207c",
+    "calls": [
+      "stripTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294679:9514389",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "stripTags",
+    "qualified_name": "stripTags",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294679,
+    "end_line": 294688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "patterns"
+    ],
+    "body_sha256": "336d355e20a499d7a87ae595b00ad0502892b8f64a0cfea0f8017f7abe43bb08",
+    "calls": [
+      "collapsed.trim",
+      "result.includes",
+      "result.replace"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294693:9514879",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "isHighSurrogate",
+    "qualified_name": "isHighSurrogate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294693,
+    "end_line": 294695,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "4a48097444cc26b01873c575e44a8da3d97b0078cd37eda27ec745dcf218d113",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294696:9514955",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "isLowSurrogate2",
+    "qualified_name": "isLowSurrogate2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294696,
+    "end_line": 294698,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "7f585427efccd699501c8662427e1df9c72d365ff7fb9723751fd51595ce9e25",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294699:9515031",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "sliceHeadSafe",
+    "qualified_name": "sliceHeadSafe",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294699,
+    "end_line": 294718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxUnits"
+    ],
+    "body_sha256": "c6bcfd1265598c80096f5e7f197f643fbb6adb20a83b9f931bb7e3ce4b19cfde",
+    "calls": [
+      "graphemeSegmenter.segment",
+      "isHighSurrogate",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294719:9515526",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "sliceTailSafe",
+    "qualified_name": "sliceTailSafe",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294719,
+    "end_line": 294736,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxUnits"
+    ],
+    "body_sha256": "f290a4ac5b0bf4293f4b2dbc949fda0782ea3cabe3ce4010142ebc07785852c8",
+    "calls": [
+      ".containing",
+      "graphemeSegmenter.segment",
+      "isLowSurrogate2",
+      "text3.charCodeAt",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:294737:9516127",
+    "artifact": "evaluation",
+    "module": "agent-transcript/context-stripping.js",
+    "name": "truncateMiddle",
+    "qualified_name": "truncateMiddle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 294737,
+    "end_line": 294744,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "31085f63c2d58fcdb85b8820d331213ad16c300378919bd1d53307c1de87c06c",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "sliceHeadSafe",
+      "sliceTailSafe"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

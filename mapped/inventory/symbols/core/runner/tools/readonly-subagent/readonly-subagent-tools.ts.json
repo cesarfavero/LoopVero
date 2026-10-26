@@ -1,0 +1,169 @@
+[
+  {
+    "id": "evaluation:554017:20521401",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-tools.ts",
+    "name": "readonlySubagentConnectorKey",
+    "qualified_name": "readonlySubagentConnectorKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554017,
+    "end_line": 554025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "d4c60c3e88079c48aa0a0eeabf75f419424dcfd27e0c8a1ce32373b36dab037f",
+    "calls": [
+      ".replace",
+      ".toLowerCase",
+      "MCP_SERVER_IDENTIFIER_SCOPE.exec",
+      "bare.endsWith",
+      "bare.slice",
+      "row.slice",
+      "serverIdentifier.lastIndexOf",
+      "serverIdentifier.slice",
+      "withoutMint.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554026:20522010",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-tools.ts",
+    "name": "isReadonlyConnectorRead",
+    "qualified_name": "isReadonlyConnectorRead",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554026,
+    "end_line": 554030,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier",
+      "toolName"
+    ],
+    "body_sha256": "0d3b4e58064b7dc499973ccda43d62f2dafda249974add847db1c987514922ea",
+    "calls": [
+      ".has",
+      "READONLY_CONNECTOR_READ_SETS.get",
+      "readonlySubagentConnectorKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554032:20522559",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-tools.ts",
+    "name": "readonlyWakeUserMachineOffers",
+    "qualified_name": "readonlyWakeUserMachineOffers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554032,
+    "end_line": 554042,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "f7107f1e42a68617cf59101a0c09d7195474268945c62aa3b39b287ed81c1716",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554043:20522987",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-tools.ts",
+    "name": "isReadonlySubagentMcpToolAllowed",
+    "qualified_name": "isReadonlySubagentMcpToolAllowed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554043,
+    "end_line": 554046,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "63a0ce910b9a89a84316aa2a06bf9bc91a7423e1d3926631cc402a1c93b04ec1",
+    "calls": [
+      "isDeclaredReadOnlyMcpTool",
+      "isReadonlyConnectorRead"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554047:20523177",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/readonly-subagent/readonly-subagent-tools.ts",
+    "name": "readonlyMcpToolIsBlocked",
+    "qualified_name": "readonlyMcpToolIsBlocked",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554047,
+    "end_line": 554058,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "236ac3964aee3dfe20fbc630ca5d30df7092570d9d86c68cd042d91fc9ff7ab0",
+    "calls": [
+      "allowed.add",
+      "isReadonlySubagentMcpToolAllowed",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,2853 @@
+[
+  {
+    "id": "host:554243:20379950",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "AssignmentsNotReadyError.constructor",
+    "qualified_name": "AssignmentsNotReadyError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554243,
+    "end_line": 554246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "retryOutcome"
+    ],
+    "body_sha256": "0f3aca75e9c095a6f190eb8a36db3d3563ffcbaf938ae95a44db70de355f7143",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.retryOutcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554254:20380338",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "shouldRetry",
+    "qualified_name": "shouldRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554254,
+    "end_line": 554254,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "19f6872098121ad71df1fbeb47d3675e52a2fd32122df73d0888e12a1970392e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554263:20380686",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "applySeatChanges",
+    "qualified_name": "applySeatChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554263,
+    "end_line": 554306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "table",
+      "changes"
+    ],
+    "body_sha256": "17b8d95fde463c1d6dc33cf678d599eb40a436ea99b06e363e01aa276e7b0b89",
+    "calls": [
+      "assignments.delete",
+      "assignments.get",
+      "assignments.set",
+      "new Map",
+      "tokens.delete",
+      "tokens.get",
+      "tokens.set",
+      "unstarted.delete",
+      "unstarted.has",
+      "unstarted.set"
+    ],
+    "writes": [
+      "changed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 15,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554307:20382758",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "encodeSeatTable",
+    "qualified_name": "encodeSeatTable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554307,
+    "end_line": 554315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "table"
+    ],
+    "body_sha256": "a57c1be1289ddce636b3f3570db3be523ac61bc47263e2cc32286050e54e6fae",
+    "calls": [
+      ".encode",
+      "JSON.stringify",
+      "Object.fromEntries",
+      "new TextEncoder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554316:20383062",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "versionOfBytes",
+    "qualified_name": "versionOfBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554316,
+    "end_line": 554318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "93b59f319e79bf82784fbeb4358038eb08c3e23512d7653982ba98304652b51b",
+    "calls": [
+      ".digest",
+      ".update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554319:20383210",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "parseAssignments",
+    "qualified_name": "parseAssignments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554319,
+    "end_line": 554358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes",
+      "{ keepDuplicateForks = false } = {}"
+    ],
+    "body_sha256": "4fe681afbdbef0e91de3b197ab2b0e3d14421dec7df20236dd31d2d540525268",
+    "calls": [
+      ".decode",
+      ".sort",
+      "JSON.parse",
+      "Number.isInteger",
+      "Object.keys",
+      "assignments.set",
+      "isUnknownRecord2",
+      "new Map",
+      "new Set",
+      "new TextDecoder",
+      "tokens.set",
+      "tokens.values",
+      "unstarted.set",
+      "usedForks.add",
+      "usedForks.has"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554359:20384859",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "resolveSharedBoxId",
+    "qualified_name": "resolveSharedBoxId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554359,
+    "end_line": 554363,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "explicit"
+    ],
+    "body_sha256": "94ee4fbd2412786eae108430cc648bf29d2f385a4fe3f1dcd2808115f1a6413a",
+    "calls": [
+      "process.env.SAND_SHARED_BOX_ID.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554365:20385143",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.constructor",
+    "qualified_name": "SharedDesktopSandBox.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554365,
+    "end_line": 554375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "inner",
+      "options2 = {}"
+    ],
+    "body_sha256": "aa439ba53c0153bc2353ce3eeed385d93dcf9002221d01a9f0985e04f289c50e",
+    "calls": [
+      "Math.max",
+      "boxMaxWindows",
+      "createRetryPolicy",
+      "resolveSharedBoxId"
+    ],
+    "writes": [
+      "this.assignmentsLoadRetry",
+      "this.findDeletedAgents",
+      "this.inner",
+      "this.maxWindowCount",
+      "this.mayReapUnstartedSeats",
+      "this.now",
+      "this.persistAssignments",
+      "this.sharedBoxId",
+      "this.unstartedSeatReapAfterMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554399:20386547",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.loadPersistedAssignments",
+    "qualified_name": "SharedDesktopSandBox.loadPersistedAssignments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554399,
+    "end_line": 554429,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "c52df6dead9a499235f0fabc425255dd172633e6de38bfa22cc5a317f8d09e68",
+    "calls": [
+      "this.adoptUnseatedAssignments",
+      "this.assignmentsLoadRetry.runWithRetry"
+    ],
+    "writes": [
+      "loaded"
+    ],
+    "throw_targets": [
+      "error64",
+      "failure3.retryOutcome.error"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554430:20387796",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.freeDeletedAgentSeatsOnce",
+    "qualified_name": "SharedDesktopSandBox.freeDeletedAgentSeatsOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554430,
+    "end_line": 554440,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "51e663617c7b0994cfc0b68f0f7f050e1c1d27d2a72f4cfc5f6d4ccb10602c76",
+    "calls": [
+      "this.freeDeletedAgentSeats"
+    ],
+    "writes": [
+      "swept",
+      "this.deletedAgentSeatsFreed"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554441:20388205",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.freeDeletedAgentSeats",
+    "qualified_name": "SharedDesktopSandBox.freeDeletedAgentSeats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554441,
+    "end_line": 554453,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4087c0e5664b184f4f8b38d277160afa516ccbf23f5e589e9dc9b9e92893b530",
+    "calls": [
+      ".filter",
+      "this.followCurrentSeatTable",
+      "this.freeDeletedSeatsOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554454:20388667",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.followCurrentSeatTable",
+    "qualified_name": "SharedDesktopSandBox.followCurrentSeatTable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554454,
+    "end_line": 554460,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "db8f31d94b5f10dffcfd0d1b86779f0f4b81b50b1e77eceeadc248c8c44c636e",
+    "calls": [
+      "this.followPersistedTable",
+      "this.readCurrentSeatTable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554461:20388928",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.readCurrentSeatTable",
+    "qualified_name": "SharedDesktopSandBox.readCurrentSeatTable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554461,
+    "end_line": 554472,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "7f25ab7bf65fe6841121e0cc23d10363f0ffe6bf233bd428f08cc8b8d4cb6e91",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnosticOrStderr",
+      "this.readSeatTableVersion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554473:20389259",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.reclaimSeatsWhenFull",
+    "qualified_name": "SharedDesktopSandBox.reclaimSeatsWhenFull",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554473,
+    "end_line": 554478,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "4decb5abeef932f9ca79c2982014145b16e8c9667da8e5d51658fd3bd0a5c5ac",
+    "calls": [
+      ".finally",
+      "this.reclaimSeats"
+    ],
+    "writes": [
+      "this.seatReclaim"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554479:20389424",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.reclaimSeats",
+    "qualified_name": "SharedDesktopSandBox.reclaimSeats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554479,
+    "end_line": 554493,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "e4e11c32320a0958a9cc9ea5983a8a879f784e7e1074692b666a19614395c70b",
+    "calls": [
+      ".filter",
+      "this.followCurrentSeatTable",
+      "this.freeDeletedSeatsOf",
+      "this.freeStaleUnstartedSeats",
+      "this.mayReapUnstartedSeats",
+      "this.refusedForkWindows.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554494:20389943",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.freeStaleUnstartedSeats",
+    "qualified_name": "SharedDesktopSandBox.freeStaleUnstartedSeats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554494,
+    "end_line": 554519,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "table"
+    ],
+    "body_sha256": "8432f3629539cba6fd9351d1c8536fca7e1ea408ba0083105b708b854596733c",
+    "calls": [
+      "asyncMapValues",
+      "freed.map",
+      "seats.filter",
+      "seats.push",
+      "table.tokens.get",
+      "table.unstarted.get",
+      "this.agentWindows.get",
+      "this.dropCachedSeat",
+      "this.establishedForks.has",
+      "this.now",
+      "this.queueSeatChanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554520:20391009",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.followPersistedTable",
+    "qualified_name": "SharedDesktopSandBox.followPersistedTable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554520,
+    "end_line": 554528,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "loaded"
+    ],
+    "body_sha256": "d0c2a685581fa0206946533f19eb9ec11b75dcda5764c0e8b70a67a8b787cbac",
+    "calls": [
+      "loaded.assignments.get",
+      "this.adoptUnseatedAssignments",
+      "this.dropCachedSeat",
+      "this.establishedForks.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554529:20391379",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.freeDeletedSeatsOf",
+    "qualified_name": "SharedDesktopSandBox.freeDeletedSeatsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554529,
+    "end_line": 554554,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "candidates",
+      "table"
+    ],
+    "body_sha256": "c1bbd06b1c9d58495daaa1de2bb5821f4316d448fad4e0ad1eba27e0b8778509",
+    "calls": [
+      "asyncMapValues",
+      "candidates.map",
+      "deleted.has",
+      "freed.map",
+      "seats.filter",
+      "seats.push",
+      "table.assignments.get",
+      "table.tokens.get",
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get",
+      "this.deletedAgents.add",
+      "this.dropCachedSeat",
+      "this.findDeletedAgents",
+      "this.queueSeatChanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 3,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554555:20392615",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.stopForkWindow",
+    "qualified_name": "SharedDesktopSandBox.stopForkWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554555,
+    "end_line": 554572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "seat",
+      "opts = {}"
+    ],
+    "body_sha256": "a981d9f55afff8b22f70898e79ef7a6e620dcaa3293999235f6a1258050a8311",
+    "calls": [
+      ".then",
+      "Promise.resolve",
+      "inFlight.stopped.then",
+      "stopped2.then",
+      "this.windowStops.get",
+      "this.windowStops.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554573:20393463",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.runGuardedStop",
+    "qualified_name": "SharedDesktopSandBox.runGuardedStop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554573,
+    "end_line": 554589,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "seat",
+      "opts"
+    ],
+    "body_sha256": "7fc910f2b3c71c0957ed641d91ec9121dd92901b07eda9f95517ae0bfe2fe6a3",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnosticOrStderr",
+      "this.inner.releaseWindow",
+      "this.seatTableOption"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554590:20394039",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.clearWindowForAdoption",
+    "qualified_name": "SharedDesktopSandBox.clearWindowForAdoption",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554590,
+    "end_line": 554597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "windowIndex"
+    ],
+    "body_sha256": "b0ee7ea4c32fa900e849b4f0a39a4f3516c66a9125d56811b9ebcbe9c2ebfd27",
+    "calls": [
+      "this.dropCachedSeat",
+      "this.establishedForks.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554598:20394390",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.dropCachedSeat",
+    "qualified_name": "SharedDesktopSandBox.dropCachedSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554598,
+    "end_line": 554604,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0fb427079485def8f0ebcf2c070d7c4f04007ec4351ea824c21a924fb9a964f5",
+    "calls": [
+      "this.agentWindowTokens.delete",
+      "this.agentWindows.delete",
+      "this.downForks.delete",
+      "this.establishedForks.delete",
+      "this.unstartedSeats.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554605:20394631",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.followUnstartedToken",
+    "qualified_name": "SharedDesktopSandBox.followUnstartedToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554605,
+    "end_line": 554607,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "loaded",
+      "token"
+    ],
+    "body_sha256": "64d8fa3383c88a2a75bc284e272bc18e5e2f6b478ff6a7289865bcb129ab8ee1",
+    "calls": [
+      "loaded.unstarted.has",
+      "this.unstartedTokens.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554608:20394769",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.adoptUnseatedAssignments",
+    "qualified_name": "SharedDesktopSandBox.adoptUnseatedAssignments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554608,
+    "end_line": 554619,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "loaded"
+    ],
+    "body_sha256": "aa28201aca8a7f4fbb6d8d2c5c43d055ba6ce7aa5be621851413cb640249b19a",
+    "calls": [
+      "loaded.tokens.get",
+      "this.agentWindowTokens.has",
+      "this.agentWindowTokens.set",
+      "this.agentWindows.has",
+      "this.agentWindows.set",
+      "this.clearWindowForAdoption",
+      "this.followUnstartedToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554620:20395286",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.readPersistedAssignments",
+    "qualified_name": "SharedDesktopSandBox.readPersistedAssignments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554620,
+    "end_line": 554638,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "d41df7886ae5ccaf752ce051a2129e04d89c0f2fb5e740a82aa0205c5e185412",
+    "calls": [
+      "errorLogTag",
+      "parseAssignments",
+      "reportHostDiagnosticOrStderr",
+      "this.inner.downloadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554639:20395816",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.ensureAssignmentsLoaded",
+    "qualified_name": "SharedDesktopSandBox.ensureAssignmentsLoaded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554639,
+    "end_line": 554648,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "e35230ab6de9cd6f533e3b61c9fdc93d583d9d6bef276d9fd7ba3f528577e57b",
+    "calls": [
+      "this.loadPersistedAssignments"
+    ],
+    "writes": [
+      "this.assignmentsLoad"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554649:20396099",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.adoptPersistedAssignment",
+    "qualified_name": "SharedDesktopSandBox.adoptPersistedAssignment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554649,
+    "end_line": 554673,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "14b801019528f4c65de059f09f18f7b3876114a18aec5491de06117694064b85",
+    "calls": [
+      "loaded.assignments.get",
+      "loaded.tokens.get",
+      "this.agentWindowTokens.delete",
+      "this.agentWindowTokens.get",
+      "this.agentWindowTokens.set",
+      "this.agentWindows.get",
+      "this.agentWindows.set",
+      "this.clearWindowForAdoption",
+      "this.downForks.delete",
+      "this.establishedForks.delete",
+      "this.followUnstartedToken",
+      "this.readPersistedAssignments",
+      "this.unstartedSeats.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554674:20397121",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.queueSeatChanges",
+    "qualified_name": "SharedDesktopSandBox.queueSeatChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554674,
+    "end_line": 554677,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "changes"
+    ],
+    "body_sha256": "0fa6ff84c2e055f8adf2039a68d29779610ec55a74b11aed4c580abe6568ccc2",
+    "calls": [
+      "this.commitSeatChanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554678:20397246",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.commitSeatChanges",
+    "qualified_name": "SharedDesktopSandBox.commitSeatChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554678,
+    "end_line": 554693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "changes"
+    ],
+    "body_sha256": "7c06c56d77c544d2e658ecf7187b721ac0904c01b0313de4b9160bf68c16e06a",
+    "calls": [
+      "Promise.resolve",
+      "commit2.then",
+      "this.persistChain.then"
+    ],
+    "writes": [
+      "this.persistChain"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554694:20397786",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.writeSeatChanges",
+    "qualified_name": "SharedDesktopSandBox.writeSeatChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554694,
+    "end_line": 554705,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "changes"
+    ],
+    "body_sha256": "5b44b8221727535264879bfdd269cddc34019c8dff5ade272fc5dfdd12a895b7",
+    "calls": [
+      "applySeatChanges",
+      "new SeatTableContendedError",
+      "this.readSeatTableVersion",
+      "this.replaceSeatTable"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [
+      "SeatTableContendedError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554706:20398404",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.readSeatTableVersion",
+    "qualified_name": "SharedDesktopSandBox.readSeatTableVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554706,
+    "end_line": 554729,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "765728bc199aecf83e55f1d403b611df597a7ba809457727971487b187a4504d",
+    "calls": [
+      "new Map",
+      "parseAssignments",
+      "this.inner.downloadFile",
+      "versionOfBytes"
+    ],
+    "writes": [
+      "bytes"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554730:20399138",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.replaceSeatTable",
+    "qualified_name": "SharedDesktopSandBox.replaceSeatTable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554730,
+    "end_line": 554743,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "version4",
+      "table"
+    ],
+    "body_sha256": "f10b33c6b75eb5c6ae169cf2368033365ed8283393822658f8af960f60b2a7cb",
+    "calls": [
+      "encodeSeatTable",
+      "this.inner.compareAndSetFile",
+      "this.inner.uploadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554744:20399564",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.claimSeat",
+    "qualified_name": "SharedDesktopSandBox.claimSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554744,
+    "end_line": 554756,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex"
+    ],
+    "body_sha256": "0e8df255500e01f18916fadd20d6f612f802272a07dda7785a7973427629d623",
+    "calls": [
+      "this.agentWindowTokens.get",
+      "this.commitSeatChanges",
+      "this.dropCachedSeat",
+      "this.followPersistedTable",
+      "this.now",
+      "this.unstartedTokens.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554757:20400102",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.takeFreeForkIndex",
+    "qualified_name": "SharedDesktopSandBox.takeFreeForkIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554757,
+    "end_line": 554766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "156a0cd8ecc0fbbe2e83bb8165761ce4fad99fb9bd6d75b959ad8189a34272a5",
+    "calls": [
+      "new Set",
+      "this.agentWindows.set",
+      "this.agentWindows.values",
+      "this.refusedForkWindows.has",
+      "this.windowStops.has",
+      "used.has"
+    ],
+    "writes": [
+      "windowIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554767:20400548",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.assignOrReclaimWindow",
+    "qualified_name": "SharedDesktopSandBox.assignOrReclaimWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554767,
+    "end_line": 554772,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "ed6656d2f0583702098f03e3f7ffeb63e99434a265bd505b63ee1c0649cf6637",
+    "calls": [
+      "this.assignWindow",
+      "this.reclaimSeatsWhenFull"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554773:20400759",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.assignWindow",
+    "qualified_name": "SharedDesktopSandBox.assignWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554773,
+    "end_line": 554777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8cd5aeeab699795f830400fad73151fad28328d2433d5f09b3f967015abe5951",
+    "calls": [
+      "this.agentWindows.get",
+      "this.takeFreeForkIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554778:20400944",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.migrateLegacyPrimarySeat",
+    "qualified_name": "SharedDesktopSandBox.migrateLegacyPrimarySeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554778,
+    "end_line": 554785,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "assigned"
+    ],
+    "body_sha256": "cb157a87bda8c08f9f2244ae9561c155b1ae34aeff4cbd381e3543bc3bb7f7b3",
+    "calls": [
+      "isPrimaryWindowIndex",
+      "this.agentWindows.get",
+      "this.takeFreeForkIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554786:20401272",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.keepFailedSeat",
+    "qualified_name": "SharedDesktopSandBox.keepFailedSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554786,
+    "end_line": 554790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "windowIndex",
+      "newSeat"
+    ],
+    "body_sha256": "aec4126231460171a6f3459b06852a993713deb9f5040da900b7b99c7d14fc79",
+    "calls": [
+      "this.agentWindows.get",
+      "this.downForks.add",
+      "this.establishedForks.has",
+      "this.unstartedSeats.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554791:20401521",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.releaseUnstartableSeat",
+    "qualified_name": "SharedDesktopSandBox.releaseUnstartableSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554791,
+    "end_line": 554798,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "isNewAssignment"
+    ],
+    "body_sha256": "e33d47e7ae272710c7f23f9425f968484761e0e42a5d7e84ddbf860dec856aa0",
+    "calls": [
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get",
+      "this.dropCachedSeat",
+      "this.queueSeatChanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554799:20401887",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.windowOptions",
+    "qualified_name": "SharedDesktopSandBox.windowOptions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554799,
+    "end_line": 554808,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "opts = {}"
+    ],
+    "body_sha256": "f75aa39fe3a0aee0d7dc446f959a8588eb99eba0106d5883f1e85eb6124c4fa0",
+    "calls": [
+      "this.agentWindowTokens.get",
+      "this.seatTableOption",
+      "this.unstartedSeats.has",
+      "this.unstartedTokens.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554806:20402286",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "beforeStart",
+    "qualified_name": "SharedDesktopSandBox.windowOptions/beforeStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554806,
+    "end_line": 554806,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "085eb62140bd7e4c2e454547ce1b00d9c59e258a3af0214b739c8c5bcbbac860",
+    "calls": [
+      "this.refuseDeletedAgentStart"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554809:20402360",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.seatTableOption",
+    "qualified_name": "SharedDesktopSandBox.seatTableOption",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554809,
+    "end_line": 554811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "16f4072b0c51ecfd745d513c8746d836354042895680860f4506609f93e75a6f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554812:20402498",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.refuseDeletedAgentStart",
+    "qualified_name": "SharedDesktopSandBox.refuseDeletedAgentStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554812,
+    "end_line": 554819,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "323e076f8b70367afd4a2cca0c273658a372234aa79004b86194cbeb4d90fedd",
+    "calls": [
+      "deleted.has",
+      "new SandBoxAgentDeletedError",
+      "this.deletedAgents.add",
+      "this.deletedAgents.has",
+      "this.findDeletedAgents"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxAgentDeletedError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554820:20402791",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.withoutDeletedAgentSeat",
+    "qualified_name": "SharedDesktopSandBox.withoutDeletedAgentSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554820,
+    "end_line": 554823,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "primary"
+    ],
+    "body_sha256": "06fcbb95998927d410264af1eb22eadc6427af84468c8372d5883ab013f104cf",
+    "calls": [
+      "this.gateComputerUse",
+      "this.inner.ensureReady",
+      "this.releaseAgentWindow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554824:20402986",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.forgetRefusedSeat",
+    "qualified_name": "SharedDesktopSandBox.forgetRefusedSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554824,
+    "end_line": 554835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex",
+      "refusal4"
+    ],
+    "body_sha256": "08ece97b3362a5ec595abc07f148ec39d7339b3910341e4f436455e195f314e9",
+    "calls": [
+      "reportHostDiagnostic",
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get",
+      "this.dropCachedSeat",
+      "this.queueSeatChanges",
+      "this.refusedForkWindows.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554836:20403538",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.gateComputerUse",
+    "qualified_name": "SharedDesktopSandBox.gateComputerUse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554836,
+    "end_line": 554843,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "primary"
+    ],
+    "body_sha256": "d381fce9738c8b0f8537999b2073bbf632d3d8773de53494504654834ac6ab3e",
+    "calls": [
+      "new CombinedResourceAccessor",
+      "resourceEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554844:20403780",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.establishFork",
+    "qualified_name": "SharedDesktopSandBox.establishFork",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554844,
+    "end_line": 554870,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex"
+    ],
+    "body_sha256": "0f6ed75ffb3c9400e7786e4d6b2077b43d1aa3f92d613c19368609a9e2710c82",
+    "calls": [
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get",
+      "this.commitSeatChanges",
+      "this.downForks.add",
+      "this.downForks.delete",
+      "this.dropCachedSeat",
+      "this.establishedForks.add",
+      "this.holdsSeat",
+      "this.unstartedSeats.delete",
+      "this.unstartedTokens.delete",
+      "this.unstartedTokens.has",
+      "this.windowStillOwned"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554871:20404916",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.windowStillOwned",
+    "qualified_name": "SharedDesktopSandBox.windowStillOwned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554871,
+    "end_line": 554882,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "windowIndex",
+      "ownerToken"
+    ],
+    "body_sha256": "fb1b1be82fd5603826b27ff2f87bc48cfaa6dda46186b10bfe282da564efa7c7",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnosticOrStderr",
+      "this.inner.windowOwnedBy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554883:20405314",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.holdsSeat",
+    "qualified_name": "SharedDesktopSandBox.holdsSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554883,
+    "end_line": 554885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "windowIndex",
+      "ownerToken"
+    ],
+    "body_sha256": "431fc0fc0c41fc20f0f08bc443550a7b551ad0966cdc8ddf0fd6a240a3149241",
+    "calls": [
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554886:20405484",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.forkConnection",
+    "qualified_name": "SharedDesktopSandBox.forkConnection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554886,
+    "end_line": 554894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "primary",
+      "window2"
+    ],
+    "body_sha256": "a10a4388334a7184817d30158339bf289f4f21e417f11598c5589c8f3e13c467",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554895:20405807",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.reattachAdoptedFork",
+    "qualified_name": "SharedDesktopSandBox.reattachAdoptedFork",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554895,
+    "end_line": 554922,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "primary"
+    ],
+    "body_sha256": "53290e506d0553ee27df52fe2fa6619330c1305accd7da1ff56250e5ace7008c",
+    "calls": [
+      "isPrimaryWindowIndex",
+      "this.adoptPersistedAssignment",
+      "this.establishFork",
+      "this.forgetRefusedSeat",
+      "this.forkConnection",
+      "this.gateComputerUse",
+      "this.inner.ensureWindow",
+      "this.keepFailedSeat",
+      "this.windowOptions",
+      "this.withoutDeletedAgentSeat"
+    ],
+    "writes": [
+      "window2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:554923:20406872",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.inAgentQueue",
+    "qualified_name": "SharedDesktopSandBox.inAgentQueue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554923,
+    "end_line": 554936,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "work"
+    ],
+    "body_sha256": "1662918fca8a82163d51cfe117416b8664348533de0f568ab8b3079d08b0dfe3",
+    "calls": [
+      "Promise.resolve",
+      "Promise.withResolvers",
+      "earlier.then",
+      "this.agentEnsures.get",
+      "this.agentEnsures.set",
+      "turn.promise.then",
+      "untilCanceled",
+      "work"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554937:20407365",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.ensureReady",
+    "qualified_name": "SharedDesktopSandBox.ensureReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554937,
+    "end_line": 554939,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "16ced4c70ee4f3a99f3b359ecfa4576a9782c38aaa5e0df58a90602d91307a4b",
+    "calls": [
+      "this.inAgentQueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:554940:20407503",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.ensureAgentReady",
+    "qualified_name": "SharedDesktopSandBox.ensureAgentReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 554940,
+    "end_line": 555001,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "0ca5cd89dd1151e001eadc3d4e6218aa577c0da69a4a1b257a7ca9fd66b22cc3",
+    "calls": [
+      "isPrimaryWindowIndex",
+      "this.adoptPersistedAssignment",
+      "this.agentWindowTokens.has",
+      "this.agentWindowTokens.set",
+      "this.agentWindows.has",
+      "this.assignOrReclaimWindow",
+      "this.claimSeat",
+      "this.deletedAgents.has",
+      "this.ensureAssignmentsLoaded",
+      "this.establishFork",
+      "this.establishedForks.has",
+      "this.forgetRefusedSeat",
+      "this.forkConnection",
+      "this.freeDeletedAgentSeatsOnce",
+      "this.gateComputerUse",
+      "this.inner.ensureReady",
+      "this.inner.ensureWindow",
+      "this.keepFailedSeat",
+      "this.migrateLegacyPrimarySeat",
+      "this.reattachAdoptedFork",
+      "this.releaseUnstartableSeat",
+      "this.windowOptions",
+      "this.withoutDeletedAgentSeat"
+    ],
+    "writes": [
+      "assigned",
+      "attempt",
+      "isNewAssignment",
+      "seat",
+      "tokenIsNew",
+      "window2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 15,
+      "loops": 1,
+      "awaits": 12,
+      "returns": 11,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:555002:20410551",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.hibernate",
+    "qualified_name": "SharedDesktopSandBox.hibernate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555002,
+    "end_line": 555003,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "_agentId"
+    ],
+    "body_sha256": "ee22fd5c58f54fc4550a0c03a7392ced63b4002a9995e92560e1b36b937beb35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555004:20410610",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.reconnectAfterConnectionLoss",
+    "qualified_name": "SharedDesktopSandBox.reconnectAfterConnectionLoss",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555004,
+    "end_line": 555006,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "lost"
+    ],
+    "body_sha256": "bd6d11080bba1de735f9a588a8d8ef4ff9efdadfd950ffc2a5c17362903b4135",
+    "calls": [
+      "this.inner.reconnectAfterConnectionLoss"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555007:20410739",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.recreateInBox",
+    "qualified_name": "SharedDesktopSandBox.recreateInBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555007,
+    "end_line": 555012,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "opts"
+    ],
+    "body_sha256": "f08e00040554c45d307244574bd158d60e820a200d6bd4f08445afca6647b9ce",
+    "calls": [
+      "new SandBoxCapabilityError",
+      "this.inner.recreateInBox"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxCapabilityError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555013:20410982",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.applyEnvironment",
+    "qualified_name": "SharedDesktopSandBox.applyEnvironment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555013,
+    "end_line": 555015,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "update"
+    ],
+    "body_sha256": "236c612d8c7b6d4a18539b35761f47b61b8be0fc40427f3da039e0af83505670",
+    "calls": [
+      "boxApplyEnvironment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555016:20411080",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.loadMcpServers",
+    "qualified_name": "SharedDesktopSandBox.loadMcpServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555016,
+    "end_line": 555018,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "configJson",
+      "options2"
+    ],
+    "body_sha256": "df8c2577014e917edfd4817b581a4dd31e4e075843331947836800682feec5a7",
+    "calls": [
+      "boxLoadMcpServers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555019:20411216",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.mcpResourceAccessor",
+    "qualified_name": "SharedDesktopSandBox.mcpResourceAccessor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555019,
+    "end_line": 555021,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "867b1a361bcabe1e11c17f930e86be0e29b4f42f3e33dd0b779766fce57d0847",
+    "calls": [
+      "boxMcpResourceAccessor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555022:20411319",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.reattachPersistedForkSeat",
+    "qualified_name": "SharedDesktopSandBox.reattachPersistedForkSeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555022,
+    "end_line": 555038,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "46a94b1933d45aeef584fa0e05c81837dedb9d9c4b1320e038d2442a7414ca19",
+    "calls": [
+      "errorLogTag",
+      "isPrimaryWindowIndex",
+      "reportHostDiagnostic",
+      "this.adoptPersistedAssignment",
+      "this.agentWindows.get",
+      "this.agentWindows.has",
+      "this.ensureAgentReady",
+      "this.ensureAssignmentsLoaded"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:555039:20411891",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.agentMcpHost",
+    "qualified_name": "SharedDesktopSandBox.agentMcpHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555039,
+    "end_line": 555042,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "39fa68328ad5e2ce1a733c7c2da8f6b9de390e4040f42d05c8692b0592661704",
+    "calls": [
+      "this.inAgentQueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555043:20412089",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.agentWindowMcpHost",
+    "qualified_name": "SharedDesktopSandBox.agentWindowMcpHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555043,
+    "end_line": 555070,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "fa72ac5b7b7a0623c8cecc6ce9f2bd10c17a61c292992c1883d3f7e16b95f32b",
+    "calls": [
+      "errorLogTag",
+      "isPrimaryWindowIndex",
+      "reportHostDiagnostic",
+      "this.establishedForks.has",
+      "this.getAgentWindowIndex",
+      "this.inner.ensureWindow",
+      "this.reattachPersistedForkSeat",
+      "this.releaseAgentWindow",
+      "this.windowOptions"
+    ],
+    "writes": [
+      "window2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:555071:20412994",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.releaseWindow",
+    "qualified_name": "SharedDesktopSandBox.releaseWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555071,
+    "end_line": 555073,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "f60a11fdab056004b9db58aea06da857664d812f4b6cf975a14260d26894ade9",
+    "calls": [
+      "this.inAgentQueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555074:20413129",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.releaseAgentWindow",
+    "qualified_name": "SharedDesktopSandBox.releaseAgentWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555074,
+    "end_line": 555091,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId"
+    ],
+    "body_sha256": "bc7df84b52db40287f2d47fe53aac4bd5f22a9b9df638ad624059100ef3fc451",
+    "calls": [
+      "current2.assignments.get",
+      "current2.tokens.get",
+      "this.adoptUnseatedAssignments",
+      "this.agentWindowTokens.get",
+      "this.agentWindows.get",
+      "this.dropCachedSeat",
+      "this.queueSeatChanges",
+      "this.readCurrentSeatTable",
+      "this.stopForkWindow"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555092:20414002",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.snapshotForkDesktops",
+    "qualified_name": "SharedDesktopSandBox.snapshotForkDesktops",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555092,
+    "end_line": 555110,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "bde416578c7ae923aace9ae8bcd6e5ffd12e923d4b9b9933c012a468f436a250",
+    "calls": [
+      "activity.windows.map",
+      "new Map",
+      "seats.flatMap",
+      "seats.map",
+      "this.inner.readDesktopActivity",
+      "this.startedForkSeats"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555111:20414702",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.startedForkSeats",
+    "qualified_name": "SharedDesktopSandBox.startedForkSeats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555111,
+    "end_line": 555127,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "dccdaeda561bb02b570f2b07a4244ec78c389b9aeb8caa7da30501d0b50c2600",
+    "calls": [
+      ".filter",
+      ".map",
+      "seats.push",
+      "table.tokens.get",
+      "table.unstarted.has",
+      "this.readCurrentSeatTable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555128:20415461",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.parkAgentWindow",
+    "qualified_name": "SharedDesktopSandBox.parkAgentWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555128,
+    "end_line": 555148,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "opts"
+    ],
+    "body_sha256": "fac90ec324991583774089b14a54ca295935f8812cdc0f2fd9e08b1c5546e8bb",
+    "calls": [
+      "this.inAgentQueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555149:20416344",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.getAgentWindowIndex",
+    "qualified_name": "SharedDesktopSandBox.getAgentWindowIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555149,
+    "end_line": 555152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "40176abb76f5aff2da48715daf7b9b2a0d5992ff503e2c29acad55eb5d384159",
+    "calls": [
+      "this.agentWindows.get",
+      "this.downForks.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555153:20416481",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.getAssignedWindowIndexes",
+    "qualified_name": "SharedDesktopSandBox.getAssignedWindowIndexes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555153,
+    "end_line": 555156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e6c3ecfe330662f982f480f7f28f1f3c7919e2c1343ac20355f7bc23132a5b69",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555157:20416712",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.refreshAssignedWindows",
+    "qualified_name": "SharedDesktopSandBox.refreshAssignedWindows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555157,
+    "end_line": 555161,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "ce463cb2ec140acac838576152ccc6c86e98f8f3c4a19b0fe426e16edea5e6e1",
+    "calls": [
+      "this.adoptUnseatedAssignments",
+      "this.readPersistedAssignments"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555162:20416926",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.awaitPersistedAssignments",
+    "qualified_name": "SharedDesktopSandBox.awaitPersistedAssignments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555162,
+    "end_line": 555164,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "40f1a72f8c19122e39125b3669e30d2320f06f41f78d8d7c3bc23746ace1842a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555165:20416984",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.getTerminalsFolder",
+    "qualified_name": "SharedDesktopSandBox.getTerminalsFolder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555165,
+    "end_line": 555167,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cc664ea8440c4905d45f3b6bd6beb6a47690364f67a7af11cb1e8aae4953a88b",
+    "calls": [
+      "boxTerminalsFolder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555168:20417060",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.getShellKeepAwakeCapMs",
+    "qualified_name": "SharedDesktopSandBox.getShellKeepAwakeCapMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555168,
+    "end_line": 555170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cf5252b4e37efb365c04063cb28e1a88bb35b57f9358a8d5bb6a2d5bb0e05086",
+    "calls": [
+      "boxShellKeepAwakeCapMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555171:20417132",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.runState",
+    "qualified_name": "SharedDesktopSandBox.runState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555171,
+    "end_line": 555173,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "_agentId"
+    ],
+    "body_sha256": "68a8a65a5263ca48d68c8761d841a6aa49a382cbe24c874ac0fc707b423cebac",
+    "calls": [
+      "this.inner.runState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555174:20417234",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.isAvailable",
+    "qualified_name": "SharedDesktopSandBox.isAvailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555174,
+    "end_line": 555176,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "631032d52284860695f49d2e187d8cb892fece7a5f1aa94c1024f4ed3f232818",
+    "calls": [
+      "boxIsAvailable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555177:20417298",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.describe",
+    "qualified_name": "SharedDesktopSandBox.describe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555177,
+    "end_line": 555179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "34c39b05dbe6b6791648aa06bea8be29ef8d7ce91c3c3be6874feddc97c20d55",
+    "calls": [
+      "boxDescription"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555180:20417359",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.isPreparing",
+    "qualified_name": "SharedDesktopSandBox.isPreparing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555180,
+    "end_line": 555182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_agentId"
+    ],
+    "body_sha256": "252b5f66ca9dbb381ee303f7d231e1addec04fa957f7e8d8e413e7d4802911b6",
+    "calls": [
+      "boxIsPreparing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555183:20417450",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.listBoxes",
+    "qualified_name": "SharedDesktopSandBox.listBoxes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555183,
+    "end_line": 555187,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5fcadfc456220c6bdbe5b0950fe4f1e681f5b5aa876c5f552ae43260f8bb33b8",
+    "calls": [
+      ".map",
+      "innerBoxes.some",
+      "this.agentWindows.keys",
+      "this.inner.listBoxes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555188:20417672",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.uploadFile",
+    "qualified_name": "SharedDesktopSandBox.uploadFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555188,
+    "end_line": 555190,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "_agentId",
+      "boxPath",
+      "data2"
+    ],
+    "body_sha256": "35f136e45c74e993d69edafecdae9544f95a962f5491567d3a5b5a8b8f8f9dde",
+    "calls": [
+      "this.inner.uploadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:555191:20417802",
+    "artifact": "host",
+    "module": "core/box/shared-desktop-sand-box.ts",
+    "name": "SharedDesktopSandBox.downloadFile",
+    "qualified_name": "SharedDesktopSandBox.downloadFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 555191,
+    "end_line": 555193,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "_agentId",
+      "boxPath",
+      "options2"
+    ],
+    "body_sha256": "e8c654508738b663b3a3583014879afb3bdf5f20cd0b58560b6f8a9ceb0a4921",
+    "calls": [
+      "this.inner.downloadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

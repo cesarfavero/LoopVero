@@ -1,0 +1,41 @@
+# `computeMaxMinFairAllocations`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../guide/components/prompts/README.md).
+
+**Módulo:** `agent-summarization/prompt-truncation.js` · [README do módulo](../../../../modules/agent-summarization/prompt-truncation-js/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:617255-617277](../../../../../reference/runtime/host-main.cjs#L617255-L617277) | `FunctionDeclaration` | não | `sizes, totalBudget` |
+| [evaluation:285795-285817](../../../../../reference/runtime/sand-eval-runner.cjs#L285795-L285817) | `FunctionDeclaration` | não | `sizes, totalBudget` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:617255-617277](../../../../../reference/runtime/host-main.cjs#L617255-L617277) | 2 | 1 | 0 | 2 | 0 | 0 |
+| [evaluation:285795-285817](../../../../../reference/runtime/sand-eval-runner.cjs#L285795-L285817) | 2 | 1 | 0 | 2 | 0 | 0 |
+
+### host:617255
+
+Chamadas escritas diretamente neste corpo: `.fill`, `Array.from`, `Math.floor`, `new Array`, `sortedIndices.sort`.
+
+Alvos de atribuição ou incremento: `allocations[computed]`, `remainingBudget`, `remainingCount`.
+
+SHA-256 do trecho: `220649ea6bbdc163aef6e30476dd8d1c6d261386b36cd0f24d5e2b28ea4db9af`.
+
+### evaluation:285795
+
+Chamadas escritas diretamente neste corpo: `.fill`, `Array.from`, `Math.floor`, `new Array`, `sortedIndices.sort`.
+
+Alvos de atribuição ou incremento: `allocations[computed]`, `remainingBudget`, `remainingCount`.
+
+SHA-256 do trecho: `220649ea6bbdc163aef6e30476dd8d1c6d261386b36cd0f24d5e2b28ea4db9af`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../guide/methodology/README.md).

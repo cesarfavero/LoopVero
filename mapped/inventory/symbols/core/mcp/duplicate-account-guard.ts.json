@@ -1,0 +1,232 @@
+[
+  {
+    "id": "host:779401:29976249",
+    "artifact": "host",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "findDuplicateAccountSlots",
+    "qualified_name": "findDuplicateAccountSlots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779401,
+    "end_line": 779417,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "servers",
+      "request5"
+    ],
+    "body_sha256": "993ad138ad7c616459cd715dce4d38e4c91689ba2215e040b60e0adf478b3526",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      ".toLowerCase",
+      "accountKeys.add",
+      "accountKeysByIdentity.get",
+      "accountKeysByIdentity.set",
+      "accountKeysByIdentity.values",
+      "new Map",
+      "new Set",
+      "normalizeMcpAccountLabel",
+      "servers.filter",
+      "slot.accountEmail.trim",
+      "slots.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779418:29977318",
+    "artifact": "host",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "describeDuplicateAccountRefusal",
+    "qualified_name": "describeDuplicateAccountRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779418,
+    "end_line": 779422,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "duplicates"
+    ],
+    "body_sha256": "b62dbae0f78d644491957695cdeb6572cbce5422e0ed7dfcec806349032fe723",
+    "calls": [
+      ".join",
+      "duplicates.accountKeys.find",
+      "duplicates.accountKeys.map",
+      "encodeMcpAccountLabelForListing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779423:29978117",
+    "artifact": "host",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "refuseDuplicateAccountSignIn",
+    "qualified_name": "refuseDuplicateAccountSignIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779423,
+    "end_line": 779429,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "servers",
+      "request5"
+    ],
+    "body_sha256": "ea581cb52b74e6cc235894855f9b9c307e79814c9cace5507b97c2ab45bce0f1",
+    "calls": [
+      "describeDuplicateAccountRefusal",
+      "duplicateAccountGuardDecisions.increment",
+      "findDuplicateAccountSlots",
+      "request5.enforced"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579574:21723806",
+    "artifact": "evaluation",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "findDuplicateAccountSlots",
+    "qualified_name": "findDuplicateAccountSlots",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579574,
+    "end_line": 579590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "servers",
+      "request3"
+    ],
+    "body_sha256": "08ad9ec96bc20f8f03c56e232dd195b51ef4b707e94bb8c98aaeff231fb42efc",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      ".toLowerCase",
+      "accountKeys.add",
+      "accountKeysByIdentity.get",
+      "accountKeysByIdentity.set",
+      "accountKeysByIdentity.values",
+      "new Map",
+      "new Set",
+      "normalizeMcpAccountLabel",
+      "servers.filter",
+      "slot.accountEmail.trim",
+      "slots.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579591:21724879",
+    "artifact": "evaluation",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "describeDuplicateAccountRefusal",
+    "qualified_name": "describeDuplicateAccountRefusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579591,
+    "end_line": 579595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "duplicates"
+    ],
+    "body_sha256": "b62dbae0f78d644491957695cdeb6572cbce5422e0ed7dfcec806349032fe723",
+    "calls": [
+      ".join",
+      "duplicates.accountKeys.find",
+      "duplicates.accountKeys.map",
+      "encodeMcpAccountLabelForListing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579596:21725678",
+    "artifact": "evaluation",
+    "module": "core/mcp/duplicate-account-guard.ts",
+    "name": "refuseDuplicateAccountSignIn",
+    "qualified_name": "refuseDuplicateAccountSignIn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579596,
+    "end_line": 579602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "servers",
+      "request3"
+    ],
+    "body_sha256": "dea724abb1f5b4a4d19a6f5b513cf762a219b84f12152e133fc8c836a1bcd887",
+    "calls": [
+      "describeDuplicateAccountRefusal",
+      "duplicateAccountGuardDecisions.increment",
+      "findDuplicateAccountSlots",
+      "request3.enforced"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

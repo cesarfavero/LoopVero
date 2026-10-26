@@ -1,0 +1,834 @@
+[
+  {
+    "id": "evaluation:588567:22164214",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "errorDetailFields",
+    "qualified_name": "errorDetailFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588567,
+    "end_line": 588574,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detail"
+    ],
+    "body_sha256": "53a41f1855903e20ad84befb5f4e09edbb6735922a860c712e19af3550f2c323",
+    "calls": [],
+    "writes": [
+      "fields3.bearerError",
+      "fields3.errorMessage",
+      "fields3.errorStatus"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588575:22164601",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "createTurnObservation",
+    "qualified_name": "createTurnObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588575,
+    "end_line": 588912,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "timing"
+    ],
+    "body_sha256": "72c47a966cdba7337ae8331dfd89ba8f111386d7ccc22ce1a49d98433e435d6a",
+    "calls": [
+      "createExpiryPolicy",
+      "new Map",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588583:22164945",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "setToolCallDiagnosticHandler",
+    "qualified_name": "createTurnObservation/setToolCallDiagnosticHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588583,
+    "end_line": 588585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "handler"
+    ],
+    "body_sha256": "cbfcd45f2ac60b9ae0c3d258d66c3caebbb0b40218f06d6cc73cee4755256333",
+    "calls": [],
+    "writes": [
+      "onToolCallDiagnostic"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588586:22165036",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "settledOutcome",
+    "qualified_name": "createTurnObservation/settledOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588586,
+    "end_line": 588589,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind"
+    ],
+    "body_sha256": "e3424facf758d9e2884091a0867ed83adf0114f31777832e5c62cb227635708f",
+    "calls": [
+      "host.isActiveRunCanceled",
+      "host.isActiveRunInterrupted",
+      "host.recordsCancelledOutcome"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588590:22165248",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "beginMcpExecObservation",
+    "qualified_name": "createTurnObservation/beginMcpExecObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588590,
+    "end_line": 588669,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "call"
+    ],
+    "body_sha256": "917bbb2aac78ada533ce8b3a0a49213d2e7ad25eb12fa270d0a4750903e2cd79",
+    "calls": [
+      ".catch",
+      "Promise.resolve",
+      "call.resolveRoute",
+      "call.resolveTransport",
+      "clock.monotonicNow",
+      "mcpExecStallExpiry.arm",
+      "mcpExecToolCallIds.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588670:22168751",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "observeMcpCallSettled",
+    "qualified_name": "createTurnObservation/observeMcpCallSettled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588670,
+    "end_line": 588684,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "call"
+    ],
+    "body_sha256": "ca8d4874d05ed18d370b5f565821f9e24478e35ad1d3fe916362571f4fd21663",
+    "calls": [
+      ".catch",
+      "call.resolveRoute",
+      "mcpExecToolCallIds.delete",
+      "onToolCallDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588687:22169449",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "observeAwaitToolCall",
+    "qualified_name": "createTurnObservation/observeAwaitToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588687,
+    "end_line": 588708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event",
+      "callId",
+      "toolCall2",
+      "awaitingUserSelection"
+    ],
+    "body_sha256": "48f29504ede61f6b13fe3c51968dc7c1e614aebb47af726c71ec03b2f09402d7",
+    "calls": [
+      "awaitBlockUntilMs",
+      "cancelledAwaitOutcome",
+      "classifyCompletedAwaitOutcome",
+      "host.isActiveRunCanceled",
+      "onTurnAwait",
+      "pendingAwaits.delete",
+      "pendingAwaits.get",
+      "pendingAwaits.set"
+    ],
+    "writes": [
+      "awaitObservationCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588709:22170328",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "cancelledAwaitOutcome",
+    "qualified_name": "createTurnObservation/cancelledAwaitOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588709,
+    "end_line": 588711,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "55a7704e960a7facc948ee18badaeb66de283820f8f50f055c52df8a3fedcc61",
+    "calls": [
+      "host.isActiveRunInterrupted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588712:22170438",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "flushPendingAwaitsOnUnwind",
+    "qualified_name": "createTurnObservation/flushPendingAwaitsOnUnwind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588712,
+    "end_line": 588725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "d71f6c3c218d080d037ef6985282dbdb58090225b5862f1a3f3fab3d180ecb0b",
+    "calls": [
+      "cancelledAwaitOutcome",
+      "onTurnAwait",
+      "pendingAwaits.clear",
+      "pendingAwaits.values"
+    ],
+    "writes": [
+      "awaitObservationCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588730:22171007",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "noteToolCallModelName",
+    "qualified_name": "createTurnObservation/noteToolCallModelName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588730,
+    "end_line": 588737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "callId",
+      "name18"
+    ],
+    "body_sha256": "2ed10601d0310f1a0cf8a849ef8f4946a3e70e0af6761a034bf9145b5bf6fbe5",
+    "calls": [
+      ".next",
+      "modelToolNamesByCallId.delete",
+      "modelToolNamesByCallId.keys",
+      "modelToolNamesByCallId.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588738:22171329",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "recordToolActivity",
+    "qualified_name": "createTurnObservation/recordToolActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588738,
+    "end_line": 588752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "update"
+    ],
+    "body_sha256": "b945df3e60d4f7eaa14af90c1c628e1dc5544edea8a43bec3ef48c0769168a46",
+    "calls": [
+      "modelToolNamesByCallId.delete",
+      "modelToolNamesByCallId.get",
+      "observedToolCallNames.push",
+      "recentActivity.push",
+      "recentActivity.splice"
+    ],
+    "writes": [
+      "observedToolCallCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588753:22172024",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "getActivitySnapshot",
+    "qualified_name": "createTurnObservation/getActivitySnapshot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588753,
+    "end_line": 588755,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "dfd7d25ad4f08ba0d3eabaa7a55f630ffd4dec7081bb2a286bc103c4e5435260",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588756:22172095",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "getObservedToolCallCount",
+    "qualified_name": "createTurnObservation/getObservedToolCallCount",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588756,
+    "end_line": 588758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "a35208bb1d5eac8d1de5f94b8e1fdb13a8c02d5520862efab0a60bfd31cf014f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588759:22172173",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "getObservedToolCallNames",
+    "qualified_name": "createTurnObservation/getObservedToolCallNames",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588759,
+    "end_line": 588761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ae3c8437d105629f01ecf5d2f3714e1cf1762200bb7561665e595fd6343fcd6e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588762:22172256",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "setTurnAwaitHandler",
+    "qualified_name": "createTurnObservation/setTurnAwaitHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588762,
+    "end_line": 588764,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "handler"
+    ],
+    "body_sha256": "bc9cee74413b9aa212ebc5d0e449a85b5489e1655203d06046e14ab02ce4f5be",
+    "calls": [],
+    "writes": [
+      "onTurnAwait"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588765:22172329",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "setFirstTokenHandler",
+    "qualified_name": "createTurnObservation/setFirstTokenHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588765,
+    "end_line": 588767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "handler"
+    ],
+    "body_sha256": "6434d84a5165ec4aa85ee36aa1faa54f6abf7f0fe43e10d107efda54d64f4289",
+    "calls": [],
+    "writes": [
+      "onFirstToken"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588768:22172404",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "setSendDispatchHandler",
+    "qualified_name": "createTurnObservation/setSendDispatchHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588768,
+    "end_line": 588770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "handler"
+    ],
+    "body_sha256": "e632fe348820a0d4db5ce0a487ea08ece07552e55136a479b71b5fe9711abced",
+    "calls": [],
+    "writes": [
+      "onSendDispatch"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588774:22172571",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "armDispatchObservation",
+    "qualified_name": "createTurnObservation/armDispatchObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588774,
+    "end_line": 588885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "08637a404e45d07392f9a479e5e7f99ef86f73fe03bb76ca0dc02448cfe35b90",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "Math.round",
+      "Number.isFinite",
+      "bucketClockSkewDeltaMs",
+      "clock.monotonicNow",
+      "deps.resolveModelId",
+      "deps.runCtx.withName",
+      "deps.setRunAttribute",
+      "errorLogTag",
+      "new Date",
+      "onSendDispatch",
+      "process.stderr.write",
+      "recordCompletedSpanIfParented",
+      "sanitizeCrossClockDurationMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:588821:22174487",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "observeFirstToken",
+    "qualified_name": "createTurnObservation/armDispatchObservation/observeFirstToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588821,
+    "end_line": 588870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "chunkType"
+    ],
+    "body_sha256": "20882acdf2bcb2b672e00d1b4179b814ed166d1c7e3ff48ee3508298f4d8b22c",
+    "calls": [
+      "clock.monotonicNow",
+      "deps.addRunEvent",
+      "deps.runCtx.withName",
+      "deps.setRunAttribute",
+      "emitObservation",
+      "errorLogTag",
+      "new Date",
+      "process.stderr.write",
+      "recordCompletedSpanIfParented",
+      "sanitizeCrossClockDurationMs"
+    ],
+    "writes": [
+      "firstTokenObserved",
+      "pendingFirstToken"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:588846:22175549",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "emitObservation",
+    "qualified_name": "createTurnObservation/armDispatchObservation/observeFirstToken/emitObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588846,
+    "end_line": 588858,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "ca52896d742882089ab8968178b4acb7b272fbae39b4a24dacddef2323c37389",
+    "calls": [
+      "deps.resolveModelId",
+      "onFirstToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588873:22176339",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "noteModelResolved",
+    "qualified_name": "createTurnObservation/armDispatchObservation/noteModelResolved",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588873,
+    "end_line": 588878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "5630a2e675215ee5fa2ace3114ea83fd7e18b8da9f9c89b65cea0915d6d6391b",
+    "calls": [
+      "pending"
+    ],
+    "writes": [
+      "pendingFirstToken",
+      "runResolvedModelId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588879:22176522",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "settle",
+    "qualified_name": "createTurnObservation/armDispatchObservation/settle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588879,
+    "end_line": 588883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9491d419f47dca2739f99d96d176ec6520f00dd1b4e6e04f8c73cf547fc91538",
+    "calls": [
+      "pending"
+    ],
+    "writes": [
+      "pendingFirstToken"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588891:22176809",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "reportToolCallDiagnostic",
+    "qualified_name": "createTurnObservation/reportToolCallDiagnostic",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588891,
+    "end_line": 588893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "observation"
+    ],
+    "body_sha256": "cdeda97a4ca19c66906b81c5bffb6bd2935b94eba4af33026b9d36c697388484",
+    "calls": [
+      "onToolCallDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588896:22176954",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "emitFirstToken",
+    "qualified_name": "createTurnObservation/emitFirstToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588896,
+    "end_line": 588898,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "observation"
+    ],
+    "body_sha256": "c344a3b1233961db549dc72d8b0fb93664075f245c6b69a882bc2a7b6f6f938f",
+    "calls": [
+      "onFirstToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588899:22177037",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-observation.ts",
+    "name": "emitSendDispatch",
+    "qualified_name": "createTurnObservation/emitSendDispatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588899,
+    "end_line": 588901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "observation"
+    ],
+    "body_sha256": "095fe9b9cca14363fe4daa87590ba07bd6e4d9ad75af1e7f5491a64e83d47b92",
+    "calls": [
+      "onSendDispatch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

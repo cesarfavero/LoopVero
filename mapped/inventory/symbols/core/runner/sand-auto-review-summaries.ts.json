@@ -1,0 +1,1643 @@
+[
+  {
+    "id": "host:693729:26342355",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "compact",
+    "qualified_name": "compact",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693729,
+    "end_line": 693732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "maxChars"
+    ],
+    "body_sha256": "e022860d802d56c26c226d0b2187f4edd78eb731696942d69bbc0f7ae3b19c09",
+    "calls": [
+      ".trim",
+      "normalized.slice",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693733:26342549",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "compactHeadAndTail",
+    "qualified_name": "compactHeadAndTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693733,
+    "end_line": 693749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "maxChars"
+    ],
+    "body_sha256": "16f0ad1ce85b91fda535494dea42047cdfa7fa9bd66efb848bf8b08d3dbb36f2",
+    "calls": [
+      ".trim",
+      "Math.ceil",
+      "Math.floor",
+      "Math.max",
+      "normalized.slice",
+      "value.replace"
+    ],
+    "writes": [
+      "attempt",
+      "available",
+      "omittedChars",
+      "omittedLabel"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693750:26343329",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "redactMcpValue",
+    "qualified_name": "redactMcpValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693750,
+    "end_line": 693779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "key",
+      "depth = 0"
+    ],
+    "body_sha256": "a17b04fb2103a6af13e8dca0ecd4ea703408851370533e5648730dd4a2039273",
+    "calls": [
+      "Array.isArray",
+      "Object.entries",
+      "Object.fromEntries",
+      "SAND_AUTO_REVIEW_SECRET_KEY_PATTERN.test",
+      "SAND_AUTO_REVIEW_SECRET_VALUE_PATTERN.test",
+      "allEntries.slice",
+      "compactHeadAndTail",
+      "entries.map",
+      "redactSandAutoReviewInlineSecrets",
+      "selected.map",
+      "value.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693780:26344516",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandMcpAutoReviewAction",
+    "qualified_name": "summarizeSandMcpAutoReviewAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693780,
+    "end_line": 693786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f25bc409a95299071514ada3d1ec5103be73c1f0b3102c048d024253b99a7e79",
+    "calls": [
+      "JSON.stringify",
+      "compact",
+      "compactHeadAndTail",
+      "redactMcpValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693787:26344908",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandAutomationWriteAction",
+    "qualified_name": "summarizeSandAutomationWriteAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693787,
+    "end_line": 693801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "027f8c95edf7cf388be93495dbda7cb2c6070a03801e6034e9e21152969a9df5",
+    "calls": [
+      ".join",
+      ".slice",
+      "args.referencingAutomationNames.flatMap",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "when.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693802:26345792",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandMeetingInstructionCopy",
+    "qualified_name": "describeSandMeetingInstructionCopy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693802,
+    "end_line": 693810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d2d7e0de0f81509e83b435128330dcd8d1e17a4352a5332ee179010d81f0902d",
+    "calls": [
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693811:26346053",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandMeetingInstructionAction",
+    "qualified_name": "summarizeSandMeetingInstructionAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693811,
+    "end_line": 693814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "73f2a2918fa159e2e23e9132a1e333d269806d6a19186365b52d38752b60ea53",
+    "calls": [
+      "describeSandMeetingInstructionCopy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693815:26346277",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeReplyDelivery",
+    "qualified_name": "describeReplyDelivery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693815,
+    "end_line": 693820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mode",
+      "interrupt"
+    ],
+    "body_sha256": "ae86025c67232423672a26752d9b5a8fa42915e39288d53ac4ab587745d7e40a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693821:26346527",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandEmailSendAction",
+    "qualified_name": "summarizeSandEmailSendAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693821,
+    "end_line": 693842,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9aa65cff81cbcfe28949f1211d56152024522a1720a9d614e44dd480388bb90f",
+    "calls": [
+      ".join",
+      "args.attachments.map",
+      "args.bcc.map",
+      "args.cc.map",
+      "args.to.map",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "replyTo.map",
+      "summarizeEmailHtml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693852:26348319",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeEmailHtml",
+    "qualified_name": "summarizeEmailHtml",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693852,
+    "end_line": 693863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "a4d98b56e411ef31e9ab54bf2d19f81f281f28fdebf06a814c48c211576a767f",
+    "calls": [
+      ".join",
+      ".map",
+      ".replace",
+      "Array.from",
+      "compactHeadAndTail",
+      "html.matchAll",
+      "html.replace",
+      "new Set",
+      "redactSandAutoReviewInlineSecrets",
+      "urls.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693864:26349268",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandCloudAgentAction",
+    "qualified_name": "summarizeSandCloudAgentAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693864,
+    "end_line": 693915,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "bd93feadc41890cb76086ee39e01555e72740f5e94934bc83a4ad4a69399e30f",
+    "calls": [
+      ".filter",
+      "args.customMode.trim",
+      "args.secretNames.join",
+      "args.title.trim",
+      "attachedParts.join",
+      "compact",
+      "compactHeadAndTail",
+      "describeReplyDelivery",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [
+      "where"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 21,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693916:26352920",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandSubagentAction",
+    "qualified_name": "summarizeSandSubagentAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693916,
+    "end_line": 693922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cab5f4706fcf32e922a3e864bd9a9fed14cb9ee0112aecbc449de8e5d608c775",
+    "calls": [
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693923:26353250",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandBrowserAutoReviewAction",
+    "qualified_name": "summarizeSandBrowserAutoReviewAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693923,
+    "end_line": 693973,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "971c6920e3dcdac22c9e979e4e1143b84e711ae2b78f95da202c90b25e25fe17",
+    "calls": [
+      ".join",
+      ".split",
+      ".trim",
+      "args.cdpMethod.slice",
+      "args.element.replace",
+      "args.key.slice",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "summarize",
+      "summarizeTypedText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 13,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693927:26353674",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarize",
+    "qualified_name": "summarizeSandBrowserAutoReviewAction/summarize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693927,
+    "end_line": 693927,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "0dfca2fd234eea58925a9e33cc45bb36245b5d71b800cba99a5a9e0ac2873351",
+    "calls": [
+      "compact"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693974:26355507",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeTypedText",
+    "qualified_name": "summarizeTypedText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693974,
+    "end_line": 693979,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "249334ad7a08e3a42fefde589c0cdb91b421505b69fc72290ddf034a612347a4",
+    "calls": [
+      ".includes",
+      "/(?:api[_ -]?key|authorization|credential|password|secret|token)\\s*[:=]/i.test",
+      "/^[A-Za-z0-9+/_=-]{24,}$/.test",
+      "SAND_AUTO_REVIEW_SECRET_VALUE_PATTERN.test",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "text3.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:693980:26356087",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandComputerTypedText",
+    "qualified_name": "summarizeSandComputerTypedText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 693980,
+    "end_line": 693982,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "07c01b418c05c9bb21ef381c8b9ff05cde60d5f19fd0723fee9ce295dde4af6a",
+    "calls": [
+      "summarizeTypedText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490965:17828603",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "compact",
+    "qualified_name": "compact",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490965,
+    "end_line": 490968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "maxChars"
+    ],
+    "body_sha256": "e022860d802d56c26c226d0b2187f4edd78eb731696942d69bbc0f7ae3b19c09",
+    "calls": [
+      ".trim",
+      "normalized.slice",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490969:17828797",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "compactHeadAndTail",
+    "qualified_name": "compactHeadAndTail",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490969,
+    "end_line": 490985,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "maxChars"
+    ],
+    "body_sha256": "16f0ad1ce85b91fda535494dea42047cdfa7fa9bd66efb848bf8b08d3dbb36f2",
+    "calls": [
+      ".trim",
+      "Math.ceil",
+      "Math.floor",
+      "Math.max",
+      "normalized.slice",
+      "value.replace"
+    ],
+    "writes": [
+      "attempt",
+      "available",
+      "omittedChars",
+      "omittedLabel"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490986:17829577",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "shellLocationPhrase",
+    "qualified_name": "shellLocationPhrase",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490986,
+    "end_line": 490988,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "surface"
+    ],
+    "body_sha256": "3744e975ea96f763f3b54ff4334d57861119307ee0870c45ac8ed29a6f88cc2a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490989:17829708",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "genericSandShellAutoReviewSummary",
+    "qualified_name": "genericSandShellAutoReviewSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490989,
+    "end_line": 490991,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "surface"
+    ],
+    "body_sha256": "ee84e036aa435ad7d0bbbcc465bc038c22c00260d5208ab75ff51c349ce334f4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490992:17829881",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandShellAutoReviewAction",
+    "qualified_name": "describeSandShellAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490992,
+    "end_line": 491001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "69d844bc78c9c9d79ba1052d2acebd33ae05c8f8374640ea329c7b47b1604293",
+    "calls": [
+      ".trim",
+      "args.description.replace",
+      "compact",
+      "description9.replace",
+      "genericSandShellAutoReviewSummary",
+      "shellLocationPhrase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491002:17830416",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandShellAutoReviewActionSource",
+    "qualified_name": "describeSandShellAutoReviewActionSource",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491002,
+    "end_line": 491018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "50f340e49a86cec19f0362267c4e4d531a45dba979c070aa256c3f4b8c17f5b9",
+    "calls": [
+      ".trim",
+      "args.description.replace",
+      "compact",
+      "describeSandShellAutoReviewAction",
+      "description9.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491019:17831097",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "redactMcpValue",
+    "qualified_name": "redactMcpValue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491019,
+    "end_line": 491048,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "key",
+      "depth = 0"
+    ],
+    "body_sha256": "a17b04fb2103a6af13e8dca0ecd4ea703408851370533e5648730dd4a2039273",
+    "calls": [
+      "Array.isArray",
+      "Object.entries",
+      "Object.fromEntries",
+      "SAND_AUTO_REVIEW_SECRET_KEY_PATTERN.test",
+      "SAND_AUTO_REVIEW_SECRET_VALUE_PATTERN.test",
+      "allEntries.slice",
+      "compactHeadAndTail",
+      "entries.map",
+      "redactSandAutoReviewInlineSecrets",
+      "selected.map",
+      "value.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491049:17832284",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandMcpAutoReviewAction",
+    "qualified_name": "summarizeSandMcpAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491049,
+    "end_line": 491055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f25bc409a95299071514ada3d1ec5103be73c1f0b3102c048d024253b99a7e79",
+    "calls": [
+      "JSON.stringify",
+      "compact",
+      "compactHeadAndTail",
+      "redactMcpValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491056:17832676",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "genericSandMcpAutoReviewSummary",
+    "qualified_name": "genericSandMcpAutoReviewSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491056,
+    "end_line": 491059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverDisplayName"
+    ],
+    "body_sha256": "6e6bed62a2f626a85566194969449d849c919f4513589d29dd431ea330e78906",
+    "calls": [
+      "compact"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491074:17833076",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "mcpNameWords",
+    "qualified_name": "mcpNameWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491074,
+    "end_line": 491076,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "7654d86455d2e419c50a00df6130dc2b3f8e8082d62e2f885fceee0a222a84d0",
+    "calls": [
+      ".filter",
+      ".replace",
+      ".split",
+      ".toLowerCase",
+      ".trim",
+      "compact"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491113:17833980",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "withoutServerPrefix",
+    "qualified_name": "withoutServerPrefix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491113,
+    "end_line": 491121,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "words",
+      "server"
+    ],
+    "body_sha256": "0126fe52cdc160d6e4d4e04b9e1f58395ccde585712978a79d4b430d02d716a0",
+    "calls": [
+      "server.startsWith",
+      "words.entries",
+      "words.slice"
+    ],
+    "writes": [
+      "spelled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491122:17834241",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "sandMcpAutoReviewAction",
+    "qualified_name": "sandMcpAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491122,
+    "end_line": 491136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8e83f999c80661bbe14806e77213c9a1569cea7672e7f025765388121ddd7c2c",
+    "calls": [
+      ".join",
+      "Object.hasOwn",
+      "candidates.reduce",
+      "mcpNameWords",
+      "withoutServerPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491137:17834848",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "humanizeMcpToolAction",
+    "qualified_name": "humanizeMcpToolAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491137,
+    "end_line": 491147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "35926642f0278d3c3c91ff90b9c6f8381592a987f5ec9a212976f3149b4d8880",
+    "calls": [
+      "/^(send|create|update|delete|post|write|read|add|remove|open|close|list|search|fetch|get|set|upload|download|invite|share)$/.test",
+      "/^[aeiou]/i.test",
+      "/s$/i.test",
+      "mcpNameWords",
+      "words.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491148:17835336",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "mentionsServer",
+    "qualified_name": "mentionsServer",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491148,
+    "end_line": 491152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "serverDisplayName"
+    ],
+    "body_sha256": "bc7657895117c7a1c16830ba9e3ce85accae4e57c165d7e910fb873521fc0250",
+    "calls": [
+      ".includes",
+      "server.toLowerCase",
+      "serverDisplayName.trim",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491153:17835535",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "safeMcpDestinationHint",
+    "qualified_name": "safeMcpDestinationHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491153,
+    "end_line": 491168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpArguments"
+    ],
+    "body_sha256": "2f18502ce5c0fc64ebe89a674449a14db7d2d7ba4ada3c288cd7d20aabc2f719",
+    "calls": [
+      ".replace",
+      ".toLowerCase",
+      ".trim",
+      "MCP_DESTINATION_KEYS.has",
+      "Object.entries",
+      "SAND_AUTO_REVIEW_SECRET_KEY_PATTERN.test",
+      "SAND_AUTO_REVIEW_SECRET_VALUE_PATTERN.test",
+      "compact",
+      "rawKey.replace",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491169:17836202",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "fallbackSandMcpAutoReviewSummary",
+    "qualified_name": "fallbackSandMcpAutoReviewSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491169,
+    "end_line": 491184,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "02c6c1abc1466ecee605c6718ea769e244db74fba31f5091c972eb7cecf8501e",
+    "calls": [
+      ".includes",
+      "base.toLowerCase",
+      "compact",
+      "genericSandMcpAutoReviewSummary",
+      "hint.toLowerCase",
+      "humanizeMcpToolAction",
+      "safeMcpDestinationHint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491185:17836830",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandMcpAutoReviewAction",
+    "qualified_name": "describeSandMcpAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491185,
+    "end_line": 491200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a6893c58452259f437d9e2757e9506193a72ce55cc3f811806e0e2c8b6c017a9",
+    "calls": [
+      ".trim",
+      "args.description.replace",
+      "compact",
+      "description9.replace",
+      "fallbackSandMcpAutoReviewSummary",
+      "mentionsServer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491201:17837481",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandMcpAutoReviewActionSource",
+    "qualified_name": "describeSandMcpAutoReviewActionSource",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491201,
+    "end_line": 491222,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ece149a01f19e61875367946044ba39ef7072eab2bc51a19a4eccc6fe6ec97b2",
+    "calls": [
+      ".trim",
+      "args.description.replace",
+      "compact",
+      "describeSandMcpAutoReviewAction",
+      "description9.replace",
+      "safeMcpDestinationHint",
+      "sandMcpAutoReviewAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491223:17838465",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandAutomationWriteAction",
+    "qualified_name": "summarizeSandAutomationWriteAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491223,
+    "end_line": 491237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "027f8c95edf7cf388be93495dbda7cb2c6070a03801e6034e9e21152969a9df5",
+    "calls": [
+      ".join",
+      ".slice",
+      "args.referencingAutomationNames.flatMap",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "when.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491238:17839349",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeSandMeetingInstructionCopy",
+    "qualified_name": "describeSandMeetingInstructionCopy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491238,
+    "end_line": 491246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d2d7e0de0f81509e83b435128330dcd8d1e17a4352a5332ee179010d81f0902d",
+    "calls": [
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491247:17839610",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandMeetingInstructionAction",
+    "qualified_name": "summarizeSandMeetingInstructionAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491247,
+    "end_line": 491250,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "73f2a2918fa159e2e23e9132a1e333d269806d6a19186365b52d38752b60ea53",
+    "calls": [
+      "describeSandMeetingInstructionCopy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491251:17839834",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "describeReplyDelivery",
+    "qualified_name": "describeReplyDelivery",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491251,
+    "end_line": 491256,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mode",
+      "interrupt"
+    ],
+    "body_sha256": "ae86025c67232423672a26752d9b5a8fa42915e39288d53ac4ab587745d7e40a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491257:17840084",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandEmailSendAction",
+    "qualified_name": "summarizeSandEmailSendAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491257,
+    "end_line": 491278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9aa65cff81cbcfe28949f1211d56152024522a1720a9d614e44dd480388bb90f",
+    "calls": [
+      ".join",
+      "args.attachments.map",
+      "args.bcc.map",
+      "args.cc.map",
+      "args.to.map",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "replyTo.map",
+      "summarizeEmailHtml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491288:17841876",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeEmailHtml",
+    "qualified_name": "summarizeEmailHtml",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491288,
+    "end_line": 491299,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "a4d98b56e411ef31e9ab54bf2d19f81f281f28fdebf06a814c48c211576a767f",
+    "calls": [
+      ".join",
+      ".map",
+      ".replace",
+      "Array.from",
+      "compactHeadAndTail",
+      "html.matchAll",
+      "html.replace",
+      "new Set",
+      "redactSandAutoReviewInlineSecrets",
+      "urls.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491300:17842825",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandCloudAgentAction",
+    "qualified_name": "summarizeSandCloudAgentAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491300,
+    "end_line": 491351,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "bd93feadc41890cb76086ee39e01555e72740f5e94934bc83a4ad4a69399e30f",
+    "calls": [
+      ".filter",
+      "args.customMode.trim",
+      "args.secretNames.join",
+      "args.title.trim",
+      "attachedParts.join",
+      "compact",
+      "compactHeadAndTail",
+      "describeReplyDelivery",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [
+      "where"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 21,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491352:17846477",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandSubagentAction",
+    "qualified_name": "summarizeSandSubagentAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491352,
+    "end_line": 491358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cab5f4706fcf32e922a3e864bd9a9fed14cb9ee0112aecbc449de8e5d608c775",
+    "calls": [
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491359:17846807",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandBrowserAutoReviewAction",
+    "qualified_name": "summarizeSandBrowserAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491359,
+    "end_line": 491409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "971c6920e3dcdac22c9e979e4e1143b84e711ae2b78f95da202c90b25e25fe17",
+    "calls": [
+      ".join",
+      ".split",
+      ".trim",
+      "args.cdpMethod.slice",
+      "args.element.replace",
+      "args.key.slice",
+      "compact",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "summarize",
+      "summarizeTypedText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 13,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491363:17847231",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarize",
+    "qualified_name": "summarizeSandBrowserAutoReviewAction/summarize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491363,
+    "end_line": 491363,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "0dfca2fd234eea58925a9e33cc45bb36245b5d71b800cba99a5a9e0ac2873351",
+    "calls": [
+      "compact"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491410:17849064",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeTypedText",
+    "qualified_name": "summarizeTypedText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491410,
+    "end_line": 491415,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "249334ad7a08e3a42fefde589c0cdb91b421505b69fc72290ddf034a612347a4",
+    "calls": [
+      ".includes",
+      "/(?:api[_ -]?key|authorization|credential|password|secret|token)\\s*[:=]/i.test",
+      "/^[A-Za-z0-9+/_=-]{24,}$/.test",
+      "SAND_AUTO_REVIEW_SECRET_VALUE_PATTERN.test",
+      "compactHeadAndTail",
+      "redactSandAutoReviewInlineSecrets",
+      "text3.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:491416:17849644",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-summaries.ts",
+    "name": "summarizeSandComputerTypedText",
+    "qualified_name": "summarizeSandComputerTypedText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 491416,
+    "end_line": 491418,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "07c01b418c05c9bb21ef381c8b9ff05cde60d5f19fd0723fee9ce295dde4af6a",
+    "calls": [
+      "summarizeTypedText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

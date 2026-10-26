@@ -1,0 +1,139 @@
+[
+  {
+    "id": "evaluation:587508:22116118",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/shell-executors.ts",
+    "name": "createTurnShellExecutorEntries",
+    "qualified_name": "createTurnShellExecutorEntries",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587508,
+    "end_line": 587541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turnToolHost",
+      "boxConnection",
+      "machineIds"
+    ],
+    "body_sha256": "6961bcf95d7ba0c8eea181423267e80399ac489e4a1b2eddfa2bc2616676f8aa",
+    "calls": [
+      "base.get",
+      "resourceEntry",
+      "turnToolHost.getConversationId",
+      "wrapBackgroundShellExecutorForAudit",
+      "wrapShellStreamExecutorForAudit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587514:22116473",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/shell-executors.ts",
+    "name": "target",
+    "qualified_name": "createTurnShellExecutorEntries/target",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587514,
+    "end_line": 587517,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "588053fd6ce74402f843e899c47680cf61a25644ae3987806ac1ac87597b6988",
+    "calls": [
+      "auditedUserMachineId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587529:22116923",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/shell-executors.ts",
+    "name": "execute",
+    "qualified_name": "createTurnShellExecutorEntries/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587529,
+    "end_line": 587532,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "603c24589009e739634a0056567a470dac7c771a47553604aa5ab3958323ab6d",
+    "calls": [
+      "baseShellStream.execute",
+      "host.autoReviewGate.assertNoPendingApproval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587535:22117150",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/shell-executors.ts",
+    "name": "execute",
+    "qualified_name": "createTurnShellExecutorEntries/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587535,
+    "end_line": 587538,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "4c417ed7e08504a0efc2fe58dfbf4f9256008577cc1d505c7817b9379e03961f",
+    "calls": [
+      "baseBackgroundShell.execute",
+      "host.autoReviewGate.assertNoPendingApproval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

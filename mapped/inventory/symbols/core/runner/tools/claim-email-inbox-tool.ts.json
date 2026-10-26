@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "host:764727:29289698",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeClaimEmailInboxTool",
+    "qualified_name": "describeClaimEmailInboxTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764727,
+    "end_line": 764736,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "multipleInboxesEnabled"
+    ],
+    "body_sha256": "3b178df98eddb5ae33f3e4bd3116176d021440a848e8e2207d65cb8df4554902",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764737:29291298",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "parseClaimEmailUsername",
+    "qualified_name": "parseClaimEmailUsername",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764737,
+    "end_line": 764763,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3a1bdc950f470e1f16d8e2d9440fa8e24740121a0e80059a6ed518422ee6fae9",
+    "calls": [
+      ".toLowerCase",
+      "USERNAME_PATTERN.test",
+      "domain2.endsWith",
+      "new SandToolInputError",
+      "raw.trim",
+      "trimmed.lastIndexOf",
+      "trimmed.slice"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764764:29292449",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "normalizeClaimEmailInboxArgs",
+    "qualified_name": "normalizeClaimEmailInboxArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764764,
+    "end_line": 764775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8c97bcd9a60881dc22e7ee5266f99280956dad2a09052eb23086d80e8a544ccb",
+    "calls": [
+      "args.display_name.trim",
+      "new SandToolInputError",
+      "parseClaimEmailUsername"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764776:29292903",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "claimEmailInbox",
+    "qualified_name": "claimEmailInbox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764776,
+    "end_line": 764793,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "b5477073fd758309414ba7c0500a671568014447a1ef2d546b0518d9cf83b6c0",
+    "calls": [
+      "deps.email.createInbox",
+      "deps.reviewClaim",
+      "describeClaimedInbox",
+      "normalizeClaimEmailInboxArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764794:29293624",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeClaimedInbox",
+    "qualified_name": "describeClaimedInbox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764794,
+    "end_line": 764801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address",
+      "draftsOnly"
+    ],
+    "body_sha256": "baae82affb5250a8cd89eeba50a6cddbf2a93a3394b3d0c3316a74d1b43b7226",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764802:29294470",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "createClaimEmailInboxTool",
+    "qualified_name": "createClaimEmailInboxTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764802,
+    "end_line": 764811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a83f9df44c1a01b5cef8d28fd3b9c077b442cf4ccaad9e69558e401e94b3b24e",
+    "calls": [
+      "defineCommunicateTool",
+      "describeClaimEmailInboxTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764808:29294772",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createClaimEmailInboxTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764808,
+    "end_line": 764808,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1d2b59ff5f996d9d032e7b1cda004c8ebc5b1cb14d2ae18f17cc45071924496e",
+    "calls": [
+      ".toLowerCase",
+      "args.username.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764809:29294845",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "execute",
+    "qualified_name": "createClaimEmailInboxTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764809,
+    "end_line": 764809,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "0872b2b6d7e8ee89be3b39b9d417d4e9a734c7b367be2bf91e72c0807fa1829a",
+    "calls": [
+      "claimEmailInbox"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764823:29295964",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "checkedName",
+    "qualified_name": "checkedName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764823,
+    "end_line": 764830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested"
+    ],
+    "body_sha256": "6895a01f551287167a9a9b6df36d1ed9b26db8aaa628ec11a06f325d56204100",
+    "calls": [
+      "parseClaimEmailUsername"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:764831:29296220",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "availabilityLine",
+    "qualified_name": "availabilityLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764831,
+    "end_line": 764846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "result"
+    ],
+    "body_sha256": "c9689ca9d11bc8b331e36178d8aab3f5ed58aa39074ea8496b9a611da720493a",
+    "calls": [
+      "result.availability.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764847:29296718",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "renderEmailAddressAvailability",
+    "qualified_name": "renderEmailAddressAvailability",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764847,
+    "end_line": 764857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "names3",
+      "results"
+    ],
+    "body_sha256": "66289fc01eeba9301edbdef159ca51a27b17dcdae325c51bb9e0d9622c3a5202",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "names3.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764858:29297287",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "checkEmailInboxAvailability",
+    "qualified_name": "checkEmailInboxAvailability",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764858,
+    "end_line": 764875,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "1b5500191d865fd10a8c8bd1e4d44d1e68c4593f08cd62eea619c5d6a02a1c9f",
+    "calls": [
+      "args.usernames.map",
+      "deps.email.checkAddressAvailability",
+      "names3.flatMap",
+      "new Map",
+      "new SandEmailError",
+      "new Set",
+      "renderEmailAddressAvailability",
+      "usernames.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandEmailError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764876:29297987",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "createCheckEmailInboxAvailabilityTool",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764876,
+    "end_line": 764885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "2e3235551e9bfde826a32ab7dbf104db28a3ded25b0e2461a120025194f8c5ed",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764882:29298303",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764882,
+    "end_line": 764882,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7e478405a7e33ece2d225eb0c0584c43f0cf724a13b44b353ce48a5e6d8a5f27",
+    "calls": [
+      "args.usernames.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764883:29298367",
+    "artifact": "host",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "execute",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764883,
+    "end_line": 764883,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "f6dffee573e4bdea350c7bbc1bcd8626bd53892e78f4bd2303eedc9d3326e62e",
+    "calls": [
+      "checkEmailInboxAvailability"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558095:20709885",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeClaimEmailInboxTool",
+    "qualified_name": "describeClaimEmailInboxTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558095,
+    "end_line": 558104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "multipleInboxesEnabled"
+    ],
+    "body_sha256": "3b178df98eddb5ae33f3e4bd3116176d021440a848e8e2207d65cb8df4554902",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558105:20711485",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "parseClaimEmailUsername",
+    "qualified_name": "parseClaimEmailUsername",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558105,
+    "end_line": 558131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3a1bdc950f470e1f16d8e2d9440fa8e24740121a0e80059a6ed518422ee6fae9",
+    "calls": [
+      ".toLowerCase",
+      "USERNAME_PATTERN.test",
+      "domain2.endsWith",
+      "new SandToolInputError",
+      "raw.trim",
+      "trimmed.lastIndexOf",
+      "trimmed.slice"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558132:20712636",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "normalizeClaimEmailInboxArgs",
+    "qualified_name": "normalizeClaimEmailInboxArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558132,
+    "end_line": 558143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8c97bcd9a60881dc22e7ee5266f99280956dad2a09052eb23086d80e8a544ccb",
+    "calls": [
+      "args.display_name.trim",
+      "new SandToolInputError",
+      "parseClaimEmailUsername"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558144:20713090",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "claimEmailInbox",
+    "qualified_name": "claimEmailInbox",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558144,
+    "end_line": 558161,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "b5477073fd758309414ba7c0500a671568014447a1ef2d546b0518d9cf83b6c0",
+    "calls": [
+      "deps.email.createInbox",
+      "deps.reviewClaim",
+      "describeClaimedInbox",
+      "normalizeClaimEmailInboxArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558162:20713811",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeClaimedInbox",
+    "qualified_name": "describeClaimedInbox",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558162,
+    "end_line": 558169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address",
+      "draftsOnly"
+    ],
+    "body_sha256": "baae82affb5250a8cd89eeba50a6cddbf2a93a3394b3d0c3316a74d1b43b7226",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558170:20714657",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "createClaimEmailInboxTool",
+    "qualified_name": "createClaimEmailInboxTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558170,
+    "end_line": 558179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a83f9df44c1a01b5cef8d28fd3b9c077b442cf4ccaad9e69558e401e94b3b24e",
+    "calls": [
+      "defineCommunicateTool",
+      "describeClaimEmailInboxTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558176:20714959",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createClaimEmailInboxTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558176,
+    "end_line": 558176,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1d2b59ff5f996d9d032e7b1cda004c8ebc5b1cb14d2ae18f17cc45071924496e",
+    "calls": [
+      ".toLowerCase",
+      "args.username.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558177:20715032",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "execute",
+    "qualified_name": "createClaimEmailInboxTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558177,
+    "end_line": 558177,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "0872b2b6d7e8ee89be3b39b9d417d4e9a734c7b367be2bf91e72c0807fa1829a",
+    "calls": [
+      "claimEmailInbox"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558191:20716151",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "checkedName",
+    "qualified_name": "checkedName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558191,
+    "end_line": 558198,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested"
+    ],
+    "body_sha256": "3c67e24b6c66632d8a52b3dd0ca5a175f4514dae0b185a5f8c795b701964db6d",
+    "calls": [
+      "parseClaimEmailUsername"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:558199:20716407",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "availabilityLine",
+    "qualified_name": "availabilityLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558199,
+    "end_line": 558214,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "result"
+    ],
+    "body_sha256": "c9689ca9d11bc8b331e36178d8aab3f5ed58aa39074ea8496b9a611da720493a",
+    "calls": [
+      "result.availability.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558215:20716905",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "renderEmailAddressAvailability",
+    "qualified_name": "renderEmailAddressAvailability",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558215,
+    "end_line": 558225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "names3",
+      "results"
+    ],
+    "body_sha256": "66289fc01eeba9301edbdef159ca51a27b17dcdae325c51bb9e0d9622c3a5202",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "names3.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558226:20717474",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "checkEmailInboxAvailability",
+    "qualified_name": "checkEmailInboxAvailability",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558226,
+    "end_line": 558243,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "1b5500191d865fd10a8c8bd1e4d44d1e68c4593f08cd62eea619c5d6a02a1c9f",
+    "calls": [
+      "args.usernames.map",
+      "deps.email.checkAddressAvailability",
+      "names3.flatMap",
+      "new Map",
+      "new SandEmailError",
+      "new Set",
+      "renderEmailAddressAvailability",
+      "usernames.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandEmailError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558244:20718174",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "createCheckEmailInboxAvailabilityTool",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558244,
+    "end_line": 558253,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "2e3235551e9bfde826a32ab7dbf104db28a3ded25b0e2461a120025194f8c5ed",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558250:20718490",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558250,
+    "end_line": 558250,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7e478405a7e33ece2d225eb0c0584c43f0cf724a13b44b353ce48a5e6d8a5f27",
+    "calls": [
+      "args.usernames.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558251:20718554",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/claim-email-inbox-tool.ts",
+    "name": "execute",
+    "qualified_name": "createCheckEmailInboxAvailabilityTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558251,
+    "end_line": 558251,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "f6dffee573e4bdea350c7bbc1bcd8626bd53892e78f4bd2303eedc9d3326e62e",
+    "calls": [
+      "checkEmailInboxAvailability"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,395 @@
+[
+  {
+    "id": "host:480682:17593276",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "aggregateStoreDbSweepOutcome",
+    "qualified_name": "aggregateStoreDbSweepOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480682,
+    "end_line": 480688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "d1e5ead4c9936abb6ade4924747927bb700858fc903d4bc6277120cd908a075e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480703:17593813",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "StoreDbCapture.constructor",
+    "qualified_name": "StoreDbCapture.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480703,
+    "end_line": 480733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "48be83b1b847efc9657b0e7b078cec6dabd8dbec3756f7e193cc7478f0c22454",
+    "calls": [
+      "new StoreDbBundleCapture",
+      "new StoreDbSnapshotUpload"
+    ],
+    "writes": [
+      "this.bundleCapture",
+      "this.deps",
+      "this.ensureWriterLock",
+      "this.fs",
+      "this.hasLiveHandle",
+      "this.isStopped",
+      "this.largeObjectThreshold",
+      "this.log",
+      "this.manifestStore",
+      "this.snapshotUpload",
+      "this.transfer",
+      "this.uploadConcurrency"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480734:17595026",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "StoreDbCapture.runAgentStoreDbsSweep",
+    "qualified_name": "StoreDbCapture.runAgentStoreDbsSweep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480734,
+    "end_line": 480870,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId",
+      "skipLiveHandles"
+    ],
+    "body_sha256": "28c1e4f4dd6efebd6377d9260e0979ced505d4c310bdf7d3dee6adb33d332881",
+    "calls": [
+      ".sort",
+      "bundles.filter",
+      "bundles.push",
+      "createStoreDbCaptureTrace",
+      "entry.isDirectory",
+      "errorMessage",
+      "findSystemErrno",
+      "forEachBounded",
+      "new Set",
+      "parseAgentId",
+      "recordStoreDbCaptureFailure",
+      "targets.find",
+      "targets.push",
+      "targets.reduce",
+      "this.bundleCapture.agentHasPendingDbRecovery",
+      "this.bundleCapture.readWalStat",
+      "this.deps.categories.find",
+      "this.fs.stat",
+      "this.hasLiveHandle",
+      "this.log",
+      "this.manifestStore.loadManifest",
+      "this.verifyAgentDbsComplete"
+    ],
+    "writes": [
+      "bundleBlocked",
+      "fileStat",
+      "roster",
+      "summary.failures"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 8,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:480820:17598191",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "bySizeDesc",
+    "qualified_name": "StoreDbCapture.runAgentStoreDbsSweep/bySizeDesc",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480820,
+    "end_line": 480820,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "51de2c7c6294911d54a06ccd1fd1ffc9a20136de48358458f74224dcfbbbafe6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480825:17598566",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "capture",
+    "qualified_name": "StoreDbCapture.runAgentStoreDbsSweep/capture",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480825,
+    "end_line": 480853,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "bundle"
+    ],
+    "body_sha256": "93ccf79148dfd297465480c5df616e5393b4649c47a3267c9dd7908a6a3e0d9f",
+    "calls": [
+      "capturedThisSweep.add",
+      "errorMessage",
+      "recordStoreDbCaptureFailure",
+      "this.bundleCapture.captureAgentDbBundle",
+      "this.log"
+    ],
+    "writes": [
+      "agentCount",
+      "committed",
+      "summary.failures"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480871:17600068",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "StoreDbCapture.verifyAgentDbsComplete",
+    "qualified_name": "StoreDbCapture.verifyAgentDbsComplete",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480871,
+    "end_line": 480907,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentsRoot",
+      "relPrefix",
+      "manifest",
+      "capturedThisSweep"
+    ],
+    "body_sha256": "86fa0baae049f0fd12bd4326758409291cfc0de9c581b83a0179bbea7e6a4a59",
+    "calls": [
+      "entry.isDirectory",
+      "findSystemErrno",
+      "parseAgentId",
+      "this.bundleCapture.agentHasPendingDbRecovery",
+      "this.bundleCapture.isAgentDbSnapshotDurable",
+      "this.fs.stat"
+    ],
+    "writes": [
+      "entries",
+      "fileStat"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:480908:17601384",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "StoreDbCapture.pruneMissingAgentStoreDbs",
+    "qualified_name": "StoreDbCapture.pruneMissingAgentStoreDbs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480908,
+    "end_line": 480959,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId"
+    ],
+    "body_sha256": "3c9423eeb6bd64fd63519ce7c4c5f1a61b666b904c2ea5eb7ba52ac8d0ac7c26",
+    "calls": [
+      ".map",
+      "AGENT_STORE_DB_BASENAMES.find",
+      "AGENT_STORE_DB_BASENAMES.some",
+      "entries.filter",
+      "errorLogTag",
+      "existing.has",
+      "isMissingPathError",
+      "manifest.keys",
+      "new Set",
+      "relPath.lastIndexOf",
+      "relPath.slice",
+      "relPath.startsWith",
+      "reportBoxStoreDiagnostic",
+      "rest.includes",
+      "rest.split",
+      "this.deps.categories.find",
+      "this.log",
+      "this.manifestStore.deleteManifestEntry",
+      "this.manifestStore.loadManifest",
+      "this.storeDbCaptures.delete",
+      "this.transfer.localStat.delete"
+    ],
+    "writes": [
+      "existing",
+      "removed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480960:17603765",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "StoreDbCapture.runAgentStoreDbSnapshot",
+    "qualified_name": "StoreDbCapture.runAgentStoreDbSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480960,
+    "end_line": 481094,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "e5b99f79dc214307b7aae8c0babc21df6de4bf50b3149288961eaf50b32c4fa5",
+    "calls": [
+      "AGENT_STORE_DB_BASENAMES.some",
+      "aggregateStoreDbSweepOutcome",
+      "createStoreDbCaptureTrace",
+      "errorMessage",
+      "findSystemErrno",
+      "finish",
+      "new Map",
+      "recordStoreDbCaptureFailure",
+      "targets.map",
+      "targets.push",
+      "targets.some",
+      "this.bundleCapture.agentHasPendingDbRecovery",
+      "this.bundleCapture.captureAgentDbBundle",
+      "this.bundleCapture.isAgentDbBundleCommitted",
+      "this.bundleCapture.readWalStat",
+      "this.deps.categories.find",
+      "this.deps.resolveStoreId",
+      "this.ensureWriterLock",
+      "this.fs.stat",
+      "this.isStopped",
+      "this.log",
+      "this.manifestStore.deleteManifestEntry",
+      "this.manifestStore.loadManifest",
+      "this.manifestStore.saveManifest",
+      "this.storeDbCaptures.delete",
+      "this.transfer.localStat.delete"
+    ],
+    "writes": [
+      "bundleBlocked",
+      "bundleCommitted",
+      "fileStat",
+      "manifestChanged",
+      "storeId",
+      "summary.failures",
+      "summary.removed"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 16,
+      "loops": 2,
+      "awaits": 10,
+      "returns": 7,
+      "throws": 1,
+      "catches": 4
+    }
+  },
+  {
+    "id": "host:480974:17604107",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-capture.ts",
+    "name": "finish",
+    "qualified_name": "StoreDbCapture.runAgentStoreDbSnapshot/finish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480974,
+    "end_line": 480980,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome",
+      "isCommitted"
+    ],
+    "body_sha256": "078ff6fc1bc1ba9f2b26b2e4225573273b2ca5f30abf86896f15f210af6f5792",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

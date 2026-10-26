@@ -1,0 +1,732 @@
+[
+  {
+    "id": "host:451554:16542657",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "normalizedHostname",
+    "qualified_name": "normalizedHostname",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451554,
+    "end_line": 451558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname4"
+    ],
+    "body_sha256": "f12a909e2fedfbdf8f420e69ec2de1d88b36bce4d178b90ac72e405c8dcfbcd2",
+    "calls": [
+      ".toLowerCase",
+      "hostname4.slice"
+    ],
+    "writes": [
+      "end"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451559:16542833",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "isCommercialHostname",
+    "qualified_name": "isCommercialHostname",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451559,
+    "end_line": 451562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname4"
+    ],
+    "body_sha256": "f4cd374db4e8a9c306050e19de2ce5dbb4db69b778de2837144c7d98e9ce9950",
+    "calls": [
+      "COMMERCIAL_DOMAINS.some",
+      "normalizedHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451567:16543096",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpProtocolOf",
+    "qualified_name": "httpProtocolOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451567,
+    "end_line": 451569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "95c12e7dc4287a0522ba5f6af6d6747264cd07121014a16137c1791594cabf28",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451570:16543199",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpOriginOf",
+    "qualified_name": "httpOriginOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451570,
+    "end_line": 451572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "75c97244e75dbdfe18fdc92b57f46cfeaafb5f0d89a5981574d055001d4fb847",
+    "calls": [
+      "httpProtocolOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451573:16543281",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "deploymentZoneOf",
+    "qualified_name": "deploymentZoneOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451573,
+    "end_line": 451577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backendUrl"
+    ],
+    "body_sha256": "933d57ffe94428c7bac2ef6b80f8c98b7402186921d32a66f466204ce6fa556d",
+    "calls": [
+      ".join",
+      ".slice",
+      ".split",
+      "COMMERCIAL_DOMAINS.includes",
+      "isCommercialHostname",
+      "normalizedHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451578:16543509",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "reachableOriginsOf",
+    "qualified_name": "reachableOriginsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451578,
+    "end_line": 451585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "urls"
+    ],
+    "body_sha256": "bdbd85c1ebf56d1759726b55f6205d8e7f1a0b67ebb0ec0954c2e8a37d2b02b7",
+    "calls": [
+      "URL.parse",
+      "httpOriginOf",
+      "new Set",
+      "origins.add",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451587:16543838",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "IsolatedDeploymentConfigError.constructor",
+    "qualified_name": "IsolatedDeploymentConfigError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451587,
+    "end_line": 451590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "8eb7a2cb1f0f3671f5dc2c5ee82479168eedaffe1ed60dec25166161ea7c8049",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451592:16543926",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpUrlOf",
+    "qualified_name": "httpUrlOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451592,
+    "end_line": 451595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "6d205e2c0a38ec3fb4d14cdd63b415d943b011e75ebfb124a0909c5487c20524",
+    "calls": [
+      "URL.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451596:16544085",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "sandIsolatedDeploymentOf",
+    "qualified_name": "sandIsolatedDeploymentOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451596,
+    "end_line": 451625,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "fc6616b209440ca0f516a50ee38f154c43170992e2fb080bd422717cab47e31d",
+    "calls": [
+      "deploymentZoneOf",
+      "httpUrlOf",
+      "new IsolatedDeploymentConfigError",
+      "reachableOriginsOf"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "IsolatedDeploymentConfigError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451616:16544971",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "isInDeploymentZone",
+    "qualified_name": "sandIsolatedDeploymentOf/isInDeploymentZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451616,
+    "end_line": 451616,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "7cafac6d085118c43e45ae74f7d2d38abe69d490f6d272a9f512e463298cb831",
+    "calls": [
+      ".endsWith",
+      "httpProtocolOf",
+      "normalizedHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:451619:16545141",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "refuses",
+    "qualified_name": "sandIsolatedDeploymentOf/refuses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 451619,
+    "end_line": 451623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "66acb515e2f23891de1936eb7ceaaedad0e16a4086902e7e544f50f4b74a60bb",
+    "calls": [
+      "URL.parse",
+      "httpOriginOf",
+      "isCommercialHostname",
+      "isInDeploymentZone",
+      "reachable.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597100:22673926",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "normalizedHostname2",
+    "qualified_name": "normalizedHostname2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597100,
+    "end_line": 597104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname3"
+    ],
+    "body_sha256": "4e4e18dbeaa086bf72c606fb25862ee79fd67913cb6920bdd9330a8ebcdf531e",
+    "calls": [
+      ".toLowerCase",
+      "hostname3.slice"
+    ],
+    "writes": [
+      "end"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597105:22674103",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "isCommercialHostname",
+    "qualified_name": "isCommercialHostname",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597105,
+    "end_line": 597108,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname3"
+    ],
+    "body_sha256": "21f5d44bce67173ce98831949a45a321bbea2af6f7337db5fb6e8504c22c2232",
+    "calls": [
+      "COMMERCIAL_DOMAINS.some",
+      "normalizedHostname2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597113:22674367",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpProtocolOf",
+    "qualified_name": "httpProtocolOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597113,
+    "end_line": 597115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "95c12e7dc4287a0522ba5f6af6d6747264cd07121014a16137c1791594cabf28",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597116:22674470",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpOriginOf",
+    "qualified_name": "httpOriginOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597116,
+    "end_line": 597118,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "75c97244e75dbdfe18fdc92b57f46cfeaafb5f0d89a5981574d055001d4fb847",
+    "calls": [
+      "httpProtocolOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597119:22674552",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "deploymentZoneOf",
+    "qualified_name": "deploymentZoneOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597119,
+    "end_line": 597123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backendUrl"
+    ],
+    "body_sha256": "19ac87ba2521cd09241671525a9b3720293aca11b4680afd8810ab3323f883cb",
+    "calls": [
+      ".join",
+      ".slice",
+      ".split",
+      "COMMERCIAL_DOMAINS.includes",
+      "isCommercialHostname",
+      "normalizedHostname2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597124:22674781",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "reachableOriginsOf",
+    "qualified_name": "reachableOriginsOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597124,
+    "end_line": 597131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "urls"
+    ],
+    "body_sha256": "946939a5497801b364b1eef09803215f8e49dee2a4148e3430b1b3a34d2de36a",
+    "calls": [
+      "URL.parse",
+      "httpOriginOf",
+      "new Set",
+      "origins.add",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597133:22675107",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "IsolatedDeploymentConfigError.constructor",
+    "qualified_name": "IsolatedDeploymentConfigError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597133,
+    "end_line": 597136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "8eb7a2cb1f0f3671f5dc2c5ee82479168eedaffe1ed60dec25166161ea7c8049",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597138:22675195",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "httpUrlOf",
+    "qualified_name": "httpUrlOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597138,
+    "end_line": 597141,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "91f95d1eefbe1a76f8cbf7e7c41999a97da6e51e685b5421876d075d666a12ca",
+    "calls": [
+      "URL.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597142:22675350",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "sandIsolatedDeploymentOf",
+    "qualified_name": "sandIsolatedDeploymentOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597142,
+    "end_line": 597171,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "c9181fd159283be6d51b1db681b6f82c1c34a517f608b8d98d2450a581c8a2f0",
+    "calls": [
+      "deploymentZoneOf",
+      "httpUrlOf",
+      "new IsolatedDeploymentConfigError",
+      "reachableOriginsOf"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "IsolatedDeploymentConfigError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597162:22676236",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "isInDeploymentZone",
+    "qualified_name": "sandIsolatedDeploymentOf/isInDeploymentZone",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597162,
+    "end_line": 597162,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "843c40248e98d8ec5ba8f3ec526384a6beb4fc22251f20c9325edd64da1f7437",
+    "calls": [
+      ".endsWith",
+      "httpProtocolOf",
+      "normalizedHostname2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:597165:22676407",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/isolated-deployment.ts",
+    "name": "refuses",
+    "qualified_name": "sandIsolatedDeploymentOf/refuses",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 597165,
+    "end_line": 597169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "605bef138221ffaa6aa31aa7a53e89e14050c4d5529e92c6056ae33a0a633dd1",
+    "calls": [
+      "URL.parse",
+      "httpOriginOf",
+      "isCommercialHostname",
+      "isInDeploymentZone",
+      "reachable.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

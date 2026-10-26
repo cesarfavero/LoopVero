@@ -1,0 +1,424 @@
+[
+  {
+    "id": "host:491017:17983126",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "conversationNameFromPrompt",
+    "qualified_name": "conversationNameFromPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491017,
+    "end_line": 491023,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prompt"
+    ],
+    "body_sha256": "6f74230fd9d68954e7532f8cabfe81f4002096d4394fc9920007e6c23f203976",
+    "calls": [
+      ".replace",
+      ".slice",
+      "prompt.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491024:17983349",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "listShape",
+    "qualified_name": "listShape",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491024,
+    "end_line": 491038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "format4",
+      "count2"
+    ],
+    "body_sha256": "bbe3e006e1c6c6ddca92891f735acc093e79835dec123f68bccefeeff6500e37",
+    "calls": [
+      "Array.from",
+      "format4",
+      "formatted.indexOf",
+      "formatted.slice",
+      "separators.push"
+    ],
+    "writes": [
+      "cursor",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491039:17983947",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "readsAsList",
+    "qualified_name": "readsAsList",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491039,
+    "end_line": 491063,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stored",
+      "names3",
+      "format4"
+    ],
+    "body_sha256": "a83d3245f1c1af2ec156b00f2ef981a669d4cc0570b5be9f1e9e56e473fdceb7",
+    "calls": [
+      "listShape",
+      "walk3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491045:17984264",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "eat2",
+    "qualified_name": "readsAsList/eat2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491045,
+    "end_line": 491049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pos",
+      "text3"
+    ],
+    "body_sha256": "12aca9d8b475f79bb0379ccabaf71eb4723dcb59479d77ed57708a7623441b78",
+    "calls": [
+      "stored.slice",
+      "stored.startsWith",
+      "text3.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491050:17984479",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "walk3",
+    "qualified_name": "readsAsList/walk3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491050,
+    "end_line": 491061,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pos",
+      "slot",
+      "used"
+    ],
+    "body_sha256": "3b4d1d7cdc8efd96eeb25416ef70e0d5d03478b0701e698b7d6ba809cc31b59c",
+    "calls": [
+      "all.map",
+      "eat2",
+      "seats.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491064:17985081",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "namesTwoMembers",
+    "qualified_name": "namesTwoMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491064,
+    "end_line": 491075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stored",
+      "memberNames"
+    ],
+    "body_sha256": "770e09b75e14c2047f144a55cf43ee28641c782ba662a4ed9d52c98ce24325b4",
+    "calls": [
+      ".separators.filter",
+      "listShape",
+      "new Set",
+      "segments.filter",
+      "separators.reduce"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491076:17985551",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "groupChatTitle",
+    "qualified_name": "groupChatTitle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491076,
+    "end_line": 491088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "agents",
+      "stored"
+    ],
+    "body_sha256": "ea82fcb1400201aad8ccb4125333bfbc5f9c10eb08a809ae1df2e279b957f895",
+    "calls": [
+      "bots.map",
+      "formatNarrowList",
+      "groupChatMembers",
+      "groupChatPeople",
+      "groupChatShortNames",
+      "namesTwoMembers",
+      "people.map",
+      "readsAsList",
+      "seated.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491089:17986556",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "generatedBotOnlyTitle",
+    "qualified_name": "generatedBotOnlyTitle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491089,
+    "end_line": 491115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "agents",
+      "stored"
+    ],
+    "body_sha256": "417323a4bfa143d6f3ea9cfb2232a85f295e6e2a77cbdb449c356bc18677ffed",
+    "calls": [
+      ".filter",
+      ".flatMap",
+      ".map",
+      ".sort",
+      "agents.filter",
+      "format4",
+      "members2.map",
+      "nameOf",
+      "new Set",
+      "segments.filter",
+      "separators.reduce"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491091:17986692",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "nameOf",
+    "qualified_name": "generatedBotOnlyTitle/nameOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491091,
+    "end_line": 491091,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "bot"
+    ],
+    "body_sha256": "b927fcebd9dc0229f9c1388611e28387f3c55c55e0105f2b8fa4e46fff446521",
+    "calls": [
+      "displayAgentName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491097:17987048",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "isCutDeparted",
+    "qualified_name": "generatedBotOnlyTitle/isCutDeparted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491097,
+    "end_line": 491097,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "segment"
+    ],
+    "body_sha256": "f3090194d324c06b272700404fa31690f7657bf3cd6c9e522085892074082de2",
+    "calls": [
+      ".some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491116:17988179",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "isUnnamedSingleBotRoom",
+    "qualified_name": "isUnnamedSingleBotRoom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491116,
+    "end_line": 491118,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "dd248454759b6aaa714eef0e79e416d3e25cc4817a6ef4a1238088fd55145a5a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491119:17988342",
+    "artifact": "host",
+    "module": "shared/agents/conversation-name.ts",
+    "name": "conversationNameForDisplay",
+    "qualified_name": "conversationNameForDisplay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491119,
+    "end_line": 491130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "agents"
+    ],
+    "body_sha256": "bd8da2664f1755624ae9b6a80b5b24eda1f38c6f1116f8369b228e66daa1da6c",
+    "calls": [
+      "agents.find",
+      "displayAgentName",
+      "generatedBotOnlyTitle",
+      "groupChatTitle",
+      "isGroupChat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

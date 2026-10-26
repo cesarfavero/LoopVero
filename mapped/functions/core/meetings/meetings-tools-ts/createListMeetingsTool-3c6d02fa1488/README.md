@@ -1,0 +1,37 @@
+# `createListMeetingsTool`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/components/tools/README.md).
+
+**Módulo:** `core/meetings/meetings-tools.ts` · [README do módulo](../../../../../modules/core/meetings/meetings-tools-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:773581-773589](../../../../../../reference/runtime/host-main.cjs#L773581-L773589) | `FunctionDeclaration` | não | `deps` |
+| [evaluation:572807-572815](../../../../../../reference/runtime/sand-eval-runner.cjs#L572807-L572815) | `FunctionDeclaration` | não | `deps` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:773581-773589](../../../../../../reference/runtime/host-main.cjs#L773581-L773589) | 0 | 0 | 0 | 1 | 0 | 0 |
+| [evaluation:572807-572815](../../../../../../reference/runtime/sand-eval-runner.cjs#L572807-L572815) | 0 | 0 | 0 | 1 | 0 | 0 |
+
+### host:773581
+
+Chamadas escritas diretamente neste corpo: `defineCommunicateTool`.
+
+SHA-256 do trecho: `b7e9f7759e271a431a9f2e00a008473670e143a37047e40c98f7fd3bcd7d6c5f`.
+
+### evaluation:572807
+
+Chamadas escritas diretamente neste corpo: `defineCommunicateTool`.
+
+SHA-256 do trecho: `b7e9f7759e271a431a9f2e00a008473670e143a37047e40c98f7fd3bcd7d6c5f`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

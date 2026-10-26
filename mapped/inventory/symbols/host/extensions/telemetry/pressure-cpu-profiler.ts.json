@@ -1,0 +1,366 @@
+[
+  {
+    "id": "host:731801:27794723",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "createInspectorBackend",
+    "qualified_name": "createInspectorBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731801,
+    "end_line": 731839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "8664c2e4867432c406ebe4c36cb033241cbe9dc429a9c2a3745ac244f7805816",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731804:27794796",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "start",
+    "qualified_name": "createInspectorBackend/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731804,
+    "end_line": 731821,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cc4b8a16ac3eff19c612dbbddd6772bf30e3cb64637513f3252fff3ce7a0a7b5",
+    "calls": [
+      "new import_promises78.Session",
+      "starting.connect",
+      "starting.disconnect",
+      "starting.post"
+    ],
+    "writes": [
+      "session"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:731822:27795298",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "stop",
+    "qualified_name": "createInspectorBackend/stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731822,
+    "end_line": 731833,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "252e906248a2483cfddd62d7625012e90b3679517947913850fcd677b8f4c771",
+    "calls": [
+      "JSON.stringify",
+      "active.disconnect",
+      "active.post",
+      "invariant",
+      "new SandProfilerCaptureError"
+    ],
+    "writes": [
+      "session"
+    ],
+    "throw_targets": [
+      "SandProfilerCaptureError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731834:27795721",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "dispose",
+    "qualified_name": "createInspectorBackend/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731834,
+    "end_line": 731837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9e9ee671105413f0b2d6dc94dd65bab4a8a1f9a5fdd30a83aeef5a27b4ca8086",
+    "calls": [
+      "session.disconnect"
+    ],
+    "writes": [
+      "session"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731840:27795795",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "createPressureCpuProfiler",
+    "qualified_name": "createPressureCpuProfiler",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731840,
+    "end_line": 731941,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "72ad771f3709957a062f81e49e82d973cd31a1bb08cfdff48af3956427a5bba4",
+    "calls": [
+      "createInspectorBackend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731844:27796030",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "knobs",
+    "qualified_name": "createPressureCpuProfiler/knobs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731844,
+    "end_line": 731860,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "508e1215a2f3a58826943d230180cdd250b1c94287c7f8872e423fc31c04c388",
+    "calls": [
+      "Math.max",
+      "options2.overrides"
+    ],
+    "writes": [
+      "live"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731866:27796830",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "pruneOldProfiles",
+    "qualified_name": "createPressureCpuProfiler/pruneOldProfiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731866,
+    "end_line": 731871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "maxRetainedProfiles"
+    ],
+    "body_sha256": "0955830807b35ffaa17edefa4bf796c75ef48537c344cd6aa50f8b9e2a6f3968",
+    "calls": [
+      ".filter",
+      ".sort",
+      "Math.max",
+      "profiles.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731872:27797234",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "finishCapture",
+    "qualified_name": "createPressureCpuProfiler/finishCapture",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731872,
+    "end_line": 731891,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "66ee6bfa36794aadc94379ab1dc184b53b6cc74147fc0a3038e9d0d07cf59a37",
+    "calls": [
+      "backend.stop",
+      "errorLogTag",
+      "knobs",
+      "now",
+      "options2.onCaptured",
+      "options2.reportHostLog",
+      "pruneOldProfiles"
+    ],
+    "writes": [
+      "state"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731893:27798030",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "onPressure",
+    "qualified_name": "createPressureCpuProfiler/onPressure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731893,
+    "end_line": 731926,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cd625669fd1ec23e89dff6fb6115231c79a38a518b1303a7b78e8ba98ef6615d",
+    "calls": [
+      ".catch",
+      ".then",
+      "backend.start",
+      "knobs",
+      "now"
+    ],
+    "writes": [
+      "lastCaptureStartedAtMs",
+      "previousPressureAtMs",
+      "state"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731927:27799150",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "onTick",
+    "qualified_name": "createPressureCpuProfiler/onTick",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731927,
+    "end_line": 731931,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b2eb97625d207e1c37ce624aa406230a5856ab561f8c7468f77a1c6f0eb9bcbc",
+    "calls": [
+      "finishCapture",
+      "now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731932:27799304",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/pressure-cpu-profiler.ts",
+    "name": "dispose",
+    "qualified_name": "createPressureCpuProfiler/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731932,
+    "end_line": 731939,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "83b09d3122abbee6b8c6bf8f2ce0c23ec85cc2e1e9517cc74b4a1dc4e007f6e3",
+    "calls": [
+      "backend.dispose"
+    ],
+    "writes": [
+      "disposed",
+      "state"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

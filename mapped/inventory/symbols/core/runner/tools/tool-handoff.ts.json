@@ -1,0 +1,136 @@
+[
+  {
+    "id": "evaluation:569311:21247204",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/tool-handoff.ts",
+    "name": "createToolHandoff",
+    "qualified_name": "createToolHandoff",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569311,
+    "end_line": 569341,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ed57f6722613d744b4a8c4e695d79b685001fa74c246fb293d73f30a761e74ac",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569314:21247306",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/tool-handoff.ts",
+    "name": "stopOtherTools",
+    "qualified_name": "createToolHandoff/stopOtherTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569314,
+    "end_line": 569321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ toolCallId }"
+    ],
+    "body_sha256": "6e152cafd7757440078d35ad4d634d2b2c46c6fc215a09ebbbf6211ab91f81cd",
+    "calls": [
+      "call.cancel",
+      "new SandRunAbortError"
+    ],
+    "writes": [
+      "handedOff"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569322:21247568",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/tool-handoff.ts",
+    "name": "wrapTool",
+    "qualified_name": "createToolHandoff/wrapTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569322,
+    "end_line": 569339,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "5450373a261dc504510071b05e71bd8c2e88790149cde08e96d9f101127a30f3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569325:21247637",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/tool-handoff.ts",
+    "name": "execute",
+    "qualified_name": "createToolHandoff/wrapTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569325,
+    "end_line": 569337,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "7846b145bd4c0d0804d38b4050bbac38a0264119a3351868914460b6bd18de53",
+    "calls": [
+      "active.add",
+      "active.delete",
+      "cancel",
+      "ctx.signal.throwIfAborted",
+      "ctx.withCancel",
+      "new ToolCallAbortedError",
+      "tool.execute"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ToolCallAbortedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

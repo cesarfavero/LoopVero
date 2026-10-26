@@ -1,0 +1,913 @@
+[
+  {
+    "id": "host:761831:29149402",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "sandToolCallExecutionTimeoutMs",
+    "qualified_name": "sandToolCallExecutionTimeoutMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761831,
+    "end_line": 761836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "isComputerUseSubagent",
+      "subagentToolTimeoutMs"
+    ],
+    "body_sha256": "5921ceec8fc91d01e30cb02d1efc575181f40a5b09eed8a2aa761c733fd838d2",
+    "calls": [
+      "isSubagentToolName",
+      "toolCallExecutionGuardMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761838:29149761",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "sandMaxBlockUntilMs",
+    "qualified_name": "sandMaxBlockUntilMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761838,
+    "end_line": 761843,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "isComputerUseSubagent"
+    ],
+    "body_sha256": "e808144fd84945c47ef6bd3ece99051c54d7da6b0729f8af24bb288c2c651a42",
+    "calls": [
+      "Math.min",
+      "sandToolCallExecutionTimeoutMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761844:29150046",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "dynamicToolCallErrorClass",
+    "qualified_name": "dynamicToolCallErrorClass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761844,
+    "end_line": 761848,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "a8e76e471f4c5c1cbc16595b5d61a6b43308976b067b6ecb72e9d3979a24fdc4",
+    "calls": [
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761850:29150319",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "startDynamicToolCallSpan",
+    "qualified_name": "startDynamicToolCallSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761850,
+    "end_line": 761863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "toolName"
+    ],
+    "body_sha256": "3f8bcf383dd8ef6b88e565f3a192fd6057e3ed5717a27aad9ae69327afc4aa5e",
+    "calls": [
+      "createSpan",
+      "ctx.withName",
+      "disposable.span.setAttribute",
+      "getSpan2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761851:29150421",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "end",
+    "qualified_name": "startDynamicToolCallSpan/end",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761851,
+    "end_line": 761852,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a4ea409bf05f706f32fb8a264110cd4a92d039cd051d9c20d470e6cb97dc5b24",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761857:29150607",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "end",
+    "qualified_name": "startDynamicToolCallSpan/end",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761857,
+    "end_line": 761861,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome",
+      "errorClass"
+    ],
+    "body_sha256": "cd471d1d37f48152fbe4bb40efe99a69c356b5ebe0f102a501dbdc00d7812335",
+    "calls": [
+      "disposable.span.setAttribute",
+      "disposable[computed]"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761864:29150839",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "withDynamicToolCallSpan",
+    "qualified_name": "withDynamicToolCallSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761864,
+    "end_line": 761883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "a0d5cfdfaf0c229a9a81e293577ffffec8640925640e6bfab1126cb76ec3f2db",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:761867:29150917",
+    "artifact": "host",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "execute",
+    "qualified_name": "withDynamicToolCallSpan/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 761867,
+    "end_line": 761881,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "7d4485635efe7901e01fe4f4a930be3c5b341f8c6ba465228ddc9b1d8f612eb1",
+    "calls": [
+      "callSpan.end",
+      "dynamicToolCallErrorClass",
+      "isIntentionalAbortReason2",
+      "startDynamicToolCallSpan",
+      "tool.execute"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:554097:20524910",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "sandToolCallExecutionTimeoutMs",
+    "qualified_name": "sandToolCallExecutionTimeoutMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554097,
+    "end_line": 554102,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "isComputerUseSubagent",
+      "subagentToolTimeoutMs"
+    ],
+    "body_sha256": "5921ceec8fc91d01e30cb02d1efc575181f40a5b09eed8a2aa761c733fd838d2",
+    "calls": [
+      "isSubagentToolName",
+      "toolCallExecutionGuardMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554104:20525269",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "sandMaxBlockUntilMs",
+    "qualified_name": "sandMaxBlockUntilMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554104,
+    "end_line": 554109,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "isComputerUseSubagent"
+    ],
+    "body_sha256": "e808144fd84945c47ef6bd3ece99051c54d7da6b0729f8af24bb288c2c651a42",
+    "calls": [
+      "Math.min",
+      "sandToolCallExecutionTimeoutMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554110:20525554",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "createMcpPauseCancelledError",
+    "qualified_name": "createMcpPauseCancelledError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554110,
+    "end_line": 554117,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "cc1480dfda6073cb6a7d14ef2b1c0733258075839ca5a06602297707806beaa4",
+    "calls": [
+      "new ToolTimeoutError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554118:20526021",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "dynamicToolCallErrorClass",
+    "qualified_name": "dynamicToolCallErrorClass",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554118,
+    "end_line": 554122,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "92c6f0591366721f51883ef9e1386690e6c8b08ad1429aa211fe305b750429b4",
+    "calls": [
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554124:20526294",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "startDynamicToolCallSpan",
+    "qualified_name": "startDynamicToolCallSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554124,
+    "end_line": 554137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "toolName"
+    ],
+    "body_sha256": "3f8bcf383dd8ef6b88e565f3a192fd6057e3ed5717a27aad9ae69327afc4aa5e",
+    "calls": [
+      "createSpan",
+      "ctx.withName",
+      "disposable.span.setAttribute",
+      "getSpan2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554125:20526396",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "end",
+    "qualified_name": "startDynamicToolCallSpan/end",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554125,
+    "end_line": 554126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a4ea409bf05f706f32fb8a264110cd4a92d039cd051d9c20d470e6cb97dc5b24",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554131:20526582",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "end",
+    "qualified_name": "startDynamicToolCallSpan/end",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554131,
+    "end_line": 554135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome",
+      "errorClass"
+    ],
+    "body_sha256": "cd471d1d37f48152fbe4bb40efe99a69c356b5ebe0f102a501dbdc00d7812335",
+    "calls": [
+      "disposable.span.setAttribute",
+      "disposable[computed]"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554138:20526814",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "withDynamicToolCallSpan",
+    "qualified_name": "withDynamicToolCallSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554138,
+    "end_line": 554157,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "1f207e566f116fa1e1e3ab6f3c4b4c4e5053f0f509c0f8fb9fdb35b88e6fba35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554141:20526892",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "execute",
+    "qualified_name": "withDynamicToolCallSpan/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554141,
+    "end_line": 554155,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "a8ac02efe0dda9845b97f541dd5aa88a124c4c68cbbadfe40b7048a778445b1e",
+    "calls": [
+      "callSpan.end",
+      "dynamicToolCallErrorClass",
+      "isIntentionalAbortReason2",
+      "startDynamicToolCallSpan",
+      "tool.execute"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:554159:20527544",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "invokedToolNameOf",
+    "qualified_name": "invokedToolNameOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554159,
+    "end_line": 554162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "61adc6cb10a38a2789da10771500208fb153c8b0c4e84b52986d1f53fc064246",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554163:20527745",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "invokesDesignatedDangerousMcpTool",
+    "qualified_name": "invokesDesignatedDangerousMcpTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554163,
+    "end_line": 554176,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawArgs"
+    ],
+    "body_sha256": "c51a1d805e7f82aba8149979e85f4f26d413ddf875faa912ba593d0760b46fb9",
+    "calls": [
+      ".replaceAll",
+      ".toLowerCase",
+      "DESIGNATED_DANGEROUS_MCP_TOOL_NAMES.has",
+      "JSON.parse",
+      "MCP_INVOCATION_TOOL_NAMES2.has",
+      "invoked.trim",
+      "invokedToolNameOf"
+    ],
+    "writes": [
+      "invoked",
+      "parsed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:554177:20528291",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "resolveDynamicInvocationToolCallTelemetry",
+    "qualified_name": "resolveDynamicInvocationToolCallTelemetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554177,
+    "end_line": 554196,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool",
+      "rawArgs",
+      "driveTranslatorToolTags"
+    ],
+    "body_sha256": "254bbbcf4a5b0225950a504a9c41bc648c984bcc528e7f91150916db433df1f8",
+    "calls": [
+      "boundedConnectorTag",
+      "boundedMcpToolName",
+      "isReservedDynamicToolsNamespace",
+      "parseDynamicInvocationArgs",
+      "resolveToolCallIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554197:20528995",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "wrapDynamicInvocationToolWithTimeout",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554197,
+    "end_line": 554285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  tool,\n  dynamicToolRegistry,\n  isComputerUseSubagent,\n  subagentToolTimeoutMs,\n  registerPauseCancel,\n  observeDynamicToolCall,\n  unreachableToolError,\n  driveTranslatorToolTags\n}"
+    ],
+    "body_sha256": "483d391098e3c4aef3503694026f1babddac9b4b5f97753b1d4cc2ed0255660b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554209:20529282",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "resolveToolCallTelemetry",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout/resolveToolCallTelemetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554209,
+    "end_line": 554213,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "rawArgs"
+    ],
+    "body_sha256": "abf77d5ec67b5d1b01e5862860446acdbbe74656a667f0166401dd452514ee8c",
+    "calls": [
+      "driveTranslatorToolTags",
+      "resolveDynamicInvocationToolCallTelemetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554214:20529428",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "execute",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554214,
+    "end_line": 554283,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "interactionHandler",
+      "argsStream",
+      "meta3"
+    ],
+    "body_sha256": "a69f437ebf22fce57fb19f27ce5254ebceb4d0c760bcfd2c0ef20b1c777c4467",
+    "calls": [
+      "callSpan.end",
+      "createMcpPauseCancelledError",
+      "ctx.withCancel",
+      "guarded.execute",
+      "invokesDesignatedDangerousMcpTool",
+      "isIntentionalAbortReason2",
+      "parseDynamicInvocationArgs",
+      "performance.now",
+      "registerPauseCancel",
+      "reportDynamicOutcome",
+      "resolveDynamicDispatch",
+      "sandToolCallExecutionTimeoutMs",
+      "startDynamicToolCallSpan",
+      "unreachableToolError",
+      "unregisterPauseCancel",
+      "wrapToolWithTimeout"
+    ],
+    "writes": [
+      "rawArgs"
+    ],
+    "throw_targets": [
+      "createMcpPauseCancelledError",
+      "error63"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:554245:20530956",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "createTimeoutError",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout/execute/createTimeoutError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554245,
+    "end_line": 554248,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2753a02c095c6692c93b015c32c710e42c312e2913e5c03f05c2b3fc22c88252",
+    "calls": [
+      "createMcpPauseCancelledError",
+      "createToolCallExecutionTimeoutError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554252:20531380",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "end",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout/execute/end",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554252,
+    "end_line": 554253,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c06ced4b21d0ea86e2519613de1622ea7a7f6418077693a5654338485131b7ae",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554254:20531434",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "reportDynamicOutcome",
+    "qualified_name": "wrapDynamicInvocationToolWithTimeout/execute/reportDynamicOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554254,
+    "end_line": 554266,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome",
+      "error63"
+    ],
+    "body_sha256": "b952cd2947bb3f0eeed8e3d00c27c3285a34b775f4bd64e65bd9069eeb24cb64",
+    "calls": [
+      "Math.round",
+      "callSpan.end",
+      "dynamicToolCallErrorClass",
+      "observeDynamicToolCall",
+      "performance.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554286:20532663",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/mcp-meta-tools.ts",
+    "name": "createSandMcpMetaToolOptions",
+    "qualified_name": "createSandMcpMetaToolOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554286,
+    "end_line": 554328,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpTools",
+      "options2"
+    ],
+    "body_sha256": "ad5e503bcbe94527fc4ecb6fb321a5d581e64338b9ec1c0e796f143a800bb47f",
+    "calls": [
+      ".map",
+      "Value.fromJson",
+      "descriptor2.tools.push",
+      "descriptors.entries",
+      "descriptors.get",
+      "descriptors.set",
+      "isReadonlySubagentMcpToolAllowed",
+      "new Map",
+      "new McpMetaToolOptions",
+      "new McpToolDescriptor",
+      "toolAnnotationsJsonField"
+    ],
+    "writes": [
+      "descriptor2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

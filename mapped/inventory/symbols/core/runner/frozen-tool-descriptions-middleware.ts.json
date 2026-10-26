@@ -1,0 +1,174 @@
+[
+  {
+    "id": "evaluation:586578:22076904",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-tool-descriptions-middleware.ts",
+    "name": "isDescribedTool2",
+    "qualified_name": "isDescribedTool2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586578,
+    "end_line": 586580,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "2d3bde37bf69e23756d359a7e0a84ef234433fb68b3f259ceebbbe99a3371035",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586582:22077095",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-tool-descriptions-middleware.ts",
+    "name": "schemaShaOf",
+    "qualified_name": "schemaShaOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586582,
+    "end_line": 586596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "a2bf2891235c13aabd85fd59684fda2d485227a5603bf3eee39321b0f8f8140f",
+    "calls": [
+      "JSON.stringify",
+      "isUnknownRecord2",
+      "schemaShaByParameters.get",
+      "schemaShaByParameters.set",
+      "sha256HexOfText"
+    ],
+    "writes": [
+      "serialized"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:586598:22077644",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-tool-descriptions-middleware.ts",
+    "name": "FrozenToolDescriptionsMiddleware.constructor",
+    "qualified_name": "FrozenToolDescriptionsMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586598,
+    "end_line": 586601,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "deps"
+    ],
+    "body_sha256": "b806b2da6e47ddc81f696108b6c29b2eb23d91447ef4089a9791b7239a959881",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586603:22077736",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-tool-descriptions-middleware.ts",
+    "name": "FrozenToolDescriptionsMiddleware.stream",
+    "qualified_name": "FrozenToolDescriptionsMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586603,
+    "end_line": 586628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "63f6f3e040bf9f5789d7ab817f2119df3ec352a17da9400f76d5fba38bdfd6d2",
+    "calls": [
+      "isDescribedTool2",
+      "live.set",
+      "new Map",
+      "resolveFrozenToolDescriptions",
+      "schemaShaOf",
+      "this.deps.compactionEpoch",
+      "this.deps.store.getToolDescriptionSnapshot",
+      "this.deps.store.setToolDescriptionSnapshot",
+      "this.innerExecutor.stream",
+      "tools.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586630:22078824",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-tool-descriptions-middleware.ts",
+    "name": "createFrozenToolDescriptionsMiddleware",
+    "qualified_name": "createFrozenToolDescriptionsMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586630,
+    "end_line": 586632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "b1033ee07de09cb8480f698f69c3d47f7f53c4bae3ec71b900c8417fd5eb055c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

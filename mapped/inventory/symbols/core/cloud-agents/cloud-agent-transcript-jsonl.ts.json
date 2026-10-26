@@ -1,0 +1,134 @@
+[
+  {
+    "id": "host:509799:18710911",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-transcript-jsonl.ts",
+    "name": "traceLine",
+    "qualified_name": "traceLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509799,
+    "end_line": 509804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "f91e8e5365b630547c174012f0a99a235bb3be338d0b5ddfcff170a0f4068527",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509805:18711060",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-transcript-jsonl.ts",
+    "name": "transcriptJsonlOf",
+    "qualified_name": "transcriptJsonlOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509805,
+    "end_line": 509811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2"
+    ],
+    "body_sha256": "be918966e1a4f298f29fd4585118db4b3c35b2e4d1a34eec5d8dbb49938afe81",
+    "calls": [
+      "lines2.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509812:18711205",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-transcript-jsonl.ts",
+    "name": "buildTranscriptJsonl",
+    "qualified_name": "buildTranscriptJsonl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509812,
+    "end_line": 509815,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversation"
+    ],
+    "body_sha256": "9a842c6e1e18d6fa2fbbbff3ef839466fa98bc2520f86ddbf5f3590c80b9657d",
+    "calls": [
+      "convertConversationMessagesToTrace",
+      "trace2.map",
+      "transcriptJsonlOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509816:18711406",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-transcript-jsonl.ts",
+    "name": "buildTranscriptJsonlInSlices",
+    "qualified_name": "buildTranscriptJsonlInSlices",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509816,
+    "end_line": 509830,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversation",
+      "slicer"
+    ],
+    "body_sha256": "7962f61212fd51368271453fa6dfd013714821829862e0edc42f8ddb876f7b87",
+    "calls": [
+      "convertConversationMessagesToTrace",
+      "lines2.push",
+      "slicer.shouldYield",
+      "slicer.yield",
+      "traceLine",
+      "transcriptJsonlOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

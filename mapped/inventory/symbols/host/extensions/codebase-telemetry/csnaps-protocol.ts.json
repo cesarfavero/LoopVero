@@ -1,0 +1,627 @@
+[
+  {
+    "id": "host:541114:19856667",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "CsnapsResponseDecoder.decode",
+    "qualified_name": "CsnapsResponseDecoder.decode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541114,
+    "end_line": 541120,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "chunk"
+    ],
+    "body_sha256": "f9eb71582209d62889fe257ca0e8543480b3fe26c889831e76b573167cc1c478",
+    "calls": [
+      "Buffer.concat",
+      "Buffer.from",
+      "decodeFramePayloads",
+      "decoded.payloads.map"
+    ],
+    "writes": [
+      "this.buffer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541121:19856974",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "CsnapsResponseDecoder.assertComplete",
+    "qualified_name": "CsnapsResponseDecoder.assertComplete",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541121,
+    "end_line": 541125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "781c3d29dcc5822cd39322e8fbe08597ab65d52c69532d6a9c97ca0dd17056b6",
+    "calls": [
+      "new CsnapsProtocolError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541127:19857100",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "encodeCsnapsRequest",
+    "qualified_name": "encodeCsnapsRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541127,
+    "end_line": 541132,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "operation"
+    ],
+    "body_sha256": "bc2847b3e17ef4a7e18a2b377cd70fc028e913fe8f75df4276a537dc7500742d",
+    "calls": [
+      "Buffer.from",
+      "JSON.stringify",
+      "Number.isSafeInteger",
+      "createCsnapsRequest",
+      "encodeFrame",
+      "new CsnapsProtocolError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541133:19857356",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseCsnapsOperationResult",
+    "qualified_name": "parseCsnapsOperationResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541133,
+    "end_line": 541152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "operation",
+      "value"
+    ],
+    "body_sha256": "f92ffe97ec55abe4a7188555af510390aa3d7c6f99b2f169487feaccb85271ba",
+    "calls": [
+      "parseApplyResult",
+      "parseEmptyResult",
+      "parseGetStateResult",
+      "parseInitializeResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541153:19857890",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "createCsnapsRequest",
+    "qualified_name": "createCsnapsRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541153,
+    "end_line": 541171,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id",
+      "operation"
+    ],
+    "body_sha256": "e50950cbb005284bd4295a7f1142ea3f044ad08e052ceac547077e20582dafb5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541172:19858445",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "encodeFrame",
+    "qualified_name": "encodeFrame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541172,
+    "end_line": 541182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "payload"
+    ],
+    "body_sha256": "f3b93c75a789cc23c309ec5c0f6845ab4fca3b7225c0bb4a3221f32ec7a70b21",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "frame.writeUInt32BE",
+      "new CsnapsProtocolError",
+      "payload.copy"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541183:19858799",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "decodeFramePayloads",
+    "qualified_name": "decodeFramePayloads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541183,
+    "end_line": 541200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "52be9f015e1fe99bff744bf7cc0bc5b647b7743a6f9bb49f78e51194cc1b6e6d",
+    "calls": [
+      "input2.readUInt32BE",
+      "input2.subarray",
+      "new CsnapsProtocolError",
+      "payloads.push"
+    ],
+    "writes": [
+      "offset2"
+    ],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541201:19859418",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseCsnapsResponse",
+    "qualified_name": "parseCsnapsResponse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541201,
+    "end_line": 541222,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "payload"
+    ],
+    "body_sha256": "e8e4807cea33a547f4de2bd5ff4ba6d2948cf5b602321182d01c5f0ee8caf35f",
+    "calls": [
+      "JSON.parse",
+      "Number.isSafeInteger",
+      "hasExactKeys",
+      "isCsnapsErrorCode",
+      "new CsnapsProtocolError",
+      "payload.toString"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 4,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:541223:19860421",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseEmptyResult",
+    "qualified_name": "parseEmptyResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541223,
+    "end_line": 541228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c232270cc92e4b9bf4e1c35416f99519636addf6eec57a4a52d248354f1b9e48",
+    "calls": [
+      "hasExactKeys",
+      "new CsnapsProtocolError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541229:19860621",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseInitializeResult",
+    "qualified_name": "parseInitializeResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541229,
+    "end_line": 541234,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8b6467a6ae6d7ac98486f29e138ba6df5f327b281dbb27e915b26222db43ce45",
+    "calls": [
+      "hasExactKeys",
+      "new CsnapsProtocolError",
+      "parseServiceState"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541235:19860900",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseGetStateResult",
+    "qualified_name": "parseGetStateResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541235,
+    "end_line": 541240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "ca330ab5f4c65962490cb85e8fd19a01bc59514ef77ff54146b259e21fadc4db",
+    "calls": [
+      "hasExactKeys",
+      "new CsnapsProtocolError",
+      "parseServiceState"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541241:19861176",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseApplyResult",
+    "qualified_name": "parseApplyResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541241,
+    "end_line": 541249,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8f8fd9d53fdd2a1d31af8c72b092694cecf532f2591835d745cedd306573c205",
+    "calls": [
+      "Array.isArray",
+      "hasExactKeys",
+      "new CsnapsProtocolError",
+      "parseServiceState",
+      "value.rejected.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541250:19861580",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseServiceState",
+    "qualified_name": "parseServiceState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541250,
+    "end_line": 541258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "609396935bea3f843868f96e50ac21f028544bbbfd28e4b40728e8affb4efce8",
+    "calls": [
+      "Array.isArray",
+      "hasExactKeys",
+      "new CsnapsProtocolError",
+      "value.tracked.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541259:19862077",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseTrackedCodebase",
+    "qualified_name": "parseTrackedCodebase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541259,
+    "end_line": 541269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "eca982e1fa73980ec9bb24c98f7bfbc0d87f19a994a4a74c5378e3f466928fbf",
+    "calls": [
+      "hasExactKeys",
+      "isUuid",
+      "new CsnapsProtocolError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541270:19862693",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "parseRejectedCodebase",
+    "qualified_name": "parseRejectedCodebase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541270,
+    "end_line": 541275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "9a8c2362255f38d3f24e438c84ce487ffc4d63a3e02eaeeaf90bb0d9766cdf99",
+    "calls": [
+      "hasExactKeys",
+      "new CsnapsProtocolError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProtocolError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541276:19863065",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "hasExactKeys",
+    "qualified_name": "hasExactKeys",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541276,
+    "end_line": 541280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "keys"
+    ],
+    "body_sha256": "21d12eaaa274be6c8a65c2c1f42b477f3cc7fa9673330662b9c935176557b3e3",
+    "calls": [
+      ".sort",
+      "Object.keys",
+      "actual.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541281:19863286",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "isCsnapsErrorCode",
+    "qualified_name": "isCsnapsErrorCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541281,
+    "end_line": 541302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "16e17db0deff2c4385fbdc6338c3447c0b0ea4cead480bb45dc0bc82fbcd5a74",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541303:19863841",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-protocol.ts",
+    "name": "isUuid",
+    "qualified_name": "isUuid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541303,
+    "end_line": 541305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "42de06400fbdd90da74ef3b9792c49f7132f3052325329a24bd46caab6cabc19",
+    "calls": [
+      "/^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

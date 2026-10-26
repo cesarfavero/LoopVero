@@ -1,0 +1,1054 @@
+[
+  {
+    "id": "host:617418:22896581",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeStrictBase64ImageDataUrl",
+    "qualified_name": "decodeStrictBase64ImageDataUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617418,
+    "end_line": 617440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "b75b3ca2ab55bde8ce2f4f8ff11c8bb94fc59a353c105aabaa8885e97267a472",
+    "calls": [
+      "Buffer.from",
+      "STRICT_IMAGE_MIME.test",
+      "data2.toString",
+      "header.endsWith",
+      "header.slice",
+      "value.indexOf",
+      "value.slice",
+      "value.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617441:22897253",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeImageDataUrlWithUrlParser",
+    "qualified_name": "decodeImageDataUrlWithUrlParser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617441,
+    "end_line": 617463,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "489363580b3c1d7f941d165cc047051354e7039b833fcfdc341f07d50a6c6871",
+    "calls": [
+      "Buffer.from",
+      "metadata2.split",
+      "mimeType.startsWith",
+      "new Error",
+      "new URL",
+      "parameters4.some",
+      "pathname.indexOf",
+      "pathname.slice",
+      "rawMimeType.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617464:22898220",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeImageDataUrl",
+    "qualified_name": "decodeImageDataUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617464,
+    "end_line": 617466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "712003bd32ae982f2b836a9bb95bdbba13f818bebe26e1503439572e5da33ccb",
+    "calls": [
+      "decodeImageDataUrlWithUrlParser",
+      "decodeStrictBase64ImageDataUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617467:22898379",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "modelImageResizeOptions",
+    "qualified_name": "modelImageResizeOptions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617467,
+    "end_line": 617470,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "5db63a00b06ffbf5911010fae9c006fdc1bd8e4d9dd4542524e71a6e66563b88",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617471:22898459",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "sha256Hex2",
+    "qualified_name": "sha256Hex2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617471,
+    "end_line": 617474,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "04022614f651124d42973191c4ef95af4644e8159774e7088c6f3eb95cefb887",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "crypto.subtle.digest",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617475:22898664",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "withImageContentSha256",
+    "qualified_name": "withImageContentSha256",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617475,
+    "end_line": 617487,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part",
+      "originalBytes"
+    ],
+    "body_sha256": "d0601c325f0a22fde4e22e310b6124222030fecf27968cb0fc5a89c07de56167",
+    "calls": [
+      "sha256Hex2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617488:22899133",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "wasImagePartChecked",
+    "qualified_name": "wasImagePartChecked",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617488,
+    "end_line": 617488,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ checkedImageParts, part, payload }"
+    ],
+    "body_sha256": "adeabb209fd17055db4b2b713977029adac1798be5e7f66375a69b3f86140088",
+    "calls": [
+      "checkedImageParts.get",
+      "checkedImageParts.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617489:22899247",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "resizeImagesInMessage",
+    "qualified_name": "resizeImagesInMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617489,
+    "end_line": 617667,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ ctx, message, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "de8036b3bb0d28dc432cf7c5b7353ca7093f509ef1d7ebdb726096c7bc1b4131",
+    "calls": [
+      ".toLowerCase",
+      ".toString",
+      "Array.isArray",
+      "Buffer.byteLength",
+      "Buffer.from",
+      "checkedImageParts.set",
+      "decodeImageDataUrl",
+      "logger35.error",
+      "logger35.info",
+      "modelImageResizeOptions",
+      "part.image.slice",
+      "resizeImageBufferIfNeeded",
+      "updatedContent.push",
+      "wasImagePartChecked",
+      "withImageContentSha256"
+    ],
+    "writes": [
+      "expContentHasUpdates",
+      "expContentIndex",
+      "hasUpdates",
+      "imageBuffer",
+      "messageHasUpdates",
+      "originalMimeType",
+      "originalSize",
+      "partIndex",
+      "representation",
+      "sawDecodedBytes",
+      "updatedContent[computed]",
+      "updatedExpContent[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 24,
+      "loops": 3,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:617668:22906372",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "resizeImagesInMessages",
+    "qualified_name": "resizeImagesInMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617668,
+    "end_line": 617673,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ ctx, messages: messages2, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "7fe9886433bead8ad8f04fba4fa4e2c4081e4be285615c865eb5feaa91827033",
+    "calls": [
+      "asyncMapValues",
+      "messages2.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617674:22906753",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "hasUncheckedImage",
+    "qualified_name": "hasUncheckedImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617674,
+    "end_line": 617682,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "checkedImageParts"
+    ],
+    "body_sha256": "803b3c392716197656c2c49c51af15fcd528ae5dce0fc4932a6a4b75cd78dbc8",
+    "calls": [
+      "Array.isArray",
+      "message.content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617684:22907462",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "ImageResizingPromptExecutor.constructor",
+    "qualified_name": "ImageResizingPromptExecutor.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617684,
+    "end_line": 617688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ innerExecutor, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "c60cd68bd5e2d032d054f8def2b824145e884ec48011ceb85436046492b6ab3e",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.checkedImageParts",
+      "this.resizeOptions"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617690:22907706",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "ImageResizingPromptExecutor.stream",
+    "qualified_name": "ImageResizingPromptExecutor.stream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617690,
+    "end_line": 617721,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "e7a858692901ac7f0edec8b278b325453eb1e9b6d75c927d1b8061523a411e6e",
+    "calls": [
+      "forward",
+      "processAndStream",
+      "this.innerExecutor.getMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617692:22907830",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "processAndStream",
+    "qualified_name": "ImageResizingPromptExecutor.stream/processAndStream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617692,
+    "end_line": 617702,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "896427af38177af83f3da0e6fc53b219fffe3de9adb50a6efbcdee2042f670cd",
+    "calls": [
+      "resizeImagesInMessages",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.clearMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617704:22908307",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "forward",
+    "qualified_name": "ImageResizingPromptExecutor.stream/forward",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617704,
+    "end_line": 617709,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "read2"
+    ],
+    "body_sha256": "1294831d61a3c9e4fe4ea485a82ca87be61be8317e933cb3dd8f62af80a8d3e1",
+    "calls": [
+      "processingPromise.then",
+      "promise2.catch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617723:22908906",
+    "artifact": "host",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "createImageResizingMiddleware",
+    "qualified_name": "createImageResizingMiddleware",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617723,
+    "end_line": 617732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resizeOptions"
+    ],
+    "body_sha256": "99b9a1702ee20f546fa03a6414580f0cec722d7d564014a91d7390e8be9694b6",
+    "calls": [
+      "new WeakMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286789:9260765",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeStrictBase64ImageDataUrl",
+    "qualified_name": "decodeStrictBase64ImageDataUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286789,
+    "end_line": 286811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "b75b3ca2ab55bde8ce2f4f8ff11c8bb94fc59a353c105aabaa8885e97267a472",
+    "calls": [
+      "Buffer.from",
+      "STRICT_IMAGE_MIME.test",
+      "data2.toString",
+      "header.endsWith",
+      "header.slice",
+      "value.indexOf",
+      "value.slice",
+      "value.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286812:9261437",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeImageDataUrlWithUrlParser",
+    "qualified_name": "decodeImageDataUrlWithUrlParser",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286812,
+    "end_line": 286834,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "9e751d62c94631ba7f576cb0726567be1ea798e23c4f428d19848e374c99e356",
+    "calls": [
+      "Buffer.from",
+      "metadata2.split",
+      "mimeType.startsWith",
+      "new Error",
+      "new URL",
+      "parameters4.some",
+      "pathname.indexOf",
+      "pathname.slice",
+      "rawMimeType.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286835:9262401",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "decodeImageDataUrl",
+    "qualified_name": "decodeImageDataUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286835,
+    "end_line": 286837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "712003bd32ae982f2b836a9bb95bdbba13f818bebe26e1503439572e5da33ccb",
+    "calls": [
+      "decodeImageDataUrlWithUrlParser",
+      "decodeStrictBase64ImageDataUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286838:9262560",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "modelImageResizeOptions",
+    "qualified_name": "modelImageResizeOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286838,
+    "end_line": 286841,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "5db63a00b06ffbf5911010fae9c006fdc1bd8e4d9dd4542524e71a6e66563b88",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286842:9262640",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "sha256Hex",
+    "qualified_name": "sha256Hex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286842,
+    "end_line": 286845,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "9d9028795a1e1e0dd1ba2307b62ed80d57a287968763120550efbfe14e86a16a",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "crypto.subtle.digest",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286846:9262844",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "withImageContentSha256",
+    "qualified_name": "withImageContentSha256",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286846,
+    "end_line": 286858,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part",
+      "originalBytes"
+    ],
+    "body_sha256": "45521ac5f81d1c4d5ea263e7c3bc4d86f65ab6fea0d7015296f82d8fb4e4e671",
+    "calls": [
+      "sha256Hex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286859:9263312",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "wasImagePartChecked",
+    "qualified_name": "wasImagePartChecked",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286859,
+    "end_line": 286859,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ checkedImageParts, part, payload }"
+    ],
+    "body_sha256": "adeabb209fd17055db4b2b713977029adac1798be5e7f66375a69b3f86140088",
+    "calls": [
+      "checkedImageParts.get",
+      "checkedImageParts.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:286860:9263426",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "resizeImagesInMessage",
+    "qualified_name": "resizeImagesInMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 286860,
+    "end_line": 287038,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ ctx, message, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "6f5c348589481c89ab8b0167f452a2f09cfcd06085ed8fa9357b4c3e734a6167",
+    "calls": [
+      ".toLowerCase",
+      ".toString",
+      "Array.isArray",
+      "Buffer.byteLength",
+      "Buffer.from",
+      "checkedImageParts.set",
+      "decodeImageDataUrl",
+      "logger10.error",
+      "logger10.info",
+      "modelImageResizeOptions",
+      "part.image.slice",
+      "resizeImageBufferIfNeeded",
+      "updatedContent.push",
+      "wasImagePartChecked",
+      "withImageContentSha256"
+    ],
+    "writes": [
+      "expContentHasUpdates",
+      "expContentIndex",
+      "hasUpdates",
+      "imageBuffer",
+      "messageHasUpdates",
+      "originalMimeType",
+      "originalSize",
+      "partIndex",
+      "representation",
+      "sawDecodedBytes",
+      "updatedContent[computed]",
+      "updatedExpContent[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 24,
+      "loops": 3,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "evaluation:287039:9270551",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "resizeImagesInMessages",
+    "qualified_name": "resizeImagesInMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287039,
+    "end_line": 287044,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ ctx, messages, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "6b468c7fda1d164508acc98762b66b7c81adfe582d4ed16297ce5bb87c6c8380",
+    "calls": [
+      "asyncMapValues",
+      "messages.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287045:9270918",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "hasUncheckedImage",
+    "qualified_name": "hasUncheckedImage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287045,
+    "end_line": 287053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "checkedImageParts"
+    ],
+    "body_sha256": "803b3c392716197656c2c49c51af15fcd528ae5dce0fc4932a6a4b75cd78dbc8",
+    "calls": [
+      "Array.isArray",
+      "message.content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287055:9271627",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "ImageResizingPromptExecutor.constructor",
+    "qualified_name": "ImageResizingPromptExecutor.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287055,
+    "end_line": 287059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ innerExecutor, resizeOptions, checkedImageParts }"
+    ],
+    "body_sha256": "c60cd68bd5e2d032d054f8def2b824145e884ec48011ceb85436046492b6ab3e",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.checkedImageParts",
+      "this.resizeOptions"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287061:9271871",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "ImageResizingPromptExecutor.stream",
+    "qualified_name": "ImageResizingPromptExecutor.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287061,
+    "end_line": 287092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "a3dfbaa0061535ad9878120bdf6c12aa7a392c7179779ef231f8e878368dde1a",
+    "calls": [
+      "forward",
+      "processAndStream",
+      "this.innerExecutor.getMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287063:9271994",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "processAndStream",
+    "qualified_name": "ImageResizingPromptExecutor.stream/processAndStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287063,
+    "end_line": 287073,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bffa527807807738a602cff20983f3693684081c21d808c9f66a0860779c9b5b",
+    "calls": [
+      "resizeImagesInMessages",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.clearMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287075:9272460",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "forward",
+    "qualified_name": "ImageResizingPromptExecutor.stream/forward",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287075,
+    "end_line": 287080,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "read2"
+    ],
+    "body_sha256": "1294831d61a3c9e4fe4ea485a82ca87be61be8317e933cb3dd8f62af80a8d3e1",
+    "calls": [
+      "processingPromise.then",
+      "promise2.catch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287094:9273059",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/image-resizing-middleware.js",
+    "name": "createImageResizingMiddleware",
+    "qualified_name": "createImageResizingMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287094,
+    "end_line": 287103,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resizeOptions"
+    ],
+    "body_sha256": "99b9a1702ee20f546fa03a6414580f0cec722d7d564014a91d7390e8be9694b6",
+    "calls": [
+      "new WeakMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

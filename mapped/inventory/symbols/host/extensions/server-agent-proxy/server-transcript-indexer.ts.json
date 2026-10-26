@@ -1,0 +1,631 @@
+[
+  {
+    "id": "host:714172:27109374",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "createServerTranscriptIndexer",
+    "qualified_name": "createServerTranscriptIndexer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714172,
+    "end_line": 714372,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "5ffd72439425e71a26e71da797025c35ef424868da24afb71f91f8b499ccef9f",
+    "calls": [
+      "createRetryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714183:27109805",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "agentSync",
+    "qualified_name": "createServerTranscriptIndexer/agentSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714183,
+    "end_line": 714196,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2",
+      "agentId"
+    ],
+    "body_sha256": "8b3d8493969e37e69df6e3f4af83e14f065c3e9701f3ba7663c06ad29f7fc392",
+    "calls": [
+      "current2.agents.get",
+      "current2.agents.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714197:27110161",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "request5",
+    "qualified_name": "createServerTranscriptIndexer/request5",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714197,
+    "end_line": 714208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2",
+      "agentId"
+    ],
+    "body_sha256": "c8c87d43ff9f0ef42e84d3a4a09c24de5584c4f9d2459c770cf21b524d4c5108",
+    "calls": [
+      "agentSync",
+      "current2.ready.push",
+      "pump"
+    ],
+    "writes": [
+      "state.dirty",
+      "state.queued"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714209:27110510",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "hint",
+    "qualified_name": "createServerTranscriptIndexer/hint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714209,
+    "end_line": 714216,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2",
+      "agentId"
+    ],
+    "body_sha256": "854e85ed070ecd10abfd810c2298d70470bfc5e1d04fbf9939351ef6663835a9",
+    "calls": [
+      "agentSync",
+      "deps.clock.schedule",
+      "state.hint.dispose"
+    ],
+    "writes": [
+      "state.hint"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714217:27110787",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "pump",
+    "qualified_name": "createServerTranscriptIndexer/pump",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714217,
+    "end_line": 714227,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2"
+    ],
+    "body_sha256": "7672b7175fa9a53c10fc4aaa3c889cb9d05b861c671774217d8378e26915bb6e",
+    "calls": [
+      "agentSync",
+      "current2.ready.shift",
+      "run"
+    ],
+    "writes": [
+      "current2.running",
+      "state.queued",
+      "state.running"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714228:27111197",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "run",
+    "qualified_name": "createServerTranscriptIndexer/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714228,
+    "end_line": 714252,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2",
+      "agentId",
+      "state"
+    ],
+    "body_sha256": "003428b7dc3c5dfdd05e68e59f899c26db5231a30abd56a5fb30ef2c56375ae5",
+    "calls": [
+      "backoff2.schedule",
+      "deps.log",
+      "errorLogTag",
+      "pump",
+      "request5",
+      "retryAfter",
+      "sync"
+    ],
+    "writes": [
+      "current2.running",
+      "state.dirty",
+      "state.failures",
+      "state.retry",
+      "state.running"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:714253:27111967",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "retryAfter",
+    "qualified_name": "createServerTranscriptIndexer/retryAfter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714253,
+    "end_line": 714263,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "current2",
+      "agentId",
+      "state",
+      "delay5"
+    ],
+    "body_sha256": "e23492ce6a6d54b2665d3a028a02456e6f95e786e64813f1704aba23a9b81e91",
+    "calls": [
+      "request5"
+    ],
+    "writes": [
+      "state.retry"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:714264:27112279",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "readCursor",
+    "qualified_name": "createServerTranscriptIndexer/readCursor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714264,
+    "end_line": 714270,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "9d9d93d6658f02618a2f66d3cc38034cd01c1c6ec641c1105fc5312d89d5a95a",
+    "calls": [
+      "deps.mirror.cursor",
+      "new ServerTranscriptIndexUnavailableError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ServerTranscriptIndexUnavailableError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714271:27112537",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "readTopRange",
+    "qualified_name": "createServerTranscriptIndexer/readTopRange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714271,
+    "end_line": 714309,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "indexed",
+      "signal"
+    ],
+    "body_sha256": "7ad7d86d2a0bfae9b2265e1d4ae77daa152c9704a17391b1e70df4039c391ab1",
+    "calls": [
+      "pages.flatMap",
+      "pages.push",
+      "readServerRange",
+      "signal.throwIfAborted"
+    ],
+    "writes": [
+      "oldest"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714310:27113747",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "sync",
+    "qualified_name": "createServerTranscriptIndexer/sync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714310,
+    "end_line": 714333,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "signal"
+    ],
+    "body_sha256": "6592084b10d5d6fc2135696a070b9a0a7422d4822663f42b0ee54a86cc2947f2",
+    "calls": [
+      "deps.mirror.applyRange",
+      "deps.requiredAgents.has",
+      "new ServerTranscriptIndexUnavailableError",
+      "readCursor",
+      "readServerRange",
+      "readTopRange",
+      "signal.throwIfAborted"
+    ],
+    "writes": [
+      "page"
+    ],
+    "throw_targets": [
+      "ServerTranscriptIndexUnavailableError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 5,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714335:27114746",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "start",
+    "qualified_name": "createServerTranscriptIndexer/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714335,
+    "end_line": 714348,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8df488d14072a6761f8ae035a186a62d0cc0d43f921dda0498061652cd8d2c10",
+    "calls": [
+      "deps.mirror.subscribeInvalidated",
+      "new AbortController",
+      "new Map",
+      "request5"
+    ],
+    "writes": [
+      "lifetime"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714349:27115223",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "stop",
+    "qualified_name": "createServerTranscriptIndexer/stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714349,
+    "end_line": 714360,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0c4faa8de35bd91ec4c4b25c7ca709111d019c61e3bd336fc69dfd1fdc25c861",
+    "calls": [
+      "current2.agents.values",
+      "current2.controller.abort",
+      "current2.unsubscribe",
+      "state.hint.dispose"
+    ],
+    "writes": [
+      "current2.ready.length",
+      "lifetime",
+      "state.hint"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714361:27115564",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "noteEvent",
+    "qualified_name": "createServerTranscriptIndexer/noteEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714361,
+    "end_line": 714366,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "13cdc66fc34b158a6daac204f68f3e50560c78f7209dc4aad0e958131a80687d",
+    "calls": [
+      "deps.requiredAgents.has",
+      "hint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714367:27115829",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "noteAgent",
+    "qualified_name": "createServerTranscriptIndexer/noteAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714367,
+    "end_line": 714370,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "72070d76944df4a7fa891a3306c8b58fb6cbe01fb4d0aa0d1c87d3c3b0d380f5",
+    "calls": [
+      "request5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714373:27115929",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "readServerRange",
+    "qualified_name": "readServerRange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714373,
+    "end_line": 714404,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "page",
+      "signal",
+      "log5"
+    ],
+    "body_sha256": "544fea0c0343a4ec8fd04a1de35968f462bb730a05f15741ba64acff2fa54aff",
+    "calls": [
+      "BigInt",
+      "Number",
+      "client.list",
+      "decodeRow",
+      "listed.at",
+      "log5",
+      "readBlobBodies",
+      "response.entries.slice",
+      "rows.push"
+    ],
+    "writes": [
+      "dropped"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714405:27117023",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "readBlobBodies",
+    "qualified_name": "readBlobBodies",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714405,
+    "end_line": 714417,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "listed",
+      "signal"
+    ],
+    "body_sha256": "d6942c6febaf529459052024ac3334c9f311b0f0961091478b41e0a8242e01c1",
+    "calls": [
+      ".filter",
+      "client.readBlobs",
+      "hashes.add",
+      "new Map",
+      "new ServerTranscriptBlobReadError",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ServerTranscriptBlobReadError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714418:27117589",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-transcript-indexer.ts",
+    "name": "decodeRow",
+    "qualified_name": "decodeRow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714418,
+    "end_line": 714430,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listedRow",
+      "blobs",
+      "log5"
+    ],
+    "body_sha256": "6a4ba3f3b11079b16c1c604188f3f8182b77f2366b87b3f662a23e0634bc3cfb",
+    "calls": [
+      "JSON.parse",
+      "Number",
+      "blobs.get",
+      "decoder2.decode",
+      "errorLogTag",
+      "log5",
+      "transcriptEntryOfJson"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

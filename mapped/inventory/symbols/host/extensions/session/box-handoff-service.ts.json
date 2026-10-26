@@ -1,0 +1,352 @@
+[
+  {
+    "id": "host:728241:27670059",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "boxHelpFacts",
+    "qualified_name": "boxHelpFacts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728241,
+    "end_line": 728260,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "427ddbb959b3ee058812adbd782ed0118f77d56f62db4957b70fc88466870914",
+    "calls": [
+      "brandedHost",
+      "brandedId"
+    ],
+    "writes": [
+      "boundedReason"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728262:27670960",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.constructor",
+    "qualified_name": "BoxHandoffService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728262,
+    "end_line": 728264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728267:27671047",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.get",
+    "qualified_name": "BoxHandoffService.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728267,
+    "end_line": 728269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "578db8fc3b6d29f063279461a2238313be3abd85647ba86156390d3e5f4e56e1",
+    "calls": [
+      "this.pending.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728270:27671123",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.forget",
+    "qualified_name": "BoxHandoffService.forget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728270,
+    "end_line": 728272,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "72ced1e382b07f2d39252be69e6d8943adf68e8cab71b287c17154f78cb47509",
+    "calls": [
+      "this.pending.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728273:27671180",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.start",
+    "qualified_name": "BoxHandoffService.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728273,
+    "end_line": 728305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "9524b9e93d7713ffffe6ca42feee311d74ede40c06be61e3bfbada2e58138ce8",
+    "calls": [
+      "Date.now",
+      "assertValidSandAgentId",
+      "boxHelpFacts",
+      "boxHelpRequest.increment",
+      "crypto.randomUUID",
+      "this.armWebAuthnForHandoff",
+      "this.deps.onStarted",
+      "this.deps.onStatusChanged",
+      "this.deps.telemetry.egressRoute",
+      "this.domainTags",
+      "this.pending.get",
+      "this.pending.set",
+      "this.reportBoxHelp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728306:27672323",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.armWebAuthnForHandoff",
+    "qualified_name": "BoxHandoffService.armWebAuthnForHandoff",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728306,
+    "end_line": 728325,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "6910314b160c2c19cab65957ba411119bd0c7497ba0b0a693c66dacffbd144a8",
+    "calls": [
+      ".encode",
+      ".log",
+      "Date.now",
+      "errorLogTag",
+      "new Date",
+      "new TextEncoder",
+      "this.deps.box.uploadFile",
+      "this.deps.ctx.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:728326:27672876",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.end",
+    "qualified_name": "BoxHandoffService.end",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728326,
+    "end_line": 728343,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "trigger2",
+      "requestId2"
+    ],
+    "body_sha256": "624254a2f87b3a7c8354642cf8ecdd00d2e66e445814ba635241e244da90c3c3",
+    "calls": [
+      "decideBoxHandBack",
+      "this.deps.onEnded",
+      "this.deps.onStatusChanged",
+      "this.pending.delete",
+      "this.pending.get",
+      "this.reportBoxHelpResolved"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728344:27673554",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.reportBoxHelp",
+    "qualified_name": "BoxHandoffService.reportBoxHelp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728344,
+    "end_line": 728363,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "request5",
+      "requestId2",
+      "facts"
+    ],
+    "body_sha256": "94f605672599ff139c6e2cb27e6b4e57dd72a25680ba45b6a1920559d9abcf7f",
+    "calls": [
+      "brandedId",
+      "this.deps.telemetry.egressRoute",
+      "this.deps.telemetry.reportBoxHelp",
+      "this.deps.telemetry.trackEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728364:27674266",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.domainTags",
+    "qualified_name": "BoxHandoffService.domainTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728364,
+    "end_line": 728372,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "facts"
+    ],
+    "body_sha256": "206bed7f4e1438ab24caa7642856daa894d47824a58c99999b20cdb82d379003",
+    "calls": [
+      "this.deps.privacyMode.get",
+      "userFormDomainMetricTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728373:27674645",
+    "artifact": "host",
+    "module": "host/extensions/session/box-handoff-service.ts",
+    "name": "BoxHandoffService.reportBoxHelpResolved",
+    "qualified_name": "BoxHandoffService.reportBoxHelpResolved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728373,
+    "end_line": 728386,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "live",
+      "decision"
+    ],
+    "body_sha256": "f94f4bd18690aeffe3ae4ac8c79cf093ca78dc99c40a0b8a2b924fc6b6b09615",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "brandedId",
+      "this.deps.telemetry.trackEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

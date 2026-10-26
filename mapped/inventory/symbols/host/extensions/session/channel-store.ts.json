@@ -1,0 +1,501 @@
+[
+  {
+    "id": "host:721231:27364591",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "getAgentChannelsDir",
+    "qualified_name": "getAgentChannelsDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721231,
+    "end_line": 721233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "bb6366eff515715ad202ff1b6cce86a12175b7b8f4932866738206d994ef4135",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721234:27364702",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "labelFor",
+    "qualified_name": "labelFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721234,
+    "end_line": 721238,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "platform2",
+      "raw"
+    ],
+    "body_sha256": "1e018630c20e186341c0928132ba6e78a9b5d30c3c0d8dfde81870d0b3682cc3",
+    "calls": [
+      "clampChannelLabel",
+      "findConnectorManifest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721239:27364912",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "channelConfigLabel",
+    "qualified_name": "channelConfigLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721239,
+    "end_line": 721246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "93f35568db99fe1d2bfc35fb62e690b4142e39e7b598165329df3f54e017ca19",
+    "calls": [
+      "JSON.parse",
+      "new TypeError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "TypeError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721247:27365201",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "degradedConnection",
+    "qualified_name": "degradedConnection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721247,
+    "end_line": 721254,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "platform2",
+      "fault",
+      "error64"
+    ],
+    "body_sha256": "e1b5ec31e64410b11662ca01cb80494d384d4f1d3845b038bc0bfd8985a97bef",
+    "calls": [
+      "errorLogTag",
+      "labelFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721256:27365481",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.constructor",
+    "qualified_name": "FileChannelStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721256,
+    "end_line": 721266,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "channelsDir",
+      "stat26 = import_node_fs85.statSync"
+    ],
+    "body_sha256": "f00d77fcb01b4cbe939af2476fa7cdd3141e5c74c486517eafcb5d728c1ed441",
+    "calls": [
+      "createDebouncePolicy",
+      "new WatchedDirectory"
+    ],
+    "writes": [
+      "this.channelsDir",
+      "this.dir",
+      "this.stat"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721270:27365828",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.getLocation",
+    "qualified_name": "FileChannelStore.getLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721270,
+    "end_line": 721272,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "fc9d6c44839317ec665dcddb5a2577b612f4e38b7fc695ac4826b9d007a17f7e",
+    "calls": [
+      "this.dir.getLocation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721273:27365885",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.setOnChange",
+    "qualified_name": "FileChannelStore.setOnChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721273,
+    "end_line": 721275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "d17099db849835aefa3fe0717511d60b95dab562c6bc9e4a33c94e82b4171953",
+    "calls": [
+      "this.dir.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721276:27365950",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.configPath",
+    "qualified_name": "FileChannelStore.configPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721276,
+    "end_line": 721278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "ad5617fb2ad3e376924bb8e5334012b231741b825637ff591274cf63e2203989",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721279:27366080",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.readConnection",
+    "qualified_name": "FileChannelStore.readConnection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721279,
+    "end_line": 721294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "4c33fccabd4e1158cb173d155badc7c03e595eedde93c86f7685892431207bd1",
+    "calls": [
+      "channelConfigLabel",
+      "degradedConnection",
+      "isMissingPathError",
+      "labelFor",
+      "readSandDataFileSync",
+      "this.configPath"
+    ],
+    "writes": [
+      "label",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:721295:27366600",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.listConnections",
+    "qualified_name": "FileChannelStore.listConnections",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721295,
+    "end_line": 721297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "aa489d15ce44f051a5e0f95b137fe85b625629d33611cd25eca97f5e6cfb46ca",
+    "calls": [
+      ".filter",
+      ".flatMap",
+      "this.dir.listSubdirectoryNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721298:27366753",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.listPlatforms",
+    "qualified_name": "FileChannelStore.listPlatforms",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721298,
+    "end_line": 721300,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "51a4919565a96046ddc2adb9e228ec8bd8ae3f3d63756eaff8f85d9a589dcc07",
+    "calls": [
+      ".map",
+      "this.listConnections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721301:27366849",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.readLabel",
+    "qualified_name": "FileChannelStore.readLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721301,
+    "end_line": 721303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "64db9b10586c100bcc3ef3978dac2752f150d69501278d66f817f80d1cd42c10",
+    "calls": [
+      "this.readConnection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721304:27366943",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.metadataPresence",
+    "qualified_name": "FileChannelStore.metadataPresence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721304,
+    "end_line": 721313,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "70b419977681e586782caa6c152a23a1e7c7d2b5eebf2f43fd1f127423765c72",
+    "calls": [
+      "isMissingPathError",
+      "reportFallbackUnlessAbsent",
+      "this.configPath",
+      "this.stat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721314:27367225",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.writeMetadata",
+    "qualified_name": "FileChannelStore.writeMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721314,
+    "end_line": 721320,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2",
+      "label"
+    ],
+    "body_sha256": "1ca5f96cf270c2ece1e201e2d65febd6cf2c7a5e3eb2e27291b114eeb2b099cf",
+    "calls": [
+      "JSON.stringify",
+      "isSafeFolderId",
+      "labelFor",
+      "this.configPath",
+      "this.dir.writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721321:27367486",
+    "artifact": "host",
+    "module": "host/extensions/session/channel-store.ts",
+    "name": "FileChannelStore.remove",
+    "qualified_name": "FileChannelStore.remove",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721321,
+    "end_line": 721339,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "platform2"
+    ],
+    "body_sha256": "b99c248bdc84ac23f4682511756f6a7ec7320711cec2aadbcbcd5f5598c1e7e6",
+    "calls": [
+      ".isDirectory",
+      "isMissingPathError",
+      "isSafeFolderId",
+      "new SandChannelLookupFailedError",
+      "removeSandDataFileSync",
+      "removeSandDataTreeSync",
+      "reportFallback",
+      "this.configPath",
+      "this.dir.scheduleNotify",
+      "this.stat"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandChannelLookupFailedError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 1,
+      "catches": 2
+    }
+  }
+]

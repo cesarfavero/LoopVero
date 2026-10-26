@@ -1,0 +1,538 @@
+[
+  {
+    "id": "host:765149:29312626",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "parseEmailTimestamp",
+    "qualified_name": "parseEmailTimestamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765149,
+    "end_line": 765159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  value,\n  field\n}"
+    ],
+    "body_sha256": "ccc705c42bdfcac3558356563f63907019859c2640eb11def31fe29073a85969",
+    "calls": [
+      "Date.parse",
+      "Number.isNaN",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765160:29312913",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "optionalText",
+    "qualified_name": "optionalText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765160,
+    "end_line": 765162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "4dfd13ef39488bb33c11f32c82185715175d5403eb193ea3d1fd0513ce4e15fe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765163:29313012",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "threadLines",
+    "qualified_name": "threadLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765163,
+    "end_line": 765182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "thread",
+      "index"
+    ],
+    "body_sha256": "ffd518af551c2d6315f238cd94ca9fe50b1fc23fc0cff058799c9cab5c574169",
+    "calls": [
+      "formatEmailAddress",
+      "formatEmailAddresses",
+      "formatEmailDirection",
+      "formatEmailTimestamp",
+      "lines2.push",
+      "softenInlineImageMarkers",
+      "thread.subject.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765183:29313998",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "renderEmailThreadSearch",
+    "qualified_name": "renderEmailThreadSearch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765183,
+    "end_line": 765195,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "threads"
+    ],
+    "body_sha256": "e97535e6e393fecb0849131539155704d1d1be4a2e9a29ea78b248977c7369e2",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "threads.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765196:29314568",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "searchEmailThreads",
+    "qualified_name": "searchEmailThreads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765196,
+    "end_line": 765215,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "16a10866ec5aa1e38d6e39ce2734b05f1fc9959efb221d3c385d0f8cbaebcf6f",
+    "calls": [
+      "Math.min",
+      "deps.email.searchThreads",
+      "new SandToolInputError",
+      "optionalText",
+      "parseEmailTimestamp",
+      "renderEmailThreadSearch"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765216:29315328",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "createSearchEmailThreadsTool",
+    "qualified_name": "createSearchEmailThreadsTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765216,
+    "end_line": 765225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "1a9aaf56860fe3dde8352501bd1d750317b4e35f5a39f12d094238b0920d6ef6",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765222:29315586",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSearchEmailThreadsTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765222,
+    "end_line": 765222,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765223:29315635",
+    "artifact": "host",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSearchEmailThreadsTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765223,
+    "end_line": 765223,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "b1515f69eb0886d1e613a8ffd5b54f273e8e7ca6d056f9df3cda232a003853ad",
+    "calls": [
+      "searchEmailThreads"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558517:20732811",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "parseEmailTimestamp",
+    "qualified_name": "parseEmailTimestamp",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558517,
+    "end_line": 558527,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  value,\n  field\n}"
+    ],
+    "body_sha256": "ccc705c42bdfcac3558356563f63907019859c2640eb11def31fe29073a85969",
+    "calls": [
+      "Date.parse",
+      "Number.isNaN",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558528:20733098",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "optionalText",
+    "qualified_name": "optionalText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558528,
+    "end_line": 558530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "4dfd13ef39488bb33c11f32c82185715175d5403eb193ea3d1fd0513ce4e15fe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558531:20733197",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "threadLines",
+    "qualified_name": "threadLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558531,
+    "end_line": 558550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "thread",
+      "index"
+    ],
+    "body_sha256": "ffd518af551c2d6315f238cd94ca9fe50b1fc23fc0cff058799c9cab5c574169",
+    "calls": [
+      "formatEmailAddress",
+      "formatEmailAddresses",
+      "formatEmailDirection",
+      "formatEmailTimestamp",
+      "lines2.push",
+      "softenInlineImageMarkers",
+      "thread.subject.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558551:20734183",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "renderEmailThreadSearch",
+    "qualified_name": "renderEmailThreadSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558551,
+    "end_line": 558563,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "threads"
+    ],
+    "body_sha256": "e97535e6e393fecb0849131539155704d1d1be4a2e9a29ea78b248977c7369e2",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "threads.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558564:20734753",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "searchEmailThreads",
+    "qualified_name": "searchEmailThreads",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558564,
+    "end_line": 558583,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "16a10866ec5aa1e38d6e39ce2734b05f1fc9959efb221d3c385d0f8cbaebcf6f",
+    "calls": [
+      "Math.min",
+      "deps.email.searchThreads",
+      "new SandToolInputError",
+      "optionalText",
+      "parseEmailTimestamp",
+      "renderEmailThreadSearch"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558584:20735513",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "createSearchEmailThreadsTool",
+    "qualified_name": "createSearchEmailThreadsTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558584,
+    "end_line": 558593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "1a9aaf56860fe3dde8352501bd1d750317b4e35f5a39f12d094238b0920d6ef6",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558590:20735771",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSearchEmailThreadsTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558590,
+    "end_line": 558590,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558591:20735820",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/search-email-threads-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSearchEmailThreadsTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558591,
+    "end_line": 558591,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "b1515f69eb0886d1e613a8ffd5b54f273e8e7ca6d056f9df3cda232a003853ad",
+    "calls": [
+      "searchEmailThreads"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

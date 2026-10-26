@@ -1,0 +1,400 @@
+[
+  {
+    "id": "host:768870:29477760",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "wallClockAtPlaceOrUtc",
+    "qualified_name": "wallClockAtPlaceOrUtc",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768870,
+    "end_line": 768880,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  utcOffsetMinutes,\n  timeMs\n}"
+    ],
+    "body_sha256": "851216dd6339464ce6354cbb4a07ce7c0f8fbc614e129c5557e5f08d9f5b71d5",
+    "calls": [
+      ".padStart",
+      "String",
+      "new Date",
+      "shifted.getUTCDay",
+      "shifted.getUTCHours",
+      "shifted.getUTCMinutes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768881:29478220",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "openingStatus",
+    "qualified_name": "openingStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768881,
+    "end_line": 768894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs2"
+    ],
+    "body_sha256": "9a27a5a527ec6b152e7cf65bef69e1a775f7c75c6ca39a618be5d7c2188f9aed",
+    "calls": [
+      "wallClockAtPlaceOrUtc"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768895:29478900",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "openingHoursLines",
+    "qualified_name": "openingHoursLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768895,
+    "end_line": 768903,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs2"
+    ],
+    "body_sha256": "23b8c517a06ccd388bc89b84cc3f7b9fd6563a855e74d866afb942c23d0aabe8",
+    "calls": [
+      ".filter",
+      "lines2.map",
+      "openingStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768904:29479267",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "ratingLine",
+    "qualified_name": "ratingLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768904,
+    "end_line": 768908,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place"
+    ],
+    "body_sha256": "6bf5f4f3882bfd503fec7410e9c68b006e9009d1654ac03c54dcbff24ea4f5ce",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768909:29479522",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "placeBlock",
+    "qualified_name": "placeBlock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768909,
+    "end_line": 768918,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs2"
+    ],
+    "body_sha256": "114f9bf132593f21b8dfc262280a9e4c356522279f7879409f9c56e0062c6035",
+    "calls": [
+      ".filter",
+      ".join",
+      "openingHoursLines",
+      "ratingLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:768919:29479943",
+    "artifact": "host",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "formatPlacesSummary",
+    "qualified_name": "formatPlacesSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 768919,
+    "end_line": 768921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "places",
+      "nowMs2"
+    ],
+    "body_sha256": "91e1e0c65234a4b0ae61c1d8a4fbe56b11dc588df96dbb598a2a9c6902622e38",
+    "calls": [
+      ".join",
+      "places.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564445:21011794",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "wallClockAtPlaceOrUtc",
+    "qualified_name": "wallClockAtPlaceOrUtc",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564445,
+    "end_line": 564455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  utcOffsetMinutes,\n  timeMs\n}"
+    ],
+    "body_sha256": "851216dd6339464ce6354cbb4a07ce7c0f8fbc614e129c5557e5f08d9f5b71d5",
+    "calls": [
+      ".padStart",
+      "String",
+      "new Date",
+      "shifted.getUTCDay",
+      "shifted.getUTCHours",
+      "shifted.getUTCMinutes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564456:21012254",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "openingStatus",
+    "qualified_name": "openingStatus",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564456,
+    "end_line": 564469,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs"
+    ],
+    "body_sha256": "f39bc7056199ab782aaeea3229c23ea45a4bd56392dfada894874c66b1cfe638",
+    "calls": [
+      "wallClockAtPlaceOrUtc"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564470:21012932",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "openingHoursLines",
+    "qualified_name": "openingHoursLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564470,
+    "end_line": 564478,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs"
+    ],
+    "body_sha256": "2ab7e8506fa0e39b6322c68188fdb9b4e3bb346121eb75cafa02be6310656f87",
+    "calls": [
+      ".filter",
+      "lines2.map",
+      "openingStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564479:21013297",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "ratingLine",
+    "qualified_name": "ratingLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564479,
+    "end_line": 564483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place"
+    ],
+    "body_sha256": "6bf5f4f3882bfd503fec7410e9c68b006e9009d1654ac03c54dcbff24ea4f5ce",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564484:21013552",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "placeBlock",
+    "qualified_name": "placeBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564484,
+    "end_line": 564493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "place",
+      "nowMs"
+    ],
+    "body_sha256": "75cddf7322fb26e072dcb33bb67fbac9498b891c06325ebf2c74d08683e85dd9",
+    "calls": [
+      ".filter",
+      ".join",
+      "openingHoursLines",
+      "ratingLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:564494:21013971",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/places/places-summary.ts",
+    "name": "formatPlacesSummary",
+    "qualified_name": "formatPlacesSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 564494,
+    "end_line": 564496,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "places",
+      "nowMs"
+    ],
+    "body_sha256": "6ea7c521b7925778f6e2ddb579beb276569ef2c805dd808524a1fc9f20d2ba9b",
+    "calls": [
+      ".join",
+      "places.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

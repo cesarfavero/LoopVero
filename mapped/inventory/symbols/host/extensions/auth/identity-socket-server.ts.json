@@ -1,0 +1,529 @@
+[
+  {
+    "id": "host:499454:18326420",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "TokenBucket.constructor",
+    "qualified_name": "TokenBucket.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499454,
+    "end_line": 499457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0a7b6f144b06c61eb13c64d71d573bb52622362d9047e572c3cf6db21979321b",
+    "calls": [
+      "performance.now"
+    ],
+    "writes": [
+      "this.lastRefillMs",
+      "this.tokens"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499458:18326520",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "TokenBucket.tryConsume",
+    "qualified_name": "TokenBucket.tryConsume",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499458,
+    "end_line": 499473,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d056a1618dbd179cc6b577bc8b93f39e669563820c645ea63444ddd6d196df56",
+    "calls": [
+      "Math.min",
+      "performance.now"
+    ],
+    "writes": [
+      "this.lastRefillMs",
+      "this.tokens"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499475:18326904",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "sendJson",
+    "qualified_name": "sendJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499475,
+    "end_line": 499487,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2a8e9e46bd3c8e9fbbd9602a5b91e91972e3dfae6f5ba4eff27cfbaf1c04e6d6",
+    "calls": [
+      "Buffer.byteLength",
+      "JSON.stringify",
+      "String",
+      "args.res.end",
+      "args.res.writeHead"
+    ],
+    "writes": [
+      "headers[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499488:18327293",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "sendInvalid",
+    "qualified_name": "sendInvalid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499488,
+    "end_line": 499495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ca2933364dbd9c2a4b37d69ae55d427eecdfccc213d4c80860e74bbd298a876a",
+    "calls": [
+      "sendJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499496:18327494",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "unlinkIfPresent",
+    "qualified_name": "unlinkIfPresent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499496,
+    "end_line": 499502,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "socketPath"
+    ],
+    "body_sha256": "b4368bca29392fe050c6903c16d933f277211ec98b055e565986ec53cd69d40d",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499503:18327690",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "waitForSocketClose",
+    "qualified_name": "waitForSocketClose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499503,
+    "end_line": 499511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "socket"
+    ],
+    "body_sha256": "c0d47c908f7f45f8a337fa5c7b79db4a9d6a8d52dad830ff6223a0a5b6b6af77",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499512:18327886",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "destroyOnDeadline",
+    "qualified_name": "destroyOnDeadline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499512,
+    "end_line": 499516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "socket"
+    ],
+    "body_sha256": "81590179effdb2d0ac80680c6ba1aeb846f6e382be393e3356c305daf5cce080",
+    "calls": [
+      "socket.destroy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499517:18328010",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "sendError",
+    "qualified_name": "sendError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499517,
+    "end_line": 499524,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ef87947a5ddb31bbd675a22655f6976509e60fe72a35e5bbdc9ce7e8ff20f67c",
+    "calls": [
+      "sendJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499525:18328180",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "parseGuestBody",
+    "qualified_name": "parseGuestBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499525,
+    "end_line": 499576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "bf376f0ed5e76faa946f372adac7a1c46fc22b0d0b799ddc12ecd8ea13683138",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "NONCE_PRINTABLE_ASCII.test",
+      "parsed2.aud.trim",
+      "parsed2.sub_claim.trim",
+      "raw.toString"
+    ],
+    "writes": [
+      "nonce",
+      "parsed2",
+      "subClaim"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499577:18329992",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "readBoundedBody",
+    "qualified_name": "readBoundedBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499577,
+    "end_line": 499594,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "ebf736dfc87a29c4a6794da680f8207210cf835a5106dc9e1cb4873deb9435d3",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499595:18330481",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "mapBackendStatusToGuestStatus",
+    "qualified_name": "mapBackendStatusToGuestStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499595,
+    "end_line": 499610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "887d6598e7366d73540635634689976e76807d17a2aba5387a1ee5c77acb2eb1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499611:18330738",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "mapMintResult",
+    "qualified_name": "mapMintResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499611,
+    "end_line": 499644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "res",
+      "minted"
+    ],
+    "body_sha256": "224ed3e38dba1ba3bee2e04b74d4483af168aec771086ccedcc653e5626126db",
+    "calls": [
+      "mapBackendStatusToGuestStatus",
+      "send",
+      "sendError",
+      "sendJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499645:18331668",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "startGrokBotBoxIdentitySocketServer",
+    "qualified_name": "startGrokBotBoxIdentitySocketServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499645,
+    "end_line": 499782,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "e581cde1e9e162a18062564ea2a69ea285fa98664e1d8722744bc84df2469655",
+    "calls": [
+      "closeListener",
+      "handPathToAgentUser",
+      "import_node_http4.default.createServer",
+      "import_node_net3.default.createServer",
+      "new Promise",
+      "new Set",
+      "new TokenBucket",
+      "new WeakMap",
+      "server.on",
+      "unlinkIfPresent"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 7,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499651:18332059",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "tryAcquireMintPermit",
+    "qualified_name": "startGrokBotBoxIdentitySocketServer/tryAcquireMintPermit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499651,
+    "end_line": 499664,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "19ff01113b20e163269699df89c6105d7afebeae8a15418c761febe227d08f2c",
+    "calls": [],
+    "writes": [
+      "inFlightMints"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499748:18335452",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "closeListener",
+    "qualified_name": "startGrokBotBoxIdentitySocketServer/closeListener",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499748,
+    "end_line": 499754,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "225d5778c30d6c2815f056942295e203ad5936bfa67b85539bc257ab9a9acf42",
+    "calls": [
+      "httpServer.close",
+      "new Promise",
+      "socket.destroy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499777:18336291",
+    "artifact": "host",
+    "module": "host/extensions/auth/identity-socket-server.ts",
+    "name": "stop",
+    "qualified_name": "startGrokBotBoxIdentitySocketServer/stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499777,
+    "end_line": 499780,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3957fb04586462a29b52d460f693f8e700565da7366d3cfa85ecd9bdffaa477b",
+    "calls": [
+      "closeListener",
+      "unlinkIfPresent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

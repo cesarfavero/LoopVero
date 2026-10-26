@@ -1,0 +1,72 @@
+[
+  {
+    "id": "host:714513:27122490",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/voice-call-server-receipt.ts",
+    "name": "voiceCallReceiptCommit",
+    "qualified_name": "voiceCallReceiptCommit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714513,
+    "end_line": 714526,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId",
+      "record3"
+    ],
+    "body_sha256": "f646ea22ada81109a93a1f5c73a5e17ccea54697e58d26fbba50501080bda121",
+    "calls": [
+      "entries.map",
+      "voiceCallHangupEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714527:27122870",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/voice-call-server-receipt.ts",
+    "name": "publishVoiceCallReceiptToServer",
+    "qualified_name": "publishVoiceCallReceiptToServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714527,
+    "end_line": 714541,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "record3",
+      "commit2"
+    ],
+    "body_sha256": "2c7c722026543c5541215ceba8ee629df4b268c7955544cb6c2c5bc06bf577e5",
+    "calls": [
+      "commit2",
+      "new VoiceCallReceiptPublishError",
+      "parseAgentId",
+      "voiceCallReceiptCommit"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "VoiceCallReceiptPublishError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

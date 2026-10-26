@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "host:767371:29409569",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "unquoteSingleQuotedYamlKey",
+    "qualified_name": "unquoteSingleQuotedYamlKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767371,
+    "end_line": 767387,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "00c3610442aca8780f2a603a4980398d0c7cf6d02d4fc9bbc2893218c41f6385",
+    "calls": [],
+    "writes": [
+      "i",
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767388:29409887",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "snapshotKeyOf",
+    "qualified_name": "snapshotKeyOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767388,
+    "end_line": 767392,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "215f742d7de39e08e38f9cde08e28da7025b886d6111d1744ec7fea79264e1e0",
+    "calls": [
+      "SNAPSHOT_LINE_PATTERN.exec",
+      "entry.startsWith",
+      "unquoteSingleQuotedYamlKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767393:29410090",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "unescapeName",
+    "qualified_name": "unescapeName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767393,
+    "end_line": 767400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "4363fe31a8092149895f89869ae4207abb11416090307498de4585bd623b15e4",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:767401:29410261",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "roleNameAndAttributes",
+    "qualified_name": "roleNameAndAttributes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767401,
+    "end_line": 767412,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "bad9bc4e77d41de24a096eff8308ba33ac31cf4542a0113964a427787988bbff",
+    "calls": [
+      "SNAPSHOT_QUOTED_NAME_PATTERN.exec",
+      "SNAPSHOT_ROLE_PATTERN.exec",
+      "rest.startsWith",
+      "unescapeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767413:29410775",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "parsePlaywrightSnapshotRefs",
+    "qualified_name": "parsePlaywrightSnapshotRefs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767413,
+    "end_line": 767446,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c038466452ca51d936f091a10020170d0f04ca166f0f8ba6a0d096f924751311",
+    "calls": [
+      "/^\\s*/.exec",
+      "SNAPSHOT_LEADING_ATTRIBUTES_PATTERN.exec",
+      "SNAPSHOT_REF_ATTRIBUTE_PATTERN.exec",
+      "frameStack.findLast",
+      "frameStack.pop",
+      "frameStack.push",
+      "new Map",
+      "new Set",
+      "parsed2.name.trim",
+      "refs.has",
+      "refs.set",
+      "repeatedRefs.add",
+      "roleNameAndAttributes",
+      "snapshotKeyOf",
+      "text3.split",
+      "withSameRoleAndNameOrdinals"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767447:29412088",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "withSameRoleAndNameOrdinals",
+    "qualified_name": "withSameRoleAndNameOrdinals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767447,
+    "end_line": 767468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "refs",
+      "repeatedRefs"
+    ],
+    "body_sha256": "f6070140a312e8f6a6ea099a1a9603ac8fd5579fadecba89e2e8e3f4154c50f6",
+    "calls": [
+      "group.forEach",
+      "group.refs.push",
+      "groups.get",
+      "groups.set",
+      "groups.values",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767469:29412873",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "parsePlaywrightCurrentTab",
+    "qualified_name": "parsePlaywrightCurrentTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767469,
+    "end_line": 767478,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "69c636120ad2e68fe29f9544618511706fd6961dd6b81f019023700cdc3d91d3",
+    "calls": [
+      "CURRENT_TAB_ROW_PATTERN.exec",
+      "Number",
+      "match2[computed].replace",
+      "row.endsWith",
+      "row.lastIndexOf",
+      "row.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767482:29413497",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "isErrorFailure",
+    "qualified_name": "isErrorFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767482,
+    "end_line": 767486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "72be033b98431e6e73848853fb0108a9bc43cf2e6d8059d035ffff4461e7ceb9",
+    "calls": [
+      "PLAYWRIGHT_UNKNOWN_TOOL_REFUSAL.test",
+      "text3.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767487:29413706",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "textOf2",
+    "qualified_name": "textOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767487,
+    "end_line": 767489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "0195a846dabe6dbc7b101a7d88007ae8c5f78c5e65060e8eb9cac3b2431203fd",
+    "calls": [
+      ".join",
+      "result.content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767490:29413852",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readOf",
+    "qualified_name": "readOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767490,
+    "end_line": 767511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "4c6833df9a1fa19ed32ed696a31bf751a0690e08b9493b0b629d6c390b6542eb",
+    "calls": [
+      "isErrorFailure",
+      "textOf2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767512:29414644",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightToolOn",
+    "qualified_name": "readPlaywrightToolOn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767512,
+    "end_line": 767544,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "server",
+      "toolName",
+      "args"
+    ],
+    "body_sha256": "3593881f3776ba13e4b4ffff1bc975ecdef53248ca55cb26e847dd363b98a4ea",
+    "calls": [
+      ".map",
+      ".then",
+      "Object.entries",
+      "Object.fromEntries",
+      "exec2.executeTool",
+      "new McpArgs",
+      "withTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767545:29415729",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightTool",
+    "qualified_name": "readPlaywrightTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767545,
+    "end_line": 767553,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex",
+      "toolName",
+      "args"
+    ],
+    "body_sha256": "b87c4bfacf17d4cc715b5f6af3b45b0652d372a4f987a27ae14dfda60d1582b0",
+    "calls": [
+      "playwrightBoxMcpServerName",
+      "readPlaywrightToolOn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767554:29415938",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "mapRead",
+    "qualified_name": "mapRead",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767554,
+    "end_line": 767556,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "read2",
+      "map4"
+    ],
+    "body_sha256": "2444e30f1903652d68ba6e6c0ae54e46a5eaf1802ef15421feb0d55ac995d5bc",
+    "calls": [
+      "map4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767557:29416057",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightSnapshotRefs",
+    "qualified_name": "readPlaywrightSnapshotRefs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767557,
+    "end_line": 767562,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex"
+    ],
+    "body_sha256": "96b008812272f81849d9b0e4a4b9b7c53e7a0d1ce094cf1a2b333c14983989c8",
+    "calls": [
+      "mapRead",
+      "readPlaywrightTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:767563:29416262",
+    "artifact": "host",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightCurrentTab",
+    "qualified_name": "readPlaywrightCurrentTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 767563,
+    "end_line": 767568,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex"
+    ],
+    "body_sha256": "7bb323bfb0f2f5c2674c8b0283219f3e2e732e349ac07f0267a9b2067bcb0a43",
+    "calls": [
+      "mapRead",
+      "readPlaywrightTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562888:20940136",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "unquoteSingleQuotedYamlKey",
+    "qualified_name": "unquoteSingleQuotedYamlKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562888,
+    "end_line": 562904,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "00c3610442aca8780f2a603a4980398d0c7cf6d02d4fc9bbc2893218c41f6385",
+    "calls": [],
+    "writes": [
+      "i",
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562905:20940454",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "snapshotKeyOf",
+    "qualified_name": "snapshotKeyOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562905,
+    "end_line": 562909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "215f742d7de39e08e38f9cde08e28da7025b886d6111d1744ec7fea79264e1e0",
+    "calls": [
+      "SNAPSHOT_LINE_PATTERN.exec",
+      "entry.startsWith",
+      "unquoteSingleQuotedYamlKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562910:20940657",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "unescapeName",
+    "qualified_name": "unescapeName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562910,
+    "end_line": 562917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "5df5169b76edfbf22893ca6ad79e03f454a752afce3006539597a0087030681a",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:562918:20940825",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "roleNameAndAttributes",
+    "qualified_name": "roleNameAndAttributes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562918,
+    "end_line": 562929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "bad9bc4e77d41de24a096eff8308ba33ac31cf4542a0113964a427787988bbff",
+    "calls": [
+      "SNAPSHOT_QUOTED_NAME_PATTERN.exec",
+      "SNAPSHOT_ROLE_PATTERN.exec",
+      "rest.startsWith",
+      "unescapeName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562930:20941339",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "parsePlaywrightSnapshotRefs",
+    "qualified_name": "parsePlaywrightSnapshotRefs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562930,
+    "end_line": 562963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "4646128637c3718ab761acc47c449681d426d98b7c5ce27a7fb94b2383cb4049",
+    "calls": [
+      "/^\\s*/.exec",
+      "SNAPSHOT_LEADING_ATTRIBUTES_PATTERN.exec",
+      "SNAPSHOT_REF_ATTRIBUTE_PATTERN.exec",
+      "frameStack.findLast",
+      "frameStack.pop",
+      "frameStack.push",
+      "new Map",
+      "new Set",
+      "parsed.name.trim",
+      "refs.has",
+      "refs.set",
+      "repeatedRefs.add",
+      "roleNameAndAttributes",
+      "snapshotKeyOf",
+      "text3.split",
+      "withSameRoleAndNameOrdinals"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562964:20942644",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "withSameRoleAndNameOrdinals",
+    "qualified_name": "withSameRoleAndNameOrdinals",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562964,
+    "end_line": 562985,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "refs",
+      "repeatedRefs"
+    ],
+    "body_sha256": "f6070140a312e8f6a6ea099a1a9603ac8fd5579fadecba89e2e8e3f4154c50f6",
+    "calls": [
+      "group.forEach",
+      "group.refs.push",
+      "groups.get",
+      "groups.set",
+      "groups.values",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562986:20943429",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "parsePlaywrightCurrentTab",
+    "qualified_name": "parsePlaywrightCurrentTab",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562986,
+    "end_line": 562995,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "69c636120ad2e68fe29f9544618511706fd6961dd6b81f019023700cdc3d91d3",
+    "calls": [
+      "CURRENT_TAB_ROW_PATTERN.exec",
+      "Number",
+      "match2[computed].replace",
+      "row.endsWith",
+      "row.lastIndexOf",
+      "row.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562999:20944053",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "isErrorFailure",
+    "qualified_name": "isErrorFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562999,
+    "end_line": 563003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "72be033b98431e6e73848853fb0108a9bc43cf2e6d8059d035ffff4461e7ceb9",
+    "calls": [
+      "PLAYWRIGHT_UNKNOWN_TOOL_REFUSAL.test",
+      "text3.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563004:20944262",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "textOf3",
+    "qualified_name": "textOf3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563004,
+    "end_line": 563006,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "caa1a72d0ff59d1d0bbef50c48581747f2dbfc36867a212ec1b1c1060bdbb845",
+    "calls": [
+      ".join",
+      "result.content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563007:20944408",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readOf",
+    "qualified_name": "readOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563007,
+    "end_line": 563028,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "a6a29cb2d9ff2d68248cbb14173572378e5f1f6f4819bd204a9a6f456afa62d2",
+    "calls": [
+      "isErrorFailure",
+      "textOf3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563029:20945200",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightToolOn",
+    "qualified_name": "readPlaywrightToolOn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563029,
+    "end_line": 563061,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "server",
+      "toolName",
+      "args"
+    ],
+    "body_sha256": "6a21bf32d3873a5e88cf5fa6db4cc21fb13f89ffd2fb72f08bca5ef34fe5f286",
+    "calls": [
+      ".map",
+      ".then",
+      "Object.entries",
+      "Object.fromEntries",
+      "exec2.executeTool",
+      "new McpArgs",
+      "withTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563062:20946285",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightTool",
+    "qualified_name": "readPlaywrightTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563062,
+    "end_line": 563070,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex",
+      "toolName",
+      "args"
+    ],
+    "body_sha256": "b87c4bfacf17d4cc715b5f6af3b45b0652d372a4f987a27ae14dfda60d1582b0",
+    "calls": [
+      "playwrightBoxMcpServerName",
+      "readPlaywrightToolOn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563071:20946494",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "mapRead",
+    "qualified_name": "mapRead",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563071,
+    "end_line": 563073,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "read2",
+      "map5"
+    ],
+    "body_sha256": "386ac259ef935a7952527bb681e0cb4cfd6a59c8286805bb693383b19e788473",
+    "calls": [
+      "map5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563074:20946613",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightSnapshotRefs",
+    "qualified_name": "readPlaywrightSnapshotRefs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563074,
+    "end_line": 563079,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex"
+    ],
+    "body_sha256": "96b008812272f81849d9b0e4a4b9b7c53e7a0d1ce094cf1a2b333c14983989c8",
+    "calls": [
+      "mapRead",
+      "readPlaywrightTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:563080:20946818",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/browser/user-form-playwright-context.ts",
+    "name": "readPlaywrightCurrentTab",
+    "qualified_name": "readPlaywrightCurrentTab",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 563080,
+    "end_line": 563085,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "exec2",
+      "windowIndex"
+    ],
+    "body_sha256": "7bb323bfb0f2f5c2674c8b0283219f3e2e732e349ac07f0267a9b2067bcb0a43",
+    "calls": [
+      "mapRead",
+      "readPlaywrightTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

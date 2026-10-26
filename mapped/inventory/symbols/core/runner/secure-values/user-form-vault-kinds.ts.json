@@ -1,0 +1,462 @@
+[
+  {
+    "id": "host:724697:27489664",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "partsOf",
+    "qualified_name": "partsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724697,
+    "end_line": 724706,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "allowed",
+      "parts"
+    ],
+    "body_sha256": "685d73390bf572253fd9a694912065db517808c09c75c98ca660f363be09ff72",
+    "calls": [
+      ".join",
+      "JSON.stringify",
+      "allowed.filter",
+      "allowed.map",
+      "new SandToolInputError",
+      "parts.find"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724707:27490121",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "checkPrefillKeys",
+    "qualified_name": "checkPrefillKeys",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724707,
+    "end_line": 724714,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "allowed",
+      "prefill"
+    ],
+    "body_sha256": "28c12cc7757b06f5c40eb764535c1d1d9a0d38c620b9b385014703451070ae87",
+    "calls": [
+      ".find",
+      ".join",
+      "JSON.stringify",
+      "Object.keys",
+      "allowed.map",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724715:27490472",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "loginFields",
+    "qualified_name": "loginFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724715,
+    "end_line": 724731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts",
+      "prefill"
+    ],
+    "body_sha256": "174df172b7e307334facc9275ded2c80c41b85f1eee12f1da2d09267e510b602",
+    "calls": [
+      "checkPrefillKeys",
+      "new SandToolInputError",
+      "parts.includes",
+      "prefill.username.trim",
+      "shown.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724732:27491174",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "cardFields",
+    "qualified_name": "cardFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724732,
+    "end_line": 724750,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefill"
+    ],
+    "body_sha256": "4f288ca4e036f92cbbd4600ed4f1000871e09c021fb8d7fcac395772faeabbd2",
+    "calls": [
+      "VAULT_CARD_FORM_FIELDS.map",
+      "checkPrefillKeys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724751:27492073",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "contactFields",
+    "qualified_name": "contactFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724751,
+    "end_line": 724770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts",
+      "prefill"
+    ],
+    "body_sha256": "fd96a1bf50f153a759a3a6f561b9738266b477c68dd66b51d29d0e830112f44e",
+    "calls": [
+      ".flatMap",
+      "JSON.stringify",
+      "Object.entries",
+      "checkPrefillKeys",
+      "isVaultContactFormFieldId",
+      "new SandToolInputError",
+      "new Set",
+      "parts.flatMap",
+      "vaultContactFormFields",
+      "vaultContactFormValueProblem"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724771:27492818",
+    "artifact": "host",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "vaultKindUserFormFields",
+    "qualified_name": "vaultKindUserFormFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724771,
+    "end_line": 724786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c461d0229ac1e5d1b55a9cd555522bb0957f86277ed4e770a31cf35c498efb17",
+    "calls": [
+      "cardFields",
+      "contactFields",
+      "loginFields",
+      "new SandToolInputError",
+      "partsOf"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560256:20808493",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "partsOf",
+    "qualified_name": "partsOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560256,
+    "end_line": 560265,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "allowed",
+      "parts"
+    ],
+    "body_sha256": "ca4605193662c4666df2c6f3aced4cbdc1202f8b202d341c2e2bf24f37038b8e",
+    "calls": [
+      ".join",
+      "JSON.stringify",
+      "allowed.filter",
+      "allowed.map",
+      "new SandToolInputError",
+      "parts.find"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560266:20808950",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "checkPrefillKeys",
+    "qualified_name": "checkPrefillKeys",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560266,
+    "end_line": 560273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "allowed",
+      "prefill"
+    ],
+    "body_sha256": "46b4ce3a1f0ad221e88e1a48c3e6216e84552bb0c5c0115b4db5b7a8e37b530b",
+    "calls": [
+      ".find",
+      ".join",
+      "JSON.stringify",
+      "Object.keys",
+      "allowed.map",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560274:20809301",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "loginFields",
+    "qualified_name": "loginFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560274,
+    "end_line": 560290,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts",
+      "prefill"
+    ],
+    "body_sha256": "174df172b7e307334facc9275ded2c80c41b85f1eee12f1da2d09267e510b602",
+    "calls": [
+      "checkPrefillKeys",
+      "new SandToolInputError",
+      "parts.includes",
+      "prefill.username.trim",
+      "shown.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560291:20810003",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "cardFields",
+    "qualified_name": "cardFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560291,
+    "end_line": 560309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefill"
+    ],
+    "body_sha256": "4f288ca4e036f92cbbd4600ed4f1000871e09c021fb8d7fcac395772faeabbd2",
+    "calls": [
+      "VAULT_CARD_FORM_FIELDS.map",
+      "checkPrefillKeys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560310:20810902",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "contactFields",
+    "qualified_name": "contactFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560310,
+    "end_line": 560329,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parts",
+      "prefill"
+    ],
+    "body_sha256": "fd96a1bf50f153a759a3a6f561b9738266b477c68dd66b51d29d0e830112f44e",
+    "calls": [
+      ".flatMap",
+      "JSON.stringify",
+      "Object.entries",
+      "checkPrefillKeys",
+      "isVaultContactFormFieldId",
+      "new SandToolInputError",
+      "new Set",
+      "parts.flatMap",
+      "vaultContactFormFields",
+      "vaultContactFormValueProblem"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:560330:20811647",
+    "artifact": "evaluation",
+    "module": "core/runner/secure-values/user-form-vault-kinds.ts",
+    "name": "vaultKindUserFormFields",
+    "qualified_name": "vaultKindUserFormFields",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 560330,
+    "end_line": 560345,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c461d0229ac1e5d1b55a9cd555522bb0957f86277ed4e770a31cf35c498efb17",
+    "calls": [
+      "cardFields",
+      "contactFields",
+      "loginFields",
+      "new SandToolInputError",
+      "partsOf"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

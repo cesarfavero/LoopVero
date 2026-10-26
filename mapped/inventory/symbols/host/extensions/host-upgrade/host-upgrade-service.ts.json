@@ -1,0 +1,1003 @@
+[
+  {
+    "id": "host:681493:25890123",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.constructor",
+    "qualified_name": "HostUpgradeService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681493,
+    "end_line": 681495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681516:25890674",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.isAutoUpdateEnabled",
+    "qualified_name": "HostUpgradeService.isAutoUpdateEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681516,
+    "end_line": 681518,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "591427105713fc56a32ba0a3d67c041d32c422033a4a002fe60be6153ffc4894",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681519:25890765",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.resolveHostBundleIdentityVersion",
+    "qualified_name": "HostUpgradeService.resolveHostBundleIdentityVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681519,
+    "end_line": 681523,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fallbackVersion"
+    ],
+    "body_sha256": "2128e42f4520cdd332b21c79142180bd696354fda0abab672864c29a1ec042b4",
+    "calls": [
+      "this.deps.readLocalVersion"
+    ],
+    "writes": [
+      "this.localVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681524:25891021",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.startMarkerForwardWake",
+    "qualified_name": "HostUpgradeService.startMarkerForwardWake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681524,
+    "end_line": 681531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ddd067c9f5bdb0e88501a0f42249a4f10347c7327488babbbb5fa6066a00e0a5",
+    "calls": [
+      "this.deps.markerForwardPolicy.start"
+    ],
+    "writes": [
+      "this.markerForwarding"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681532:25891337",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.activateAfterHostIdentityReady",
+    "qualified_name": "HostUpgradeService.activateAfterHostIdentityReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681532,
+    "end_line": 681536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ff4ef7f2fb17bdc1cebd595020c80cda1ead57ea7978e8edb0e042c230edb9be",
+    "calls": [
+      "this.forwardHostUpgradeMarker"
+    ],
+    "writes": [
+      "this.hostIdentityReady"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681537:25891487",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.startSharedUpdateWatch",
+    "qualified_name": "HostUpgradeService.startSharedUpdateWatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681537,
+    "end_line": 681558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "2d10838d1c827dbc942a764bfeba0b5fe64aac83177797c05075941b5f20c1d1",
+    "calls": [
+      ".catch",
+      ".then",
+      "hostBundleWatchInitialDelayMs",
+      "this.deps.clock.now",
+      "this.deps.getUpdateWatchIntervalMs",
+      "this.deps.readLocalVersion",
+      "this.deps.resolveBundleSource",
+      "this.deps.updateWatchDueCheckPolicy.start"
+    ],
+    "writes": [
+      "this.nextUpdateCheckAtMs",
+      "this.runRootUpdateTick",
+      "this.sharedUpdateWatch",
+      "this.sharedUpdateWatchStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681559:25892398",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.updateHostNow",
+    "qualified_name": "HostUpgradeService.updateHostNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681559,
+    "end_line": 681599,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "083acc295f75d81073df77d819b0fd6a1b057ae7f665b23d0f7976b7f12333e9",
+    "calls": [
+      "String",
+      "describeHostBundleErrorDetail",
+      "isSandHostUpgradeAvailable",
+      "this.deps.isVersionSwapVetoed",
+      "this.deps.readLocalVersion",
+      "this.deps.resolveBundleSource",
+      "this.runHostBundleFetchStage"
+    ],
+    "writes": [
+      "this.latestVersion",
+      "this.localVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681600:25893737",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.getVersionState",
+    "qualified_name": "HostUpgradeService.getVersionState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681600,
+    "end_line": 681606,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b10dc8f42a125b4f4cd6943eb1afd5884abe32acc3199ba6231f824ffd40f3dd",
+    "calls": [
+      "isSandHostUpgradeAvailable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681607:25894004",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.prepareForUpgrade",
+    "qualified_name": "HostUpgradeService.prepareForUpgrade",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681607,
+    "end_line": 681620,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "376c5b3a912f8b6191f8e34eb1f9f63bd71534f6a67afc0bb6bd9582b999ee21",
+    "calls": [
+      "this.prepareForUpgradeOnce"
+    ],
+    "writes": [
+      "this.prepareUpgradeInFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681621:25894417",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.readAppliedUpgradeOperation",
+    "qualified_name": "HostUpgradeService.readAppliedUpgradeOperation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681621,
+    "end_line": 681632,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "def4696ed8ebe054f7b0e16a5ad81cb027fd82849dda9ad478f5af1bc41e61f3",
+    "calls": [
+      "parseHostUpgradeMarker",
+      "this.deps.markerStore.readRaw"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681633:25894802",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.retainAppliedUpgradeOperation",
+    "qualified_name": "HostUpgradeService.retainAppliedUpgradeOperation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681633,
+    "end_line": 681635,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "operation"
+    ],
+    "body_sha256": "ab672bd69147244f385a7e1308f9ba69c30ac31f0b5798f31452dcd175a96096",
+    "calls": [],
+    "writes": [
+      "this.retainedAppliedOperation"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681636:25894905",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.releaseAppliedUpgradeOperation",
+    "qualified_name": "HostUpgradeService.releaseAppliedUpgradeOperation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681636,
+    "end_line": 681645,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "operationId"
+    ],
+    "body_sha256": "e81cc8c233ad1a9daf4d23d541e6065f69e627cdaca28c2872d7d0f1b727c7a2",
+    "calls": [
+      "this.deps.markerStore.deleteMarker",
+      "this.deps.markerStore.readRaw",
+      "this.forwardHostUpgradeMarker"
+    ],
+    "writes": [
+      "this.retainedAppliedOperation"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681646:25895297",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.prepareForUpgradeOnce",
+    "qualified_name": "HostUpgradeService.prepareForUpgradeOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681646,
+    "end_line": 681670,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a5b0a03c5c71e21070ad690ba92a117c43d0475780e33f43a6c59e0eb8e08abf",
+    "calls": [
+      "refuseSwapRunningTurns",
+      "this.abandonOverBudgetUpgradePause",
+      "this.deps.automations.suspendWakes",
+      "this.deps.transcript.cancelForcedUpgradePause",
+      "this.deps.transcript.isForcedUpgradePauseActive",
+      "this.deps.transcript.pauseTurnsForUpgrade",
+      "this.resumeBackgroundWorkIfUnpaused"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 5,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681671:25896430",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.forwardHostUpgradeMarker",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681671,
+    "end_line": 681709,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7eb56ce62665068af6eb8635e0b32c76d8aec1b1f6e9ea732d96a60c75e899e5",
+    "calls": [
+      "forwardHostUpgradeMarkerWith"
+    ],
+    "writes": [
+      "this.markerForwardInFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681676:25896602",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "readRaw",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/readRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681676,
+    "end_line": 681676,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a7808e9577ed913f79da175aa296356624105d82697ef56648a8bdf9bc4405aa",
+    "calls": [
+      "this.deps.markerStore.readRaw"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681677:25896663",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "deleteMarker",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/deleteMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681677,
+    "end_line": 681681,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6f7e1973ebc34f8ffc08d42eed72c32a77d56c14114c5262dca4f3f224d698e2",
+    "calls": [
+      "this.deps.markerStore.deleteMarker"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681682:25896828",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "emit",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681682,
+    "end_line": 681682,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "metadata2"
+    ],
+    "body_sha256": "a07788fa0da60b335cb4247c178fac5ed999ea7db202630dd2fe036eca3af351",
+    "calls": [
+      "this.deps.telemetry.reportHostUpgradeConfirmed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681683:25896916",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "warn",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/warn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681683,
+    "end_line": 681683,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6746306bb3fa0bbbdecd2d7bea0ac768f8b37ff7caec06143538facc288a3e09",
+    "calls": [
+      "this.deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681684:25896974",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "now",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/now",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681684,
+    "end_line": 681692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "dd997b82b9fd410b5ae3be89e53c7a39b105369f99168cac2aa448d64677776a",
+    "calls": [
+      "this.deps.clock.now"
+    ],
+    "writes": [
+      "this.markerForwardNow"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681693:25897243",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "wasForwarded",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/wasForwarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681693,
+    "end_line": 681693,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f0041618ffc50edc61471c60adb353a07411c325ca26979f8b4f3c1ea3ae24a9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681694:25897307",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "markForwarded",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/markForwarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681694,
+    "end_line": 681696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d5223def11013d62180966618182eb4bac840578fe8a28f86e571397e535cc62",
+    "calls": [],
+    "writes": [
+      "this.lastHandledMarker"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681697:25897390",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "onForwarded",
+    "qualified_name": "HostUpgradeService.forwardHostUpgradeMarker/onForwarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681697,
+    "end_line": 681704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "marker17"
+    ],
+    "body_sha256": "afed2eef42f9b0cdb36b2139965da76852a302b36fdcf2c8cc35b5bdbdf40e3c",
+    "calls": [
+      "noteFailedSwapMarkerForRetry",
+      "this.deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681710:25897833",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.abandonOverBudgetUpgradePause",
+    "qualified_name": "HostUpgradeService.abandonOverBudgetUpgradePause",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681710,
+    "end_line": 681717,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "allowIdleAfterStalePoll"
+    ],
+    "body_sha256": "4ffc6e4b5f694930bd8d45b655826cda31baed114340507e68d32f28695a337b",
+    "calls": [
+      "this.deps.transcript.abandonOverBudgetUpgradePause",
+      "this.resumeBackgroundWorkIfUnpaused"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681718:25898141",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.resumeBackgroundWorkIfUnpaused",
+    "qualified_name": "HostUpgradeService.resumeBackgroundWorkIfUnpaused",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681718,
+    "end_line": 681721,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9314f370a1330d571790c8a36901285b28c4c6fd6620a1c3f69d2040c038f7ca",
+    "calls": [
+      "this.deps.automations.resumeWakes",
+      "this.deps.transcript.isPausingForUpgrade"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681722:25898260",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.dispose",
+    "qualified_name": "HostUpgradeService.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681722,
+    "end_line": 681727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ee006b4b87d8d7fe6393dff74ee15453dd35c41879f4a95fe6126fc114ed8871",
+    "calls": [
+      "this.markerForwarding.dispose",
+      "this.sharedUpdateWatch.dispose"
+    ],
+    "writes": [
+      "this.markerForwarding",
+      "this.sharedUpdateWatch"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681728:25898452",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.runSharedUpdateWatchIfDue",
+    "qualified_name": "HostUpgradeService.runSharedUpdateWatchIfDue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681728,
+    "end_line": 681743,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a02b23796cdd52b9057bdd49c8167030ad5521df5ff6b04de254ba99a910b5c5",
+    "calls": [
+      "errorLogTag",
+      "hostBundleWatchNextDelayMs",
+      "this.deps.clock.now",
+      "this.deps.getUpdateWatchIntervalMs",
+      "this.deps.log",
+      "this.maybeAutoUpdateHostBundle",
+      "this.runRootUpdateTick"
+    ],
+    "writes": [
+      "this.nextUpdateCheckAtMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681744:25899042",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.maybeAutoUpdateHostBundle",
+    "qualified_name": "HostUpgradeService.maybeAutoUpdateHostBundle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681744,
+    "end_line": 681766,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6265e66343e716dbde1ad7d0cc6a43d81452af58038f43a49168cf5637173f7d",
+    "calls": [
+      "isSandHostUpgradeAvailable",
+      "this.deps.isVersionSwapVetoed",
+      "this.deps.readLocalVersion",
+      "this.deps.resolveBundleSource",
+      "this.runHostBundleFetchStage"
+    ],
+    "writes": [
+      "this.latestVersion",
+      "this.localVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681767:25899819",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "HostUpgradeService.runHostBundleFetchStage",
+    "qualified_name": "HostUpgradeService.runHostBundleFetchStage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681767,
+    "end_line": 681801,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    source,\n    localVersion,\n    trigger: trigger2,\n    forceNow\n  }"
+    ],
+    "body_sha256": "15d4ed7a33cb9f50d865fddc2ff1951437530a0e813a62631cbdf27b2e7fbb6d",
+    "calls": [
+      "fetchStageAndReportHostBundle",
+      "new Error"
+    ],
+    "writes": [
+      "this.updateInFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681786:25900259",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "stage",
+    "qualified_name": "HostUpgradeService.runHostBundleFetchStage/stage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681786,
+    "end_line": 681794,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ bytes, sha256 }"
+    ],
+    "body_sha256": "9c47c61ef01793bfb81ee2f748ad96851ea3d51ac336b0447f206b50cacf8407",
+    "calls": [
+      "this.deps.stageUpgrade"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681795:25900506",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "reportUpgrade",
+    "qualified_name": "HostUpgradeService.runHostBundleFetchStage/reportUpgrade",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681795,
+    "end_line": 681795,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "metadata2"
+    ],
+    "body_sha256": "b1d6f55ef0f2146f27885f1034308e78672e7603fb436182e53da7dd2b3190f6",
+    "calls": [
+      "this.deps.telemetry.reportHostUpgrade"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681796:25900584",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-upgrade-service.ts",
+    "name": "log",
+    "qualified_name": "HostUpgradeService.runHostBundleFetchStage/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681796,
+    "end_line": 681796,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "message"
+    ],
+    "body_sha256": "3788c4dd3b93ebd215ba3de2d9af8e48cf3edb3dfa283194f104f2afbd25d948",
+    "calls": [
+      "this.deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

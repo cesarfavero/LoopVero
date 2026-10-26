@@ -1,0 +1,1464 @@
+[
+  {
+    "id": "host:542100:19889604",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "defaultWorkerEntryPath",
+    "qualified_name": "defaultWorkerEntryPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542100,
+    "end_line": 542107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "9aa0bf07237ca241511efe80b6fd91cc46cc00017a5995dccbea3fc813950cf7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542113:19889989",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SearchIndexWorkerChannel.constructor",
+    "qualified_name": "SearchIndexWorkerChannel.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542113,
+    "end_line": 542123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryPath",
+      "workerData"
+    ],
+    "body_sha256": "f760a522d84a893f9d8ddefe7f183e3365976c95346caacccc195e283608cdbd",
+    "calls": [
+      "new import_node_worker_threads2.Worker",
+      "this.worker.on"
+    ],
+    "writes": [
+      "this.worker"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542124:19890512",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SearchIndexWorkerChannel.lose",
+    "qualified_name": "SearchIndexWorkerChannel.lose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542124,
+    "end_line": 542129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6fa57cccade535af3c7b40fc4a7898dc67dbf39d4146a931737a74401c7d63da",
+    "calls": [
+      "settle3",
+      "this.pending.clear",
+      "this.pending.values"
+    ],
+    "writes": [
+      "this.isLost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542130:19890701",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SearchIndexWorkerChannel.request",
+    "qualified_name": "SearchIndexWorkerChannel.request",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542130,
+    "end_line": 542139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "build2"
+    ],
+    "body_sha256": "6828e7992aff59024d61ce5fc3547a8745148a266c3af573b53f4a1b273a1bda",
+    "calls": [
+      "Promise.resolve",
+      "new Promise"
+    ],
+    "writes": [
+      "this.nextRequestId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542140:19891054",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SearchIndexWorkerChannel.terminate",
+    "qualified_name": "SearchIndexWorkerChannel.terminate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542140,
+    "end_line": 542143,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c5790d08b52e96d64106ed6be43d9aeaa5f59ef35304ec994689868c407328d8",
+    "calls": [
+      "this.lose",
+      "this.worker.terminate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542147:19891213",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexJobPort.constructor",
+    "qualified_name": "WorkerSearchIndexJobPort.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542147,
+    "end_line": 542149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryPath",
+      "config2"
+    ],
+    "body_sha256": "b5f8eac924f62df04ba51b764e37dbaa92ae73f317958d7b1f6182ef404b3673",
+    "calls": [
+      "new SearchIndexWorkerChannel"
+    ],
+    "writes": [
+      "this.channel"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542150:19891344",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexJobPort.post",
+    "qualified_name": "WorkerSearchIndexJobPort.post",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542150,
+    "end_line": 542170,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "job"
+    ],
+    "body_sha256": "ed0ccdb91fa59346f164a15f8e9f5de3b45320d12acdb7934deb043eaab2b223",
+    "calls": [
+      "this.channel.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542171:19892005",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexJobPort.terminate",
+    "qualified_name": "WorkerSearchIndexJobPort.terminate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542171,
+    "end_line": 542173,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b2f3f5e1a98a9535cfe7f6a0d5de8a4f009d2588c59d37bd0a9d76ef5585b746",
+    "calls": [
+      "this.channel.terminate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542177:19892119",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexQueryPort.constructor",
+    "qualified_name": "WorkerSearchIndexQueryPort.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542177,
+    "end_line": 542179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entryPath",
+      "config2"
+    ],
+    "body_sha256": "484414c97d84b37dd9363654cc8d9dd53c3dbf8de88f8c696649f933f8c74b52",
+    "calls": [
+      "new SearchIndexWorkerChannel"
+    ],
+    "writes": [
+      "this.channel"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542180:19892249",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexQueryPort.run",
+    "qualified_name": "WorkerSearchIndexQueryPort.run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542180,
+    "end_line": 542186,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "33da24113e11d4698494208d0a5e33ee1215224e6f2b1af384876515bcba1e2d",
+    "calls": [
+      "this.channel.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542187:19892749",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexQueryPort.searchMessages",
+    "qualified_name": "WorkerSearchIndexQueryPort.searchMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542187,
+    "end_line": 542192,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "5f4e8976793a3ae82f78a78eddc8d9bfc3afe49310177ba44615ef5fb39e99a6",
+    "calls": [
+      "invariant",
+      "this.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542193:19893058",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexQueryPort.searchMedia",
+    "qualified_name": "WorkerSearchIndexQueryPort.searchMedia",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542193,
+    "end_line": 542198,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "a8fdddf9a1ca32da648338853f616deabcc1ecc6a716da5c93d2d8dc48418629",
+    "calls": [
+      "invariant",
+      "this.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542199:19893353",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "WorkerSearchIndexQueryPort.terminate",
+    "qualified_name": "WorkerSearchIndexQueryPort.terminate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542199,
+    "end_line": 542201,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b2f3f5e1a98a9535cfe7f6a0d5de8a4f009d2588c59d37bd0a9d76ef5585b746",
+    "calls": [
+      "this.channel.terminate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542226:19893931",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "cursor",
+    "qualified_name": "cursor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542226,
+    "end_line": 542226,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0d898fd73fef158ef93da7026acef16338429bde141359cfe1341ee44160c239",
+    "calls": [
+      "this.serverCursor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542227:19893994",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "applyRange",
+    "qualified_name": "applyRange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542227,
+    "end_line": 542227,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "range2"
+    ],
+    "body_sha256": "f23801b3765a72804c6d0f537829df99e10c9ef30e9fe22ad72a4e7a12006089",
+    "calls": [
+      "this.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542228:19894093",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "subscribeInvalidated",
+    "qualified_name": "subscribeInvalidated",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542228,
+    "end_line": 542233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "844e4a3c195c58815fb4e522f512ce24bd086644a84ad94b8f234d8c46d5ff45",
+    "calls": [
+      "this.invalidationListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542235:19894264",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.constructor",
+    "qualified_name": "SandSearchIndexService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542235,
+    "end_line": 542245,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "4d727b06657083d633ea8fab821539e06d457e002206e5a58624664a77445510",
+    "calls": [
+      "defaultWorkerEntryPath",
+      "isFts5Available"
+    ],
+    "writes": [
+      "this.agentsRootDir",
+      "this.createJobPort",
+      "this.createQueryPort",
+      "this.disposeDeadline",
+      "this.indexDbPath",
+      "this.isFtsEnabled",
+      "this.report"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542246:19894873",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.start",
+    "qualified_name": "SandSearchIndexService.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542246,
+    "end_line": 542258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "996bae3bc71130f9f1f30bb1d5c18804a3ca093acac02d5cd1324e2c7c432b3a",
+    "calls": [
+      "this.enqueue",
+      "this.markUnavailable",
+      "this.openAndMigrate",
+      "this.safeReadReconcileDone"
+    ],
+    "writes": [
+      "this.db",
+      "this.isReconcileDone"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542259:19895239",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.isSearchReady",
+    "qualified_name": "SandSearchIndexService.isSearchReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542259,
+    "end_line": 542261,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cb629d2e5671890fd17ce62771546ee57340afcf2f849a9602c87574ad07c247",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542262:19895373",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.searchMessages",
+    "qualified_name": "SandSearchIndexService.searchMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542262,
+    "end_line": 542264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "3c4bdd0cf20e950decafe67379680a2c55f7607e699b081727ca346c85d10479",
+    "calls": [
+      "this.runQuery"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542265:19895501",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.searchMedia",
+    "qualified_name": "SandSearchIndexService.searchMedia",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542265,
+    "end_line": 542267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "2ffe7f03524d228cf8da152d20a5cb5250b8e525fc96bceff3a18b7f877ec556",
+    "calls": [
+      "this.runQuery"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542268:19895626",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.runQuery",
+    "qualified_name": "SandSearchIndexService.runQuery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542268,
+    "end_line": 542282,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "stage",
+      "run"
+    ],
+    "body_sha256": "1160f4e0252a903743c67bf44d12ab52a4798fd79f9003b0c708e734c5cf1ba3",
+    "calls": [
+      "errorLogTag",
+      "run",
+      "this.getQueryPort",
+      "this.handleQueryFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542283:19896151",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.applyMutation",
+    "qualified_name": "SandSearchIndexService.applyMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542283,
+    "end_line": 542305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "mutation"
+    ],
+    "body_sha256": "1686398369189a33a71febd01248125a4fb14787b072dce51a66148a150fcfab",
+    "calls": [
+      "this.agentNeedsReindex",
+      "this.agentRemoved",
+      "this.conversationCleared",
+      "this.entriesUpserted",
+      "this.entryDeleted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542306:19896821",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.entriesUpserted",
+    "qualified_name": "SandSearchIndexService.entriesUpserted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542306,
+    "end_line": 542312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "entries"
+    ],
+    "body_sha256": "97601790a1268dfbc85472d280d709bf7ecd186805a648c525e3f9484e996417",
+    "calls": [
+      "entries.filter",
+      "this.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542313:19897071",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.entryDeleted",
+    "qualified_name": "SandSearchIndexService.entryDeleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542313,
+    "end_line": 542315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "entryId"
+    ],
+    "body_sha256": "f4bd2eb41804e698bd06521f14a11976b059a101343975d2b628f6b00df6c64f",
+    "calls": [
+      "this.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542316:19897179",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.conversationCleared",
+    "qualified_name": "SandSearchIndexService.conversationCleared",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542316,
+    "end_line": 542318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "747048bff544ec91c7c171d1f182f5fe4edb0f61eb71e1e00d29f5aa13d36726",
+    "calls": [
+      "this.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542319:19897261",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.agentRemoved",
+    "qualified_name": "SandSearchIndexService.agentRemoved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542319,
+    "end_line": 542321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d4298622432e6164dcc9e6d9dd5605569ff79dbc1ed73cc8bac1e35a1918e394",
+    "calls": [
+      "this.enqueue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542322:19897349",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.agentNeedsReindex",
+    "qualified_name": "SandSearchIndexService.agentNeedsReindex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542322,
+    "end_line": 542326,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8ff0b0ebb6e62887146d05675598f447439579f7eac4955015d5c797e4bc52c1",
+    "calls": [
+      "this.enqueue"
+    ],
+    "writes": [
+      "this.pendingReindexCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542327:19897551",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.whenIdle",
+    "qualified_name": "SandSearchIndexService.whenIdle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542327,
+    "end_line": 542329,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "42c13de899c2e774ff8bfc6d02d319ed1b47a4c29c0175d06192a2ff45aa105d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542330:19897600",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.dispose",
+    "qualified_name": "SandSearchIndexService.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542330,
+    "end_line": 542344,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2b5faad901cc32fe8d754052ff0f0086255167ac6e95e7a6f8f3dfc3c34a154a",
+    "calls": [
+      ".catch",
+      "this.db.close",
+      "this.disposeDeadline.run",
+      "this.terminateWorker"
+    ],
+    "writes": [
+      "this.db",
+      "this.isDisposed",
+      "this.port",
+      "this.queryPort"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542345:19898082",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.terminateWorker",
+    "qualified_name": "SandSearchIndexService.terminateWorker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542345,
+    "end_line": 542349,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "port",
+      "stage"
+    ],
+    "body_sha256": "c2865395487649fbc71009d1bb2a83406064c95e61907f103b92df4893f4134b",
+    "calls": [
+      ".catch",
+      "port.terminate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542350:19898273",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.markUnavailable",
+    "qualified_name": "SandSearchIndexService.markUnavailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542350,
+    "end_line": 542364,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "5beafa2358ed409b1af687747276480e1c0dc53ecc6d001babb3a5c80f9a089d",
+    "calls": [
+      "errorLogTag",
+      "this.db.close",
+      "this.report",
+      "this.terminateWorker"
+    ],
+    "writes": [
+      "this.db",
+      "this.isUnavailable",
+      "this.port",
+      "this.queryPort"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542365:19898746",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.serverCursor",
+    "qualified_name": "SandSearchIndexService.serverCursor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542365,
+    "end_line": 542376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "287b787e5c922ff08f1ff0a3c63258333ba3daf8f7fba56bfb06ac982a931b60",
+    "calls": [
+      "errorLogTag",
+      "readServerCursor",
+      "this.report"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542377:19899146",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.safeReadReconcileDone",
+    "qualified_name": "SandSearchIndexService.safeReadReconcileDone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542377,
+    "end_line": 542385,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "2888c2d78546d6f51c05fd6384217b70e00cb25016dff688792cb6d7b9ec8ddf",
+    "calls": [
+      "readReconcileDone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542386:19899315",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.openAndMigrate",
+    "qualified_name": "SandSearchIndexService.openAndMigrate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542386,
+    "end_line": 542403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ca47bab548e4e351954cfb7fff77f6832f188fa77bb063aa8ef3a27da8d42c5f",
+    "calls": [
+      "db.close",
+      "ensureSandDataDirSync",
+      "ensureSearchIndexSchema",
+      "errorLogTag",
+      "openSearchIndexDb",
+      "readSearchIndexFileMode",
+      "readSearchIndexSchemaVersion",
+      "stampSearchIndexSchemaVersion",
+      "this.recreateIndexFile",
+      "this.report"
+    ],
+    "writes": [
+      "db"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542404:19900059",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.recreateIndexFile",
+    "qualified_name": "SandSearchIndexService.recreateIndexFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542404,
+    "end_line": 542411,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9da99d06c9c4f3fc37d2aa7683b760a6bfd1771b1dc4bb4de7371a76ffdc0b0c",
+    "calls": [
+      "ensureSearchIndexSchema",
+      "listener",
+      "openSearchIndexDb",
+      "stampSearchIndexSchemaVersion",
+      "this.removeIndexFiles"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542412:19900345",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.removeIndexFiles",
+    "qualified_name": "SandSearchIndexService.removeIndexFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542412,
+    "end_line": 542416,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "fa0042810c3065c53d6f9d710188a42331ae7fa401674377f937ef031434c0e4",
+    "calls": [
+      "removeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542417:19900506",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.handleQueryFailure",
+    "qualified_name": "SandSearchIndexService.handleQueryFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542417,
+    "end_line": 542440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "stage",
+      "failure3"
+    ],
+    "body_sha256": "6726b7dd7c9f6888cd3047563e450449b4b8bdc09af35436b610ddc479782a88",
+    "calls": [
+      "new Error",
+      "this.markUnavailable",
+      "this.report",
+      "this.scheduleRebuild"
+    ],
+    "writes": [
+      "this.queryPort",
+      "this.readerRespawnCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542441:19901333",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.scheduleRebuild",
+    "qualified_name": "SandSearchIndexService.scheduleRebuild",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542441,
+    "end_line": 542471,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "c72f84d440d1718d7a75e559a2d42cd4f50abbd21db1720d29b124217e03688f",
+    "calls": [
+      ".catch",
+      ".finally",
+      "this.enqueue",
+      "this.jobTail.then",
+      "this.markUnavailable",
+      "this.report"
+    ],
+    "writes": [
+      "this.isRebuildPending",
+      "this.isReconcileDone",
+      "this.jobTail",
+      "this.port",
+      "this.queryPort",
+      "this.rebuildCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542472:19902324",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.getPort",
+    "qualified_name": "SandSearchIndexService.getPort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542472,
+    "end_line": 542480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9bfa0315ff560486ae65e81156e6e6dbdb72da2bc759861ae30868840d9a696a",
+    "calls": [
+      "this.createJobPort"
+    ],
+    "writes": [
+      "this.port"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542481:19902534",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.getQueryPort",
+    "qualified_name": "SandSearchIndexService.getQueryPort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542481,
+    "end_line": 542489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "785b30e1df3ab8481549e870fa6951d2ef2f1047e0c905d4313064a03d51c9b6",
+    "calls": [
+      "this.createQueryPort"
+    ],
+    "writes": [
+      "this.queryPort"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542490:19902754",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.enqueue",
+    "qualified_name": "SandSearchIndexService.enqueue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542490,
+    "end_line": 542500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "job"
+    ],
+    "body_sha256": "f96a73a43413695efd58a4a267a0934cecd7024caa5c28775a609e0fb8820553",
+    "calls": [
+      ".catch",
+      "Promise.resolve",
+      "settled.then",
+      "this.jobTail.then"
+    ],
+    "writes": [
+      "this.jobTail"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542501:19903167",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.runJob",
+    "qualified_name": "SandSearchIndexService.runJob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542501,
+    "end_line": 542509,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "job"
+    ],
+    "body_sha256": "9db37d5557763dc3184ac1a1a61ace766bd34f7eab6a93543a1a2f81e94dec8b",
+    "calls": [
+      "Math.max",
+      "this.dispatchJob"
+    ],
+    "writes": [
+      "this.pendingReindexCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542510:19903401",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-service.ts",
+    "name": "SandSearchIndexService.dispatchJob",
+    "qualified_name": "SandSearchIndexService.dispatchJob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542510,
+    "end_line": 542548,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "job"
+    ],
+    "body_sha256": "a51d40d6f4926a58a7cf818b96ebbd7dd837727663ced86c1e170b6dcc527cb5",
+    "calls": [
+      ".post",
+      "new Error",
+      "this.enqueue",
+      "this.getPort",
+      "this.markUnavailable",
+      "this.report",
+      "this.scheduleRebuild"
+    ],
+    "writes": [
+      "this.failedJobReconcileCount",
+      "this.isReconcileDone",
+      "this.pendingReindexCount",
+      "this.port",
+      "this.workerRespawnCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

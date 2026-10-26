@@ -1,0 +1,728 @@
+[
+  {
+    "id": "host:766589:29376324",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatUtcTimestamp",
+    "qualified_name": "formatUtcTimestamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766589,
+    "end_line": 766591,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2"
+    ],
+    "body_sha256": "89a146fa0d30c2532c5937f1e130fb7ab165e4e56c6fc2a02a52c12cd6f49858",
+    "calls": [
+      ".replace",
+      ".toISOString",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766592:29376425",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatCountdown",
+    "qualified_name": "formatCountdown",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766592,
+    "end_line": 766595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verb",
+      "atMs",
+      "nowMs2"
+    ],
+    "body_sha256": "b1512eabda7b93e73c881379235460319dfd571b193aae00144373bc169ddc0b",
+    "calls": [
+      "formatDurationMs",
+      "formatUtcTimestamp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766596:29376632",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatPlanName",
+    "qualified_name": "formatPlanName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766596,
+    "end_line": 766602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "33250a0601e1dfa013c8ab2c31adb4be7df9caef9cf4659cbde290d87ccbc536",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766603:29376869",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatPlanLine",
+    "qualified_name": "formatPlanLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766603,
+    "end_line": 766610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "fbd5a82a1473364dc34cf521b48d201079b669bcf372f993a6dff294d9e8e449",
+    "calls": [
+      "formatPlanName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766611:29377141",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatUsageLine",
+    "qualified_name": "formatUsageLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766611,
+    "end_line": 766617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "3a3a5a6dc91c18731e1e5b893851752c6e4f51d206844b5e1f39d131a14bd422",
+    "calls": [
+      "Math.min",
+      "Number",
+      "usage.usagePercent.toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766618:29377359",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatOnDemandLine",
+    "qualified_name": "formatOnDemandLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766618,
+    "end_line": 766628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "0d8dc9dfa927ef5ba41821cd1555d8cc883f88c0dab5fcb37cd2a317f9966253",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766629:29378033",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatTrialLine",
+    "qualified_name": "formatTrialLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766629,
+    "end_line": 766634,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trialExpiresAtMs",
+      "nowMs2"
+    ],
+    "body_sha256": "a63febf5919c90102e835327ec5083fcdcb74e1c4857cd2515e08930807f5bc1",
+    "calls": [
+      "formatCountdown",
+      "formatUtcTimestamp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766635:29378303",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatResetLine",
+    "qualified_name": "formatResetLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766635,
+    "end_line": 766640,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "nextResetMs",
+      "nowMs2"
+    ],
+    "body_sha256": "e133b9e2353d2cafd451660a425941f3113a35e39d9f49d2b39c077d4363afdf",
+    "calls": [
+      "formatCountdown"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766641:29378492",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatCycleUsage",
+    "qualified_name": "formatCycleUsage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766641,
+    "end_line": 766650,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage",
+      "nowMs2"
+    ],
+    "body_sha256": "d7818019605d15573be76016b614216473fdcae783fe41b3cc0cbdf9f9d6a2ac",
+    "calls": [
+      ".filter",
+      "formatOnDemandLine",
+      "formatPlanLine",
+      "formatResetLine",
+      "formatTrialLine",
+      "formatUsageLine",
+      "lines2.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766651:29378849",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "createCheckSubscriptionUsageTool",
+    "qualified_name": "createCheckSubscriptionUsageTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766651,
+    "end_line": 766668,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "553d359a19dd37abbcdaa9593dd9341de2a78cc9131074fbfbd1097fb7e93006",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports2.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:766657:29379412",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "execute",
+    "qualified_name": "createCheckSubscriptionUsageTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 766657,
+    "end_line": 766666,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "_args",
+      "d"
+    ],
+    "body_sha256": "7ff4a6c746f38b44aad6a563afa4a37be4dac1f7050e439bdf723a83b93583fd",
+    "calls": [
+      "Date.now",
+      "d.getCycleUsage",
+      "errorLogTag",
+      "formatCycleUsage",
+      "logger121.warn"
+    ],
+    "writes": [
+      "usage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:562102:20906703",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatUtcTimestamp",
+    "qualified_name": "formatUtcTimestamp",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562102,
+    "end_line": 562104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2"
+    ],
+    "body_sha256": "89a146fa0d30c2532c5937f1e130fb7ab165e4e56c6fc2a02a52c12cd6f49858",
+    "calls": [
+      ".replace",
+      ".toISOString",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562105:20906804",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatCountdown",
+    "qualified_name": "formatCountdown",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562105,
+    "end_line": 562108,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verb",
+      "atMs",
+      "nowMs"
+    ],
+    "body_sha256": "e1f89043062b299b0bbfd1aff8f33e1b276ee6faf07c7449634847d8256936ca",
+    "calls": [
+      "formatDurationMs",
+      "formatUtcTimestamp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562109:20907009",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatPlanName",
+    "qualified_name": "formatPlanName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562109,
+    "end_line": 562115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "33250a0601e1dfa013c8ab2c31adb4be7df9caef9cf4659cbde290d87ccbc536",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562116:20907246",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatPlanLine",
+    "qualified_name": "formatPlanLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562116,
+    "end_line": 562123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "fbd5a82a1473364dc34cf521b48d201079b669bcf372f993a6dff294d9e8e449",
+    "calls": [
+      "formatPlanName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562124:20907518",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatUsageLine",
+    "qualified_name": "formatUsageLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562124,
+    "end_line": 562130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "3a3a5a6dc91c18731e1e5b893851752c6e4f51d206844b5e1f39d131a14bd422",
+    "calls": [
+      "Math.min",
+      "Number",
+      "usage.usagePercent.toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562131:20907736",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatOnDemandLine",
+    "qualified_name": "formatOnDemandLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562131,
+    "end_line": 562141,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "0d8dc9dfa927ef5ba41821cd1555d8cc883f88c0dab5fcb37cd2a317f9966253",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562142:20908410",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatTrialLine",
+    "qualified_name": "formatTrialLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562142,
+    "end_line": 562147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trialExpiresAtMs",
+      "nowMs"
+    ],
+    "body_sha256": "7c17e0ee48a72e4e7f37d0aca07eab018cb7727c19d0812e281dd278df5c1bfd",
+    "calls": [
+      "formatCountdown",
+      "formatUtcTimestamp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562148:20908677",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatResetLine",
+    "qualified_name": "formatResetLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562148,
+    "end_line": 562153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "nextResetMs",
+      "nowMs"
+    ],
+    "body_sha256": "cd87be52b04084cecfb6301da30dd730ce969673ffd54bbd4ce0587abf8b73b4",
+    "calls": [
+      "formatCountdown"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562154:20908863",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "formatCycleUsage",
+    "qualified_name": "formatCycleUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562154,
+    "end_line": 562163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage",
+      "nowMs"
+    ],
+    "body_sha256": "fa1653e0a0ce413ae91cedc7592fd124d5125aa080e3c4ddfdfd673918491f48",
+    "calls": [
+      ".filter",
+      "formatOnDemandLine",
+      "formatPlanLine",
+      "formatResetLine",
+      "formatTrialLine",
+      "formatUsageLine",
+      "lines2.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562164:20909217",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "createCheckSubscriptionUsageTool",
+    "qualified_name": "createCheckSubscriptionUsageTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562164,
+    "end_line": 562181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "2e9c957433c87fd53a35cebe4ee9128c770bb34b539edc9a8a61350857a3ff7d",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports3.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562170:20909780",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-subscription-usage-tool.ts",
+    "name": "execute",
+    "qualified_name": "createCheckSubscriptionUsageTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562170,
+    "end_line": 562179,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "_args",
+      "d"
+    ],
+    "body_sha256": "0b875d68e64682399eef40d7434a700a5ec6bf763eba4bc0980780bdef557eba",
+    "calls": [
+      "Date.now",
+      "d.getCycleUsage",
+      "errorLogTag",
+      "formatCycleUsage",
+      "logger94.warn"
+    ],
+    "writes": [
+      "usage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

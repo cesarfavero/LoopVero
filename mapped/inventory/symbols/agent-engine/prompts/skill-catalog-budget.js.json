@@ -1,0 +1,851 @@
+[
+  {
+    "id": "host:639375:23861590",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "applySkillCatalogBudget",
+    "qualified_name": "applySkillCatalogBudget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639375,
+    "end_line": 639451,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ skills, agentTokenLimit, renderSection, renderOmittedNotice, protectLoopSkill }"
+    ],
+    "body_sha256": "5d4929655e162fd37f3eaa4b6d78e18aadeceaba54418fe41b5dd1138c25b35d",
+    "calls": [
+      "Math.floor",
+      "estimateStringTokenCount",
+      "new Set",
+      "omitSkillsToFit",
+      "renderContent",
+      "renderSection",
+      "skills.filter",
+      "toPathOnlySkills",
+      "truncateDescriptionsToFit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639380:23862120",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "isProtected",
+    "qualified_name": "applySkillCatalogBudget/isProtected",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639380,
+    "end_line": 639380,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "12997e85be4e3d9bc287dc935509224cff8166b6cfb9f962a7ae50c9c2f6a3ee",
+    "calls": [
+      "protectedSkills.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639452:23864474",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "toPathOnlySkills",
+    "qualified_name": "toPathOnlySkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639452,
+    "end_line": 639454,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills",
+      "isProtected"
+    ],
+    "body_sha256": "1bd697a749182206dcc1d7fa921fd871951aaf1e1eaacead2e1e6c5e160d0047",
+    "calls": [
+      "skills.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639455:23864637",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "truncateDescriptionsToFit",
+    "qualified_name": "truncateDescriptionsToFit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639455,
+    "end_line": 639484,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ skills, budgetTokens, renderSection, isProtected }"
+    ],
+    "body_sha256": "0e63feff49f7c8f69e8611546480e43c9b462f403977f3a73b2251a1a153c6ea",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "estimateStringTokenCount",
+      "renderContent",
+      "renderSection",
+      "skills.map",
+      "skills.reduce"
+    ],
+    "writes": [
+      "bestFit",
+      "lowerBound",
+      "upperBound"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639485:23865828",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "omitSkillsToFit",
+    "qualified_name": "omitSkillsToFit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639485,
+    "end_line": 639541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ pathOnlySkills, allSkills, budgetTokens, maxRetainedDroppableCount, uncappedEstimatedTokens, renderSection, renderOmittedNotice, isProtected }"
+    ],
+    "body_sha256": "97f61d41e6c34cc6635997ae8a136072559da2def16c3effa4fe9e3b681aafb1",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "droppableIndices.push",
+      "isProtected",
+      "renderRetaining"
+    ],
+    "writes": [
+      "fitting",
+      "fittingCount",
+      "i",
+      "overflowingCount",
+      "probe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639492:23866185",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "renderRetaining",
+    "qualified_name": "omitSkillsToFit/renderRetaining",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639492,
+    "end_line": 639516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "retainedDroppableCount"
+    ],
+    "body_sha256": "22e86c8428d80c2863711a9638979865325873a75bdbca4cec5f1a69c6b9f563",
+    "calls": [
+      "estimateStringTokenCount",
+      "getOmittedSkillDirectories",
+      "isProtected",
+      "omittedSkills.push",
+      "renderContent",
+      "renderOmittedNotice",
+      "renderSection",
+      "retainedSkills.push"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639542:23868116",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "isProtectedSkill",
+    "qualified_name": "isProtectedSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639542,
+    "end_line": 639545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "441214254f9df5577b58c3e66f7df69b7dc07145434bc97abdb47913dd20c4bd",
+    "calls": [
+      "PROTECTED_SKILL_NAMES.has",
+      "PROTECTED_SKILL_NAME_PREFIXES.some",
+      "skillNameFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639546:23868326",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "truncateDescription",
+    "qualified_name": "truncateDescription",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639546,
+    "end_line": 639552,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "description9",
+      "maxLength"
+    ],
+    "body_sha256": "ff7e8f3bd63877f2e0b50373bbbeae84317bb48b8cb33d37263ceaf9a4902d91",
+    "calls": [
+      ".trimEnd",
+      "Math.max",
+      "description9.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639553:23868663",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "getOmittedSkillDirectories",
+    "qualified_name": "getOmittedSkillDirectories",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639553,
+    "end_line": 639562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "c627c356f7a9c1794323fdd77c224cb0d67e1a0aa337fdc88de79ada846d86a7",
+    "calls": [
+      "directories.add",
+      "getSkillDirectoryHint",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:639563:23868962",
+    "artifact": "host",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "getSkillDirectoryHint",
+    "qualified_name": "getSkillDirectoryHint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 639563,
+    "end_line": 639590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fullPath"
+    ],
+    "body_sha256": "8ca03ace6b4cee68a97b13004de31a94ae832b94d56859957d15600c0954753a",
+    "calls": [
+      "fullPath.replace",
+      "normalizedPath.indexOf",
+      "normalizedPath.lastIndexOf",
+      "normalizedPath.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:429965:15075823",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "applySkillCatalogBudget",
+    "qualified_name": "applySkillCatalogBudget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 429965,
+    "end_line": 430041,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ skills, agentTokenLimit, renderSection, renderOmittedNotice, protectLoopSkill }"
+    ],
+    "body_sha256": "5d4929655e162fd37f3eaa4b6d78e18aadeceaba54418fe41b5dd1138c25b35d",
+    "calls": [
+      "Math.floor",
+      "estimateStringTokenCount",
+      "new Set",
+      "omitSkillsToFit",
+      "renderContent",
+      "renderSection",
+      "skills.filter",
+      "toPathOnlySkills",
+      "truncateDescriptionsToFit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:429970:15076353",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "isProtected",
+    "qualified_name": "applySkillCatalogBudget/isProtected",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 429970,
+    "end_line": 429970,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "12997e85be4e3d9bc287dc935509224cff8166b6cfb9f962a7ae50c9c2f6a3ee",
+    "calls": [
+      "protectedSkills.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430042:15078707",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "toPathOnlySkills",
+    "qualified_name": "toPathOnlySkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430042,
+    "end_line": 430044,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills",
+      "isProtected"
+    ],
+    "body_sha256": "1bd697a749182206dcc1d7fa921fd871951aaf1e1eaacead2e1e6c5e160d0047",
+    "calls": [
+      "skills.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430045:15078870",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "budgetSkillCatalogText",
+    "qualified_name": "budgetSkillCatalogText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430045,
+    "end_line": 430068,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ skills, agentTokenLimit, renderCatalog, renderOmittedNotice }"
+    ],
+    "body_sha256": "8b9702c0b9649eba435b05ff42c5d96a1568007dbbd52b113031c8172891ff43",
+    "calls": [
+      "applySkillCatalogBudget",
+      "new WeakMap",
+      "renderContent",
+      "texts.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430047:15079038",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "textElement",
+    "qualified_name": "budgetSkillCatalogText/textElement",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430047,
+    "end_line": 430051,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "70190998d2429afee48abed6256e4da6078d13cc08a6c082cc97163e89a2d0c0",
+    "calls": [
+      "jsx",
+      "texts.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430055:15079258",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "renderSection",
+    "qualified_name": "budgetSkillCatalogText/renderSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430055,
+    "end_line": 430055,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "skillItems",
+      "omittedNotice"
+    ],
+    "body_sha256": "bd6ba8cf3df84f3df1b466671a88cf2b82de34d98d55c0d7daf1fc7bd728dcee",
+    "calls": [
+      "renderCatalog",
+      "textElement",
+      "texts.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430056:15079416",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "renderOmittedNotice",
+    "qualified_name": "budgetSkillCatalogText/renderOmittedNotice",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430056,
+    "end_line": 430056,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_directories",
+      "omittedCount"
+    ],
+    "body_sha256": "65ea0d5983fe2839653bc934471f288fa2e71e6431925ace011277db7db81db4",
+    "calls": [
+      "renderOmittedNotice",
+      "textElement"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430069:15079851",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "truncateDescriptionsToFit",
+    "qualified_name": "truncateDescriptionsToFit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430069,
+    "end_line": 430098,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ skills, budgetTokens, renderSection, isProtected }"
+    ],
+    "body_sha256": "0e63feff49f7c8f69e8611546480e43c9b462f403977f3a73b2251a1a153c6ea",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "estimateStringTokenCount",
+      "renderContent",
+      "renderSection",
+      "skills.map",
+      "skills.reduce"
+    ],
+    "writes": [
+      "bestFit",
+      "lowerBound",
+      "upperBound"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430099:15081042",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "omitSkillsToFit",
+    "qualified_name": "omitSkillsToFit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430099,
+    "end_line": 430155,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ pathOnlySkills, allSkills, budgetTokens, maxRetainedDroppableCount, uncappedEstimatedTokens, renderSection, renderOmittedNotice, isProtected }"
+    ],
+    "body_sha256": "97f61d41e6c34cc6635997ae8a136072559da2def16c3effa4fe9e3b681aafb1",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "droppableIndices.push",
+      "isProtected",
+      "renderRetaining"
+    ],
+    "writes": [
+      "fitting",
+      "fittingCount",
+      "i",
+      "overflowingCount",
+      "probe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430106:15081399",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "renderRetaining",
+    "qualified_name": "omitSkillsToFit/renderRetaining",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430106,
+    "end_line": 430130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "retainedDroppableCount"
+    ],
+    "body_sha256": "22e86c8428d80c2863711a9638979865325873a75bdbca4cec5f1a69c6b9f563",
+    "calls": [
+      "estimateStringTokenCount",
+      "getOmittedSkillDirectories",
+      "isProtected",
+      "omittedSkills.push",
+      "renderContent",
+      "renderOmittedNotice",
+      "renderSection",
+      "retainedSkills.push"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430156:15083330",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "isProtectedSkill",
+    "qualified_name": "isProtectedSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430156,
+    "end_line": 430159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "441214254f9df5577b58c3e66f7df69b7dc07145434bc97abdb47913dd20c4bd",
+    "calls": [
+      "PROTECTED_SKILL_NAMES.has",
+      "PROTECTED_SKILL_NAME_PREFIXES.some",
+      "skillNameFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430160:15083540",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "truncateDescription",
+    "qualified_name": "truncateDescription",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430160,
+    "end_line": 430166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "description9",
+      "maxLength"
+    ],
+    "body_sha256": "ff7e8f3bd63877f2e0b50373bbbeae84317bb48b8cb33d37263ceaf9a4902d91",
+    "calls": [
+      ".trimEnd",
+      "Math.max",
+      "description9.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430167:15083877",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "getOmittedSkillDirectories",
+    "qualified_name": "getOmittedSkillDirectories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430167,
+    "end_line": 430176,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "c627c356f7a9c1794323fdd77c224cb0d67e1a0aa337fdc88de79ada846d86a7",
+    "calls": [
+      "directories.add",
+      "getSkillDirectoryHint",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:430177:15084176",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/skill-catalog-budget.js",
+    "name": "getSkillDirectoryHint",
+    "qualified_name": "getSkillDirectoryHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 430177,
+    "end_line": 430204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fullPath"
+    ],
+    "body_sha256": "8ca03ace6b4cee68a97b13004de31a94ae832b94d56859957d15600c0954753a",
+    "calls": [
+      "fullPath.replace",
+      "normalizedPath.indexOf",
+      "normalizedPath.lastIndexOf",
+      "normalizedPath.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

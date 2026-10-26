@@ -1,0 +1,448 @@
+[
+  {
+    "id": "host:781220:30086355",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "inTenant",
+    "qualified_name": "inTenant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781220,
+    "end_line": 781223,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tenant"
+    ],
+    "body_sha256": "815eae4a8436bb84ae42fcea0a1a64810368171a1da4fad50ef010f32ab4d7d5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781224:30086593",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "teamsSetupOwnerStepMessage",
+    "qualified_name": "teamsSetupOwnerStepMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781224,
+    "end_line": 781226,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "1c0f462ad07f026ddb88d0e75980231e0393ca9b7c599420c18d603651256b81",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781227:30087026",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "describeTeamsSetupOutcome",
+    "qualified_name": "describeTeamsSetupOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781227,
+    "end_line": 781249,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome",
+      "action"
+    ],
+    "body_sha256": "77eed5ce884fabfb5c5697a2f67eb528195ff22a30aaf854340143da806e8afe",
+    "calls": [
+      ".join",
+      "inTenant",
+      "outcome.installedTeams.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781251:30090434",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "executeTeamsSetup",
+    "qualified_name": "executeTeamsSetup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781251,
+    "end_line": 781269,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "d"
+    ],
+    "body_sha256": "eb7a2aab9a054029f05b5ba540fced0a16eb282049e2cf7436070a0139994105",
+    "calls": [
+      "Date.now",
+      "d.isTeamSetupUnderway",
+      "d.onSendMessage",
+      "d.setup.start",
+      "d.setup.status",
+      "describeTeamsSetupOutcome",
+      "teamsSetupOwnerStepMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781270:30091096",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "createTeamsSetupTool",
+    "qualified_name": "createTeamsSetupTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781270,
+    "end_line": 781279,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "091a5543592bc1be2514cad50a7de9f9b505675b6e5cdc001e887a340da297b3",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781276:30091340",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTeamsSetupTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781276,
+    "end_line": 781276,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "fca003d5a6742a265292b9564fa919bd1546086830d14b853c6e92dc038aaf02",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781277:30091390",
+    "artifact": "host",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "execute",
+    "qualified_name": "createTeamsSetupTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781277,
+    "end_line": 781277,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "c962786e3bb3f2b3d87096429e4af4a57dfe0e3276c5f4169ee8f87d773eee92",
+    "calls": [
+      "executeTeamsSetup"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581567:21842437",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "inTenant",
+    "qualified_name": "inTenant",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581567,
+    "end_line": 581570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tenant"
+    ],
+    "body_sha256": "815eae4a8436bb84ae42fcea0a1a64810368171a1da4fad50ef010f32ab4d7d5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581571:21842675",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "teamsSetupOwnerStepMessage",
+    "qualified_name": "teamsSetupOwnerStepMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581571,
+    "end_line": 581573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "1c0f462ad07f026ddb88d0e75980231e0393ca9b7c599420c18d603651256b81",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581574:21843108",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "describeTeamsSetupOutcome",
+    "qualified_name": "describeTeamsSetupOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581574,
+    "end_line": 581596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome",
+      "action"
+    ],
+    "body_sha256": "77eed5ce884fabfb5c5697a2f67eb528195ff22a30aaf854340143da806e8afe",
+    "calls": [
+      ".join",
+      "inTenant",
+      "outcome.installedTeams.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581598:21846516",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "executeTeamsSetup",
+    "qualified_name": "executeTeamsSetup",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581598,
+    "end_line": 581616,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "d"
+    ],
+    "body_sha256": "eb7a2aab9a054029f05b5ba540fced0a16eb282049e2cf7436070a0139994105",
+    "calls": [
+      "Date.now",
+      "d.isTeamSetupUnderway",
+      "d.onSendMessage",
+      "d.setup.start",
+      "d.setup.status",
+      "describeTeamsSetupOutcome",
+      "teamsSetupOwnerStepMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581617:21847178",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "createTeamsSetupTool",
+    "qualified_name": "createTeamsSetupTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581617,
+    "end_line": 581626,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "091a5543592bc1be2514cad50a7de9f9b505675b6e5cdc001e887a340da297b3",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581623:21847422",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createTeamsSetupTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581623,
+    "end_line": 581623,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "fca003d5a6742a265292b9564fa919bd1546086830d14b853c6e92dc038aaf02",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:581624:21847472",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/msteams/sand-teams-setup-tool.ts",
+    "name": "execute",
+    "qualified_name": "createTeamsSetupTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 581624,
+    "end_line": 581624,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "c962786e3bb3f2b3d87096429e4af4a57dfe0e3276c5f4169ee8f87d773eee92",
+    "calls": [
+      "executeTeamsSetup"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

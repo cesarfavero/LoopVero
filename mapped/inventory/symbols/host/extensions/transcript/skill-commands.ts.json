@@ -1,0 +1,685 @@
+[
+  {
+    "id": "host:740229:28131054",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.constructor",
+    "qualified_name": "SkillCommands.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740229,
+    "end_line": 740231,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740234:28131128",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.enqueueSkillMutation",
+    "qualified_name": "SkillCommands.enqueueSkillMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740234,
+    "end_line": 740267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    activeMutation,\n    inactiveMutation\n  }"
+    ],
+    "body_sha256": "6f33bcc9ce63d0fd197935a69cfb03c0db96ed013831ceec9e9254cb529580ee",
+    "calls": [
+      "this.tm.automationRuntime.enqueueAutomationLifecycleMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740241:28131297",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "mutation",
+    "qualified_name": "SkillCommands.enqueueSkillMutation/mutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740241,
+    "end_line": 740265,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c0ae11cc43aa83be8a5c4aba6190dae69806359b975f13f2d7947720e0dce3a1",
+    "calls": [
+      "activeMutation",
+      "inactiveMutation",
+      "this.tm.automationRuntime.recordAutomationChangeEvents",
+      "this.tm.automationRuntime.recordInactiveAutomationChanges",
+      "this.tm.sessionStore.listAgentAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740268:28132245",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.watchSessionSkills",
+    "qualified_name": "SkillCommands.watchSessionSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740268,
+    "end_line": 740273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "14234adfb54a730f9b682153deb2257e623fef9f6094e653003ac93e17ca03e3",
+    "calls": [
+      "session.skills.setOnChange",
+      "this.watchedSkills.setOnChange"
+    ],
+    "writes": [
+      "this.watchedSkills"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740274:28132478",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.emitSkills",
+    "qualified_name": "SkillCommands.emitSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740274,
+    "end_line": 740282,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "245c4bac79579fa30b90b4341c7d7ef3ee5c6ddc843cec8da2c73d0c1a1568cd",
+    "calls": [
+      "limitSurfacedSkills",
+      "session.skills.listAll",
+      "this.tm.roster.emitter.emit",
+      "this.tm.shouldEmitAutomations"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740283:28132770",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.subscribeSkills",
+    "qualified_name": "SkillCommands.subscribeSkills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740283,
+    "end_line": 740288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "9049649e235118d2f03e57ae6b9701de3f59f89aef9c6e79d47912923e45a0eb",
+    "calls": [
+      "this.tm.roster.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740289:28132943",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.getAgentWorkflows",
+    "qualified_name": "SkillCommands.getAgentWorkflows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740289,
+    "end_line": 740295,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "27df237c1d8cdc0d886cb80975d6497066ca73924e3e167c17ad09456ff7e74e",
+    "calls": [
+      "active.skills.listAll",
+      "limitSurfacedSkills",
+      "this.tm.sessionStore.listAgentSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740296:28133211",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.createAgentWorkflow",
+    "qualified_name": "SkillCommands.createAgentWorkflow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740296,
+    "end_line": 740305,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "spec"
+    ],
+    "body_sha256": "bd55b5d8f8ef0acfd70cc01e065a8f2e73d359ac5743e86e4d1092fd570b1f91",
+    "calls": [
+      "this.enqueueSkillMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740299:28133305",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "activeMutation",
+    "qualified_name": "SkillCommands.createAgentWorkflow/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740299,
+    "end_line": 740302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "b09e9b188fe6c5fa54594f75f29021f94d916e1dfa09999efb7cf241dcf2d090",
+    "calls": [
+      "active.skills.create",
+      "active.skills.listAll",
+      "limitSurfacedSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740303:28133457",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "SkillCommands.createAgentWorkflow/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740303,
+    "end_line": 740303,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d91cd98a4a7d5f75eba82e6e47b4ce03342e72191b8fc9cb7a4dd1d48191a0cc",
+    "calls": [
+      "this.tm.sessionStore.createAgentWorkflow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740306:28133558",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.updateAgentWorkflow",
+    "qualified_name": "SkillCommands.updateAgentWorkflow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740306,
+    "end_line": 740315,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId",
+      "spec"
+    ],
+    "body_sha256": "5b52e5eb8a295c0c57abe9efed3dc52de691c4e8f64a29e1fd8bd072d8ea6485",
+    "calls": [
+      "this.enqueueSkillMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740309:28133664",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "activeMutation",
+    "qualified_name": "SkillCommands.updateAgentWorkflow/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740309,
+    "end_line": 740312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "739c2480ca06ba57728302a23a6ad3642739eaa7eca8888af2c3107f7a9ad8da",
+    "calls": [
+      "active.skills.listAll",
+      "active.skills.update",
+      "limitSurfacedSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740313:28133828",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "SkillCommands.updateAgentWorkflow/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740313,
+    "end_line": 740313,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "226ca96deb18ad3aae7add3df331036028077695b754f60d91a45607a165bf26",
+    "calls": [
+      "this.tm.sessionStore.updateAgentWorkflow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740316:28133941",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.deleteAgentWorkflow",
+    "qualified_name": "SkillCommands.deleteAgentWorkflow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740316,
+    "end_line": 740325,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId"
+    ],
+    "body_sha256": "e9feb4622cdd0f7a1a306607f1b712e7911cb75d6c1e28eb58968d887db4bcbe",
+    "calls": [
+      "this.enqueueSkillMutation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740319:28134041",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "activeMutation",
+    "qualified_name": "SkillCommands.deleteAgentWorkflow/activeMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740319,
+    "end_line": 740322,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "active"
+    ],
+    "body_sha256": "d6e802e431bf8ec530e4811f5bf2d48cec904f3bd82009074481bb005b61cbb1",
+    "calls": [
+      "active.skills.listAll",
+      "active.skills.remove",
+      "limitSurfacedSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740323:28134191",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "inactiveMutation",
+    "qualified_name": "SkillCommands.deleteAgentWorkflow/inactiveMutation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740323,
+    "end_line": 740323,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4b30926fa50165318d1578f56df4d50f48526338c9274fb8dc25642f60099793",
+    "calls": [
+      "this.tm.sessionStore.removeAgentSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740326:28134300",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.importAgentSkillMarkdown",
+    "qualified_name": "SkillCommands.importAgentSkillMarkdown",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740326,
+    "end_line": 740339,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "markdown",
+      "fallbackName"
+    ],
+    "body_sha256": "16711a6a5737f5c62d0c6c65c36a6137a91ec57694aac862035bb1edfccf4b23",
+    "calls": [
+      "active.skills.importMarkdown",
+      "active.skills.listAll",
+      "limitSurfacedSkills",
+      "this.tm.sessionStore.importAgentSkillMarkdown"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740340:28134922",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.importAgentSkillSource",
+    "qualified_name": "SkillCommands.importAgentSkillSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740340,
+    "end_line": 740350,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "source",
+      "fallbackName"
+    ],
+    "body_sha256": "7ba6b94150504fd89353e4ea71ae33ed37af9cf37c63bdceb2a12957baf2f37d",
+    "calls": [
+      "active.skills.importLiveSource",
+      "active.skills.listAll",
+      "limitSurfacedSkills",
+      "this.tm.sessionStore.importAgentSkillSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740351:28135492",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.importAgentWorkflowUrl",
+    "qualified_name": "SkillCommands.importAgentWorkflowUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740351,
+    "end_line": 740353,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "url2",
+      "name18"
+    ],
+    "body_sha256": "a48ebab1ee38e762f4f02615839614b46152d457de25b5e3b7a627f59378e929",
+    "calls": [
+      "deriveSkillNameFromUrl",
+      "this.tm.importAgentSkillSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740354:28135647",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.runAgentWorkflowNow",
+    "qualified_name": "SkillCommands.runAgentWorkflowNow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740354,
+    "end_line": 740358,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId"
+    ],
+    "body_sha256": "3d64b99259323da339bc52caefdfa590b6eaca47bf9593d77b941305fac43fe4",
+    "calls": [
+      "skillToAutomation",
+      "this.getSkillForAgent",
+      "this.tm.sendPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740359:28135928",
+    "artifact": "host",
+    "module": "host/extensions/transcript/skill-commands.ts",
+    "name": "SkillCommands.getSkillForAgent",
+    "qualified_name": "SkillCommands.getSkillForAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740359,
+    "end_line": 740365,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "workflowId"
+    ],
+    "body_sha256": "c1b2809842bf4d35f4dfc278757490484c55bd548b70db88a6e4f6e8d5c4dc70",
+    "calls": [
+      "active.skills.get",
+      "this.tm.sessionStore.getAgentSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

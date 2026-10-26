@@ -1,0 +1,179 @@
+[
+  {
+    "id": "evaluation:525815:19144083",
+    "artifact": "evaluation",
+    "module": "core/runner/connector-scope/connector-scope.ts",
+    "name": "canonicalJson",
+    "qualified_name": "canonicalJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 525815,
+    "end_line": 525822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8b9786c27fc056f1cc3572cb4898c6438436f0146317ebde9a4be6e3e08712dc",
+    "calls": [
+      ".join",
+      ".map",
+      ".sort",
+      "Array.isArray",
+      "JSON.stringify",
+      "Object.keys",
+      "fields3.join",
+      "isUnknownRecord2",
+      "value.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:525823:19144426",
+    "artifact": "evaluation",
+    "module": "core/runner/connector-scope/connector-scope.ts",
+    "name": "serverConfigsOf",
+    "qualified_name": "serverConfigsOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 525823,
+    "end_line": 525832,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "a846cf075c10efa0b6a148bc6ce6a01895dcc441e41fc39b9ff4b3e333c57461",
+    "calls": [
+      "Object.entries",
+      "canonicalJson",
+      "isUnknownRecord2",
+      "mcpConfigSchema.safeParse",
+      "new Map",
+      "parseJsonOrUndefined2",
+      "servers.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:525833:19144897",
+    "artifact": "evaluation",
+    "module": "core/runner/connector-scope/connector-scope.ts",
+    "name": "validConnectorScope",
+    "qualified_name": "validConnectorScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 525833,
+    "end_line": 525836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope"
+    ],
+    "body_sha256": "5885282ab5a71628c8941e68a69d33a8d2350dbd152c60ae6a0d6506883a7a9b",
+    "calls": [
+      "serverConfigsOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:525837:19145061",
+    "artifact": "evaluation",
+    "module": "core/runner/connector-scope/connector-scope.ts",
+    "name": "connectorScopeOfSend",
+    "qualified_name": "connectorScopeOfSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 525837,
+    "end_line": 525840,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpConfigJson"
+    ],
+    "body_sha256": "691e23af00df03261fce741aa8c4e7a563ee8e158256e6e85dcd26750489cece",
+    "calls": [
+      "mcpConfigJson.trim",
+      "validConnectorScope"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:525841:19145265",
+    "artifact": "evaluation",
+    "module": "core/runner/connector-scope/connector-scope.ts",
+    "name": "narrowestConnectorScope",
+    "qualified_name": "narrowestConnectorScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 525841,
+    "end_line": 525863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scopes"
+    ],
+    "body_sha256": "8de91af0287a419a411f13f982109f77bb07869ab2c7e383ccb44dfb6f0347f3",
+    "calls": [
+      ".filter",
+      "JSON.stringify",
+      "Object.fromEntries",
+      "common2.map",
+      "others.push",
+      "rest.every",
+      "scopes.flatMap",
+      "serverConfigsOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

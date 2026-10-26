@@ -1,0 +1,270 @@
+[
+  {
+    "id": "host:616764:22872234",
+    "artifact": "host",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "isValidUsedTokensThreshold",
+    "qualified_name": "isValidUsedTokensThreshold",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616764,
+    "end_line": 616766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "threshold",
+      "maxTokens"
+    ],
+    "body_sha256": "bcc8443cdb763495534b8a27848c46ad290e1c287b46a2b80bd8058553173586",
+    "calls": [
+      "Number.isFinite",
+      "Number.isSafeInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616767:22872443",
+    "artifact": "host",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "getBackgroundSummarizationTriggerThreshold",
+    "qualified_name": "getBackgroundSummarizationTriggerThreshold",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616767,
+    "end_line": 616785,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "f3f8212800384f1fb27abb52ac8a4bfc90e8982edef0d95e98800c34f2b9e036",
+    "calls": [
+      "Math.min",
+      "candidates.push",
+      "isValidUsedTokensThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616786:22873233",
+    "artifact": "host",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "shouldStartBackgroundSummarization",
+    "qualified_name": "shouldStartBackgroundSummarization",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616786,
+    "end_line": 616789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usedTokens",
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "aca319ee63fcbad16537046489c46a661eee5624411aff20d29b450f14d229d3",
+    "calls": [
+      "getBackgroundSummarizationTriggerThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616790:22873451",
+    "artifact": "host",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "shouldPersistBackgroundSummarization",
+    "qualified_name": "shouldPersistBackgroundSummarization",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616790,
+    "end_line": 616793,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usedTokens",
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "f212854bed68052304011588401738c6a3b90646349a9c3927b9f9dbfd6a9ae5",
+    "calls": [
+      "isValidUsedTokensThreshold",
+      "shouldStartBackgroundSummarization"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285304:9206877",
+    "artifact": "evaluation",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "isValidUsedTokensThreshold",
+    "qualified_name": "isValidUsedTokensThreshold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285304,
+    "end_line": 285306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "threshold",
+      "maxTokens"
+    ],
+    "body_sha256": "bcc8443cdb763495534b8a27848c46ad290e1c287b46a2b80bd8058553173586",
+    "calls": [
+      "Number.isFinite",
+      "Number.isSafeInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285307:9207086",
+    "artifact": "evaluation",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "getBackgroundSummarizationTriggerThreshold",
+    "qualified_name": "getBackgroundSummarizationTriggerThreshold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285307,
+    "end_line": 285325,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "f3f8212800384f1fb27abb52ac8a4bfc90e8982edef0d95e98800c34f2b9e036",
+    "calls": [
+      "Math.min",
+      "candidates.push",
+      "isValidUsedTokensThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285326:9207876",
+    "artifact": "evaluation",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "shouldStartBackgroundSummarization",
+    "qualified_name": "shouldStartBackgroundSummarization",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285326,
+    "end_line": 285329,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usedTokens",
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "aca319ee63fcbad16537046489c46a661eee5624411aff20d29b450f14d229d3",
+    "calls": [
+      "getBackgroundSummarizationTriggerThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285330:9208094",
+    "artifact": "evaluation",
+    "module": "agent-summarization/background-summarization.js",
+    "name": "shouldPersistBackgroundSummarization",
+    "qualified_name": "shouldPersistBackgroundSummarization",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285330,
+    "end_line": 285333,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usedTokens",
+      "maxTokens",
+      "props"
+    ],
+    "body_sha256": "f212854bed68052304011588401738c6a3b90646349a9c3927b9f9dbfd6a9ae5",
+    "calls": [
+      "isValidUsedTokensThreshold",
+      "shouldStartBackgroundSummarization"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

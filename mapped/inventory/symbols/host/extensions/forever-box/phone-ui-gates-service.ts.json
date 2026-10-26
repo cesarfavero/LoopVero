@@ -1,0 +1,220 @@
+[
+  {
+    "id": "host:680659:25859299",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "createPhoneUiGatesService",
+    "qualified_name": "createPhoneUiGatesService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680659,
+    "end_line": 680735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "41d07fc24ebd15eaebae74797003b1ea334c81637875f6a7a46196241fbb6e13",
+    "calls": [
+      "createSnapshotStore",
+      "deps.onCredential"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680672:25859866",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "isFresh",
+    "qualified_name": "createPhoneUiGatesService/isFresh",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680672,
+    "end_line": 680672,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0d2a9201644f3f23b6d8cea145a732661add55ba2ab7b8cf3ae1c4bfe1fd6429",
+    "calls": [
+      "deps.clock.monotonicNow",
+      "snapshot.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680673:25859977",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "runFetch",
+    "qualified_name": "createPhoneUiGatesService/runFetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680673,
+    "end_line": 680710,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9ec9512d73380886c9a6d26ebf5826562664883d8747a9e5bec7aa4e58fca304",
+    "calls": [
+      ".finally",
+      "Promise.resolve",
+      "deps.log",
+      "hasCredential"
+    ],
+    "writes": [
+      "cache3.inFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680711:25861528",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "loadUnlessBackingOff",
+    "qualified_name": "createPhoneUiGatesService/loadUnlessBackingOff",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680711,
+    "end_line": 680716,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a01e08583801ca897b4b4965434d0703b1a09f5256f4c354501883f7872829bd",
+    "calls": [
+      "deps.clock.monotonicNow",
+      "isFresh",
+      "runFetch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680721:25861880",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "getSnapshot",
+    "qualified_name": "createPhoneUiGatesService/getSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680721,
+    "end_line": 680724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9e4280ecf40c7516fd2e8489aaa63f67acb2340914e63cf0ea58f75f924bc965",
+    "calls": [
+      "loadUnlessBackingOff",
+      "snapshot.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680726:25862008",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "prefetch",
+    "qualified_name": "createPhoneUiGatesService/prefetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680726,
+    "end_line": 680728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6a630ff7f2123e1da993fad8d7ac067eeca7607717d6ac71318cee1256686c4e",
+    "calls": [
+      "loadUnlessBackingOff"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680729:25862071",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/phone-ui-gates-service.ts",
+    "name": "dispose",
+    "qualified_name": "createPhoneUiGatesService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680729,
+    "end_line": 680733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9f6b9e5d43642f4763974e94c570a4bcd47e94df54b464af0cb152edb8129213",
+    "calls": [
+      "stopCredentialListener"
+    ],
+    "writes": [
+      "cache3.disposed",
+      "cache3.inFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

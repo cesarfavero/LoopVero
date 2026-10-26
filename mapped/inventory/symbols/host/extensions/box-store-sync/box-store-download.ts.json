@@ -1,0 +1,1840 @@
+[
+  {
+    "id": "host:477510:17477090",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "boxStoreRestoreTempName",
+    "qualified_name": "boxStoreRestoreTempName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477510,
+    "end_line": 477512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "da6344dba84c9e63d0b3ca3be36688b2cafed197d7257a60c9ff5184ad772130",
+    "calls": [
+      ".toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477513:17477232",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "withoutForeignMountEntries",
+    "qualified_name": "withoutForeignMountEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477513,
+    "end_line": 477524,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifest",
+      "log5"
+    ],
+    "body_sha256": "a7d749f6927ea69ffb9192655e0b9db7ede76e7b187b73136670576be94a51e0",
+    "calls": [
+      "isBoxHomeForeignMountPath",
+      "kept.set",
+      "log5",
+      "new Map",
+      "skipped2.toString"
+    ],
+    "writes": [
+      "skipped2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477534:17477834",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "isCriticalRelPath",
+    "qualified_name": "isCriticalRelPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477534,
+    "end_line": 477536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "relPath"
+    ],
+    "body_sha256": "a71cab6b5c8c49545db788648f50b6fe6bdabb95171c2d31ea19eb8211314a6a",
+    "calls": [
+      "COPY_IN_CRITICAL_BASENAMES.has",
+      "relPath.lastIndexOf",
+      "relPath.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477559:17478400",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "BoxStoreDownload.constructor",
+    "qualified_name": "BoxStoreDownload.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477559,
+    "end_line": 477570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cb8232c7803134071c3ff08a3628c376e482f87917760a7c692e47bbc1225c72",
+    "calls": [],
+    "writes": [
+      "this.discardTemp",
+      "this.downloadByteBudget",
+      "this.downloadConcurrency",
+      "this.hasDiskSpaceForLargeObject",
+      "this.largeObjectThreshold",
+      "this.log",
+      "this.manifestStore",
+      "this.objectStore",
+      "this.packPipeline",
+      "this.resolveStoreId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477571:17478913",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "BoxStoreDownload.download",
+    "qualified_name": "BoxStoreDownload.download",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477571,
+    "end_line": 478282,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "targetDir",
+      "options2 = {}"
+    ],
+    "body_sha256": "373696858bc173c3d4eb8f3806b1f9334245a21191fad0c03e3549aac5da0d83",
+    "calls": [
+      ".map",
+      "Promise.all",
+      "bulkLarge.values",
+      "bulkSmall.values",
+      "claimedDestinations.add",
+      "claimedDestinations.has",
+      "criticalLarge.values",
+      "criticalSmall.values",
+      "destinationPaths.set",
+      "fileEntries.set",
+      "forEachBounded",
+      "group.relPaths.filter",
+      "group.relPaths.push",
+      "isBoxStoreManifestFileEntry",
+      "isBoxStoreManifestSymlinkEntry",
+      "isCriticalRelPath",
+      "makeInFlightByteBudget",
+      "new Map",
+      "new Set",
+      "phase.get",
+      "phase.set",
+      "recordFailure",
+      "remainingBulkSmall.push",
+      "reportTrace",
+      "resolveRestoreDestination",
+      "runPhase",
+      "symlinkEntries.set",
+      "this.manifestStore.loadManifest",
+      "this.objectStore",
+      "this.packPipeline.restoreBulkSmallFromPacks",
+      "this.resolveStoreId",
+      "withoutForeignMountEntries"
+    ],
+    "writes": [
+      "manifest",
+      "phase",
+      "this.manifestStore.manifest"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 3,
+      "awaits": 7,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477584:17479392",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "recordFailure",
+    "qualified_name": "BoxStoreDownload.download/recordFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477584,
+    "end_line": 477587,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "detail",
+      "failure3"
+    ],
+    "body_sha256": "f6b751f17eb1d41b96b5be1dd2924156ab311f360286e35b440f453eb8683daf",
+    "calls": [
+      "failures2.push"
+    ],
+    "writes": [
+      "firstFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477623:17480795",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "reportTrace",
+    "qualified_name": "BoxStoreDownload.download/reportTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477623,
+    "end_line": 477635,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event",
+      "detail = {}"
+    ],
+    "body_sha256": "8ca9f0057a98d4f74b1fad61da79f7dc2a22073b1e8fef39a4ef7d6c2963ec35",
+    "calls": [
+      "options2.onTrace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477636:17481219",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "runSymlinkStep",
+    "qualified_name": "BoxStoreDownload.download/runSymlinkStep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477636,
+    "end_line": 477645,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "step",
+      "symlinkOrdinal",
+      "operation"
+    ],
+    "body_sha256": "c6c40b4b09652743fe934ba0b564018fc0fcd27f709c9270896f938a1affda49",
+    "calls": [
+      "operation",
+      "reportTrace"
+    ],
+    "writes": [
+      "activeSymlinkSteps[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477647:17481651",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "openRestoreRoot",
+    "qualified_name": "BoxStoreDownload.download/openRestoreRoot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477647,
+    "end_line": 477657,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "721fbc7a90551337b07b899fef12fbf6474ad601afa67e0d21659d679ce3cd67",
+    "calls": [
+      "findSystemErrno",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError",
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:477658:17482136",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "handCreatedDirectory",
+    "qualified_name": "BoxStoreDownload.download/handCreatedDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477658,
+    "end_line": 477665,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "e3527d65380e12b98fea066c9a47d770f2a6f41501376d8db35905a907e0f548",
+    "calls": [
+      "directory.handle.chown",
+      "directory.handle.stat",
+      "mayHandOverTo",
+      "options2.chown"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477666:17482534",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "openOrCreateRestoreDirectory",
+    "qualified_name": "BoxStoreDownload.download/openOrCreateRestoreDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477666,
+    "end_line": 477694,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "name18"
+    ],
+    "body_sha256": "9df0cbd13a99405e2e8e3158248b73fc257b5c1ddd51d2892e1f888015e8b09e",
+    "calls": [
+      "entryOf",
+      "findSystemErrno",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [
+      "attempt",
+      "created"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError",
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 4,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:477695:17483771",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "openRestoreParent",
+    "qualified_name": "BoxStoreDownload.download/openRestoreParent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477695,
+    "end_line": 477715,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dir"
+    ],
+    "body_sha256": "103cf00eb42e5249522237ea7dae71de168c78dbd32a6ca235517119951758cc",
+    "calls": [
+      "directory.handle.close",
+      "handCreatedDirectory",
+      "new SandBoxStoreSyncError",
+      "openOrCreateRestoreDirectory",
+      "openRestoreRoot",
+      "relDir.split",
+      "relDir.startsWith"
+    ],
+    "writes": [
+      "directory"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError",
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 5,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:477716:17484698",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "withRestoreParent",
+    "qualified_name": "BoxStoreDownload.download/withRestoreParent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477716,
+    "end_line": 477723,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "destPath",
+      "operation"
+    ],
+    "body_sha256": "b8d5d0bde6192de630cce352f01b2789f051e2042f7e93dc6b21ae42036d47e4",
+    "calls": [
+      "openRestoreParent",
+      "operation",
+      "parent.handle.close"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477724:17485009",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "mkdirOwned",
+    "qualified_name": "BoxStoreDownload.download/mkdirOwned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477724,
+    "end_line": 477727,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "dir"
+    ],
+    "body_sha256": "f66975c58fc46fa75a4d8d2f40b24837d3c155d9aee2ae5496468a24dbf4f0d5",
+    "calls": [
+      "directory.handle.close",
+      "openRestoreParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477728:17485159",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "applyOpenFileMetadata",
+    "qualified_name": "BoxStoreDownload.download/applyOpenFileMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477728,
+    "end_line": 477749,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target",
+      "entry",
+      "deferInjectedChown",
+      "legacyReplacementMode"
+    ],
+    "body_sha256": "fe47c7328ea9250c3ec77b4459f9bcfe6f8d568828b74fbe1f313ad9295b5b30",
+    "calls": [
+      "handle.chmod",
+      "handle.chown",
+      "handle.close",
+      "handle.stat",
+      "info2.isFile",
+      "mayHandOverTo",
+      "new SandBoxStoreSyncError",
+      "options2.chown"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477750:17486268",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "existingRegularFileMode",
+    "qualified_name": "BoxStoreDownload.download/existingRegularFileMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477750,
+    "end_line": 477759,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "b5608be219a2c548b0158883b1c8aa9b5362d75eb7e50d243230e4e58a93580c",
+    "calls": [
+      ".then",
+      "destination.isFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477760:17486638",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "replaceDestinationWithTemp",
+    "qualified_name": "BoxStoreDownload.download/replaceDestinationWithTemp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477760,
+    "end_line": 477786,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "tempName",
+      "name18",
+      "symlinkOrdinal"
+    ],
+    "body_sha256": "fc16ea755ff81557e69565cdcc858b974da5fd31eba70433ffcae031e3462686",
+    "calls": [
+      "destination.isDirectory",
+      "entryOf",
+      "inspectDestination",
+      "removeTreeNoFollow",
+      "runSymlinkStep"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477762:17486774",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "inspectDestination",
+    "qualified_name": "BoxStoreDownload.download/replaceDestinationWithTemp/inspectDestination",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477762,
+    "end_line": 477768,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4e2e3780a8197473cfdd4d7a4cc291f91af5e10129fb6f9e8895bfbfe07912b0",
+    "calls": [
+      ".then"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477787:17487826",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "installVerifiedTemp",
+    "qualified_name": "BoxStoreDownload.download/installVerifiedTemp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477787,
+    "end_line": 477806,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "tempName",
+      "destPath",
+      "relPath"
+    ],
+    "body_sha256": "4817e0608648b1a1843e50139364a0ef019b2bf7552e8914c337ed104daaa9a9",
+    "calls": [
+      "applyOpenFileMetadata",
+      "entryOf",
+      "existingRegularFileMode",
+      "fileEntries.get",
+      "new SandBoxStoreSyncError",
+      "options2.chown",
+      "replaceDestinationWithTemp"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477807:17488812",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "applyExistingFileMetadataIn",
+    "qualified_name": "BoxStoreDownload.download/applyExistingFileMetadataIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477807,
+    "end_line": 477819,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "destPath",
+      "relPath"
+    ],
+    "body_sha256": "912a2ed1545763c471891d5b88c33b40be64dd670b8b077a8485937a8c99df7b",
+    "calls": [
+      "applyOpenFileMetadata",
+      "entryOf",
+      "fileEntries.get",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477820:17489301",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "applyExistingFileMetadata",
+    "qualified_name": "BoxStoreDownload.download/applyExistingFileMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477820,
+    "end_line": 477824,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "destPath",
+      "relPath"
+    ],
+    "body_sha256": "4bfa356d6774ab205c8564cf993d7237048d02495c6730a011ca6888a341772b",
+    "calls": [
+      "withRestoreParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477825:17489510",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "writeVerifiedBytes",
+    "qualified_name": "BoxStoreDownload.download/writeVerifiedBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477825,
+    "end_line": 477836,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "destPath",
+      "relPath",
+      "blob"
+    ],
+    "body_sha256": "1bf9be7d1f4b74d633e95e8f02304efdec14a0512ee0a099319f8f223f3142eb",
+    "calls": [
+      "withRestoreParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477837:17490019",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "applySymlinkOwner",
+    "qualified_name": "BoxStoreDownload.download/applySymlinkOwner",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477837,
+    "end_line": 477844,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "3271b523d2cc25062370313fa776433e12ac01649abdfe8fb8289f8df9473b05",
+    "calls": [
+      "handSymlinkTo",
+      "options2.lchown"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477845:17490345",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "localSymlinkMatches",
+    "qualified_name": "BoxStoreDownload.download/localSymlinkMatches",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477845,
+    "end_line": 477856,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "destEntry",
+      "entry"
+    ],
+    "body_sha256": "59312c6ac4158895a721dbd582aeb34831f3df46b9412d6b41c955b42313cbff",
+    "calls": [
+      ".then",
+      "info2.isSymbolicLink"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477857:17490753",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "restoreSymlink",
+    "qualified_name": "BoxStoreDownload.download/restoreSymlink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477857,
+    "end_line": 477921,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "relPath",
+      "entry",
+      "symlinkOrdinal"
+    ],
+    "body_sha256": "07a1fe90d24b5f607682069729d63dc5fc880130553529f27ea5a2fcc81fb84f",
+    "calls": [
+      "boxStoreRestoreTempName",
+      "copyInFailureOf",
+      "destinationPaths.get",
+      "entryOf",
+      "errorMessage",
+      "new SandBoxStoreSyncError",
+      "parent.handle.close",
+      "recordFailure",
+      "replaceDestinationWithTemp",
+      "reportProgress",
+      "runSymlinkStep",
+      "symlinkTargetStaysWithinRoot"
+    ],
+    "writes": [
+      "files",
+      "parent",
+      "verified"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 9,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:477922:17493249",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "reportProgress",
+    "qualified_name": "BoxStoreDownload.download/reportProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477922,
+    "end_line": 477924,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "fe509b113d68401b2d1065dc1ea96bed361a042faf9c96eb10155d1149749c7e",
+    "calls": [
+      "options2.onProgress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:477926:17493445",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "restoreSmallGroup",
+    "qualified_name": "BoxStoreDownload.download/restoreSmallGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477926,
+    "end_line": 477970,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "group",
+      "pending"
+    ],
+    "body_sha256": "5d5888e8ce1552090bebc05c88f9cd103b7dc0ba4c13c307b6cd626a1b10cb2c",
+    "calls": [
+      "byteBudget.acquire",
+      "byteBudget.release",
+      "copyInFailureOf",
+      "destinationPaths.get",
+      "errorMessage",
+      "recordFailure",
+      "reportProgress",
+      "sha256Hex",
+      "store.get",
+      "writeVerifiedBytes"
+    ],
+    "writes": [
+      "blob",
+      "bytes",
+      "files",
+      "verified"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 4,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:477971:17495025",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "restoreLargeToPath",
+    "qualified_name": "BoxStoreDownload.download/restoreLargeToPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477971,
+    "end_line": 477989,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "group",
+      "relPath"
+    ],
+    "body_sha256": "7e1685afca4a6faac7a198ab8e0c99e86e70a72c055864b3d0a3b53e4945e73b",
+    "calls": [
+      "copyInFailureOf",
+      "destinationPaths.get",
+      "errorMessage",
+      "openRestoreParent",
+      "parent.handle.close",
+      "recordFailure",
+      "restoreLargeInto"
+    ],
+    "writes": [
+      "parent"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:477990:17495704",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "restoreLargeInto",
+    "qualified_name": "BoxStoreDownload.download/restoreLargeInto",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 477990,
+    "end_line": 478040,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "group",
+      "relPath",
+      "destPath"
+    ],
+    "body_sha256": "d25b4469dfe84a3e699da81586095266c666b57d14c33fc0135f974941f24f0e",
+    "calls": [
+      "boxStoreRestoreTempName",
+      "copyInFailureOf",
+      "entryOf",
+      "errorMessage",
+      "installVerifiedTemp",
+      "recordFailure",
+      "reportProgress",
+      "sha256File",
+      "store.getToFile",
+      "this.discardTemp",
+      "this.hasDiskSpaceForLargeObject"
+    ],
+    "writes": [
+      "actualSha",
+      "bytes",
+      "files",
+      "verified",
+      "written"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 9,
+      "returns": 7,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:478041:17497748",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "copyLargeToPath",
+    "qualified_name": "BoxStoreDownload.download/copyLargeToPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478041,
+    "end_line": 478059,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "sourcePath2",
+      "group",
+      "relPath"
+    ],
+    "body_sha256": "52e6739f41d2edf4ae8e62016206bde9b547779091b8fa19469944ed8b0f7d7c",
+    "calls": [
+      "copyInFailureOf",
+      "copyLargeInto",
+      "destinationPaths.get",
+      "errorMessage",
+      "openRestoreParent",
+      "parent.handle.close",
+      "recordFailure"
+    ],
+    "writes": [
+      "parent"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478060:17498428",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "copyLargeInto",
+    "qualified_name": "BoxStoreDownload.download/copyLargeInto",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478060,
+    "end_line": 478093,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "sourcePath2",
+      "group",
+      "relPath",
+      "destPath"
+    ],
+    "body_sha256": "f886599bef763d2ab3928552dd510a2b9dd6a5727b071348ec29d9aa2317ee63",
+    "calls": [
+      "boxStoreRestoreTempName",
+      "copyFileHashing",
+      "copyInFailureOf",
+      "entryOf",
+      "errorMessage",
+      "installVerifiedTemp",
+      "openBelow",
+      "recordFailure",
+      "reportProgress",
+      "segmentsBelow",
+      "source.handle.close",
+      "this.discardTemp",
+      "this.hasDiskSpaceForLargeObject"
+    ],
+    "writes": [
+      "bytes",
+      "copied",
+      "files",
+      "verified"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478094:17499944",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "restoreLargeGroup",
+    "qualified_name": "BoxStoreDownload.download/restoreLargeGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478094,
+    "end_line": 478105,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "group",
+      "pending"
+    ],
+    "body_sha256": "06b918b504516a4c09e99d086f047515d7ef68837afe91045d20c6efdc9234a7",
+    "calls": [
+      "copyLargeToPath",
+      "destinationPaths.get",
+      "restoreLargeToPath"
+    ],
+    "writes": [
+      "restoredPath"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478106:17500342",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "reportLocalCompareFailure",
+    "qualified_name": "BoxStoreDownload.download/reportLocalCompareFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478106,
+    "end_line": 478114,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "b194c572ccfbb05d2ac18043043bf7e35d1cce69b8f892141b0ccf74f30cd785",
+    "calls": [
+      "errorLogTag",
+      "isMissingPathError",
+      "reportBoxStoreDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478115:17500624",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "localFileMatchesIn",
+    "qualified_name": "BoxStoreDownload.download/localFileMatchesIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478115,
+    "end_line": 478124,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "parent",
+      "name18",
+      "group"
+    ],
+    "body_sha256": "0a155ebda508f4d03b0c72b7bc1fb2c98c981b9e4ff1d47122a9b5decc3ec23b",
+    "calls": [
+      "entryOf",
+      "local.isFile",
+      "reportLocalCompareFailure",
+      "sha256File"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478125:17501028",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "localFileMatches",
+    "qualified_name": "BoxStoreDownload.download/localFileMatches",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478125,
+    "end_line": 478134,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "destPath",
+      "group"
+    ],
+    "body_sha256": "953f2a94542b5c574ef3455faba5bbcf51a941cf7a8744f5737e78bc25c769cc",
+    "calls": [
+      "reportLocalCompareFailure",
+      "withRestoreParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478135:17501337",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "runPhase",
+    "qualified_name": "BoxStoreDownload.download/runPhase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478135,
+    "end_line": 478192,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "groups",
+      "concurrency",
+      "restoreGroup"
+    ],
+    "body_sha256": "1c273fbfb7f18db880537c1bb91402ff8b9e8b8617edf7acb105c8d62ba3abcd",
+    "calls": [
+      "forEachWavePipelined"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478139:17501506",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "prepareWave",
+    "qualified_name": "BoxStoreDownload.download/runPhase/prepareWave",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478139,
+    "end_line": 478189,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "wave"
+    ],
+    "body_sha256": "13e1611e70907f64e5426280b6311266e5644581be01001ec838736c446add48",
+    "calls": [
+      "errorMessage",
+      "forEachBounded",
+      "remote.map",
+      "store.prefetchReads",
+      "this.log"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478190:17503724",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "process",
+    "qualified_name": "BoxStoreDownload.download/runPhase/process",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478190,
+    "end_line": 478190,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "r"
+    ],
+    "body_sha256": "d373ec92323314494301f2b1222bbf9d622d451619bcdc589fb98cc95dac362b",
+    "calls": [
+      "restoreGroup"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478228:17505056",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "recordRestoredPath",
+    "qualified_name": "BoxStoreDownload.download/recordRestoredPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478228,
+    "end_line": 478233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "byteSize"
+    ],
+    "body_sha256": "e02bfb031ec7fca6cb4fb64e35be9e418c8013283e22b0e6525b0512bea4894f",
+    "calls": [
+      "reportProgress"
+    ],
+    "writes": [
+      "bytes",
+      "files",
+      "verified"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478284:17506761",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "resolveRestoreDestination",
+    "qualified_name": "resolveRestoreDestination",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478284,
+    "end_line": 478297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f7fc2bb82fb98f38386f827a4680986a4337e4dbf09a712d78e76190a6782761",
+    "calls": [
+      "rel.startsWith",
+      "relPath.split",
+      "segments.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478298:17507408",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "symlinkTargetStaysWithinRoot",
+    "qualified_name": "symlinkTargetStaysWithinRoot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478298,
+    "end_line": 478303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d1c38b237c83f8cf4c57d9176632375e4baf9a50ef9a4bb9c07d33855a64c589",
+    "calls": [
+      "rel.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478304:17507900",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "mayHandOverTo",
+    "qualified_name": "mayHandOverTo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478304,
+    "end_line": 478307,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "info2",
+      "uid"
+    ],
+    "body_sha256": "3077707dd81a6f147b5b0b7af022fd5930101f1412830dd4fcf740f9f2746574",
+    "calls": [
+      "info2.isDirectory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478309:17508077",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "handSymlinkTo",
+    "qualified_name": "handSymlinkTo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478309,
+    "end_line": 478319,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "uid",
+      "gid"
+    ],
+    "body_sha256": "9ae4eb27fda83da2c96aa031be62f9dc805db32b552dd6365925d54eac1db421",
+    "calls": [
+      "handle.close",
+      "handle.fd.toString",
+      "handle.stat",
+      "info2.isSymbolicLink",
+      "mayHandOverTo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478320:17508495",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "makeInFlightByteBudget",
+    "qualified_name": "makeInFlightByteBudget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478320,
+    "end_line": 478349,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "budgetBytes"
+    ],
+    "body_sha256": "8f345b88876273609ba03c25339c2b97a4e55e418e7b12cb267e7673a9d7b8e0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478323:17508612",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "admitWaiters",
+    "qualified_name": "makeInFlightByteBudget/admitWaiters",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478323,
+    "end_line": 478331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dbfcb92cc77f47d4b7e0c0f1cceeab8490f7e57496be3ffe1cb428c58daf1a6f",
+    "calls": [
+      "head.admit",
+      "waiters.shift"
+    ],
+    "writes": [
+      "inFlightBytes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478333:17508881",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "acquire",
+    "qualified_name": "makeInFlightByteBudget/acquire",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478333,
+    "end_line": 478342,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "byteCount"
+    ],
+    "body_sha256": "14192104e8a769fbbb2813d99fa9e42f8c3f89c5d4086c81b46de652bb85b9a7",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [
+      "inFlightBytes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478343:17509208",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "release",
+    "qualified_name": "makeInFlightByteBudget/release",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478343,
+    "end_line": 478347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "byteCount"
+    ],
+    "body_sha256": "c7f56a9bfb7796badab2e08fe8085079e3e794c9342cf77d251566a7b834ce8f",
+    "calls": [
+      "Math.max",
+      "admitWaiters"
+    ],
+    "writes": [
+      "inFlightBytes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478350:17509353",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "sha256File",
+    "qualified_name": "sha256File",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478350,
+    "end_line": 478365,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "dcbae8fbd35d25b231511e26412e6fcb7e28c2c9b9445d53f2fc61d96d4330d8",
+    "calls": [
+      "handle.close",
+      "handle.createReadStream",
+      "handle.stat",
+      "hash2.digest",
+      "info2.isFile",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478366:17509982",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "copyFileHashing",
+    "qualified_name": "copyFileHashing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478366,
+    "end_line": 478398,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "srcPath",
+      "destPath",
+      "onChunk"
+    ],
+    "body_sha256": "a043a8e3e05769a3f4697c3d98e544d51c4e455bea111bdbd905ae8ed38fe303",
+    "calls": [
+      "handle.close",
+      "handle.createReadStream",
+      "handle.stat",
+      "hash2.digest",
+      "info2.isFile",
+      "new SandBoxStoreSyncError",
+      "new import_node_stream4.Transform"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478370:17510186",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-store-download.ts",
+    "name": "transform",
+    "qualified_name": "copyFileHashing/transform",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478370,
+    "end_line": 478379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "chunk",
+      "_encoding",
+      "callback"
+    ],
+    "body_sha256": "fd1c33e5b6e40ebe56b02147d27ca907b5656668563562df3026fde180eedc56",
+    "calls": [
+      ".then",
+      "Buffer.from",
+      "Buffer.isBuffer",
+      "callback",
+      "hash2.update",
+      "onChunk"
+    ],
+    "writes": [
+      "size"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

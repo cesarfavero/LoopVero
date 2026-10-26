@@ -1,0 +1,165 @@
+[
+  {
+    "id": "host:430959:15819754",
+    "artifact": "host",
+    "module": "core/process-crash-guard.ts",
+    "name": "toError",
+    "qualified_name": "toError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430959,
+    "end_line": 430961,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "75b176df7887e401e0855618775ed89cbfde5002b4cb4d2c18c3061015a60603",
+    "calls": [
+      "String",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430962:15819850",
+    "artifact": "host",
+    "module": "core/process-crash-guard.ts",
+    "name": "handleProcessCrash",
+    "qualified_name": "handleProcessCrash",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430962,
+    "end_line": 430973,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2",
+      "kind",
+      "value"
+    ],
+    "body_sha256": "25ff8caa4318fef7f7bff51b06cb324fdd3aa38ba932b8949d9a77bb0c58d78c",
+    "calls": [
+      "console.error",
+      "errorLogTag",
+      "options2.onError",
+      "process.stderr.write",
+      "toError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:430974:15820233",
+    "artifact": "host",
+    "module": "core/process-crash-guard.ts",
+    "name": "installProcessCrashGuards",
+    "qualified_name": "installProcessCrashGuards",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430974,
+    "end_line": 430984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "59fbce302f0932e259510213574456191dd03306a9e855df2298266a630dfa6a",
+    "calls": [
+      "process.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430976:15820332",
+    "artifact": "host",
+    "module": "core/process-crash-guard.ts",
+    "name": "report",
+    "qualified_name": "installProcessCrashGuards/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430976,
+    "end_line": 430976,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "kind",
+      "value"
+    ],
+    "body_sha256": "5213e5528ae55e315fb060d8ee5a42ea83ff937bd10e2ce945756882b3de6017",
+    "calls": [
+      "handleProcessCrash"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430980:15820622",
+    "artifact": "host",
+    "module": "core/process-crash-guard.ts",
+    "name": "setReporter",
+    "qualified_name": "installProcessCrashGuards/setReporter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430980,
+    "end_line": 430982,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "onError"
+    ],
+    "body_sha256": "0a2167090568ec2ed01bc41caca671e3808527eaa5dbc06e9acf6f99a57ef9e2",
+    "calls": [],
+    "writes": [
+      "reporter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

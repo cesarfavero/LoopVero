@@ -1,0 +1,524 @@
+[
+  {
+    "id": "host:775721:29810538",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "isSandCloudAgentAutoReviewAction",
+    "qualified_name": "isSandCloudAgentAutoReviewAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775721,
+    "end_line": 775723,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "7e0eb90a26bff25294e259e6848df875572cd2bb170d048ecb5e068803873cd6",
+    "calls": [
+      "REVIEWABLE_ACTIONS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775724:29810633",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "describeSandCloudAgentReviewImages",
+    "qualified_name": "describeSandCloudAgentReviewImages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775724,
+    "end_line": 775731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "urls",
+      "images"
+    ],
+    "body_sha256": "93aa20090384a8427e750956fdea04106c36511b3872a0fa4a1451c99c959922",
+    "calls": [
+      "images.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775732:29811006",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "describeSandCloudAgentReviewFiles",
+    "qualified_name": "describeSandCloudAgentReviewFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775732,
+    "end_line": 775741,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "05745453521f2584a4e8c19c3f00f3586f4e70a4a820d89b001a330ab18433e8",
+    "calls": [
+      "files.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775742:29811334",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "buildSandCloudAgentReviewTarget",
+    "qualified_name": "buildSandCloudAgentReviewTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775742,
+    "end_line": 775820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "attachments = {}"
+    ],
+    "body_sha256": "d67355d3155801b6b81bf12473b549a5925bfe43cc9a318dc039888fba8f76b8",
+    "calls": [
+      "args.agent_id.trim",
+      "args.custom_mode.trim",
+      "args.prompt.trim",
+      "args.repo.trim",
+      "args.repo_name.trim",
+      "args.repo_url.trim",
+      "args.title.trim",
+      "isSandCloudAgentAutoReviewAction",
+      "normalizeCloudAgentSecretNames",
+      "normalizedPublishFolder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 27,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775821:29814285",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "buildSandCloudAgentRiskTarget",
+    "qualified_name": "buildSandCloudAgentRiskTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775821,
+    "end_line": 775870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1c92cf5834e3dd1f7cf7f831d046e02e961df46c449088f5e4e2a3f901a50007",
+    "calls": [
+      ".map",
+      "buildProjectPermissionsContext",
+      "new SmartModeRiskTarget",
+      "structFromRecord",
+      "target.images.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775871:29816006",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "sandCloudAgentReviewFingerprintPayload",
+    "qualified_name": "sandCloudAgentReviewFingerprintPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775871,
+    "end_line": 775895,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "c7a685dcf44c9c9bf2d0bc037a11a79e8d7abbd2b4ab9b130e8f804c034aa5a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775901:29816987",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "summarize",
+    "qualified_name": "summarize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775901,
+    "end_line": 775905,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "40b48dabed373784b150500eff541dfd3ccf9684d28c4d8e770bebfc3581bba7",
+    "calls": [
+      "summarizeSandCloudAgentAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775908:29817217",
+    "artifact": "host",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "reviewSandCloudAgentAction",
+    "qualified_name": "reviewSandCloudAgentAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775908,
+    "end_line": 775911,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2b6f145d26783ef157608a13c75f569c53f32c739d91f719fe13482466c554ea",
+    "calls": [
+      "runSandAutoReviewFlow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575364:21536763",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "isSandCloudAgentAutoReviewAction",
+    "qualified_name": "isSandCloudAgentAutoReviewAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575364,
+    "end_line": 575366,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "7e0eb90a26bff25294e259e6848df875572cd2bb170d048ecb5e068803873cd6",
+    "calls": [
+      "REVIEWABLE_ACTIONS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575367:21536858",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "describeSandCloudAgentReviewImages",
+    "qualified_name": "describeSandCloudAgentReviewImages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575367,
+    "end_line": 575374,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "urls",
+      "images"
+    ],
+    "body_sha256": "427def590369a4827a24fc3e3880c92df4771b6d702ac7276c81bb4ec5a1a3bb",
+    "calls": [
+      "images.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575375:21537231",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "describeSandCloudAgentReviewFiles",
+    "qualified_name": "describeSandCloudAgentReviewFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575375,
+    "end_line": 575384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "f655760f4a03dd012b49df24e84fcd49f2429965e4248a58bb3f47ab69da6d17",
+    "calls": [
+      "files.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575385:21537559",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "buildSandCloudAgentReviewTarget",
+    "qualified_name": "buildSandCloudAgentReviewTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575385,
+    "end_line": 575463,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "attachments = {}"
+    ],
+    "body_sha256": "d67355d3155801b6b81bf12473b549a5925bfe43cc9a318dc039888fba8f76b8",
+    "calls": [
+      "args.agent_id.trim",
+      "args.custom_mode.trim",
+      "args.prompt.trim",
+      "args.repo.trim",
+      "args.repo_name.trim",
+      "args.repo_url.trim",
+      "args.title.trim",
+      "isSandCloudAgentAutoReviewAction",
+      "normalizeCloudAgentSecretNames",
+      "normalizedPublishFolder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 27,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575464:21540510",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "buildSandCloudAgentRiskTarget",
+    "qualified_name": "buildSandCloudAgentRiskTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575464,
+    "end_line": 575513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1c92cf5834e3dd1f7cf7f831d046e02e961df46c449088f5e4e2a3f901a50007",
+    "calls": [
+      ".map",
+      "buildProjectPermissionsContext",
+      "new SmartModeRiskTarget",
+      "structFromRecord",
+      "target.images.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575514:21542231",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "sandCloudAgentReviewFingerprintPayload",
+    "qualified_name": "sandCloudAgentReviewFingerprintPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575514,
+    "end_line": 575538,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "c7a685dcf44c9c9bf2d0bc037a11a79e8d7abbd2b4ab9b130e8f804c034aa5a4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575544:21543212",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "summarize",
+    "qualified_name": "summarize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575544,
+    "end_line": 575548,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "40b48dabed373784b150500eff541dfd3ccf9684d28c4d8e770bebfc3581bba7",
+    "calls": [
+      "summarizeSandCloudAgentAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575551:21543442",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-cloud-agent-auto-review.ts",
+    "name": "reviewSandCloudAgentAction",
+    "qualified_name": "reviewSandCloudAgentAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575551,
+    "end_line": 575554,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2b6f145d26783ef157608a13c75f569c53f32c739d91f719fe13482466c554ea",
+    "calls": [
+      "runSandAutoReviewFlow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,561 @@
+[
+  {
+    "id": "host:537533:19742213",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "runStatusFromBackendStatus",
+    "qualified_name": "runStatusFromBackendStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537533,
+    "end_line": 537550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "ffe1fba4c5f1be8eb1a8987b2b3b87d35e2a8a69c3f5ef7ef02327485acc714e",
+    "calls": [
+      "mapRunStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537551:19742993",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "isPublishTimeStamped",
+    "qualified_name": "isPublishTimeStamped",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537551,
+    "end_line": 537561,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind"
+    ],
+    "body_sha256": "a58982b339697e944df349bf9444504947adf391cd9b4b712f31c89e52bbcf4d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537562:19743340",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "toCloudAgentUpdateEvent",
+    "qualified_name": "toCloudAgentUpdateEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537562,
+    "end_line": 537568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "86a7fd729700a4a5c25bf7300fba0d351f108547033d4d8cf2eab3f03a01d110",
+    "calls": [
+      "Number",
+      "event.bcId.trim",
+      "isPublishTimeStamped",
+      "runStatusFromBackendStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537569:19743670",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "snapshotToCloudAgentUpdateEvent",
+    "qualified_name": "snapshotToCloudAgentUpdateEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537569,
+    "end_line": 537574,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "composer"
+    ],
+    "body_sha256": "3223dfb91788425c9b9e50a2b534d96a2b80d71735e458d91e5b928f94062e46",
+    "calls": [
+      "Math.trunc",
+      "composer.bcId.trim",
+      "mapRunStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537575:19743949",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "errorClassOf2",
+    "qualified_name": "errorClassOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537575,
+    "end_line": 537579,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "db682b3a4a56b2f8c9ff940f178712b937d8adbbc6e6f1c24b827382c9a3bc7d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537581:19744191",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.constructor",
+    "qualified_name": "CloudAgentUpdatesStream.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537581,
+    "end_line": 537597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "9560ecf18661c53c6a97ecf4fbd5dc482466eb60edd06e19153b0462786b3a09",
+    "calls": [
+      "createIdleWatchdogPolicy",
+      "createRetryPolicy"
+    ],
+    "writes": [
+      "this.options",
+      "this.reconnect",
+      "this.watchdog"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537606:19744937",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.start",
+    "qualified_name": "CloudAgentUpdatesStream.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537606,
+    "end_line": 537617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8ec6770ec7c87b86920e1a156e0f803db2990734f978d0922c4f94f89023a01e",
+    "calls": [
+      ".catch",
+      "this.run"
+    ],
+    "writes": [
+      "this.started"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537618:19745298",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.wake",
+    "qualified_name": "CloudAgentUpdatesStream.wake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537618,
+    "end_line": 537620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "bcda45b0e18f3a93f7e090f78f8b600a8294f7e8b4597d6419ce20ce201e4af8",
+    "calls": [
+      "this.gateWait.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537621:19745344",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.dispose",
+    "qualified_name": "CloudAgentUpdatesStream.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537621,
+    "end_line": 537623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c9f531541f907f81b4dedf97cc63cc3d634afa3ec4ecae71da802b85b7f005f1",
+    "calls": [
+      "this.abort.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537624:19745387",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.noteLive",
+    "qualified_name": "CloudAgentUpdatesStream.noteLive",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537624,
+    "end_line": 537628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "live"
+    ],
+    "body_sha256": "8ac5ac2f9adf4d1a85f293170de750c4fbf316befc3fff05a42ed6bfc21d4681",
+    "calls": [
+      "this.options.onLive"
+    ],
+    "writes": [
+      "this.live"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537629:19745531",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.run",
+    "qualified_name": "CloudAgentUpdatesStream.run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537629,
+    "end_line": 537647,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b29b599f2d3e9e2b49b46031b03b983f373361059fb64506e436d26339cb524e",
+    "calls": [
+      "Math.max",
+      "this.connectOnce",
+      "this.options.isEnabled",
+      "this.options.onFirstFailure",
+      "this.wait",
+      "this.waitForGate"
+    ],
+    "writes": [
+      "failures2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537648:19746092",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.waitForGate",
+    "qualified_name": "CloudAgentUpdatesStream.waitForGate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537648,
+    "end_line": 537662,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "58c2806aa0997a5667189011e7f353f2884298fa066f7f3bfb3b4a7e6774179d",
+    "calls": [
+      "new AbortController",
+      "this.abort.signal.addEventListener",
+      "this.abort.signal.removeEventListener",
+      "this.wait"
+    ],
+    "writes": [
+      "this.gateWait"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537650:19746161",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "onAbort",
+    "qualified_name": "CloudAgentUpdatesStream.waitForGate/onAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537650,
+    "end_line": 537650,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bf473563f9ec8acfde2363467f39f3b8f9c184a278b1cff3c7a97731e5abfdf7",
+    "calls": [
+      "gateWait.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537663:19746560",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.wait",
+    "qualified_name": "CloudAgentUpdatesStream.wait",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537663,
+    "end_line": 537669,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "attempt",
+      "signal",
+      "hint"
+    ],
+    "body_sha256": "323d8de0aba6e91bbffaaf0a84cfb09329446eb434158c682381f7cf2feeb5f5",
+    "calls": [
+      "this.reconnect.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537670:19746759",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.connectOnce",
+    "qualified_name": "CloudAgentUpdatesStream.connectOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537670,
+    "end_line": 537700,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "parent"
+    ],
+    "body_sha256": "984406545056daf8cee03775ed58c4c2a50b78aaef17585029a3ac0552742507",
+    "calls": [
+      ".streamBackgroundComposerUpdates",
+      "connection.abort",
+      "errorClassOf2",
+      "idle.dispose",
+      "idle.kick",
+      "new AbortController",
+      "new StreamBackgroundComposerUpdatesRequest",
+      "parent.addEventListener",
+      "parent.removeEventListener",
+      "this.ingest",
+      "this.noteLive",
+      "this.options.getClient",
+      "this.options.isEnabled",
+      "this.watchdog.arm"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537672:19746842",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "onParentAbort",
+    "qualified_name": "CloudAgentUpdatesStream.connectOnce/onParentAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537672,
+    "end_line": 537672,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "773ea61ba04236d0d6c78cdf81955de1d3c0e4f314d013ad668b6883390a5e4f",
+    "calls": [
+      "connection.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537701:19747862",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/cloud-agent-updates-stream.ts",
+    "name": "CloudAgentUpdatesStream.ingest",
+    "qualified_name": "CloudAgentUpdatesStream.ingest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537701,
+    "end_line": 537728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "730477efbcd7d2be68680b250f6850cc5c08247dab853ed51574447c201456f8",
+    "calls": [
+      "snapshotToCloudAgentUpdateEvent",
+      "this.noteLive",
+      "this.options.onEvent",
+      "this.options.onLive",
+      "toCloudAgentUpdateEvent"
+    ],
+    "writes": [
+      "this.cursor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

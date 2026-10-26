@@ -1,0 +1,396 @@
+[
+  {
+    "id": "host:784382:30232021",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "newId",
+    "qualified_name": "newId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784382,
+    "end_line": 784384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "edc95c58729f8cd0d9f3648a3acf9fd74e9fed0902f792c163eb149a069b494e",
+    "calls": [
+      "crypto.randomUUID"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784385:30232072",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "contentDedupeKey",
+    "qualified_name": "contentDedupeKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784385,
+    "end_line": 784422,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  agentId,\n  title,\n  errorKind,\n  actions: actions2\n}"
+    ],
+    "body_sha256": "7968ef0018b1787788a0045441a0feac21d52263744ce23347ce6b3e7c3ba1c1",
+    "calls": [
+      ".map",
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784423:30233138",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "appendOccurrenceKeepingFirstAndLatest",
+    "qualified_name": "appendOccurrenceKeepingFirstAndLatest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784423,
+    "end_line": 784426,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "occurrences",
+      "now"
+    ],
+    "body_sha256": "6649a4678351c52ad8b841de25e24e1dfcd80b0644bc7d3923a0e7af8da36ce4",
+    "calls": [
+      "appended.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784432:30233528",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.getTrays",
+    "qualified_name": "TrayManager.getTrays",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784432,
+    "end_line": 784434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8cb42514405eab48f42542c5d23182804ff6f1bca128e5bd7a505784256da250",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784435:30233571",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.pushError",
+    "qualified_name": "TrayManager.pushError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784435,
+    "end_line": 784513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    title,\n    titleKind,\n    titleParams,\n    detail,\n    requestId: requestId2,\n    errorKind,\n    errorParams,\n    usageLimitKind,\n    unifiedMoreUsage,\n    rawDetail,\n    actions: actions2,\n    dedupeKey: dedupeKey2,\n    count: count2,\n    severity\n  }"
+    ],
+    "body_sha256": "2ae5d0993dd10c61cb290ed83909acac2e87ee4bb2468eb12f7c28a670ffbd8f",
+    "calls": [
+      "Date.now",
+      "appendOccurrenceKeepingFirstAndLatest",
+      "contentDedupeKey",
+      "newId",
+      "this.activitySeqByTrayId.set",
+      "this.emit",
+      "this.enforceCap",
+      "this.trays.findIndex"
+    ],
+    "writes": [
+      "next[computed]",
+      "this.activitySeq",
+      "this.trays"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784514:30236563",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.clearAll",
+    "qualified_name": "TrayManager.clearAll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784514,
+    "end_line": 784519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "578dc35b1a971491dded03e7abf96c7e3d03ffd2608c72b113b56734700b784f",
+    "calls": [
+      "this.activitySeqByTrayId.clear",
+      "this.emit"
+    ],
+    "writes": [
+      "this.trays"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784520:30236717",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.dismiss",
+    "qualified_name": "TrayManager.dismiss",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784520,
+    "end_line": 784527,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "c873c050c1d8905f296e7eca5966b7c2c08105bd2cc2aa9f730886a9de0a289d",
+    "calls": [
+      "this.activitySeqByTrayId.delete",
+      "this.emit",
+      "this.trays.filter"
+    ],
+    "writes": [
+      "this.trays"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784528:30236985",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.clearForAgent",
+    "qualified_name": "TrayManager.clearForAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784528,
+    "end_line": 784537,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "7c40ed5d78f2547e79daa0c0181269f9eabd5a08de2060e6f3a0da38588c0d75",
+    "calls": [
+      "this.activitySeqByTrayId.delete",
+      "this.emit",
+      "this.trays.filter"
+    ],
+    "writes": [
+      "this.trays"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784538:30237371",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.subscribe",
+    "qualified_name": "TrayManager.subscribe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784538,
+    "end_line": 784543,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "1a2e79cab379c3adbdf95afd6f3ef8fb7bd9f78d33fc863f2bab1f26f40bc9c5",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784544:30237509",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.enforceCap",
+    "qualified_name": "TrayManager.enforceCap",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784544,
+    "end_line": 784556,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "bb3d9cc4767f8e5347330d1b4853381470f2f2fbfafdd8c99fbda4f6aca96785",
+    "calls": [
+      ".map",
+      ".slice",
+      ".sort",
+      "new Set",
+      "this.activitySeqByTrayId.delete",
+      "this.emit",
+      "this.trays.filter"
+    ],
+    "writes": [
+      "this.trays"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784547:30237638",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "activityOf2",
+    "qualified_name": "TrayManager.enforceCap/activityOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784547,
+    "end_line": 784547,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "tray"
+    ],
+    "body_sha256": "2d42e9d74ad9270a9d87b083c3c20965f2dfedc3447f75f7dbf67c7140c55982",
+    "calls": [
+      "this.activitySeqByTrayId.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784557:30238071",
+    "artifact": "host",
+    "module": "host/extensions/trays/trays-service.ts",
+    "name": "TrayManager.emit",
+    "qualified_name": "TrayManager.emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784557,
+    "end_line": 784559,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "fff876eac723b958e2e7e50f862d7bdcd55d31e4d8e72b098c61ba7fd863218e",
+    "calls": [
+      "this.emitter.emit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

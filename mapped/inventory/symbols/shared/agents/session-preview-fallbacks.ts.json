@@ -1,0 +1,230 @@
+[
+  {
+    "id": "host:721673:27379887",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "isSessionPreviewLink",
+    "qualified_name": "isSessionPreviewLink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721673,
+    "end_line": 721682,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "7bbd55fc86df9142bc6de0e183405514f3345911a414d6a745eab05825e89f3d",
+    "calls": [
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:721683:27380149",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "localToolPermissionPreviewTarget",
+    "qualified_name": "localToolPermissionPreviewTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721683,
+    "end_line": 721687,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ask"
+    ],
+    "body_sha256": "faa679ad87f915712cb9e20862b8ae084af0b44f47a2b17d99a405941512b572",
+    "calls": [
+      "showMessagesSendTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721688:27380450",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "widgetPrompt",
+    "qualified_name": "widgetPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721688,
+    "end_line": 721690,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "widget"
+    ],
+    "body_sha256": "48390115974860a2a16dca6a53cd2092a36bf31dde5c15073f7ff293ebe9406c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721691:27380553",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "sessionPreviewForWidget",
+    "qualified_name": "sessionPreviewForWidget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721691,
+    "end_line": 721709,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "99f33886bb9b5e30e4199bb430f3e4f8475318c2afa89ae048350eddd571efdc",
+    "calls": [
+      "Array.isArray",
+      "args.widget.options.map",
+      "getWidgetAnswerLabel",
+      "widgetPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721710:27381166",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "sessionPreviewForSendMessage",
+    "qualified_name": "sessionPreviewForSendMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721710,
+    "end_line": 721817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "slackMentionNames"
+    ],
+    "body_sha256": "3d5cae0a1d6a451c49c2735d6243989b87c24030931c8d5844fac3542d5d5959",
+    "calls": [
+      "classifyAttachment",
+      "isSessionPreviewLink",
+      "localToolPermissionPreviewTarget",
+      "message.request.secrets.map",
+      "message.title.trim",
+      "slackMarkupForDisplay",
+      "widgetPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 39,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 28,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721818:27385269",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "isLocalizableSessionPreview",
+    "qualified_name": "isLocalizableSessionPreview",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721818,
+    "end_line": 721852,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "preview"
+    ],
+    "body_sha256": "a83d4beb0540bb872c020532f9c67971f1e3624c38c085fd12e5b50ade87fbe5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 27,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:721853:27386235",
+    "artifact": "host",
+    "module": "shared/agents/session-preview-fallbacks.ts",
+    "name": "hostSessionPreview",
+    "qualified_name": "hostSessionPreview",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 721853,
+    "end_line": 721916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "preview"
+    ],
+    "body_sha256": "3831ff44bd1c2e3c5f4fc37b03d9d0618e8d86a5aabfe4c1ecea0b355ae4d00b",
+    "calls": [
+      "connectCardManifest",
+      "formatAttachmentSentSummary",
+      "preview.connectors.join",
+      "preview.names.join",
+      "preview.options.join",
+      "preview.text.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 34,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 26,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

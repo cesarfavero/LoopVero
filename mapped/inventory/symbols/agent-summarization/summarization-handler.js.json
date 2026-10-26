@@ -1,0 +1,2218 @@
+[
+  {
+    "id": "host:620714:23008278",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "executeSummarizationStream",
+    "qualified_name": "executeSummarizationStream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620714,
+    "end_line": 620783,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "promptSession",
+      "summaryPrompt",
+      "maxOutputTokens"
+    ],
+    "body_sha256": "c0a12b3966aab4463952da65a097e0e098681b75362fb2645549edd888ad8e3a",
+    "calls": [
+      ".join",
+      "Array.isArray",
+      "assistantMessages.at",
+      "executor.stream",
+      "lastAssistantMessage.content.map",
+      "logger38.warn",
+      "new Error",
+      "promptSession.getExecutor",
+      "response.messages.filter",
+      "result.extendedUsage.catch",
+      "result.invocationId.catch",
+      "result.providerMetadata.catch",
+      "result.response.catch",
+      "result.usage.catch",
+      "text3.trim"
+    ],
+    "writes": [
+      "inputTokens",
+      "outputTokens"
+    ],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:620784:23010876",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "formatGuardedToolPart",
+    "qualified_name": "formatGuardedToolPart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620784,
+    "end_line": 620791,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefix",
+      "serializedValue"
+    ],
+    "body_sha256": "4e2ad0cab78197a2fa81e38c97fa4a813d79ed05f0ad324084bc6fe2bfc349d0",
+    "calls": [
+      "serializedValue.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620792:23011212",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "turnMessageToString",
+    "qualified_name": "turnMessageToString",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620792,
+    "end_line": 620825,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "redactedMessage",
+      "enablePromptSizeGuards"
+    ],
+    "body_sha256": "6afcfabde460e6b8f9dce4ae1536bfdca71e59b452d5d7df4822d92fcd3df2ea",
+    "calls": [
+      ".join",
+      "Array.isArray",
+      "content.map",
+      "fromRedactedCoreMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620826:23012443",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "buildSummarizationPrompt",
+    "qualified_name": "buildSummarizationPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620826,
+    "end_line": 620940,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "messages2",
+      "options2",
+      "serialized = messages2.map((m2) => `${m2.role}: ${turnMessageToString(m2, true)}`)"
+    ],
+    "body_sha256": "ae029abed396b02b7a876f1160de37004dc97377449fa351c844580672b5a7fd",
+    "calls": [
+      "Buffer.byteLength",
+      "Math.floor",
+      "formatOmittedMessagesPreamble",
+      "logger38.info",
+      "logger38.warn",
+      "messages2.map",
+      "new CannotTruncatePromptError",
+      "resultParts.join",
+      "serialized.at",
+      "serialized.join",
+      "truncatePromptFairly"
+    ],
+    "writes": [
+      "didByteAdjust",
+      "oldPromptBudget",
+      "promptBudget"
+    ],
+    "throw_targets": [
+      "CannotTruncatePromptError"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620941:23016828",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "stripNonPrintableCharacters",
+    "qualified_name": "stripNonPrintableCharacters",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620941,
+    "end_line": 620943,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "5cf6e553116f5a78f9da5ad4ff7aeede1dff0c51b2c878a3ad679c99630bc25e",
+    "calls": [
+      "input2.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620944:23016927",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "reducePromptBudget",
+    "qualified_name": "reducePromptBudget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620944,
+    "end_line": 620951,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "opts"
+    ],
+    "body_sha256": "2123251ba04c1c1ca0f7e86bcbebc8cce21138a091bf9e5ae70bc0c98f27bafe",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "Math.min"
+    ],
+    "writes": [
+      "next"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620952:23017239",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "parseSummarizerModelLabel",
+    "qualified_name": "parseSummarizerModelLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620952,
+    "end_line": 620962,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "d530b2ed775bfa32482bb6a1eb2ab57652111bed97e6ba6c05332b46152a7211",
+    "calls": [
+      "modelId.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620963:23017691",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "executeSummarizationWithRetry",
+    "qualified_name": "executeSummarizationWithRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620963,
+    "end_line": 621221,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "promptSession",
+      "messages2",
+      "options2"
+    ],
+    "body_sha256": "2f4069fbd07f5fec52a4f0369cbb1f3da6d76b7e82741d9681a32ae84ab11b6a",
+    "calls": [
+      "Math.min",
+      "buildSummarizationPrompt",
+      "errorKinds.join",
+      "errorKinds.push",
+      "executeSummarizationStream",
+      "getRetryDirective",
+      "logger38.error",
+      "logger38.info",
+      "logger38.warn",
+      "messages2.map",
+      "new Error",
+      "new Promise",
+      "parseSummarizerModelLabel",
+      "promptSession.getModelId",
+      "reducePromptBudget",
+      "stripNonPrintableCharacters",
+      "summarizationAttempts.increment",
+      "summarizationFailures.increment",
+      "summarizationFallbackAttempts.increment",
+      "summarizationFallbackFailures.increment",
+      "summarizationRetries.increment",
+      "summarizationSuccess.increment",
+      "summarizationTryAttempts.increment",
+      "summarizationTryFailures.increment",
+      "summarizationTrySuccess.increment"
+    ],
+    "writes": [
+      "attempt",
+      "attemptsPerformed",
+      "expectTruncationFromInputReduction",
+      "lastErrorKind",
+      "lastFailedPromptLength",
+      "promptBudget",
+      "rateLimitError",
+      "requestShorterOutput",
+      "summaryPrompt"
+    ],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:621295:23031525",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "hasToolInvocation",
+    "qualified_name": "hasToolInvocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621295,
+    "end_line": 621301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "08122a84a0ffa6c33a3979c9fcef4095e925c9eb18be07d3e818250728adaf5b",
+    "calls": [
+      "Array.isArray",
+      "content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621302:23031715",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isToolResult",
+    "qualified_name": "isToolResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621302,
+    "end_line": 621311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "05a76876adda73e9ea53ecdf824598943edd97cf41744a4d92ebadf5c7803b61",
+    "calls": [
+      "Array.isArray",
+      "content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621312:23031957",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "shouldForceSummarizationForTesting",
+    "qualified_name": "shouldForceSummarizationForTesting",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621312,
+    "end_line": 621358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2",
+      "evalCompletionMode"
+    ],
+    "body_sha256": "a832b0af83afd05d0bcb5c3fb3572952527ccb2b692f9d3de8bce3ef948054e0",
+    "calls": [
+      ".trim",
+      "Number.isFinite",
+      "Number.parseInt",
+      "import_node_fs63.default.readFileSync",
+      "import_node_fs63.default.rmSync",
+      "isToolResult",
+      "messages2.filter",
+      "strategy.includes",
+      "strategy.split",
+      "strategy.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 18,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:621452:23040563",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.constructor",
+    "qualified_name": "SummarizationHandler.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621452,
+    "end_line": 621468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "promptSession",
+      "isFallbackToMainModel = false",
+      "options2"
+    ],
+    "body_sha256": "96ffd4edbf0f57c7310231f35e8a157475d5bd6b143bde50ada4c51b8a08a072",
+    "calls": [],
+    "writes": [
+      "this.alwaysRetryOutputTokenLimit",
+      "this.deterministicFallbackWindowRatio",
+      "this.enableDeterministicFallback",
+      "this.enableReduceInputsRetry",
+      "this.enableRetryRateLimited",
+      "this.enableRetryUncategorizedErrors",
+      "this.isFallbackToMainModel",
+      "this.maxOutputTokens",
+      "this.maxPromptChars",
+      "this.preserveLastUserMessage",
+      "this.preserveLatestImage",
+      "this.promptSession",
+      "this.summaryAfterUnfinishedRequest",
+      "this.throwOnRetryExhaustion",
+      "this.useRelaxedSplitIndexGuard"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621469:23041833",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getModelId",
+    "qualified_name": "SummarizationHandler.getModelId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621469,
+    "end_line": 621471,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b4d2bf2587f751c2763f5b0c7f19da154cb0cc286eb4d9dd5c82bd4959ad4ced",
+    "calls": [
+      "this.promptSession.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621472:23041908",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getMetricsModelLabel",
+    "qualified_name": "SummarizationHandler.getMetricsModelLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621472,
+    "end_line": 621474,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "89dab6e4cb0b8e59729203b50b01cfe4c05a99fcf516fdfbe321e1159eea9df9",
+    "calls": [
+      "this.getMetricsLabels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621475:23041977",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getMetricsLabels",
+    "qualified_name": "SummarizationHandler.getMetricsLabels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621475,
+    "end_line": 621477,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "97243a814c65ec4d3c6b107cb89e9a434ad4747039b4b96ebe23d5b68386018a",
+    "calls": [
+      "parseSummarizerModelLabel",
+      "this.promptSession.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621481:23042262",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.partitionMessages",
+    "qualified_name": "SummarizationHandler.partitionMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621481,
+    "end_line": 621509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "messages2",
+      "options2"
+    ],
+    "body_sha256": "362e36f94d27ae9e6d6e3bde20e697c153d42615d8fdc216d39843126e2434d0",
+    "calls": [
+      ".some",
+      "collectAllSkillBlocks",
+      "isTurnUnfinished",
+      "messagesForSummarization.findLastIndex",
+      "messagesForSummarization.slice",
+      "messagesToSummarize.findLastIndex",
+      "messagesToSummarize.slice",
+      "prepareMessagesForCompaction",
+      "tailOverflowsContextWindow"
+    ],
+    "writes": [
+      "preservedTailMessages",
+      "splitIndex",
+      "tailBeforeSummary"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621513:23044193",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.generateSummary",
+    "qualified_name": "SummarizationHandler.generateSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621513,
+    "end_line": 621534,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2"
+    ],
+    "body_sha256": "119bb5ec5ed2aee4973e91bbc4ec307d53501de0ff9a83f155b02df89d5b5d10",
+    "calls": [
+      "executeSummarizationWithRetry",
+      "this.buildDeterministicFallbackText",
+      "this.shouldUseDeterministicFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621535:23045412",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.shouldUseDeterministicFallback",
+    "qualified_name": "SummarizationHandler.shouldUseDeterministicFallback",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621535,
+    "end_line": 621550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "67c33659383ae81cb967c42c37e07b913ff2b0a0ef569c9e1a8c282fc3fbef93",
+    "calls": [
+      ".includes",
+      "errorKind.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621551:23045784",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.buildDeterministicFallbackText",
+    "qualified_name": "SummarizationHandler.buildDeterministicFallbackText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621551,
+    "end_line": 621593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2",
+      "errorKind"
+    ],
+    "body_sha256": "0959da3ecd4100358f3f5a2a20ba4dba1b07e932ad541e821cc8335e1793c0a7",
+    "calls": [
+      "buildDeterministicSummaryText",
+      "computeDeterministicFallbackMaxChars",
+      "logger38.info",
+      "logger38.warn",
+      "summarizationDeterministicFallbackUsed.increment",
+      "this.getMetricsLabels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621597:23047976",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.buildSummaryMessage",
+    "qualified_name": "SummarizationHandler.buildSummaryMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621597,
+    "end_line": 621620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rawSummary",
+      "partitioned",
+      "enrichments",
+      "options2"
+    ],
+    "body_sha256": "340c154d853b175b31bce2a016295d8a10491076e1dd9f128d99fcc5c1ec9227",
+    "calls": [
+      "appendDurableBlocks",
+      "findLatestImagePart",
+      "renderDurableBlocks",
+      "toRedactedCoreMessage",
+      "toUserMessageImagePart"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621624:23049414",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.assembleFinalMessages",
+    "qualified_name": "SummarizationHandler.assembleFinalMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621624,
+    "end_line": 621630,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "partitioned",
+      "summaryMessage"
+    ],
+    "body_sha256": "30f576800b65eda339076ef42c579e4118f4d386fb9dc5edad4ab334cf84491a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621634:23050081",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.summarize",
+    "qualified_name": "SummarizationHandler.summarize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621634,
+    "end_line": 621717,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "messages2",
+      "options2"
+    ],
+    "body_sha256": "6d992bcd4bd5910cf389ddd9cbed19536021e7c8222e447883fc574f66a80a37",
+    "calls": [
+      "Array.isArray",
+      "carrierText.safeTransform",
+      "createRedactedString",
+      "isRedactedString",
+      "logger38.error",
+      "logger38.info",
+      "logger38.warn",
+      "messages2.find",
+      "performance.now",
+      "prepareMessagesForCompaction",
+      "runSummarizationPipeline",
+      "summaryBlockingDurationMs.histogram",
+      "this.getMetricsModelLabel",
+      "this.recordMetrics",
+      "timeBetweenLastTwoMessagesMs.histogram"
+    ],
+    "writes": [
+      "carrierText",
+      "timeBetweenMessages"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:621721:23053799",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.recordMetrics",
+    "qualified_name": "SummarizationHandler.recordMetrics",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621721,
+    "end_line": 621785,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "params"
+    ],
+    "body_sha256": "0bbe5a4b5a66180dcbbd4011688b110758ae5b85def61124c6aca21711548ee9",
+    "calls": [
+      "logger38.warn",
+      "summarizationCompressionPercent.histogram",
+      "summarizationInputTokens.histogram",
+      "summarizationOriginalLengthChars.histogram",
+      "summarizationOutputTokens.histogram",
+      "summarizationPersistedLengthChars.histogram",
+      "summarizationTotalCompressionPercent.histogram",
+      "summaryBlockingDurationMs.histogram",
+      "summaryLengthChars.histogram",
+      "this.getMetricsLabels",
+      "this.totalRawSerializedCharLength",
+      "timeBetweenLastTwoMessagesMs.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621786:23056300",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.totalRawSerializedCharLength",
+    "qualified_name": "SummarizationHandler.totalRawSerializedCharLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621786,
+    "end_line": 621792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "966eaee92c11ab6e2f6421ddf182702ee71e507cf3a193df0f1669172f190e22",
+    "calls": [
+      "turnMessageToString"
+    ],
+    "writes": [
+      "total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621798:23056683",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.isTokenLimitError",
+    "qualified_name": "SummarizationHandler.isTokenLimitError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621798,
+    "end_line": 621800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "4d5dd9c13947fc9ecf834a67fc5101462aae9e56fce9bf9f1ab6d7ab57b55792",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621808:23057160",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.isInputOrOutputTokenLimitError",
+    "qualified_name": "SummarizationHandler.isInputOrOutputTokenLimitError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621808,
+    "end_line": 621810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f603996bf88a77ba937a89c49ca09cd0edbfe975503a73f70da33dc3a006ab0a",
+    "calls": [
+      "hasErrorName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621812:23057392",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "tailOverflowsContextWindow",
+    "qualified_name": "tailOverflowsContextWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621812,
+    "end_line": 621814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tail",
+      "contextWindowTokens"
+    ],
+    "body_sha256": "0de2f038f26a20e83150d0af075286d2912928acf12b6daa070e4df4acddb991",
+    "calls": [
+      "estimateTokenCount"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621815:23057630",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isRequestMessage",
+    "qualified_name": "isRequestMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621815,
+    "end_line": 621817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "35815ebc3cb42d8981c396898fde1b6d34d3e7665be20472e7905cd16557f97c",
+    "calls": [
+      "isInjectedReminderMessage",
+      "isSummaryCarrier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621818:23057772",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isSummaryCarrier",
+    "qualified_name": "isSummaryCarrier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621818,
+    "end_line": 621820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "0221242713f293a46bfd0e921929a503c4b598437b562529019e6576316194de",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:621821:23057873",
+    "artifact": "host",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isTurnUnfinished",
+    "qualified_name": "isTurnUnfinished",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 621821,
+    "end_line": 621824,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messagesAfterRequest"
+    ],
+    "body_sha256": "da680e0a832791dd806aa5d38128cd3e26ceaf2299463bc6aa5de0a948ca2011",
+    "calls": [
+      "hasToolInvocation",
+      "messagesAfterRequest.findLast"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305068:9912154",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "executeSummarizationStream",
+    "qualified_name": "executeSummarizationStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305068,
+    "end_line": 305137,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "promptSession",
+      "summaryPrompt",
+      "maxOutputTokens"
+    ],
+    "body_sha256": "6cc33862c16b27d6aeedd9c79df760c1a1065dc418245cebcde3674e049266d7",
+    "calls": [
+      ".join",
+      "Array.isArray",
+      "assistantMessages.at",
+      "executor.stream",
+      "lastAssistantMessage.content.map",
+      "logger13.warn",
+      "new Error",
+      "promptSession.getExecutor",
+      "response.messages.filter",
+      "result.extendedUsage.catch",
+      "result.invocationId.catch",
+      "result.providerMetadata.catch",
+      "result.response.catch",
+      "result.usage.catch",
+      "text3.trim"
+    ],
+    "writes": [
+      "inputTokens",
+      "outputTokens"
+    ],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:305138:9914752",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "formatGuardedToolPart",
+    "qualified_name": "formatGuardedToolPart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305138,
+    "end_line": 305145,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prefix",
+      "serializedValue"
+    ],
+    "body_sha256": "4e2ad0cab78197a2fa81e38c97fa4a813d79ed05f0ad324084bc6fe2bfc349d0",
+    "calls": [
+      "serializedValue.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305146:9915088",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "turnMessageToString",
+    "qualified_name": "turnMessageToString",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305146,
+    "end_line": 305179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "redactedMessage",
+      "enablePromptSizeGuards"
+    ],
+    "body_sha256": "6afcfabde460e6b8f9dce4ae1536bfdca71e59b452d5d7df4822d92fcd3df2ea",
+    "calls": [
+      ".join",
+      "Array.isArray",
+      "content.map",
+      "fromRedactedCoreMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305180:9916319",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "buildSummarizationPrompt",
+    "qualified_name": "buildSummarizationPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305180,
+    "end_line": 305294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "messages",
+      "options2",
+      "serialized = messages.map((m2) => `${m2.role}: ${turnMessageToString(m2, true)}`)"
+    ],
+    "body_sha256": "67292a8ba941f9392a42e4c854cff587e867df893f2e3b9d1242b7d147772b50",
+    "calls": [
+      "Buffer.byteLength",
+      "Math.floor",
+      "formatOmittedMessagesPreamble",
+      "logger13.info",
+      "logger13.warn",
+      "messages.map",
+      "new CannotTruncatePromptError",
+      "resultParts.join",
+      "serialized.at",
+      "serialized.join",
+      "truncatePromptFairly"
+    ],
+    "writes": [
+      "didByteAdjust",
+      "oldPromptBudget",
+      "promptBudget"
+    ],
+    "throw_targets": [
+      "CannotTruncatePromptError"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305295:9920697",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "stripNonPrintableCharacters",
+    "qualified_name": "stripNonPrintableCharacters",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305295,
+    "end_line": 305297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "5cf6e553116f5a78f9da5ad4ff7aeede1dff0c51b2c878a3ad679c99630bc25e",
+    "calls": [
+      "input2.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305298:9920796",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "reducePromptBudget",
+    "qualified_name": "reducePromptBudget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305298,
+    "end_line": 305305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "opts"
+    ],
+    "body_sha256": "2123251ba04c1c1ca0f7e86bcbebc8cce21138a091bf9e5ae70bc0c98f27bafe",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "Math.min"
+    ],
+    "writes": [
+      "next"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305306:9921108",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "parseSummarizerModelLabel",
+    "qualified_name": "parseSummarizerModelLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305306,
+    "end_line": 305316,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "d530b2ed775bfa32482bb6a1eb2ab57652111bed97e6ba6c05332b46152a7211",
+    "calls": [
+      "modelId.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305317:9921560",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "executeSummarizationWithRetry",
+    "qualified_name": "executeSummarizationWithRetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305317,
+    "end_line": 305575,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "promptSession",
+      "messages",
+      "options2"
+    ],
+    "body_sha256": "fc525a87f49ed7293c9ec6e7e64c97e865df82df65b230124fe47909bbfd0615",
+    "calls": [
+      "Math.min",
+      "buildSummarizationPrompt",
+      "errorKinds.join",
+      "errorKinds.push",
+      "executeSummarizationStream",
+      "getRetryDirective",
+      "logger13.error",
+      "logger13.info",
+      "logger13.warn",
+      "messages.map",
+      "new Error",
+      "new Promise",
+      "parseSummarizerModelLabel",
+      "promptSession.getModelId",
+      "reducePromptBudget",
+      "stripNonPrintableCharacters",
+      "summarizationAttempts.increment",
+      "summarizationFailures.increment",
+      "summarizationFallbackAttempts.increment",
+      "summarizationFallbackFailures.increment",
+      "summarizationRetries.increment",
+      "summarizationSuccess.increment",
+      "summarizationTryAttempts.increment",
+      "summarizationTryFailures.increment",
+      "summarizationTrySuccess.increment"
+    ],
+    "writes": [
+      "attempt",
+      "attemptsPerformed",
+      "expectTruncationFromInputReduction",
+      "lastErrorKind",
+      "lastFailedPromptLength",
+      "promptBudget",
+      "rateLimitError",
+      "requestShorterOutput",
+      "summaryPrompt"
+    ],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:305649:9935389",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "hasToolInvocation",
+    "qualified_name": "hasToolInvocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305649,
+    "end_line": 305655,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "08122a84a0ffa6c33a3979c9fcef4095e925c9eb18be07d3e818250728adaf5b",
+    "calls": [
+      "Array.isArray",
+      "content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305656:9935579",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isToolResult",
+    "qualified_name": "isToolResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305656,
+    "end_line": 305665,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "05a76876adda73e9ea53ecdf824598943edd97cf41744a4d92ebadf5c7803b61",
+    "calls": [
+      "Array.isArray",
+      "content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305666:9935821",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "shouldForceSummarizationForTesting",
+    "qualified_name": "shouldForceSummarizationForTesting",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305666,
+    "end_line": 305712,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "evalCompletionMode"
+    ],
+    "body_sha256": "2566ebf17cecf0d9806710a9d5962b10db56b99ceab625527e100b4a1ff8bf4d",
+    "calls": [
+      ".trim",
+      "Number.isFinite",
+      "Number.parseInt",
+      "import_node_fs4.default.readFileSync",
+      "import_node_fs4.default.rmSync",
+      "isToolResult",
+      "messages.filter",
+      "strategy.includes",
+      "strategy.split",
+      "strategy.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 18,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:305806:9944418",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.constructor",
+    "qualified_name": "SummarizationHandler.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305806,
+    "end_line": 305822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "promptSession",
+      "isFallbackToMainModel = false",
+      "options2"
+    ],
+    "body_sha256": "96ffd4edbf0f57c7310231f35e8a157475d5bd6b143bde50ada4c51b8a08a072",
+    "calls": [],
+    "writes": [
+      "this.alwaysRetryOutputTokenLimit",
+      "this.deterministicFallbackWindowRatio",
+      "this.enableDeterministicFallback",
+      "this.enableReduceInputsRetry",
+      "this.enableRetryRateLimited",
+      "this.enableRetryUncategorizedErrors",
+      "this.isFallbackToMainModel",
+      "this.maxOutputTokens",
+      "this.maxPromptChars",
+      "this.preserveLastUserMessage",
+      "this.preserveLatestImage",
+      "this.promptSession",
+      "this.summaryAfterUnfinishedRequest",
+      "this.throwOnRetryExhaustion",
+      "this.useRelaxedSplitIndexGuard"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305823:9945688",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getModelId",
+    "qualified_name": "SummarizationHandler.getModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305823,
+    "end_line": 305825,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b4d2bf2587f751c2763f5b0c7f19da154cb0cc286eb4d9dd5c82bd4959ad4ced",
+    "calls": [
+      "this.promptSession.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305826:9945763",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getMetricsModelLabel",
+    "qualified_name": "SummarizationHandler.getMetricsModelLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305826,
+    "end_line": 305828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "89dab6e4cb0b8e59729203b50b01cfe4c05a99fcf516fdfbe321e1159eea9df9",
+    "calls": [
+      "this.getMetricsLabels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305829:9945832",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.getMetricsLabels",
+    "qualified_name": "SummarizationHandler.getMetricsLabels",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305829,
+    "end_line": 305831,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "97243a814c65ec4d3c6b107cb89e9a434ad4747039b4b96ebe23d5b68386018a",
+    "calls": [
+      "parseSummarizerModelLabel",
+      "this.promptSession.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305835:9946117",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.partitionMessages",
+    "qualified_name": "SummarizationHandler.partitionMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305835,
+    "end_line": 305863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "messages",
+      "options2"
+    ],
+    "body_sha256": "9771d6febb2ab419767d56a1d6f4e0dd7b093b4f50fd284bf8867987e7442730",
+    "calls": [
+      ".some",
+      "collectAllSkillBlocks",
+      "isTurnUnfinished",
+      "messagesForSummarization.findLastIndex",
+      "messagesForSummarization.slice",
+      "messagesToSummarize.findLastIndex",
+      "messagesToSummarize.slice",
+      "prepareMessagesForCompaction",
+      "tailOverflowsContextWindow"
+    ],
+    "writes": [
+      "preservedTailMessages",
+      "splitIndex",
+      "tailBeforeSummary"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305867:9948046",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.generateSummary",
+    "qualified_name": "SummarizationHandler.generateSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305867,
+    "end_line": 305888,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2"
+    ],
+    "body_sha256": "119bb5ec5ed2aee4973e91bbc4ec307d53501de0ff9a83f155b02df89d5b5d10",
+    "calls": [
+      "executeSummarizationWithRetry",
+      "this.buildDeterministicFallbackText",
+      "this.shouldUseDeterministicFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305889:9949265",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.shouldUseDeterministicFallback",
+    "qualified_name": "SummarizationHandler.shouldUseDeterministicFallback",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305889,
+    "end_line": 305904,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "67c33659383ae81cb967c42c37e07b913ff2b0a0ef569c9e1a8c282fc3fbef93",
+    "calls": [
+      ".includes",
+      "errorKind.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305905:9949637",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.buildDeterministicFallbackText",
+    "qualified_name": "SummarizationHandler.buildDeterministicFallbackText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305905,
+    "end_line": 305947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2",
+      "errorKind"
+    ],
+    "body_sha256": "5d0732b2e59f8d0e9af8385113687a56ca3d5705492a8c21f70821b3cd5d8253",
+    "calls": [
+      "buildDeterministicSummaryText",
+      "computeDeterministicFallbackMaxChars",
+      "logger13.info",
+      "logger13.warn",
+      "summarizationDeterministicFallbackUsed.increment",
+      "this.getMetricsLabels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305951:9951829",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.buildSummaryMessage",
+    "qualified_name": "SummarizationHandler.buildSummaryMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305951,
+    "end_line": 305974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rawSummary",
+      "partitioned",
+      "enrichments",
+      "options2"
+    ],
+    "body_sha256": "f44ce9c81e7115e17ff2ae244940b488459ae048a6127a360d5228335b359062",
+    "calls": [
+      "appendDurableBlocks",
+      "findLatestImagePart",
+      "renderDurableBlocks",
+      "toRedactedCoreMessage",
+      "toUserMessageImagePart"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305978:9953268",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.assembleFinalMessages",
+    "qualified_name": "SummarizationHandler.assembleFinalMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305978,
+    "end_line": 305984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "partitioned",
+      "summaryMessage"
+    ],
+    "body_sha256": "30f576800b65eda339076ef42c579e4118f4d386fb9dc5edad4ab334cf84491a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305988:9953935",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.summarize",
+    "qualified_name": "SummarizationHandler.summarize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305988,
+    "end_line": 306071,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "messages",
+      "options2"
+    ],
+    "body_sha256": "491bf3ac6b94aed0dac23ee6a47e35100064fef5bbb46489ff3b99c3e4416308",
+    "calls": [
+      "Array.isArray",
+      "carrierText.safeTransform",
+      "createRedactedString",
+      "isRedactedString",
+      "logger13.error",
+      "logger13.info",
+      "logger13.warn",
+      "messages.find",
+      "performance.now",
+      "prepareMessagesForCompaction",
+      "runSummarizationPipeline",
+      "summaryBlockingDurationMs.histogram",
+      "this.getMetricsModelLabel",
+      "this.recordMetrics",
+      "timeBetweenLastTwoMessagesMs.histogram"
+    ],
+    "writes": [
+      "carrierText",
+      "timeBetweenMessages"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:306075:9957641",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.recordMetrics",
+    "qualified_name": "SummarizationHandler.recordMetrics",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306075,
+    "end_line": 306139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "params"
+    ],
+    "body_sha256": "8e0a299e75305fd4a9be89f41cd4d6933111351cfde2d8a446af58713b586f87",
+    "calls": [
+      "logger13.warn",
+      "summarizationCompressionPercent.histogram",
+      "summarizationInputTokens.histogram",
+      "summarizationOriginalLengthChars.histogram",
+      "summarizationOutputTokens.histogram",
+      "summarizationPersistedLengthChars.histogram",
+      "summarizationTotalCompressionPercent.histogram",
+      "summaryBlockingDurationMs.histogram",
+      "summaryLengthChars.histogram",
+      "this.getMetricsLabels",
+      "this.totalRawSerializedCharLength",
+      "timeBetweenLastTwoMessagesMs.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306140:9960142",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.totalRawSerializedCharLength",
+    "qualified_name": "SummarizationHandler.totalRawSerializedCharLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306140,
+    "end_line": 306146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "52e8ae8dfd8cda7f44bae906fcf26928930691811f3bf7b790147465972d45ba",
+    "calls": [
+      "turnMessageToString"
+    ],
+    "writes": [
+      "total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306152:9960523",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.isTokenLimitError",
+    "qualified_name": "SummarizationHandler.isTokenLimitError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306152,
+    "end_line": 306154,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "76c4c0ca15a6b80f72eb958f7227a6c7896fb2214ddd75ce6c3298d1bed87ebb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306162:9961000",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "SummarizationHandler.isInputOrOutputTokenLimitError",
+    "qualified_name": "SummarizationHandler.isInputOrOutputTokenLimitError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306162,
+    "end_line": 306164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "d09943b1619f72b2098272022c1c2685b14a71ce63a79a62c87fb7875ccc5532",
+    "calls": [
+      "hasErrorName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306166:9961232",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "tailOverflowsContextWindow",
+    "qualified_name": "tailOverflowsContextWindow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306166,
+    "end_line": 306168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tail",
+      "contextWindowTokens"
+    ],
+    "body_sha256": "0de2f038f26a20e83150d0af075286d2912928acf12b6daa070e4df4acddb991",
+    "calls": [
+      "estimateTokenCount"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306169:9961470",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isRequestMessage",
+    "qualified_name": "isRequestMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306169,
+    "end_line": 306171,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "35815ebc3cb42d8981c396898fde1b6d34d3e7665be20472e7905cd16557f97c",
+    "calls": [
+      "isInjectedReminderMessage",
+      "isSummaryCarrier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306172:9961612",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isSummaryCarrier",
+    "qualified_name": "isSummaryCarrier",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306172,
+    "end_line": 306174,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "0221242713f293a46bfd0e921929a503c4b598437b562529019e6576316194de",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:306175:9961713",
+    "artifact": "evaluation",
+    "module": "agent-summarization/summarization-handler.js",
+    "name": "isTurnUnfinished",
+    "qualified_name": "isTurnUnfinished",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 306175,
+    "end_line": 306178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messagesAfterRequest"
+    ],
+    "body_sha256": "da680e0a832791dd806aa5d38128cd3e26ceaf2299463bc6aa5de0a948ca2011",
+    "calls": [
+      "hasToolInvocation",
+      "messagesAfterRequest.findLast"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

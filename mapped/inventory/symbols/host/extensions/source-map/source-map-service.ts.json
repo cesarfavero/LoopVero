@@ -1,0 +1,288 @@
+[
+  {
+    "id": "host:454377:16650759",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "getSourceMapPath",
+    "qualified_name": "getSourceMapPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454377,
+    "end_line": 454379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "f5933e6a3e75d43eeea6dd6a01d3f2fb7f315f52776baad9cef9870c96badca2",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454380:16650867",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "parseSourceMap",
+    "qualified_name": "parseSourceMap",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454380,
+    "end_line": 454382,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6a0938f9d11aca8ca4e36142792fcaa59182c290e4915ed26073592c21e613a3",
+    "calls": [
+      "JSON.parse",
+      "sourceMapSchema.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454386:16651065",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.constructor",
+    "qualified_name": "SandSourceMap.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454386,
+    "end_line": 454392,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "owner",
+      "path33 = getSourceMapPath()"
+    ],
+    "body_sha256": "ec7b4e52251cca51d4a89fc10bc9c2692590c9036655a09777b64a1f66a5058e",
+    "calls": [
+      "openDurableFileSync",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [
+      "this.file"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454393:16651278",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.getOrCreate",
+    "qualified_name": "SandSourceMap.getOrCreate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454393,
+    "end_line": 454401,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "87ee557ccc9228b98031c558eb40c743a42c56eb475f007f92c3bec7e6487094",
+    "calls": [
+      "crypto.randomUUID",
+      "this.load",
+      "this.save"
+    ],
+    "writes": [
+      "map4[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454402:16651564",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.getOrCreateBoxStore",
+    "qualified_name": "SandSourceMap.getOrCreateBoxStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454402,
+    "end_line": 454404,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f1bb0ddbda58055c418eb043e57e51a4cda7a351b99f047fb6429136f5fe1432",
+    "calls": [
+      "this.getOrCreate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454405:16651643",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.getBoxStore",
+    "qualified_name": "SandSourceMap.getBoxStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454405,
+    "end_line": 454408,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7a6ccb5a7d301037c1d98ae98da12e1b1df9e38e9cc2893e76681ef00f91211f",
+    "calls": [
+      "this.load"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454409:16651744",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.setMode",
+    "qualified_name": "SandSourceMap.setMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454409,
+    "end_line": 454419,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "mode"
+    ],
+    "body_sha256": "755d839e066f06d5a005e3e9eee0ce0515609f115ee603f38185158bee03a548",
+    "calls": [
+      "crypto.randomUUID",
+      "this.load",
+      "this.save"
+    ],
+    "writes": [
+      "map4[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454420:16652011",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.load",
+    "qualified_name": "SandSourceMap.load",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454420,
+    "end_line": 454423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6fceaff7039393a20bc4cc77fc3536c056e4dda61d090c7adfe16a39226f00c3",
+    "calls": [
+      "this.file.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:454424:16652120",
+    "artifact": "host",
+    "module": "host/extensions/source-map/source-map-service.ts",
+    "name": "SandSourceMap.save",
+    "qualified_name": "SandSourceMap.save",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 454424,
+    "end_line": 454426,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "map4"
+    ],
+    "body_sha256": "5706e0e9e3b41b3a192fb00b64d656a983d9ed7e09689e305400fc852b040850",
+    "calls": [
+      "JSON.stringify",
+      "this.file.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

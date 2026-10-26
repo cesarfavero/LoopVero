@@ -1,0 +1,272 @@
+[
+  {
+    "id": "evaluation:586250:22064215",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "isDescribedTool",
+    "qualified_name": "isDescribedTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586250,
+    "end_line": 586252,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "417c32dd281ef86905c0313fcc9eba891df6dd9752f3c8a18510fcde3f899829",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586253:22064346",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "liveShape",
+    "qualified_name": "liveShape",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586253,
+    "end_line": 586256,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "e546e980b1b33eeedd568944c94ce9ca6dd6aa0cd4bfa89d811bf04a883a31b7",
+    "calls": [
+      "parseSandToolInputSchema"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586259:22064642",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "FrozenPromptToolsMiddleware.constructor",
+    "qualified_name": "FrozenPromptToolsMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586259,
+    "end_line": 586263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "frozenPromptId",
+      "binding"
+    ],
+    "body_sha256": "e089a44989507aa931ba9a974995d743caa8c6a7c1886d3fbd594efc8525f2a8",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.binding",
+      "this.frozenPromptId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586267:22064868",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "FrozenPromptToolsMiddleware.logAdjustments",
+    "qualified_name": "FrozenPromptToolsMiddleware.logAdjustments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586267,
+    "end_line": 586279,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "tool",
+      "adjustments"
+    ],
+    "body_sha256": "14bcd94a258f0acf64686d45110bf8c76b815afab1744c7d3718d6012779d97b",
+    "calls": [
+      "logger99.info",
+      "this.logged.add",
+      "this.logged.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586280:22065250",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "FrozenPromptToolsMiddleware.stream",
+    "qualified_name": "FrozenPromptToolsMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586280,
+    "end_line": 586302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "b9e14e959defd577565d7093fc774338f690427be72a4067b68aa5a5ca7e8d9e",
+    "calls": [
+      ".map",
+      "bound.map",
+      "new Map",
+      "this.binding",
+      "this.innerExecutor.stream",
+      "tools.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586304:22066249",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "createSandFrozenPromptTools",
+    "qualified_name": "createSandFrozenPromptTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586304,
+    "end_line": 586321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "frozenPrompt"
+    ],
+    "body_sha256": "2e35c3d178343f706ce1f274fac92521602aa033189338349e325c00ff9c93a3",
+    "calls": [
+      "frozenPrompt.tools.map",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586308:22066438",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "bind",
+    "qualified_name": "createSandFrozenPromptTools/bind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586308,
+    "end_line": 586318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "tools",
+      "rowPromptDate"
+    ],
+    "body_sha256": "744327233f8c3be9b19c3b8a8e06a6bff8b58fc64f053a583a87acabc8bdcb5e",
+    "calls": [
+      "frozenPrompt.tools.flatMap",
+      "new Set",
+      "tools.flatMap",
+      "tools.map"
+    ],
+    "writes": [
+      "binding"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586319:22067035",
+    "artifact": "evaluation",
+    "module": "core/frozen-prompts/frozen-prompt-tools.ts",
+    "name": "middleware",
+    "qualified_name": "createSandFrozenPromptTools/middleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586319,
+    "end_line": 586319,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "executor"
+    ],
+    "body_sha256": "e37aee05f73de83302ef145f93849a997508f27a66f6ee5ddbfaa4a8465a1881",
+    "calls": [
+      "new FrozenPromptToolsMiddleware"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

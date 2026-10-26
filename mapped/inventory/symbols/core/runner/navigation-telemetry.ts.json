@@ -1,0 +1,324 @@
+[
+  {
+    "id": "host:490047:17944043",
+    "artifact": "host",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "readSandEgressRoute",
+    "qualified_name": "readSandEgressRoute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490047,
+    "end_line": 490050,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tunnelEnabled",
+      "ownerPresenceMarker = EGRESS_TUNNEL_OWNER_PRESENCE_MARKER"
+    ],
+    "body_sha256": "c2ccc552558ef491f0ff695458e5c8ee9351a382c2a2753ec0b671df2ca2eaf1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490051:17944296",
+    "artifact": "host",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "isSandBoxBrowser",
+    "qualified_name": "isSandBoxBrowser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490051,
+    "end_line": 490053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "588ce874ab5f3b14909d6d526fd54907b4f2261e72394e9c46176ea614dd68c6",
+    "calls": [
+      "SAND_BOX_BROWSERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490054:17944398",
+    "artifact": "host",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "readSandBoxBrowser",
+    "qualified_name": "readSandBoxBrowser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490054,
+    "end_line": 490063,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "recordPath"
+    ],
+    "body_sha256": "c5249b7e5560e9bff2e7dbbdd858489033d41af63e42719b6b88bbb5f629fe79",
+    "calls": [
+      ".trim",
+      "findSystemErrno",
+      "isSandBoxBrowser"
+    ],
+    "writes": [
+      "recorded"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:490064:17944706",
+    "artifact": "host",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "readSandBoxBrowserForAnyDisplay",
+    "qualified_name": "readSandBoxBrowserForAnyDisplay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490064,
+    "end_line": 490081,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "recordPathPrefix",
+      "primaryPort"
+    ],
+    "body_sha256": "ce01fdd01a059f69383fca88dc8f8b1bbddb24d88c8911f31d37416460e72c37",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "entries.filter",
+      "findSystemErrno",
+      "readSandBoxBrowser"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:484598:17570386",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "navigationBrowser",
+    "qualified_name": "navigationBrowser",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484598,
+    "end_line": 484600,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "record4"
+    ],
+    "body_sha256": "e92b7a1b58b0deaf5303cea0235fb8f115c8b3304eed3187dcc5c88d6e52c626",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:484601:17570514",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "navigationHostname",
+    "qualified_name": "navigationHostname",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484601,
+    "end_line": 484609,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "record4"
+    ],
+    "body_sha256": "bf218fb5f87e0a2023aafb9dc424692decac49eccced354cccf9e6d943907114",
+    "calls": [
+      ".hostname.toLowerCase",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:484610:17570788",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "navigationNoRuntimeEnable",
+    "qualified_name": "navigationNoRuntimeEnable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484610,
+    "end_line": 484612,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "record4"
+    ],
+    "body_sha256": "ed6b2f91c81f85635d3aeb10a520c878fa493be520c309997e750b02bde73fde",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:484613:17570961",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "record",
+    "qualified_name": "record",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484613,
+    "end_line": 484614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ddbef6fa3165c9a1cb88d7db481bb8891f6b2cb4f22bacf74cd5ccf3195929be",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:484615:17570974",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "withNavigationTelemetry",
+    "qualified_name": "withNavigationTelemetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484615,
+    "end_line": 484695,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "auditor",
+      "options2",
+      "recordGuardrailOnStampedAuditor"
+    ],
+    "body_sha256": "3f2278060b53ab38fc8bef2d0779dd38519e4b5087e8282e6e4cc1bac03a4841",
+    "calls": [
+      "withBotBlockDetection",
+      "withSiteVisitTracking"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:484620:17571293",
+    "artifact": "evaluation",
+    "module": "core/runner/navigation-telemetry.ts",
+    "name": "dimensionsFor",
+    "qualified_name": "withNavigationTelemetry/dimensionsFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 484620,
+    "end_line": 484627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "record4"
+    ],
+    "body_sha256": "45099408a7cfe643c0c8ee165e268eb37bc87b4dd87f8e6fcf6f01af2526995b",
+    "calls": [
+      "egressPathFor",
+      "navigationHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

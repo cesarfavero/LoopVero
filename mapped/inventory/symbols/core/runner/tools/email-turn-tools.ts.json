@@ -1,0 +1,344 @@
+[
+  {
+    "id": "host:765228:29315766",
+    "artifact": "host",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "emailTurnTools",
+    "qualified_name": "emailTurnTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765228,
+    "end_line": 765305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions",
+      "review",
+      "recordDelivery"
+    ],
+    "body_sha256": "635bc4c63d2aef3fa0b04c34bfe78026a2857155a8926d67562959161d95ed12",
+    "calls": [
+      "createCheckEmailInboxAvailabilityTool",
+      "createClaimEmailInboxTool",
+      "createListEmailInboxesTool",
+      "createReadEmailAttachmentTool",
+      "createReadEmailThreadTool",
+      "createSearchEmailThreadsTool",
+      "createSendEmailTool",
+      "decisions.offers",
+      "host.gates.agentEmailDrafts",
+      "host.gates.agentEmailMultipleInboxes",
+      "tools.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765232:29315985",
+    "artifact": "host",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "getApprovalExpiryPolicy",
+    "qualified_name": "emailTurnTools/getApprovalExpiryPolicy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765232,
+    "end_line": 765232,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cdb111e098d2834bc8f46bd073f0f06ad26db84f8c67586821d1f2cdb59e06a3",
+    "calls": [
+      "host.activeTurnApprovalExpiryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765242:29316487",
+    "artifact": "host",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "reviewSend",
+    "qualified_name": "emailTurnTools/reviewSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765242,
+    "end_line": 765267,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ toolCallId, target, signal }"
+    ],
+    "body_sha256": "861ba2567d2e68f181c22da4c7e91dc45c396bc5fc565fb13b156f58f3e2762c",
+    "calls": [
+      "host.activeTurnAutomationWakeEmail",
+      "host.activeTurnAutomationWakeEmbedsExternalEvent",
+      "host.activeTurnRequestSource",
+      "host.assertNoPendingAutoReviewApproval",
+      "host.getAutoReviewInstructions",
+      "host.getConversationId",
+      "review.getUserInstructions",
+      "reviewSandEmailSend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765278:29317945",
+    "artifact": "host",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "reviewClaim",
+    "qualified_name": "emailTurnTools/reviewClaim",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765278,
+    "end_line": 765292,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ toolCallId, target, signal }"
+    ],
+    "body_sha256": "6c8418f2166d4d942825e1d69568315cd19e5d5bc9b7e071f63b0789d8c7b310",
+    "calls": [
+      "host.assertNoPendingAutoReviewApproval",
+      "host.getConversationId",
+      "reviewSandEmailClaim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765301:29318828",
+    "artifact": "host",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "getPersistMediaBytes",
+    "qualified_name": "emailTurnTools/getPersistMediaBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765301,
+    "end_line": 765301,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d7aa9f1a23e01ce236c2d4e43eb2db9cbe858e5fa61394a8ed34dbfa3aec26cd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558596:20735951",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "emailTurnTools",
+    "qualified_name": "emailTurnTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558596,
+    "end_line": 558673,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions",
+      "review",
+      "recordDelivery"
+    ],
+    "body_sha256": "635bc4c63d2aef3fa0b04c34bfe78026a2857155a8926d67562959161d95ed12",
+    "calls": [
+      "createCheckEmailInboxAvailabilityTool",
+      "createClaimEmailInboxTool",
+      "createListEmailInboxesTool",
+      "createReadEmailAttachmentTool",
+      "createReadEmailThreadTool",
+      "createSearchEmailThreadsTool",
+      "createSendEmailTool",
+      "decisions.offers",
+      "host.gates.agentEmailDrafts",
+      "host.gates.agentEmailMultipleInboxes",
+      "tools.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558600:20736170",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "getApprovalExpiryPolicy",
+    "qualified_name": "emailTurnTools/getApprovalExpiryPolicy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558600,
+    "end_line": 558600,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cdb111e098d2834bc8f46bd073f0f06ad26db84f8c67586821d1f2cdb59e06a3",
+    "calls": [
+      "host.activeTurnApprovalExpiryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558610:20736672",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "reviewSend",
+    "qualified_name": "emailTurnTools/reviewSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558610,
+    "end_line": 558635,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ toolCallId, target, signal }"
+    ],
+    "body_sha256": "861ba2567d2e68f181c22da4c7e91dc45c396bc5fc565fb13b156f58f3e2762c",
+    "calls": [
+      "host.activeTurnAutomationWakeEmail",
+      "host.activeTurnAutomationWakeEmbedsExternalEvent",
+      "host.activeTurnRequestSource",
+      "host.assertNoPendingAutoReviewApproval",
+      "host.getAutoReviewInstructions",
+      "host.getConversationId",
+      "review.getUserInstructions",
+      "reviewSandEmailSend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558646:20738130",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "reviewClaim",
+    "qualified_name": "emailTurnTools/reviewClaim",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558646,
+    "end_line": 558660,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ toolCallId, target, signal }"
+    ],
+    "body_sha256": "6c8418f2166d4d942825e1d69568315cd19e5d5bc9b7e071f63b0789d8c7b310",
+    "calls": [
+      "host.assertNoPendingAutoReviewApproval",
+      "host.getConversationId",
+      "reviewSandEmailClaim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558669:20739013",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/email-turn-tools.ts",
+    "name": "getPersistMediaBytes",
+    "qualified_name": "emailTurnTools/getPersistMediaBytes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558669,
+    "end_line": 558669,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d7aa9f1a23e01ce236c2d4e43eb2db9cbe858e5fa61394a8ed34dbfa3aec26cd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

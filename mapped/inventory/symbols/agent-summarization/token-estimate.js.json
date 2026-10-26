@@ -1,0 +1,268 @@
+[
+  {
+    "id": "host:620623:23005395",
+    "artifact": "host",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "safeLength",
+    "qualified_name": "safeLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620623,
+    "end_line": 620636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "205de5f0ab66aea5decf2081197ce3ef075e85ded5bbd941f1fb63621c0307a8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:620637:23005715",
+    "artifact": "host",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "estimatePartChars",
+    "qualified_name": "estimatePartChars",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620637,
+    "end_line": 620656,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "b04ea159875dc36582fee1be5ea6e9ed81f630116cc8f037b4063ecff04cfea8",
+    "calls": [
+      "safeLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620657:23006189",
+    "artifact": "host",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "defaultTextContentLength",
+    "qualified_name": "defaultTextContentLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620657,
+    "end_line": 620672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "bb6115a66f8759dc06d9b770a778f9baa82c68db7b1c5d113b33fdc1155ed226",
+    "calls": [
+      "Array.isArray",
+      "isRedactedString",
+      "safeLength"
+    ],
+    "writes": [
+      "len"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620673:23006574",
+    "artifact": "host",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "estimateTokenCount",
+    "qualified_name": "estimateTokenCount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620673,
+    "end_line": 620693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2",
+      "options2"
+    ],
+    "body_sha256": "4f230b1bfbf73802378e8360aaff87ab63bad5e534f3379f98f57c00fc26818d",
+    "calls": [
+      "Array.isArray",
+      "Math.ceil",
+      "estimatePartChars",
+      "getTextLen",
+      "isRedactedString"
+    ],
+    "writes": [
+      "totalChars"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304977:9909273",
+    "artifact": "evaluation",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "safeLength",
+    "qualified_name": "safeLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304977,
+    "end_line": 304990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "205de5f0ab66aea5decf2081197ce3ef075e85ded5bbd941f1fb63621c0307a8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:304991:9909593",
+    "artifact": "evaluation",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "estimatePartChars",
+    "qualified_name": "estimatePartChars",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304991,
+    "end_line": 305010,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "b04ea159875dc36582fee1be5ea6e9ed81f630116cc8f037b4063ecff04cfea8",
+    "calls": [
+      "safeLength"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305011:9910067",
+    "artifact": "evaluation",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "defaultTextContentLength",
+    "qualified_name": "defaultTextContentLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305011,
+    "end_line": 305026,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "bb6115a66f8759dc06d9b770a778f9baa82c68db7b1c5d113b33fdc1155ed226",
+    "calls": [
+      "Array.isArray",
+      "isRedactedString",
+      "safeLength"
+    ],
+    "writes": [
+      "len"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:305027:9910452",
+    "artifact": "evaluation",
+    "module": "agent-summarization/token-estimate.js",
+    "name": "estimateTokenCount",
+    "qualified_name": "estimateTokenCount",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 305027,
+    "end_line": 305047,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "options2"
+    ],
+    "body_sha256": "4de23693d7f49b94a6c44c1cc369d606b588dd5c7ca645f9fa997590bfe82727",
+    "calls": [
+      "Array.isArray",
+      "Math.ceil",
+      "estimatePartChars",
+      "getTextLen",
+      "isRedactedString"
+    ],
+    "writes": [
+      "totalChars"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

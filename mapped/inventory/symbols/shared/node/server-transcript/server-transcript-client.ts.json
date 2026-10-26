@@ -1,0 +1,439 @@
+[
+  {
+    "id": "host:712362:27039317",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "fetchBackendRouteStatusFromUrl",
+    "qualified_name": "fetchBackendRouteStatusFromUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712362,
+    "end_line": 712368,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "signal"
+    ],
+    "body_sha256": "819d52c6281b42aa1bb68b174fedeecb6eb318dbcffabd72b64a3d16bc186872",
+    "calls": [
+      "backendProbeDeadline.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712369:27039582",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "fetchBlobFromUrl",
+    "qualified_name": "fetchBlobFromUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712369,
+    "end_line": 712378,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "signal"
+    ],
+    "body_sha256": "02e0a0ad593b0d69b14289cb5fd04c5d977d5032a0b9094401dee807a2a33dd6",
+    "calls": [
+      "blobReadDeadline.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712379:27039997",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "createServerTranscriptClient",
+    "qualified_name": "createServerTranscriptClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712379,
+    "end_line": 712498,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "ead3f729f0cf67f1573aface673fd027e84ef47cacaddc4cb6e3196401a2d67b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712387:27040411",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "resolveAccess",
+    "qualified_name": "createServerTranscriptClient/resolveAccess",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712387,
+    "end_line": 712402,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5cf7f447474b5602e84cbf2bd42233213c8ace72e476a6e32f11309ac879090e",
+    "calls": [
+      "String",
+      "deps.resolveAccess",
+      "new ServerTranscriptTailAccessError",
+      "now"
+    ],
+    "writes": [
+      "access5",
+      "cachedAccess",
+      "lastBaseUrl"
+    ],
+    "throw_targets": [
+      "ServerTranscriptTailAccessError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:712403:27040993",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "requireAccess",
+    "qualified_name": "createServerTranscriptClient/requireAccess",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712403,
+    "end_line": 712409,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "27a0ed477a2298a25648061945ea490952f025310180edab06b30b4a001941d4",
+    "calls": [
+      "new ServerTranscriptTailDisabledError",
+      "resolveAccess"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ServerTranscriptTailDisabledError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712410:27041230",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "requireRouteAccess",
+    "qualified_name": "createServerTranscriptClient/requireRouteAccess",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712410,
+    "end_line": 712417,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId }"
+    ],
+    "body_sha256": "5e0316519d5b9333a4a2f9017f2594ac4f5ca422ec357a659140e4d4f2ba4385",
+    "calls": [
+      "deps.requiredAgents.has",
+      "new ServerTranscriptTailDisabledError",
+      "requireAccess"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ServerTranscriptTailDisabledError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712418:27041652",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "headerInterceptor",
+    "qualified_name": "createServerTranscriptClient/headerInterceptor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712418,
+    "end_line": 712423,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "a8e2a257549e122daa5a190a8006fe34cd4d413b9cb1db7a370acb2dca88ffde",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712424:27041993",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "clientFor",
+    "qualified_name": "createServerTranscriptClient/clientFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712424,
+    "end_line": 712435,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "access5"
+    ],
+    "body_sha256": "c99b299db135125bd8c61b0e74421c8d91c096e3a440ac373d9d8d01d4014fce",
+    "calls": [
+      "createPromiseClient"
+    ],
+    "writes": [
+      "promiseClient"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712437:27042463",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "isEnabled",
+    "qualified_name": "createServerTranscriptClient/isEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712437,
+    "end_line": 712440,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "a634c457dea791aaf404d8b530d79df052d2986767865f00ee665af8c7f3caae",
+    "calls": [
+      "resolveAccess"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712441:27042607",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "probeBackend",
+    "qualified_name": "createServerTranscriptClient/probeBackend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712441,
+    "end_line": 712454,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "signal"
+    ],
+    "body_sha256": "b2155ce821ecec1ce004b84e46d99e46d477443173a023f897bb5d521ec35f96",
+    "calls": [
+      "fetchBackendRouteStatus",
+      "isBackendDownError",
+      "isBackendDownStatus",
+      "lastBaseUrl.replace"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:712455:27043075",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "watch",
+    "qualified_name": "createServerTranscriptClient/watch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712455,
+    "end_line": 712458,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "request5",
+      "signal"
+    ],
+    "body_sha256": "a361007c6f7f146c0935f02bb95df332179582dcabea4530737784838a960264",
+    "calls": [
+      "client.watchGrokBotTranscripts",
+      "clientFor",
+      "requireRouteAccess"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712459:27043246",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "list",
+    "qualified_name": "createServerTranscriptClient/list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712459,
+    "end_line": 712467,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "request5",
+      "signal"
+    ],
+    "body_sha256": "5d12f255213525593a1121c04b3279649ac8a11b03a9b5629dd86f47500af6ed",
+    "calls": [
+      "client.listGrokBotTranscriptEntries",
+      "clientFor",
+      "parseAgentId",
+      "requireRouteAccess"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:712468:27043572",
+    "artifact": "host",
+    "module": "shared/node/server-transcript/server-transcript-client.ts",
+    "name": "readBlobs",
+    "qualified_name": "createServerTranscriptClient/readBlobs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 712468,
+    "end_line": 712496,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "hashes",
+      "signal"
+    ],
+    "body_sha256": "e0843468f028d2133f56e223b481c205fda1b116c39169e22eb737d9f15fa3f9",
+    "calls": [
+      "Promise.allSettled",
+      "batch.map",
+      "bodies.set",
+      "client.presignSandBoxStoreReads",
+      "clientFor",
+      "hashes.map",
+      "instructions.slice",
+      "new Map",
+      "presigned.instructions.filter",
+      "requireRouteAccess"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

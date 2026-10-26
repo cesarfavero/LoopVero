@@ -1,0 +1,557 @@
+[
+  {
+    "id": "host:725685:27537080",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "summarizeUserFormRequest",
+    "qualified_name": "summarizeUserFormRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725685,
+    "end_line": 725687,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form"
+    ],
+    "body_sha256": "b0b922927776e1217a6c8ea5a794c24ee958772e744fa2fc1c3cb88569e73a4b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725698:27539306",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormSubmittedAck",
+    "qualified_name": "buildUserFormSubmittedAck",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725698,
+    "end_line": 725748,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "outcomes",
+      "domainMismatch",
+      "submit",
+      "fillFailureKinds",
+      "pageMoved",
+      "remap"
+    ],
+    "body_sha256": "0aa6a30fe01df3ded010d60703c37e22c83bd3d757fe2e11a29659c836446122",
+    "calls": [
+      ".join",
+      "buildPageMovedLinesThatSteerTheAgentToRePlanNotRetry",
+      "buildRemapOfferLines",
+      "buildSubmitAfterFillLine",
+      "form.fields.map",
+      "new Map",
+      "new Set",
+      "outcomes.map",
+      "outcomes.some"
+    ],
+    "writes": [
+      "mismatchLine",
+      "nextStep"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725758:27543923",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildRemapOfferLines",
+    "qualified_name": "buildRemapOfferLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725758,
+    "end_line": 725773,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "heldFieldIds",
+      "consentedHost",
+      "remap",
+      "pageMoved"
+    ],
+    "body_sha256": "a01bacb2f6e8f0d188cfdc8083e83e9e4263200814240099b22060039762d3c8",
+    "calls": [
+      ".join",
+      ".map"
+    ],
+    "writes": [
+      "snapshotWhere"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725774:27545566",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildPageMovedLinesThatSteerTheAgentToRePlanNotRetry",
+    "qualified_name": "buildPageMovedLinesThatSteerTheAgentToRePlanNotRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725774,
+    "end_line": 725786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pageMoved",
+      "anyFilled",
+      "remapOffered"
+    ],
+    "body_sha256": "d8646984854d838488281dd3750c71a9eb67596d570bc7f1efacf94e8223ef24",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725798:27548533",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormRemapReceipt",
+    "qualified_name": "buildUserFormRemapReceipt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725798,
+    "end_line": 725829,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "71a2f5e991c56a58c4be111f22fca03e35e495f23f7984d419adc1ecef7cbf1c",
+    "calls": [
+      ".join",
+      "outcome.heldFieldIds.map",
+      "outcome.notRemappedFieldIds.map",
+      "outcome.outcomes.map",
+      "outcome.outcomes.some",
+      "outcome.unknownFieldIds.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725830:27551109",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildSubmitAfterFillLine",
+    "qualified_name": "buildSubmitAfterFillLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725830,
+    "end_line": 725841,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "submit"
+    ],
+    "body_sha256": "dd96f77961f4b1dc83feddae0090797a00a556df275eb95ff2dd23fa230b7c19",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725846:27552837",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormUnfillableResult",
+    "qualified_name": "buildUserFormUnfillableResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725846,
+    "end_line": 725856,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "fieldKinds"
+    ],
+    "body_sha256": "57a5ce4ce209295a121ca64c551b9abbc56099bd6ccdb88e1c12b6cdeed721c1",
+    "calls": [
+      ".join",
+      "form.fields.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725857:27553648",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormDriverUnavailableResult",
+    "qualified_name": "buildUserFormDriverUnavailableResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725857,
+    "end_line": 725859,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form"
+    ],
+    "body_sha256": "8d63be6efd89c11a55bb6eb837d393a29634166dbb71ec8db7b6cb1b8ac497df",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725869:27556153",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormUnsupportedTurnResult",
+    "qualified_name": "buildUserFormUnsupportedTurnResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725869,
+    "end_line": 725871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "reason"
+    ],
+    "body_sha256": "fef23a8b00b3a63e27b4f1f3ebe5d746d4a0e87402e10685bc19ade3ea2e21a5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725872:27556377",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormSkippedFieldsNote",
+    "qualified_name": "buildUserFormSkippedFieldsNote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725872,
+    "end_line": 725881,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skippedFieldKinds"
+    ],
+    "body_sha256": "8c53d9f57af04c69363c0efc9c9a021c4d1de2e3d7a723bb9272b68ae6bf5500",
+    "calls": [
+      ".join",
+      ".map",
+      "Object.entries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:725882:27557057",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormDismissedAck",
+    "qualified_name": "buildUserFormDismissedAck",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 725882,
+    "end_line": 725884,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form"
+    ],
+    "body_sha256": "833998694265ff3d4aed3e5921aee174e2ad717d40fedc7e749303fe8581dc8c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550156:20330501",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "summarizeUserFormRequest",
+    "qualified_name": "summarizeUserFormRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550156,
+    "end_line": 550158,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form"
+    ],
+    "body_sha256": "b0b922927776e1217a6c8ea5a794c24ee958772e744fa2fc1c3cb88569e73a4b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550179:20333754",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormRemapReceipt",
+    "qualified_name": "buildUserFormRemapReceipt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550179,
+    "end_line": 550210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "71a2f5e991c56a58c4be111f22fca03e35e495f23f7984d419adc1ecef7cbf1c",
+    "calls": [
+      ".join",
+      "outcome.heldFieldIds.map",
+      "outcome.notRemappedFieldIds.map",
+      "outcome.outcomes.map",
+      "outcome.outcomes.some",
+      "outcome.unknownFieldIds.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550215:20336538",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormUnfillableResult",
+    "qualified_name": "buildUserFormUnfillableResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550215,
+    "end_line": 550225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "fieldKinds"
+    ],
+    "body_sha256": "57a5ce4ce209295a121ca64c551b9abbc56099bd6ccdb88e1c12b6cdeed721c1",
+    "calls": [
+      ".join",
+      "form.fields.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550226:20337349",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormDriverUnavailableResult",
+    "qualified_name": "buildUserFormDriverUnavailableResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550226,
+    "end_line": 550228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form"
+    ],
+    "body_sha256": "8d63be6efd89c11a55bb6eb837d393a29634166dbb71ec8db7b6cb1b8ac497df",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550238:20339854",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormUnsupportedTurnResult",
+    "qualified_name": "buildUserFormUnsupportedTurnResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550238,
+    "end_line": 550240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "reason"
+    ],
+    "body_sha256": "fef23a8b00b3a63e27b4f1f3ebe5d746d4a0e87402e10685bc19ade3ea2e21a5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550241:20340078",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-user-form.ts",
+    "name": "buildUserFormSkippedFieldsNote",
+    "qualified_name": "buildUserFormSkippedFieldsNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550241,
+    "end_line": 550250,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skippedFieldKinds"
+    ],
+    "body_sha256": "8c53d9f57af04c69363c0efc9c9a021c4d1de2e3d7a723bb9272b68ae6bf5500",
+    "calls": [
+      ".join",
+      ".map",
+      "Object.entries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

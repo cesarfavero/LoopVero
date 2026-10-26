@@ -1,0 +1,2043 @@
+[
+  {
+    "id": "host:482735:17665595",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInConcurrency",
+    "qualified_name": "resolveCopyInConcurrency",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482735,
+    "end_line": 482740,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "5ebbb939490b11f7c19948fbc7bb1c0fce628fff12654cff8843f538cc8dca9f",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseInt",
+      "env.SAND_BOX_STORE_COPY_IN_CONCURRENCY.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482741:17665861",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInOwnerTeamId",
+    "qualified_name": "resolveCopyInOwnerTeamId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482741,
+    "end_line": 482746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "99e9ced30a841c0d55e9408d59334f772c8086c2bd3956f63c13e89494356dab",
+    "calls": [
+      "Number",
+      "Number.isSafeInteger",
+      "env.SAND_BOX_OWNER_TEAM_ID.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482747:17666103",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "shouldHydrateFromLegacyStore",
+    "qualified_name": "shouldHydrateFromLegacyStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482747,
+    "end_line": 482749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "policyKind",
+      "env"
+    ],
+    "body_sha256": "141222159129424ccb9f91acdf540950fbf05a3354ba770aee75b460e1ba30d2",
+    "calls": [
+      "isLegacyBoxStoreHydrateSkipped"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482753:17666347",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "classifyCopyInMeteredOutcome",
+    "qualified_name": "classifyCopyInMeteredOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482753,
+    "end_line": 482765,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "aabd10d93a51663e7c7fdea1e0a7b63a491f3a840b21527ef5306ccd93e7f9c4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482768:17666860",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "buildCopyInStatusFromResult",
+    "qualified_name": "buildCopyInStatusFromResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482768,
+    "end_line": 482786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "44732a8fff0953c4ce043d4e3071dbef3b3fe781eab1a8129c87ab11e6459c11",
+    "calls": [
+      "bucketCopyInReason",
+      "classifyCopyInFailure",
+      "classifyCopyInMeteredOutcome",
+      "redactCopyInErrorForTelemetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482787:17667639",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "makeCopyInStatusWriter",
+    "qualified_name": "makeCopyInStatusWriter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482787,
+    "end_line": 482807,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33 = SAND_BOX_COPY_IN_STATUS_PATH",
+      "now = Date.now",
+      "onRefused"
+    ],
+    "body_sha256": "627054b6d41667fc9bf43c01de93161dbd0cf69eaca6d6e232ced087063cc76f",
+    "calls": [
+      "noFollowRootFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482808:17668310",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "refusalClassOf",
+    "qualified_name": "refusalClassOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482808,
+    "end_line": 482811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "67c5659a6e7deb97d7af379f21bb1d4c2de07698800af025ca0f116d7af906ca",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482831:17669217",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "shouldRetry",
+    "qualified_name": "shouldRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482831,
+    "end_line": 482831,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f10973f4ca9494cea02041ca1e5acb2c36493e69bef100e4686f54f66048ccee",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482835:17669362",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInAttempts",
+    "qualified_name": "resolveCopyInAttempts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482835,
+    "end_line": 482840,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "3c09b5345ef735bf2dfc1368180f1b2b3154d9e17cabdeb412404aed56a50add",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseInt",
+      "env.SAND_BOX_COPY_IN_ATTEMPTS.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482843:17669735",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInStuckThresholdMs",
+    "qualified_name": "resolveCopyInStuckThresholdMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482843,
+    "end_line": 482848,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "7c6712edd4cf246d25d9b6133eee4dc0a7aa85733ded012e079b65adee8ce90b",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseInt",
+      "env.SAND_BOX_COPY_IN_STUCK_MS.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482849:17670037",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "buildCopyInWatchdogEvent",
+    "qualified_name": "buildCopyInWatchdogEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482849,
+    "end_line": 482871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "f042991e7f68cccc1920bd1edee9c278b94b10cd3e524c54c52dc8016faaabc4",
+    "calls": [
+      "BOX_STORE_SYMLINK_STEPS.filter",
+      "brandLiteralEnumList",
+      "logFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482872:17671080",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInDownloadOwner",
+    "qualified_name": "resolveCopyInDownloadOwner",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482872,
+    "end_line": 482888,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "7aa946266682f5dc4cef55df30e2ff765b8db8d70c10dec01b264879f331dfa4",
+    "calls": [
+      "boundedErrorClass",
+      "getuid",
+      "isMissingPathError",
+      "reportBoxStoreDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:482889:17671663",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "boundedErrorClass",
+    "qualified_name": "boundedErrorClass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482889,
+    "end_line": 482891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "e39077d2b243b2c77148606e1e1ee1d5069f94f614cdc37d104be7536e4069b0",
+    "calls": [
+      "brandedErrorClass",
+      "connectErrorClassOf",
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482892:17671789",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "reportTelemetryTokenUnavailable",
+    "qualified_name": "reportTelemetryTokenUnavailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482892,
+    "end_line": 482901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reported2",
+      "error64"
+    ],
+    "body_sha256": "45ee7b6d672f226efe3581128c8a592ee8a91d363b3144ca29926fdc47c03fc4",
+    "calls": [
+      "boundedErrorClass",
+      "reportBoxStoreDiagnostic",
+      "reported2.add",
+      "reported2.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482905:17672255",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "pruneRestoredOriginCliStoredLogins",
+    "qualified_name": "pruneRestoredOriginCliStoredLogins",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482905,
+    "end_line": 482951,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetDir"
+    ],
+    "body_sha256": "24d6823fca531f6c0f9f575ad0e804196479b07e1c7bf8948a18a9c63661f844",
+    "calls": [
+      "Promise.all",
+      "byHome.handle.close",
+      "descriptorPathOf",
+      "entry.isDirectory",
+      "logins.map",
+      "logins.push",
+      "new AggregateError",
+      "new Map",
+      "openBelowTarget",
+      "refusals2.values",
+      "settle3"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AggregateError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:482912:17672600",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "settle3",
+    "qualified_name": "pruneRestoredOriginCliStoredLogins/settle3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482912,
+    "end_line": 482922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pathRole",
+      "error64"
+    ],
+    "body_sha256": "4f9cfdbd766da8a78fec5d43673a6bf7818d58fcb43f74a8d948a1c073d00547",
+    "calls": [
+      "errors.push",
+      "findSystemErrno",
+      "refusals2.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482952:17673797",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "logRefusals",
+    "qualified_name": "logRefusals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482952,
+    "end_line": 482956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "log5",
+      "refusals2"
+    ],
+    "body_sha256": "5463c246da1a474f17d5abb19d10fd7b0905def9beb80098ab044346089e5343",
+    "calls": [
+      "log5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482957:17673973",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "removeOriginCliLogin",
+    "qualified_name": "removeOriginCliLogin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482957,
+    "end_line": 482964,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetDir",
+      "segments"
+    ],
+    "body_sha256": "1158aa76936729b787c37f9f039cf4130730b8f008643025ea600254c2b1ae7e",
+    "calls": [
+      "openBelowTarget",
+      "parent.handle.close",
+      "removeTreeNoFollow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482965:17674206",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "openBelowTarget",
+    "qualified_name": "openBelowTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482965,
+    "end_line": 482968,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetDir",
+      "segments"
+    ],
+    "body_sha256": "6cccff07982016c5e20d552c9c5d7ba74ed6d2de6a68539c5b785cf988d62284",
+    "calls": [
+      "noFollowRootFor",
+      "openBelow",
+      "segmentsBelow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:482969:17674422",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "runBoxCopyIn",
+    "qualified_name": "runBoxCopyIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 482969,
+    "end_line": 483231,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "f957e7a5612203202c2878647a6875dbd1f0b8edee5cf89c399c42bddd2e7319",
+    "calls": [
+      ".every",
+      ".filter",
+      "copyInFailureOf",
+      "countStoreDbManifestEntries",
+      "deps.legacySync.readManifestStrict",
+      "deps.sync.enrollManifestV2",
+      "deps.sync.markLegacyHydrationCompleteForHandoff",
+      "deps.sync.markLegacyHydrationIncomplete",
+      "deps.sync.readManifestStrictDetailed",
+      "downloadVia.download",
+      "empty",
+      "errorMessage",
+      "getStoreDbManifestAgentIds",
+      "isBoxStoreFullyHydrated",
+      "log5",
+      "logRefusals",
+      "new Map",
+      "new SandBoxStoreSyncError",
+      "pruneRestoredOriginCliStoredLogins",
+      "withoutForeignMountEntries"
+    ],
+    "writes": [
+      "authoritativeStoreDbAgentIds",
+      "authoritativeStoreDbEntries",
+      "downloadFromLegacy",
+      "downloadVia",
+      "hydrateSource",
+      "legacyManifest",
+      "manifest",
+      "summary"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 13,
+      "throws": 2,
+      "catches": 7
+    }
+  },
+  {
+    "id": "host:483232:17684453",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "runBoxCopyInWithRetry",
+    "qualified_name": "runBoxCopyInWithRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483232,
+    "end_line": 483268,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "options2"
+    ],
+    "body_sha256": "ba5e243ed5730fe288397e9fbf714cfe7a3886f922687f4278b7d260898ad1f6",
+    "calls": [
+      "deps.log",
+      "isTransientCopyInFailure",
+      "legacySync.download.bind",
+      "options2.retry.schedule",
+      "runBoxCopyIn",
+      "wait2.dispose"
+    ],
+    "writes": [
+      "attempt",
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483238:17684686",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "manifestV2Enabled",
+    "qualified_name": "runBoxCopyInWithRetry/manifestV2Enabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483238,
+    "end_line": 483240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "b2589a510f67200fa356623b147d2fcaf5b71d36cb81eb6d523af3436ab445f7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483242:17684825",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "readManifestStrict",
+    "qualified_name": "runBoxCopyInWithRetry/readManifestStrict",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483242,
+    "end_line": 483251,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6a29b3f4dc55739019ee9145e698d96827fe5e3c023c66bc587512962207024a",
+    "calls": [
+      "legacySync.readManifestStrict"
+    ],
+    "writes": [
+      "advertisedLegacyManifest"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483269:17685680",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "executeBoxCopyInFromEnv",
+    "qualified_name": "executeBoxCopyInFromEnv",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483269,
+    "end_line": 483550,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env",
+      "createTelemetryClient"
+    ],
+    "body_sha256": "8c201c8c8d8e95b6ede34583d945884e9c55046f094eadd6c3d03adb8fa86e0a",
+    "calls": [
+      ".catch",
+      "Date.now",
+      "acquireCopyInLock",
+      "buildCopyInStatusFromResult",
+      "copyInFailureOf",
+      "createDeadlinePolicy",
+      "createIdleWatchdogPolicy",
+      "createPollingPolicy2",
+      "createRetryPolicy",
+      "createSandDurableFileOwner",
+      "errorMessage",
+      "getAgentStoreRpcServiceOverride",
+      "getBoxStoreBackendPolicy",
+      "getSandRootDir",
+      "isBoxStoreCopyInEnabled",
+      "isBoxStorePackBuildEnabled",
+      "isLegacyBoxStoreHydrateSkipped",
+      "lock.release",
+      "log5",
+      "logFields",
+      "makeCopyInAccessTokenGetter",
+      "makeCopyInStatusWriter",
+      "new AgentStoreObjectStoreProvider",
+      "new BoxStoreSync",
+      "new SandSourceMap",
+      "new SandStructuredLogTelemetry",
+      "new Set",
+      "outcomeToExitCode",
+      "pinBoxStoreDiagnosticsReporter",
+      "readSandProcessEnvironment",
+      "reportCopyIn",
+      "resolveBoxObjectStoreProvider",
+      "resolveCopyInAttempts",
+      "resolveCopyInConcurrency",
+      "resolveCopyInDownloadOwner",
+      "resolveCopyInStoreId",
+      "resolveCopyInStuckThresholdMs",
+      "resolveSandBoxIdentityTags",
+      "result.failures.slice",
+      "runBoxCopyInWithRetry",
+      "shouldHydrateFromLegacyStore",
+      "stuckWatchdog.arm",
+      "stuckWatchdogHandle.dispose",
+      "telemetry.dispose",
+      "telemetry.reportBoxCopyIn",
+      "writeStatus"
+    ],
+    "writes": [
+      "legacyFallbackReason"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 6,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:483271:17685796",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "log5",
+    "qualified_name": "executeBoxCopyInFromEnv/log5",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483271,
+    "end_line": 483274,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "b1267b1d0e77f3d115625278e5990b4d72f6f158cf1b53b5b622e8fcd5a89815",
+    "calls": [
+      "process.stdout.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483297:17686842",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "getMachineId",
+    "qualified_name": "executeBoxCopyInFromEnv/getMachineId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483297,
+    "end_line": 483303,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "204a9ac87df42f862218aaf24bea60de45b5cbbf5170f2a25e57c13e07fbef0c",
+    "calls": [
+      "getHostSecretsPath",
+      "getOrCreateHostMachineId",
+      "noFollowRootFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483304:17687101",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "reportStatusRefusal",
+    "qualified_name": "executeBoxCopyInFromEnv/reportStatusRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483304,
+    "end_line": 483306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "refusal4"
+    ],
+    "body_sha256": "521525bfaa3415978edf585d9442921edaa39f98b87d855aa33c69baf285997d",
+    "calls": [
+      "logRefusals"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483311:17687291",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "getTeamId",
+    "qualified_name": "executeBoxCopyInFromEnv/getTeamId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483311,
+    "end_line": 483311,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dbe8a39dfb4a1c3afb7e06a4ea8b6f9bfb9d029610cb39ec072b9f05e0c3dfe4",
+    "calls": [
+      "resolveCopyInOwnerTeamId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483319:17687565",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveStoreId",
+    "qualified_name": "executeBoxCopyInFromEnv/resolveStoreId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483319,
+    "end_line": 483319,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "63fc9a8e40fbe09d17d9f4237c9e27e991bf4802333c8bb7201c15ae96c76d7b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483334:17688375",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveStoreId",
+    "qualified_name": "executeBoxCopyInFromEnv/resolveStoreId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483334,
+    "end_line": 483334,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "63fc9a8e40fbe09d17d9f4237c9e27e991bf4802333c8bb7201c15ae96c76d7b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483341:17688678",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "log",
+    "qualified_name": "executeBoxCopyInFromEnv/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483341,
+    "end_line": 483341,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6fc88671837d27f3ae94bffb385579f1ee29748244b8441a3073d99aecdfcc32",
+    "calls": [
+      "log5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483348:17688969",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "getAccessToken",
+    "qualified_name": "executeBoxCopyInFromEnv/getAccessToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483348,
+    "end_line": 483356,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c88a76ab211f3b760cf449bc0dfeec99e5917bdd6bf17290ebc43a6e4ee898e2",
+    "calls": [
+      "accessToken",
+      "reportTelemetryTokenUnavailable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:483358:17689238",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "getTeamId",
+    "qualified_name": "executeBoxCopyInFromEnv/getTeamId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483358,
+    "end_line": 483358,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dbe8a39dfb4a1c3afb7e06a4ea8b6f9bfb9d029610cb39ec072b9f05e0c3dfe4",
+    "calls": [
+      "resolveCopyInOwnerTeamId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483382:17689958",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "reportCopyIn",
+    "qualified_name": "executeBoxCopyInFromEnv/reportCopyIn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483382,
+    "end_line": 483401,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "48a5c544d02caf4392ccc780ec4f85539b04afeac501500f62271b8e18df1ac8",
+    "calls": [
+      "Date.now",
+      "brandLiteralEnum",
+      "bucketCopyInReason",
+      "classifyCopyInFailure",
+      "logFields",
+      "telemetry.reportBoxCopyIn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483483:17693661",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "onProgress",
+    "qualified_name": "executeBoxCopyInFromEnv/onProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483483,
+    "end_line": 483497,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "progress"
+    ],
+    "body_sha256": "0b1536d8894277ea936e22d58470996d9cd1a951779a2812b5740e9e0b77b666",
+    "calls": [
+      "writeStatus"
+    ],
+    "writes": [
+      "lastProgress",
+      "progressEvents"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483498:17694117",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "onTrace",
+    "qualified_name": "executeBoxCopyInFromEnv/onTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483498,
+    "end_line": 483509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "trace2"
+    ],
+    "body_sha256": "d06765b3ad906720bef10f5853e5730937a2ae08047bfbe3201c99ce59d8c3d4",
+    "calls": [],
+    "writes": [
+      "lastTraceStatus"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483551:17695973",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "bucketCopyInReason",
+    "qualified_name": "bucketCopyInReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483551,
+    "end_line": 483572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "c7a6ab85ffb0646ebd797287264280e54f43fd6836d5eb847cbdbb178db90762",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483573:17696683",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "classifyCopyInFailure",
+    "qualified_name": "classifyCopyInFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483573,
+    "end_line": 483576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "1ea9c7bb77c663c7585c1e37f13de8d22af96832adba002fe3683ef42db5dbb4",
+    "calls": [
+      "copyInFailureClassOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483577:17696860",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "isTransientCopyInFailure",
+    "qualified_name": "isTransientCopyInFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483577,
+    "end_line": 483590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "459298fd72cec77437c80b57d871f772e86ba59282ed5a1b71dbf87dbacbe034",
+    "calls": [
+      "classifyCopyInFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483591:17697361",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "redactCopyInErrorForTelemetry",
+    "qualified_name": "redactCopyInErrorForTelemetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483591,
+    "end_line": 483593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "c9bfaec8dea562e20d41c461a69c0561965c9ad485b956d2f6855ca0ad102566",
+    "calls": [
+      ".replace",
+      ".slice",
+      ".trim",
+      "raw.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483594:17697574",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "outcomeToExitCode",
+    "qualified_name": "outcomeToExitCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483594,
+    "end_line": 483603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "5f4a939fe2b0aa9e005917dca1faa73da0bd2e92ff31b012e86f9779cdadee9d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483604:17697810",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "resolveCopyInStoreId",
+    "qualified_name": "resolveCopyInStoreId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483604,
+    "end_line": 483610,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env",
+      "sourceMap"
+    ],
+    "body_sha256": "bdc05de3425ee993982e89b8f3792477e11a9f83d05cf2d032e8171f71b41941",
+    "calls": [
+      "env.SAND_BOX_STORE_ID.trim",
+      "isAgentStoreSourceId",
+      "sourceMap.getBoxStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483611:17698084",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "makeCopyInAccessTokenGetter",
+    "qualified_name": "makeCopyInAccessTokenGetter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483611,
+    "end_line": 483625,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env",
+      "backend",
+      "log5"
+    ],
+    "body_sha256": "08e8cd5d14bbdce505cdad331f1d05d57e93665156360e38d364640fff587f01",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483626:17698558",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "fetchCopyInCredential",
+    "qualified_name": "fetchCopyInCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483626,
+    "end_line": 483639,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env",
+      "backend"
+    ],
+    "body_sha256": "dd35bd509acc387b3e42c11b102d1e093d50f2a6186689c99c00c612371816bd",
+    "calls": [
+      "env[computed].trim",
+      "new SandBoxStoreSyncError",
+      "readDevInferenceCredentialFile",
+      "renewSandBoxInferenceCredential"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483652:17699829",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "acquireCopyInLock",
+    "qualified_name": "acquireCopyInLock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483652,
+    "end_line": 483710,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lockPath",
+      "log5"
+    ],
+    "body_sha256": "20ed62d0888f59f7c6444cec951282cc76138fba0251c2a3ff23a0bd4e1b4d84",
+    "calls": [
+      ".catch",
+      "Math.round",
+      "entryOf",
+      "fs33.unlink",
+      "judgeExistingLockByHeartbeat",
+      "log5",
+      "noFollowRootFor",
+      "openParentNoFollow2",
+      "parent.handle.close",
+      "reportCopyInLockError",
+      "storeLockFsThrough",
+      "tryAcquireStoreLock",
+      "unlinkPlantedLink"
+    ],
+    "writes": [
+      "acquired",
+      "held"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:483691:17701144",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "release",
+    "qualified_name": "acquireCopyInLock/release",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483691,
+    "end_line": 483697,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5f9516ccf9d579ca59f2a148c2a8245c94d8d16965dd9b7e71ee5120927f60f4",
+    "calls": [
+      "parent.handle.close",
+      "result.lock.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483711:17701600",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "reportCopyInLockError",
+    "qualified_name": "reportCopyInLockError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483711,
+    "end_line": 483719,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "log5",
+      "error64"
+    ],
+    "body_sha256": "eb15d66289e849ed3d0eec1d86b792a495add737b3dee545ba72eb8049130490",
+    "calls": [
+      "errorMessage",
+      "log5",
+      "logRefusals"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483720:17701887",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "unlinkPlantedLink",
+    "qualified_name": "unlinkPlantedLink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483720,
+    "end_line": 483726,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "087816ca89975ec8aa62b816629c3aa3e9f307a633f14c162974ca9dec2d9374",
+    "calls": [
+      ".catch",
+      "info2.isSymbolicLink"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483727:17702168",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "storeLockFsThrough",
+    "qualified_name": "storeLockFsThrough",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483727,
+    "end_line": 483759,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "8712191fc8b62de74e76c1945f979364bf25f25b2bd2db13e8fdef55c29695c0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483729:17702230",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "readFile",
+    "qualified_name": "storeLockFsThrough/readFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483729,
+    "end_line": 483742,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33",
+      "encoding"
+    ],
+    "body_sha256": "9492cd32824983a1829d36d34738347c7243bcf78553f97b87d5df114c625fb9",
+    "calls": [
+      ".catch",
+      ".isFile",
+      "handle.close",
+      "handle.readFile",
+      "handle.stat",
+      "new NoFollowRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "NoFollowRefusedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483743:17702842",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "stat",
+    "qualified_name": "storeLockFsThrough/stat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483743,
+    "end_line": 483743,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b659af53403f6574c02ec99abbf1801fcd3c3548deb05eeac4ed7010d0d55768",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483744:17702897",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "unlink",
+    "qualified_name": "storeLockFsThrough/unlink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483744,
+    "end_line": 483744,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1d901232f573e4fa47575a39b6218fe6156d7d717658eb162b351018373ffc72",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483745:17702953",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "utimes",
+    "qualified_name": "storeLockFsThrough/utimes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483745,
+    "end_line": 483745,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_path",
+      "atime",
+      "mtime"
+    ],
+    "body_sha256": "2b43034e7a91dc9dcbd455e0af68d560e67171a878657cda73fd5fc61dbd1a8c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483746:17703055",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "writeLockExclusive",
+    "qualified_name": "storeLockFsThrough/writeLockExclusive",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483746,
+    "end_line": 483757,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_path",
+      "data2",
+      "mode"
+    ],
+    "body_sha256": "82a27718e47328fae437f6f2306691eeae5b26e5f4c31aaba798e633eb35d81b",
+    "calls": [
+      "handle.close",
+      "handle.writeFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483760:17703480",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "judgeExistingLockByHeartbeat",
+    "qualified_name": "judgeExistingLockByHeartbeat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483760,
+    "end_line": 483792,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lockPath",
+      "fs33 = {\n  readFile: (path33, encoding) => (0, import_promises24.readFile)(path33, encoding),\n  stat: (path33) => (0, import_promises24.stat)(path33)\n}"
+    ],
+    "body_sha256": "84db5abc67573246fd506a381efe759122d46f74cd68c2212a1d4358f309abf2",
+    "calls": [
+      "BOOT_COPY_IN_HEARTBEAT_POLL.runWithRetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483761:17703555",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "readFile",
+    "qualified_name": "judgeExistingLockByHeartbeat/readFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483761,
+    "end_line": 483761,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33",
+      "encoding"
+    ],
+    "body_sha256": "eb5eb18cd4b1a0c45f4fc07cfb67e8c09e41969df469f86917a76683ec676b6a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483762:17703636",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "stat",
+    "qualified_name": "judgeExistingLockByHeartbeat/stat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483762,
+    "end_line": 483762,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "cbe8aad806d9edd49c8a7c0ba88b328b82a42bfed6f1b087acb0a927a03fe07d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483793:17704677",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "pidIsNotEvidenceAcrossContainers",
+    "qualified_name": "pidIsNotEvidenceAcrossContainers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483793,
+    "end_line": 483795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "746fa0902eacb6aaf97e064b589fe266bb25355f186d10d2c33e25703e4f5322",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483796:17704740",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "parseLockOwnerFields",
+    "qualified_name": "parseLockOwnerFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483796,
+    "end_line": 483811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "0ec90bd58fece9db26e647954cb0cc83bc006c1092b99562af87f3b4570af45c",
+    "calls": [
+      "JSON.parse",
+      "Symbol"
+    ],
+    "writes": [
+      "fields3.sid",
+      "fields3.uid",
+      "fields3.windowId",
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:483812:17705342",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "withRetry",
+    "qualified_name": "withRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483812,
+    "end_line": 483825,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "label",
+      "fn",
+      "log5"
+    ],
+    "body_sha256": "27b37f53fb3c6b18a0d7a2e47f9fcbc9a4806c8461da64966fe4f40f9e39be96",
+    "calls": [
+      "COPY_IN_CREDENTIAL_RETRY.runWithRetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483826:17705738",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-copy-in.ts",
+    "name": "empty",
+    "qualified_name": "empty",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483826,
+    "end_line": 483838,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reasonCode",
+      "reason"
+    ],
+    "body_sha256": "1baa6e182ca0bcf655b6a9233957736df2bf722f05effc068153fa81de24698b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

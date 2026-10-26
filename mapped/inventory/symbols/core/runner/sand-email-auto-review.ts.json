@@ -1,0 +1,1098 @@
+[
+  {
+    "id": "host:764510:29279715",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewArguments",
+    "qualified_name": "reviewArguments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764510,
+    "end_line": 764539,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "7e96408f9c166432b4405ba08ea4401fc5ddf0210dd1b2204841d1765ffffa76",
+    "calls": [
+      "target.attachments.map",
+      "target.replyTo.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764540:29281037",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "addressesMatch",
+    "qualified_name": "addressesMatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764540,
+    "end_line": 764542,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "51e1fd492ea87bf4b355c120b7f0f145bf5d6e4fa02282e2cebefb09efc620f3",
+    "calls": [
+      ".toLowerCase",
+      "left.trim",
+      "right.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764543:29281145",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "wakeEmailContext",
+    "qualified_name": "wakeEmailContext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764543,
+    "end_line": 764555,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "wakeEmail"
+    ],
+    "body_sha256": "350cbc30c9afbb9dab7a2d94669fac3b9a5a76182a9c5b77efcbf0114607759a",
+    "calls": [
+      ".some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764556:29281668",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "provenanceContext",
+    "qualified_name": "provenanceContext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764556,
+    "end_line": 764566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "provenance"
+    ],
+    "body_sha256": "b8136053aac9db6a37b153fe422e63d805e872f91184f5ed0d32fac04b9e1fce",
+    "calls": [
+      "wakeEmailContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764567:29282230",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "buildSandEmailSendRiskTarget",
+    "qualified_name": "buildSandEmailSendRiskTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764567,
+    "end_line": 764590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7f6050224e97d2a23797d61f85aef06bc989f3672321e10e60602667e2db06a2",
+    "calls": [
+      "buildProjectPermissionsContext",
+      "new SmartModeRiskTarget",
+      "provenanceContext",
+      "reviewArguments",
+      "structFromRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764591:29283244",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailSendFingerprintPayload",
+    "qualified_name": "sandEmailSendFingerprintPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764591,
+    "end_line": 764619,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "provenance"
+    ],
+    "body_sha256": "8a1fe53493bd0c48ecd93f32f9c63e8bc5ce72bcc5eeef5e24390dc4229c86b6",
+    "calls": [
+      "target.attachments.map",
+      "target.replyTo.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764620:29284464",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailSendReviewSpec",
+    "qualified_name": "sandEmailSendReviewSpec",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764620,
+    "end_line": 764641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provenance"
+    ],
+    "body_sha256": "606d08f4a298e37e4acb3079a37872aeb0ebb4d97f734785cb063d498beca07f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764624:29284631",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "buildRiskTarget",
+    "qualified_name": "sandEmailSendReviewSpec/buildRiskTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764624,
+    "end_line": 764624,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e4cf2360a56065421c33efa10a07fed575c494a5f111eccb331d4411aafae533",
+    "calls": [
+      "buildSandEmailSendRiskTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764625:29284720",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "fingerprintPayload",
+    "qualified_name": "sandEmailSendReviewSpec/fingerprintPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764625,
+    "end_line": 764625,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d4c153b7544917a37b75992505908862fe85a75ffa9472a6e3d87eb5ac2a8a8a",
+    "calls": [
+      "sandEmailSendFingerprintPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764626:29284800",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "summarize",
+    "qualified_name": "sandEmailSendReviewSpec/summarize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764626,
+    "end_line": 764637,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "b3fc844a4d7368dd2c75c58bc6a4052cd7900bd84602125f8e79e80e69e86537",
+    "calls": [
+      "summarizeSandEmailSendAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764639:29285316",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "requireApproval",
+    "qualified_name": "sandEmailSendReviewSpec/requireApproval",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764639,
+    "end_line": 764639,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "c61399d814a16976b5ca2a8962d6d00258e5390612a6a23a7cdec7dbf808b8ca",
+    "calls": [
+      "sendNeedsManualReview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764642:29285455",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "attachmentsNotFullyReviewable",
+    "qualified_name": "attachmentsNotFullyReviewable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764642,
+    "end_line": 764649,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d366a506dedcb363bd61ca4fc5a4352d6e284579492bf9bae148f48ed77d6dac",
+    "calls": [
+      ".join",
+      "target.attachments.filter",
+      "unseen.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764650:29285989",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sendNeedsManualReview",
+    "qualified_name": "sendNeedsManualReview",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764650,
+    "end_line": 764657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d93c242f650f157fb6305b6c11e9765b9893089bf52e06df34989d3f12371860",
+    "calls": [
+      ".map",
+      "attachmentsNotFullyReviewable",
+      "diverted.join",
+      "target.fromInboxEmail.toLowerCase",
+      "target.replyTo.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764658:29286503",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewSandEmailSend",
+    "qualified_name": "reviewSandEmailSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764658,
+    "end_line": 764664,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "394451a5506daf8260ea3a3dfb7ce2015ea2b57c5c48616ee2af9b862c668737",
+    "calls": [
+      "runSandAutoReviewFlow",
+      "sandEmailSendReviewSpec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764665:29286743",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "claimReviewArguments",
+    "qualified_name": "claimReviewArguments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764665,
+    "end_line": 764670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d7c72471121a9a25c0d25ef855f2a064dd94e483a6e385c269806fa355a0aa9f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764671:29286913",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailClaimFingerprintPayload",
+    "qualified_name": "sandEmailClaimFingerprintPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764671,
+    "end_line": 764676,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "4b81253ca24eccf780fcf80a192f5b208a7f74c2be60eed8c0a08e29b120de35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764679:29287279",
+    "artifact": "host",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewSandEmailClaim",
+    "qualified_name": "reviewSandEmailClaim",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764679,
+    "end_line": 764715,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "32acabebf166d0d1c07bb0abd9e57a352b88fc974e8c66fe94fe095ddfc54d05",
+    "calls": [
+      "args.options.getApprovalExpiryPolicy",
+      "claimReviewArguments",
+      "fingerprintSandAutoReviewTarget",
+      "humanOnlyReviewLedger",
+      "ledger.answered",
+      "ledger.ruleRefused",
+      "requestReviewedApproval",
+      "sandEmailClaimFingerprintPayload",
+      "summarizeSandMcpAutoReviewAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557878:20699902",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewArguments",
+    "qualified_name": "reviewArguments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557878,
+    "end_line": 557907,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "7e96408f9c166432b4405ba08ea4401fc5ddf0210dd1b2204841d1765ffffa76",
+    "calls": [
+      "target.attachments.map",
+      "target.replyTo.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557908:20701224",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "addressesMatch",
+    "qualified_name": "addressesMatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557908,
+    "end_line": 557910,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "51e1fd492ea87bf4b355c120b7f0f145bf5d6e4fa02282e2cebefb09efc620f3",
+    "calls": [
+      ".toLowerCase",
+      "left.trim",
+      "right.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557911:20701332",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "wakeEmailContext",
+    "qualified_name": "wakeEmailContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557911,
+    "end_line": 557923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "wakeEmail"
+    ],
+    "body_sha256": "350cbc30c9afbb9dab7a2d94669fac3b9a5a76182a9c5b77efcbf0114607759a",
+    "calls": [
+      ".some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557924:20701855",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "provenanceContext",
+    "qualified_name": "provenanceContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557924,
+    "end_line": 557934,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "provenance"
+    ],
+    "body_sha256": "b8136053aac9db6a37b153fe422e63d805e872f91184f5ed0d32fac04b9e1fce",
+    "calls": [
+      "wakeEmailContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557935:20702417",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "buildSandEmailSendRiskTarget",
+    "qualified_name": "buildSandEmailSendRiskTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557935,
+    "end_line": 557958,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7f6050224e97d2a23797d61f85aef06bc989f3672321e10e60602667e2db06a2",
+    "calls": [
+      "buildProjectPermissionsContext",
+      "new SmartModeRiskTarget",
+      "provenanceContext",
+      "reviewArguments",
+      "structFromRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557959:20703431",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailSendFingerprintPayload",
+    "qualified_name": "sandEmailSendFingerprintPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557959,
+    "end_line": 557987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target",
+      "provenance"
+    ],
+    "body_sha256": "8a1fe53493bd0c48ecd93f32f9c63e8bc5ce72bcc5eeef5e24390dc4229c86b6",
+    "calls": [
+      "target.attachments.map",
+      "target.replyTo.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557988:20704651",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailSendReviewSpec",
+    "qualified_name": "sandEmailSendReviewSpec",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557988,
+    "end_line": 558009,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provenance"
+    ],
+    "body_sha256": "606d08f4a298e37e4acb3079a37872aeb0ebb4d97f734785cb063d498beca07f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557992:20704818",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "buildRiskTarget",
+    "qualified_name": "sandEmailSendReviewSpec/buildRiskTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557992,
+    "end_line": 557992,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e4cf2360a56065421c33efa10a07fed575c494a5f111eccb331d4411aafae533",
+    "calls": [
+      "buildSandEmailSendRiskTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557993:20704907",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "fingerprintPayload",
+    "qualified_name": "sandEmailSendReviewSpec/fingerprintPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557993,
+    "end_line": 557993,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d4c153b7544917a37b75992505908862fe85a75ffa9472a6e3d87eb5ac2a8a8a",
+    "calls": [
+      "sandEmailSendFingerprintPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557994:20704987",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "summarize",
+    "qualified_name": "sandEmailSendReviewSpec/summarize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557994,
+    "end_line": 558005,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "b3fc844a4d7368dd2c75c58bc6a4052cd7900bd84602125f8e79e80e69e86537",
+    "calls": [
+      "summarizeSandEmailSendAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558007:20705503",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "requireApproval",
+    "qualified_name": "sandEmailSendReviewSpec/requireApproval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558007,
+    "end_line": 558007,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "c61399d814a16976b5ca2a8962d6d00258e5390612a6a23a7cdec7dbf808b8ca",
+    "calls": [
+      "sendNeedsManualReview"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558010:20705642",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "attachmentsNotFullyReviewable",
+    "qualified_name": "attachmentsNotFullyReviewable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558010,
+    "end_line": 558017,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d366a506dedcb363bd61ca4fc5a4352d6e284579492bf9bae148f48ed77d6dac",
+    "calls": [
+      ".join",
+      "target.attachments.filter",
+      "unseen.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558018:20706176",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sendNeedsManualReview",
+    "qualified_name": "sendNeedsManualReview",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558018,
+    "end_line": 558025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d93c242f650f157fb6305b6c11e9765b9893089bf52e06df34989d3f12371860",
+    "calls": [
+      ".map",
+      "attachmentsNotFullyReviewable",
+      "diverted.join",
+      "target.fromInboxEmail.toLowerCase",
+      "target.replyTo.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558026:20706690",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewSandEmailSend",
+    "qualified_name": "reviewSandEmailSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558026,
+    "end_line": 558032,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "394451a5506daf8260ea3a3dfb7ce2015ea2b57c5c48616ee2af9b862c668737",
+    "calls": [
+      "runSandAutoReviewFlow",
+      "sandEmailSendReviewSpec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558033:20706930",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "claimReviewArguments",
+    "qualified_name": "claimReviewArguments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558033,
+    "end_line": 558038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d7c72471121a9a25c0d25ef855f2a064dd94e483a6e385c269806fa355a0aa9f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558039:20707100",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "sandEmailClaimFingerprintPayload",
+    "qualified_name": "sandEmailClaimFingerprintPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558039,
+    "end_line": 558044,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "4b81253ca24eccf780fcf80a192f5b208a7f74c2be60eed8c0a08e29b120de35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558047:20707466",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-email-auto-review.ts",
+    "name": "reviewSandEmailClaim",
+    "qualified_name": "reviewSandEmailClaim",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558047,
+    "end_line": 558083,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "32acabebf166d0d1c07bb0abd9e57a352b88fc974e8c66fe94fe095ddfc54d05",
+    "calls": [
+      "args.options.getApprovalExpiryPolicy",
+      "claimReviewArguments",
+      "fingerprintSandAutoReviewTarget",
+      "humanOnlyReviewLedger",
+      "ledger.answered",
+      "ledger.ruleRefused",
+      "requestReviewedApproval",
+      "sandEmailClaimFingerprintPayload",
+      "summarizeSandMcpAutoReviewAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,1188 @@
+[
+  {
+    "id": "host:684348:26000477",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "watchDirectoryWithNodeFs",
+    "qualified_name": "watchDirectoryWithNodeFs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684348,
+    "end_line": 684350,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "directory",
+      "onEvent"
+    ],
+    "body_sha256": "470705abcaab5e4c89176c90e6790c2bd213498bfbdee21cf6636950f9ba3d3d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684351:26000615",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "isSameDirectory",
+    "qualified_name": "isSameDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684351,
+    "end_line": 684353,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "armed",
+      "onDisk"
+    ],
+    "body_sha256": "f6f718f6aab30ac591d2b1c1a1fd9a9ead2235747d913c9be633e6c24a114a1f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684355:26000810",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.constructor",
+    "qualified_name": "WatchedDirectory.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684355,
+    "end_line": 684360,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root",
+      "debounce",
+      "watchDirectory = watchDirectoryWithNodeFs",
+      "lstat13 = import_node_fs70.lstatSync"
+    ],
+    "body_sha256": "45b600a4db3907a68b95d1df60eb794fe9c9bcf81d253fe12a89cdfb2a51390e",
+    "calls": [],
+    "writes": [
+      "this.debounce",
+      "this.lstat",
+      "this.root",
+      "this.watchDirectory"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684367:26001144",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.getLocation",
+    "qualified_name": "WatchedDirectory.getLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684367,
+    "end_line": 684369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d9609698a7364ba70f97eeb9c6ff9af72a039060aba051752f1fa87396f7fa50",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684370:26001198",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.listSubdirectoryNames",
+    "qualified_name": "WatchedDirectory.listSubdirectoryNames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684370,
+    "end_line": 684372,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3a3b4f4eedfa2509fd4ef5a80beef9c5409a31ea98b0f6b5b4d3080de42a9183",
+    "calls": [
+      "this.listSubdirectoryNamesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684373:26001272",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.setOnChange",
+    "qualified_name": "WatchedDirectory.setOnChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684373,
+    "end_line": 684381,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "4514ef11c8a10869622e31b408acc81e0e1e3acf45b07fa53dfbc046847bc538",
+    "calls": [
+      "this.debounce.wrap",
+      "this.notify.dispose",
+      "this.startWatching",
+      "this.stopWatching"
+    ],
+    "writes": [
+      "this.notify"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684382:26001510",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.startWatching",
+    "qualified_name": "WatchedDirectory.startWatching",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684382,
+    "end_line": 684395,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "61286d67a629cd1b1deec2f9edfed3f2e9b3455a3fcd863921a9ca0cf05884ac",
+    "calls": [
+      "ensureSandDataDirSync",
+      "isSandDataPath",
+      "this.reportWatchUnavailable",
+      "this.watchDirectoryTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:684396:26001888",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.stopWatching",
+    "qualified_name": "WatchedDirectory.stopWatching",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684396,
+    "end_line": 684403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3c531dfdc74db54c58ed60310ed01dfcd527ee658e6f5671bff68b0d89cb3553",
+    "calls": [
+      "armed.watcher.close",
+      "this.notify.dispose",
+      "this.watchers.clear",
+      "this.watchers.values"
+    ],
+    "writes": [
+      "this.notify"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684404:26002083",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.watchDirectoryTree",
+    "qualified_name": "WatchedDirectory.watchDirectoryTree",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684404,
+    "end_line": 684417,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "93464a69e70648333f41b0a6bb69f2b418e3e8d7e50d31d2dc1a42b589a75a2d",
+    "calls": [
+      "isSameDirectory",
+      "this.armDirectory",
+      "this.readDirectoryEntry",
+      "this.unwatchSubtree",
+      "this.watchers.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684418:26002523",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.armDirectory",
+    "qualified_name": "WatchedDirectory.armDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684418,
+    "end_line": 684434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory",
+      "identity"
+    ],
+    "body_sha256": "c4a3ef57d861f306f420c9c04c728f224d26165e90e9fd28d094d32d86d12c20",
+    "calls": [
+      "isMissingPathError",
+      "this.reportWatchUnavailable",
+      "this.watchDirectory",
+      "this.watchSubdirectoriesOf",
+      "this.watchers.set",
+      "watcher.on"
+    ],
+    "writes": [
+      "watcher"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:684435:26003058",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.watchSubdirectoriesOf",
+    "qualified_name": "WatchedDirectory.watchSubdirectoriesOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684435,
+    "end_line": 684439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "88e8191ce336e5b846bec5bed12ef9f95b010d04dfdde24c7692e7871c2b0cec",
+    "calls": [
+      "this.listSubdirectoryNamesOf",
+      "this.watchDirectoryTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684440:26003251",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.readDirectoryEntry",
+    "qualified_name": "WatchedDirectory.readDirectoryEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684440,
+    "end_line": 684452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "8a0f407bc129d14d70a44b9c846785745f880a25f966b1fdfe2ef32180dc7d6a",
+    "calls": [
+      "reportFallbackUnlessAbsent",
+      "stats.isDirectory",
+      "this.lstat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:684453:26003663",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.listSubdirectoryNamesOf",
+    "qualified_name": "WatchedDirectory.listSubdirectoryNamesOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684453,
+    "end_line": 684462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "0444fda81caa5a6d8e44a222c9c071ce5a22944f1cff88101e0595997aa385d8",
+    "calls": [
+      ".map",
+      ".sort",
+      "entries.filter",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:684463:26004044",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.onDirectoryEvent",
+    "qualified_name": "WatchedDirectory.onDirectoryEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684463,
+    "end_line": 684480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory",
+      "filename"
+    ],
+    "body_sha256": "2809f62841a9862fcccaf0a5626a974d573b6e3414672f6005f885a1c374c013",
+    "calls": [
+      "filename.toString",
+      "this.scheduleNotify",
+      "this.unwatchSubtree",
+      "this.watchDirectoryTree",
+      "this.watchSubdirectoriesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684481:26004699",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.unwatchSubtree",
+    "qualified_name": "WatchedDirectory.unwatchSubtree",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684481,
+    "end_line": 684489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "34ba792a07db576b2acc40ce2095145a753206b3f7ccb95f9c8df7303f8b2f4d",
+    "calls": [
+      "armed.watcher.close",
+      "this.watchers.delete",
+      "watched.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684490:26004989",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.reportWatchUnavailable",
+    "qualified_name": "WatchedDirectory.reportWatchUnavailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684490,
+    "end_line": 684495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f889bb2e5313ea15bb60fcb8a4457fd050e0347e14c45bc0d1d644b0a8984cf5",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684496:26005128",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.scheduleNotify",
+    "qualified_name": "WatchedDirectory.scheduleNotify",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684496,
+    "end_line": 684498,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b43368620ff73c1f919e8e72c89f7e7f8f24778d19ba0e6fad8ba774716f9786",
+    "calls": [
+      "this.notify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684499:26005175",
+    "artifact": "host",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.writeFileAtomic",
+    "qualified_name": "WatchedDirectory.writeFileAtomic",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684499,
+    "end_line": 684502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "contents"
+    ],
+    "body_sha256": "84b70d8787c7caf61d07deef01e89d196c1ff2b8495b2f1d477da0d39f41ca63",
+    "calls": [
+      "this.scheduleNotify",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627672:23807381",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "watchDirectoryWithNodeFs",
+    "qualified_name": "watchDirectoryWithNodeFs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627672,
+    "end_line": 627674,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "directory",
+      "onEvent"
+    ],
+    "body_sha256": "f016de9fd993db734b79cb375045be4b1083ec87955bf432410bbaf611755b91",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627675:23807519",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "isSameDirectory",
+    "qualified_name": "isSameDirectory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627675,
+    "end_line": 627677,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "armed",
+      "onDisk"
+    ],
+    "body_sha256": "f6f718f6aab30ac591d2b1c1a1fd9a9ead2235747d913c9be633e6c24a114a1f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627679:23807714",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.constructor",
+    "qualified_name": "WatchedDirectory.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627679,
+    "end_line": 627684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root",
+      "debounce",
+      "watchDirectory = watchDirectoryWithNodeFs",
+      "lstat2 = import_node_fs30.lstatSync"
+    ],
+    "body_sha256": "021a08d26ea099d846816074b78161a783f2d50179244a0db6dbe327bebc4871",
+    "calls": [],
+    "writes": [
+      "this.debounce",
+      "this.lstat",
+      "this.root",
+      "this.watchDirectory"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627691:23808046",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.getLocation",
+    "qualified_name": "WatchedDirectory.getLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627691,
+    "end_line": 627693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d9609698a7364ba70f97eeb9c6ff9af72a039060aba051752f1fa87396f7fa50",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627694:23808100",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.listSubdirectoryNames",
+    "qualified_name": "WatchedDirectory.listSubdirectoryNames",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627694,
+    "end_line": 627696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3a3b4f4eedfa2509fd4ef5a80beef9c5409a31ea98b0f6b5b4d3080de42a9183",
+    "calls": [
+      "this.listSubdirectoryNamesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627697:23808174",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.setOnChange",
+    "qualified_name": "WatchedDirectory.setOnChange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627697,
+    "end_line": 627705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "onChange"
+    ],
+    "body_sha256": "4514ef11c8a10869622e31b408acc81e0e1e3acf45b07fa53dfbc046847bc538",
+    "calls": [
+      "this.debounce.wrap",
+      "this.notify.dispose",
+      "this.startWatching",
+      "this.stopWatching"
+    ],
+    "writes": [
+      "this.notify"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627706:23808412",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.startWatching",
+    "qualified_name": "WatchedDirectory.startWatching",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627706,
+    "end_line": 627719,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1c9f062c10f89fe4d8ba2dd23e0592ddf3b4950d4faada9c58980df78e3959b6",
+    "calls": [
+      "ensureSandDataDirSync",
+      "isSandDataPath",
+      "this.reportWatchUnavailable",
+      "this.watchDirectoryTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627720:23808790",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.stopWatching",
+    "qualified_name": "WatchedDirectory.stopWatching",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627720,
+    "end_line": 627727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3c531dfdc74db54c58ed60310ed01dfcd527ee658e6f5671bff68b0d89cb3553",
+    "calls": [
+      "armed.watcher.close",
+      "this.notify.dispose",
+      "this.watchers.clear",
+      "this.watchers.values"
+    ],
+    "writes": [
+      "this.notify"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627728:23808985",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.watchDirectoryTree",
+    "qualified_name": "WatchedDirectory.watchDirectoryTree",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627728,
+    "end_line": 627741,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "93464a69e70648333f41b0a6bb69f2b418e3e8d7e50d31d2dc1a42b589a75a2d",
+    "calls": [
+      "isSameDirectory",
+      "this.armDirectory",
+      "this.readDirectoryEntry",
+      "this.unwatchSubtree",
+      "this.watchers.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627742:23809425",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.armDirectory",
+    "qualified_name": "WatchedDirectory.armDirectory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627742,
+    "end_line": 627758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory",
+      "identity2"
+    ],
+    "body_sha256": "0a7e8838eb7ba9ac8b3ffe08d4264abf8c1196e2cdd58485610c2c3f6c12f79f",
+    "calls": [
+      "isMissingPathError",
+      "this.reportWatchUnavailable",
+      "this.watchDirectory",
+      "this.watchSubdirectoriesOf",
+      "this.watchers.set",
+      "watcher.on"
+    ],
+    "writes": [
+      "watcher"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627759:23809962",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.watchSubdirectoriesOf",
+    "qualified_name": "WatchedDirectory.watchSubdirectoriesOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627759,
+    "end_line": 627763,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "05bec9f7b8a39fb4361fffb681e19f1392dbd68924f494b68b721a9c3e7a9edb",
+    "calls": [
+      "this.listSubdirectoryNamesOf",
+      "this.watchDirectoryTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627764:23810154",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.readDirectoryEntry",
+    "qualified_name": "WatchedDirectory.readDirectoryEntry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627764,
+    "end_line": 627776,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "28ab947b98c8262369a9975e399a7967107ec568c327a2149610a1bf725ef48e",
+    "calls": [
+      "reportFallbackUnlessAbsent",
+      "stats.isDirectory",
+      "this.lstat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627777:23810566",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.listSubdirectoryNamesOf",
+    "qualified_name": "WatchedDirectory.listSubdirectoryNamesOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627777,
+    "end_line": 627786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "263915e33164c9f411de1d999d7c120a18a7af88cd3e3f950defb64503297787",
+    "calls": [
+      ".map",
+      ".sort",
+      "entries.filter",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:627787:23810947",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.onDirectoryEvent",
+    "qualified_name": "WatchedDirectory.onDirectoryEvent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627787,
+    "end_line": 627804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "directory",
+      "filename"
+    ],
+    "body_sha256": "008d08c1f1db30c18641ae79920db167812c2a617c56e14ca0a33f6c80eba41f",
+    "calls": [
+      "filename.toString",
+      "this.scheduleNotify",
+      "this.unwatchSubtree",
+      "this.watchDirectoryTree",
+      "this.watchSubdirectoriesOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627805:23811600",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.unwatchSubtree",
+    "qualified_name": "WatchedDirectory.unwatchSubtree",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627805,
+    "end_line": 627813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "70ad55d65de57d37488e004c71a6172ecfcabe7c50cb1abc34212b8358427913",
+    "calls": [
+      "armed.watcher.close",
+      "this.watchers.delete",
+      "watched.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627814:23811889",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.reportWatchUnavailable",
+    "qualified_name": "WatchedDirectory.reportWatchUnavailable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627814,
+    "end_line": 627819,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "a08d3c0a75284ba063cefd89629ec9b2c965bbbcce38659397705a3c8f3838a0",
+    "calls": [
+      "errorLogTag",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627820:23812028",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.scheduleNotify",
+    "qualified_name": "WatchedDirectory.scheduleNotify",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627820,
+    "end_line": 627822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b43368620ff73c1f919e8e72c89f7e7f8f24778d19ba0e6fad8ba774716f9786",
+    "calls": [
+      "this.notify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:627823:23812075",
+    "artifact": "evaluation",
+    "module": "host/watched-directory.ts",
+    "name": "WatchedDirectory.writeFileAtomic",
+    "qualified_name": "WatchedDirectory.writeFileAtomic",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 627823,
+    "end_line": 627826,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "contents"
+    ],
+    "body_sha256": "84b70d8787c7caf61d07deef01e89d196c1ff2b8495b2f1d477da0d39f41ca63",
+    "calls": [
+      "this.scheduleNotify",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

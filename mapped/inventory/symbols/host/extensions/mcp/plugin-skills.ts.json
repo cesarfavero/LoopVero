@@ -1,0 +1,1019 @@
+[
+  {
+    "id": "host:701677:26667680",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "skillRecordsIdentity",
+    "qualified_name": "skillRecordsIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701677,
+    "end_line": 701679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "records2"
+    ],
+    "body_sha256": "8f4561023206d206296a3d719993b398a48950a4e8edc981d357f96a0e8565d5",
+    "calls": [
+      ".join",
+      ".sort",
+      "records2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701680:26667820",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "toPluginSkillInfo",
+    "qualified_name": "toPluginSkillInfo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701680,
+    "end_line": 701687,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "589d46bf1d12934d70b9b48954da27acde1bd4e02b706d093ed4676795c693fe",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701688:26668005",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "skillNameFromPath2",
+    "qualified_name": "skillNameFromPath2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701688,
+    "end_line": 701692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "relativePath"
+    ],
+    "body_sha256": "6741cf36e5bf12f408404f554ece5b659adecc13b39ced24ddd0babf4b040eb6",
+    "calls": [
+      ".filter",
+      "relativePath.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701693:26668239",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "pluginVersionOf",
+    "qualified_name": "pluginVersionOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701693,
+    "end_line": 701696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "identifier2"
+    ],
+    "body_sha256": "318e7c13a432d3f30406d8706fd0089bda31fe44b828657e831496cc4ae3706c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701697:26668434",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "pluginContentsToSkillRecords",
+    "qualified_name": "pluginContentsToSkillRecords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701697,
+    "end_line": 701732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "publisherFacts = /* @__PURE__ */ new Map()"
+    ],
+    "body_sha256": "a7d7d11d36f9e7caea1a1c41a5d3fc45a71a16953d7faf9ed81ec23aad98f8a9",
+    "calls": [
+      "clampSkillDescription",
+      "clampSkillName",
+      "getPluginDbId",
+      "new Set",
+      "pluginVersionOf",
+      "publisherFacts.get",
+      "records2.push",
+      "skillNameFromPath2",
+      "slugifySkillName",
+      "usedIds.add",
+      "usedIds.has"
+    ],
+    "writes": [
+      "id",
+      "suffix"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701733:26670011",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "pluginAuthBlocksFromFailures",
+    "qualified_name": "pluginAuthBlocksFromFailures",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701733,
+    "end_line": 701749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "failures2"
+    ],
+    "body_sha256": "58ef1cea095ac8072fe765f661be2880056bbc2b3d6e3f2644c77eb7fe336e03",
+    "calls": [
+      "blocks.push",
+      "classifyCloneError",
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701751:26670717",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "PluginListingUnavailableError.constructor",
+    "qualified_name": "PluginListingUnavailableError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701751,
+    "end_line": 701754,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "75ca3c2073b5f284bbddf01b6461c4897dc42eb93c93a04f39b9492e451b2c5c",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701758:26670922",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "publisherFactsFromListing",
+    "qualified_name": "publisherFactsFromListing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701758,
+    "end_line": 701771,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "97b501fae0458fbdfae5f3e5596ae3e4f18cc44ed9e2f7e832651ced4415d289",
+    "calls": [
+      "byPluginId.set",
+      "new Map",
+      "plugin.id.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701772:26671468",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "selectedTeamGetMeRequest",
+    "qualified_name": "selectedTeamGetMeRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701772,
+    "end_line": 701774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "teamId"
+    ],
+    "body_sha256": "6a2bbfdf3c2d884980b3b01f485756ab12daa2fca92f7bd2fea40e24e79e2369",
+    "calls": [
+      "new GetMeRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701775:26671578",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "createSharedInstalledPluginsLoader",
+    "qualified_name": "createSharedInstalledPluginsLoader",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701775,
+    "end_line": 701862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "615df55668ff3457e10b94c577c429188448ae93e7d6036bf42baf478311029a",
+    "calls": [
+      "createSandCursorBackendClient",
+      "getPluginsRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701784:26671980",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "resolveCurrentUserId",
+    "qualified_name": "createSharedInstalledPluginsLoader/resolveCurrentUserId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701784,
+    "end_line": 701796,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3d0bb734eb99caea5c57536ef4474f25fb12f048d4fc2e6d4a08cc05dd5574b1",
+    "calls": [
+      "dashboardClient.getMe",
+      "deps.auth.getTeamId",
+      "deps.log",
+      "errorLogTag",
+      "selectedTeamGetMeRequest"
+    ],
+    "writes": [
+      "currentUserId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:701816:26673326",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "extraGitConfig",
+    "qualified_name": "createSharedInstalledPluginsLoader/<callback>/extraGitConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701816,
+    "end_line": 701816,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ed48f2bf2cf266d814515e06a75791cd001f73341f59554f9687d1af6394a819",
+    "calls": [
+      "buildOriginTokenGitConfig",
+      "deps.auth.peekAccessToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701826:26673695",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "onPluginsListed",
+    "qualified_name": "createSharedInstalledPluginsLoader/<callback>/onPluginsListed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701826,
+    "end_line": 701839,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "7a8eeeed981359eae26b33df9e170d8a6bffaf763cc5c49d45b08f62ef93ea84",
+    "calls": [
+      "listedCacheKeys.push",
+      "listedPluginIds.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701863:26674871",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "pruneUninstalledPluginDirs",
+    "qualified_name": "pruneUninstalledPluginDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701863,
+    "end_line": 701894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cacheRoot",
+      "listedCacheKeys",
+      "indexedFilePaths"
+    ],
+    "body_sha256": "a86ef4a5dea5768e0983544ad9cacd00443768e0e22ec64f396dc551e255a2ae",
+    "calls": [
+      "indexedFilePaths.some",
+      "keep.has",
+      "listedCacheKeys.map",
+      "new Set",
+      "pluginEntry.isDirectory",
+      "removeSandDataTreeSync",
+      "slugEntry.isDirectory"
+    ],
+    "writes": [
+      "pluginEntries",
+      "slugEntries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:701895:26676004",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "getPluginDataRootDir",
+    "qualified_name": "getPluginDataRootDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701895,
+    "end_line": 701897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sandRoot"
+    ],
+    "body_sha256": "412b4e29eb879daf37ee3148e7d8eb3f4e3bfe5027484e946da2639e0f6815fb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701898:26676119",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "pruneUninstalledPluginDataDirs",
+    "qualified_name": "pruneUninstalledPluginDataDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701898,
+    "end_line": 701915,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dataRoot",
+      "listedPluginIds"
+    ],
+    "body_sha256": "1d5db7309bbd7c8dbfed53e3c9bd12201d0cfb79cc62e45433cfe19baa065bbe",
+    "calls": [
+      "entry.isDirectory",
+      "keep.has",
+      "new Set",
+      "removeSandDataTreeSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:701916:26676730",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "nextIndexEntries",
+    "qualified_name": "nextIndexEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701916,
+    "end_line": 701945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "loaded",
+      "previous"
+    ],
+    "body_sha256": "a7a0dd7f2a0e909c74c426f9a8350ab75edf070e856fa82cb28626ad118ed79e",
+    "calls": [
+      ".filter",
+      "carriedOver",
+      "loaded.plugins.flatMap",
+      "new Set",
+      "pluginContentsToSkillRecords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701927:26677151",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "carriedOver",
+    "qualified_name": "nextIndexEntries/carriedOver",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701927,
+    "end_line": 701929,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entries = []"
+    ],
+    "body_sha256": "f2f08938d284748f2df11fbbf5913bcef04c86b111cba4bce4249446282fa86a",
+    "calls": [
+      "entries.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701948:26678013",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.constructor",
+    "qualified_name": "SandPluginSkillsService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701948,
+    "end_line": 701950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "ceac9852a463b579886a797ed1fc2be50f40bc606286d39e830a281195862750",
+    "calls": [],
+    "writes": [
+      "this.options"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701955:26678136",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.start",
+    "qualified_name": "SandPluginSkillsService.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701955,
+    "end_line": 701957,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "47d0e08faf211dc9c9ce1a6c89585ddb6c9c5a4876613626b6c89fd700de8383",
+    "calls": [
+      "this.syncInBackground"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701958:26678201",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.handleAuthChange",
+    "qualified_name": "SandPluginSkillsService.handleAuthChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701958,
+    "end_line": 701960,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4d2cb25c5366b33ac94db92acf4b28e8649a2e7fb70b01b1e8a54cb80456707c",
+    "calls": [
+      "this.syncInBackground"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701961:26678270",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.syncInBackground",
+    "qualified_name": "SandPluginSkillsService.syncInBackground",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701961,
+    "end_line": 701968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "07c5ac9e1d134607fee89a3a911d41e99443fb0b2891ecbb7bf9371d350d4c27",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701969:26678401",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.dispose",
+    "qualified_name": "SandPluginSkillsService.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701969,
+    "end_line": 701971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6af56427fa752a21c21aa8a4c392210edda4efbfb2981c41b5b44f186924324a",
+    "calls": [],
+    "writes": [
+      "this.isDisposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701972:26678447",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.current",
+    "qualified_name": "SandPluginSkillsService.current",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701972,
+    "end_line": 701974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "83f56ae501c1fdcdf2dbb41d9ea3e2482ed1dafd80e8eb60c1e25bdba1223340",
+    "calls": [
+      "this.currentIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701975:26678516",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.currentIndex",
+    "qualified_name": "SandPluginSkillsService.currentIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701975,
+    "end_line": 701977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "326795e9fed749162c131e98404b23bef554e5298daed949020ceff9a01484aa",
+    "calls": [
+      "getPluginSkillsDir",
+      "readPluginSkillsCache"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701978:26678620",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.installFolder",
+    "qualified_name": "SandPluginSkillsService.installFolder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701978,
+    "end_line": 701983,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "pluginId"
+    ],
+    "body_sha256": "ffc477e976343f1f89f8a7a41dc6c9cc62cc1fe52a023a69c3dfbebc41e11ca9",
+    "calls": [
+      ".installFolders.find",
+      "this.currentIndex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701984:26678898",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.currentAuthBlocked",
+    "qualified_name": "SandPluginSkillsService.currentAuthBlocked",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701984,
+    "end_line": 701986,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0d38593e8201182e74b19ac50c46ad39b31c4a5fd2dba2912ffa6172064632a6",
+    "calls": [
+      "getPluginSkillsDir",
+      "readPluginSkillsCache"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:701987:26679018",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.sync",
+    "qualified_name": "SandPluginSkillsService.sync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 701987,
+    "end_line": 702007,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "61f7c857198c1819712912a8dc41c9d7d6c5bd34d08bd81cbe0e1ce6c13c77b2",
+    "calls": [
+      "this.current",
+      "this.startPass"
+    ],
+    "writes": [
+      "this.pending",
+      "this.pending.trigger"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702008:26679686",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.startPass",
+    "qualified_name": "SandPluginSkillsService.startPass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702008,
+    "end_line": 702016,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "7d1a0bd08269b003985c1d9bb87460bd1a26bf289d7300b5af989313f64ce900",
+    "calls": [
+      "pass.then",
+      "this.runPass"
+    ],
+    "writes": [
+      "this.inFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702011:26679784",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "clear",
+    "qualified_name": "SandPluginSkillsService.startPass/clear",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702011,
+    "end_line": 702013,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b78a83a3ee0062d5589c939055ce8091c8b33f41b7d5a53eef4d5ee9aa6ce130",
+    "calls": [],
+    "writes": [
+      "this.inFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702017:26679920",
+    "artifact": "host",
+    "module": "host/extensions/mcp/plugin-skills.ts",
+    "name": "SandPluginSkillsService.runPass",
+    "qualified_name": "SandPluginSkillsService.runPass",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702017,
+    "end_line": 702057,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "466348aca5b4f3559f0ed86f8ea6e6606be75d383be3a0dd97c17b5358b03b92",
+    "calls": [
+      "Date.now",
+      "errorLogTag",
+      "getPluginDataRootDir",
+      "getPluginSkillsDir",
+      "getPluginsRootDir",
+      "nextIndexEntries",
+      "pruneUninstalledPluginDataDirs",
+      "pruneUninstalledPluginDirs",
+      "records2.map",
+      "skillRecordsIdentity",
+      "this.current",
+      "this.currentIndex",
+      "this.options.load",
+      "this.options.log",
+      "this.options.reportSync",
+      "writePluginSkillsCache"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

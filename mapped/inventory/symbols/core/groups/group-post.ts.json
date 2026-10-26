@@ -1,0 +1,250 @@
+[
+  {
+    "id": "host:708128:26894510",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "groupPostText",
+    "qualified_name": "groupPostText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708128,
+    "end_line": 708199,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "0d67a2d280f3c9049dc82a6e67c8b488a0a5be8f2a779e1e8aa14ae329a5b24e",
+    "calls": [
+      ".join",
+      "message.approval.items.map",
+      "message.connectors.join",
+      "message.credentialRequest.entries.map",
+      "message.draft.to.join",
+      "message.request.secrets.map",
+      "message.title.trim",
+      "summarizeWidget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 35,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 32,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708200:26898150",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "isRoomSettleBoundPost",
+    "qualified_name": "isRoomSettleBoundPost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708200,
+    "end_line": 708202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6d23741696763f25b1bd3bde746c700f6097d12ce98fc4c3dae989e0b4412ee6",
+    "calls": [
+      "isRoomSettleBoundKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708203:26898240",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "deliverableGroupPost",
+    "qualified_name": "deliverableGroupPost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708203,
+    "end_line": 708215,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "231858222da96436495a70fdbf295cb91a4afe035697cc339b9a361a8befd2bc",
+    "calls": [
+      "content.endsWith",
+      "isRoomSettleBoundPost",
+      "message.content.slice",
+      "message.content.startsWith",
+      "stripLeadingPass"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708216:26898950",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "textGroupPost",
+    "qualified_name": "textGroupPost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708216,
+    "end_line": 708218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "5c6cecb2735a31a78a38735fc4ad6dc3ec64277b3a936837566a05d33258933e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708220:26899053",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "decodeLoss",
+    "qualified_name": "decodeLoss",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708220,
+    "end_line": 708243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2",
+      "output2"
+    ],
+    "body_sha256": "ddc228605031fd4c1435b1ba7645ce21878a62122e2356b40b17157ad344d2d8",
+    "calls": [
+      ".some",
+      "Array.isArray",
+      "Object.entries",
+      "Object.keys",
+      "isUnknownRecord2",
+      "next.output.forEach",
+      "pending.pop",
+      "pending.push"
+    ],
+    "writes": [
+      "next",
+      "stripped"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708244:26900107",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "groupPostFromWire",
+    "qualified_name": "groupPostFromWire",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708244,
+    "end_line": 708269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "wire",
+      "reportDegraded = () => {\n}"
+    ],
+    "body_sha256": "08b51249cf117672eb8b6e7df6b26f57a700865c745784c8e16b04cbe363dae8",
+    "calls": [
+      "decodeLoss",
+      "isDeliverableKind",
+      "isRoomSettleBoundKind",
+      "isUnknownRecord2",
+      "parseDeliverableGroupPost",
+      "parseJsonOrUndefined",
+      "reportDegraded",
+      "textGroupPost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708270:26901186",
+    "artifact": "host",
+    "module": "core/groups/group-post.ts",
+    "name": "groupPostsFromWire",
+    "qualified_name": "groupPostsFromWire",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708270,
+    "end_line": 708278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "posts",
+      "texts",
+      "reportDegraded"
+    ],
+    "body_sha256": "627635b5793c915ec6260d92da13019406f5c27fa40315cf276a4686e6d78341",
+    "calls": [
+      "posts.flatMap",
+      "texts.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

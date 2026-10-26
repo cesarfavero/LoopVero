@@ -1,0 +1,392 @@
+[
+  {
+    "id": "host:762086:29160221",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "classify3",
+    "qualified_name": "classify3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762086,
+    "end_line": 762104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "mode"
+    ],
+    "body_sha256": "2a6c42638ce546f547d76d48ee873815b976b1bf109717fa1726a3b58f571f53",
+    "calls": [
+      "runSandAutoReviewClassifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:762094:29160533",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "buildTarget",
+    "qualified_name": "classify3/buildTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762094,
+    "end_line": 762099,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "62dc16526ce0f33746fd4cfbf490cc8d8b4d373c535e6996fb404843aabd94a9",
+    "calls": [
+      "spec.buildRiskTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:762100:29160807",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "loadConversationContext",
+    "qualified_name": "classify3/loadConversationContext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762100,
+    "end_line": 762100,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a5d641124d0cb920c56b3ac21fcfd70db2b225d062c6fff8de26bfa0fc19535b",
+    "calls": [
+      "extractConversationContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:762105:29161041",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "runSandAutoReviewFlow",
+    "qualified_name": "runSandAutoReviewFlow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762105,
+    "end_line": 762196,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f0488ff56c1bac03e6a48b9b07aa975f0afb10953798ae7efa19d1f7d6d7388b",
+    "calls": [
+      ".catch",
+      "args.onUserDenied",
+      "cancelled",
+      "classify3",
+      "fingerprintSandAutoReviewTarget",
+      "options2.getApprovalExpiryPolicy",
+      "recordRuleRefusalTheToolReportsAsText",
+      "recordedCardRefusal",
+      "requestReviewedApproval",
+      "sandAutoReviewCautionNote",
+      "spec.fingerprintPayload",
+      "spec.requireApproval",
+      "spec.summarize",
+      "spec.summaryCopy"
+    ],
+    "writes": [
+      "proposedRule",
+      "proposedRuleReplaces"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 29,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:762117:29161546",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "recordRuleRefusalTheToolReportsAsText",
+    "qualified_name": "runSandAutoReviewFlow/recordRuleRefusalTheToolReportsAsText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762117,
+    "end_line": 762123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bf7f3c22fcea17a46427f317cbd8696602c5b36259af8a02923ac55c117c9699",
+    "calls": [
+      "options2.toolDecisions.decide"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:762124:29161724",
+    "artifact": "host",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "cancelled",
+    "qualified_name": "runSandAutoReviewFlow/cancelled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 762124,
+    "end_line": 762129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "32403fc8c40aebe3a37b4681ac5230436559a3b9dfe55e6e41e6da8b1d22d539",
+    "calls": [
+      "recordRuleRefusalTheToolReportsAsText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554696:20548106",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "classify2",
+    "qualified_name": "classify2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554696,
+    "end_line": 554714,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "mode"
+    ],
+    "body_sha256": "3efb6ab191c1d674f4629a764330e60618d80962aa6645e77503f2dec55c94c5",
+    "calls": [
+      "runSandAutoReviewClassifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554704:20548418",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "buildTarget",
+    "qualified_name": "classify2/buildTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554704,
+    "end_line": 554709,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "62dc16526ce0f33746fd4cfbf490cc8d8b4d373c535e6996fb404843aabd94a9",
+    "calls": [
+      "spec.buildRiskTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554710:20548692",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "loadConversationContext",
+    "qualified_name": "classify2/loadConversationContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554710,
+    "end_line": 554710,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a5d641124d0cb920c56b3ac21fcfd70db2b225d062c6fff8de26bfa0fc19535b",
+    "calls": [
+      "extractConversationContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554715:20548926",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "runSandAutoReviewFlow",
+    "qualified_name": "runSandAutoReviewFlow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554715,
+    "end_line": 554806,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9207a852790fafcf89d4346c787d01be8401b6cff35310bee274c93a5c92276a",
+    "calls": [
+      ".catch",
+      "args.onUserDenied",
+      "cancelled",
+      "classify2",
+      "fingerprintSandAutoReviewTarget",
+      "options2.getApprovalExpiryPolicy",
+      "recordRuleRefusalTheToolReportsAsText",
+      "recordedCardRefusal",
+      "requestReviewedApproval",
+      "sandAutoReviewCautionNote",
+      "spec.fingerprintPayload",
+      "spec.requireApproval",
+      "spec.summarize",
+      "spec.summaryCopy"
+    ],
+    "writes": [
+      "proposedRule",
+      "proposedRuleReplaces"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 29,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554727:20549431",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "recordRuleRefusalTheToolReportsAsText",
+    "qualified_name": "runSandAutoReviewFlow/recordRuleRefusalTheToolReportsAsText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554727,
+    "end_line": 554733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bf7f3c22fcea17a46427f317cbd8696602c5b36259af8a02923ac55c117c9699",
+    "calls": [
+      "options2.toolDecisions.decide"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:554734:20549609",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-auto-review-flow.ts",
+    "name": "cancelled",
+    "qualified_name": "runSandAutoReviewFlow/cancelled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 554734,
+    "end_line": 554739,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "32403fc8c40aebe3a37b4681ac5230436559a3b9dfe55e6e41e6da8b1d22d539",
+    "calls": [
+      "recordRuleRefusalTheToolReportsAsText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

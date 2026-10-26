@@ -1,0 +1,387 @@
+[
+  {
+    "id": "evaluation:566571:21096415",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "ownPullRequests",
+    "qualified_name": "ownPullRequests",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566571,
+    "end_line": 566593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "06fda3b3798df8fc969832d2e1ea44ba115c1208d2ea0dad1fe15fad0ed09c6b",
+    "calls": [
+      "agent.storedPrs.flatMap",
+      "new Map",
+      "prs.push",
+      "prs.some",
+      "prs.unshift",
+      "unlinked.get",
+      "unlinked.set",
+      "unlinked.values"
+    ],
+    "writes": [
+      "same.rows"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566594:21097396",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "collectPullRequests",
+    "qualified_name": "collectPullRequests",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566594,
+    "end_line": 566610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agents"
+    ],
+    "body_sha256": "d32ef0ad6db3a926261521c44b82dcdd2ffa02726827b79727a0c8a93ad44154",
+    "calls": [
+      "byUrl.get",
+      "byUrl.set",
+      "entries.push",
+      "new Map",
+      "ownPullRequests",
+      "shared.owners.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566611:21097934",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "agentName",
+    "qualified_name": "agentName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566611,
+    "end_line": 566614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "bfabbcfc89fc8fd4e191fd1dd0ac953719ba8139204733988fdc4aadfaac5725",
+    "calls": [
+      "agent.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566615:21098058",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "ownerProject",
+    "qualified_name": "ownerProject",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566615,
+    "end_line": 566626,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "byId"
+    ],
+    "body_sha256": "bcce34d33d744be0d25027e63278bebb1b897f9aac5b48fec9f2d86d185483fb",
+    "calls": [
+      "agentName",
+      "byId.get"
+    ],
+    "writes": [
+      "hop",
+      "managerBcId",
+      "top"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566627:21098566",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "ownerWords",
+    "qualified_name": "ownerWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566627,
+    "end_line": 566637,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "byId"
+    ],
+    "body_sha256": "6d64e292bdfcad434da15d2e2df9518ecb77bc6f32a9448f42f4aaebc1714faf",
+    "calls": [
+      ".filter",
+      "agentName",
+      "bits.join",
+      "cloudAgentNeedsAttention",
+      "ownerProject"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566638:21098994",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "entryLine",
+    "qualified_name": "entryLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566638,
+    "end_line": 566641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "byId"
+    ],
+    "body_sha256": "ca0c60271ed15a325cd5da77a6219283b2e1367952e708398e56046635e684b5",
+    "calls": [
+      ".join",
+      "entry.owners.map",
+      "others.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566647:21099352",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "renderCloudAgentPullRequests",
+    "qualified_name": "renderCloudAgentPullRequests",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566647,
+    "end_line": 566688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scan2",
+      "limit3",
+      "hints"
+    ],
+    "body_sha256": "e3065d75dffe71e8f0a86198e1a2df1086e54726ae25d6d612e546a93621c0c5",
+    "calls": [
+      "Math.max",
+      "collectPullRequests",
+      "entries.filter",
+      "hints.scope",
+      "lines2.join",
+      "lines2.push",
+      "members2.slice",
+      "new Map",
+      "scan2.agents.map",
+      "shown.map",
+      "unlistedLine2"
+    ],
+    "writes": [
+      "budget",
+      "pending"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566689:21101384",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "unlistedLine2",
+    "qualified_name": "unlistedLine2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566689,
+    "end_line": 566696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "unlisted",
+      "requested",
+      "scanStopped",
+      "hints"
+    ],
+    "body_sha256": "904af531299de9cc3cf9ea9080b9f22db2dee3667148daaf6fa246c11701144c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566697:21101854",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "pullRequestListText",
+    "qualified_name": "pullRequestListText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566697,
+    "end_line": 566702,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api",
+      "limit3"
+    ],
+    "body_sha256": "bef9719178dcb19845b6db6239cd8ae5a67d8b7861f6f6c48c312c9ffa25b949",
+    "calls": [
+      "api.listPullRequests",
+      "renderCloudAgentPullRequests"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566703:21102120",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "prRowLabel",
+    "qualified_name": "prRowLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566703,
+    "end_line": 566705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prUrl",
+      "state"
+    ],
+    "body_sha256": "3d235f7b4fe52aad6eea8e708c440824f2faa432a6b7e7d4d2df8cffa6d347ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566706:21102230",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-pull-requests.ts",
+    "name": "prDetailLine",
+    "qualified_name": "prDetailLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566706,
+    "end_line": 566708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prUrl",
+      "state"
+    ],
+    "body_sha256": "bba8b7b4368393bf475b1136bf5705720af177a5a86220f54942c4f8df302e3e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

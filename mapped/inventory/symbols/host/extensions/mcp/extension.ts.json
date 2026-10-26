@@ -1,0 +1,507 @@
+[
+  {
+    "id": "host:702388:26694649",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "startPluginSkillsWhenAuthenticated",
+    "qualified_name": "startPluginSkillsWhenAuthenticated",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702388,
+    "end_line": 702423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "3d016b44b4c8fa74c7cf39fdbd41275d41354dfa0feaf991afe29852529e2400",
+    "calls": [
+      "options2.auth.peekAccessToken",
+      "options2.auth.subscribeToRenewal",
+      "start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702392:26694790",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "start",
+    "qualified_name": "startPluginSkillsWhenAuthenticated/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702392,
+    "end_line": 702406,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "11ae17c5623054ff32d18a0fd9bf67863c9991a71c1cc70b62c85fae5525c45f",
+    "calls": [
+      "options2.polling.start"
+    ],
+    "writes": [
+      "pollingHandle",
+      "started2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702407:26695247",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "handleRenewal",
+    "qualified_name": "startPluginSkillsWhenAuthenticated/handleRenewal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702407,
+    "end_line": 702414,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "3d7cd96ff9a7d5fe857c84f3deaa6ae22a894fa872aca041a276b3e8c70ad1f1",
+    "calls": [
+      "options2.auth.peekAccessToken",
+      "options2.service.handleAuthChange",
+      "start"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702433:26695974",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "start",
+    "qualified_name": "start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702433,
+    "end_line": 702516,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "5b8c39201aee19b1931e6873cd15e54f12fbe33f3d8db9a6cc51c1ca28333209",
+    "calls": [
+      "cleanupLegacyMcpAuthCredentials",
+      "context2.deps.telemetry.logs.reportMcpAuthCleanup",
+      "context2.onStop",
+      "createMcpService",
+      "createPollingPolicy2",
+      "createSandSkillPublishClient",
+      "createSharedInstalledPluginsLoader",
+      "getSandRootDir",
+      "new SandPluginSkillsService",
+      "new SandSkillPublishService",
+      "pinMcpDiagnosticsReporter",
+      "startPluginSkillsWhenAuthenticated"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:702457:26696796",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "reportSync",
+    "qualified_name": "start/reportSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702457,
+    "end_line": 702457,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "ba660759cf673604f7af2103da8b043c710efb14b13f502300e9d612e8433b53",
+    "calls": [
+      "context2.deps.telemetry.logs.reportPluginSkillsSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702466:26697186",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "onStartupSyncSucceeded",
+    "qualified_name": "start/onStartupSyncSucceeded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702466,
+    "end_line": 702473,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d0e9bf80676e35780cfd1048eb27862ca108db8f337c62b549b58d1f97838f21",
+    "calls": [
+      "sweepLegacyPluginSkillReferences"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702476:26697457",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "isCatalogServerStatusDisabled",
+    "qualified_name": "start/isCatalogServerStatusDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702476,
+    "end_line": 702478,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3874d9182d4ff967c7ba7ccc35b9c678fd9345017eb017ff2863916989aee875",
+    "calls": [
+      "context2.deps.experiments.checkFeatureGate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702479:26697625",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "isStdioSignInCardEnabled",
+    "qualified_name": "start/isStdioSignInCardEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702479,
+    "end_line": 702481,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3c9d5fb45bd332b47f34fece3bac6ad38124261385a092128cfdd425e3575727",
+    "calls": [
+      "context2.deps.experiments.checkFeatureGate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702487:26697940",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "onDiscoveryFailed",
+    "qualified_name": "start/onDiscoveryFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702487,
+    "end_line": 702487,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "8672940a7e747ccb8ad4444371821643ecb50f3310ac8ae59bbba9f76319d568",
+    "calls": [
+      "context2.deps.telemetry.logs.reportMcpDiscoveryFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702488:26698042",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "onConnectorAuth",
+    "qualified_name": "start/onConnectorAuth",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702488,
+    "end_line": 702494,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "a8be8299d857dd4ad612e0cbc8e0a8bc8249dd65bc58e696e65e913d4868b226",
+    "calls": [
+      "connectorAuthAnalyticsProps",
+      "context2.deps.telemetry.analytics.trackEvent",
+      "context2.deps.telemetry.logs.reportConnectorAuth"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702496:26698319",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "sync",
+    "qualified_name": "start/sync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702496,
+    "end_line": 702496,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "881a6501693d27d324d872647e839f9353b146b1e653546139bbfc2d31e88dfc",
+    "calls": [
+      ".map",
+      "pluginSkills.sync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702497:26698415",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "status",
+    "qualified_name": "start/status",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702497,
+    "end_line": 702497,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "159cd2895869b6147f9965d7fcfb5c8812e9888f955b2f30599a7555db86a7d4",
+    "calls": [
+      "pluginSkills.currentAuthBlocked"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702498:26698505",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "removeLiveReferences",
+    "qualified_name": "start/removeLiveReferences",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702498,
+    "end_line": 702498,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "sourceUrls"
+    ],
+    "body_sha256": "ed0b53f79e36c1b081dfb9dfcb82d635c0a51160383e4ceff4c5d6325de9092f",
+    "calls": [
+      "removeSkillLiveReferences"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702499:26698596",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "installFolder",
+    "qualified_name": "start/installFolder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702499,
+    "end_line": 702499,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pluginId"
+    ],
+    "body_sha256": "29caac6a5140bebd56b37d95b245cc6acd23ead780b8bcb487e37274bc68d546",
+    "calls": [
+      "pluginSkills.installFolder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702506:26698877",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "readMemberPublishMarketplaces",
+    "qualified_name": "start/readMemberPublishMarketplaces",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702506,
+    "end_line": 702506,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a4db3e411aa233397eb059419c1f5330f381f35bc523620492f40e71e899a712",
+    "calls": [
+      "service.readMemberPublishMarketplaces"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702508:26698978",
+    "artifact": "host",
+    "module": "host/extensions/mcp/extension.ts",
+    "name": "reportEdgeFailed",
+    "qualified_name": "start/reportEdgeFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702508,
+    "end_line": 702508,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "da0daad00f0ef6ca89bb33a3eaa518ba7cbc4f82f756b8285e4c59bb9cc08f80",
+    "calls": [
+      "context2.deps.telemetry.logs.reportSkillPublishEdgeFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

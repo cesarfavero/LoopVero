@@ -1,0 +1,918 @@
+[
+  {
+    "id": "host:557874:20497581",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "sectionLabelOf",
+    "qualified_name": "sectionLabelOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557874,
+    "end_line": 557879,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "anchor2"
+    ],
+    "body_sha256": "8cdc4927c5b4f6e960899517b73b4679eceadcd02b6258a998056a7e217cf5a5",
+    "calls": [
+      "SAND_UI_MAP.settings.sections.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557880:20497788",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "rowOf",
+    "qualified_name": "rowOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557880,
+    "end_line": 557883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "4711d71ce010641fba808abc3ddc3b478b3a2eed36b72f0ebbd6b3373c11e213",
+    "calls": [
+      "SAND_UI_MAP_SETTINGS_ROWS.find",
+      "sandUiActionAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557884:20497965",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "adminLockRemovesChoice",
+    "qualified_name": "adminLockRemovesChoice",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557884,
+    "end_line": 557886,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row",
+      "facts"
+    ],
+    "body_sha256": "91c3b7cf111753fc2468bc04325bff4e6c0bad28327ea74af8b7bdda77c55159",
+    "calls": [
+      "adminLockState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557887:20498059",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actionValues",
+    "qualified_name": "actionValues",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557887,
+    "end_line": 557893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action",
+      "facts"
+    ],
+    "body_sha256": "0c0f6a632ff73b4d70f1267c7005f107d6745e3f98a2b15a217364d78c350790",
+    "calls": [
+      "action.values.filter",
+      "new Set",
+      "taughtOverviewTabIds2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557894:20498327",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "taughtActions",
+    "qualified_name": "taughtActions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557894,
+    "end_line": 557911,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "facts"
+    ],
+    "body_sha256": "519d7580e12d95d049083edbda17539c3fcaa1a53c4b2309cb1c7233af6d079a",
+    "calls": [
+      "NEVER_TAUGHT_ANCHORS.has",
+      "actionValues",
+      "adminLockRemovesChoice",
+      "rowOf",
+      "rowShows",
+      "taught.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557912:20498937",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actRefused",
+    "qualified_name": "actRefused",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557912,
+    "end_line": 557916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "6ae12f33917dab1b83c394b4cb380b5563c88a7ead4d19c2570a348f726fba16",
+    "calls": [
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557917:20499131",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "valueList",
+    "qualified_name": "valueList",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557917,
+    "end_line": 557922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "649f6d15ffac445d5f594cc67bdf5834864e3f8c8a0e8fa257eae064dcb12521",
+    "calls": [
+      ".join",
+      "action.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557923:20499404",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "parseSendMessageAct",
+    "qualified_name": "parseSendMessageAct",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557923,
+    "end_line": 557928,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "449bdf5af6a0a65ddacb64640d4bde9f197eaa066e26e15368ee8e48d47d1e71",
+    "calls": [
+      ".trim",
+      "raw.indexOf",
+      "raw.slice",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557929:20499666",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "resolveSendMessageAct",
+    "qualified_name": "resolveSendMessageAct",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557929,
+    "end_line": 557968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "context2"
+    ],
+    "body_sha256": "0de6f2cb7b382038855c2a94bec3def75fe4c2ccadadde761912d0ed3d84c5df",
+    "calls": [
+      ".join",
+      "PLAN_NAME.test",
+      "actRefused",
+      "moveAllowedForRequestSource",
+      "parseSendMessageAct",
+      "sandUiActionAcceptsValue",
+      "sandUiActionTakesValue",
+      "sandUiFactsForToolDescription",
+      "taught.find",
+      "taught.map",
+      "taughtActions",
+      "valueList"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "actRefused"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 8,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557969:20501324",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "riskWord",
+    "qualified_name": "riskWord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557969,
+    "end_line": 557971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "risk"
+    ],
+    "body_sha256": "8262a208f4781389b2491726e9bfe977bb7adddd3bf9ba404def9b5a2cbadb73",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557972:20501400",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actionTerm",
+    "qualified_name": "actionTerm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557972,
+    "end_line": 557980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "4b32cb071f60635e288f9f012a9f9b787fc8ef6eb5c8aafc97732a412abf0525",
+    "calls": [
+      ".join",
+      "action.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557981:20501796",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "inAppActionsGuidance",
+    "qualified_name": "inAppActionsGuidance",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557981,
+    "end_line": 557993,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "visibility = {}"
+    ],
+    "body_sha256": "a58c2b1b729968af94b96a156b4f69a8016fce2ab5c551c88d6eb92f9848bd98",
+    "calls": [
+      ".join",
+      ".map",
+      "actionTerm",
+      "byRisk.get",
+      "byRisk.set",
+      "new Map",
+      "sandUiFactsForToolDescription",
+      "taughtActions",
+      "terms.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:557994:20502819",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "valueSentence",
+    "qualified_name": "valueSentence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 557994,
+    "end_line": 558005,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "629f64ac7ad4ff9d562652bee14cf07e214a71792730f9f678bf9855427a6b4c",
+    "calls": [
+      ".join",
+      "action.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:558006:20503473",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "targetSentence",
+    "qualified_name": "targetSentence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 558006,
+    "end_line": 558013,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "d07f6b27029b4ccb24b62b0459af001c509980720725c6b35a86a39a803f3c8c",
+    "calls": [
+      "rowOf",
+      "sectionLabelOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:558014:20503967",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "riskSentence",
+    "qualified_name": "riskSentence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 558014,
+    "end_line": 558027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "5a11314bff745ee7bd0c982a465fc00982207541c9dd10f1ffa9ebab4a809245",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:558028:20505007",
+    "artifact": "host",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "sandAppActionsReferenceDoc",
+    "qualified_name": "sandAppActionsReferenceDoc",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 558028,
+    "end_line": 558062,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "facts = {}"
+    ],
+    "body_sha256": "93cf30dd60549c3f83126ac254dbdcd7f2c6fddd03be823a4fd91c1f091e4891",
+    "calls": [
+      ".join",
+      "lines2.join",
+      "lines2.push",
+      "new Set",
+      "riskSentence",
+      "targetSentence",
+      "taught.filter",
+      "taughtActions",
+      "unclassified.map",
+      "valueSentence"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550688:20356068",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "rowOf",
+    "qualified_name": "rowOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550688,
+    "end_line": 550691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "4711d71ce010641fba808abc3ddc3b478b3a2eed36b72f0ebbd6b3373c11e213",
+    "calls": [
+      "SAND_UI_MAP_SETTINGS_ROWS.find",
+      "sandUiActionAnchor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550692:20356245",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "adminLockRemovesChoice",
+    "qualified_name": "adminLockRemovesChoice",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550692,
+    "end_line": 550694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row",
+      "facts"
+    ],
+    "body_sha256": "91c3b7cf111753fc2468bc04325bff4e6c0bad28327ea74af8b7bdda77c55159",
+    "calls": [
+      "adminLockState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550695:20356339",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actionValues",
+    "qualified_name": "actionValues",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550695,
+    "end_line": 550701,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action",
+      "facts"
+    ],
+    "body_sha256": "0c0f6a632ff73b4d70f1267c7005f107d6745e3f98a2b15a217364d78c350790",
+    "calls": [
+      "action.values.filter",
+      "new Set",
+      "taughtOverviewTabIds2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550702:20356607",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "taughtActions",
+    "qualified_name": "taughtActions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550702,
+    "end_line": 550719,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "facts"
+    ],
+    "body_sha256": "519d7580e12d95d049083edbda17539c3fcaa1a53c4b2309cb1c7233af6d079a",
+    "calls": [
+      "NEVER_TAUGHT_ANCHORS.has",
+      "actionValues",
+      "adminLockRemovesChoice",
+      "rowOf",
+      "rowShows",
+      "taught.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550720:20357217",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actRefused",
+    "qualified_name": "actRefused",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550720,
+    "end_line": 550724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "6ae12f33917dab1b83c394b4cb380b5563c88a7ead4d19c2570a348f726fba16",
+    "calls": [
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550725:20357411",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "valueList",
+    "qualified_name": "valueList",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550725,
+    "end_line": 550730,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "649f6d15ffac445d5f594cc67bdf5834864e3f8c8a0e8fa257eae064dcb12521",
+    "calls": [
+      ".join",
+      "action.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550731:20357684",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "parseSendMessageAct",
+    "qualified_name": "parseSendMessageAct",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550731,
+    "end_line": 550736,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "449bdf5af6a0a65ddacb64640d4bde9f197eaa066e26e15368ee8e48d47d1e71",
+    "calls": [
+      ".trim",
+      "raw.indexOf",
+      "raw.slice",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550737:20357946",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "resolveSendMessageAct",
+    "qualified_name": "resolveSendMessageAct",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550737,
+    "end_line": 550776,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "context2"
+    ],
+    "body_sha256": "0de6f2cb7b382038855c2a94bec3def75fe4c2ccadadde761912d0ed3d84c5df",
+    "calls": [
+      ".join",
+      "PLAN_NAME.test",
+      "actRefused",
+      "moveAllowedForRequestSource",
+      "parseSendMessageAct",
+      "sandUiActionAcceptsValue",
+      "sandUiActionTakesValue",
+      "sandUiFactsForToolDescription",
+      "taught.find",
+      "taught.map",
+      "taughtActions",
+      "valueList"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "actRefused"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 8,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550777:20359604",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "riskWord",
+    "qualified_name": "riskWord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550777,
+    "end_line": 550779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "risk"
+    ],
+    "body_sha256": "8262a208f4781389b2491726e9bfe977bb7adddd3bf9ba404def9b5a2cbadb73",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550780:20359680",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "actionTerm",
+    "qualified_name": "actionTerm",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550780,
+    "end_line": 550788,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "action"
+    ],
+    "body_sha256": "4b32cb071f60635e288f9f012a9f9b787fc8ef6eb5c8aafc97732a412abf0525",
+    "calls": [
+      ".join",
+      "action.values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550789:20360076",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-ui-map/actions.ts",
+    "name": "inAppActionsGuidance",
+    "qualified_name": "inAppActionsGuidance",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550789,
+    "end_line": 550801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "visibility = {}"
+    ],
+    "body_sha256": "a58c2b1b729968af94b96a156b4f69a8016fce2ab5c551c88d6eb92f9848bd98",
+    "calls": [
+      ".join",
+      ".map",
+      "actionTerm",
+      "byRisk.get",
+      "byRisk.set",
+      "new Map",
+      "sandUiFactsForToolDescription",
+      "taughtActions",
+      "terms.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

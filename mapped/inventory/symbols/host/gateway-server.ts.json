@@ -1,0 +1,1457 @@
+[
+  {
+    "id": "host:493302:18084986",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "statusForCommandError",
+    "qualified_name": "statusForCommandError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493302,
+    "end_line": 493311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "ce9f8bdcd864521957f41b882d4e670e88e3f9427a595423fa95467743581ed5",
+    "calls": [
+      "DOMAIN_REFUSALS.some",
+      "GATEWAY_FAILURE_CODES.has",
+      "isEdgeFailureOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493338:18086339",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "gatewayFailureCodeFor",
+    "qualified_name": "gatewayFailureCodeFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493338,
+    "end_line": 493350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "838dd260273787c7c4376332cf0feb98cb54690c84cbdcbbee8fbf4cdf5940f4",
+    "calls": [
+      "GATEWAY_FAILURE_CODES.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493358:18087411",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "parseArgs",
+    "qualified_name": "parseArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493358,
+    "end_line": 493374,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "parse17"
+    ],
+    "body_sha256": "db82219bcb9775a0de8860a3aca2b644db6394d326d529deddf007896fac918c",
+    "calls": [
+      "JSON.parse",
+      "String",
+      "errorMessage",
+      "new SandGatewayRequestError",
+      "parse17"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [
+      "SandGatewayRequestError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:493375:18087870",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "readBody",
+    "qualified_name": "readBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493375,
+    "end_line": 493387,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "f75e3375fbf6b7836720717d3274f5174e43a314ed31178134259cd950306f9c",
+    "calls": [
+      ".toString",
+      "Buffer.concat",
+      "Buffer.from",
+      "chunks.push",
+      "new SandGatewayRequestError"
+    ],
+    "writes": [
+      "totalBytes"
+    ],
+    "throw_targets": [
+      "SandGatewayRequestError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493394:18088512",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "gzipOptionsFor",
+    "qualified_name": "gzipOptionsFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493394,
+    "end_line": 493397,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "method",
+      "result"
+    ],
+    "body_sha256": "70d714f57826b2e3878172fbd29bbb4642360f11d09ff95ee52af44e60494204",
+    "calls": [
+      "COMPRESSED_IMAGE_DATA_URL.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493398:18088847",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "clientAcceptsGzip",
+    "qualified_name": "clientAcceptsGzip",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493398,
+    "end_line": 493402,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "933a5b8ee50614a8c74d1191d9a7263e5df9ecf43477a3955e9a84bb1f0c1642",
+    "calls": [
+      ".includes",
+      "Array.isArray",
+      "header.join",
+      "value.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493403:18089075",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "clientWantsSlimAvatars",
+    "qualified_name": "clientWantsSlimAvatars",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493403,
+    "end_line": 493407,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "77d73a88e571c9c5346ab450a69fe57df63568f7931a46606a9075f68bbb3698",
+    "calls": [
+      "Array.isArray"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493409:18089322",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "respondJson",
+    "qualified_name": "respondJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493409,
+    "end_line": 493440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "res",
+      "value",
+      "req",
+      "gzipOptions = {}"
+    ],
+    "body_sha256": "2b4dd226e74c72bcf2e871be51c919e64e5a095784ce2dc9499fdecda16cec86",
+    "calls": [
+      "Buffer.from",
+      "JSON.stringify",
+      "clientAcceptsGzip",
+      "respondRaw"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493411:18089467",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "respondRaw",
+    "qualified_name": "respondJson/respondRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493411,
+    "end_line": 493419,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4a655f3cbf19c956cc7d87671472f7666d95d7b960b343db63bf391b431e8032",
+    "calls": [
+      "res.end",
+      "res.writeHead"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493441:18090332",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "respondErrorPayload",
+    "qualified_name": "respondErrorPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493441,
+    "end_line": 493454,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "res",
+      "status",
+      "args"
+    ],
+    "body_sha256": "0269115e26ec01ea6ad2fbd40ae6d67400aa947089b867790d32bf64137027e9",
+    "calls": [
+      "Buffer.byteLength",
+      "JSON.stringify",
+      "res.end",
+      "res.writeHead"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493455:18090895",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "respondError",
+    "qualified_name": "respondError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493455,
+    "end_line": 493457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "res",
+      "status",
+      "message"
+    ],
+    "body_sha256": "773934d5e2775d89a5dccc9b6704b29e924fb6ccb7ef7dce34e878ebfa98df87",
+    "calls": [
+      "respondErrorPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493458:18090992",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "isAuthorized",
+    "qualified_name": "isAuthorized",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493458,
+    "end_line": 493466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req",
+      "expectedToken"
+    ],
+    "body_sha256": "341223e49d8508cbe0a44550737697e53f2f12960b5d7bbeba545efc0256f693",
+    "calls": [
+      "Buffer.from",
+      "header.slice",
+      "header.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493468:18091496",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "gatewayRouteLabel",
+    "qualified_name": "gatewayRouteLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493468,
+    "end_line": 493476,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pathname"
+    ],
+    "body_sha256": "330027eb62a4d5da4939c3c9343a29dd6d4d56e8477c3333e8396998574193ee",
+    "calls": [
+      "isSandGatewayMethod",
+      "pathname.slice",
+      "pathname.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493477:18091918",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "isLoopbackPeer",
+    "qualified_name": "isLoopbackPeer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493477,
+    "end_line": 493481,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "b06e31495dc5f77ad7a229497ef80083737fda0795b88b4c097da1c0dd69d7ee",
+    "calls": [
+      ".startsWith",
+      "address.slice",
+      "address.toLowerCase",
+      "v4.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493482:18092183",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "webAuthnProxyRefusal",
+    "qualified_name": "webAuthnProxyRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493482,
+    "end_line": 493490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "37722ccbe7e8fd1c4ec0c1f3922c53379a8b3e76fd0754361320c458ec047885",
+    "calls": [
+      "gatewayRouteLabel",
+      "isLoopbackPeer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493491:18092606",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "webAuthnProxyRefusalMessage",
+    "qualified_name": "webAuthnProxyRefusalMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493491,
+    "end_line": 493493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "refusal4"
+    ],
+    "body_sha256": "67577725142432e8306f7b3b698555d8064cf0d2f7e20350a589809b4f9f9b97",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493494:18092808",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "hostHeaderHostname",
+    "qualified_name": "hostHeaderHostname",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493494,
+    "end_line": 493502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "f907263debd3f1dab4d931ac64e81ca72653ea97f90450c3fdc5826e88a7d292",
+    "calls": [
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:493504:18093114",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "rejectUntrustedBrowserRequest",
+    "qualified_name": "rejectUntrustedBrowserRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493504,
+    "end_line": 493517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res"
+    ],
+    "body_sha256": "c0cfb3c1ef11473bb683cdcb1501129d2e6a22c3d4290d12ab3b0ada5c33f35f",
+    "calls": [
+      "hostHeaderHostname",
+      "isLoopbackHostname",
+      "respondError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493518:18093555",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "requestId",
+    "qualified_name": "requestId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493518,
+    "end_line": 493522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "5f413af61a309333ca9d3c5f70d0d1cd7db7376fbcff35a9f8307df4d3dd8bd3",
+    "calls": [
+      "Array.isArray"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493523:18093773",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "commandTrace",
+    "qualified_name": "commandTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493523,
+    "end_line": 493529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "req"
+    ],
+    "body_sha256": "75b270e97937f633e3c7a83b0ab30ae670eb19c68e3a39b269d4a38d492669ea",
+    "calls": [
+      "Array.isArray",
+      "parseTraceparent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493530:18094085",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "routeCommand",
+    "qualified_name": "routeCommand",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493530,
+    "end_line": 493579,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api",
+      "method",
+      "body",
+      "res",
+      "req",
+      "onCommandError",
+      "onCommandComplete"
+    ],
+    "body_sha256": "ac02c34546adb8b070aacf8dc3f7474d39fc4a74c1232f9e6aae8a09084bee0b",
+    "calls": [
+      "Date.now",
+      "beginGatewayCommandTrace",
+      "classifyGatewayCommandError",
+      "clientWantsSlimAvatars",
+      "commandSpan.span.end",
+      "commandTrace",
+      "gzipOptionsFor",
+      "isSandGatewayMethod",
+      "onCommandComplete",
+      "onCommandError",
+      "requestId",
+      "respondErrorPayload",
+      "respondJson",
+      "runGatewayCommand",
+      "statusForCommandError"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:493580:18095524",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "openSseStream",
+    "qualified_name": "openSseStream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493580,
+    "end_line": 493614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res",
+      "register",
+      "echoes"
+    ],
+    "body_sha256": "be203b310eede605d0cc39c55580120b3a0d98ac8744ce783e095edc0a9d8d36",
+    "calls": [
+      "clientAcceptsGzip",
+      "echoes.add",
+      "gzip6.pipe",
+      "register",
+      "res.on",
+      "res.writeHead",
+      "sink.write",
+      "sseHeartbeatPolicy.arm"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493602:18096345",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "echo",
+    "qualified_name": "openSseStream/echo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493602,
+    "end_line": 493606,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "nonce"
+    ],
+    "body_sha256": "96d7f585e9b964fd348ae7aaa2d58721109b5b85968721922e51f50dc8b10e91",
+    "calls": [
+      "sink.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493615:18096570",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "parseSubscribedChannels",
+    "qualified_name": "parseSubscribedChannels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493615,
+    "end_line": 493623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "5b6b0c8fa33ae20a67266d5c91c47bbdc720c93707dbbf3754bf2bcd08230b19",
+    "calls": [
+      ".flatMap",
+      "new Set",
+      "raw.split",
+      "url2.searchParams.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493624:18096903",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "parseStreamSurface",
+    "qualified_name": "parseStreamSurface",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493624,
+    "end_line": 493627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "94f4483353de160378b4cf4ab7f6f879939fde83efc3f2523993e80f0e1a9098",
+    "calls": [
+      "isSandClientSurface",
+      "url2.searchParams.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493628:18097060",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleEvents",
+    "qualified_name": "handleEvents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493628,
+    "end_line": 493643,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res",
+      "url2",
+      "echoes"
+    ],
+    "body_sha256": "56557f377689215b64b022b8aab220bbc484a9d5d89a2115e5773de967cc01e2",
+    "calls": [
+      "clientWantsSlimAvatars",
+      "openSseStream",
+      "parseSubscribedChannels"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493650:18097788",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleAvatarImage",
+    "qualified_name": "handleAvatarImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493650,
+    "end_line": 493684,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res",
+      "url2"
+    ],
+    "body_sha256": "5f4922495d58f469ae7c23b7cfff51b552364f747d096f969dad83178c465f76",
+    "calls": [
+      "Buffer.from",
+      "DATA_URL_PATTERN.exec",
+      "decodeURIComponent",
+      "deps.api.getAgentAvatar",
+      "parseAgentId",
+      "res.end",
+      "res.writeHead",
+      "respondError",
+      "url2.pathname.slice",
+      "url2.searchParams.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493686:18099252",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "responseDrained",
+    "qualified_name": "responseDrained",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493686,
+    "end_line": 493699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "res"
+    ],
+    "body_sha256": "10dc19d6e2b35a49496eb910c343027c92eb34a13445fa74c177e1cf2487cede",
+    "calls": [
+      "Promise.resolve",
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493691:18099425",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "settle3",
+    "qualified_name": "responseDrained/<callback>/settle3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493691,
+    "end_line": 493695,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f75d2dc7e948f9a03351a7826f0239e22cb6f3890d16c285c45b55ea6de6a952",
+    "calls": [
+      "res.off",
+      "resolve31"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493700:18099597",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleAttachmentStream",
+    "qualified_name": "handleAttachmentStream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493700,
+    "end_line": 493753,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res",
+      "url2"
+    ],
+    "body_sha256": "ff8189fe807888a44dc82df44ab79e21119d70503f24cf9706de1278b5bd0d4e",
+    "calls": [
+      "Buffer.alloc",
+      "Buffer.from",
+      "Math.min",
+      "decodeURIComponent",
+      "parseAgentId",
+      "parseGatewayByteRange",
+      "probe.mime.startsWith",
+      "read2",
+      "res.destroy",
+      "res.end",
+      "res.write",
+      "res.writeHead",
+      "respondError",
+      "responseDrained",
+      "url2.pathname.slice",
+      "url2.searchParams.get"
+    ],
+    "writes": [
+      "offset2"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 12,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:493711:18100140",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "read2",
+    "qualified_name": "handleAttachmentStream/read2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493711,
+    "end_line": 493711,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "offset2",
+      "length"
+    ],
+    "body_sha256": "2017773d73e061cc6c1be33a0e6d1508a47b9c082d659ea62042d5e4429bf0c5",
+    "calls": [
+      "deps.api.readAttachmentChunk"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493754:18101751",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleLocalExecRequests",
+    "qualified_name": "handleLocalExecRequests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493754,
+    "end_line": 493765,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res"
+    ],
+    "body_sha256": "939452aae5cc99605e09672deec006be4f97a1877ae6a3b5a2fe90181cbe7526",
+    "calls": [
+      "openSseStream",
+      "respondError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493766:18102066",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleLocalExecResponses",
+    "qualified_name": "handleLocalExecResponses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493766,
+    "end_line": 493774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "body",
+      "res"
+    ],
+    "body_sha256": "d44137a3b00db4134c131d75be1e737df954c9f2439ff57dc4d7e907c5bea6c2",
+    "calls": [
+      "bridge.submitResponses",
+      "parseArgs",
+      "respondError",
+      "respondJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493775:18102384",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleWebAuthnRequests",
+    "qualified_name": "handleWebAuthnRequests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493775,
+    "end_line": 493786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res"
+    ],
+    "body_sha256": "0390e33f824b3db6d5dbf79a8702fb26bcf8fa69adadec21b15b65ea0a5d4df9",
+    "calls": [
+      "openSseStream",
+      "respondError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493787:18102695",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleWebAuthnResponses",
+    "qualified_name": "handleWebAuthnResponses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493787,
+    "end_line": 493795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "body",
+      "res"
+    ],
+    "body_sha256": "040358c7f81e8e30d7d97e131301c0baaed37e439f9de6683ca9687f05e3691b",
+    "calls": [
+      "bridge.submitResponses",
+      "parseArgs",
+      "respondError",
+      "respondJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493796:18103008",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleCookieOriginApprovalRequests",
+    "qualified_name": "handleCookieOriginApprovalRequests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493796,
+    "end_line": 493807,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res"
+    ],
+    "body_sha256": "5146cc7027c2e0d2e37c050a72d4a3d93695f9f43f0c4137c67595a53a249985",
+    "calls": [
+      "openSseStream",
+      "respondError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493808:18103357",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleCookieOriginApprovalResponses",
+    "qualified_name": "handleCookieOriginApprovalResponses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493808,
+    "end_line": 493816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "body",
+      "res"
+    ],
+    "body_sha256": "f0084a4803337a953645272ac88a0be138948e6b0e25403b8bc00ee1b561a746",
+    "calls": [
+      "bridge.submitResponses",
+      "parseArgs",
+      "respondError",
+      "respondJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493817:18103720",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "startGatewayServer",
+    "qualified_name": "startGatewayServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493817,
+    "end_line": 493850,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "cf24d98a454eecfe39c4f149ed83ef3e3ed96e38b9c7aa6f356f3f86126ea87b",
+    "calls": [
+      "new Promise",
+      "new Set",
+      "server.address"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493820:18103884",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "requestListener",
+    "qualified_name": "startGatewayServer/requestListener",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493820,
+    "end_line": 493833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "req",
+      "res"
+    ],
+    "body_sha256": "ef77771c718de6df1404f5f11161ca8a98e571be976e318a76476055742031a3",
+    "calls": [
+      ".catch",
+      "handleRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493845:18105050",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "close",
+    "qualified_name": "startGatewayServer/close",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493845,
+    "end_line": 493848,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79497a164a3e1f9f73cb16c990ee70ba0b968af49b52bc2163ee1f4b3da08373",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:493851:18105227",
+    "artifact": "host",
+    "module": "host/gateway-server.ts",
+    "name": "handleRequest",
+    "qualified_name": "handleRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 493851,
+    "end_line": 493962,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "req",
+      "res",
+      "eventStreamEchoes"
+    ],
+    "body_sha256": "e7f28ace14ccff22dfec3b4dda078a57eec40567db52c31d34efdb061a8b3879",
+    "calls": [
+      "GATEWAY_EVENTS_ECHO_NONCE_PATTERN.test",
+      "SECRET_VALUE_COMMANDS.has",
+      "deps.getHealth",
+      "deps.isWebAuthnProxyCredentialLive",
+      "deps.onDesktopContact",
+      "deps.onWebAuthnProxyRefused",
+      "deps.prepareForUpgrade",
+      "echo",
+      "handleAttachmentStream",
+      "handleAvatarImage",
+      "handleCookieOriginApprovalRequests",
+      "handleCookieOriginApprovalResponses",
+      "handleEvents",
+      "handleLocalExecRequests",
+      "handleLocalExecResponses",
+      "handleWebAuthnRequests",
+      "handleWebAuthnResponses",
+      "isAuthorized",
+      "new URL",
+      "readBody",
+      "rejectUntrustedBrowserRequest",
+      "respondError",
+      "respondJson",
+      "routeCommand",
+      "url2.pathname.slice",
+      "url2.pathname.startsWith",
+      "url2.searchParams.get",
+      "webAuthnProxyRefusal",
+      "webAuthnProxyRefusalMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 25,
+      "loops": 1,
+      "awaits": 5,
+      "returns": 21,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

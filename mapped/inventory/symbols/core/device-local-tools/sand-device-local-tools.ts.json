@@ -1,0 +1,414 @@
+[
+  {
+    "id": "host:759517:29035066",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "currentDeviceLocalToolId",
+    "qualified_name": "currentDeviceLocalToolId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759517,
+    "end_line": 759519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId",
+      "tools = SAND_DEVICE_LOCAL_TOOLS"
+    ],
+    "body_sha256": "5b915ffae18781b38a549dc7543257106df59b8e50bee94a5cddf4abcf9f59e2",
+    "calls": [
+      "tools.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759520:29035241",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "isComputerUseToolId",
+    "qualified_name": "isComputerUseToolId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759520,
+    "end_line": 759522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "d3c69ba02eed18a85b496f962ab8b64451c4def137a210ef4e3a3b0c00106fbb",
+    "calls": [
+      "COMPUTER_USE_TOOL_NAMES.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759530:29035542",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "provesOsPermissionGranted",
+    "qualified_name": "provesOsPermissionGranted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759530,
+    "end_line": 759532,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "cd206551632ce1795efa201ec286243cfa72238646d0a3cefb1258f8b762fe42",
+    "calls": [
+      "COMPUTER_USE_TOOLS_WITHOUT_OS_PERMISSION.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759533:29035653",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "deviceLocalToolOf",
+    "qualified_name": "deviceLocalToolOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759533,
+    "end_line": 759536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "dce28e43bf696ce978dd258b5d3a49a8faa498af9dfc579bbc912f107ff42bae",
+    "calls": [
+      "SAND_DEVICE_LOCAL_TOOLS.find",
+      "currentDeviceLocalToolId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759537:29035840",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "describeDeviceLocalToolPermission",
+    "qualified_name": "describeDeviceLocalToolPermission",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759537,
+    "end_line": 759557,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "728cfedc8b07e8d6e27bd65aa0eb9558bd000eaf60fc37c78202e315304833ec",
+    "calls": [
+      "args.deviceName.trim",
+      "computerUsePermissionText",
+      "deviceLocalToolOf",
+      "isComputerUseToolId",
+      "tool.permissionCardBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759558:29036932",
+    "artifact": "host",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "computerUsePermissionText",
+    "qualified_name": "computerUsePermissionText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759558,
+    "end_line": 759570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "computer"
+    ],
+    "body_sha256": "f551434c1b11d108aba1d7da13b53f245d464832e5eff6150dfc2f5e2d1e0ea9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549677:20312429",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "currentDeviceLocalToolId",
+    "qualified_name": "currentDeviceLocalToolId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549677,
+    "end_line": 549679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId",
+      "tools = SAND_DEVICE_LOCAL_TOOLS"
+    ],
+    "body_sha256": "5b915ffae18781b38a549dc7543257106df59b8e50bee94a5cddf4abcf9f59e2",
+    "calls": [
+      "tools.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549680:20312604",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "isComputerUseToolId",
+    "qualified_name": "isComputerUseToolId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549680,
+    "end_line": 549682,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "d3c69ba02eed18a85b496f962ab8b64451c4def137a210ef4e3a3b0c00106fbb",
+    "calls": [
+      "COMPUTER_USE_TOOL_NAMES.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549690:20312905",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "provesOsPermissionGranted",
+    "qualified_name": "provesOsPermissionGranted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549690,
+    "end_line": 549692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "cd206551632ce1795efa201ec286243cfa72238646d0a3cefb1258f8b762fe42",
+    "calls": [
+      "COMPUTER_USE_TOOLS_WITHOUT_OS_PERMISSION.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549693:20313016",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "deviceLocalToolOf",
+    "qualified_name": "deviceLocalToolOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549693,
+    "end_line": 549696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "dce28e43bf696ce978dd258b5d3a49a8faa498af9dfc579bbc912f107ff42bae",
+    "calls": [
+      "SAND_DEVICE_LOCAL_TOOLS.find",
+      "currentDeviceLocalToolId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549697:20313203",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "describeDeviceLocalToolPermission",
+    "qualified_name": "describeDeviceLocalToolPermission",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549697,
+    "end_line": 549717,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "728cfedc8b07e8d6e27bd65aa0eb9558bd000eaf60fc37c78202e315304833ec",
+    "calls": [
+      "args.deviceName.trim",
+      "computerUsePermissionText",
+      "deviceLocalToolOf",
+      "isComputerUseToolId",
+      "tool.permissionCardBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549718:20314295",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "computerUsePermissionText",
+    "qualified_name": "computerUsePermissionText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549718,
+    "end_line": 549730,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "computer"
+    ],
+    "body_sha256": "f551434c1b11d108aba1d7da13b53f245d464832e5eff6150dfc2f5e2d1e0ea9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549731:20314920",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/sand-device-local-tools.ts",
+    "name": "createDeviceLocalTools",
+    "qualified_name": "createDeviceLocalTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549731,
+    "end_line": 549735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deviceLocalTools"
+    ],
+    "body_sha256": "f34e4f33ed94e984132837c8d15086ed8a6521fceec650ce375427247d267590",
+    "calls": [
+      ".map",
+      "SAND_DEVICE_LOCAL_TOOLS.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,528 @@
+[
+  {
+    "id": "host:760019:29053740",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "validate",
+    "qualified_name": "validate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760019,
+    "end_line": 760022,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c0c46c7065ae418aebbcf1b256919ef4ee150b95e7b8362f21529d2e80ae6b67",
+    "calls": [
+      "meetingChatAnswerSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760053:29059752",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.prompt",
+    "qualified_name": "_MeetingChatReview.prompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760053,
+    "end_line": 760059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "1ec47e54340aaaa14461b4425a764fc006179edc770b315c6c74d3d00b958d4e",
+    "calls": [
+      "JSON.stringify",
+      "_MeetingChatReview.payload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760060:29059930",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.payload",
+    "qualified_name": "_MeetingChatReview.payload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760060,
+    "end_line": 760087,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ context: context2, draft }"
+    ],
+    "body_sha256": "aff801931840894ede6e75080e1bcb5ad8986387bbfe30dc69c21be41ffafda2",
+    "calls": [
+      "_MeetingChatReview.newestWithin",
+      "context2.conversation.map",
+      "context2.recentLines.slice",
+      "notes.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760088:29060891",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.parse",
+    "qualified_name": "_MeetingChatReview.parse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760088,
+    "end_line": 760096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "calls"
+    ],
+    "body_sha256": "baf906bd7165a608ad9873400ca113c909f9d4011485b817617bc15dab4a2edd",
+    "calls": [
+      ".filter",
+      ".map",
+      ".slice",
+      "meetingChatAnswerSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760097:29061489",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.run",
+    "qualified_name": "_MeetingChatReview.run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760097,
+    "end_line": 760122,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    input: input2,\n    run,\n    signal,\n    timeoutMs = MEETING_CHAT_REVIEW_TIMEOUT_MS\n  }"
+    ],
+    "body_sha256": "a0ce018a93dc7080a6202af73139bbbdfced536b4e6ae2c649440f5ee9d18ede",
+    "calls": [
+      "_MeetingChatReview.parse",
+      "_MeetingChatReview.prompt",
+      "cancelled",
+      "controller.abort",
+      "new AbortController",
+      "run",
+      "signal.addEventListener",
+      "signal.removeEventListener",
+      "withTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:760103:29061608",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "cancelled",
+    "qualified_name": "_MeetingChatReview.run/cancelled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760103,
+    "end_line": 760103,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79ef92b33c6f921cffd1243c7a47ed94384662a47040f458b53485c155a4a231",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760106:29061774",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "onAbort",
+    "qualified_name": "_MeetingChatReview.run/onAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760106,
+    "end_line": 760106,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1470b8fe4e5582a3cc9f0ebb0327cac5a78fb75e35f6efb62ca0df9094af269e",
+    "calls": [
+      "controller.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:760123:29062482",
+    "artifact": "host",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.newestWithin",
+    "qualified_name": "_MeetingChatReview.newestWithin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 760123,
+    "end_line": 760135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "items",
+      "maxChars",
+      "lengthOf"
+    ],
+    "body_sha256": "f0d4b8615caa52d2913bc9c0d51650137f5ee4fd8a51aa02bf19e70618bdc70f",
+    "calls": [
+      "kept.unshift",
+      "lengthOf"
+    ],
+    "writes": [
+      "index",
+      "used"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550834:20362506",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "validate",
+    "qualified_name": "validate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550834,
+    "end_line": 550837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "b8bf8bcebe6134db3a18b92964ce48d37ae5568b095e1387b97c7541e2aa3242",
+    "calls": [
+      "meetingChatAnswerSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550868:20368514",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.prompt",
+    "qualified_name": "_MeetingChatReview.prompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550868,
+    "end_line": 550874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "1ec47e54340aaaa14461b4425a764fc006179edc770b315c6c74d3d00b958d4e",
+    "calls": [
+      "JSON.stringify",
+      "_MeetingChatReview.payload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550875:20368692",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.payload",
+    "qualified_name": "_MeetingChatReview.payload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550875,
+    "end_line": 550902,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ context: context2, draft }"
+    ],
+    "body_sha256": "aff801931840894ede6e75080e1bcb5ad8986387bbfe30dc69c21be41ffafda2",
+    "calls": [
+      "_MeetingChatReview.newestWithin",
+      "context2.conversation.map",
+      "context2.recentLines.slice",
+      "notes.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550903:20369653",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.parse",
+    "qualified_name": "_MeetingChatReview.parse",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550903,
+    "end_line": 550911,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "calls"
+    ],
+    "body_sha256": "baf906bd7165a608ad9873400ca113c909f9d4011485b817617bc15dab4a2edd",
+    "calls": [
+      ".filter",
+      ".map",
+      ".slice",
+      "meetingChatAnswerSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550912:20370251",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.run",
+    "qualified_name": "_MeetingChatReview.run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550912,
+    "end_line": 550937,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    input: input2,\n    run,\n    signal,\n    timeoutMs = MEETING_CHAT_REVIEW_TIMEOUT_MS\n  }"
+    ],
+    "body_sha256": "f8bf3f3bdc328b86d677689c5bd244dee6708cdfb02c6f1726fc297c57172a7e",
+    "calls": [
+      "_MeetingChatReview.parse",
+      "_MeetingChatReview.prompt",
+      "cancelled",
+      "controller.abort",
+      "new AbortController",
+      "run",
+      "signal.addEventListener",
+      "signal.removeEventListener",
+      "withTimeout"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:550918:20370370",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "cancelled",
+    "qualified_name": "_MeetingChatReview.run/cancelled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550918,
+    "end_line": 550918,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79ef92b33c6f921cffd1243c7a47ed94384662a47040f458b53485c155a4a231",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550921:20370536",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "onAbort",
+    "qualified_name": "_MeetingChatReview.run/onAbort",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550921,
+    "end_line": 550921,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1470b8fe4e5582a3cc9f0ebb0327cac5a78fb75e35f6efb62ca0df9094af269e",
+    "calls": [
+      "controller.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:550938:20371244",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-chat-review.ts",
+    "name": "_MeetingChatReview.newestWithin",
+    "qualified_name": "_MeetingChatReview.newestWithin",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 550938,
+    "end_line": 550950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "items",
+      "maxChars",
+      "lengthOf"
+    ],
+    "body_sha256": "f0d4b8615caa52d2913bc9c0d51650137f5ee4fd8a51aa02bf19e70618bdc70f",
+    "calls": [
+      "kept.unshift",
+      "lengthOf"
+    ],
+    "writes": [
+      "index",
+      "used"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

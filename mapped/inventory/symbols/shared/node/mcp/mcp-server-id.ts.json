@@ -1,0 +1,307 @@
+[
+  {
+    "id": "host:685159:26029200",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "isMcpServerId",
+    "qualified_name": "isMcpServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685159,
+    "end_line": 685161,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "e945c29af33f64c0e56fef687ba75eaed9e6b4df8135c96db2f0acb06abb3062",
+    "calls": [
+      "MCP_SERVER_ID_PATTERN.test",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685162:26029285",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "validateMcpServerId",
+    "qualified_name": "validateMcpServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685162,
+    "end_line": 685168,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "52df87302d308fe9958e979df3ce16602bf360e773f1c99144f72eb6791c13a3",
+    "calls": [
+      "isMcpServerId",
+      "new SandMcpConfigError",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685169:26029483",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "isGrokDisplayServerId",
+    "qualified_name": "isGrokDisplayServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685169,
+    "end_line": 685171,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "4574389469ca6f41002982b971e5e48c7d1e9ba1d4389b6ee4e1c63621031513",
+    "calls": [
+      "rawId.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685172:26029594",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "validateMcpDisplayServerId",
+    "qualified_name": "validateMcpDisplayServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685172,
+    "end_line": 685181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "66bd613b1df08c44dc4f6dc30af534e7471bcdd2abd4c278e4104dc2795d7dd2",
+    "calls": [
+      "isGrokDisplayServerId",
+      "isMcpListingServerId",
+      "new SandMcpConfigError",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685183:26029893",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "isInt32McpServerId",
+    "qualified_name": "isInt32McpServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685183,
+    "end_line": 685185,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parsed2"
+    ],
+    "body_sha256": "558e40435a70f4ff4f2023016237e065bbc4e04afbe0c9c71f8ce407034dd571",
+    "calls": [
+      "Number.isSafeInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685186:26030012",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "parseInt32McpServerId",
+    "qualified_name": "parseInt32McpServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685186,
+    "end_line": 685192,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "eae0478fa0f608128017f016b38e7c8cbaaf7aa518f3d445a021d4d8042843d9",
+    "calls": [
+      "Number",
+      "isInt32McpServerId",
+      "new SandMcpConfigError",
+      "validateMcpServerId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685193:26030251",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "parseInt32McpListingServerId",
+    "qualified_name": "parseInt32McpListingServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685193,
+    "end_line": 685203,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "12a863b3d71bc524500a2c1c58e5db486700859b324c18e2a085eb3256dbd4b1",
+    "calls": [
+      "Math.abs",
+      "Number",
+      "Number.isSafeInteger",
+      "isMcpListingServerId",
+      "new SandMcpConfigError",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685204:26030665",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "int32McpServerIdOrNull",
+    "qualified_name": "int32McpServerIdOrNull",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685204,
+    "end_line": 685211,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "15c1b00ccf7b02b108e1407ce597e9b34aa08ffabf3b347f3c47f8c2a0a2aba0",
+    "calls": [
+      "Number",
+      "isInt32McpServerId",
+      "isMcpServerId",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579382:21712631",
+    "artifact": "evaluation",
+    "module": "shared/node/mcp/mcp-server-id.ts",
+    "name": "isMcpServerId",
+    "qualified_name": "isMcpServerId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579382,
+    "end_line": 579384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawId"
+    ],
+    "body_sha256": "e945c29af33f64c0e56fef687ba75eaed9e6b4df8135c96db2f0acb06abb3062",
+    "calls": [
+      "MCP_SERVER_ID_PATTERN.test",
+      "rawId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

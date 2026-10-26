@@ -1,0 +1,688 @@
+[
+  {
+    "id": "host:781763:30122543",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "textItem",
+    "qualified_name": "textItem",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781763,
+    "end_line": 781767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "7bd3c2e838e713eba06de65b3df69cd22ad9d969a83f9f849648a6dfcc73459e",
+    "calls": [
+      "new McpTextContent",
+      "new McpToolResultContentItem"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781768:30122692",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "unexpectedOutputText",
+    "qualified_name": "unexpectedOutputText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781768,
+    "end_line": 781772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b0fa7ac28168ec7714c626d78491977166ed12acd05bcf0b99213cca16ad1305",
+    "calls": [
+      "JSON.stringify",
+      "String",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781773:30123015",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "contentItemOf",
+    "qualified_name": "contentItemOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781773,
+    "end_line": 781786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3b34b7f5ed62813fbc2ae1390952906f8d5f30acf7ed00d3cbc38325fd278749",
+    "calls": [
+      "Buffer.from",
+      "contentItem.safeParse",
+      "new McpImageContent",
+      "new McpToolResultContentItem",
+      "new Uint8Array",
+      "textItem",
+      "unexpectedOutputText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781787:30123459",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "toolResult",
+    "qualified_name": "toolResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781787,
+    "end_line": 781791,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content",
+      "isError"
+    ],
+    "body_sha256": "8bca77b1f38a934c80d604cd3bbb1d14ea8474f13cb86b4104689f731b846e60",
+    "calls": [
+      "new McpResult",
+      "new McpSuccess"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781792:30123609",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "refusal3",
+    "qualified_name": "refusal3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781792,
+    "end_line": 781794,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "cdb06e3f9479c8ed8393e86517b90c9e5767c880e0accd142b667ba60a75b72c",
+    "calls": [
+      "textItem",
+      "toolResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781795:30123684",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopToolResult",
+    "qualified_name": "userDesktopToolResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781795,
+    "end_line": 781825,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "8e7ade759416643c9884c8717549745929dc19e09dba1e87c2f5264a33f51a47",
+    "calls": [
+      "callToolResult.safeParse",
+      "output2.data.content.map",
+      "refusal3",
+      "textItem",
+      "toolResult",
+      "unexpectedOutputText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781826:30125428",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopInputSchema",
+    "qualified_name": "userDesktopInputSchema",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781826,
+    "end_line": 781835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ name: name18, inputSchema }"
+    ],
+    "body_sha256": "834df624c920a1be4e061073aab5bcb19d063de7f2ca31b39229039d029d7983",
+    "calls": [
+      "JSON.parse",
+      "JSON.stringify",
+      "isUnknownRecord2",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781836:30125969",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopToolsForHost",
+    "qualified_name": "userDesktopToolsForHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781836,
+    "end_line": 781874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "e8f8e5f7c0dcf4fc103f936f0c8efd6d745157ddb3e49785f705de16d268f77a",
+    "calls": [
+      "COMPUTER_USE_CATALOG.tools.map",
+      "accessor.register",
+      "new RegistryResourceAccessor",
+      "withDeviceToolPermissionCards"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781839:30126167",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "execute",
+    "qualified_name": "userDesktopToolsForHost/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781839,
+    "end_line": 781856,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "d99db4018e1c9ee459b3f91a5a6d2bc4fd9cc9970ca4098395669dc431f108e7",
+    "calls": [
+      ".map",
+      "Object.entries",
+      "Object.fromEntries",
+      "host.getTranscriptId",
+      "port.run",
+      "refusal3",
+      "userDesktopToolResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781877:30127388",
+    "artifact": "host",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "build",
+    "qualified_name": "build",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781877,
+    "end_line": 781877,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ host, scopeLocalTool }"
+    ],
+    "body_sha256": "7009639812793be3f7e098cae00c4c09c9594a03f9f1e89b9e54c85736333920",
+    "calls": [
+      ".map",
+      "userDesktopToolsForHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582108:21878582",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "textItem",
+    "qualified_name": "textItem",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582108,
+    "end_line": 582112,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "7bd3c2e838e713eba06de65b3df69cd22ad9d969a83f9f849648a6dfcc73459e",
+    "calls": [
+      "new McpTextContent",
+      "new McpToolResultContentItem"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582113:21878731",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "unexpectedOutputText",
+    "qualified_name": "unexpectedOutputText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582113,
+    "end_line": 582117,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b0fa7ac28168ec7714c626d78491977166ed12acd05bcf0b99213cca16ad1305",
+    "calls": [
+      "JSON.stringify",
+      "String",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582118:21879054",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "contentItemOf",
+    "qualified_name": "contentItemOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582118,
+    "end_line": 582131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "3b34b7f5ed62813fbc2ae1390952906f8d5f30acf7ed00d3cbc38325fd278749",
+    "calls": [
+      "Buffer.from",
+      "contentItem.safeParse",
+      "new McpImageContent",
+      "new McpToolResultContentItem",
+      "new Uint8Array",
+      "textItem",
+      "unexpectedOutputText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582132:21879498",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "toolResult",
+    "qualified_name": "toolResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582132,
+    "end_line": 582136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content",
+      "isError"
+    ],
+    "body_sha256": "8bca77b1f38a934c80d604cd3bbb1d14ea8474f13cb86b4104689f731b846e60",
+    "calls": [
+      "new McpResult",
+      "new McpSuccess"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582137:21879648",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "refusal3",
+    "qualified_name": "refusal3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582137,
+    "end_line": 582139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "cdb06e3f9479c8ed8393e86517b90c9e5767c880e0accd142b667ba60a75b72c",
+    "calls": [
+      "textItem",
+      "toolResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582140:21879723",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopToolResult",
+    "qualified_name": "userDesktopToolResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582140,
+    "end_line": 582170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "8e7ade759416643c9884c8717549745929dc19e09dba1e87c2f5264a33f51a47",
+    "calls": [
+      "callToolResult.safeParse",
+      "output2.data.content.map",
+      "refusal3",
+      "textItem",
+      "toolResult",
+      "unexpectedOutputText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582171:21881467",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopInputSchema",
+    "qualified_name": "userDesktopInputSchema",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582171,
+    "end_line": 582180,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ name: name18, inputSchema }"
+    ],
+    "body_sha256": "834df624c920a1be4e061073aab5bcb19d063de7f2ca31b39229039d029d7983",
+    "calls": [
+      "JSON.parse",
+      "JSON.stringify",
+      "isUnknownRecord2",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582181:21882008",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "userDesktopToolsForHost",
+    "qualified_name": "userDesktopToolsForHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582181,
+    "end_line": 582219,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "e8f8e5f7c0dcf4fc103f936f0c8efd6d745157ddb3e49785f705de16d268f77a",
+    "calls": [
+      "COMPUTER_USE_CATALOG.tools.map",
+      "accessor.register",
+      "new RegistryResourceAccessor",
+      "withDeviceToolPermissionCards"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582184:21882206",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "execute",
+    "qualified_name": "userDesktopToolsForHost/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582184,
+    "end_line": 582201,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "d99db4018e1c9ee459b3f91a5a6d2bc4fd9cc9970ca4098395669dc431f108e7",
+    "calls": [
+      ".map",
+      "Object.entries",
+      "Object.fromEntries",
+      "host.getTranscriptId",
+      "port.run",
+      "refusal3",
+      "userDesktopToolResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582222:21883427",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/turn-builders/user-desktop-tools.ts",
+    "name": "build",
+    "qualified_name": "build",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582222,
+    "end_line": 582222,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ host, scopeLocalTool }"
+    ],
+    "body_sha256": "7009639812793be3f7e098cae00c4c09c9594a03f9f1e89b9e54c85736333920",
+    "calls": [
+      ".map",
+      "userDesktopToolsForHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,189 @@
+[
+  {
+    "id": "host:739126:28078147",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-search.ts",
+    "name": "isStoreUnreadable",
+    "qualified_name": "isStoreUnreadable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739126,
+    "end_line": 739128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "bc6bec0b19ed3424c25da2444f3bb78528c75d419e184fee0ab3e3cf4189b2a3",
+    "calls": [
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739130:28078310",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-search.ts",
+    "name": "RosterSearch.constructor",
+    "qualified_name": "RosterSearch.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739130,
+    "end_line": 739132,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739134:28078365",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-search.ts",
+    "name": "RosterSearch.searchAgents",
+    "qualified_name": "RosterSearch.searchAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739134,
+    "end_line": 739165,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3 = this.tm.contentSearch.maxResults"
+    ],
+    "body_sha256": "55f94a0b97479b425bc93667f4afbe9ee2d7f450c12fd9b71b966a80d70f92ff",
+    "calls": [
+      ".slice",
+      ".toLowerCase",
+      "Date.now",
+      "entries.reduce",
+      "getTranscript",
+      "indexed.filter",
+      "query2.trim",
+      "results.push",
+      "results.sort",
+      "this.searchAgentsByLinearScan",
+      "this.tm.contentSearch.findTranscriptMatches",
+      "this.tm.contentSearch.searchMessages",
+      "this.tm.sessions.isServerHostedAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739166:28079929",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-search.ts",
+    "name": "RosterSearch.searchAgentsByLinearScan",
+    "qualified_name": "RosterSearch.searchAgentsByLinearScan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739166,
+    "end_line": 739190,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "normalized",
+      "limit3"
+    ],
+    "body_sha256": "486e3381582b1ddd5af37ce7b7efb3a6206e67d822ae14070037f6c2412e0b19",
+    "calls": [
+      "getTranscript",
+      "isStoreUnreadable",
+      "results.push",
+      "results.slice",
+      "results.sort",
+      "this.tm.contentSearch.findTranscriptMatches",
+      "this.tm.getActiveAgentId",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessionStore.readAgentTranscriptEntries"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:739191:28080893",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-search.ts",
+    "name": "RosterSearch.searchMedia",
+    "qualified_name": "RosterSearch.searchMedia",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739191,
+    "end_line": 739199,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "query2",
+      "limit3 = this.tm.contentSearch.maxResults"
+    ],
+    "body_sha256": "9876673eea8c4811beed0b18bb73efb9477859c840695f9156c0760dbe1b6e0c",
+    "calls": [
+      "matches.filter",
+      "new SandSearchUnavailableError",
+      "query2.trim",
+      "this.tm.contentSearch.searchMedia"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandSearchUnavailableError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

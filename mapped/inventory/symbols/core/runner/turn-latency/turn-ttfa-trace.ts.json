@@ -1,0 +1,107 @@
+[
+  {
+    "id": "evaluation:546859:20190000",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-latency/turn-ttfa-trace.ts",
+    "name": "classifyTtfaBucket",
+    "qualified_name": "classifyTtfaBucket",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546859,
+    "end_line": 546864,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2"
+    ],
+    "body_sha256": "8ffbf6e67aca374ed576c87679181ffc9efa2421c22d9324f05438271c74fc1b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546865:20190176",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-latency/turn-ttfa-trace.ts",
+    "name": "ttfaPhaseSpans",
+    "qualified_name": "ttfaPhaseSpans",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546865,
+    "end_line": 546895,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "marks"
+    ],
+    "body_sha256": "419a371b37822577dc3b84a33d4aa813d4261aedcbdf998aee659600b5a9c7cf",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "known.slice",
+      "phases2.push",
+      "points.filter"
+    ],
+    "writes": [
+      "previousAt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:546896:20191339",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-latency/turn-ttfa-trace.ts",
+    "name": "emitTtfaTrace",
+    "qualified_name": "emitTtfaTrace",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 546896,
+    "end_line": 546923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  trace: trace2,\n  marks,\n  toEpochMs,\n  attributes\n}"
+    ],
+    "body_sha256": "a750270aaeff460841dc8940268611a46ae5131f0b90571abc022443e4213e00",
+    "calls": [
+      "Math.max",
+      "classifyTtfaBucket",
+      "getSpan2",
+      "recordCompletedSpanIfParented",
+      "runSpan.setAttribute",
+      "runSpan.setAttributes",
+      "toEpochMs",
+      "trace2.phaseParentCtx.withName",
+      "ttfaPhaseSpans"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

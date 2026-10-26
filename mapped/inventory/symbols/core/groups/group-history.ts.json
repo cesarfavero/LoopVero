@@ -1,0 +1,80 @@
+[
+  {
+    "id": "host:737625:28020919",
+    "artifact": "host",
+    "module": "core/groups/group-history.ts",
+    "name": "groupReplyTarget",
+    "qualified_name": "groupReplyTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737625,
+    "end_line": 737644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entriesById",
+      "replyToId"
+    ],
+    "body_sha256": "c903a1b9f0c5385798e29ff7364ff19f40b584439af37c9635fa47458618e9b1",
+    "calls": [
+      ".slice",
+      ".trim",
+      "entriesById.get",
+      "groupPostText",
+      "rawQuote.replace"
+    ],
+    "writes": [
+      "rawQuote",
+      "speaker"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737645:28021724",
+    "artifact": "host",
+    "module": "core/groups/group-history.ts",
+    "name": "groupHistoryFromTranscriptEntries",
+    "qualified_name": "groupHistoryFromTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737645,
+    "end_line": 737679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "seqOf"
+    ],
+    "body_sha256": "ea380a3689042f9b3d53f1e4abccacf235dd086f2ebb6c2203f7c4325617630c",
+    "calls": [
+      "Number",
+      "entries.map",
+      "entry.content.trim",
+      "groupPostText",
+      "groupReplyTarget",
+      "messages2.push",
+      "new Map",
+      "seqOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

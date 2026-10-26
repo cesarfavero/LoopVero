@@ -1,0 +1,246 @@
+[
+  {
+    "id": "host:680015:25838353",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "seatKey",
+    "qualified_name": "seatKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680015,
+    "end_line": 680017,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "seat"
+    ],
+    "body_sha256": "8589de63fdb46c26b37308d5d10935b463ef6764f7840a3a4b8205b4bfc2f821",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680018:25838428",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "unparkedBackoffMs",
+    "qualified_name": "unparkedBackoffMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680018,
+    "end_line": 680020,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attempts2"
+    ],
+    "body_sha256": "e5c0da591a7eed99eb616af5933718076e74db0b2d8d97ce5d964580581c2ac6",
+    "calls": [
+      "Math.min"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680021:25838563",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "createIdleDesktopPark",
+    "qualified_name": "createIdleDesktopPark",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680021,
+    "end_line": 680119,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a36d7a5b1600f705c78ca4d663c8cf805df673df10c10d830eb37b817986c6ed",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680027:25838752",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "backingOff",
+    "qualified_name": "createIdleDesktopPark/backingOff",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680027,
+    "end_line": 680030,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "key",
+      "now"
+    ],
+    "body_sha256": "96b00bf897615cadf0ba4d724df4055b2e551552093a076b5ad164448e61cb25",
+    "calls": [
+      "elapsedMs",
+      "unparked2.get",
+      "unparkedBackoffMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680031:25838934",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "tick",
+    "qualified_name": "createIdleDesktopPark/tick",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680031,
+    "end_line": 680102,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7e4043565b7bfb250ee5e357981e8c9e7d2be1fea61620ac9311f38b90851bc2",
+    "calls": [
+      "Math.floor",
+      "decideDesktopParks",
+      "deps.clock.monotonicNow",
+      "deps.desktops.parkAgentWindow",
+      "deps.desktops.snapshotForkDesktops",
+      "deps.liveAgentIds",
+      "deps.log",
+      "deps.readConfig",
+      "elapsedMs",
+      "errorLogTag",
+      "new Set",
+      "parseAgentId",
+      "results.push",
+      "seatKey",
+      "seatKeys.has",
+      "snapshot.seats.filter",
+      "snapshot.seats.map",
+      "unparked2.clear",
+      "unparked2.delete",
+      "unparked2.get",
+      "unparked2.keys",
+      "unparked2.set"
+    ],
+    "writes": [
+      "idleClockStartMs",
+      "lastReading",
+      "outcome",
+      "unsupportedSince"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:680105:25841703",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "start",
+    "qualified_name": "createIdleDesktopPark/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680105,
+    "end_line": 680113,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "policy"
+    ],
+    "body_sha256": "2238b7d86c144cdf4d9d54025989ab82242c06b7e1ced66c56639cde7a96ce90",
+    "calls": [
+      "policy.start"
+    ],
+    "writes": [
+      "polling"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680114:25841941",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/idle-desktop-park.ts",
+    "name": "dispose",
+    "qualified_name": "createIdleDesktopPark/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680114,
+    "end_line": 680117,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "bf2a6a7ff23d0ac6f8a404c48cfc1c55074a9ac8d1fdc1a8bbc391a5d123a7a4",
+    "calls": [
+      "polling.dispose"
+    ],
+    "writes": [
+      "polling"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

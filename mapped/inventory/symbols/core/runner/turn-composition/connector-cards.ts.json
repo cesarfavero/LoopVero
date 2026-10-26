@@ -1,0 +1,169 @@
+[
+  {
+    "id": "evaluation:584125:21968617",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/connector-cards.ts",
+    "name": "createTurnConnectorCards",
+    "qualified_name": "createTurnConnectorCards",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584125,
+    "end_line": 584178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turnToolHost",
+      "turnScope"
+    ],
+    "body_sha256": "f5a6819a0a4d2bb5e68a28f2d18b00794fb0bdb54e5618050d7af974c7e3a6c8",
+    "calls": [
+      "createCardSurfacer",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584128:21968794",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/connector-cards.ts",
+    "name": "platform",
+    "qualified_name": "createTurnConnectorCards/platform",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584128,
+    "end_line": 584128,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "659b74e5325de05cc7f87373f42662f80ff26b9af3fdae2e9637208a4e0989b5",
+    "calls": [
+      "host.cardSurface"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584131:21968917",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/connector-cards.ts",
+    "name": "resolvePluginId",
+    "qualified_name": "createTurnConnectorCards/resolvePluginId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584131,
+    "end_line": 584139,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "serverId"
+    ],
+    "body_sha256": "92a0b3d631ad42e435c199f4cb8dbbdb997606eb5574332faff78d29fcf9953b",
+    "calls": [
+      "listing.servers.find",
+      "readMcpInstalledListing"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584141:21969356",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/connector-cards.ts",
+    "name": "emit",
+    "qualified_name": "createTurnConnectorCards/emit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584141,
+    "end_line": 584149,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "timestampMs"
+    ],
+    "body_sha256": "1ea451a26dc1a785e5f19c25c50cccb0b1d6f4495d6793753b1990a9e270cfb8",
+    "calls": [
+      "turnToolHost.emitUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584157:21969940",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/connector-cards.ts",
+    "name": "emitConnectorCard",
+    "qualified_name": "createTurnConnectorCards/emitConnectorCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584157,
+    "end_line": 584176,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "emission",
+      "options2"
+    ],
+    "body_sha256": "4b3a3986eb76d4833f7e21c1a5095d4808a2c8b07bbb75d587559dbaa055067e",
+    "calls": [
+      "Date.now",
+      "armMcpAuthWait",
+      "connectorCardDedupeKey",
+      "connectorCardEmissionToMessage",
+      "connectorCardOutcomes.get",
+      "connectorCardOutcomes.set",
+      "emittedConnectorCards.add",
+      "emittedConnectorCards.has",
+      "turnToolHost.gates.automationConnectCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

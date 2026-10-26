@@ -1,0 +1,418 @@
+[
+  {
+    "id": "host:711227:27000620",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "isBackendDownStatus",
+    "qualified_name": "isBackendDownStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711227,
+    "end_line": 711229,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "fc69e681037b8a840f02e6c01bbd51b1fa2b0d5337fd617ffd4c531601811abc",
+    "calls": [
+      "BACKEND_DOWN_HTTP_STATUSES.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711230:27000710",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "isBackendDownError",
+    "qualified_name": "isBackendDownError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711230,
+    "end_line": 711240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fe7ed9e87f885e964a6dc1e5c43fbeb17cf6854c1009974f19e20e5ced25e2d9",
+    "calls": [
+      "BACKEND_DOWN_ERRNOS.has",
+      "Number",
+      "TRANSPORT_STATUS_MESSAGE.exec",
+      "findSystemErrno",
+      "isBackendDownStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711241:27001274",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "createBackendReachability",
+    "qualified_name": "createBackendReachability",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711241,
+    "end_line": 711273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "1d344f32513e0592436ccef34fa86dd41b0c749cb625cf2c0ba91f2a9053f6fb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711247:27001499",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "fireReturn",
+    "qualified_name": "createBackendReachability/fireReturn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711247,
+    "end_line": 711254,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a98d0bd401487100fddf740bb5ec13cd838b409dbb19b96268f0514154f7dc9a",
+    "calls": [
+      "Math.min",
+      "clock.monotonicNow",
+      "deps.onReturn",
+      "elapsedMs"
+    ],
+    "writes": [
+      "gapMs",
+      "lastReturnAt",
+      "pendingReturn"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711256:27001840",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "note",
+    "qualified_name": "createBackendReachability/note",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711256,
+    "end_line": 711267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "observation"
+    ],
+    "body_sha256": "e4da20e3453a2336fa981595de298f3f3eafdf9c55ef8e28b97d09d81b365cf8",
+    "calls": [
+      "clock.monotonicNow",
+      "clock.schedule",
+      "elapsedMs",
+      "fireReturn"
+    ],
+    "writes": [
+      "pendingReturn",
+      "reachable"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711268:27002263",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "dispose",
+    "qualified_name": "createBackendReachability/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711268,
+    "end_line": 711271,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "2375457e728601f0638fad96a70f3f07c116cdc57d0bd45cf70cbe8fab65811b",
+    "calls": [
+      "pendingReturn.dispose"
+    ],
+    "writes": [
+      "pendingReturn"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711274:27002341",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "createBackendReturnWake",
+    "qualified_name": "createBackendReturnWake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711274,
+    "end_line": 711313,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps = {}"
+    ],
+    "body_sha256": "c96b1f02df2ca397c28fa4aed142b275d65927a923ed1fcbf3bd1395a2024cfa",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711280:27002542",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "noteFailure",
+    "qualified_name": "createBackendReturnWake/noteFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711280,
+    "end_line": 711282,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "13ef81378dd48dc1ce326ba9c42d4089f0ac4675b2d4f5f479406230d6975158",
+    "calls": [
+      "isBackendDownError"
+    ],
+    "writes": [
+      "sawDown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711283:27002621",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "noteSilence",
+    "qualified_name": "createBackendReturnWake/noteSilence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711283,
+    "end_line": 711285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "9f5b90edc39d31c7e4d607e22d251658bc75cc581e428c8643cdad056c99dbef",
+    "calls": [],
+    "writes": [
+      "sawDown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711286:27002671",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "noteAnswered",
+    "qualified_name": "createBackendReturnWake/noteAnswered",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711286,
+    "end_line": 711288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "2800e4ac1d12740b4fb9320232c17f7934d3f4703551f164169840fb453a68d6",
+    "calls": [],
+    "writes": [
+      "sawDown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711289:27002713",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "arm",
+    "qualified_name": "createBackendReturnWake/arm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711289,
+    "end_line": 711301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "6f3726e48c32bec23f9b6c54e5c14cca527e8f305dc6fb63b55f44398308690c",
+    "calls": [
+      "armed.wake.dispose",
+      "new AbortController"
+    ],
+    "writes": [
+      "armed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711295:27002913",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "dispose",
+    "qualified_name": "createBackendReturnWake/arm/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711295,
+    "end_line": 711299,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a6b22e0534d6b31c93e914076487ba4cb293b89334cd6ebe53d44d37ac7f17f2",
+    "calls": [
+      "wait2.wake.dispose"
+    ],
+    "writes": [
+      "armed",
+      "wait2.wake"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:711302:27003075",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/backend-reachability.ts",
+    "name": "noteBackendReturn",
+    "qualified_name": "createBackendReturnWake/noteBackendReturn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 711302,
+    "end_line": 711311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "39e6ed043f42542a33e173b99aa5381a263147eb40a3ab953119c026763f17d3",
+    "calls": [
+      "clock.schedule",
+      "random",
+      "wait2.controller.abort"
+    ],
+    "writes": [
+      "wait2.wake"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

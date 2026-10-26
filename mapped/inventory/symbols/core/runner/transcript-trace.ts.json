@@ -1,0 +1,774 @@
+[
+  {
+    "id": "host:765651:29337125",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "stripSandPromptMarkers",
+    "qualified_name": "stripSandPromptMarkers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765651,
+    "end_line": 765653,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "60eb1982adb6010a08f4ac22829ed5de8a39da85032701db5ed9f150eebbcd5c",
+    "calls": [
+      "stripLeadingHiddenPromptMarker",
+      "stripLeadingTrustedAutomationPromptMarker"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765654:29337259",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "boundedText",
+    "qualified_name": "boundedText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765654,
+    "end_line": 765656,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6550c269619f68edb5e1115489795b7a4855a181243038aa1ac36eee1aebb57f",
+    "calls": [
+      "truncateMiddle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765657:29337355",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "boundedPayload",
+    "qualified_name": "boundedPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765657,
+    "end_line": 765667,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fcc386af7078d19ed32355015b4fd902415463189f0d52d59b73f1461dc7fdde",
+    "calls": [
+      "JSON.stringify",
+      "boundedText"
+    ],
+    "writes": [
+      "serialized"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:765671:29337863",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "userTextOf",
+    "qualified_name": "userTextOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765671,
+    "end_line": 765677,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "828bcff30855c242cd3de55c3429e6383b087ac9e3f78013623994f3f08a33ed",
+    "calls": [
+      "stripContextTags",
+      "stripSandPromptMarkers",
+      "stripped.replace",
+      "stripped.trim"
+    ],
+    "writes": [
+      "stripped"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765678:29338087",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "tracePartOf",
+    "qualified_name": "tracePartOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765678,
+    "end_line": 765710,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part",
+      "role"
+    ],
+    "body_sha256": "15e35cf34229fb815076c36e554c7ef4973ee64030b32a2f6a66da83e3b6aa1a",
+    "calls": [
+      "boundedPayload",
+      "boundedText",
+      "part.text.trim",
+      "userTextOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765711:29339207",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "contentParts",
+    "qualified_name": "contentParts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765711,
+    "end_line": 765725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "11a5e1f0285c448c586585d8bc33e4e81e23c9e97b406ea62f6cf4f42ad2f33e",
+    "calls": [
+      "boundedText",
+      "content.trim",
+      "messagePartSchema.safeParse",
+      "parts.push",
+      "tracePartOf",
+      "userTextOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765726:29339737",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "formatSandTranscriptTraceLine",
+    "qualified_name": "formatSandTranscriptTraceLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765726,
+    "end_line": 765737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "options2"
+    ],
+    "body_sha256": "017500385e757307b6d4e2fbe294a4c42a0b84a55e50057086a5028645ca0fd0",
+    "calls": [
+      "JSON.stringify",
+      "contentParts",
+      "parts.filter",
+      "promptMessageSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765738:29340293",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "renderSandSpokenMessages",
+    "qualified_name": "renderSandSpokenMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765738,
+    "end_line": 765758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "37722b15930a13e7173b92e7747d9c8b5b923d3abc9e8e3b39e3c9d58ae9d760",
+    "calls": [
+      "JSON.stringify",
+      "boundedText",
+      "lines2.unshift"
+    ],
+    "writes": [
+      "bytes",
+      "firstPosition",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765759:29341073",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "listMessageBlobIds",
+    "qualified_name": "listMessageBlobIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765759,
+    "end_line": 765768,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "state"
+    ],
+    "body_sha256": "2f68c91c18d29a0616599d6335a5086829a318dbc6514770514dac9912f5cb55",
+    "calls": [
+      "ConversationSummaryArchive.fromBinary",
+      "blobStore.getBlob",
+      "ids.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765769:29341466",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "clampSandTranscriptMessageLimit",
+    "qualified_name": "clampSandTranscriptMessageLimit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765769,
+    "end_line": 765772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "limit3"
+    ],
+    "body_sha256": "3c6c9bbeac356951decaefd793931e872d1de212acdf094e9a1b206087447f35",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765773:29341705",
+    "artifact": "host",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "readSandTranscriptWindow",
+    "qualified_name": "readSandTranscriptWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765773,
+    "end_line": 765812,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7d5b5b0af1dc6f62ff2d88403e1e62efb9886c4b9358ca3b434d294d4fe4e041",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "asyncMapValues",
+      "clampSandTranscriptMessageLimit",
+      "ids.slice",
+      "lines2.unshift",
+      "listMessageBlobIds"
+    ],
+    "writes": [
+      "bytes",
+      "firstIndex",
+      "index",
+      "reachedByteCap"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559016:20757247",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "stripSandPromptMarkers",
+    "qualified_name": "stripSandPromptMarkers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559016,
+    "end_line": 559018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "60eb1982adb6010a08f4ac22829ed5de8a39da85032701db5ed9f150eebbcd5c",
+    "calls": [
+      "stripLeadingHiddenPromptMarker",
+      "stripLeadingTrustedAutomationPromptMarker"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559019:20757381",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "boundedText",
+    "qualified_name": "boundedText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559019,
+    "end_line": 559021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6550c269619f68edb5e1115489795b7a4855a181243038aa1ac36eee1aebb57f",
+    "calls": [
+      "truncateMiddle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559022:20757477",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "boundedPayload",
+    "qualified_name": "boundedPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559022,
+    "end_line": 559032,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fcc386af7078d19ed32355015b4fd902415463189f0d52d59b73f1461dc7fdde",
+    "calls": [
+      "JSON.stringify",
+      "boundedText"
+    ],
+    "writes": [
+      "serialized"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:559036:20757985",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "userTextOf",
+    "qualified_name": "userTextOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559036,
+    "end_line": 559042,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "828bcff30855c242cd3de55c3429e6383b087ac9e3f78013623994f3f08a33ed",
+    "calls": [
+      "stripContextTags",
+      "stripSandPromptMarkers",
+      "stripped.replace",
+      "stripped.trim"
+    ],
+    "writes": [
+      "stripped"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559043:20758209",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "tracePartOf",
+    "qualified_name": "tracePartOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559043,
+    "end_line": 559075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part",
+      "role"
+    ],
+    "body_sha256": "15e35cf34229fb815076c36e554c7ef4973ee64030b32a2f6a66da83e3b6aa1a",
+    "calls": [
+      "boundedPayload",
+      "boundedText",
+      "part.text.trim",
+      "userTextOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559076:20759329",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "contentParts",
+    "qualified_name": "contentParts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559076,
+    "end_line": 559090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6b9ed31d4ba3352a27ffe5268430fceb2d354eccdd3e94778b7e1c53f7ddc6b0",
+    "calls": [
+      "boundedText",
+      "content.trim",
+      "messagePartSchema.safeParse",
+      "parts.push",
+      "tracePartOf",
+      "userTextOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559091:20759856",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "formatSandTranscriptTraceLine",
+    "qualified_name": "formatSandTranscriptTraceLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559091,
+    "end_line": 559102,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "options2"
+    ],
+    "body_sha256": "4145ac70b350ba4824b728932491aeff6a22e78cfb2f11228dcbda58d00e63d3",
+    "calls": [
+      "JSON.stringify",
+      "contentParts",
+      "parts.filter",
+      "promptMessageSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559103:20760408",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "renderSandSpokenMessages",
+    "qualified_name": "renderSandSpokenMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559103,
+    "end_line": 559123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "bdabde3490f7450ca00e72c0f43a20ddb6c3cd37d1219290da9de1c4a84ab8f9",
+    "calls": [
+      "JSON.stringify",
+      "boundedText",
+      "lines2.unshift"
+    ],
+    "writes": [
+      "bytes",
+      "firstPosition",
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559124:20761185",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "listMessageBlobIds",
+    "qualified_name": "listMessageBlobIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559124,
+    "end_line": 559133,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "state"
+    ],
+    "body_sha256": "2f68c91c18d29a0616599d6335a5086829a318dbc6514770514dac9912f5cb55",
+    "calls": [
+      "ConversationSummaryArchive.fromBinary",
+      "blobStore.getBlob",
+      "ids.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559134:20761578",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "clampSandTranscriptMessageLimit",
+    "qualified_name": "clampSandTranscriptMessageLimit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559134,
+    "end_line": 559137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "limit3"
+    ],
+    "body_sha256": "3c6c9bbeac356951decaefd793931e872d1de212acdf094e9a1b206087447f35",
+    "calls": [
+      "Math.floor",
+      "Math.min",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:559138:20761817",
+    "artifact": "evaluation",
+    "module": "core/runner/transcript-trace.ts",
+    "name": "readSandTranscriptWindow",
+    "qualified_name": "readSandTranscriptWindow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 559138,
+    "end_line": 559177,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7d5b5b0af1dc6f62ff2d88403e1e62efb9886c4b9358ca3b434d294d4fe4e041",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "asyncMapValues",
+      "clampSandTranscriptMessageLimit",
+      "ids.slice",
+      "lines2.unshift",
+      "listMessageBlobIds"
+    ],
+    "writes": [
+      "bytes",
+      "firstIndex",
+      "index",
+      "reachedByteCap"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

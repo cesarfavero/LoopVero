@@ -1,0 +1,260 @@
+[
+  {
+    "id": "host:741044:28164236",
+    "artifact": "host",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "canonicalRenderCardId",
+    "qualified_name": "canonicalRenderCardId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 741044,
+    "end_line": 741046,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "f2f2ab91f10f9d64061ebb97117e183cab6d69fbe9adfc1d3db94331427564d0",
+    "calls": [
+      "id.toUpperCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481939:17464202",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "canonicalRenderCardId",
+    "qualified_name": "canonicalRenderCardId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481939,
+    "end_line": 481941,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "f2f2ab91f10f9d64061ebb97117e183cab6d69fbe9adfc1d3db94331427564d0",
+    "calls": [
+      "id.toUpperCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481942:17464268",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "randomId",
+    "qualified_name": "randomId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481942,
+    "end_line": 481946,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "b0f20bc5aff971af0660c9647e55996fa55280c72314ff1af1b0e6f85a610003",
+    "calls": [
+      "ID_ALPHABET.charAt"
+    ],
+    "writes": [
+      "id"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481947:17464435",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "createRenderCardRegistry",
+    "qualified_name": "createRenderCardRegistry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481947,
+    "end_line": 481964,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mintId = randomId"
+    ],
+    "body_sha256": "a07bbe63d25b693686d36f60c205c59ff1768d177a7aa7ffe7dca47275600f0f",
+    "calls": [
+      "new Map",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481951:17464601",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "register",
+    "qualified_name": "createRenderCardRegistry/register",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481951,
+    "end_line": 481957,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "c93237c026c03e80ad0f0a7a4866270a942b47cb79f4222e728a5d40876a482e",
+    "calls": [
+      "entries.has",
+      "entries.set",
+      "mintId"
+    ],
+    "writes": [
+      "id"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481958:17464803",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "lookup",
+    "qualified_name": "createRenderCardRegistry/lookup",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481958,
+    "end_line": 481958,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "id"
+    ],
+    "body_sha256": "960749d19aa14f1cf5ffc857c0455712b59c84309d165890a2797bc6c9915a73",
+    "calls": [
+      "Promise.resolve",
+      "canonicalRenderCardId",
+      "entries.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481959:17464887",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "isShown",
+    "qualified_name": "createRenderCardRegistry/isShown",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481959,
+    "end_line": 481959,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "2cf82e58f7fcf10a9ba5d541437edf571fee39660e9a5c5a2a5d5b8b9e698060",
+    "calls": [
+      "canonicalRenderCardId",
+      "shown.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:481960:17464946",
+    "artifact": "evaluation",
+    "module": "core/runner/cards/render-card-registry.ts",
+    "name": "markShown",
+    "qualified_name": "createRenderCardRegistry/markShown",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 481960,
+    "end_line": 481962,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ids"
+    ],
+    "body_sha256": "86b4ab91defdd40aaec738dcd90f1a08f8c24d6b76fabff12ffdd9c1f2c4d2d0",
+    "calls": [
+      "canonicalRenderCardId",
+      "shown.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

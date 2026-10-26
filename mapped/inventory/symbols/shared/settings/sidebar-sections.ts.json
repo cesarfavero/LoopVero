@@ -1,0 +1,214 @@
+[
+  {
+    "id": "host:687415:26113283",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.normalize",
+    "qualified_name": "_SidebarSections.normalize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687415,
+    "end_line": 687444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sections"
+    ],
+    "body_sha256": "385d51e2f1d8a990f29c7e015926e722dbc26008f3c977c82c71856da888eaf0",
+    "calls": [
+      "agentIds.push",
+      "claimedAgentIds.add",
+      "claimedAgentIds.has",
+      "new Set",
+      "normalized.push",
+      "section.id.trim",
+      "seenSectionIds.add",
+      "seenSectionIds.has"
+    ],
+    "writes": [
+      "hasCustomSection"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687445:26114272",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.parse",
+    "qualified_name": "_SidebarSections.parse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687445,
+    "end_line": 687457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "de4785669f78467f1dace147b31cc3989bc177a5c68a3ad2e149cf96321ae855",
+    "calls": [
+      "Array.isArray",
+      "_SidebarSections.normalize",
+      "entry.agentIds.flatMap",
+      "isUnknownRecord2",
+      "records2.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687458:26114740",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.areEqual",
+    "qualified_name": "_SidebarSections.areEqual",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687458,
+    "end_line": 687463,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "3a5d40e7278ade3b17192929c9b31c8648c29de8b996786c9d4815d372cfd0ec",
+    "calls": [
+      "left.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687464:26115115",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.withFolds",
+    "qualified_name": "_SidebarSections.withFolds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687464,
+    "end_line": 687470,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sections",
+      "collapsedSectionIds"
+    ],
+    "body_sha256": "8afdb0dd13c3cf793df927b017e68446fd4eca2b5caa3396c2ec99330e2cdf3c",
+    "calls": [
+      "new Set",
+      "sections.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687471:26115338",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.assignAgents",
+    "qualified_name": "_SidebarSections.assignAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687471,
+    "end_line": 687485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sections",
+      "agentIds",
+      "sectionId"
+    ],
+    "body_sha256": "a88aa285655e6cf799f12d8591903cfaad68c8e60b5e842fadcec8e77ae08dbd",
+    "calls": [
+      "_SidebarSections.normalize",
+      "new Set",
+      "normalized.map",
+      "normalized.some",
+      "stripped.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:687486:26115958",
+    "artifact": "host",
+    "module": "shared/settings/sidebar-sections.ts",
+    "name": "_SidebarSections.carryFolds",
+    "qualified_name": "_SidebarSections.carryFolds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 687486,
+    "end_line": 687500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    sections,\n    stored = []\n  }"
+    ],
+    "body_sha256": "5ba5315118f6a467df485591b60d3adb8c73d84dcf2c71e5aa0742b43eb3d529",
+    "calls": [
+      ".map",
+      "_SidebarSections.normalize",
+      "foldBySectionId.set",
+      "new Map",
+      "section.id.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,1103 @@
+[
+  {
+    "id": "host:225767:9635532",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "copyInheritableAttributes",
+    "qualified_name": "copyInheritableAttributes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225767,
+    "end_line": 225775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span",
+      "ctx"
+    ],
+    "body_sha256": "87d5acd7678ab5947ddf980e69a122939faccaa3e151c9d79ec9c865742aa513",
+    "calls": [
+      "ctx.get",
+      "span.setAttribute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225776:9635854",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "isChildSpanNameSuppressed",
+    "qualified_name": "isChildSpanNameSuppressed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225776,
+    "end_line": 225778,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spanName"
+    ],
+    "body_sha256": "10df2cb6b2e1c8d74c54525c5c7ee847383d00948ba168923ac36057792cd3eb",
+    "calls": [
+      "childSpanSuppressionPredicate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225779:9635964",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "resolveSpanName",
+    "qualified_name": "resolveSpanName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225779,
+    "end_line": 225781,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "e6959e4526a57ac4de47ebce8b91616d51352f449bc62ad581a0f6b8148a9eb5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225782:9636040",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "isChildSpanSuppressed",
+    "qualified_name": "isChildSpanSuppressed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225782,
+    "end_line": 225787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "parentSpan"
+    ],
+    "body_sha256": "73b4ddff067c133a7eca8377d05138424ecd3032f23a0e0eb5374c8d21345761",
+    "calls": [
+      "ctx.get",
+      "isChildSpanNameSuppressed",
+      "resolveSpanName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225788:9636230",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "getTracer",
+    "qualified_name": "getTracer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225788,
+    "end_line": 225790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18 = \"context-tracer\""
+    ],
+    "body_sha256": "e210990b04e3de89dd1234863414ecc01c47b9ca91db03eea459aa03b7c8ccfe",
+    "calls": [
+      "trace.getTracer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225791:9636314",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "withSpan",
+    "qualified_name": "withSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225791,
+    "end_line": 225812,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2"
+    ],
+    "body_sha256": "3bf79449b9cdedbf2fb83e1d623d324c043031f32c8ccecbb65bb8242cd10108",
+    "calls": [
+      ".with",
+      "Date.now",
+      "context.active",
+      "copyInheritableAttributes",
+      "ctx.get",
+      "ctx.with",
+      "ctxWith.with",
+      "getTracer",
+      "isChildSpanSuppressed",
+      "resolveSpanName",
+      "trace.setSpan",
+      "tracer.startSpan"
+    ],
+    "writes": [
+      "ctxWith",
+      "span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225813:9636997",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "getSpan2",
+    "qualified_name": "getSpan2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225813,
+    "end_line": 225815,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "bdfb726b2e405a00213e1aa6dce7c2487ddb03ecde1ca3a67e3fd24d6842867f",
+    "calls": [
+      "ctx.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225816:9637053",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "withSuppressedChildSpans",
+    "qualified_name": "withSuppressedChildSpans",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225816,
+    "end_line": 225818,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "dc1de5fa8b668da6ee3a499399eee267a5de7af790b071de2835c0b17877f77b",
+    "calls": [
+      "ctx.with"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225819:9637147",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "getSpanContextData",
+    "qualified_name": "getSpanContextData",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225819,
+    "end_line": 225836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "5b8b860131c65f4a450635a02abde61592b8d2a770662592c71fc29ff8a6ba5e",
+    "calls": [
+      "ctx.get",
+      "getSpan2",
+      "sc.traceState.toString",
+      "span.spanContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:225837:9637566",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "createContextFromSpanContext",
+    "qualified_name": "createContextFromSpanContext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225837,
+    "end_line": 225853,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spanContext",
+      "name18",
+      "existingContext"
+    ],
+    "body_sha256": "69d81d37b42d6e15152febc1510396161aa3153e9f2e473e69a8f5a3c32dcad1",
+    "calls": [
+      "context.active",
+      "createContext",
+      "ctx.with",
+      "getTracer",
+      "parentCtx.withName",
+      "trace.setSpanContext",
+      "tracer.startSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225854:9638199",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "createSpan",
+    "qualified_name": "createSpan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225854,
+    "end_line": 225860,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2"
+    ],
+    "body_sha256": "088ebbf30d27fc38b8e5bfc5fb8904beeada8bb1ba8247789ef9782f4ed8c9d6",
+    "calls": [
+      "getSpan2",
+      "isChildSpanSuppressed",
+      "new DisposableSpan",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225861:9638485",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "recordCompletedSpanIfParented",
+    "qualified_name": "recordCompletedSpanIfParented",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225861,
+    "end_line": 225870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2",
+      "endTime"
+    ],
+    "body_sha256": "794420bca6d1db0684c2ae765444e30f3f89161d2ebafe1ae64d770117ab9216",
+    "calls": [
+      "getSpan2",
+      "isChildSpanSuppressed",
+      "span.end",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225873:9639015",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "../packages/context/dist/otel.js",
+    "qualified_name": "../packages/context/dist/otel.js",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225873,
+    "end_line": 225894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "183be7412bb5bbd3ac78ec91adcb2ceb7001c8ed1aedf23b5aec8d87600e6bfb",
+    "calls": [
+      "Symbol",
+      "createKey",
+      "init_core3",
+      "init_esm4"
+    ],
+    "writes": [
+      "DisposableSpan",
+      "INHERITABLE_SPAN_ATTRIBUTES_KEY",
+      "ROOT_SPAN_KEY",
+      "ROOT_SPAN_START_MS_KEY",
+      "SPAN_KEY2",
+      "SUPPRESS_CHILD_SPANS_KEY"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225883:9639581",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "<class>.constructor",
+    "qualified_name": "../packages/context/dist/otel.js/<class>.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225883,
+    "end_line": 225887,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "span",
+      "shouldEnd = true"
+    ],
+    "body_sha256": "4c853ef39e7c81d3f0cc72866dee98a404378dcb48b9182b2f03a434680ce640",
+    "calls": [],
+    "writes": [
+      "this.ctx",
+      "this.shouldEnd",
+      "this.span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:225888:9639729",
+    "artifact": "host",
+    "module": "context/otel.js",
+    "name": "<class>.Symbol.dispose",
+    "qualified_name": "../packages/context/dist/otel.js/<class>.Symbol.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 225888,
+    "end_line": 225892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "25c60a208a56abd283ee181d06b258d50257265069c491dc820202e0b553f151",
+    "calls": [
+      "this.span.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2255:83056",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "copyInheritableAttributes",
+    "qualified_name": "copyInheritableAttributes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2255,
+    "end_line": 2263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span",
+      "ctx"
+    ],
+    "body_sha256": "87d5acd7678ab5947ddf980e69a122939faccaa3e151c9d79ec9c865742aa513",
+    "calls": [
+      "ctx.get",
+      "span.setAttribute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2264:83378",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "isChildSpanNameSuppressed",
+    "qualified_name": "isChildSpanNameSuppressed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2264,
+    "end_line": 2266,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spanName"
+    ],
+    "body_sha256": "10df2cb6b2e1c8d74c54525c5c7ee847383d00948ba168923ac36057792cd3eb",
+    "calls": [
+      "childSpanSuppressionPredicate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2267:83488",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "resolveSpanName",
+    "qualified_name": "resolveSpanName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2267,
+    "end_line": 2269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "e6959e4526a57ac4de47ebce8b91616d51352f449bc62ad581a0f6b8148a9eb5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2270:83564",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "isChildSpanSuppressed",
+    "qualified_name": "isChildSpanSuppressed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2270,
+    "end_line": 2275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "parentSpan"
+    ],
+    "body_sha256": "73b4ddff067c133a7eca8377d05138424ecd3032f23a0e0eb5374c8d21345761",
+    "calls": [
+      "ctx.get",
+      "isChildSpanNameSuppressed",
+      "resolveSpanName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2276:83754",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "getTracer",
+    "qualified_name": "getTracer",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2276,
+    "end_line": 2278,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18 = \"context-tracer\""
+    ],
+    "body_sha256": "e210990b04e3de89dd1234863414ecc01c47b9ca91db03eea459aa03b7c8ccfe",
+    "calls": [
+      "trace.getTracer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2279:83838",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "withSpan",
+    "qualified_name": "withSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2279,
+    "end_line": 2300,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2"
+    ],
+    "body_sha256": "3bf79449b9cdedbf2fb83e1d623d324c043031f32c8ccecbb65bb8242cd10108",
+    "calls": [
+      ".with",
+      "Date.now",
+      "context.active",
+      "copyInheritableAttributes",
+      "ctx.get",
+      "ctx.with",
+      "ctxWith.with",
+      "getTracer",
+      "isChildSpanSuppressed",
+      "resolveSpanName",
+      "trace.setSpan",
+      "tracer.startSpan"
+    ],
+    "writes": [
+      "ctxWith",
+      "span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2301:84521",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "getSpan2",
+    "qualified_name": "getSpan2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2301,
+    "end_line": 2303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "bdfb726b2e405a00213e1aa6dce7c2487ddb03ecde1ca3a67e3fd24d6842867f",
+    "calls": [
+      "ctx.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2304:84577",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "withSuppressedChildSpans",
+    "qualified_name": "withSuppressedChildSpans",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2304,
+    "end_line": 2306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "dc1de5fa8b668da6ee3a499399eee267a5de7af790b071de2835c0b17877f77b",
+    "calls": [
+      "ctx.with"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2307:84671",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "withInheritableAttribute",
+    "qualified_name": "withInheritableAttribute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2307,
+    "end_line": 2317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "key",
+      "value"
+    ],
+    "body_sha256": "a3f34de2badfa2445295f4f6f11a36c1a7827ffcf2fb2eb0d870eb922e985bd5",
+    "calls": [
+      "ctx.get",
+      "ctx.with",
+      "getSpan2",
+      "span.setAttribute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2318:84981",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "getSpanContextData",
+    "qualified_name": "getSpanContextData",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2318,
+    "end_line": 2335,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "5b8b860131c65f4a450635a02abde61592b8d2a770662592c71fc29ff8a6ba5e",
+    "calls": [
+      "ctx.get",
+      "getSpan2",
+      "sc.traceState.toString",
+      "span.spanContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:2336:85400",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "reportEvent",
+    "qualified_name": "reportEvent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2336,
+    "end_line": 2356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18"
+    ],
+    "body_sha256": "b1c42f607697fc413550ccae903505de48ece45f843ed331686edf57963f4a2b",
+    "calls": [
+      "Date.now",
+      "context.active",
+      "copyInheritableAttributes",
+      "ctx.get",
+      "eventSpan.end",
+      "eventSpan.setAttribute",
+      "getSpan2",
+      "getTracer",
+      "rootSpan.setAttribute",
+      "trace.setSpan",
+      "tracer.startSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:2357:86116",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "createContextFromRemoteSpanContext",
+    "qualified_name": "createContextFromRemoteSpanContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2357,
+    "end_line": 2367,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spanContext",
+      "name18",
+      "existingContext"
+    ],
+    "body_sha256": "7184abd2186af16d1410b447b807c5cdcb845e82c4e4109641de9f6ec739f413",
+    "calls": [
+      "createContext",
+      "ctx.with",
+      "parentCtx.withName",
+      "trace.wrapSpanContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2368:86527",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "createSpan",
+    "qualified_name": "createSpan",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2368,
+    "end_line": 2374,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2"
+    ],
+    "body_sha256": "088ebbf30d27fc38b8e5bfc5fb8904beeada8bb1ba8247789ef9782f4ed8c9d6",
+    "calls": [
+      "getSpan2",
+      "isChildSpanSuppressed",
+      "new DisposableSpan",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2375:86813",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "recordCompletedSpanIfParented",
+    "qualified_name": "recordCompletedSpanIfParented",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2375,
+    "end_line": 2384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "options2",
+      "endTime"
+    ],
+    "body_sha256": "794420bca6d1db0684c2ae765444e30f3f89161d2ebafe1ae64d770117ab9216",
+    "calls": [
+      "getSpan2",
+      "isChildSpanSuppressed",
+      "span.end",
+      "withSpan"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2387:87343",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "../packages/context/dist/otel.js",
+    "qualified_name": "../packages/context/dist/otel.js",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2387,
+    "end_line": 2408,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "1b85aed67d0048be2f1278da60544b59b8747e2ed71cb969c4ad055557600aa9",
+    "calls": [
+      "Symbol",
+      "createKey",
+      "init_core",
+      "init_esm"
+    ],
+    "writes": [
+      "DisposableSpan",
+      "INHERITABLE_SPAN_ATTRIBUTES_KEY",
+      "ROOT_SPAN_KEY",
+      "ROOT_SPAN_START_MS_KEY",
+      "SPAN_KEY2",
+      "SUPPRESS_CHILD_SPANS_KEY"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2397:87907",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "<class>.constructor",
+    "qualified_name": "../packages/context/dist/otel.js/<class>.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2397,
+    "end_line": 2401,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "span",
+      "shouldEnd = true"
+    ],
+    "body_sha256": "4c853ef39e7c81d3f0cc72866dee98a404378dcb48b9182b2f03a434680ce640",
+    "calls": [],
+    "writes": [
+      "this.ctx",
+      "this.shouldEnd",
+      "this.span"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:2402:88055",
+    "artifact": "evaluation",
+    "module": "context/otel.js",
+    "name": "<class>.Symbol.dispose",
+    "qualified_name": "../packages/context/dist/otel.js/<class>.Symbol.dispose",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 2402,
+    "end_line": 2406,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "25c60a208a56abd283ee181d06b258d50257265069c491dc820202e0b553f151",
+    "calls": [
+      "this.span.end"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

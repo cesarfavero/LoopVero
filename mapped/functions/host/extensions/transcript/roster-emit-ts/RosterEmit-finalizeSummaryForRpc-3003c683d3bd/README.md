@@ -1,0 +1,29 @@
+# `RosterEmit.finalizeSummaryForRpc`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../../guide/components/transcripts/README.md).
+
+**Módulo:** `host/extensions/transcript/roster-emit.ts` · [README do módulo](../../../../../../modules/host/extensions/transcript/roster-emit-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:739013-739019](../../../../../../../reference/runtime/host-main.cjs#L739013-L739019) | `method` | não | `summary, stamp` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:739013-739019](../../../../../../../reference/runtime/host-main.cjs#L739013-L739019) | 0 | 0 | 0 | 1 | 0 | 0 |
+
+### host:739013
+
+Chamadas escritas diretamente neste corpo: `this.applySnapshotStamp`, `this.tm.runLifecycle.withRunStates`.
+
+SHA-256 do trecho: `14ef6b10c4b9b0fee8953a7174dd6aaaecc4af85b8e511d730a0b21abed2cd48`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../../guide/methodology/README.md).

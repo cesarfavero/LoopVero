@@ -1,0 +1,1518 @@
+[
+  {
+    "id": "evaluation:565713:21061054",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillToolName",
+    "qualified_name": "skillToolName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565713,
+    "end_line": 565715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "95eb2c611db350e0e8ac5554c82856a9e064812d87f55b9688284f13b8557dfc",
+    "calls": [
+      "skillNameFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565716:21061132",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "catalogLabels",
+    "qualified_name": "catalogLabels",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565716,
+    "end_line": 565731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "fd6c4331033f9294ab83aca21d8dde3119cd54996b5fd8cb5b0b185c1d3ff065",
+    "calls": [
+      "nameCounts.get",
+      "nameCounts.set",
+      "new Map",
+      "skillToolName",
+      "skills.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565732:21061592",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "catalogLine",
+    "qualified_name": "catalogLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565732,
+    "end_line": 565735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "label",
+      "description9"
+    ],
+    "body_sha256": "27267025b15cbb3dca629ee6ea0b0132d9034d5518711ed5916e269973d2c430",
+    "calls": [
+      ".trim",
+      "description9.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565736:21061762",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "unlistedSkillsNudge",
+    "qualified_name": "unlistedSkillsNudge",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565736,
+    "end_line": 565739,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "count2"
+    ],
+    "body_sha256": "eba8179b9cde084b29e6d857ca954b7bcd80c4a86cbb28c77fb3d4fc34fd23e4",
+    "calls": [
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565741:21062243",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "buildSkillToolCatalog",
+    "qualified_name": "buildSkillToolCatalog",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565741,
+    "end_line": 565783,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills",
+      "agentTokenLimit",
+      "search"
+    ],
+    "body_sha256": "da425345db443d38c2e5277973c2ae44e4ed8b5ed2f874a8fd1450dfc324db5d",
+    "calls": [
+      "budgetSkillCatalogText",
+      "catalogLabels",
+      "invocable.map",
+      "modelInvocableSkills",
+      "new Map",
+      "unlistedSkillsNudge"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565754:21062791",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "searchNudge",
+    "qualified_name": "buildSkillToolCatalog/searchNudge",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565754,
+    "end_line": 565761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "items"
+    ],
+    "body_sha256": "a97211b61a942b1cdbdb1d1d3d400111af12866d9b7d376ca02ee2447500e3f1",
+    "calls": [
+      "items.some",
+      "unlistedSkillsNudge"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565768:21063326",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "renderCatalog",
+    "qualified_name": "buildSkillToolCatalog/renderCatalog",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565768,
+    "end_line": 565779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "items",
+      "omittedNotice"
+    ],
+    "body_sha256": "e2bee2598dd180aabdbc90b284fa1785283ef21658a9cf2ad548f7b6d7dc6cd2",
+    "calls": [
+      ".join",
+      "items.map",
+      "searchNudge"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565780:21063721",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "renderOmittedNotice",
+    "qualified_name": "buildSkillToolCatalog/renderOmittedNotice",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565780,
+    "end_line": 565780,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "omittedCount"
+    ],
+    "body_sha256": "b6ee3192125c31f98544f12af46227080b7ba9fd0badacde89f2d53ec53849be",
+    "calls": [
+      "String",
+      "unlistedSkillsNudge"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565784:21064026",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "looseKey2",
+    "qualified_name": "looseKey2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565784,
+    "end_line": 565786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "775f50f2751032fd1ecb4e7d555edf6b27fac260a1194d19095ec11a0e07bfc1",
+    "calls": [
+      ".replace",
+      "value.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565787:21064138",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "comparablePath",
+    "qualified_name": "comparablePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565787,
+    "end_line": 565790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "1653497ba1087b9b723b1746c77c5c58fcf40098043eed69c62b4a1e53b03fbe",
+    "calls": [
+      ".replace",
+      "import_node_path36.posix.basename",
+      "import_node_path36.posix.dirname",
+      "import_node_path36.posix.normalize",
+      "path33.trim",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565791:21064421",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "distinctSkills",
+    "qualified_name": "distinctSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565791,
+    "end_line": 565798,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skills"
+    ],
+    "body_sha256": "2f1f5202aa03aa5db3f7de4ac40359f0c52d64894c10ea6901bc088429619229",
+    "calls": [
+      "new Set",
+      "skills.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565799:21064636",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "resolveSkill",
+    "qualified_name": "resolveSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565799,
+    "end_line": 565816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listed",
+      "requested",
+      "{ unlisted = [] } = {}"
+    ],
+    "body_sha256": "773326965c01470abe5b7c7268887020defb5fdd34129005d09b945e60b9b4bd",
+    "calls": [
+      "distinctSkills",
+      "looseKey2",
+      "pool.filter",
+      "query2.includes",
+      "requested.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565817:21065453",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "escapeXml",
+    "qualified_name": "escapeXml",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565817,
+    "end_line": 565819,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "47782d6bef4ab0d8319cdd1fc7d117b86b4c6a0d6de6f83121b5f28a0f2709fa",
+    "calls": [
+      ".replaceAll",
+      "value.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565825:21065985",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillDirectoryLines",
+    "qualified_name": "skillDirectoryLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565825,
+    "end_line": 565839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "directory"
+    ],
+    "body_sha256": "b2b2316171c14893bd69885a44d1dbe442c1306710f322794e71e26b7107a459",
+    "calls": [
+      "directory.files.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565840:21066392",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "renderSkillContent",
+    "qualified_name": "renderSkillContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565840,
+    "end_line": 565850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "811fbf1625ba04d695d220af7269ec1a8ca03fad04e811097248a3d66d26f784",
+    "calls": [
+      ".join",
+      "args.body.trim",
+      "escapeXml",
+      "skillDirectoryLines"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565851:21066713",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillContentEnding",
+    "qualified_name": "skillContentEnding",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565851,
+    "end_line": 565861,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill",
+      "truncated"
+    ],
+    "body_sha256": "6d008366bb658eebdad1b79d32f54b3c2c184440e09d6f4930be9d7900a33d93",
+    "calls": [
+      "import_node_path36.posix.dirname",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565862:21067113",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "missingSkillMessage",
+    "qualified_name": "missingSkillMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565862,
+    "end_line": 565868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested",
+      "skills"
+    ],
+    "body_sha256": "f6de29051fca81366fde5037d29033acdee2ac28d740275f18e659dc8279a235",
+    "calls": [
+      ".join",
+      ".sort",
+      "String",
+      "names3.slice",
+      "new Set",
+      "skills.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565869:21067628",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "ambiguousSkillMessage",
+    "qualified_name": "ambiguousSkillMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565869,
+    "end_line": 565872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested",
+      "candidates"
+    ],
+    "body_sha256": "69c635e2834693da91fa44fbd8bda0eceff8d4d2a98036350092d6173b61a398",
+    "calls": [
+      ".join",
+      "candidates.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565873:21067925",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "readFailureDetail",
+    "qualified_name": "readFailureDetail",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565873,
+    "end_line": 565884,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "52def9669a1cc0dda1daf0277c17b7d5e46bbc7bfea7fd511cfe6805979d3e1d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565885:21068181",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "readOutputText",
+    "qualified_name": "readOutputText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565885,
+    "end_line": 565894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "output2"
+    ],
+    "body_sha256": "a6b8b07a46450be543ec3c118e281d536e28a8d1286b9d3c6dfb0ffd637f481e",
+    "calls": [
+      ".toString",
+      "Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565895:21068401",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "readSkillBody",
+    "qualified_name": "readSkillBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565895,
+    "end_line": 565914,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "skill"
+    ],
+    "body_sha256": "de43348197619ce8d0a61c7a00964847e4f77f7ec1ead824cf336332c6a06b25",
+    "calls": [
+      ".execute",
+      "deps.boxResources.get",
+      "new ReadArgs",
+      "new SandModelVisibleError",
+      "parseSkillFile",
+      "readFailureDetail",
+      "readOutputText",
+      "skillToolName",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565915:21069327",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "recordSkillActivation",
+    "qualified_name": "recordSkillActivation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565915,
+    "end_line": 565931,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "skill"
+    ],
+    "body_sha256": "956956f924680b5a898df05088f4380d31bfe0f2a093a859c93bcbd50d285ae8",
+    "calls": [
+      ".catch",
+      ".trackSkillUsed",
+      "getAgentEventTracker",
+      "getSkillSourceFromPath",
+      "recordSkillApplied",
+      "resolveCurrentTurnUserMessageText",
+      "skillToolName",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565932:21069958",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "countLoad",
+    "qualified_name": "countLoad",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565932,
+    "end_line": 565938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "outcome",
+      "skill"
+    ],
+    "body_sha256": "46f3ec1ae0174911dcd89822384724546eb7b4d80cfca4b5985e590422472049",
+    "calls": [
+      "skillToolLoads.increment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565939:21070138",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "loadResolvedSkill",
+    "qualified_name": "loadResolvedSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565939,
+    "end_line": 565951,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "skill"
+    ],
+    "body_sha256": "2a76b53b51a947f0185cbc921eeca8bd11e39098112af9dcbe8d48b41ef7e1df",
+    "calls": [
+      ".catch",
+      "countLoad",
+      "readSkillBody",
+      "recordSkillActivation",
+      "renderSkillContent",
+      "skillContentEnding",
+      "skillToolName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565952:21070576",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "loadSkill",
+    "qualified_name": "loadSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565952,
+    "end_line": 565967,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "requested"
+    ],
+    "body_sha256": "8698394feab36c5365dd4f11a644767c8ccfa61076d5b017f9a2a9fccc89a3ae",
+    "calls": [
+      "ambiguousSkillMessage",
+      "countLoad",
+      "deps.skills",
+      "loadResolvedSkill",
+      "missingSkillMessage",
+      "modelInvocableSkills",
+      "new SandModelVisibleError",
+      "requested.trim",
+      "resolveSkill"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565968:21071182",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillPools",
+    "qualified_name": "skillPools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565968,
+    "end_line": 565977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listedSkills",
+      "loadableSkills"
+    ],
+    "body_sha256": "455e3e889d7a6740340eddf4dbeab211a4e7fbc6a05dd0b1a5a5d4c7cca6d319",
+    "calls": [
+      ".filter",
+      "distinctSkills",
+      "listed.map",
+      "modelInvocableSkills",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565978:21071518",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "resolveSkillToolRequest",
+    "qualified_name": "resolveSkillToolRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565978,
+    "end_line": 565984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listedSkills",
+      "requested",
+      "loadableSkills"
+    ],
+    "body_sha256": "42e6319395706ff5bfa71da861d23639556b1a24a72919166c5a3c24924b4f95",
+    "calls": [
+      "modelInvocableSkills",
+      "resolveSkill",
+      "skillPools"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565985:21071843",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "searchResultLabel",
+    "qualified_name": "searchResultLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565985,
+    "end_line": 565989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill",
+      "pools"
+    ],
+    "body_sha256": "f5c13b792a764f220bbd78e21a8f9eb8bce04a51a1cb3f4bfaa53d5c50a54f71",
+    "calls": [
+      "resolveSkill",
+      "skillToolName",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565990:21072146",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillSearchLines",
+    "qualified_name": "skillSearchLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565990,
+    "end_line": 566007,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cabebe4018328a0662109c0053fb4562be41f5fa8a0a6fa81dd87bc20087ef49",
+    "calls": [
+      "escapeXml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566008:21072945",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "renderSkillSearch",
+    "qualified_name": "renderSkillSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566008,
+    "end_line": 566012,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d3514c9072ac10eb9ff70154ee2d965cdb886d37f4db2128c9b7f3fb33e259b0",
+    "calls": [
+      ".join",
+      "escapeXml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566013:21073097",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "searchSkills",
+    "qualified_name": "searchSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566013,
+    "end_line": 566051,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "search",
+      "pools",
+      "request3"
+    ],
+    "body_sha256": "eed89fcec3d0df0eaa369d2a70d496026b3b64be87b229826ca8610abf6965aa",
+    "calls": [
+      "boundSkillSearch",
+      "createSkillsVirtualMount",
+      "hits.flatMap",
+      "hits.map",
+      "renderSkillSearch",
+      "results.map",
+      "search.agentId",
+      "search.onSearch",
+      "skillSearchLines",
+      "skillToolSearches.increment",
+      "virtualMount.search"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566016:21073272",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skills",
+    "qualified_name": "searchSkills/skills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566016,
+    "end_line": 566016,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7336f00f10e40a5457050770ea82936511c4bcee3e75620db5dc3fc2e2b5a69b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566017:21073295",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "label",
+    "qualified_name": "searchSkills/label",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566017,
+    "end_line": 566017,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "b6e8101db4b2f43549c9dfeae49430ec5f94f2ec980852b77aff7dd7e3fb2e5b",
+    "calls": [
+      "searchResultLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566018:21073349",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "line",
+    "qualified_name": "searchSkills/line",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566018,
+    "end_line": 566018,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "skill",
+      "label"
+    ],
+    "body_sha256": "20f77e5b5842d4368c5e2435207b00b3a97dc3aefb3eeadfdf2764abbeecc6cd",
+    "calls": [
+      "catalogLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566052:21074429",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "presentText",
+    "qualified_name": "presentText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566052,
+    "end_line": 566054,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "86c92d0e9b4791b6d067f2a5cfebdf066300d5e8a72e51f49a278bc9aa1adc55",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566055:21074527",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "loadOrSearchSkill",
+    "qualified_name": "loadOrSearchSkill",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566055,
+    "end_line": 566080,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "search",
+      "args"
+    ],
+    "body_sha256": "2a2d1210451397166007c0982201e26eb9be0f083642d70ac5bb4dd5c52e58c3",
+    "calls": [
+      "ambiguousSkillMessage",
+      "countLoad",
+      "deps.skills",
+      "loadResolvedSkill",
+      "new SandModelVisibleError",
+      "presentText",
+      "resolveSkill",
+      "search.loadableSkills",
+      "searchSkills",
+      "skillPools"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandModelVisibleError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566081:21075578",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "createSkillTool",
+    "qualified_name": "createSkillTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566081,
+    "end_line": 566108,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "be68c15fd111f54f766583f43dca1c06a64a28ecee9cd899d4f0304bda7f4b0f",
+    "calls": [
+      "Object.assign",
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566083:21075656",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "catalog",
+    "qualified_name": "createSkillTool/catalog",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566083,
+    "end_line": 566088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b4b6d5a8ae53a555316c6c3e85a9b6805a9fc87c7b7edeb194f8fcc9a8f31cfc",
+    "calls": [
+      "buildSkillToolCatalog",
+      "deps.skills",
+      "search.loadableSkills",
+      "skillPools"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566092:21076072",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "description",
+    "qualified_name": "createSkillTool/description",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566092,
+    "end_line": 566092,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1e458922a2a03cf063e58f2a6434fc89c35cb82fac7d04b1294f2b97256354f4",
+    "calls": [
+      "catalog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566094:21076160",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSkillTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566094,
+    "end_line": 566094,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "981d23a5d986f5f643233042170323df5a22c52e1ca69f4c9e79e70955e69b31",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566095:21076208",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSkillTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566095,
+    "end_line": 566095,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "b921fe321f8d361cbc9c4b4337cc086c3384a39650e5e653701792bd839b05d3",
+    "calls": [
+      "loadSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566099:21076380",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "description",
+    "qualified_name": "createSkillTool/description",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566099,
+    "end_line": 566099,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1e458922a2a03cf063e58f2a6434fc89c35cb82fac7d04b1294f2b97256354f4",
+    "calls": [
+      "catalog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566101:21076474",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSkillTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566101,
+    "end_line": 566101,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ea133ea97dbb9fc8ce79da155b7ca9fb04ababb0b5cb3239565825d8494584b6",
+    "calls": [
+      "presentText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566102:21076549",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSkillTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566102,
+    "end_line": 566102,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "7f816cf681d2a966a0efb607bcc77e9d340ab8c5d9274d0b5527e3b1f100b29e",
+    "calls": [
+      "loadOrSearchSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566106:21076717",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/skill/skill-tool.ts",
+    "name": "skillCatalogBudget",
+    "qualified_name": "createSkillTool/skillCatalogBudget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566106,
+    "end_line": 566106,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3285bb2e655cc618d5759067bc019d893998a3cde7fc4419fad05879d2cf4a65",
+    "calls": [
+      "catalog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

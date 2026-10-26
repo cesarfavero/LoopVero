@@ -1,0 +1,375 @@
+[
+  {
+    "id": "host:722532:27411157",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "deriveTranscriptExtras",
+    "qualified_name": "deriveTranscriptExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722532,
+    "end_line": 722541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "agentId",
+      "firstLimit = PREVIEW_TAIL_FIRST_LIMIT"
+    ],
+    "body_sha256": "9fe360cecb94d63426dc4f9832798f0f0ca349c95f58ffc9ba3fb8ce8c0af1b5",
+    "calls": [
+      "db.getTranscriptEntries",
+      "db.getTranscriptTail",
+      "previewsSettledWithin",
+      "transcriptExtrasFrom"
+    ],
+    "writes": [
+      "limit3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722542:27411634",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "transcriptExtrasFrom",
+    "qualified_name": "transcriptExtrasFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722542,
+    "end_line": 722549,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "agentId"
+    ],
+    "body_sha256": "a916440ea6f17908d86fcefa2aa6762275f967516d11a1dd5d577faa4003d775",
+    "calls": [
+      "entries.at",
+      "previewFieldOrNull"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722550:27411965",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "loadAgentDbExtras",
+    "qualified_name": "loadAgentDbExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722550,
+    "end_line": 722554,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "dbPath",
+      "dirName",
+      "dbStats"
+    ],
+    "body_sha256": "06d637a8b3d52630ada5400c07c31c42d0221701eb1fb0af58f07759a4c0c056",
+    "calls": [
+      "ensureProfileFile",
+      "readDbExtras"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722555:27412135",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "readDbExtras",
+    "qualified_name": "readDbExtras",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722555,
+    "end_line": 722583,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "dirName",
+      "dbStats"
+    ],
+    "body_sha256": "288ae360b0c95eeeddf4c3dbc931f4f154c7114eaeddc69229530e3196b7b25a",
+    "calls": [
+      "db.get",
+      "db.getAgentOrigin",
+      "db.getAgentPurpose",
+      "db.getAwaitingUserResponse",
+      "db.getLastTurnSettlement",
+      "db.getSandProfile",
+      "db.getUnreadState",
+      "deriveTranscriptExtras",
+      "getDefaultAgentMetadata",
+      "getSummaryUpdatedAt",
+      "parseAgentId",
+      "seedActivityFromMtime"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:722585:27413053",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "previewFieldOrNull",
+    "qualified_name": "previewFieldOrNull",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722585,
+    "end_line": 722599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId",
+      "derive"
+    ],
+    "body_sha256": "56814459e8509888d814d5658a2a9ada9ad0e33d78c8fc28ee868c3174b57e8a",
+    "calls": [
+      "derive",
+      "errorLogTag",
+      "reportHostDiagnostic",
+      "reportedPreviewDegradations.add",
+      "reportedPreviewDegradations.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:722600:27413420",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "orNull",
+    "qualified_name": "orNull",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722600,
+    "end_line": 722602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "a5eaf179297890e0c197f29405c733e0f146bd622aeca59a143507b55f015820",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722603:27413506",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "minimalAgentSummary",
+    "qualified_name": "minimalAgentSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722603,
+    "end_line": 722646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "19c6058e34cd5c309e891b5dee73edbe08077c359e4cbb92e3aad571e5ac3706",
+    "calls": [
+      "Math.floor",
+      "Number",
+      "fileProfile.name.trim",
+      "getSandProfilePath",
+      "orNull",
+      "readSandProfileCreationMetadata",
+      "readSandProfileFile",
+      "readSandProfileHarness"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722647:27415200",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "buildSummary",
+    "qualified_name": "buildSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722647,
+    "end_line": 722720,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "417924132b82a5d29ab55fd3a6d9068d850516f7b63733c27afc00d3b9d5461b",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "Number",
+      "agentHasDurableFootprint",
+      "description9.trim",
+      "ensureSettingsFile",
+      "fileProfile.name.trim",
+      "getSandProfilePath",
+      "getSandSettingsPath",
+      "groupConfig.memberIds.filter",
+      "hasPlaceholderProfileName",
+      "normalizeSandVoiceId",
+      "normalizeSandVoiceLanguage",
+      "normalizeSandVoiceSpeed",
+      "orNull",
+      "readAvatarWithinDir",
+      "readLegacyProfileAvatarField",
+      "readSandGroupConfig",
+      "readSandProfileCreationMetadata",
+      "readSandProfileFile",
+      "readSandProfileHarness",
+      "readSandSettingsFile",
+      "resolveDerivedAvatarFilename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722721:27419314",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "agentHasDurableFootprint",
+    "qualified_name": "agentHasDurableFootprint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722721,
+    "end_line": 722723,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "agentHasMemory"
+    ],
+    "body_sha256": "aa79d5ef798774d992791eeabdedabe30c21f4f7535b3492677e180feacea34e",
+    "calls": [
+      "agentHasAutomations",
+      "agentHasMemory",
+      "agentHasQuarantinedStoreDb",
+      "agentHasSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722724:27419526",
+    "artifact": "host",
+    "module": "host/extensions/session/session-summaries.ts",
+    "name": "agentHasQuarantinedStoreDb",
+    "qualified_name": "agentHasQuarantinedStoreDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722724,
+    "end_line": 722732,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "91035a8f4522193ccc045d8b8453abc5b07d4167078dfba1530135a37ca9df9d",
+    "calls": [
+      "entries.some",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

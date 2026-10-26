@@ -1,0 +1,1000 @@
+[
+  {
+    "id": "host:509176:18684902",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "scmProviderDisplayName",
+    "qualified_name": "scmProviderDisplayName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509176,
+    "end_line": 509178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "6bba3fb4ba9a622eb010cc7b7cd818d1c2155f4e33f4d6c53d9adb95dbc7e861",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509179:18685037",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isDotcomGithubHost",
+    "qualified_name": "isDotcomGithubHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509179,
+    "end_line": 509182,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "07171562d5688c91081caaa60edcee240ac5746b5b9f86fea83063ed24b5dd89",
+    "calls": [
+      "host.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509183:18685180",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "repoUrlAsHttp",
+    "qualified_name": "repoUrlAsHttp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509183,
+    "end_line": 509191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl"
+    ],
+    "body_sha256": "476044d0cb965b7d5f170209ec0f3559b2041da1d73c22265173f203992c9a35",
+    "calls": [
+      "new URL",
+      "repoUrl.trim",
+      "trimmed.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509192:18685409",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "githubRepoSlugFromUrl",
+    "qualified_name": "githubRepoSlugFromUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509192,
+    "end_line": 509197,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl"
+    ],
+    "body_sha256": "ff3fa886252eaf9ca73d280c885741ac3174b3965fb8a8d867df38cd2c6bbf79",
+    "calls": [
+      ".filter",
+      ".split",
+      ".toLowerCase",
+      "isDotcomGithubHost",
+      "repoUrlAsHttp",
+      "url2.pathname.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509198:18685738",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "detectScmProviderForRepoUrl",
+    "qualified_name": "detectScmProviderForRepoUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509198,
+    "end_line": 509210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "8a85bd53a729b6b1e24f8c9bfa5dc0f2cb4010cb2c66837268d4a283121bd55c",
+    "calls": [
+      ".hostname.toLowerCase",
+      "hostname4.endsWith",
+      "isOriginRepoReference",
+      "repoUrlAsHttp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509211:18686430",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isScmNotConnectedShapedRejection",
+    "qualified_name": "isScmNotConnectedShapedRejection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509211,
+    "end_line": 509213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "e16a429011a8fe7b221f6377e05a21fe8dcc73c573ca0f7c55b7359acbc0f3f0",
+    "calls": [
+      "/is not connected to your (account|team)/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509214:18686556",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isScmReconnectShapedRejection",
+    "qualified_name": "isScmReconnectShapedRejection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509214,
+    "end_line": 509218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "65edc573543dc44fa42f3662f4752bbdcfdc11f0350b601fb9fa52cc28ba4d8f",
+    "calls": [
+      "/please reconnect (github|gitlab|bitbucket|azure|your source control integration)/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509219:18686728",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isRepoAccessShapedRejection",
+    "qualified_name": "isRepoAccessShapedRejection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509219,
+    "end_line": 509225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "9873d470fc94e0314704f4c0eda1c12756e3a48c4cf7fd6cf3c8f665c4eca86b",
+    "calls": [
+      "/deleted, renamed, made private|not linked for this workspace|do(?:es)? not have access|not accessible|no .*access token found with access|removed from the .* installation|permission denied/i.test",
+      "/repositor/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509235:18687420",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "scmConnectCardFromRequest",
+    "qualified_name": "scmConnectCardFromRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509235,
+    "end_line": 509244,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "92cec7b1d15c3559348f1cbbb62cf7ae7518a54ac326207e09c916fe905fcdb9",
+    "calls": [
+      ".toLowerCase",
+      "args.repo.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509245:18687838",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "requestExample",
+    "qualified_name": "requestExample",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509245,
+    "end_line": 509253,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f2df9b24233356e6f7946df0286eb71900d0d5e6893471753567365df22d0c99",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509254:18688173",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "armScmConnectWaits",
+    "qualified_name": "armScmConnectWaits",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509254,
+    "end_line": 509276,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "card",
+      "registerScmConnectWait"
+    ],
+    "body_sha256": "b5b58d9acf5441891b6861e375eb0a4d781d7913acca39a4e7970d12bd847ef5",
+    "calls": [
+      "DASHBOARD_CONNECTABLE_PROVIDERS.find",
+      "errorClassOf",
+      "registerScmConnectWait",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509278:18689220",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "originPortalBaseUrl",
+    "qualified_name": "originPortalBaseUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509278,
+    "end_line": 509283,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "b6f58a5a7198e529e150365786a7e530035d8d3b2b0b9d3e1361eba65d56fb05",
+    "calls": [
+      "resolvePortalBaseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509284:18689446",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeOriginAccessBlocker",
+    "qualified_name": "describeOriginAccessBlocker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509284,
+    "end_line": 509299,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "blocker",
+      "blockedAction",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "fc53087c3014139a5c90ced4c7c05e5a1e5fe3f431d36bf919dfc2e7b8de1a0b",
+    "calls": [
+      "originPortalBaseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509300:18691377",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeOriginBlocker",
+    "qualified_name": "describeOriginBlocker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509300,
+    "end_line": 509325,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  rejection,\n  knownIntent,\n  blockedAction,\n  repoUrl,\n  readPortalBaseUrl,\n  readOriginPrIdentityHosts\n}"
+    ],
+    "body_sha256": "36e8a2fe90c6964268bdc57694b402ab6c3ea1f84db331a1a20b6dd023cebf77",
+    "calls": [
+      "/create an origin namespace|no origin namespace/i.test",
+      "/origin is (turned|switched) off for (this|your|the) team|origin (is )?disabled for (this|your|the) team/i.test",
+      "describeOriginAccessBlocker",
+      "isRepoAccessShapedRejection",
+      "originRepoIdentityFromReference"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509326:18692369",
+    "artifact": "host",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeScmConnectBlocker",
+    "qualified_name": "describeScmConnectBlocker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509326,
+    "end_line": 509397,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  provider,\n  rejection,\n  knownIntent,\n  isConnected,\n  blockedAction,\n  repoUrl,\n  readPortalBaseUrl,\n  readOriginPrIdentityHosts\n}"
+    ],
+    "body_sha256": "ce1d5f477adb2bcb08c78bba8d44c5e82c5d16456bea03d427fe0167b2e27fb6",
+    "calls": [
+      "Promise.allSettled",
+      "describeOriginBlocker",
+      "errorClassOf",
+      "githubRepoSlugFromUrl",
+      "isRepoAccessShapedRejection",
+      "isScmNotConnectedShapedRejection",
+      "isScmReconnectShapedRejection",
+      "probeTargets.map",
+      "reportHostDiagnostic",
+      "requestExample"
+    ],
+    "writes": [
+      "hasConnectedProvider",
+      "leadSentence",
+      "sawFulfilledProbe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 19,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556901:20652192",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "scmProviderDisplayName",
+    "qualified_name": "scmProviderDisplayName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556901,
+    "end_line": 556903,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "6bba3fb4ba9a622eb010cc7b7cd818d1c2155f4e33f4d6c53d9adb95dbc7e861",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556904:20652327",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isDotcomGithubHost",
+    "qualified_name": "isDotcomGithubHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556904,
+    "end_line": 556907,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "07171562d5688c91081caaa60edcee240ac5746b5b9f86fea83063ed24b5dd89",
+    "calls": [
+      "host.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556908:20652470",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "repoUrlAsHttp",
+    "qualified_name": "repoUrlAsHttp",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556908,
+    "end_line": 556916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl"
+    ],
+    "body_sha256": "476044d0cb965b7d5f170209ec0f3559b2041da1d73c22265173f203992c9a35",
+    "calls": [
+      "new URL",
+      "repoUrl.trim",
+      "trimmed.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:556917:20652699",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "githubRepoSlugFromUrl",
+    "qualified_name": "githubRepoSlugFromUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556917,
+    "end_line": 556922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl"
+    ],
+    "body_sha256": "ff3fa886252eaf9ca73d280c885741ac3174b3965fb8a8d867df38cd2c6bbf79",
+    "calls": [
+      ".filter",
+      ".split",
+      ".toLowerCase",
+      "isDotcomGithubHost",
+      "repoUrlAsHttp",
+      "url2.pathname.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556923:20653028",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "detectScmProviderForRepoUrl",
+    "qualified_name": "detectScmProviderForRepoUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556923,
+    "end_line": 556935,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "db99a351943cc711c1b444d5fb308eae5202fbe667bfcc6f26ca7872f244da37",
+    "calls": [
+      ".hostname.toLowerCase",
+      "hostname3.endsWith",
+      "isOriginRepoReference",
+      "repoUrlAsHttp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556936:20653720",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isScmNotConnectedShapedRejection",
+    "qualified_name": "isScmNotConnectedShapedRejection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556936,
+    "end_line": 556938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "e16a429011a8fe7b221f6377e05a21fe8dcc73c573ca0f7c55b7359acbc0f3f0",
+    "calls": [
+      "/is not connected to your (account|team)/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556939:20653846",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isScmReconnectShapedRejection",
+    "qualified_name": "isScmReconnectShapedRejection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556939,
+    "end_line": 556943,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "65edc573543dc44fa42f3662f4752bbdcfdc11f0350b601fb9fa52cc28ba4d8f",
+    "calls": [
+      "/please reconnect (github|gitlab|bitbucket|azure|your source control integration)/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556944:20654018",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "isRepoAccessShapedRejection",
+    "qualified_name": "isRepoAccessShapedRejection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556944,
+    "end_line": 556950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rejection"
+    ],
+    "body_sha256": "9873d470fc94e0314704f4c0eda1c12756e3a48c4cf7fd6cf3c8f665c4eca86b",
+    "calls": [
+      "/deleted, renamed, made private|not linked for this workspace|do(?:es)? not have access|not accessible|no .*access token found with access|removed from the .* installation|permission denied/i.test",
+      "/repositor/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556960:20654710",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "scmConnectCardFromRequest",
+    "qualified_name": "scmConnectCardFromRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556960,
+    "end_line": 556969,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "92cec7b1d15c3559348f1cbbb62cf7ae7518a54ac326207e09c916fe905fcdb9",
+    "calls": [
+      ".toLowerCase",
+      "args.repo.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556970:20655128",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "requestExample",
+    "qualified_name": "requestExample",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556970,
+    "end_line": 556978,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f2df9b24233356e6f7946df0286eb71900d0d5e6893471753567365df22d0c99",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556979:20655463",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "armScmConnectWaits",
+    "qualified_name": "armScmConnectWaits",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556979,
+    "end_line": 557001,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "card",
+      "registerScmConnectWait"
+    ],
+    "body_sha256": "0ffa1069d5ff491523721b3990f99dd9b99c33157fcc5e32b7553d9111acfc4b",
+    "calls": [
+      "DASHBOARD_CONNECTABLE_PROVIDERS.find",
+      "errorClassOf",
+      "registerScmConnectWait",
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:557003:20656510",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "originPortalBaseUrl",
+    "qualified_name": "originPortalBaseUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557003,
+    "end_line": 557008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "b6f58a5a7198e529e150365786a7e530035d8d3b2b0b9d3e1361eba65d56fb05",
+    "calls": [
+      "resolvePortalBaseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557009:20656736",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeOriginAccessBlocker",
+    "qualified_name": "describeOriginAccessBlocker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557009,
+    "end_line": 557024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "blocker",
+      "blockedAction",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "fc53087c3014139a5c90ced4c7c05e5a1e5fe3f431d36bf919dfc2e7b8de1a0b",
+    "calls": [
+      "originPortalBaseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557025:20658667",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeOriginBlocker",
+    "qualified_name": "describeOriginBlocker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557025,
+    "end_line": 557050,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  rejection,\n  knownIntent,\n  blockedAction,\n  repoUrl,\n  readPortalBaseUrl,\n  readOriginPrIdentityHosts\n}"
+    ],
+    "body_sha256": "36e8a2fe90c6964268bdc57694b402ab6c3ea1f84db331a1a20b6dd023cebf77",
+    "calls": [
+      "/create an origin namespace|no origin namespace/i.test",
+      "/origin is (turned|switched) off for (this|your|the) team|origin (is )?disabled for (this|your|the) team/i.test",
+      "describeOriginAccessBlocker",
+      "isRepoAccessShapedRejection",
+      "originRepoIdentityFromReference"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557051:20659659",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/scm-connect-cards.ts",
+    "name": "describeScmConnectBlocker",
+    "qualified_name": "describeScmConnectBlocker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557051,
+    "end_line": 557122,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  provider,\n  rejection,\n  knownIntent,\n  isConnected,\n  blockedAction,\n  repoUrl,\n  readPortalBaseUrl,\n  readOriginPrIdentityHosts\n}"
+    ],
+    "body_sha256": "ce1d5f477adb2bcb08c78bba8d44c5e82c5d16456bea03d427fe0167b2e27fb6",
+    "calls": [
+      "Promise.allSettled",
+      "describeOriginBlocker",
+      "errorClassOf",
+      "githubRepoSlugFromUrl",
+      "isRepoAccessShapedRejection",
+      "isScmNotConnectedShapedRejection",
+      "isScmReconnectShapedRejection",
+      "probeTargets.map",
+      "reportHostDiagnostic",
+      "requestExample"
+    ],
+    "writes": [
+      "hasConnectedProvider",
+      "leadSentence",
+      "sawFulfilledProbe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 19,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

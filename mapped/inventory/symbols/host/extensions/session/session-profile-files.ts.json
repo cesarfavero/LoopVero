@@ -1,0 +1,280 @@
+[
+  {
+    "id": "host:722789:27421871",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "updateAgentProfile",
+    "qualified_name": "updateAgentProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722789,
+    "end_line": 722803,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId",
+      "profile"
+    ],
+    "body_sha256": "f3fc69b6cc028bfe457ae4a89e4c084177a46fde876fda415a3e52d58c7b7a51",
+    "calls": [
+      "host.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722800:27422335",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "agentHasMemory",
+    "qualified_name": "updateAgentProfile/<callback>/agentHasMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722800,
+    "end_line": 722800,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "95e7e8ec5b373f6e4bc67cbe57dd6738bc076d7030b9f556be1caf37258d63ad",
+    "calls": [
+      "host.memory.agentHasContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722804:27422405",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "getAgentProfileText",
+    "qualified_name": "getAgentProfileText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722804,
+    "end_line": 722814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId"
+    ],
+    "body_sha256": "041d7af91954139110dbc72d1f4bd32cefab26945fb96ac4bf3f1e3797a927b6",
+    "calls": [
+      "getSandProfilePath",
+      "host.getAgentDir",
+      "readSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722815:27422754",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "getAgentAvatar",
+    "qualified_name": "getAgentAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722815,
+    "end_line": 722823,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId"
+    ],
+    "body_sha256": "c05dc1fef84f010f61dcc3e8d09bc60e73a31d97f6026abe182b059095147613",
+    "calls": [
+      "getSandProfilePath",
+      "host.getAgentDir",
+      "readAvatarWithinDir",
+      "readLegacyProfileAvatarField",
+      "readLegacyStoredAvatar",
+      "resolveDerivedAvatarFilename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722825:27423262",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "base64ByteCount",
+    "qualified_name": "base64ByteCount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722825,
+    "end_line": 722833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "payload"
+    ],
+    "body_sha256": "c6f1282808c426480c76a599362aef519f0b9e86a37b4510fbe8590b7ecacc45",
+    "calls": [
+      "Math.floor",
+      "payload.endsWith"
+    ],
+    "writes": [
+      "padding"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722834:27423482",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "getAgentNotificationAvatar",
+    "qualified_name": "getAgentNotificationAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722834,
+    "end_line": 722851,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId"
+    ],
+    "body_sha256": "84fed9aa5e484480cfa671f31f61e9e53463737d5a7af808d064b2207d7185b9",
+    "calls": [
+      "AVATAR_DATA_URL_PATTERN.exec",
+      "base64ByteCount",
+      "getAgentAvatar",
+      "getAgentProfileText",
+      "parsed2[computed].toLowerCase",
+      "resolveWornGrokBotMark"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722852:27424156",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "readLegacyStoredAvatar",
+    "qualified_name": "readLegacyStoredAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722852,
+    "end_line": 722859,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId",
+      "read2"
+    ],
+    "body_sha256": "5f01d5f4ed97d661194fd3d5f85ea599ca6af206a225355e4b9fcb478f065894",
+    "calls": [
+      "host.agentExists",
+      "host.getAgentDir",
+      "host.withAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722860:27424430",
+    "artifact": "host",
+    "module": "host/extensions/session/session-profile-files.ts",
+    "name": "getAgentAvatarPng",
+    "qualified_name": "getAgentAvatarPng",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722860,
+    "end_line": 722867,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "agentId"
+    ],
+    "body_sha256": "38fbd0f45e632a3eaf169b9b693cfa9320347f2f683ab8f6c4e8db8a1d912df4",
+    "calls": [
+      "getSandProfilePath",
+      "host.getAgentDir",
+      "readAvatarBytesWithinDir",
+      "readLegacyProfileAvatarField",
+      "readLegacyStoredAvatar",
+      "resolveDerivedAvatarFilename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

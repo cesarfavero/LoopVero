@@ -1,0 +1,218 @@
+[
+  {
+    "id": "host:512280:18805318",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "encodeOriginWalk",
+    "qualified_name": "encodeOriginWalk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512280,
+    "end_line": 512286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "walk3"
+    ],
+    "body_sha256": "b0cbb279058df71dc98021f6c9f008505b395e63c03e5ac4be6b5adb4e3cb173",
+    "calls": [
+      "walk3.namespaces.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:512287:18805504",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "decodeOriginWalk",
+    "qualified_name": "decodeOriginWalk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512287,
+    "end_line": 512296,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "wire"
+    ],
+    "body_sha256": "e595dbf6e8b66bfd57d04efce140c0f6313b34763bfadd93819d073b62ce50b8",
+    "calls": [
+      "wire.on.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:512297:18805732",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "listOriginNamespaces",
+    "qualified_name": "listOriginNamespaces",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512297,
+    "end_line": 512326,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "origin"
+    ],
+    "body_sha256": "f3cceff59d81a8ed1799c520ff82ecc0b5a8ff77ba5d8caab6f3755c86707ca4",
+    "calls": [
+      "BigInt",
+      "errorLogTag",
+      "namespaces.has",
+      "namespaces.set",
+      "namespaces.values",
+      "new GetAuthorizedNamespacesRequest",
+      "new Map",
+      "origin.getAuthorizedNamespaces",
+      "owned.namespace.trim",
+      "owned.ownerEntityId.toString",
+      "process.stderr.write"
+    ],
+    "writes": [
+      "response"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:512327:18807191",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "fetchOriginPage",
+    "qualified_name": "fetchOriginPage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512327,
+    "end_line": 512348,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "origin",
+      "unit",
+      "request5"
+    ],
+    "body_sha256": "488eeba833b25b9ba7148b66d4422ee4e28fd58627595f11454d31b35ef3249e",
+    "calls": [
+      "errorLogTag",
+      "new ListHostedReposRequest",
+      "origin.listHostedRepos",
+      "process.stderr.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:512349:18808074",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "walkOriginRepositories",
+    "qualified_name": "walkOriginRepositories",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512349,
+    "end_line": 512405,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7e2d00aee716b0b28e8dabfa5d7fd4df7be91e9856196dffcf9c7ebe5de86e2e",
+    "calls": [
+      "fetchOriginPage",
+      "originPortalHostnames",
+      "originRepoPortalUrl",
+      "page.repositories.slice",
+      "repos.push",
+      "resumeHere",
+      "unlistableInstallations.push",
+      "unreachableProviders.includes",
+      "unreachableProviders.push"
+    ],
+    "writes": [
+      "fetches",
+      "index",
+      "pageToken",
+      "portalHostnames",
+      "within"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 3,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:512358:18808524",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-listing.ts",
+    "name": "resumeHere",
+    "qualified_name": "walkOriginRepositories/resumeHere",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 512358,
+    "end_line": 512362,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9cfdb90454a890c4581b5c212a878995ffb6089293af016fe584e467d37facd3",
+    "calls": [
+      "args.encodeCursor",
+      "args.walk.namespaces.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,2350 @@
+[
+  {
+    "id": "host:624542:23154077",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "fingerprintAgentLoopEvidence",
+    "qualified_name": "fingerprintAgentLoopEvidence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624542,
+    "end_line": 624550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "loopKind",
+      "evidenceParts"
+    ],
+    "body_sha256": "fd2304fef018cf349f9f6d3de66bcce970aeed408e590d9509ab6314459f400c",
+    "calls": [
+      "Buffer.byteLength",
+      "hash2.digest",
+      "hash2.update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624551:23154437",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "reportLoopObservation",
+    "qualified_name": "reportLoopObservation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624551,
+    "end_line": 624559,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporting",
+      "observation"
+    ],
+    "body_sha256": "ddd6f62244981b6d4a2d593098687881a11a42e486fa2eb1f3178f10ebc3760f",
+    "calls": [
+      "reporting.onDetection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:624560:23154606",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "reportLoopMitigationObservation",
+    "qualified_name": "reportLoopMitigationObservation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624560,
+    "end_line": 624565,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporting",
+      "observation"
+    ],
+    "body_sha256": "fbac61326418ed65f9df2064285c06c785b24f61d7c2cffff2b2c5642b03624f",
+    "calls": [
+      "reporting.onMitigation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:624566:23154743",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "resolveAgentSingleMessageLoopDetection",
+    "qualified_name": "resolveAgentSingleMessageLoopDetection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624566,
+    "end_line": 624571,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2"
+    ],
+    "body_sha256": "e3539e10a3992c26d40de3f6e114a7ecc5dd9e519a65ddd6cf9b1f5a7488ff0d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624572:23155012",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "normalizeAgentSingleMessageLoopDetection",
+    "qualified_name": "normalizeAgentSingleMessageLoopDetection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624572,
+    "end_line": 624577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detection"
+    ],
+    "body_sha256": "a5bdeab383edd7671bc0ab235a3c75507a136b176378b78927f2cf35d9670ac2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624579:23155292",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "AgentLoopError.constructor",
+    "qualified_name": "AgentLoopError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624579,
+    "end_line": 624600,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "6fef0abbe78b2e10288a2c9fe9132c5a221490109315a3a13aae6cbd7ae2b43c",
+    "calls": [
+      "new CustomErrorDetails",
+      "new ErrorDetails",
+      "singleMessageLoopWireInfo",
+      "super"
+    ],
+    "writes": [
+      "this.evidenceFingerprint",
+      "this.loopType",
+      "this.name",
+      "this.period",
+      "this.repetitions",
+      "this.singleMessageLoopKind"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624609:23156692",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "isSingleMessageLoopKind",
+    "qualified_name": "isSingleMessageLoopKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624609,
+    "end_line": 624611,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind"
+    ],
+    "body_sha256": "d8e1ef340d9bb2c7a7c4f3967493569913a5047b6924ade9cbecc080f25d8ba0",
+    "calls": [
+      "SINGLE_MESSAGE_LOOP_KINDS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624615:23156913",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleMessageLoopWireInfo",
+    "qualified_name": "singleMessageLoopWireInfo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624615,
+    "end_line": 624624,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "ff3868da203b4d808aea89982e1bf330a83d8ace6964cca19527fc50928655bc",
+    "calls": [
+      "String"
+    ],
+    "writes": [
+      "info2[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624625:23157195",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "stripThinkingTags",
+    "qualified_name": "stripThinkingTags",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624625,
+    "end_line": 624636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "8c84ebb4725f81cb7ad1f8ed60d47ffac5896ff3e09bf5d60c0b94f58324ca1c",
+    "calls": [
+      "text3.indexOf",
+      "text3.slice"
+    ],
+    "writes": [
+      "startIndex",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624638:23157661",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "SingleMessageLoopDetector2.constructor",
+    "qualified_name": "SingleMessageLoopDetector2.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624638,
+    "end_line": 624654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "41526abeaf2ed369ab02d649d0d96e30368e6d0af8daedcd5c7b2ca6a649c595",
+    "calls": [
+      "super"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624640:23157713",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinRepetitions",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinRepetitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624640,
+    "end_line": 624640,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "471bc97903d65b04c2c95e8ecb51c115efa5d7df40d29b8e84ae8728d7ed4411",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624641:23157813",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinRepetitionsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinRepetitionsInCodeFence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624641,
+    "end_line": 624641,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "86509e737e9865125dd4189987030bb4deea6c6b23ca0bc4637abd6e0cb80df1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624642:23157902",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "maxLineLength",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/maxLineLength",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624642,
+    "end_line": 624642,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "670a95d8dc872ae43583976a31a2759a57dad7d77ac3140bc4e12e44c2dc7891",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624643:23157976",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "maxCheckTimeMs",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/maxCheckTimeMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624643,
+    "end_line": 624643,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "281c92b297d05343c272af29f1ca4d7a2407802a56ee68c11cedd907a6383f91",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624644:23158066",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinRepetitions",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinRepetitions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624644,
+    "end_line": 624644,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c334c5268637a0c572f61054d737e9464cd3a10e7461e9f1afc884d0c8bdeafc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624645:23158153",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinRepetitionsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinRepetitionsInCodeFence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624645,
+    "end_line": 624645,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7e01b6a4c031205f3cb575a32f26685cc70f9dc5fbe1226ddae106a26816d319",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624646:23158239",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinPTimesK",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinPTimesK",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624646,
+    "end_line": 624646,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6c5dd141e27c7d13bf5d618500e90c7e9593090d69a329c441548da74588a236",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624647:23158320",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinPTimesKInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinPTimesKInCodeFence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624647,
+    "end_line": 624647,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bb09755a6449836820bcb4b980ddf7f0c86ce09f7f39fe03c80be9d21538aa5e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624648:23158398",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMaxP",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMaxP",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624648,
+    "end_line": 624648,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7090e48c12536e59c5cc6dfa1be42d34162744429f539feaacc5d71b9f2f4bf8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624649:23158459",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinPTimesK",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinPTimesK",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624649,
+    "end_line": 624649,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dcae20f5803942b047cfe39ef80c0c4368e05bf473111e8831b25fa8294b3270",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624650:23158553",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinPTimesKInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinPTimesKInCodeFence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624650,
+    "end_line": 624650,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "35ab33e69ce0d4695de2594576fc70c37bc6d9cdd09753d2bc74cb01a9d76a77",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624651:23158653",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinTotalChars",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinTotalChars",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624651,
+    "end_line": 624651,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4c1917b97485c7fe9d77ed1fa809492039cd61f7fc2b3a9e2bcaede8484275b8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624652:23158737",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinTotalCharsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinTotalCharsInCodeFence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624652,
+    "end_line": 624652,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d6404b42f60e9dabe8b3459e3f8dfe975bb49f76b5ec952516f16c22a61f455",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624656:23158804",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "getAgentSingleMessageLoopInfo",
+    "qualified_name": "getAgentSingleMessageLoopInfo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624656,
+    "end_line": 624669,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detector",
+      "channel"
+    ],
+    "body_sha256": "fac9377945d22e670315d2b4af9a5d8b8e1d81240643ea9b942efdbde570e0aa",
+    "calls": [
+      "detector.getMultiLineLoopInfo",
+      "detector.getSingleLineLoopInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624670:23159310",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "checkForAgentSingleMessageLooping",
+    "qualified_name": "checkForAgentSingleMessageLooping",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624670,
+    "end_line": 624760,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "74be576ef4d05b20fde80c243eabdc7965dee3364f165b56649854cdffb55b0e",
+    "calls": [
+      "eventTracker.trackLoopDetected",
+      "fingerprintAgentLoopEvidence",
+      "getAgentEventTracker",
+      "getAgentSingleMessageLoopInfo",
+      "logger41.info",
+      "logger41.warn",
+      "loopDetectionCounter.increment",
+      "loopInfo.pattern.slice",
+      "params.ctx.get",
+      "params.detector.addText",
+      "params.detector.loopDetected",
+      "params.detector.timedOut",
+      "performance.now",
+      "reportLoopObservation",
+      "singleMessageLoopCheckLatency.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:624761:23162337",
+    "artifact": "host",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "createLoopReminderMessage",
+    "qualified_name": "createLoopReminderMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 624761,
+    "end_line": 624775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8be0089092cdbb55d7f56bc5e3015cc89fab72f4f6760eebdc08a03628f02d35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310664:10126091",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "fingerprintAgentLoopEvidence",
+    "qualified_name": "fingerprintAgentLoopEvidence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310664,
+    "end_line": 310672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "loopKind",
+      "evidenceParts"
+    ],
+    "body_sha256": "39de7692acc59d7edb9dea70bd660e100b7a5499768f1d73b31c49370cbfb995",
+    "calls": [
+      "Buffer.byteLength",
+      "hash2.digest",
+      "hash2.update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310673:10126450",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "smallestRotation",
+    "qualified_name": "smallestRotation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310673,
+    "end_line": 310682,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "keys"
+    ],
+    "body_sha256": "30ce1b12c4c627e1a9164c6ca33cdf909ab0be6dfa686d19cd4146e54f6ad166",
+    "calls": [
+      "keys.slice",
+      "rotation.findIndex"
+    ],
+    "writes": [
+      "best",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310683:10126809",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "reportLoopObservation",
+    "qualified_name": "reportLoopObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310683,
+    "end_line": 310691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporting",
+      "observation"
+    ],
+    "body_sha256": "ddd6f62244981b6d4a2d593098687881a11a42e486fa2eb1f3178f10ebc3760f",
+    "calls": [
+      "reporting.onDetection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:310692:10126978",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "reportLoopMitigationObservation",
+    "qualified_name": "reportLoopMitigationObservation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310692,
+    "end_line": 310697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporting",
+      "observation"
+    ],
+    "body_sha256": "fbac61326418ed65f9df2064285c06c785b24f61d7c2cffff2b2c5642b03624f",
+    "calls": [
+      "reporting.onMitigation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:310698:10127115",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "resolveAgentSingleMessageLoopDetection",
+    "qualified_name": "resolveAgentSingleMessageLoopDetection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310698,
+    "end_line": 310703,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2"
+    ],
+    "body_sha256": "e3539e10a3992c26d40de3f6e114a7ecc5dd9e519a65ddd6cf9b1f5a7488ff0d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310704:10127384",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "normalizeAgentSingleMessageLoopDetection",
+    "qualified_name": "normalizeAgentSingleMessageLoopDetection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310704,
+    "end_line": 310709,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detection"
+    ],
+    "body_sha256": "a5bdeab383edd7671bc0ab235a3c75507a136b176378b78927f2cf35d9670ac2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310711:10127664",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "AgentLoopError.constructor",
+    "qualified_name": "AgentLoopError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310711,
+    "end_line": 310732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "6fef0abbe78b2e10288a2c9fe9132c5a221490109315a3a13aae6cbd7ae2b43c",
+    "calls": [
+      "new CustomErrorDetails",
+      "new ErrorDetails",
+      "singleMessageLoopWireInfo",
+      "super"
+    ],
+    "writes": [
+      "this.evidenceFingerprint",
+      "this.loopType",
+      "this.name",
+      "this.period",
+      "this.repetitions",
+      "this.singleMessageLoopKind"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310741:10129064",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "isSingleMessageLoopKind",
+    "qualified_name": "isSingleMessageLoopKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310741,
+    "end_line": 310743,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind"
+    ],
+    "body_sha256": "d8e1ef340d9bb2c7a7c4f3967493569913a5047b6924ade9cbecc080f25d8ba0",
+    "calls": [
+      "SINGLE_MESSAGE_LOOP_KINDS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310747:10129285",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleMessageLoopWireInfo",
+    "qualified_name": "singleMessageLoopWireInfo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310747,
+    "end_line": 310756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "ff3868da203b4d808aea89982e1bf330a83d8ace6964cca19527fc50928655bc",
+    "calls": [
+      "String"
+    ],
+    "writes": [
+      "info2[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310757:10129567",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "stripThinkingTags",
+    "qualified_name": "stripThinkingTags",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310757,
+    "end_line": 310768,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "8c84ebb4725f81cb7ad1f8ed60d47ffac5896ff3e09bf5d60c0b94f58324ca1c",
+    "calls": [
+      "text3.indexOf",
+      "text3.slice"
+    ],
+    "writes": [
+      "startIndex",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310770:10129989",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "extractToolResultTextForLoopDetection",
+    "qualified_name": "extractToolResultTextForLoopDetection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310770,
+    "end_line": 310808,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "c1b4e805618db5fa8c9de1e880f508e1105e87e847531da4d0357d75fae88f22",
+    "calls": [
+      ".slice",
+      "Array.isArray",
+      "JSON.stringify",
+      "String",
+      "data2.slice",
+      "imageTokens.slice",
+      "result.slice",
+      "text3.slice"
+    ],
+    "writes": [
+      "imageTokens",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:310809:10131401",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "convertCoreMessagesToLoopFormat",
+    "qualified_name": "convertCoreMessagesToLoopFormat",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310809,
+    "end_line": 310873,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "options2 = {}"
+    ],
+    "body_sha256": "8aa07fd533969a6a9520aff8cb6001313597089f9f670210bdec0b1dafc36a3b",
+    "calls": [
+      ".trim",
+      "Array.isArray",
+      "callsById.get",
+      "callsById.set",
+      "extractToolResultTextForLoopDetection",
+      "new Map",
+      "options2.isWaitToolResult",
+      "previous.toolResultTexts.push",
+      "previous.transientRetryKinds.push",
+      "result.push",
+      "stripThinkingTags",
+      "toolCalls3.push"
+    ],
+    "writes": [
+      "previous.toolResultTexts",
+      "previous.toolResultWaited",
+      "previous.transientRetryKinds",
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 17,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310875:10134219",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "toolArgsJson",
+    "qualified_name": "toolArgsJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310875,
+    "end_line": 310883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f54407a77da85ec2e5c6fa869cd0b4e7629631cb8f664a2cbe62bc08f72a6bc1",
+    "calls": [
+      "JSON.stringify",
+      "toolArgsJsonCache.get",
+      "toolArgsJsonCache.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310884:10134442",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "createMessageKey",
+    "qualified_name": "createMessageKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310884,
+    "end_line": 310901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "options2 = {}"
+    ],
+    "body_sha256": "d8f911ee643a223ed27ba43c099cac1c49e6c73368a40972cd1a5f3bd9d434c2",
+    "calls": [
+      ".join",
+      ".sort",
+      "message.toolCalls.map",
+      "normalizeText"
+    ],
+    "writes": [
+      "toolInfo"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310902:10135153",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "detectPatternInMessages",
+    "qualified_name": "detectPatternInMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310902,
+    "end_line": 310923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messageKeys",
+      "minRepetitions",
+      "minMessageLength"
+    ],
+    "body_sha256": "f2aacb4f4fa4e4dbb773b5dd33faf07fc74095c320af186fab5e437e59290692",
+    "calls": [
+      ".fill",
+      "Math.floor",
+      "new Array"
+    ],
+    "writes": [
+      "i",
+      "p2",
+      "periodMatchRunLengths[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310924:10135944",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "hasPatternAnywhereInMessages",
+    "qualified_name": "hasPatternAnywhereInMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310924,
+    "end_line": 310947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messageKeys",
+      "minRepetitions",
+      "minMessageLength"
+    ],
+    "body_sha256": "eb1958bbf05532bbd9b691078e059518a9e027223c3d60090c4055d54ca62de3",
+    "calls": [
+      ".fill",
+      "Math.floor",
+      "Math.min",
+      "new Array"
+    ],
+    "writes": [
+      "i",
+      "p2",
+      "periodMatchRunLengths[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310948:10136789",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "describePatternRun",
+    "qualified_name": "describePatternRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310948,
+    "end_line": 310977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "fd97933012364c50f133e2af2dbec6b06edb5eda5b9a7419f79b234140addc6c",
+    "calls": [
+      "Math.max",
+      "collectRunOccurrenceResults",
+      "messages.slice",
+      "occurrenceStarts.every",
+      "patternMessages.every",
+      "runOccurrenceStarts"
+    ],
+    "writes": [
+      "i",
+      "identicalPairs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310954:10137430",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "waits",
+    "qualified_name": "describePatternRun/waits",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310954,
+    "end_line": 310954,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "msg"
+    ],
+    "body_sha256": "f163f3b0fd4127efba4c65406ae35dcf089673c9e65301c974af2dc99fd471e3",
+    "calls": [
+      ".some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310978:10138528",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "runOccurrenceStarts",
+    "qualified_name": "runOccurrenceStarts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310978,
+    "end_line": 310990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "keys",
+      "{ patternStartIdx, patternLength }"
+    ],
+    "body_sha256": "ee7a6a694ba8adb232eaa6d1ecef0ccfb082fb2410cb9e9ac23b563b871bcff4",
+    "calls": [
+      "keys.slice",
+      "starts.push"
+    ],
+    "writes": [
+      "offset2",
+      "start"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:310991:10139000",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "collectRunOccurrenceResults",
+    "qualified_name": "collectRunOccurrenceResults",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 310991,
+    "end_line": 311003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "a668a326ac445e515aa982c1b79b24810965a041b6d22c982364b283fe7c6cc2",
+    "calls": [
+      "occurrenceStarts.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311005:10139573",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "SingleMessageLoopDetector2.constructor",
+    "qualified_name": "SingleMessageLoopDetector2.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311005,
+    "end_line": 311021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "41526abeaf2ed369ab02d649d0d96e30368e6d0af8daedcd5c7b2ca6a649c595",
+    "calls": [
+      "super"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311007:10139625",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinRepetitions",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinRepetitions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311007,
+    "end_line": 311007,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "471bc97903d65b04c2c95e8ecb51c115efa5d7df40d29b8e84ae8728d7ed4411",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311008:10139725",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinRepetitionsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinRepetitionsInCodeFence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311008,
+    "end_line": 311008,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "86509e737e9865125dd4189987030bb4deea6c6b23ca0bc4637abd6e0cb80df1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311009:10139814",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "maxLineLength",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/maxLineLength",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311009,
+    "end_line": 311009,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "670a95d8dc872ae43583976a31a2759a57dad7d77ac3140bc4e12e44c2dc7891",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311010:10139888",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "maxCheckTimeMs",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/maxCheckTimeMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311010,
+    "end_line": 311010,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "281c92b297d05343c272af29f1ca4d7a2407802a56ee68c11cedd907a6383f91",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311011:10139978",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinRepetitions",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinRepetitions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311011,
+    "end_line": 311011,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c334c5268637a0c572f61054d737e9464cd3a10e7461e9f1afc884d0c8bdeafc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311012:10140065",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinRepetitionsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinRepetitionsInCodeFence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311012,
+    "end_line": 311012,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7e01b6a4c031205f3cb575a32f26685cc70f9dc5fbe1226ddae106a26816d319",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311013:10140151",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinPTimesK",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinPTimesK",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311013,
+    "end_line": 311013,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6c5dd141e27c7d13bf5d618500e90c7e9593090d69a329c441548da74588a236",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311014:10140232",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMinPTimesKInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMinPTimesKInCodeFence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311014,
+    "end_line": 311014,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bb09755a6449836820bcb4b980ddf7f0c86ce09f7f39fe03c80be9d21538aa5e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311015:10140310",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "singleLineLoopMaxP",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/singleLineLoopMaxP",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311015,
+    "end_line": 311015,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7090e48c12536e59c5cc6dfa1be42d34162744429f539feaacc5d71b9f2f4bf8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311016:10140371",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinPTimesK",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinPTimesK",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311016,
+    "end_line": 311016,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dcae20f5803942b047cfe39ef80c0c4368e05bf473111e8831b25fa8294b3270",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311017:10140465",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinPTimesKInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinPTimesKInCodeFence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311017,
+    "end_line": 311017,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "35ab33e69ce0d4695de2594576fc70c37bc6d9cdd09753d2bc74cb01a9d76a77",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311018:10140565",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinTotalChars",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinTotalChars",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311018,
+    "end_line": 311018,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4c1917b97485c7fe9d77ed1fa809492039cd61f7fc2b3a9e2bcaede8484275b8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311019:10140649",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "multiLineLoopMinTotalCharsInCodeFence",
+    "qualified_name": "SingleMessageLoopDetector2.constructor/multiLineLoopMinTotalCharsInCodeFence",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311019,
+    "end_line": 311019,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d6404b42f60e9dabe8b3459e3f8dfe975bb49f76b5ec952516f16c22a61f455",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311023:10140716",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "getAgentSingleMessageLoopInfo",
+    "qualified_name": "getAgentSingleMessageLoopInfo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311023,
+    "end_line": 311036,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "detector",
+      "channel"
+    ],
+    "body_sha256": "fac9377945d22e670315d2b4af9a5d8b8e1d81240643ea9b942efdbde570e0aa",
+    "calls": [
+      "detector.getMultiLineLoopInfo",
+      "detector.getSingleLineLoopInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311037:10141222",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "checkForAgentSingleMessageLooping",
+    "qualified_name": "checkForAgentSingleMessageLooping",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311037,
+    "end_line": 311127,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "d9267becc91dde57e91b1943aa339b10ef045bf7a5157e3654ef27d04dce47fa",
+    "calls": [
+      "eventTracker.trackLoopDetected",
+      "fingerprintAgentLoopEvidence",
+      "getAgentEventTracker",
+      "getAgentSingleMessageLoopInfo",
+      "logger16.info",
+      "logger16.warn",
+      "loopDetectionCounter.increment",
+      "loopInfo.pattern.slice",
+      "params.ctx.get",
+      "params.detector.addText",
+      "params.detector.loopDetected",
+      "params.detector.timedOut",
+      "performance.now",
+      "reportLoopObservation",
+      "singleMessageLoopCheckLatency.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311128:10144249",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "findLastUserMessageIndex",
+    "qualified_name": "findLastUserMessageIndex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311128,
+    "end_line": 311135,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "loopMessages"
+    ],
+    "body_sha256": "462aa4daac75a129438480f6de0ab4b14f60c3c899e804e3de9c37c5bd7d6281",
+    "calls": [],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311136:10144438",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "currentMessageForLoopDetection",
+    "qualified_name": "currentMessageForLoopDetection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311136,
+    "end_line": 311147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "6610c9b8eacfa14b930360f0c395ddb47ef23dc36a881a868b24e4b291981ecd",
+    "calls": [
+      ".trim",
+      "stripThinkingTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311148:10144930",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "checkForAgentOutboundMessageFlood",
+    "qualified_name": "checkForAgentOutboundMessageFlood",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311148,
+    "end_line": 311236,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params",
+      "reporting"
+    ],
+    "body_sha256": "dfacdd6f21c8790836109d7dc0a59b5fe5c7a96a4acc0e609f4593f80b89e285",
+    "calls": [
+      ".sort",
+      ".trackLoopDetected",
+      "convertCoreMessagesToLoopFormat",
+      "currentMessageForLoopDetection",
+      "findLastUserMessageIndex",
+      "fingerprintAgentLoopEvidence",
+      "getAgentEventTracker",
+      "logger16.warn",
+      "loopDetectionCounter.increment",
+      "loopDetectionLatency.histogram",
+      "loopMessages.slice",
+      "msg.toolResultTexts.some",
+      "new Set",
+      "performance.now",
+      "reportLoopObservation",
+      "runToolNames.add",
+      "runToolNames.clear",
+      "toolCalls3.every"
+    ],
+    "writes": [
+      "run"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311237:10147676",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "checkForAgentMessageLooping",
+    "qualified_name": "checkForAgentMessageLooping",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311237,
+    "end_line": 311396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params",
+      "reporting"
+    ],
+    "body_sha256": "4b8c0634749eabcb3b62e2b34d483a5170953172f3dc79a74a8ebb5f26c02878",
+    "calls": [
+      "Math.max",
+      "assistantMessageKeys.push",
+      "assistantMessageKeys.slice",
+      "assistantMessagesForKeys.push",
+      "convertCoreMessagesToLoopFormat",
+      "createMessageKey",
+      "createRetrySkipper",
+      "currentMessageForLoopDetection",
+      "detectPatternInMessages",
+      "eventTracker.trackLoopDetected",
+      "findLastUserMessageIndex",
+      "fingerprintAgentLoopEvidence",
+      "getAgentEventTracker",
+      "hasPatternAnywhereInMessages",
+      "logger16.warn",
+      "loopDetectionCounter.increment",
+      "loopDetectionLatency.histogram",
+      "params.ctx.get",
+      "patternKeys[computed].slice",
+      "performance.now",
+      "previousAssistantKeys.push",
+      "reportLoopObservation",
+      "runOf",
+      "shouldIncludeMessage",
+      "skipsPreviousRetry",
+      "skipsRetry",
+      "smallestRotation"
+    ],
+    "writes": [
+      "currentPattern",
+      "i",
+      "isLoopReoccurrence",
+      "noProgress",
+      "requiredRepetitions"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 23,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311250:10148521",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "shouldIncludeMessage",
+    "qualified_name": "checkForAgentMessageLooping/shouldIncludeMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311250,
+    "end_line": 311257,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "hasTools"
+    ],
+    "body_sha256": "86d4dcb33bc06842029b263486c67b561817b42388d96796eb9fb4b598ffebc0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311258:10148818",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "isInvitedRetry",
+    "qualified_name": "checkForAgentMessageLooping/isInvitedRetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311258,
+    "end_line": 311260,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "msg"
+    ],
+    "body_sha256": "8b2be3f2a45bf11712c46604c0772e7557c7874f104a242b3d39490ec1dc5a99",
+    "calls": [
+      "msg.toolResultTexts.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311261:10149001",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "createRetrySkipper",
+    "qualified_name": "checkForAgentMessageLooping/createRetrySkipper",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311261,
+    "end_line": 311271,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "a8a502304e846ca7bb53ebade11ed25157d53f8b83ae5db44a52d1e58c308c94",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311304:10150675",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "runOf",
+    "qualified_name": "checkForAgentMessageLooping/runOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311304,
+    "end_line": 311310,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "pattern"
+    ],
+    "body_sha256": "76455441c2ac40f812d613977ef3a215c74e7e3fbafc2e2e8a05186930d4db9f",
+    "calls": [
+      "describePatternRun"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311397:10154517",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "createLoopReminderMessage",
+    "qualified_name": "createLoopReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311397,
+    "end_line": 311411,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8be0089092cdbb55d7f56bc5e3015cc89fab72f4f6760eebdc08a03628f02d35",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311412:10156173",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "checkAndHandleLoopOnToolResultAppend",
+    "qualified_name": "checkAndHandleLoopOnToolResultAppend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311412,
+    "end_line": 311496,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "c1e32696862c35a5363689137dda04171c6756f2f5dbe161f4b360e1e4c7fccf",
+    "calls": [
+      "applyNudge",
+      "checkForAgentMessageLooping",
+      "checkForAgentOutboundMessageFlood",
+      "convertCoreMessagesToLoopFormat",
+      "currentMessages.slice"
+    ],
+    "writes": [
+      "i",
+      "lastAssistantIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:311414:10156359",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/agent-loop-detector.js",
+    "name": "applyNudge",
+    "qualified_name": "checkAndHandleLoopOnToolResultAppend/applyNudge",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 311414,
+    "end_line": 311437,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "loopResult2"
+    ],
+    "body_sha256": "244201444f2df0c19797454f1422b9747a62d10a24854353b34ef238a2592640",
+    "calls": [
+      "appendMessage",
+      "createLoopReminderMessage",
+      "logShimFiring",
+      "multiMessageLoopNudge.applied",
+      "params.appliedNudgeFingerprints.add",
+      "params.appliedNudgeFingerprints.has",
+      "reportLoopMitigationObservation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

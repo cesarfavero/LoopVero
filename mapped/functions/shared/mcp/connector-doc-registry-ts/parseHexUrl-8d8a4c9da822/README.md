@@ -1,0 +1,37 @@
+# `parseHexUrl`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/components/integrations/README.md).
+
+**Módulo:** `shared/mcp/connector-doc-registry.ts` · [README do módulo](../../../../../modules/shared/mcp/connector-doc-registry-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:774204-774210](../../../../../../reference/runtime/host-main.cjs#L774204-L774210) | `FunctionDeclaration` | não | `url2` |
+| [evaluation:573419-573425](../../../../../../reference/runtime/sand-eval-runner.cjs#L573419-L573425) | `FunctionDeclaration` | não | `url2` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:774204-774210](../../../../../../reference/runtime/host-main.cjs#L774204-L774210) | 3 | 0 | 0 | 3 | 0 | 0 |
+| [evaluation:573419-573425](../../../../../../reference/runtime/sand-eval-runner.cjs#L573419-L573425) | 3 | 0 | 0 | 3 | 0 | 0 |
+
+### host:774204
+
+Chamadas escritas diretamente neste corpo: `matching`, `segmentsOf`.
+
+SHA-256 do trecho: `786a6d57312e1bb7b9480d2288b9789753f91ed362928255890a39bc3f4fb6d7`.
+
+### evaluation:573419
+
+Chamadas escritas diretamente neste corpo: `matching`, `segmentsOf`.
+
+SHA-256 do trecho: `786a6d57312e1bb7b9480d2288b9789753f91ed362928255890a39bc3f4fb6d7`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

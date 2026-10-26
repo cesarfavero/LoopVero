@@ -1,0 +1,329 @@
+[
+  {
+    "id": "host:480272:17579183",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "sqlitePrimaryCode",
+    "qualified_name": "sqlitePrimaryCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480272,
+    "end_line": 480281,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "9e7c2243c6ee343092b90bb7e434ecd334edd4f1d785bac6777df8788da51b84",
+    "calls": [
+      ".join",
+      "Number.isInteger",
+      "SQLITE_PRIMARY_CODES.get",
+      "error64.code.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480282:17579576",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteBusyError",
+    "qualified_name": "isSqliteBusyError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480282,
+    "end_line": 480285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "0cf1b82bbefd8eb0424b5862184bae85bd8adb483ec64ea51005a734d383d6f1",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480286:17579716",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteIoError",
+    "qualified_name": "isSqliteIoError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480286,
+    "end_line": 480288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "520f516b23a80e4c675f2d2923c0a4f0622b334930f7bbc8ed23d64213b241c5",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480289:17579808",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteCantOpenError",
+    "qualified_name": "isSqliteCantOpenError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480289,
+    "end_line": 480291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "abcbcf8db921f95123e4e49af5d413bbb5d5ac35a8a844bd9a2f45c08b6a6c0a",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480292:17579909",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteCorruptError",
+    "qualified_name": "isSqliteCorruptError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480292,
+    "end_line": 480295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f4f23e7690767b9ea1201aa9525d774351256e7f3282d914ffe0991deab77d57",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480296:17580055",
+    "artifact": "host",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "retrySqliteBusy",
+    "qualified_name": "retrySqliteBusy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480296,
+    "end_line": 480317,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "operation",
+      "options2 = {}"
+    ],
+    "body_sha256": "cfe89cc16be2022d3fce3dd806aa145b48a73e7d4d912d34b9ed8d1d94275176",
+    "calls": [
+      "Math.max",
+      "backoff2.schedule",
+      "createRetryPolicy",
+      "isSqliteBusyError",
+      "operation"
+    ],
+    "writes": [
+      "attempt",
+      "lastError"
+    ],
+    "throw_targets": [
+      "error64",
+      "lastError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:685:25234",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "sqlitePrimaryCode",
+    "qualified_name": "sqlitePrimaryCode",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 685,
+    "end_line": 694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error"
+    ],
+    "body_sha256": "d20ee8fc88687c8e7da60d3806bd29a01d7db813add84e03a027a8d032c628bd",
+    "calls": [
+      ".join",
+      "Number.isInteger",
+      "SQLITE_PRIMARY_CODES.get",
+      "error.code.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:695:25609",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteIoError",
+    "qualified_name": "isSqliteIoError",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 695,
+    "end_line": 697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error"
+    ],
+    "body_sha256": "c76d1460c0980f17eb0a201fa316b99c6b71def6244314d1ead86fa8deb415a6",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:698:25697",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteCantOpenError",
+    "qualified_name": "isSqliteCantOpenError",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 698,
+    "end_line": 700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error"
+    ],
+    "body_sha256": "3ed4e7bd0f81eeafabba86728a5e121f8cff0e9d54b8a9f57dae5d0691fe9b51",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:701:25794",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-busy.ts",
+    "name": "isSqliteCorruptError",
+    "qualified_name": "isSqliteCorruptError",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 701,
+    "end_line": 704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error"
+    ],
+    "body_sha256": "ff5b4b0551942bc42edab7834a6527ed7ffe3ffb286b47807c8a20e0acadba39",
+    "calls": [
+      "sqlitePrimaryCode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

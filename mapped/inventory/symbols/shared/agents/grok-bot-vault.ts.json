@@ -1,0 +1,198 @@
+[
+  {
+    "id": "host:724352:27476753",
+    "artifact": "host",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "isNonCountryRegionCode",
+    "qualified_name": "isNonCountryRegionCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724352,
+    "end_line": 724354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "dd03105f90a28bac004d21e79eaf516d99072bb91db08a863d4e2a6dc25947fc",
+    "calls": [
+      "NON_COUNTRY_REGION_CODES.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724355:27476840",
+    "artifact": "host",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "canonicalVaultCountryCode",
+    "qualified_name": "canonicalVaultCountryCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724355,
+    "end_line": 724358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "9b09f1e5accb43deee1e29edd5624d77338e16e379a5b674709804080ddbc553",
+    "calls": [
+      ".toUpperCase",
+      "RENAMED_COUNTRY_CODES.get",
+      "code.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:724359:27476980",
+    "artifact": "host",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "isVaultCountryCode",
+    "qualified_name": "isVaultCountryCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 724359,
+    "end_line": 724363,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "85dd7f948003a9a89ece19f11456fdf7352ec4d616d2c5d9c4915b8757329449",
+    "calls": [
+      ".of",
+      "/^[A-Z]{2}$/.test",
+      "isNonCountryRegionCode",
+      "new Intl.DisplayNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549864:20319031",
+    "artifact": "evaluation",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "isNonCountryRegionCode",
+    "qualified_name": "isNonCountryRegionCode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549864,
+    "end_line": 549866,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "dd03105f90a28bac004d21e79eaf516d99072bb91db08a863d4e2a6dc25947fc",
+    "calls": [
+      "NON_COUNTRY_REGION_CODES.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549867:20319118",
+    "artifact": "evaluation",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "canonicalVaultCountryCode",
+    "qualified_name": "canonicalVaultCountryCode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549867,
+    "end_line": 549870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "9b09f1e5accb43deee1e29edd5624d77338e16e379a5b674709804080ddbc553",
+    "calls": [
+      ".toUpperCase",
+      "RENAMED_COUNTRY_CODES.get",
+      "code.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549871:20319258",
+    "artifact": "evaluation",
+    "module": "shared/agents/grok-bot-vault.ts",
+    "name": "isVaultCountryCode",
+    "qualified_name": "isVaultCountryCode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549871,
+    "end_line": 549875,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "85dd7f948003a9a89ece19f11456fdf7352ec4d616d2c5d9c4915b8757329449",
+    "calls": [
+      ".of",
+      "/^[A-Z]{2}$/.test",
+      "isNonCountryRegionCode",
+      "new Intl.DisplayNames"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

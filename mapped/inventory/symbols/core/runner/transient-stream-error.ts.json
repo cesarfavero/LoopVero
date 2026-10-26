@@ -1,0 +1,1675 @@
+[
+  {
+    "id": "host:736210:27966185",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "messageLooksTransient",
+    "qualified_name": "messageLooksTransient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736210,
+    "end_line": 736213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "1f6a986cbe0250988e2c57002d52d96cd53754ed09cea35af379c7b686c6efde",
+    "calls": [
+      "TRANSIENT_MESSAGE_TOKENS.some",
+      "message.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736214:27966342",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isTransientStreamError",
+    "qualified_name": "isTransientStreamError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736214,
+    "end_line": 736216,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "911e20b341c1ab32199f9d8319ad5b66c8bdec27237add6a80229c0ae82098f2",
+    "calls": [
+      "classify",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736217:27966442",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "classify",
+    "qualified_name": "classify",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736217,
+    "end_line": 736232,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "e152d3be1a90c5b2b71e0240e83e5296cf7a4022ab100b2306413b703c26ad18",
+    "calls": [
+      "Array.isArray",
+      "TRANSIENT_ERRNO_CODES.has",
+      "classify",
+      "fields3.code.toUpperCase",
+      "fields3.errors.some",
+      "messageLooksTransient",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736241:27967456",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isProviderContentPolicyBlock",
+    "qualified_name": "isProviderContentPolicyBlock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736241,
+    "end_line": 736243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "a3e6fe916cdb739f4f29c238ae03ffa3d6d087d97b6c7bf1cbdbb51023d9a640",
+    "calls": [
+      "hasProviderContentPolicyBlock",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736244:27967583",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasProviderContentPolicyBlock",
+    "qualified_name": "hasProviderContentPolicyBlock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736244,
+    "end_line": 736257,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "26e6045a0146088daea8f6c40bf343df4a323d6e067bf2dbc71f138b10be251d",
+    "calls": [
+      "Array.isArray",
+      "SERVER_PROVIDER_CONTENT_POLICY_BLOCK_ERROR_NAMES.has",
+      "fields3.errors.some",
+      "hasProviderContentPolicyBlock",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736258:27968163",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isRetryableProviderError",
+    "qualified_name": "isRetryableProviderError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736258,
+    "end_line": 736266,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "bbc7f71b22f07dd61a7a64634b30250bf5a1ac983ec4531fabd0b44abf8fa90a",
+    "calls": [
+      "classifyError2",
+      "classifyInferenceHookTurnFailure",
+      "hasWrappedHardTerminal",
+      "isContextOverflowDeadEnd",
+      "isConversationTooLargeRefusal",
+      "isProviderContentPolicyBlock",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736267:27968639",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isConversationTooLargeRefusal",
+    "qualified_name": "isConversationTooLargeRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736267,
+    "end_line": 736269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "05df710489c1cfc79c141e0d4ec694ff709b871a4780ff3dbd025749a5523c4b",
+    "calls": [
+      "hasConversationTooLargeSignal",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736270:27968767",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasConversationTooLargeSignal",
+    "qualified_name": "hasConversationTooLargeSignal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736270,
+    "end_line": 736285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "3cce16cf6174b862ad9d382c09e5e68dbdb06fd9c8dfb66d363e30d9f0412041",
+    "calls": [
+      "Array.isArray",
+      "fields3.errors.some",
+      "hasConversationTooLargeSignal",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736286:27969302",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isContextOverflowDeadEnd",
+    "qualified_name": "isContextOverflowDeadEnd",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736286,
+    "end_line": 736288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "032c4f983c13224d9af5434bfff86966faddc949662e3374b2940410875683ed",
+    "calls": [
+      "hasContextOverflowDeadEndSignal",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736289:27969427",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isInputTokenLimitOverflowError",
+    "qualified_name": "isInputTokenLimitOverflowError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736289,
+    "end_line": 736292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "9bb1b48d056dcbf8db8716bed7a0513d13ea1b5e26ea505de10588552cbeda6d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736293:27969618",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isSummarizationRetriesExhaustedError",
+    "qualified_name": "isSummarizationRetriesExhaustedError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736293,
+    "end_line": 736301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "2fb1d6897f4062232a0c3ac0cab979b252ac2e24945c5253711379cae3216d54",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736302:27970038",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasContextOverflowDeadEndSignal",
+    "qualified_name": "hasContextOverflowDeadEndSignal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736302,
+    "end_line": 736317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "b1d9ccd1f7ac3297a164764258b7525ef00db74681b06a1f2190b8765dc2a8b5",
+    "calls": [
+      "Array.isArray",
+      "fields3.errors.some",
+      "hasContextOverflowDeadEndSignal",
+      "isInputTokenLimitOverflowError",
+      "isSummarizationRetriesExhaustedError",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736318:27970628",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasWrappedHardTerminal",
+    "qualified_name": "hasWrappedHardTerminal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736318,
+    "end_line": 736332,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "f1ad37dc2162182d3d1287b3e5763523c44a01d90efc4223fb0e4d3006894953",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "fields3.errors.some",
+      "hasWrappedHardTerminal",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736333:27971223",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isProviderCapacityError",
+    "qualified_name": "isProviderCapacityError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736333,
+    "end_line": 736336,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "25160daeb66f437d7a13bfada50751efe09a6e44c592c0fb4615ef3ffb39bd2c",
+    "calls": [
+      "hasProviderCapacitySignal",
+      "isRetryableProviderError",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736337:27971397",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isBackendUnreachableError",
+    "qualified_name": "isBackendUnreachableError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736337,
+    "end_line": 736340,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "5f8aa6c28bc1b307e5504674d72a732dbe0a30d56ec9c5b77252c562abdfe661",
+    "calls": [
+      "hasTransportUnavailableSignal",
+      "isRetryableProviderError",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736341:27971577",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasTransportErrno",
+    "qualified_name": "hasTransportErrno",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736341,
+    "end_line": 736353,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "2f9fb1f43a30f036489f719b6dba0d12c0ccd0f78bfb5695180782dc826ea598",
+    "calls": [
+      "TRANSPORT_ERRNO_CODES.has",
+      "fields3.code.toUpperCase",
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736354:27971999",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasTransportUnavailableSignal",
+    "qualified_name": "hasTransportUnavailableSignal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736354,
+    "end_line": 736368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "e259d15dbdd225f83523f3bd79215f878b80555df86212e681a64c5fd63baa9c",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "fields3.errors.some",
+      "hasTransportErrno",
+      "hasTransportUnavailableSignal",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736369:27972657",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasProviderCapacitySignal",
+    "qualified_name": "hasProviderCapacitySignal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736369,
+    "end_line": 736386,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "2f1c364b53e68b55c9fa81889f2444e0563570a686dbba5d2fcfcf8b543bc99d",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "fields3.errors.some",
+      "hasProviderCapacitySignal",
+      "hasTransportErrno",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736389:27973565",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "FirstTokenStallError.constructor",
+    "qualified_name": "FirstTokenStallError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736389,
+    "end_line": 736392,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deadlineMs"
+    ],
+    "body_sha256": "f538ce2cca20826260c076151f49437d687cda70ecc53bea4519c9a27fd93fe1",
+    "calls": [
+      "Math.round",
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736394:27973726",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isFirstTokenStallError",
+    "qualified_name": "isFirstTokenStallError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736394,
+    "end_line": 736399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "3396b888e9cfb98fa28fa1925b8c2cfde21e9298664936e441cb00d5af8ab568",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736403:27974074",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "StreamIdleError.constructor",
+    "qualified_name": "StreamIdleError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736403,
+    "end_line": 736407,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deadlineMs"
+    ],
+    "body_sha256": "de600a74e4ea42d13dd5f4551e1c2994a34577db47e93503126dc90ccf59f6cf",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.idleDeadlineMs",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736409:27974223",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isStreamIdleError",
+    "qualified_name": "isStreamIdleError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736409,
+    "end_line": 736414,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "5daf2979875090d645ec34bf4f2af9550bf70ba60f121b88b4e3953dba654658",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736417:27974541",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "serverRetryAfterMsFromError",
+    "qualified_name": "serverRetryAfterMsFromError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736417,
+    "end_line": 736419,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "64a05f846dcb82689350cbfb9a78da3daaf17a6ad63029c5ed4529ddd636acff",
+    "calls": [
+      "findServerRetryAfterMs",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736420:27974660",
+    "artifact": "host",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "findServerRetryAfterMs",
+    "qualified_name": "findServerRetryAfterMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736420,
+    "end_line": 736444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "3eb3f22cf0027d71b19f12895307f4c91c194085ef2cb6a485b18af06a1f8b19",
+    "calls": [
+      "Array.isArray",
+      "Math.min",
+      "Math.round",
+      "Number",
+      "Number.isFinite",
+      "error64.metadata.get",
+      "findServerRetryAfterMs",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589891:22212901",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "messageLooksTransient",
+    "qualified_name": "messageLooksTransient",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589891,
+    "end_line": 589894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "1f6a986cbe0250988e2c57002d52d96cd53754ed09cea35af379c7b686c6efde",
+    "calls": [
+      "TRANSIENT_MESSAGE_TOKENS.some",
+      "message.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589895:22213058",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isTransientStreamError",
+    "qualified_name": "isTransientStreamError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589895,
+    "end_line": 589897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "130dae0dba88a6bdeaf0145be8f37fe927ea2c2925306b258421a4c9599b8982",
+    "calls": [
+      "classify3",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589898:22213159",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "classify3",
+    "qualified_name": "classify3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589898,
+    "end_line": 589913,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "e62b1a6d1f59175c8be4f492faa0ab85b259420280b592ec490280f721721977",
+    "calls": [
+      "Array.isArray",
+      "TRANSIENT_ERRNO_CODES.has",
+      "classify3",
+      "fields3.code.toUpperCase",
+      "fields3.errors.some",
+      "messageLooksTransient",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589922:22214176",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isProviderContentPolicyBlock",
+    "qualified_name": "isProviderContentPolicyBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589922,
+    "end_line": 589924,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "39730c41cdf5c202be2699f1fc31d5d21921b5f5ede64d934ea59b1eb4df2c02",
+    "calls": [
+      "hasProviderContentPolicyBlock",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589925:22214303",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasProviderContentPolicyBlock",
+    "qualified_name": "hasProviderContentPolicyBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589925,
+    "end_line": 589938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "8087ae25f08489ebe5cc037205850d6ba9de35be2662cbb7bc18f0061fde7a64",
+    "calls": [
+      "Array.isArray",
+      "SERVER_PROVIDER_CONTENT_POLICY_BLOCK_ERROR_NAMES.has",
+      "fields3.errors.some",
+      "hasProviderContentPolicyBlock",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589939:22214883",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isModelFallbackRetryError",
+    "qualified_name": "isModelFallbackRetryError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589939,
+    "end_line": 589949,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "987aecc58355befac252ec83a7033e867975fbae2cfe02595eaa9dbd6f30b3aa",
+    "calls": [
+      "new Set",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589950:22215247",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isRetryableProviderError",
+    "qualified_name": "isRetryableProviderError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589950,
+    "end_line": 589958,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "8e60db78a98b289d0d2c4a86b97c62151c9926f3735cbc28bf939e0a6ffbee57",
+    "calls": [
+      "classifyError2",
+      "classifyInferenceHookTurnFailure",
+      "hasWrappedHardTerminal",
+      "isContextOverflowDeadEnd",
+      "isConversationTooLargeRefusal",
+      "isProviderContentPolicyBlock",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589959:22215723",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isConversationTooLargeRefusal",
+    "qualified_name": "isConversationTooLargeRefusal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589959,
+    "end_line": 589961,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "cdb30fd66d6e00c47455ab6b6fd872df41bc68166565b0cc57e1b858080ddab5",
+    "calls": [
+      "hasConversationTooLargeSignal",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589962:22215851",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasConversationTooLargeSignal",
+    "qualified_name": "hasConversationTooLargeSignal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589962,
+    "end_line": 589977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "af9640a148966833c09e80e3e3c452365a435b44553f2a548169ee648f9049a8",
+    "calls": [
+      "Array.isArray",
+      "fields3.errors.some",
+      "hasConversationTooLargeSignal",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589978:22216386",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isContextOverflowDeadEnd",
+    "qualified_name": "isContextOverflowDeadEnd",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589978,
+    "end_line": 589980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "f5c4ec73cbe9161213f5d993f6a07be6cb52bc45339c037ad6617e10803e4041",
+    "calls": [
+      "hasContextOverflowDeadEndSignal",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589981:22216511",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isInputTokenLimitOverflowError",
+    "qualified_name": "isInputTokenLimitOverflowError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589981,
+    "end_line": 589984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "2a1eff18b966a001fc9919778b41b230c142b25420eb1649b60f46e1cdc615ab",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589985:22216702",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isSummarizationRetriesExhaustedError",
+    "qualified_name": "isSummarizationRetriesExhaustedError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589985,
+    "end_line": 589993,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "35feb11e73edf47c169f4d475d8e1729d63326f39fa0ac5fc5a57e3ebdf1f924",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589994:22217122",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasContextOverflowDeadEndSignal",
+    "qualified_name": "hasContextOverflowDeadEndSignal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589994,
+    "end_line": 590009,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "2dbb3a67873ce52db50a953feebb4f1312b088f23eed8ab805afd42b3ce5022e",
+    "calls": [
+      "Array.isArray",
+      "fields3.errors.some",
+      "hasContextOverflowDeadEndSignal",
+      "isInputTokenLimitOverflowError",
+      "isSummarizationRetriesExhaustedError",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590010:22217712",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "hasWrappedHardTerminal",
+    "qualified_name": "hasWrappedHardTerminal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590010,
+    "end_line": 590024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "0ebd1da5e9865083b2343cf656a89bb5dbcecbec3f43e0b681969530e50ecbfb",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "fields3.errors.some",
+      "hasWrappedHardTerminal",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590027:22218397",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "FirstTokenStallError.constructor",
+    "qualified_name": "FirstTokenStallError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590027,
+    "end_line": 590030,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deadlineMs"
+    ],
+    "body_sha256": "f538ce2cca20826260c076151f49437d687cda70ecc53bea4519c9a27fd93fe1",
+    "calls": [
+      "Math.round",
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590032:22218558",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isFirstTokenStallError",
+    "qualified_name": "isFirstTokenStallError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590032,
+    "end_line": 590037,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "06493c6d876cc5545245ae589335ddc6ca1046bb72780d282183d279423f79be",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590041:22218906",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "StreamIdleError.constructor",
+    "qualified_name": "StreamIdleError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590041,
+    "end_line": 590045,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deadlineMs"
+    ],
+    "body_sha256": "de600a74e4ea42d13dd5f4551e1c2994a34577db47e93503126dc90ccf59f6cf",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.idleDeadlineMs",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590047:22219055",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "isStreamIdleError",
+    "qualified_name": "isStreamIdleError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590047,
+    "end_line": 590052,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "3edf7cf0ef622b5ace6fdd0988e9b4d087a775d1232422f735995eb947800a51",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590053:22219290",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "shouldRetryTurnAttempt",
+    "qualified_name": "shouldRetryTurnAttempt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590053,
+    "end_line": 590073,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "a198992e9bd19f4e314f9dab3461ae70168b6a48b3b1861e5797bb920487992d",
+    "calls": [
+      "classifyInferenceHookTurnFailure",
+      "input2.automationIsRetryable",
+      "isFirstTokenStallError",
+      "isModelFallbackRetryError",
+      "isModelStreamWallClockLimitError",
+      "isProviderContentPolicyBlock",
+      "isRetryableProviderError",
+      "isStreamIdleError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590074:22220311",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "computeBackoffDelayMs",
+    "qualified_name": "computeBackoffDelayMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590074,
+    "end_line": 590081,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "670c8d282606c5658619d58b508c384a57f3c5c949610a385cd3723561334ab7",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Math.round",
+      "random2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590084:22220778",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "serverRetryAfterMsFromError",
+    "qualified_name": "serverRetryAfterMsFromError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590084,
+    "end_line": 590086,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "83b4ceaad5f68b904f10d7adb1c260ec45f8de52bd0d94762d29e71c59b30134",
+    "calls": [
+      "findServerRetryAfterMs",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590087:22220897",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "computeServerPacedDelayMs",
+    "qualified_name": "computeServerPacedDelayMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590087,
+    "end_line": 590091,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "b005c9a8fa9c944ea1a0bbc3f5489d6163c7f65eab67956a1098c169300e73e7",
+    "calls": [
+      "Math.min",
+      "Math.round",
+      "random2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590092:22221140",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "findServerRetryAfterMs",
+    "qualified_name": "findServerRetryAfterMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590092,
+    "end_line": 590116,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "3e568c3276345aef1cedac7a5aab9a8022f1a19e1f5a36da596390e379f2bdb2",
+    "calls": [
+      "Array.isArray",
+      "Math.min",
+      "Math.round",
+      "Number",
+      "Number.isFinite",
+      "error63.metadata.get",
+      "findServerRetryAfterMs",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590117:22221998",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "runWithTransientRetry",
+    "qualified_name": "runWithTransientRetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590117,
+    "end_line": 590146,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "run",
+      "policy"
+    ],
+    "body_sha256": "3d9245f58c61e64f22c7ac9f9f64b14e6026060a8e7d153a70656a984eef19ac",
+    "calls": [
+      "Math.floor",
+      "Math.max",
+      "computeBackoffDelayMs",
+      "computeServerPacedDelayMs",
+      "isRetryable",
+      "policy.onRetry",
+      "run",
+      "serverRetryAfterMsFromError",
+      "sleep2"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:590148:22223066",
+    "artifact": "evaluation",
+    "module": "core/runner/transient-stream-error.ts",
+    "name": "resolveStreamDeadlinePolicy",
+    "qualified_name": "resolveStreamDeadlinePolicy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590148,
+    "end_line": 590153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "overrides",
+      "config2"
+    ],
+    "body_sha256": "51cab66f1afc8c71dd22ef07054c45095ef2ce53ba8b63a961bdd82f5b38dd52",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

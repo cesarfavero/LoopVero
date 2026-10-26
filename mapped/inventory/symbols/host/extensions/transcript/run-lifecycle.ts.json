@@ -1,0 +1,548 @@
+[
+  {
+    "id": "host:739908:28118562",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.constructor",
+    "qualified_name": "RunLifecycle.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739908,
+    "end_line": 739947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm",
+      "environment"
+    ],
+    "body_sha256": "05ded39436ab1ad1a3174f18ab493a198ddef1cea83068eed57effde25294159",
+    "calls": [
+      "new SandRunScheduler"
+    ],
+    "writes": [
+      "this.runScheduler",
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739914:28118879",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "onAccepted",
+    "qualified_name": "RunLifecycle.constructor/onAccepted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739914,
+    "end_line": 739923,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "cd1e3b2ed9e4742ee94eef63c3f252d8da4ddf9c267c564b7022024ab4715e2c",
+    "calls": [
+      "this.tm.telemetry.reportQueueAccepted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739924:28119264",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "onDequeued",
+    "qualified_name": "RunLifecycle.constructor/onDequeued",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739924,
+    "end_line": 739934,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "bff5a673ca5105ab564bbf37d8842f650320aa564dcbe5e83367e52590ba5390",
+    "calls": [
+      "this.tm.telemetry.reportQueueDequeued"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739935:28119763",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "onWatchdog",
+    "qualified_name": "RunLifecycle.constructor/onWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739935,
+    "end_line": 739944,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "96912b5d45298b9433c936c1cc94c63c7bb9826b42f365b01bd8507f49e28cf5",
+    "calls": [
+      "this.tm.telemetry.reportQueueWatchdog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739956:28120510",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.enqueueExclusiveRun",
+    "qualified_name": "RunLifecycle.enqueueExclusiveRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739956,
+    "end_line": 739973,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "task",
+      "options2"
+    ],
+    "body_sha256": "6c1a16f79c60064ff3936ba90b9fbafe9adc451ea759c35a79c68aef59d45579",
+    "calls": [
+      ".then",
+      "Promise.allSettled",
+      "Promise.resolve",
+      "previous.then",
+      "scheduler.enqueue",
+      "this.runChains.get",
+      "this.runChains.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739974:28121104",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.drainExclusiveRuns",
+    "qualified_name": "RunLifecycle.drainExclusiveRuns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739974,
+    "end_line": 739980,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "4048ff11640082f46ac7055e430bee2f24df8b857853b0b01a0cd124ad2fc5f8",
+    "calls": [
+      "this.runChains.get",
+      "this.runScheduler.drain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739981:28121279",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.beginSessionRun",
+    "qualified_name": "RunLifecycle.beginSessionRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739981,
+    "end_line": 739989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "bc8f82d7be8e39a1623474d4180d8272c04921827274dbea16d8e462361c855d",
+    "calls": [
+      "Date.now",
+      "this.inFlightRunCounts.get",
+      "this.inFlightRunCounts.set",
+      "this.runWindowStartedAt.set",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessions.liveSessions.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739990:28121629",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.endSessionRun",
+    "qualified_name": "RunLifecycle.endSessionRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739990,
+    "end_line": 740003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "2bf7a56e971e41c16b31d64dedfec8955f4b6d8ad65be5ddab415383a8a00117",
+    "calls": [
+      "this.activeRequestSources.delete",
+      "this.inFlightRunCounts.delete",
+      "this.inFlightRunCounts.get",
+      "this.inFlightRunCounts.has",
+      "this.inFlightRunCounts.set",
+      "this.recordTurnCompleted",
+      "this.retireSession",
+      "this.tm.roster.emitAgentUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740004:28122152",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.recordTurnCompleted",
+    "qualified_name": "RunLifecycle.recordTurnCompleted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740004,
+    "end_line": 740016,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "2206e0644e323d99aaa611aa0da6cd41c9beffcf53a98dd0952100954ac59d09",
+    "calls": [
+      "Date.now",
+      "brandedId",
+      "classifySandTurnInitiator",
+      "this.activeRequestSources.get",
+      "this.runWindowStartedAt.delete",
+      "this.runWindowStartedAt.get",
+      "this.tm.groupChat.isGroupSession",
+      "this.tm.productAnalytics.trackEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740017:28122749",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.isSessionRetiring",
+    "qualified_name": "RunLifecycle.isSessionRetiring",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740017,
+    "end_line": 740019,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "77da2c11b529deac3dfbd6c63517585e973acb0b56c31b39528770091a010306",
+    "calls": [
+      "this.retiringSessions.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740020:28122833",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.retireSession",
+    "qualified_name": "RunLifecycle.retireSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740020,
+    "end_line": 740046,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "52cce932211d71ca07f552007b19fa5b74a3d2b03205ae27460a89ad0426b67e",
+    "calls": [
+      "errorLogTag",
+      "reportFallback",
+      "session.agentStore.dispose",
+      "session.db.close",
+      "this.inFlightRunCounts.has",
+      "this.retiringSessions.add",
+      "this.retiringSessions.has",
+      "this.tm.hostLog",
+      "this.tm.sessions.deferSessionRetirementWhileActivating",
+      "this.tm.sessions.deletedAgentIds.has",
+      "this.tm.sessions.liveSessions.delete",
+      "this.tm.sessions.liveSessions.get",
+      "this.tm.sessions.pendingSessionOpens.delete",
+      "this.tm.sessions.pendingSessionOpens.get",
+      "this.tm.sessions.settledOpen"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:740047:28124050",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.runningAgentIds",
+    "qualified_name": "RunLifecycle.runningAgentIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740047,
+    "end_line": 740049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "93beabba03ac39c007057dc50256ce0a09d95dd16798d1d85751a43b7610cf64",
+    "calls": [
+      ".map",
+      "new Set",
+      "this.inFlightRunCounts.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740050:28124178",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.setServerActivityOverlayProvider",
+    "qualified_name": "RunLifecycle.setServerActivityOverlayProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740050,
+    "end_line": 740052,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "75e1d47780c00f0a8a672cd800a78d444b1dfc9c89b8a223f997308bc8d2291d",
+    "calls": [],
+    "writes": [
+      "this.serverActivityOverlayProvider"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740053:28124261",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.withRunStates",
+    "qualified_name": "RunLifecycle.withRunStates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740053,
+    "end_line": 740076,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agents"
+    ],
+    "body_sha256": "dfb12d2dc9b59f41b18c52766cd2163bb137add736196a8d4da15dafbe6572c2",
+    "calls": [
+      "agents.map",
+      "this.runningAgentIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740077:28125327",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.closeSessionWhenIdle",
+    "qualified_name": "RunLifecycle.closeSessionWhenIdle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740077,
+    "end_line": 740080,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "41bdedf65cef227b2d2dff17a45d3a8a6636e3a00df9b755321f527b610b26f7",
+    "calls": [
+      "session.db.close",
+      "this.inFlightRunCounts.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740081:28125440",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-lifecycle.ts",
+    "name": "RunLifecycle.watchActiveSession",
+    "qualified_name": "RunLifecycle.watchActiveSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740081,
+    "end_line": 740085,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "37a492571b79832073ee1072174ba45761057b0e15ed7f7cdaee61d4d4cdddd9",
+    "calls": [
+      "this.tm.automationRuntime.watchSessionAutomations",
+      "this.tm.roster.watchSessionProfile",
+      "this.tm.skillCommands.watchSessionSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,349 @@
+[
+  {
+    "id": "evaluation:566185:21079555",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "summarizeDeviceToolCall",
+    "qualified_name": "summarizeDeviceToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566185,
+    "end_line": 566187,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ tool, input: input2, phone }"
+    ],
+    "body_sha256": "60e6ad7fba89258a2a2fb67f11bb1c0bf7ab9d1c47b509085216d7c0c0ac2fa6",
+    "calls": [
+      "tool.describeCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566188:21079705",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "phoneToolReadsOnly",
+    "qualified_name": "phoneToolReadsOnly",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566188,
+    "end_line": 566190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tool"
+    ],
+    "body_sha256": "cdcf3e887ee25c7836c027ee69c28db127327e77b44cae6338ca270f3b8305ce",
+    "calls": [
+      "Object.hasOwn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566194:21079959",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "buildRiskTarget",
+    "qualified_name": "buildRiskTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566194,
+    "end_line": 566210,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ target, ...instructions }"
+    ],
+    "body_sha256": "107b5979a52922bf4941c18152d6268900bb656442879911debdce1ba943b175",
+    "calls": [
+      "buildProjectPermissionsContext",
+      "isUnknownRecord2",
+      "new SmartModeRiskTarget",
+      "phoneToolReadsOnly",
+      "structFromRecord",
+      "summarizeDeviceToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566211:21080734",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "fingerprintPayload",
+    "qualified_name": "fingerprintPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566211,
+    "end_line": 566215,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ tool, input: input2, phone }"
+    ],
+    "body_sha256": "064cec1a8bff901499df3aeb1f38fab99d36a65eaf313c3a8a4d324307af73d4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566219:21080977",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "reviewOfAllowed",
+    "qualified_name": "reviewOfAllowed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566219,
+    "end_line": 566228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "by"
+    ],
+    "body_sha256": "575d5dc71d89cda9f61c608f00b2419f89d4fb3fba26fb90e7c061e1a82a1ac0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566229:21081159",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "reviewOfDenied",
+    "qualified_name": "reviewOfDenied",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566229,
+    "end_line": 566232,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason",
+      "userDenied"
+    ],
+    "body_sha256": "38d8b4733f50ae8d9ba3af946bf55109e08bf9bcc9b5e20e6d0d912df7552b0d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566233:21081325",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "withDeviceToolAutoReview",
+    "qualified_name": "withDeviceToolAutoReview",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566233,
+    "end_line": 566274,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "review",
+      "tools = SAND_DEVICE_LOCAL_TOOLS"
+    ],
+    "body_sha256": "a6a5b0aa6bf5246ccc5289cb7bf543f15e31c8667a7a9e6c3bedfef657ac5832",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566235:21081431",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "offers",
+    "qualified_name": "withDeviceToolAutoReview/offers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566235,
+    "end_line": 566235,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolId"
+    ],
+    "body_sha256": "bae633c65ef9a622b206536b3a5625cca3aacd093106274d745c0513bc59435e",
+    "calls": [
+      "port.offers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566236:21081473",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "run",
+    "qualified_name": "withDeviceToolAutoReview/run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566236,
+    "end_line": 566272,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "fdf01e8f4c460662c9d23fe9d0aa872663308d53ef65857fdf0879669cc5eea3",
+    "calls": [
+      "port.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566238:21081537",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "autoReview",
+    "qualified_name": "withDeviceToolAutoReview/run/autoReview",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566238,
+    "end_line": 566271,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reviewCtx",
+      "phone"
+    ],
+    "body_sha256": "72dd25e18acc7c41155f95fff2e771dc0fde4b6975e098d0296e2f22ebcccd21",
+    "calls": [
+      "review.assertNoPendingAutoReviewApproval",
+      "review.options",
+      "reviewCtx.get",
+      "reviewOfAllowed",
+      "reviewOfDenied",
+      "runSandAutoReviewFlow",
+      "tools.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566262:21082552",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/device-tool-auto-review.ts",
+    "name": "onUserDenied",
+    "qualified_name": "withDeviceToolAutoReview/run/autoReview/onUserDenied",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566262,
+    "end_line": 566264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "189c4ac85c6f91b70119be950d0930f6dd8e35a40eb8d0eeac3fe515d8d245de",
+    "calls": [],
+    "writes": [
+      "userDenied"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

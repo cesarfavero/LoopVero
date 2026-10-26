@@ -1,0 +1,172 @@
+[
+  {
+    "id": "host:491438:18004023",
+    "artifact": "host",
+    "module": "host/groups/group-store.ts",
+    "name": "getSandGroupPath",
+    "qualified_name": "getSandGroupPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491438,
+    "end_line": 491440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "6b5f1537150ec9fa613db5fe59baf2f43dc95dda087577a9e6b730c0b05820ea",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491441:18004133",
+    "artifact": "host",
+    "module": "host/groups/group-store.ts",
+    "name": "normalizeMemberIds",
+    "qualified_name": "normalizeMemberIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491441,
+    "end_line": 491452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "21859c899df77be48128fff1b77d8b85cedac58703274be60253cf614b4b7cbc",
+    "calls": [
+      "Array.isArray",
+      "new Set",
+      "parseAgentId",
+      "seen.add",
+      "seen.has",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491453:18004503",
+    "artifact": "host",
+    "module": "host/groups/group-store.ts",
+    "name": "readSandGroupConfig",
+    "qualified_name": "readSandGroupConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491453,
+    "end_line": 491474,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "9f23967c4d9c33af95bd2cb97d76e61c55056955c30495449440bcaa16e39a13",
+    "calls": [
+      "JSON.parse",
+      "getSandGroupPath",
+      "normalizeMemberIds",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "parsed2",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:491475:18005101",
+    "artifact": "host",
+    "module": "host/groups/group-store.ts",
+    "name": "writeSandGroupConfig",
+    "qualified_name": "writeSandGroupConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491475,
+    "end_line": 491488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "config2"
+    ],
+    "body_sha256": "8bde8d066849a6e1ec69098b3a32413a5e26172d615562d98adad3d25c4b02d2",
+    "calls": [
+      "JSON.stringify",
+      "ensureSandDataDirSync",
+      "getSandGroupPath",
+      "normalizeMemberIds",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491489:18005474",
+    "artifact": "host",
+    "module": "host/groups/group-store.ts",
+    "name": "isSandGroupDir",
+    "qualified_name": "isSandGroupDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491489,
+    "end_line": 491491,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "0cf7edc3b0fd94615ee35867cd55427ce858d110e986c9771bd12394a42b5de8",
+    "calls": [
+      "readSandGroupConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

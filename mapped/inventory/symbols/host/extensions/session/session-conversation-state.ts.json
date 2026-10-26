@@ -1,0 +1,400 @@
+[
+  {
+    "id": "host:720076:27323921",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.constructor",
+    "qualified_name": "SandSessionConversationState.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720076,
+    "end_line": 720078,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "6739b592404421f682b6affe527a447ef0b00db07005ef6c3d68a9152c25e657",
+    "calls": [],
+    "writes": [
+      "this.host"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720080:27323996",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.resolveConversationState",
+    "qualified_name": "SandSessionConversationState.resolveConversationState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720080,
+    "end_line": 720094,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "d6455a4c4944823852e7bd0eaff94d878dbce7572618bcd8ef2d1428d01e77d9",
+    "calls": [
+      "applyTurnRequestIds",
+      "cacheBlobReads",
+      "deriveConversationStateFromStructure",
+      "readDurableTurnRequestIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720095:27324547",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.getTranscriptEntries",
+    "qualified_name": "SandSessionConversationState.getTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720095,
+    "end_line": 720097,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "45bbfdf94772b55bbd90259d597c9a455e29f4bfa4b8d98acc30600fbdc47856",
+    "calls": [
+      "session.db.getTranscriptEntries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720098:27324634",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.getSessionOutline",
+    "qualified_name": "SandSessionConversationState.getSessionOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720098,
+    "end_line": 720101,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "49f2187edbabe2ffcdd7e8ab8e3bf0babbbb8f884776c8594e11718e75078956",
+    "calls": [
+      "deriveOutlineFromConversationState",
+      "session.agentStore.getFullConversation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720102:27324806",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.getAgentOutline",
+    "qualified_name": "SandSessionConversationState.getAgentOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720102,
+    "end_line": 720110,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "2aec817c834b229f17a4c2b73371dae6ce74786cccaee1a26e4b94c1d0c0db0c",
+    "calls": [
+      "session.agentStore.dispose",
+      "session.db.close",
+      "this.getSessionOutline",
+      "this.host.openSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720111:27325053",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.withReadOnlyAgentDb",
+    "qualified_name": "SandSessionConversationState.withReadOnlyAgentDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720111,
+    "end_line": 720128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "read2"
+    ],
+    "body_sha256": "643b124296bc12668a20db74b65498db9e4917c8a0b970a90f5d7bb610c41feb",
+    "calls": [
+      "db.close",
+      "errorLogTag",
+      "getAgentDbPath",
+      "new SandAgentStoreUnreadableError",
+      "read2",
+      "reportSessionDiagnostic",
+      "this.host.createAgentDb"
+    ],
+    "writes": [
+      "db"
+    ],
+    "throw_targets": [
+      "SandAgentStoreUnreadableError"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720129:27325586",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.readAgentTranscriptEntries",
+    "qualified_name": "SandSessionConversationState.readAgentTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720129,
+    "end_line": 720131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "277ac824d8a5717cb7b3a220eaa7762e1d76c08cae9da6394981c51ad7baed75",
+    "calls": [
+      "this.withReadOnlyAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720132:27325708",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.readAgentTranscriptPage",
+    "qualified_name": "SandSessionConversationState.readAgentTranscriptPage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720132,
+    "end_line": 720134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "6f4357552ad833c847ecac763ce9c252eba9c5cb22393b0be82aba339340dd0e",
+    "calls": [
+      "this.withReadOnlyAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720135:27325843",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.readAgentTranscriptWindow",
+    "qualified_name": "SandSessionConversationState.readAgentTranscriptWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720135,
+    "end_line": 720137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "6d42117c469c54400eef4be067b5595641b58c017a1e9d1d71637687b917de10",
+    "calls": [
+      "this.withReadOnlyAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720138:27325978",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.readAgentTranscriptTail",
+    "qualified_name": "SandSessionConversationState.readAgentTranscriptTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720138,
+    "end_line": 720140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "query2"
+    ],
+    "body_sha256": "c0439e7fc826d750385ac37ab991dbde48253cbec82e56afeb66878a2932b2f5",
+    "calls": [
+      "this.withReadOnlyAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720141:27326103",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.readAgentThread",
+    "qualified_name": "SandSessionConversationState.readAgentThread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720141,
+    "end_line": 720143,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "rootId"
+    ],
+    "body_sha256": "654ab946df33cdcad332bb4694f048c6b8bba428eb69ce6a7fee27eb9ac53bac",
+    "calls": [
+      "this.withReadOnlyAgentDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720144:27326236",
+    "artifact": "host",
+    "module": "host/extensions/session/session-conversation-state.ts",
+    "name": "SandSessionConversationState.getAgentTranscriptEntries",
+    "qualified_name": "SandSessionConversationState.getAgentTranscriptEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720144,
+    "end_line": 720152,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "fadfabb54bb55a13e7bf08999a21fbc10cd8910075881817fcd279c4144fb9cf",
+    "calls": [
+      "session.agentStore.dispose",
+      "session.db.close",
+      "this.getTranscriptEntries",
+      "this.host.openSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

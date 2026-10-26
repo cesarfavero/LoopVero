@@ -1,0 +1,517 @@
+[
+  {
+    "id": "host:705377:26796564",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "startOrbitDaemonProxy",
+    "qualified_name": "startOrbitDaemonProxy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705377,
+    "end_line": 705435,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "e7574842bc2760260707caa379ede4cae4e65922ec9c678d13ef1154f8e9cbe7",
+    "calls": [
+      "http22.createServer",
+      "listenServer",
+      "new OrbitDaemonProxyPathError",
+      "new Set",
+      "options2.signal.throwIfAborted",
+      "prepareSocketPath",
+      "readSocketIdentity",
+      "sameSocketIdentity",
+      "server.on",
+      "stop"
+    ],
+    "writes": [
+      "server.maxConnections",
+      "socketIdentity"
+    ],
+    "throw_targets": [
+      "OrbitDaemonProxyPathError",
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705397:26797297",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "performStop",
+    "qualified_name": "startOrbitDaemonProxy/performStop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705397,
+    "end_line": 705409,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a7cc7dbf9d8c5dcdfef78aa73fbcf8f3e9d39d3429a566fc0be61ad42eedb627",
+    "calls": [
+      "closeServer",
+      "http2Session.destroy",
+      "unlinkSocketIfSame"
+    ],
+    "writes": [
+      "stopping"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705410:26797619",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "stop",
+    "qualified_name": "startOrbitDaemonProxy/stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705410,
+    "end_line": 705413,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a5cde5db29bae062e76c78d95dab06322e023dfd2dedcb3e72c15d11e98436ad",
+    "calls": [
+      "performStop"
+    ],
+    "writes": [
+      "stopPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705439:26798499",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "prepareSocketPath",
+    "qualified_name": "prepareSocketPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705439,
+    "end_line": 705453,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "signal"
+    ],
+    "body_sha256": "779c24ea36fc364f3833ecbccb67ec10abc2d6988b90823f975987474027ec0e",
+    "calls": [
+      "findSystemErrno",
+      "new OrbitDaemonProxyPathError",
+      "readSocketIdentity",
+      "socketAcceptsConnections",
+      "unlinkSocketIfSame"
+    ],
+    "writes": [
+      "identity"
+    ],
+    "throw_targets": [
+      "OrbitDaemonProxyPathError",
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705454:26798937",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "readSocketIdentity",
+    "qualified_name": "readSocketIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705454,
+    "end_line": 705463,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "d4627b3c96bc3b8f59c9803e28e49176a19bd8109066dfe10058f2cda57aaff6",
+    "calls": [
+      "metadata2.isSocket",
+      "new OrbitDaemonProxyPathError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "OrbitDaemonProxyPathError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705464:26799270",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "sameSocketIdentity",
+    "qualified_name": "sameSocketIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705464,
+    "end_line": 705466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "e24e6e31db342eb959522c93dad84021a3dd64f86b2d0851e85ef49e4aff44b4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705467:26799384",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "socketAcceptsConnections",
+    "qualified_name": "socketAcceptsConnections",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705467,
+    "end_line": 705496,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "signal"
+    ],
+    "body_sha256": "a7fe70724e12dc6c9a87c82d910baee9e6728ed387dcc8c0dbc607a7066a6dbe",
+    "calls": [
+      "new OrbitDaemonProxyPathError",
+      "new Promise",
+      "socket.destroy",
+      "socketProbeDeadline.run"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "OrbitDaemonProxyPathError",
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705470:26799593",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "onConnect",
+    "qualified_name": "socketAcceptsConnections/<callback>/onConnect",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705470,
+    "end_line": 705472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bbfe788f9d5c61c0deca28c5e5d8e41d5ffcb23a10b0ec766c716c0662fbbc56",
+    "calls": [
+      "resolve31"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705473:26799651",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "onError",
+    "qualified_name": "socketAcceptsConnections/<callback>/onError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705473,
+    "end_line": 705480,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "47e69d413d6bdf43ef81fd9c5a820dda764a138c0bc5336627c44d5674aa1129",
+    "calls": [
+      "findSystemErrno",
+      "reject2",
+      "resolve31"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705497:26800284",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "listenServer",
+    "qualified_name": "listenServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705497,
+    "end_line": 705532,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server",
+      "path33",
+      "signal"
+    ],
+    "body_sha256": "e601d7790b403a4d6da2122cd9835dc2a107eafb5ba097adda75ec27be0e5b08",
+    "calls": [
+      "new Promise",
+      "signal.throwIfAborted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705501:26800456",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "finish",
+    "qualified_name": "listenServer/<callback>/finish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705501,
+    "end_line": 705513,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "c08f565b5d23f5b871c726206820953c9a24ccb9ae4c88a28d4a05a3a9667ded",
+    "calls": [
+      "reject2",
+      "resolve31",
+      "server.off",
+      "signal.removeEventListener"
+    ],
+    "writes": [
+      "settled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705514:26800756",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "onError",
+    "qualified_name": "listenServer/<callback>/onError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705514,
+    "end_line": 705516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "dc3229dc8bcba83f3b3e71053fa2cb74e158c8b2123890544cd2a496f1fe6692",
+    "calls": [
+      "finish"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705517:26800821",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "onAbort",
+    "qualified_name": "listenServer/<callback>/onAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705517,
+    "end_line": 705525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "032cf7e156d07fe51a95638072268d2e332048ad0e7828c1df9b795668a7584c",
+    "calls": [
+      "finish",
+      "server.close",
+      "signal.throwIfAborted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705533:26801143",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "closeServer",
+    "qualified_name": "closeServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705533,
+    "end_line": 705552,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "16c4345ccafdd7aa07d45c57d85debd5fa1b6116fb45a0b709db56d5026f2d30",
+    "calls": [
+      "findSystemErrno",
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:705553:26801563",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy.ts",
+    "name": "unlinkSocketIfSame",
+    "qualified_name": "unlinkSocketIfSame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705553,
+    "end_line": 705564,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "expected"
+    ],
+    "body_sha256": "fcba1d38287292684f7aa219e7b94e1cf535cfdbcfceda5b1dbd265bf5168bcc",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

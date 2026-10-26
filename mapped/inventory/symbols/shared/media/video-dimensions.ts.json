@@ -1,0 +1,345 @@
+[
+  {
+    "id": "host:497666:18259315",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "toDimensions",
+    "qualified_name": "toDimensions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497666,
+    "end_line": 497670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ width, height }"
+    ],
+    "body_sha256": "1d322b3b575387305e6df867b86712280fb85372e75e07959c47685b30457017",
+    "calls": [
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497671:18259506",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "fourCharTag2",
+    "qualified_name": "fourCharTag2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497671,
+    "end_line": 497678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "view",
+      "offset2"
+    ],
+    "body_sha256": "8f32438e7a5960b6b14524612d74946b7c1257ef9ea33f89ed81e04ab0ab2225",
+    "calls": [
+      "String.fromCharCode",
+      "view.getUint8"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497680:18259761",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.read",
+    "qualified_name": "_Mp4Dimensions.read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497680,
+    "end_line": 497691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "window2"
+    ],
+    "body_sha256": "ca7da1a7c5141d2d55d007184be2e718c44f568c89d7aa49ed137b8be852dbdc",
+    "calls": [
+      "_Mp4Dimensions.indexOfTag",
+      "_Mp4Dimensions.readMoov",
+      "new DataView"
+    ],
+    "writes": [
+      "searchFrom"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497692:18260235",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.indexOfTag",
+    "qualified_name": "_Mp4Dimensions.indexOfTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497692,
+    "end_line": 497703,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "tag",
+      "from2"
+    ],
+    "body_sha256": "5ba2fd7cac833f9967b91ac71d8772a5a629538e158a3a2e19645b02ea125f17",
+    "calls": [
+      "Math.max",
+      "tag.charCodeAt",
+      "view.getUint8"
+    ],
+    "writes": [
+      "at3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497704:18260676",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.readMoov",
+    "qualified_name": "_Mp4Dimensions.readMoov",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497704,
+    "end_line": 497714,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "moovTag"
+    ],
+    "body_sha256": "8006226e32190e6e0a593dc7fd3d763e16031ac66dd4793b25c9b0c1b3e9f61e",
+    "calls": [
+      "_Mp4Dimensions.childBoxes",
+      "_Mp4Dimensions.clampedBoxAt",
+      "_Mp4Dimensions.readTkhd"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497715:18261143",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.clampedBoxAt",
+    "qualified_name": "_Mp4Dimensions.clampedBoxAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497715,
+    "end_line": 497731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "{ at: at3, end }"
+    ],
+    "body_sha256": "a4bf16b7aedf3e3e86f77e1a92f173553ce7f6c151d39251a47c1538d7259d21",
+    "calls": [
+      "Math.min",
+      "view.getUint32"
+    ],
+    "writes": [
+      "header",
+      "size"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497732:18261622",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.childBoxes",
+    "qualified_name": "_Mp4Dimensions.childBoxes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497732,
+    "end_line": 497745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "range2",
+      "type2"
+    ],
+    "body_sha256": "b970ea8a811be0c9ea5f3670db9baf760bd886bcbc06b8e93101212db162851f",
+    "calls": [
+      "_Mp4Dimensions.clampedBoxAt",
+      "children.push",
+      "fourCharTag2"
+    ],
+    "writes": [
+      "offset2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497746:18262070",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.readTkhd",
+    "qualified_name": "_Mp4Dimensions.readTkhd",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497746,
+    "end_line": 497759,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "box"
+    ],
+    "body_sha256": "136cb7be7041452cfb42b1a635db199d98e0d83a6831b83ada180a5ab363e448",
+    "calls": [
+      "_Mp4Dimensions.matrixIsQuarterTurn",
+      "_Mp4Dimensions.read16Dot16",
+      "body.getUint8",
+      "new DataView",
+      "toDimensions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497760:18262724",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.read16Dot16",
+    "qualified_name": "_Mp4Dimensions.read16Dot16",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497760,
+    "end_line": 497762,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "offset2"
+    ],
+    "body_sha256": "a551ae5154e911148bea4f31f13a28471a028c068e81d80a14905258ba1172cc",
+    "calls": [
+      "view.getUint32"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497763:18262817",
+    "artifact": "host",
+    "module": "shared/media/video-dimensions.ts",
+    "name": "_Mp4Dimensions.matrixIsQuarterTurn",
+    "qualified_name": "_Mp4Dimensions.matrixIsQuarterTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497763,
+    "end_line": 497769,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "view",
+      "matrixAt"
+    ],
+    "body_sha256": "203c0099ea3939a219b1cb9a5f088b977dab7c48b87f7bb3ae25975c3b4f781e",
+    "calls": [
+      "view.getUint32"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

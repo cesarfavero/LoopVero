@@ -1,0 +1,173 @@
+[
+  {
+    "id": "evaluation:586925:22089898",
+    "artifact": "evaluation",
+    "module": "core/runner/reminders/tools-changed-reminder-middleware.ts",
+    "name": "toolsChangedReminderBody",
+    "qualified_name": "toolsChangedReminderBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586925,
+    "end_line": 586942,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ccece4e08a4225b1851ca986e4235fe07bebaf07cf0e41bba9c140d6e6d49946",
+    "calls": [
+      "args.offered.join",
+      "args.subagentTypes.types.join",
+      "lines2.join",
+      "lines2.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586948:22090979",
+    "artifact": "evaluation",
+    "module": "core/runner/reminders/tools-changed-reminder-middleware.ts",
+    "name": "subagentTypesOffered",
+    "qualified_name": "subagentTypesOffered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586948,
+    "end_line": 586956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tools"
+    ],
+    "body_sha256": "df8f78b8fc0f22ce286b65a725205b0b3fa4a9b88be30304960555b03592547e",
+    "calls": [
+      "subagentTypeSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586958:22091350",
+    "artifact": "evaluation",
+    "module": "core/runner/reminders/tools-changed-reminder-middleware.ts",
+    "name": "ToolsChangedReminderMiddleware.constructor",
+    "qualified_name": "ToolsChangedReminderMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586958,
+    "end_line": 586961,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "toolsAreStatic"
+    ],
+    "body_sha256": "c2926e247eef2cd4448ae4242c0a9688b9c2692c87d11e3677893cb4739b8794",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.toolsAreStatic"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586964:22091501",
+    "artifact": "evaluation",
+    "module": "core/runner/reminders/tools-changed-reminder-middleware.ts",
+    "name": "ToolsChangedReminderMiddleware.stream",
+    "qualified_name": "ToolsChangedReminderMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586964,
+    "end_line": 586985,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "772d159f7da835ea50e5ed11dfcccdb7689b826cc849abd5c1e5ef0239d24a78",
+    "calls": [
+      ".some",
+      "subagentTypesOffered",
+      "systemReminder",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream",
+      "tools.map",
+      "toolsChangedReminderBody"
+    ],
+    "writes": [
+      "this.checked"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586987:22092456",
+    "artifact": "evaluation",
+    "module": "core/runner/reminders/tools-changed-reminder-middleware.ts",
+    "name": "createToolsChangedReminderMiddleware",
+    "qualified_name": "createToolsChangedReminderMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586987,
+    "end_line": 586989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "55118659a07712ee25b28ae3f4bcd4780b8dd49edefc6224a284ed1557bf7680",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

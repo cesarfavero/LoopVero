@@ -1,0 +1,470 @@
+[
+  {
+    "id": "host:765025:29306210",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "messageLines",
+    "qualified_name": "messageLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765025,
+    "end_line": 765067,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "index"
+    ],
+    "body_sha256": "cb4ad26e3f343b8c8cce7e215373f35b1fa906125420914f164ae78fb061d072",
+    "calls": [
+      ".trimEnd",
+      "attachmentLines",
+      "formatEmailAddress",
+      "formatEmailAddresses",
+      "formatEmailDirection",
+      "formatEmailTimestamp",
+      "lines2.push",
+      "message.deliveryState.toLowerCase",
+      "message.subject.trim",
+      "meta3.join",
+      "meta3.push",
+      "verifyInlineImageMarkers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765068:29308047",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "attachmentLines",
+    "qualified_name": "attachmentLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765068,
+    "end_line": 765084,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "9fe663a35b6edd7c6f281ebb2aeea1d2334aca532ff4c03cda630a99e277739a",
+    "calls": [
+      "message.attachments.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765085:29308964",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "renderEmailThread",
+    "qualified_name": "renderEmailThread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765085,
+    "end_line": 765093,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "threadId",
+      "thread"
+    ],
+    "body_sha256": "5b2371bcbb65845ec8fb12d329496f15e22f4f7abdb8ca3c5a04521a52aed8a2",
+    "calls": [
+      "lines2.join",
+      "thread.messages.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765094:29309412",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "readEmailThread",
+    "qualified_name": "readEmailThread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765094,
+    "end_line": 765107,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "e8c80fd2d3bcff04ae4b7412980458c4ac9ba3c6bfdeb8702e5f99b6a6e31083",
+    "calls": [
+      "Math.min",
+      "deps.email.readThread",
+      "renderEmailThread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765108:29309884",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "createReadEmailThreadTool",
+    "qualified_name": "createReadEmailThreadTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765108,
+    "end_line": 765117,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "268605e54d20d5380429b939e86e6af6190dc0ad0afe3a8a12cfeb5e79339851",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765114:29310133",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReadEmailThreadTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765114,
+    "end_line": 765114,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ce1c6cd5187a06b37ef34999e96603e34ccc4eae8caeb62541bdd3ded803bc51",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:765115:29310186",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadEmailThreadTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 765115,
+    "end_line": 765115,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "e35b317d97357442f1bd020626cbd4c257af0b68fb6d6f2eb5e07cf26e9426b4",
+    "calls": [
+      "readEmailThread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558393:20726395",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "messageLines",
+    "qualified_name": "messageLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558393,
+    "end_line": 558435,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "index"
+    ],
+    "body_sha256": "cb4ad26e3f343b8c8cce7e215373f35b1fa906125420914f164ae78fb061d072",
+    "calls": [
+      ".trimEnd",
+      "attachmentLines",
+      "formatEmailAddress",
+      "formatEmailAddresses",
+      "formatEmailDirection",
+      "formatEmailTimestamp",
+      "lines2.push",
+      "message.deliveryState.toLowerCase",
+      "message.subject.trim",
+      "meta3.join",
+      "meta3.push",
+      "verifyInlineImageMarkers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558436:20728232",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "attachmentLines",
+    "qualified_name": "attachmentLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558436,
+    "end_line": 558452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "9fe663a35b6edd7c6f281ebb2aeea1d2334aca532ff4c03cda630a99e277739a",
+    "calls": [
+      "message.attachments.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558453:20729149",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "renderEmailThread",
+    "qualified_name": "renderEmailThread",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558453,
+    "end_line": 558461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "threadId",
+      "thread"
+    ],
+    "body_sha256": "5b2371bcbb65845ec8fb12d329496f15e22f4f7abdb8ca3c5a04521a52aed8a2",
+    "calls": [
+      "lines2.join",
+      "thread.messages.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558462:20729597",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "readEmailThread",
+    "qualified_name": "readEmailThread",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558462,
+    "end_line": 558475,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "e8c80fd2d3bcff04ae4b7412980458c4ac9ba3c6bfdeb8702e5f99b6a6e31083",
+    "calls": [
+      "Math.min",
+      "deps.email.readThread",
+      "renderEmailThread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558476:20730069",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "createReadEmailThreadTool",
+    "qualified_name": "createReadEmailThreadTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558476,
+    "end_line": 558485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "268605e54d20d5380429b939e86e6af6190dc0ad0afe3a8a12cfeb5e79339851",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558482:20730318",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReadEmailThreadTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558482,
+    "end_line": 558482,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ce1c6cd5187a06b37ef34999e96603e34ccc4eae8caeb62541bdd3ded803bc51",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558483:20730371",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-thread-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadEmailThreadTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558483,
+    "end_line": 558483,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "e35b317d97357442f1bd020626cbd4c257af0b68fb6d6f2eb5e07cf26e9426b4",
+    "calls": [
+      "readEmailThread"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

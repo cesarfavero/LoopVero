@@ -1,0 +1,504 @@
+[
+  {
+    "id": "host:478721:17521353",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "parseDeletedAgent",
+    "qualified_name": "parseDeletedAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478721,
+    "end_line": 478727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "d79fd79ac891b17940c3933bca17e25a7600e41e8b91603519eec78bc2385be4",
+    "calls": [
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478728:17521651",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "readDeletedAgents",
+    "qualified_name": "readDeletedAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478728,
+    "end_line": 478752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "6d89e41d3d06969e688dbb04c48372d7f0623a7fe17e010fdc403daac86f7ec5",
+    "calls": [
+      "Object.entries",
+      "agents.set",
+      "attemptSync",
+      "errorMessage",
+      "findSystemErrno",
+      "isUnknownRecord2",
+      "new Map",
+      "parseAgentId",
+      "parseDeletedAgent",
+      "readSandDataFileIfPresentSync"
+    ],
+    "writes": [
+      "malformed",
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478754:17522872",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.constructor",
+    "qualified_name": "_DeletedAgentRecord.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478754,
+    "end_line": 478757,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "agents"
+    ],
+    "body_sha256": "35a826de631cde08f993ad86f9606b2f2df0431672b987642b5708431e3b367c",
+    "calls": [],
+    "writes": [
+      "this.agents",
+      "this.path"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478760:17522976",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.open",
+    "qualified_name": "_DeletedAgentRecord.open",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478760,
+    "end_line": 478765,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "log5"
+    ],
+    "body_sha256": "b163db850d50c065fb563696acc3d22d38dc72b9c517656ad745dc3278fb1154",
+    "calls": [
+      "new _DeletedAgentRecord",
+      "readDeletedAgents",
+      "record3.keepDamagedFileAside"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478766:17523212",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.has",
+    "qualified_name": "_DeletedAgentRecord.has",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478766,
+    "end_line": 478768,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "da4b4d6d74981c848c1ec2950b4f04c4919b24d3e22a47053ab014c0611bfab5",
+    "calls": [
+      "this.agents.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478769:17523273",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.isDone",
+    "qualified_name": "_DeletedAgentRecord.isDone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478769,
+    "end_line": 478771,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d02eac38f2f21b0c1251c6afefb4ce33e7706e0e01c53fb47bfa429e08fe7a25",
+    "calls": [
+      "this.agents.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478772:17523364",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.pendingUpstream",
+    "qualified_name": "_DeletedAgentRecord.pendingUpstream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478772,
+    "end_line": 478774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8b517fd1909f44c2d2da8490b51dbc231b804b1553f54ec7b3f7d61b143e9b4a",
+    "calls": [
+      ".filter",
+      ".map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478775:17523529",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.record",
+    "qualified_name": "_DeletedAgentRecord.record",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478775,
+    "end_line": 478779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "serverId"
+    ],
+    "body_sha256": "b7ae82b679de9882c77a88b8606b8f9f3ed0264f5f452571abea45d5ffdc31f7",
+    "calls": [
+      "this.agents.get",
+      "this.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478780:17523731",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.settle",
+    "qualified_name": "_DeletedAgentRecord.settle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478780,
+    "end_line": 478784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0cd7e83e9a53dc50ea85e6ab62630bcaa50ff63d51ff097218ce6a4cda65cfd8",
+    "calls": [
+      "this.agents.get",
+      "this.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478785:17523919",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.forget",
+    "qualified_name": "_DeletedAgentRecord.forget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478785,
+    "end_line": 478790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "1f5e7e94b6ebbd433542e9a737c2ac7887171569e1a061591315e524f012f929",
+    "calls": [
+      "new Map",
+      "next.delete",
+      "this.agents.has",
+      "this.persist"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478791:17524084",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.removeAgentDirs",
+    "qualified_name": "_DeletedAgentRecord.removeAgentDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478791,
+    "end_line": 478800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentsRootDir",
+      "log5"
+    ],
+    "body_sha256": "43de78b580a3db30fd2ebb9718edcf7770d18025d916d044ef3532df5b60a9fa",
+    "calls": [
+      "AGENT_UUID.test",
+      "errorMessage",
+      "log5",
+      "removeSandDataTreeSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:478801:17524483",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.keepDamagedFileAside",
+    "qualified_name": "_DeletedAgentRecord.keepDamagedFileAside",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478801,
+    "end_line": 478822,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "damage",
+      "log5"
+    ],
+    "body_sha256": "3eefe46c643f715415ef974f77bebf16acb2b9d5435b29236d6c177cc0c242a8",
+    "calls": [
+      "Date.now",
+      "errorMessage",
+      "log5",
+      "this.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:478823:17525199",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.write",
+    "qualified_name": "_DeletedAgentRecord.write",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478823,
+    "end_line": 478825,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "agent"
+    ],
+    "body_sha256": "16ecf6f3bc95cb3f54fbc96e008e5968d5196cc99bb82cce654716f4aaf12961",
+    "calls": [
+      ".set",
+      "new Map",
+      "this.persist"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478826:17525291",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.persist",
+    "qualified_name": "_DeletedAgentRecord.persist",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478826,
+    "end_line": 478830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "4ec4a3c1641c520d1270328da636fa22134376317857bcd6ecccc215f694f821",
+    "calls": [
+      "this.agents.clear",
+      "this.agents.set",
+      "this.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:478831:17525432",
+    "artifact": "host",
+    "module": "host/agents/deleted-agent-record.ts",
+    "name": "_DeletedAgentRecord.flush",
+    "qualified_name": "_DeletedAgentRecord.flush",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 478831,
+    "end_line": 478836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agents"
+    ],
+    "body_sha256": "7fdfc6482558e2b2664fb66458b79b701411531bc0575a7d66cae2c64f0fea56",
+    "calls": [
+      "JSON.stringify",
+      "Object.fromEntries",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

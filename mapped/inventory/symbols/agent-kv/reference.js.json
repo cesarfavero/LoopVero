@@ -1,0 +1,646 @@
+[
+  {
+    "id": "host:616578:22865153",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "getBlobTypeLabel",
+    "qualified_name": "getBlobTypeLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616578,
+    "end_line": 616599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serde"
+    ],
+    "body_sha256": "f2157aee6b448000d58755bc90d4f940bc90fffad481bb91c836bbf8de4cd13b",
+    "calls": [
+      "serde.getBlobType"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616603:22865759",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.constructor",
+    "qualified_name": "EagerReference.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616603,
+    "end_line": 616608,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serde",
+      "blobStore",
+      "value"
+    ],
+    "body_sha256": "30e2e0e96b7cecc2879e6c5d5b73035303de1c4663e55ffd066e9bb293282332",
+    "calls": [],
+    "writes": [
+      "this.blobStore",
+      "this.lastWrittenValue",
+      "this.serde",
+      "this.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616609:22865912",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.get",
+    "qualified_name": "EagerReference.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616609,
+    "end_line": 616611,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx"
+    ],
+    "body_sha256": "7a42baf66290dab9a44f10afede400a9f345d72b49069ca0e83510c0a7c48244",
+    "calls": [
+      "Promise.resolve"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616612:22865970",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.set",
+    "qualified_name": "EagerReference.set",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616612,
+    "end_line": 616614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "5a6c86f1d0aa79bef23b50595fc37f85afbeb20eb2fa23eafc9370dbb8dd3d91",
+    "calls": [],
+    "writes": [
+      "this.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616615:22866032",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.writeToBlobStore",
+    "qualified_name": "EagerReference.writeToBlobStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616615,
+    "end_line": 616640,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "20837b297fb86b674c4fe26a106e7cc7473bdc521bec2e34f050ff2d407cb60c",
+    "calls": [
+      "getBlobId",
+      "getBlobMetadataCallback",
+      "isBlobDurable",
+      "onBlobMetadata",
+      "this.blobStore.setBlob",
+      "this.serde.getBlobType",
+      "this.serde.serialize",
+      "this.serde.serializeAsync",
+      "value.writeToBlobStore"
+    ],
+    "writes": [
+      "this.lastWrittenValue"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616643:22867044",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.constructor",
+    "qualified_name": "LazyReference.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616643,
+    "end_line": 616650,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serde",
+      "blobStore",
+      "blobId"
+    ],
+    "body_sha256": "2b7c70d0341f3f29386b632c63ed1971a68df42ddedf429d9f38ddab883e03d3",
+    "calls": [],
+    "writes": [
+      "this.blobId",
+      "this.blobStore",
+      "this.lastWrittenBlobData",
+      "this.lastWrittenValue",
+      "this.serde",
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616651:22867277",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.get",
+    "qualified_name": "LazyReference.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616651,
+    "end_line": 616697,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "ab6897fb0bc0dc22de1599736611fb058bed4d1c255251b519e80c74f03a936e",
+    "calls": [
+      ".then",
+      "getBlobTypeLabel",
+      "this.blobStore.getBlob",
+      "valuePromise.then",
+      "withDefaultBlobReadKind"
+    ],
+    "writes": [
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616698:22869217",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.set",
+    "qualified_name": "LazyReference.set",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616698,
+    "end_line": 616700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "ccf10e708f16bfe31f8b0d0b29a3547f2d2c29bcdb4da39d734395a10a34193e",
+    "calls": [
+      "Promise.resolve"
+    ],
+    "writes": [
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616701:22869303",
+    "artifact": "host",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.writeToBlobStore",
+    "qualified_name": "LazyReference.writeToBlobStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616701,
+    "end_line": 616727,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "0cc7d13a5647a24e67f2c86cdf3b2f91eaf13ffd99d484196b7a9f4744b9e5eb",
+    "calls": [
+      "getBlobId",
+      "getBlobMetadataCallback",
+      "isBlobDurable",
+      "onBlobMetadata",
+      "this.blobStore.setBlob",
+      "this.get",
+      "this.serde.getBlobType",
+      "this.serde.serialize",
+      "this.serde.serializeAsync",
+      "value.writeToBlobStore"
+    ],
+    "writes": [
+      "this.blobId",
+      "this.lastWrittenBlobData",
+      "this.lastWrittenValue"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285118:9199800",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "getBlobTypeLabel",
+    "qualified_name": "getBlobTypeLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285118,
+    "end_line": 285139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serde"
+    ],
+    "body_sha256": "f2157aee6b448000d58755bc90d4f940bc90fffad481bb91c836bbf8de4cd13b",
+    "calls": [
+      "serde.getBlobType"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285143:9200406",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.constructor",
+    "qualified_name": "EagerReference.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285143,
+    "end_line": 285148,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serde",
+      "blobStore",
+      "value"
+    ],
+    "body_sha256": "30e2e0e96b7cecc2879e6c5d5b73035303de1c4663e55ffd066e9bb293282332",
+    "calls": [],
+    "writes": [
+      "this.blobStore",
+      "this.lastWrittenValue",
+      "this.serde",
+      "this.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285149:9200559",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.get",
+    "qualified_name": "EagerReference.get",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285149,
+    "end_line": 285151,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx"
+    ],
+    "body_sha256": "7a42baf66290dab9a44f10afede400a9f345d72b49069ca0e83510c0a7c48244",
+    "calls": [
+      "Promise.resolve"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285152:9200617",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.set",
+    "qualified_name": "EagerReference.set",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285152,
+    "end_line": 285154,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "5a6c86f1d0aa79bef23b50595fc37f85afbeb20eb2fa23eafc9370dbb8dd3d91",
+    "calls": [],
+    "writes": [
+      "this.value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285155:9200679",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "EagerReference.writeToBlobStore",
+    "qualified_name": "EagerReference.writeToBlobStore",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285155,
+    "end_line": 285180,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "20837b297fb86b674c4fe26a106e7cc7473bdc521bec2e34f050ff2d407cb60c",
+    "calls": [
+      "getBlobId",
+      "getBlobMetadataCallback",
+      "isBlobDurable",
+      "onBlobMetadata",
+      "this.blobStore.setBlob",
+      "this.serde.getBlobType",
+      "this.serde.serialize",
+      "this.serde.serializeAsync",
+      "value.writeToBlobStore"
+    ],
+    "writes": [
+      "this.lastWrittenValue"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285183:9201691",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.constructor",
+    "qualified_name": "LazyReference.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285183,
+    "end_line": 285190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serde",
+      "blobStore",
+      "blobId"
+    ],
+    "body_sha256": "2b7c70d0341f3f29386b632c63ed1971a68df42ddedf429d9f38ddab883e03d3",
+    "calls": [],
+    "writes": [
+      "this.blobId",
+      "this.blobStore",
+      "this.lastWrittenBlobData",
+      "this.lastWrittenValue",
+      "this.serde",
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285191:9201924",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.get",
+    "qualified_name": "LazyReference.get",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285191,
+    "end_line": 285237,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "c29de18458a50b7bdcd16937f4e5a7bc6c9b888727255eaee7ca9604e42dea73",
+    "calls": [
+      ".then",
+      "getBlobTypeLabel",
+      "this.blobStore.getBlob",
+      "valuePromise.then",
+      "withDefaultBlobReadKind"
+    ],
+    "writes": [
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285238:9203862",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.set",
+    "qualified_name": "LazyReference.set",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285238,
+    "end_line": 285240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "ccf10e708f16bfe31f8b0d0b29a3547f2d2c29bcdb4da39d734395a10a34193e",
+    "calls": [
+      "Promise.resolve"
+    ],
+    "writes": [
+      "this.valuePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285241:9203948",
+    "artifact": "evaluation",
+    "module": "agent-kv/reference.js",
+    "name": "LazyReference.writeToBlobStore",
+    "qualified_name": "LazyReference.writeToBlobStore",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285241,
+    "end_line": 285267,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "0cc7d13a5647a24e67f2c86cdf3b2f91eaf13ffd99d484196b7a9f4744b9e5eb",
+    "calls": [
+      "getBlobId",
+      "getBlobMetadataCallback",
+      "isBlobDurable",
+      "onBlobMetadata",
+      "this.blobStore.setBlob",
+      "this.get",
+      "this.serde.getBlobType",
+      "this.serde.serialize",
+      "this.serde.serializeAsync",
+      "value.writeToBlobStore"
+    ],
+    "writes": [
+      "this.blobId",
+      "this.lastWrittenBlobData",
+      "this.lastWrittenValue"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,340 @@
+[
+  {
+    "id": "host:681154:25877265",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "hostBundleBaseUrl",
+    "qualified_name": "hostBundleBaseUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681154,
+    "end_line": 681156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "override"
+    ],
+    "body_sha256": "6e025aaa367cc01f5a44b64e5fe8b8b0652435ef8b4183987abd58f4cad2ebd1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681157:25877361",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "resolveHostBundleChannel",
+    "qualified_name": "resolveHostBundleChannel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681157,
+    "end_line": 681160,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "liveConfiguredChannel"
+    ],
+    "body_sha256": "f3b88d1ecd5c40acd256f8f3797bfcd0134259e4d7a5fb4d1ab6dc96e76ddee5",
+    "calls": [
+      "coerceSandHostBundleChannel",
+      "liveConfiguredChannel.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681161:25877579",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "hostBundleVersionUrl",
+    "qualified_name": "hostBundleVersionUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681161,
+    "end_line": 681163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "channel",
+      "base = SAND_HOST_BUNDLE_PUBLIC_BASE_URL"
+    ],
+    "body_sha256": "aa2af9305afe1f620919cdc7af49dae6caea5a78d092519a546597ce79e0f3a2",
+    "calls": [
+      "sandHostBundleVersionFileName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681164:25877725",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "hostBundleTarballUrl",
+    "qualified_name": "hostBundleTarballUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681164,
+    "end_line": 681166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "version4",
+      "base = SAND_HOST_BUNDLE_PUBLIC_BASE_URL"
+    ],
+    "body_sha256": "0c157bea1550cb449998f383ffc7c8a12540ee098ae40ef5f4fefb0c024c195a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681167:25877876",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "hostBundleDigestUrl",
+    "qualified_name": "hostBundleDigestUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681167,
+    "end_line": 681169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "version4",
+      "base = SAND_HOST_BUNDLE_PUBLIC_BASE_URL"
+    ],
+    "body_sha256": "d2a1b1a8ac246aea123dfa42a54cf723225d20fa5001626d000d2b42d779a878",
+    "calls": [
+      "hostBundleTarballUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681171:25878067",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "fetchLatestHostBundleVersion",
+    "qualified_name": "fetchLatestHostBundleVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681171,
+    "end_line": 681187,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fetchFn = fetch",
+      "channel = resolveHostBundleChannel()",
+      "base = SAND_HOST_BUNDLE_PUBLIC_BASE_URL"
+    ],
+    "body_sha256": "7ca0f1f261ca8c5f876274a139c80046e152d119cc31d834813cbcb097c877ca",
+    "calls": [
+      ".trim",
+      "Date.now",
+      "SHORT_GIT_SHA_REGEX.test",
+      "cachedVersions.get",
+      "cachedVersions.set",
+      "fetchFn",
+      "hostBundleVersionUrl",
+      "reportFallback",
+      "resp.text"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681188:25878756",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "fetchHostBundleDigest",
+    "qualified_name": "fetchHostBundleDigest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681188,
+    "end_line": 681203,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fetchFn",
+      "version4",
+      "base"
+    ],
+    "body_sha256": "381c074d3e871ca1665597469903b52e7364511a1927c44e3456feaa9aa1e6f6",
+    "calls": [
+      "fetchFn",
+      "hostBundleDigestUrl",
+      "new SandHostBundleSourceError",
+      "parseSandHostBundleDigest",
+      "resp.text"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandHostBundleSourceError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681204:25879307",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "fetchHostBundle",
+    "qualified_name": "fetchHostBundle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681204,
+    "end_line": 681223,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fetchFn",
+      "version4",
+      "base"
+    ],
+    "body_sha256": "0ced48d81061d2b3164e307946aad39032fd1111a800055b996c102d707d9302",
+    "calls": [
+      "SHORT_GIT_SHA_REGEX.test",
+      "fetchFn",
+      "fetchHostBundleDigest",
+      "hostBundleTarballUrl",
+      "new SandHostBundleSourceError",
+      "new Uint8Array",
+      "resp.arrayBuffer"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandHostBundleSourceError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681224:25880047",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "resolveHostBundleSource",
+    "qualified_name": "resolveHostBundleSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681224,
+    "end_line": 681231,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fetchFn = fetch",
+      "channel = resolveHostBundleChannel()",
+      "base = SAND_HOST_BUNDLE_PUBLIC_BASE_URL"
+    ],
+    "body_sha256": "b68b080d157b4e4ef3fc566489b25bb568343d8a9e1511bf4c3d93542e23d575",
+    "calls": [
+      "fetchLatestHostBundleVersion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681229:25880355",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-source.ts",
+    "name": "loadBundle",
+    "qualified_name": "resolveHostBundleSource/loadBundle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681229,
+    "end_line": 681229,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "438bec85eaeae682f683446cfe166b2f8bdda52536d7872546dd0951705294ab",
+    "calls": [
+      "fetchHostBundle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

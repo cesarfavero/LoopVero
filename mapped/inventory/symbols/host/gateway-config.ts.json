@@ -1,0 +1,169 @@
+[
+  {
+    "id": "host:483848:17706212",
+    "artifact": "host",
+    "module": "host/gateway-config.ts",
+    "name": "isTruthyEnv",
+    "qualified_name": "isTruthyEnv",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483848,
+    "end_line": 483852,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "f3b33cb58543b6efe15ef59ec4582f410517ad27c6d7e0790b5f2f0a592712a9",
+    "calls": [
+      ".toLowerCase",
+      "value.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483853:17706406",
+    "artifact": "host",
+    "module": "host/gateway-config.ts",
+    "name": "readPort",
+    "qualified_name": "readPort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483853,
+    "end_line": 483857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "af1482f4f516eca2ce16b34e67507fe7cea068613e475376b7f4aa601e2d4ce4",
+    "calls": [
+      "Number.isInteger",
+      "Number.parseInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483858:17706601",
+    "artifact": "host",
+    "module": "host/gateway-config.ts",
+    "name": "resolveTls",
+    "qualified_name": "resolveTls",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483858,
+    "end_line": 483877,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env"
+    ],
+    "body_sha256": "63912f138b7adff6aa2208d9b648e6115f62d52a5745321abcb04f365e601ef8",
+    "calls": [
+      "String",
+      "env.SAND_GATEWAY_TLS_CERT.trim",
+      "env.SAND_GATEWAY_TLS_KEY.trim",
+      "new SandGatewayConfigError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandGatewayConfigError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:483878:17707391",
+    "artifact": "host",
+    "module": "host/gateway-config.ts",
+    "name": "resolveGatewayServerConfig",
+    "qualified_name": "resolveGatewayServerConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483878,
+    "end_line": 483891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env",
+      "generateToken = () => (0, import_node_crypto15.randomBytes)(32).toString(\"base64url\")"
+    ],
+    "body_sha256": "1db8ef61be3e294719967bb5124826a9b142399066e5e1deaf66733dcf6a6d7c",
+    "calls": [
+      "env.SAND_GATEWAY_BIND_HOST.trim",
+      "env.SAND_GATEWAY_TOKEN.trim",
+      "generateToken",
+      "isLoopbackHostname",
+      "isTruthyEnv",
+      "readPort",
+      "resolveTls"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:483892:17708183",
+    "artifact": "host",
+    "module": "host/gateway-config.ts",
+    "name": "gatewayScheme",
+    "qualified_name": "gatewayScheme",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 483892,
+    "end_line": 483894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2"
+    ],
+    "body_sha256": "1e9d71ca60948a2620e9232fec53270b2be988d2787cacfdc3f43cf722b86dea",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

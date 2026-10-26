@@ -1,0 +1,879 @@
+[
+  {
+    "id": "host:541308:19864052",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "spawnCsnaps",
+    "qualified_name": "spawnCsnaps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541308,
+    "end_line": 541310,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "439e1b44e3dd7c480e3bf9f7dc3a4052ef0974da11c1c7aebc2cdaff3b73f1f2",
+    "calls": [
+      "CsnapsProcess.spawn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541315:19864291",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "CsnapsRequestError.constructor",
+    "qualified_name": "CsnapsRequestError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541315,
+    "end_line": 541319,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "method",
+      "code"
+    ],
+    "body_sha256": "cf1593eb542ec6908d7f41f60f68e15fa0f50d5e0bd77b986c690433036057c8",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.code",
+      "this.method"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541325:19864523",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.constructor",
+    "qualified_name": "_CsnapsProcess.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541325,
+    "end_line": 541375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "child",
+      "deadlines"
+    ],
+    "body_sha256": "c34f454cb1ddc467c85c45106cdf941bc67b337a15f9d521f298ce3ffefbd754",
+    "calls": [
+      "Promise.withResolvers",
+      "child.once",
+      "child.stdin.on",
+      "child.stdout.on",
+      "new Promise"
+    ],
+    "writes": [
+      "this.child",
+      "this.childClosed",
+      "this.deadlines",
+      "this.resolveTerminalFailure",
+      "this.terminalFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541387:19866380",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.spawn",
+    "qualified_name": "_CsnapsProcess.spawn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541387,
+    "end_line": 541427,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "2162200baf2486ad28cc6a86c6f0a3dadb25b78cf4fb138b56f58fb2c0f9c9e3",
+    "calls": [
+      "csnaps.close",
+      "csnaps.initialize",
+      "csnaps.ping",
+      "csnaps.terminate",
+      "new CodebaseTelemetryCleanupError",
+      "new _CsnapsProcess",
+      "options2.signal.throwIfAborted",
+      "spawnChild"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CodebaseTelemetryCleanupError",
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 4,
+      "catches": 4
+    }
+  },
+  {
+    "id": "host:541428:19867636",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.initialize",
+    "qualified_name": "_CsnapsProcess.initialize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541428,
+    "end_line": 541431,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "params",
+      "signal"
+    ],
+    "body_sha256": "7ead0a7703e60540b2ded42221057e9323fc6bb2f1af8be1adec30fa6bb952d4",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541432:19867820",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.getState",
+    "qualified_name": "_CsnapsProcess.getState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541432,
+    "end_line": 541435,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "signal"
+    ],
+    "body_sha256": "0d6401cffd79796d63746f61afa98af2aa16e5337f8b5b717458d0772190a2cf",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541436:19868003",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.applyCodebaseSpecs",
+    "qualified_name": "_CsnapsProcess.applyCodebaseSpecs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541436,
+    "end_line": 541442,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "codebases",
+      "signal"
+    ],
+    "body_sha256": "15e15b30f798fe2f3ee9326361c64768d388e30d36324133808fc142a5a52179",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541443:19868231",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.snapshot",
+    "qualified_name": "_CsnapsProcess.snapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541443,
+    "end_line": 541446,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason",
+      "signal"
+    ],
+    "body_sha256": "fef22e48b1ddc06a1982b176a64419db2a69df992451a234f181f70c2f1760d1",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541447:19868423",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.triggerUpload",
+    "qualified_name": "_CsnapsProcess.triggerUpload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541447,
+    "end_line": 541453,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "credentials",
+      "signal"
+    ],
+    "body_sha256": "73c1697d83645b16866f0a28bb92b778fe8cb56b4ceeee4ccb692cd3321b4e9a",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541454:19868649",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.flushPendingUploads",
+    "qualified_name": "_CsnapsProcess.flushPendingUploads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541454,
+    "end_line": 541460,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "credentials",
+      "signal"
+    ],
+    "body_sha256": "f7366167dbc8bf977170c28fbc6fff4a7fa28428406f5227bcd69e1a3e2a660e",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541461:19868862",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.close",
+    "qualified_name": "_CsnapsProcess.close",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541461,
+    "end_line": 541468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cf21fe6c7fe84ece68bc9352581831ea5659a405e3b2d708a0572bfe3f49c96a",
+    "calls": [
+      "this.shutdown"
+    ],
+    "writes": [
+      "this.closePromise",
+      "this.isClosing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541469:19869059",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.ping",
+    "qualified_name": "_CsnapsProcess.ping",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541469,
+    "end_line": 541472,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "signal"
+    ],
+    "body_sha256": "c58aa85ca1e76230ba4d6593095b80dcb2f7465000abf5b85dd071e3e60b3b5d",
+    "calls": [
+      "parseCsnapsOperationResult",
+      "this.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541473:19869214",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.shutdown",
+    "qualified_name": "_CsnapsProcess.shutdown",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541473,
+    "end_line": 541489,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3e5312c3f1e9801d23fca86e9bb0a410f915e483bff05a3ffd93f591d72132e2",
+    "calls": [
+      "new CodebaseTelemetryCleanupError",
+      "parseCsnapsOperationResult",
+      "this.request",
+      "this.terminate",
+      "this.waitForChildClose"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CodebaseTelemetryCleanupError"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:541490:19869713",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.terminate",
+    "qualified_name": "_CsnapsProcess.terminate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541490,
+    "end_line": 541504,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ba9d2f08fef0dc46bf00940aac7d92c3f3ec0306a3a7eb212eedd57e7ce224f3",
+    "calls": [
+      "this.child.kill",
+      "this.child.stdin.destroy",
+      "this.waitForChildClose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:541505:19870119",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.waitForChildClose",
+    "qualified_name": "_CsnapsProcess.waitForChildClose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541505,
+    "end_line": 541511,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "a3198514f61c2e0b0a363684f9538894a9bba40d6073de4be3bd56b58799a962",
+    "calls": [
+      "describeChildCloseTimeout",
+      "new CsnapsProcessError",
+      "this.deadlines.exit.run"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProcessError"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:541512:19870340",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.request",
+    "qualified_name": "_CsnapsProcess.request",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541512,
+    "end_line": 541558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "operation",
+      "signal"
+    ],
+    "body_sha256": "6bdb3826240eef9d378e9e053fee39e5f2d019d31e295600e493386739595870",
+    "calls": [
+      ".run",
+      "request5.catch",
+      "this.deadlineFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541520:19870700",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "onAbort",
+    "qualified_name": "_CsnapsProcess.request/<callback>/onAbort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541520,
+    "end_line": 541528,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8278a17ffae4244d12e420fb990c53e6217afcee6471a30ee9a677aeefcca05b",
+    "calls": [
+      "new CsnapsProcessError",
+      "response.reject",
+      "this.fail",
+      "this.pendingRequests.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541559:19872123",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.deadlineFor",
+    "qualified_name": "_CsnapsProcess.deadlineFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541559,
+    "end_line": 541578,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "method"
+    ],
+    "body_sha256": "e4469a3c3b51a7507fe05e6990e5439e57aa7e158a07a2d2b12735625d304aec",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541579:19872743",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.handleStdoutChunk",
+    "qualified_name": "_CsnapsProcess.handleStdoutChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541579,
+    "end_line": 541603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "chunk"
+    ],
+    "body_sha256": "ad5a3216bfb7f037f7e1beb825e144617bfeabb9807381c250fd18b3f4a9ace2",
+    "calls": [
+      "new CsnapsProcessError",
+      "new Set",
+      "seenResponseIds.add",
+      "seenResponseIds.has",
+      "this.fail",
+      "this.pendingRequests.has",
+      "this.responseDecoder.decode",
+      "this.settlePendingRequest"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProcessError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:541604:19873610",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.settlePendingRequest",
+    "qualified_name": "_CsnapsProcess.settlePendingRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541604,
+    "end_line": 541616,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "ab83fcfd91c1a0159a9e31e97d551f08b403765a1eeef9391f75ca898a9a6a89",
+    "calls": [
+      "new CsnapsProcessError",
+      "new CsnapsRequestError",
+      "pending.reject",
+      "pending.resolve",
+      "pending.signal.removeEventListener",
+      "this.pendingRequests.delete",
+      "this.pendingRequests.get"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "CsnapsProcessError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541617:19874077",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.fail",
+    "qualified_name": "_CsnapsProcess.fail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541617,
+    "end_line": 541628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "7fbffa98d8ac60c575c58fbe470a7cd172917120da6d886a8f4710d9edb96b8d",
+    "calls": [
+      "this.child.kill",
+      "this.child.stdin.destroy",
+      "this.rejectPendingRequests",
+      "this.resolveTerminalFailure"
+    ],
+    "writes": [
+      "this.terminalError"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541629:19874393",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "_CsnapsProcess.rejectPendingRequests",
+    "qualified_name": "_CsnapsProcess.rejectPendingRequests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541629,
+    "end_line": 541635,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "eae157751c83c449ded3b26afdc4932edd7263dd8d7810361deb81317bc57cf2",
+    "calls": [
+      "pending.reject",
+      "pending.signal.removeEventListener",
+      "this.pendingRequests.clear",
+      "this.pendingRequests.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541637:19874610",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "describeCsnapsExit",
+    "qualified_name": "describeCsnapsExit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541637,
+    "end_line": 541645,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "exitCode",
+      "signal"
+    ],
+    "body_sha256": "ed72311f68b83db030a975bcbe640aa6d4e3a47452182974ae355a5f2c083653",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541646:19874872",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "describeChildCloseTimeout",
+    "qualified_name": "describeChildCloseTimeout",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541646,
+    "end_line": 541656,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "1ef02143ee9973f779b15b92a898ae62de56110ec44ffc464fe5e83282324176",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541657:19875238",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "writeFrame",
+    "qualified_name": "writeFrame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541657,
+    "end_line": 541671,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stream3",
+      "frame"
+    ],
+    "body_sha256": "eaad669cdad26e4cdce112e1385932c357352701ebf384c39e91f1ea441074d5",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541672:19875598",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/csnaps-process.ts",
+    "name": "csnapsStdinWriteError",
+    "qualified_name": "csnapsStdinWriteError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541672,
+    "end_line": 541675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "d1a4f04480f2fa2c2959e3ecedb791f5dfd285c889012313f857fd16af2d0d5a",
+    "calls": [
+      "new CsnapsProcessError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

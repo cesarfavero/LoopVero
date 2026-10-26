@@ -1,0 +1,462 @@
+[
+  {
+    "id": "host:734399:27897090",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "cloudAgentExchangeRound",
+    "qualified_name": "cloudAgentExchangeRound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734399,
+    "end_line": 734403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "bcId"
+    ],
+    "body_sha256": "fef6178645afa6f68e5ed35ab5130af87206abfb3502938bc55da5fda8ab68ed",
+    "calls": [
+      "entries.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734404:27897289",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "cloudAgentInboundEntryId",
+    "qualified_name": "cloudAgentInboundEntryId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734404,
+    "end_line": 734409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "bcId",
+      "report"
+    ],
+    "body_sha256": "3fc9414ee03393bb272c2ab3b178433fff24eb87c362b8db8768b8c0212d2cb1",
+    "calls": [
+      ".digest",
+      ".slice",
+      ".update",
+      "cloudAgentExchangeRound"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734412:27897635",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.constructor",
+    "qualified_name": "AgentToAgentMessaging.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734412,
+    "end_line": 734414,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734418:27897797",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.sendToAgent",
+    "qualified_name": "AgentToAgentMessaging.sendToAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734418,
+    "end_line": 734472,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fromAgentId",
+      "toAgentId",
+      "text3",
+      "images = []",
+      "priority = false"
+    ],
+    "body_sha256": "2b939f04f36c020657cb94b4f85bb2766d578c26eddfb864bc28cc931b60938b",
+    "calls": [
+      "Date.now",
+      "brandedId",
+      "clampAgentMessage",
+      "notes.join",
+      "notes.push",
+      "roster.find",
+      "this.appendAgentOutboundEntry",
+      "this.appendInbound",
+      "this.tm.postToGroup",
+      "this.tm.productAnalytics.trackEvent",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessions.isAgentGone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734473:27900435",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.sendToRemotePeer",
+    "qualified_name": "AgentToAgentMessaging.sendToRemotePeer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734473,
+    "end_line": 734506,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0bc5a3880f0f7de1599841080368a313a098d123dd451ef98cf6ab8b06bd056b",
+    "calls": [
+      "Date.now",
+      "args.deliver",
+      "brandedId",
+      "clampAgentMessage",
+      "notes.join",
+      "notes.push",
+      "this.appendAgentOutboundEntry",
+      "this.tm.productAnalytics.trackEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734507:27901853",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.receiveFromPeer",
+    "qualified_name": "AgentToAgentMessaging.receiveFromPeer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734507,
+    "end_line": 734543,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1fbcdfda82e4cfcb7ccaad6c2cb83e9caee36d6765fa8762277cd590b1543431",
+    "calls": [
+      "clampAgentMessage",
+      "roster.find",
+      "this.deliverPeerMessage",
+      "this.peerDeliveriesInFlight.delete",
+      "this.peerDeliveriesInFlight.get",
+      "this.peerDeliveriesInFlight.set",
+      "this.receivedPeerMessageIds.has",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessions.isAgentGone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734544:27903127",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.deliverPeerMessage",
+    "qualified_name": "AgentToAgentMessaging.deliverPeerMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734544,
+    "end_line": 734577,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2aa03436ebd7a290c6c4078cf0feee2e972309abd353b2b437f8c53f4bb97fb5",
+    "calls": [
+      "Date.now",
+      "parseAgentId",
+      "this.appendInbound",
+      "this.rememberPeerMessageId",
+      "this.tm.groupChat.postToGroupWithStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734578:27904215",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.rememberPeerMessageId",
+    "qualified_name": "AgentToAgentMessaging.rememberPeerMessageId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734578,
+    "end_line": 734585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ledgerKey",
+      "messageId"
+    ],
+    "body_sha256": "64b2ce76c84878d12823daf263a464a0d188cb85ec2557a24ce2f807bebdcbfc",
+    "calls": [
+      ".next",
+      "this.receivedPeerMessageIds.add",
+      "this.receivedPeerMessageIds.delete",
+      "this.receivedPeerMessageIds.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734586:27904577",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.appendInbound",
+    "qualified_name": "AgentToAgentMessaging.appendInbound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734586,
+    "end_line": 734605,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "toAgentId",
+      "inbound"
+    ],
+    "body_sha256": "96fe8b0ff47cec81ec6d96018047441a9e2c835af6ecc09d242a21ad847d7380",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "this.appendAgentInboundEntries",
+      "this.tm.groupChat.isGroupSession",
+      "this.tm.sessions.leaseBackgroundSession"
+    ],
+    "writes": [
+      "leased"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:734606:27905165",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.appendAgentInboundEntries",
+    "qualified_name": "AgentToAgentMessaging.appendAgentInboundEntries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734606,
+    "end_line": 734632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "messages2"
+    ],
+    "body_sha256": "d2306c05f4e22df67323c5e998826a9bc1685bc3324d61865498f861d7e41f0a",
+    "calls": [
+      "entryRaisesUserActivitySignal",
+      "getTranscript",
+      "nextEntryId",
+      "session.db.appendTranscriptEntry",
+      "session.db.getTranscriptEntries",
+      "this.tm.appendEntry",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.markSessionActivity"
+    ],
+    "writes": [
+      "raisesUserActivity"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:734633:27906181",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.appendAgentInboundEntry",
+    "qualified_name": "AgentToAgentMessaging.appendAgentInboundEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734633,
+    "end_line": 734663,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "from2",
+      "text3",
+      "timestampMs"
+    ],
+    "body_sha256": "8a0b89384db0ea63df8ad40c387b45d1ebae77605945859663079a830d397a82",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "cloudAgentInboundEntryId",
+      "entries.some",
+      "getTranscript",
+      "nextEntryId",
+      "session.db.appendTranscriptEntry",
+      "session.db.getTranscriptEntries",
+      "this.tm.appendEntry",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessions.isAgentGone",
+      "this.tm.sessions.leaseBackgroundSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:734664:27907332",
+    "artifact": "host",
+    "module": "host/extensions/transcript/agent-to-agent-messaging.ts",
+    "name": "AgentToAgentMessaging.appendAgentOutboundEntry",
+    "qualified_name": "AgentToAgentMessaging.appendAgentOutboundEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 734664,
+    "end_line": 734692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fromAgentId",
+      "to3",
+      "text3",
+      "timestampMs",
+      "media = {}"
+    ],
+    "body_sha256": "19f675d1828ea95fb5ca1a4beb6c27e005591575b66605e02331094cb2655cc7",
+    "calls": [
+      "entryRaisesUserActivitySignal",
+      "getTranscript",
+      "isVisibleOutboundAgentPeerMessageEntry",
+      "nextEntryId",
+      "session.db.appendTranscriptEntry",
+      "session.db.getTranscriptEntries",
+      "this.tm.appendEntry",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.markSessionActivity",
+      "this.tm.sessions.liveSessions.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

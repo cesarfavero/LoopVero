@@ -1,0 +1,516 @@
+[
+  {
+    "id": "host:758905:28997422",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "isDueDate",
+    "qualified_name": "isDueDate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758905,
+    "end_line": 758911,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "2bfd2e94ba413000fba9b5ba005c1c8392ba95db8fca25e9ff4662a457bb5878",
+    "calls": [
+      "Date.UTC",
+      "Date.parse",
+      "ISO_DATE_OR_DATE_TIME.exec",
+      "Number",
+      "Number.isNaN",
+      "date6.getUTCDate",
+      "date6.getUTCMonth",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758954:29000626",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "dueText",
+    "qualified_name": "dueText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758954,
+    "end_line": 758959,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "due"
+    ],
+    "body_sha256": "32a24fd74ccd19bc1e3af1c3bd1243ffe7ff6484050560033e6595eb495f105c",
+    "calls": [
+      ".replace",
+      "DUE_ZONE.exec",
+      "due.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758960:29000881",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "describeWriteReminders",
+    "qualified_name": "describeWriteReminders",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758960,
+    "end_line": 758989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  id,\n  title,\n  notes,\n  due,\n  completed,\n  list,\n  currentTitle,\n  delete: remove\n}"
+    ],
+    "body_sha256": "5e55ef4c382198ac3f37da91959fe53f5322224a88be2dbf5f0c2e6c68fe6157",
+    "calls": [
+      ".join",
+      "changes.join",
+      "completedChange",
+      "dueChange",
+      "dueText",
+      "notesChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758990:29001834",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "dueChange",
+    "qualified_name": "dueChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758990,
+    "end_line": 758992,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "due"
+    ],
+    "body_sha256": "173d2b7d400dcfa1fbb3bf8a005ca1407705b83cadfaa2a6532224eb94beaa97",
+    "calls": [
+      "dueText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758993:29001941",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "notesChange",
+    "qualified_name": "notesChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758993,
+    "end_line": 758995,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "notes"
+    ],
+    "body_sha256": "09f107f4bc3c585ace3fc2434f128f0abc24ea0bbe62e290d1246e0fbf9b8f92",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:758996:29002051",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "completedChange",
+    "qualified_name": "completedChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 758996,
+    "end_line": 758998,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "completed"
+    ],
+    "body_sha256": "281afce9a9cfdc0b4bdd03089252470e68e4c0c24f1436162bd49b6a1d9d0edb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759010:29004290",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "inputOf",
+    "qualified_name": "inputOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759010,
+    "end_line": 759019,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ id, currentTitle, delete: remove, title, notes, due, completed, list }"
+    ],
+    "body_sha256": "42678b94051c370c3de7814b5482dbc8917d48be3a14290b5f01f800ab07ead0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:759020:29004494",
+    "artifact": "host",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "describeCall",
+    "qualified_name": "describeCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 759020,
+    "end_line": 759023,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "2fb68eca03bf61c6425c90417b940ecd493cebbb3f78461e007ded442067768a",
+    "calls": [
+      "describeWriteReminders",
+      "writeRemindersParameters.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549065:20274875",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "isDueDate",
+    "qualified_name": "isDueDate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549065,
+    "end_line": 549071,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "2bfd2e94ba413000fba9b5ba005c1c8392ba95db8fca25e9ff4662a457bb5878",
+    "calls": [
+      "Date.UTC",
+      "Date.parse",
+      "ISO_DATE_OR_DATE_TIME.exec",
+      "Number",
+      "Number.isNaN",
+      "date6.getUTCDate",
+      "date6.getUTCMonth",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549114:20278079",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "dueText",
+    "qualified_name": "dueText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549114,
+    "end_line": 549119,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "due"
+    ],
+    "body_sha256": "32a24fd74ccd19bc1e3af1c3bd1243ffe7ff6484050560033e6595eb495f105c",
+    "calls": [
+      ".replace",
+      "DUE_ZONE.exec",
+      "due.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549120:20278334",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "describeWriteReminders",
+    "qualified_name": "describeWriteReminders",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549120,
+    "end_line": 549149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  id,\n  title,\n  notes,\n  due,\n  completed,\n  list,\n  currentTitle,\n  delete: remove\n}"
+    ],
+    "body_sha256": "5e55ef4c382198ac3f37da91959fe53f5322224a88be2dbf5f0c2e6c68fe6157",
+    "calls": [
+      ".join",
+      "changes.join",
+      "completedChange",
+      "dueChange",
+      "dueText",
+      "notesChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549150:20279287",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "dueChange",
+    "qualified_name": "dueChange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549150,
+    "end_line": 549152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "due"
+    ],
+    "body_sha256": "173d2b7d400dcfa1fbb3bf8a005ca1407705b83cadfaa2a6532224eb94beaa97",
+    "calls": [
+      "dueText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549153:20279394",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "notesChange",
+    "qualified_name": "notesChange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549153,
+    "end_line": 549155,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "notes"
+    ],
+    "body_sha256": "09f107f4bc3c585ace3fc2434f128f0abc24ea0bbe62e290d1246e0fbf9b8f92",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549156:20279504",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "completedChange",
+    "qualified_name": "completedChange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549156,
+    "end_line": 549158,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "completed"
+    ],
+    "body_sha256": "281afce9a9cfdc0b4bdd03089252470e68e4c0c24f1436162bd49b6a1d9d0edb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549170:20281743",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "inputOf",
+    "qualified_name": "inputOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549170,
+    "end_line": 549179,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ id, currentTitle, delete: remove, title, notes, due, completed, list }"
+    ],
+    "body_sha256": "42678b94051c370c3de7814b5482dbc8917d48be3a14290b5f01f800ab07ead0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:549180:20281947",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/ios-write-reminders.ts",
+    "name": "describeCall",
+    "qualified_name": "describeCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 549180,
+    "end_line": 549183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "29dc3c8b883a49f8443da1f9d60bd231bedf3459039ffd3947d80ab49cf2ffba",
+    "calls": [
+      "describeWriteReminders",
+      "writeRemindersParameters.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

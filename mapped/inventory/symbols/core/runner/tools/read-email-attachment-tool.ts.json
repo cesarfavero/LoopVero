@@ -1,0 +1,592 @@
+[
+  {
+    "id": "host:764933:29301491",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "displayAttachmentName",
+    "qualified_name": "displayAttachmentName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764933,
+    "end_line": 764935,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "dc5d2af2d2ec811ed3aeb83d2f290d06a64218bcc4ad6b38df2b0c49217c708a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764936:29301631",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "storedAttachmentName",
+    "qualified_name": "storedAttachmentName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764936,
+    "end_line": 764939,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "c7accfa5d6e59061b0116e33a16acf075e88a5b4ab0d4a7f1d33053aeb0d2658",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764940:29301791",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "describe3",
+    "qualified_name": "describe3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764940,
+    "end_line": 764942,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "67e7385c48fc7c58126b3d0996e91686d539b405fed6f30460fd52112dfe93db",
+    "calls": [
+      "displayAttachmentName",
+      "formatEmailAttachmentSize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764943:29301945",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "renderEmailAttachmentText",
+    "qualified_name": "renderEmailAttachmentText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764943,
+    "end_line": 764956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachment",
+      "text3",
+      "truncated"
+    ],
+    "body_sha256": "fd31157ebc774729ab9925631422bf9acc272d92d31083d0788487d34cf4a16b",
+    "calls": [
+      "Math.round",
+      "describe3",
+      "lines2.join",
+      "lines2.push",
+      "text3.trimEnd"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764957:29302354",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "renderEmailAttachmentSaved",
+    "qualified_name": "renderEmailAttachmentSaved",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764957,
+    "end_line": 764962,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachment",
+      "path33"
+    ],
+    "body_sha256": "5a47968445e3671819e7bf8b40ec85a1885dc6694ab2c5156080be132b0f98c3",
+    "calls": [
+      ".join",
+      "describe3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764963:29302628",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "readEmailAttachment",
+    "qualified_name": "readEmailAttachment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764963,
+    "end_line": 764991,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "cab3d35042d0909f98a370a45ef1d02c090f7ca5e8e1a16c08206839aaca8641",
+    "calls": [
+      "deps.email.readAttachment",
+      "deps.getPersistMediaBytes",
+      "describe3",
+      "new SandToolInputError",
+      "persist",
+      "renderEmailAttachmentSaved",
+      "renderEmailAttachmentText",
+      "storedAttachmentName",
+      "url2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764992:29303736",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "createReadEmailAttachmentTool",
+    "qualified_name": "createReadEmailAttachmentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764992,
+    "end_line": 765001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "ed6b8e2cfaa4c78f78323fb0c70598f01f2a79b1dffd37b222176f6bb672b6e8",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764998:29303997",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReadEmailAttachmentTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764998,
+    "end_line": 764998,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "356d10241d3089c87f177cab3946da62875e6d0c97f2c7b9d80d159c46199f70",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764999:29304054",
+    "artifact": "host",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadEmailAttachmentTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764999,
+    "end_line": 764999,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "733c22e9adcd63711a7e9179f2c9245b081f7a362a123541a9cd7c6d9ad4cfb9",
+    "calls": [
+      "readEmailAttachment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558301:20721677",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "displayAttachmentName",
+    "qualified_name": "displayAttachmentName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558301,
+    "end_line": 558303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "dc5d2af2d2ec811ed3aeb83d2f290d06a64218bcc4ad6b38df2b0c49217c708a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558304:20721817",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "storedAttachmentName",
+    "qualified_name": "storedAttachmentName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558304,
+    "end_line": 558307,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "c7accfa5d6e59061b0116e33a16acf075e88a5b4ab0d4a7f1d33053aeb0d2658",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558308:20721977",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "describe3",
+    "qualified_name": "describe3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558308,
+    "end_line": 558310,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "67e7385c48fc7c58126b3d0996e91686d539b405fed6f30460fd52112dfe93db",
+    "calls": [
+      "displayAttachmentName",
+      "formatEmailAttachmentSize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558311:20722131",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "renderEmailAttachmentText",
+    "qualified_name": "renderEmailAttachmentText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558311,
+    "end_line": 558324,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachment",
+      "text3",
+      "truncated"
+    ],
+    "body_sha256": "fd31157ebc774729ab9925631422bf9acc272d92d31083d0788487d34cf4a16b",
+    "calls": [
+      "Math.round",
+      "describe3",
+      "lines2.join",
+      "lines2.push",
+      "text3.trimEnd"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558325:20722540",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "renderEmailAttachmentSaved",
+    "qualified_name": "renderEmailAttachmentSaved",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558325,
+    "end_line": 558330,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachment",
+      "path33"
+    ],
+    "body_sha256": "5a47968445e3671819e7bf8b40ec85a1885dc6694ab2c5156080be132b0f98c3",
+    "calls": [
+      ".join",
+      "describe3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558331:20722814",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "readEmailAttachment",
+    "qualified_name": "readEmailAttachment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558331,
+    "end_line": 558359,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "b0ce9ce24270d95eff89cd3e88a634f5c778ffc967f238e35a6e4c33870b8a1c",
+    "calls": [
+      "deps.email.readAttachment",
+      "deps.getPersistMediaBytes",
+      "describe3",
+      "new SandToolInputError",
+      "persist",
+      "renderEmailAttachmentSaved",
+      "renderEmailAttachmentText",
+      "storedAttachmentName",
+      "url2.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558360:20723921",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "createReadEmailAttachmentTool",
+    "qualified_name": "createReadEmailAttachmentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558360,
+    "end_line": 558369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "ed6b8e2cfaa4c78f78323fb0c70598f01f2a79b1dffd37b222176f6bb672b6e8",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558366:20724182",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createReadEmailAttachmentTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558366,
+    "end_line": 558366,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "356d10241d3089c87f177cab3946da62875e6d0c97f2c7b9d80d159c46199f70",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:558367:20724239",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/read-email-attachment-tool.ts",
+    "name": "execute",
+    "qualified_name": "createReadEmailAttachmentTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 558367,
+    "end_line": 558367,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "733c22e9adcd63711a7e9179f2c9245b081f7a362a123541a9cd7c6d9ad4cfb9",
+    "calls": [
+      "readEmailAttachment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

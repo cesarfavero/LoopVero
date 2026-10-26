@@ -1,0 +1,674 @@
+[
+  {
+    "id": "host:175715:7458366",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "parseJwtPayload",
+    "qualified_name": "parseJwtPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175715,
+    "end_line": 175725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "token"
+    ],
+    "body_sha256": "5dc0b17970850f9c14fc0637fa2afea7cc492d3f1ae5058c080dc73d356c4e91",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "JSON.parse",
+      "jwtPayloadSchema.safeParse",
+      "token.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:175726:7458726",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountSubjectScope",
+    "qualified_name": "accountSubjectScope",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175726,
+    "end_line": 175729,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subject"
+    ],
+    "body_sha256": "82e6a5e0bf58b8d2ccac4effacf8d80e92ee6383483cad99d7cc38999c6c4e8d",
+    "calls": [
+      "accountScopeOfPrincipal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175730:7458888",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "tokenSubjectScope",
+    "qualified_name": "tokenSubjectScope",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175730,
+    "end_line": 175733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accessToken"
+    ],
+    "body_sha256": "b239582040885db3b13775b53a708cdfaef64dd0bc28ea88d14e78a937d321b7",
+    "calls": [
+      "accountSubjectScope",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175734:7459039",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountScopeOfPrincipal",
+    "qualified_name": "accountScopeOfPrincipal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175734,
+    "end_line": 175736,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ principal }"
+    ],
+    "body_sha256": "a394ebc170283cbcc6509c2757d81517ee6a510e99434e6b8d6eefd234faa023",
+    "calls": [
+      ".digest",
+      ".update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175737:7459179",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountScopeOfToken",
+    "qualified_name": "accountScopeOfToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175737,
+    "end_line": 175739,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ accessToken }"
+    ],
+    "body_sha256": "1dcbf4ca59262bee786af2b11c94c17ecebf79dcb9034d8d717161af363efd45",
+    "calls": [
+      "accountScopeOfPrincipal",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175740:7459328",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "getAccessTokenExpiryMs",
+    "qualified_name": "getAccessTokenExpiryMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175740,
+    "end_line": 175743,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "token"
+    ],
+    "body_sha256": "5390a04896312da9a9b9c8bf50325b5d1b49afde3610268a40dacae78e2b8eb9",
+    "calls": [
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175744:7459471",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "backendUrlOf",
+    "qualified_name": "backendUrlOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175744,
+    "end_line": 175746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sandBackendUrl",
+      "cursorApiBaseUrl"
+    ],
+    "body_sha256": "f06fa0c208904493764194edcc98a401e46ce358fbe0f3b6e8be0aba6116d58e",
+    "calls": [
+      ".toString",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175747:7459626",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "originBackendUrlOf",
+    "qualified_name": "originBackendUrlOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175747,
+    "end_line": 175752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "configuredOriginBackendUrl",
+      "readBackendUrl"
+    ],
+    "body_sha256": "4287e249d64cd7a36940293ae8c16ec1d9b5577d578ff69b4a00b29328ccb5cb",
+    "calls": [
+      ".toString",
+      "configuredOriginBackendUrl.trim",
+      "new URL",
+      "readBackendUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175753:7460044",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "dashboardUrlOf",
+    "qualified_name": "dashboardUrlOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175753,
+    "end_line": 175761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readBackendUrl"
+    ],
+    "body_sha256": "3443b028dc374573d259ba58800195f68e69f9885ed5fc0b172c986536035bcf",
+    "calls": [
+      ".hostname.toLowerCase",
+      "isLocalDevBackendHostname",
+      "new URL",
+      "readBackendUrl"
+    ],
+    "writes": [
+      "backendHostname"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:175762:7460362",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "authClientIdOf",
+    "qualified_name": "authClientIdOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175762,
+    "end_line": 175766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backendUrl",
+      "override"
+    ],
+    "body_sha256": "f858915d1e4abf9c678acb3d78dc1e8e50ae8c264878ee41c5fcd71513eef557",
+    "calls": [
+      "isDevBackendHostname",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175767:7460611",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "isLocalDevBackendHostname",
+    "qualified_name": "isLocalDevBackendHostname",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175767,
+    "end_line": 175769,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostname4"
+    ],
+    "body_sha256": "23b6a9533e3803bbdea6f08f70695cfabfde0d6e3c59e8746e1d86a2f3a1d390",
+    "calls": [
+      "hostname4.includes",
+      "isLoopbackHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:175772:7461020",
+    "artifact": "host",
+    "module": "shared/node/cursor-token.ts",
+    "name": "src/shared/node/cursor-token.ts",
+    "qualified_name": "src/shared/node/cursor-token.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 175772,
+    "end_line": 175790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "6bcc521a96da121f8abf84c012a6dad4ec197528ece5101ddbb608d2254527b8",
+    "calls": [
+      ".optional",
+      ".passthrough",
+      "init_dev_login",
+      "init_loopback_host",
+      "init_v4",
+      "number2",
+      "object",
+      "require",
+      "string2"
+    ],
+    "writes": [
+      "DEFAULT_CURSOR_BACKEND_URL",
+      "DEFAULT_CURSOR_DASHBOARD_URL",
+      "DEFAULT_LOCAL_DASHBOARD_URL",
+      "DEFAULT_ORIGIN_BACKEND_URL",
+      "DEV_AUTH_CLIENT_ID",
+      "PROD_AUTH_CLIENT_ID",
+      "TOKEN_REFRESH_LEEWAY_MS",
+      "import_node_crypto7",
+      "jwtPayloadSchema"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511694:18582718",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "parseJwtPayload",
+    "qualified_name": "parseJwtPayload",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511694,
+    "end_line": 511704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "token"
+    ],
+    "body_sha256": "1c4fb2bef80f6cef31acd47ea27f519e5e74d0e0d4c047db34d113bead0343a2",
+    "calls": [
+      ".toString",
+      "Buffer.from",
+      "JSON.parse",
+      "jwtPayloadSchema.safeParse",
+      "token.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:511705:18583075",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountSubjectScope",
+    "qualified_name": "accountSubjectScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511705,
+    "end_line": 511708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subject"
+    ],
+    "body_sha256": "82e6a5e0bf58b8d2ccac4effacf8d80e92ee6383483cad99d7cc38999c6c4e8d",
+    "calls": [
+      "accountScopeOfPrincipal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511709:18583237",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "tokenSubjectScope",
+    "qualified_name": "tokenSubjectScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511709,
+    "end_line": 511712,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accessToken"
+    ],
+    "body_sha256": "b239582040885db3b13775b53a708cdfaef64dd0bc28ea88d14e78a937d321b7",
+    "calls": [
+      "accountSubjectScope",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511713:18583388",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountScopeOfPrincipal",
+    "qualified_name": "accountScopeOfPrincipal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511713,
+    "end_line": 511715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ principal }"
+    ],
+    "body_sha256": "09226d192536cb2413abd6ae46e3da9e907b5d6d614ca23a0193f3f4791bc96e",
+    "calls": [
+      ".digest",
+      ".update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511716:18583529",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "accountScopeOfToken",
+    "qualified_name": "accountScopeOfToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511716,
+    "end_line": 511718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ accessToken }"
+    ],
+    "body_sha256": "1dcbf4ca59262bee786af2b11c94c17ecebf79dcb9034d8d717161af363efd45",
+    "calls": [
+      "accountScopeOfPrincipal",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511719:18583678",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "backendUrlOf",
+    "qualified_name": "backendUrlOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511719,
+    "end_line": 511721,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sandBackendUrl",
+      "cursorApiBaseUrl"
+    ],
+    "body_sha256": "f06fa0c208904493764194edcc98a401e46ce358fbe0f3b6e8be0aba6116d58e",
+    "calls": [
+      ".toString",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511722:18583833",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "originBackendUrlOf",
+    "qualified_name": "originBackendUrlOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511722,
+    "end_line": 511727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "configuredOriginBackendUrl",
+      "readBackendUrl"
+    ],
+    "body_sha256": "4287e249d64cd7a36940293ae8c16ec1d9b5577d578ff69b4a00b29328ccb5cb",
+    "calls": [
+      ".toString",
+      "configuredOriginBackendUrl.trim",
+      "new URL",
+      "readBackendUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511728:18584251",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-token.ts",
+    "name": "authClientIdOf",
+    "qualified_name": "authClientIdOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511728,
+    "end_line": 511732,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backendUrl",
+      "override"
+    ],
+    "body_sha256": "9942bacc8f12d24e82acb8dd5d617181d72c5e3b198e017bd772d7e25ea737c3",
+    "calls": [
+      "isDevBackendHostname",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

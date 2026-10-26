@@ -1,0 +1,132 @@
+[
+  {
+    "id": "host:495003:18162193",
+    "artifact": "host",
+    "module": "host/agents/settings-file.ts",
+    "name": "getSandSettingsPath",
+    "qualified_name": "getSandSettingsPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 495003,
+    "end_line": 495005,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "a85e1837315905ac4b3099b44f3f5212d8a5e6d2e7a88dcbc7535d5f07300085",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:495006:18162309",
+    "artifact": "host",
+    "module": "host/agents/settings-file.ts",
+    "name": "readRawSettings",
+    "qualified_name": "readRawSettings",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 495006,
+    "end_line": 495015,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "9428fcc92b3c7c4468824f84cb817231894e7bc27c05f2dece3677e0ecf96392",
+    "calls": [
+      "parseRawSandSettings",
+      "readSandDataFileIfPresentSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:495016:18162611",
+    "artifact": "host",
+    "module": "host/agents/settings-file.ts",
+    "name": "readSandSettingsFile",
+    "qualified_name": "readSandSettingsFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 495016,
+    "end_line": 495018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "62ae335b194a9d1b135dce6a4b3cd99169846be9e6ab07e8a9ffe6909aaaa66a",
+    "calls": [
+      "readRawSettings",
+      "settingsConfigFromRaw"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:495019:18162710",
+    "artifact": "host",
+    "module": "host/agents/settings-file.ts",
+    "name": "writeSandSettingsFile",
+    "qualified_name": "writeSandSettingsFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 495019,
+    "end_line": 495021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "update"
+    ],
+    "body_sha256": "e596d7f62eb1e70c8b104d1958beac19247269c52cf7e52dea91260e8f5f1bdf",
+    "calls": [
+      "readRawSettings",
+      "serializeSandSettingsFile",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

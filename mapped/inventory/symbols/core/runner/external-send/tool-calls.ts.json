@@ -1,0 +1,597 @@
+[
+  {
+    "id": "evaluation:539034:19882993",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "classifyMcpInvocation",
+    "qualified_name": "classifyMcpInvocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539034,
+    "end_line": 539041,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "754ec62809a1458dd056396d505f0362bf41f1bee3496c4d476740ffd230bdfe",
+    "calls": [
+      "mcpInvocationArgsSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539042:19883322",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "classifyProviderKeyedTool",
+    "qualified_name": "classifyProviderKeyedTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539042,
+    "end_line": 539050,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "args",
+      "resolveHost"
+    ],
+    "body_sha256": "ca2e80f0a2760d3714a244d78d378e2514a23321961d0b51887263c0b76051a5",
+    "calls": [
+      "resolveHost",
+      "toolName.lastIndexOf",
+      "toolName.slice"
+    ],
+    "writes": [
+      "end"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539051:19883709",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "classifyToolCall",
+    "qualified_name": "classifyToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539051,
+    "end_line": 539053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "args",
+      "resolveHost"
+    ],
+    "body_sha256": "02d9b8e9debdbee27dc8a23ccc1043f1dbe1093c249a3305d007763659ca1257",
+    "calls": [
+      "MCP_INVOCATION_TOOL_NAMES.has",
+      "classifyMcpInvocation",
+      "classifyProviderKeyedTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539054:19883905",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "forEachToolCall",
+    "qualified_name": "forEachToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539054,
+    "end_line": 539065,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "visit3"
+    ],
+    "body_sha256": "208e6175300e73d553bf09dd960310109da1b08c7b3d69a4abed442ef9cc050c",
+    "calls": [
+      "messages.forEach"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539066:19884236",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "classifyMcpToolCalls",
+    "qualified_name": "classifyMcpToolCalls",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539066,
+    "end_line": 539083,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "resolveHost",
+      "skipToolCallIds"
+    ],
+    "body_sha256": "257cb1618ba5b839f104b81042f515344af82ce26c85c5e8d75e92507b4d322e",
+    "calls": [
+      "forEachToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539084:19884770",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "withServerHost",
+    "qualified_name": "withServerHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539084,
+    "end_line": 539088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "calls"
+    ],
+    "body_sha256": "3758c842f7c218a8a89b0d279d58230a3a7f3d93069c0c5ed806b8502814f7a4",
+    "calls": [
+      "calls.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539089:19884948",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "withoutServerHost",
+    "qualified_name": "withoutServerHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539089,
+    "end_line": 539093,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "calls"
+    ],
+    "body_sha256": "71ce22a0e168b303b5d8eacb1c78a6b1e231a97c6be55e77f3672a2a9da76da7",
+    "calls": [
+      "calls.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539094:19885133",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "hasUnresolvedMcpInvocation",
+    "qualified_name": "hasUnresolvedMcpInvocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539094,
+    "end_line": 539108,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "resolveHost",
+      "skipToolCallIds"
+    ],
+    "body_sha256": "fc78d83d281dfdddae9475a6cb20431adbb19633beb67543e4bb5fedc1657ae4",
+    "calls": [
+      "forEachToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539109:19885686",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "isUrlLessBoxPlaywrightTool",
+    "qualified_name": "isUrlLessBoxPlaywrightTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539109,
+    "end_line": 539111,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "54f8da602ab15485403913e1d5482f1206c36a1f8ddfe073f9f3bd903192523a",
+    "calls": [
+      "playwrightBoxMcpWindowIndex",
+      "toolName.lastIndexOf",
+      "toolName.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539112:19885831",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "isUnresolvedProviderKeyedTool",
+    "qualified_name": "isUnresolvedProviderKeyedTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539112,
+    "end_line": 539114,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "resolveHost"
+    ],
+    "body_sha256": "f0c1fda43118ca8b3a7826a79c947345070345558a02163f3fbf157232be5d1e",
+    "calls": [
+      "classifyProviderKeyedTool",
+      "isUrlLessBoxPlaywrightTool",
+      "toolName.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539115:19886042",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "reviewedCommitToolCalls",
+    "qualified_name": "reviewedCommitToolCalls",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539115,
+    "end_line": 539132,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "reviewedCommit",
+      "skipToolCallIds"
+    ],
+    "body_sha256": "356736312db37adae7dcdf7c559fb9a41dc695e85e54a21d492b953481cf94d1",
+    "calls": [
+      "forEachToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539133:19886620",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "toolCallIds",
+    "qualified_name": "toolCallIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539133,
+    "end_line": 539137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "279bdf63944a5cdd1c0d16b921cdb70df7b471154afa565eec6c3bd9b7bb8d78",
+    "calls": [
+      "forEachToolCall",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539138:19886775",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "unresolvedToolCallIds",
+    "qualified_name": "unresolvedToolCallIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539138,
+    "end_line": 539151,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "60aedc08f0c41640547d49581b31350f004a933058ee7662e4ccce2bd18f210c",
+    "calls": [
+      "toolCallIds",
+      "unresolved.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539152:19887162",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "pendingToolCallIds",
+    "qualified_name": "pendingToolCallIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539152,
+    "end_line": 539164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pendingToolCalls"
+    ],
+    "body_sha256": "923ac9ca33c45460dcf48191a18e49e261b63f33162e9ba5efcfead793fd3e1f",
+    "calls": [
+      ".add",
+      ".filter",
+      "checkpointedMessageSchema.safeParse",
+      "new Set",
+      "safeJsonParse",
+      "toolCallIdPartSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539170:19887936",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "safeJsonParse",
+    "qualified_name": "safeJsonParse",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539170,
+    "end_line": 539176,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d8d67fe926f8d15d80cc286ea9439250b9daef4496e1c90b4cf779db841449c9",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:539177:19888039",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "findExternalSendConnector",
+    "qualified_name": "findExternalSendConnector",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539177,
+    "end_line": 539183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "connectors",
+      "serverHost",
+      "toolName"
+    ],
+    "body_sha256": "42765728666653533e1711bf18245a22d28221fb007714db793af59c33479260",
+    "calls": [
+      "findConnectorServedOn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539184:19888239",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "findConnectorServedOn",
+    "qualified_name": "findConnectorServedOn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539184,
+    "end_line": 539189,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "connectors",
+      "serverHost",
+      "accepts"
+    ],
+    "body_sha256": "f1a546f7491549afabeff6e47c8896154f7bf02c549145c8d8d26fc8eabb3f6f",
+    "calls": [
+      "connectors.find",
+      "host.split",
+      "serverHost.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539187:19888413",
+    "artifact": "evaluation",
+    "module": "core/runner/external-send/tool-calls.ts",
+    "name": "servedOn",
+    "qualified_name": "findConnectorServedOn/servedOn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539187,
+    "end_line": 539187,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate",
+      "key"
+    ],
+    "body_sha256": "31ae58f65526ff0c5e56e45510176881c572107b6a46ca0d406ec49cfde61c4f",
+    "calls": [
+      "accepts",
+      "candidate.hosts.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

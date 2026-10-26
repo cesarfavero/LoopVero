@@ -1,0 +1,134 @@
+[
+  {
+    "id": "evaluation:566277:21083024",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/turn-device-tools.ts",
+    "name": "phonePortForTurn",
+    "qualified_name": "phonePortForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566277,
+    "end_line": 566280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "04d04199d5669711d5224e1afe1c496657286053d4c29c089c3aab0a3b175cdc",
+    "calls": [
+      "host.gates.mobileLocalTools"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566281:21083170",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/turn-device-tools.ts",
+    "name": "deviceToolsForTurn",
+    "qualified_name": "deviceToolsForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566281,
+    "end_line": 566289,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "reviewOptions"
+    ],
+    "body_sha256": "5b69722a353e97b85f227371a0d479757a206fead804b056b669ec112be0eb7c",
+    "calls": [
+      "createDeviceLocalTools",
+      "phonePortForTurn",
+      "withDeviceToolAutoReview",
+      "withDeviceToolPermissionCards"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566286:21083413",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/turn-device-tools.ts",
+    "name": "assertNoPendingAutoReviewApproval",
+    "qualified_name": "deviceToolsForTurn/assertNoPendingAutoReviewApproval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566286,
+    "end_line": 566286,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8f2b280f09a680ec5f7f6d75271bee6c78e3c619fdfd43e1cf874a9aa3c48c69",
+    "calls": [
+      "host.assertNoPendingAutoReviewApproval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566290:21083548",
+    "artifact": "evaluation",
+    "module": "core/device-local-tools/turn-device-tools.ts",
+    "name": "unreachableDeviceToolError",
+    "qualified_name": "unreachableDeviceToolError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566290,
+    "end_line": 566301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "stepDeviceTools",
+      "toolName"
+    ],
+    "body_sha256": "1b2a22f1a1dc36dc44a8f7a855e6dcdb2860db9e66d54a24f21db17bd730f9ed",
+    "calls": [
+      "SAND_DEVICE_LOCAL_TOOLS.find",
+      "new CustomToolCallError",
+      "phonePortForTurn",
+      "sandNoPhoneForLocalToolMessage",
+      "stepDeviceTools.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

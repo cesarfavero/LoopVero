@@ -1,0 +1,140 @@
+[
+  {
+    "id": "host:497778:18263366",
+    "artifact": "host",
+    "module": "host/connectors/channel-attachment.ts",
+    "name": "tryParseUrl",
+    "qualified_name": "tryParseUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497778,
+    "end_line": 497784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "40327e72e2f6f1cc378d4830d0b494821b9e10770ef80aac63f9a8c1a0979dfc",
+    "calls": [
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:497785:18263462",
+    "artifact": "host",
+    "module": "host/connectors/channel-attachment.ts",
+    "name": "toLocalPath",
+    "qualified_name": "toLocalPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497785,
+    "end_line": 497798,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "9045bcd302fd5fc5bfb467fa32169c781f9fd79c5dad7be7dbe06ac2fe276bec",
+    "calls": [
+      "tryParseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:497799:18263762",
+    "artifact": "host",
+    "module": "host/connectors/channel-attachment.ts",
+    "name": "urlLooksLikeImage",
+    "qualified_name": "urlLooksLikeImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497799,
+    "end_line": 497803,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "aa6b4805d404566c7096ff3256a69ad184ebec36cd0cb13590457b6b8b8df29a",
+    "calls": [
+      "imageMimeFromPath",
+      "tryParseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497804:18263925",
+    "artifact": "host",
+    "module": "host/connectors/channel-attachment.ts",
+    "name": "resolveChannelAttachment",
+    "qualified_name": "resolveChannelAttachment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497804,
+    "end_line": 497839,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawUrl"
+    ],
+    "body_sha256": "97d50a56370f6ded40d4bd14a0fe9d399fcb1c65c1c1ef8a5c6567bfef4aa897",
+    "calls": [
+      "imageMimeFromPath",
+      "import_node_fs39.promises.readFile",
+      "import_node_fs39.promises.stat",
+      "new Uint8Array",
+      "reanchorSandPath",
+      "reportFallbackUnlessAbsent",
+      "stat26.isFile",
+      "toLocalPath",
+      "tryParseUrl",
+      "urlLooksLikeImage",
+      "videoMimeFromPath"
+    ],
+    "writes": [
+      "data2",
+      "size"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 8,
+      "throws": 0,
+      "catches": 2
+    }
+  }
+]

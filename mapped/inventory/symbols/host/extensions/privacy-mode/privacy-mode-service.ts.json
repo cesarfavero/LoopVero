@@ -1,0 +1,490 @@
+[
+  {
+    "id": "host:706488:26832988",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "createPrivacyModeService",
+    "qualified_name": "createPrivacyModeService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706488,
+    "end_line": 706592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  auth: auth2,\n  load: load2,\n  policies: policies2,\n  clock,\n  logger: logger132\n}"
+    ],
+    "body_sha256": "bbc63d6dd4fd2cb05716c0228c0e47d751ce32b194793c924c7175a021baa8b5",
+    "calls": [
+      "auth2.subscribeToRenewal",
+      "createWatchChannel",
+      "policies2.refreshPolling.start",
+      "reconcileAuth"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706504:26833363",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "onSubscriberError",
+    "qualified_name": "createPrivacyModeService/onSubscriberError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706504,
+    "end_line": 706504,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "c7dbf85949c5aeba2ca6aecbc6dbdc3239972c2e8de6cd0fff172900dfd68491",
+    "calls": [
+      "logger132.error"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706506:26833459",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "publish",
+    "qualified_name": "createPrivacyModeService/publish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706506,
+    "end_line": 706512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "5a8a728f53fe66ab95a3e6447bd1ed32f7c2f5a90d1db2374fbf24b9ff155bb0",
+    "calls": [
+      "observationReceiver.get",
+      "observationSender.send"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706513:26833703",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "refresh",
+    "qualified_name": "createPrivacyModeService/refresh",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706513,
+    "end_line": 706544,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "70ca3a8ea71e6910200079fcc847c785da68dd0af75d3584012addbd962bad07",
+    "calls": [
+      "activeRefresh.abort",
+      "clock.now",
+      "logger132.warn",
+      "new AbortController",
+      "policies2.lookupRetry.runWithRetry",
+      "publish",
+      "toPrivacyMode2"
+    ],
+    "writes": [
+      "activeRefresh",
+      "generation"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:706545:26834740",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "reconcileAuth",
+    "qualified_name": "createPrivacyModeService/reconcileAuth",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706545,
+    "end_line": 706564,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "29f64725792e6f68b259fdda3781a7e90068dd3c389bc4e3706f3b989bce4328",
+    "calls": [
+      "activeRefresh.abort",
+      "auth2.peekAccessToken",
+      "publish",
+      "readAuth",
+      "refresh"
+    ],
+    "writes": [
+      "activeAuth",
+      "activeRefresh",
+      "generation"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706574:26835701",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "get",
+    "qualified_name": "createPrivacyModeService/get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706574,
+    "end_line": 706574,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7715c98d85d50c23b08a108bc79f745bdb49c2b2efc7ea1d9625e14cc754a929",
+    "calls": [
+      "observationReceiver.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706575:26835747",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "subscribe",
+    "qualified_name": "createPrivacyModeService/subscribe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706575,
+    "end_line": 706578,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "f575ac294c35d4b8521e1901ac3b7b7e420ea6c0e60ca6e374bd08aaf45c190f",
+    "calls": [
+      "observationReceiver.subscribe"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706579:26835889",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "dispose",
+    "qualified_name": "createPrivacyModeService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706579,
+    "end_line": 706590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "ff800363937726c4c79e010ffa2d7de031ff9aea8766a5716cf8f45098496fdd",
+    "calls": [
+      "activeRefresh.abort",
+      "observationSender.dispose",
+      "polling.dispose",
+      "unsubscribeFromRenewal"
+    ],
+    "writes": [
+      "activeRefresh",
+      "disposed",
+      "generation"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706593:26836148",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "createPrivacyModeLogger",
+    "qualified_name": "createPrivacyModeLogger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706593,
+    "end_line": 706601,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "log5"
+    ],
+    "body_sha256": "0789b073fae8ec7c49642ef92bccbc4fbf5702f84efadcc51820a36837898daf",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706594:26836206",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "write4",
+    "qualified_name": "createPrivacyModeLogger/write4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706594,
+    "end_line": 706596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "message",
+      "error64"
+    ],
+    "body_sha256": "339ff21621e71b2c5b8d78ccaaf0fd881a0c6bd3d0add33a1db7f331234de317",
+    "calls": [
+      "formatLogMessage",
+      "log5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706598:26836340",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "error",
+    "qualified_name": "createPrivacyModeLogger/error",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706598,
+    "end_line": 706598,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "4a5df34f5a4e47ee322abdc5bd0656abdf9de3063378698157097cc44f1c3792",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706599:26836407",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "warn",
+    "qualified_name": "createPrivacyModeLogger/warn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706599,
+    "end_line": 706599,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "f3c6bbfb23e589fbaec1729cf57b3343639851806c57258d43d1dbe3b22bd775",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706602:26836469",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "isRetryablePrivacyModeLookupError",
+    "qualified_name": "isRetryablePrivacyModeLookupError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706602,
+    "end_line": 706604,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "2281dd0560d690f8ca2edaa00e29ca5c70ab503a63027a7dbb5e308e1d329488",
+    "calls": [
+      "error64.metadata.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706605:26836732",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "readAuth",
+    "qualified_name": "readAuth",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706605,
+    "end_line": 706615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accessToken",
+      "logger132"
+    ],
+    "body_sha256": "da818847af3f4341948be48f3524cf3f6a4bc3fe23b8e5831107f24c3600e143",
+    "calls": [
+      "logger132.warn",
+      "parseJwtPayload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:706616:26837091",
+    "artifact": "host",
+    "module": "host/extensions/privacy-mode/privacy-mode-service.ts",
+    "name": "toPrivacyMode2",
+    "qualified_name": "toPrivacyMode2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 706616,
+    "end_line": 706626,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "95bf16e873e3b17fcc9d6c458064034be1fbe2411160ade4a61318f558ae3926",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

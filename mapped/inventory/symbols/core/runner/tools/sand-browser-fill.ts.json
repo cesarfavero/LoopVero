@@ -1,0 +1,4578 @@
+[
+  {
+    "id": "host:726800:27613782",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "createSandBrowserOpRunner",
+    "qualified_name": "createSandBrowserOpRunner",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726800,
+    "end_line": 726951,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "6da68878cc0a17c5f78db9f58b40411ccbf71e3b8e007d7de24b51b66721f113",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726802:27613866",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "ensureUploaded",
+    "qualified_name": "createSandBrowserOpRunner/ensureUploaded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726802,
+    "end_line": 726813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "7c7f7992fe12c9a49833a134cb7e3fa2ac555de5306962b1f95cec7b4049f8e4",
+    "calls": [
+      ".catch",
+      "deps.agentBox.uploadFile",
+      "import_node_buffer6.Buffer.from"
+    ],
+    "writes": [
+      "uploaded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726814:27614272",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "sensitiveRequest",
+    "qualified_name": "createSandBrowserOpRunner/sensitiveRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726814,
+    "end_line": 726891,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "encoded",
+      "op"
+    ],
+    "body_sha256": "04d7108638ddfc194ddc2ff6e52ec6ab181bfb77477724ef0ba8e82507355696",
+    "calls": [
+      ".execute",
+      "Date.now",
+      "deps.agentBox.downloadFile.bind",
+      "deps.resourceAccessor.get",
+      "downloadTerminal",
+      "new BackgroundShellSpawnArgs",
+      "new WriteShellStdinArgs",
+      "parseDriverResponse",
+      "parseShellTerminalFooter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726851:27615860",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "downloadTerminal",
+    "qualified_name": "createSandBrowserOpRunner/sensitiveRequest/downloadTerminal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726851,
+    "end_line": 726859,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dfa37782ad23079e57e014f1c4d07ca066cc98ee8d5b3b7cfeb8101a05464f75",
+    "calls": [
+      ".then",
+      "downloadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726893:27617393",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "run",
+    "qualified_name": "createSandBrowserOpRunner/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726893,
+    "end_line": 726949,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "op",
+      "args"
+    ],
+    "body_sha256": "da00f2b553b6a24807c0a03602076667ad1b2b746285b8848c608b03a0c29493",
+    "calls": [
+      ".execute",
+      ".toString",
+      "Date.now",
+      "JSON.stringify",
+      "Object.hasOwn",
+      "buildHostShellArgs",
+      "deps.resourceAccessor.get",
+      "describeSandBrowserShellError",
+      "ensureUploaded",
+      "errorMessage",
+      "import_node_buffer6.Buffer.from",
+      "parseDriverResponse",
+      "sensitiveRequest"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:726955:27619798",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "withSandDriverRefNamespace",
+    "qualified_name": "withSandDriverRefNamespace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726955,
+    "end_line": 726963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runner"
+    ],
+    "body_sha256": "94f1f28f53eac0b333863f63566d02b481f8a8b64cc93bc5f9b61c611239d8ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726957:27619864",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "run",
+    "qualified_name": "withSandDriverRefNamespace/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726957,
+    "end_line": 726961,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "op",
+      "args"
+    ],
+    "body_sha256": "76a46dab503c7cb284f566da1551bbe9c11c4e1e36befd7b191064a691c55f25",
+    "calls": [
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726964:27620034",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isSandDriverNamespacedRef",
+    "qualified_name": "isSandDriverNamespacedRef",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726964,
+    "end_line": 726966,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "6367616ef3c5e3d8d3ef6be782cff1b7633e55aed5c9eb5b36e5d0afae3fc203",
+    "calls": [
+      "SAND_DRIVER_NAMESPACED_REF_PATTERN.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726969:27620251",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickRefLine",
+    "qualified_name": "pickRefLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726969,
+    "end_line": 726981,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "preferredRole",
+      "matches"
+    ],
+    "body_sha256": "8e5ee8be2cf640957c5100effd01fd109d7e60fa0962ecd1aa2b991a196ab87f",
+    "calls": [
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "matches"
+    ],
+    "writes": [
+      "any2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726982:27620723",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+    "qualified_name": "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726982,
+    "end_line": 726984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "45d0868eb76062abb33364f361a28f71ef4afd9e507bed3c8a59d13d57875638",
+    "calls": [
+      ".replace",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726986:27620912",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "wordsOf2",
+    "qualified_name": "wordsOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726986,
+    "end_line": 726988,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fc00224fc6ec28bec0cf54072999bf1fd6f9ae97c1502e3c1bf8e1235da7ea91",
+    "calls": [
+      ".match",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:726989:27621003",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber",
+    "qualified_name": "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 726989,
+    "end_line": 727004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "db495096c24eee326c09d4343352b659060adbb323c1e01af928a1b7b3692731",
+    "calls": [
+      "collapsed.push",
+      "wordsOf2"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727005:27621476",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+    "qualified_name": "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727005,
+    "end_line": 727019,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole"
+    ],
+    "body_sha256": "79982cd334fbdc753511bf63c626903f741b961a7239da358dd33e3ce21015aa",
+    "calls": [
+      "SNAPSHOT_LINE_NAME_PATTERN.exec",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "labelWords.every",
+      "new Set",
+      "wordsOf2",
+      "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber"
+    ],
+    "writes": [
+      "only"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727020:27622202",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+    "qualified_name": "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727020,
+    "end_line": 727036,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole"
+    ],
+    "body_sha256": "4759b19cf76f4af72b787406ea1501d01c1bea8ca770388564141cf737c12a8a",
+    "calls": [
+      "SNAPSHOT_LINE_NAME_PATTERN.exec",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "nameWords.every",
+      "new Set",
+      "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber"
+    ],
+    "writes": [
+      "only"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727037:27623002",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "leadingIndent",
+    "qualified_name": "leadingIndent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727037,
+    "end_line": 727039,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "f40eaaeab9349e756df219a286f2499aa7755ca24cb5e476562ab2894c5a3740",
+    "calls": [
+      "/^\\s*/.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727040:27623080",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "unescapedSnapshotName",
+    "qualified_name": "unescapedSnapshotName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727040,
+    "end_line": 727050,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "0a2e74bd86632953af0460b7a982205829a0de153e148dc73f395b4791d1c4f4",
+    "calls": [
+      "JSON.parse",
+      "SNAPSHOT_LINE_NAME_PATTERN.exec"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:727051:27623417",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "exactMatchesInScope",
+    "qualified_name": "exactMatchesInScope",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727051,
+    "end_line": 727059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matches",
+      "frameNeedle",
+      "inFrame",
+      "uniqueExactAcrossFrames"
+    ],
+    "body_sha256": "d240a6fd097b7e71035733f92f9c34474056a479a4c00d3692a4ac2c921e73fc",
+    "calls": [
+      "inFrame",
+      "matches.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727060:27623877",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "exactAccessibleNameRef",
+    "qualified_name": "exactAccessibleNameRef",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727060,
+    "end_line": 727088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole",
+      "frame",
+      "uniqueExactAcrossFrames"
+    ],
+    "body_sha256": "6be23d2be15e3d4aa082a5195267811b01c722727755276f41dbfac8f17c7db5",
+    "calls": [
+      ".toLowerCase",
+      ".trim",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "exactMatchesInScope",
+      "frame.trim",
+      "frames.pop",
+      "frames.push",
+      "leadingIndent",
+      "matches.push",
+      "unescapedSnapshotName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727079:27624785",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "inFrame",
+    "qualified_name": "exactAccessibleNameRef/inFrame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727079,
+    "end_line": 727079,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "frameName"
+    ],
+    "body_sha256": "c63446e96d7d11227ff23c802e0e312a9b664a1b0d71e32460a2cfba09db0795",
+    "calls": [
+      "frameName.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727089:27625153",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolveLabelRefFromSnapshot",
+    "qualified_name": "resolveLabelRefFromSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727089,
+    "end_line": 727119,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot",
+      "label",
+      "preferredRole",
+      "disambiguation"
+    ],
+    "body_sha256": "d69de0970ec133eb55a0df57e82d3b28532d2b15b08ff99bbec2f66c36f9fdd6",
+    "calls": [
+      ".toLowerCase",
+      "disambiguation.frame.trim",
+      "exactAccessibleNameRef",
+      "label.trim",
+      "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+      "pickRefLine",
+      "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+      "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+      "snapshot.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727120:27626724",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "firstRefFromSnapshot",
+    "qualified_name": "firstRefFromSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727120,
+    "end_line": 727122,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot"
+    ],
+    "body_sha256": "fa7c9358a08cf54425792cb3a7eedc9f1fa8403458e739c0ca69d0ed6f40bbca",
+    "calls": [
+      "SNAPSHOT_REF_PATTERN.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727123:27626819",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "cardFormAwareFillOp",
+    "qualified_name": "cardFormAwareFillOp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727123,
+    "end_line": 727128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "op",
+      "isCardForm"
+    ],
+    "body_sha256": "6580b035fcfb97309a1961118fc91f69710c5ca7ac93c58a89872df015ff5a0c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727126:27626902",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "args",
+    "qualified_name": "cardFormAwareFillOp/args",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727126,
+    "end_line": 727126,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ref2",
+      "value"
+    ],
+    "body_sha256": "ee5bb796ddcc48c336abdfb5752881d466e0ecd41eeb1e960855736a142be770",
+    "calls": [
+      "isCardForm",
+      "op.args",
+      "userFormValueLooksLikeCardCodeOrExpiry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727129:27627075",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "userFormWriteFrameHosts",
+    "qualified_name": "userFormWriteFrameHosts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727129,
+    "end_line": 727137,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "consentedHost"
+    ],
+    "body_sha256": "b96c6f5f34fe7d7444034249d8874469e10771b48a05f783d0877caa1949e970",
+    "calls": [
+      ".toLowerCase",
+      "consented.replace",
+      "consentedHost.trim",
+      "isLoopbackUserFormHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727138:27627508",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "withWriteFrameHosts",
+    "qualified_name": "withWriteFrameHosts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727138,
+    "end_line": 727142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "op",
+      "consentedHost"
+    ],
+    "body_sha256": "d24061c3dae9cbc00e2b8251f7cceaeabd505122c76853f956950e1a6b7eb0f4",
+    "calls": [
+      "userFormWriteFrameHosts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727141:27627695",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "args",
+    "qualified_name": "withWriteFrameHosts/args",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727141,
+    "end_line": 727141,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ref2",
+      "value"
+    ],
+    "body_sha256": "bf624032570d5eb72033be416ee74aeb4962f39328331d43859ebfecc0a683d0",
+    "calls": [
+      "op.args"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727143:27627764",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillOpFor",
+    "qualified_name": "fillOpFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727143,
+    "end_line": 727153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field"
+    ],
+    "body_sha256": "27c19580f228decf516d030640b960a036d49048ee6a539a64b4ecedbaad0755",
+    "calls": [
+      "isSecretUserFormField"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727146:27627911",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "args",
+    "qualified_name": "fillOpFor/args",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727146,
+    "end_line": 727146,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ref2",
+      "value"
+    ],
+    "body_sha256": "0c788002a6d24e79dc67b8997ed997f2ec4b1ef71649758e519216433607d34c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727151:27628059",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "args",
+    "qualified_name": "fillOpFor/args",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727151,
+    "end_line": 727151,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ref2",
+      "value"
+    ],
+    "body_sha256": "001afa132d5d1d54548133f24af3658503c7f51fa8a0ae89a8399cb4803f6d3b",
+    "calls": [
+      "userFormValueLooksLikeCardNumber"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727154:27628200",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillableSnapshotRole",
+    "qualified_name": "fillableSnapshotRole",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727154,
+    "end_line": 727156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "field"
+    ],
+    "body_sha256": "0c96e2e6e6f4cc03e2d38a3c38ff49e47ee9a0d3a4e2c196b2c6a02485abd726",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727157:27628300",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isTargetedUserFormFillValue",
+    "qualified_name": "isTargetedUserFormFillValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727157,
+    "end_line": 727159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "e053ef2d628013c363955445befcec5eb5114b946d0463781ec2b7c53391f4b2",
+    "calls": [
+      "fillOpFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727160:27628420",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "userFormFillValuesOf",
+    "qualified_name": "userFormFillValuesOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727160,
+    "end_line": 727180,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "values"
+    ],
+    "body_sha256": "372c76bca5209adf8c9a8ca887f0610ae3a7c4ead5c95cdc7e6f7ff3b4303aa2",
+    "calls": [
+      "form.fields.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727181:27629013",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "userFormFieldOutcomesOf",
+    "qualified_name": "userFormFieldOutcomesOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727181,
+    "end_line": 727184,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "form",
+      "result"
+    ],
+    "body_sha256": "6981e75a9d2bc6e95f0dd6927eab40b0272b512504c68ccbe73dc3b06a256da7",
+    "calls": [
+      "form.fields.map",
+      "new Map",
+      "result.outcomes.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727194:27629469",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyUserFormFailureReason",
+    "qualified_name": "classifyUserFormFailureReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727194,
+    "end_line": 727209,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "outcomes"
+    ],
+    "body_sha256": "ed67118d9021aa6960989957f4a71308e0d32a420838e0f1094c125ce968c5f7",
+    "calls": [
+      "Object.values",
+      "outcomes.some"
+    ],
+    "writes": [
+      "mostDiagnostic"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727210:27630285",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyFailedLookup",
+    "qualified_name": "classifyFailedLookup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727210,
+    "end_line": 727212,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "aea99dcf6f82acb265b0f8048e68c9ac08de6daa47d465dfab3cebd02d174a79",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727213:27630401",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyFailedWrite",
+    "qualified_name": "classifyFailedWrite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727213,
+    "end_line": 727219,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "244f2a58e3d0bbb7413ac0be25930baef477182fc3110f2fb890da915e1a08cd",
+    "calls": [
+      "isFrameOriginDriverError",
+      "isHiddenTargetDriverError",
+      "isStaleRefDriverError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727220:27630741",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyUnresolvedSelector",
+    "qualified_name": "classifyUnresolvedSelector",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727220,
+    "end_line": 727223,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "meta3"
+    ],
+    "body_sha256": "f20e1cfeb0c1a54b95e545fbfc9dc29f9db5f67e3af74929a0c5512efab39c30",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727224:27630886",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "labelDisambiguationFor",
+    "qualified_name": "labelDisambiguationFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727224,
+    "end_line": 727231,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "playwright2",
+      "target"
+    ],
+    "body_sha256": "369d93ef3b7f3cc0830f2853dbd23023fadb9fad8f9860c2cffa128481a834c3",
+    "calls": [
+      "target.frame.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727232:27631169",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolveTargetRef",
+    "qualified_name": "resolveTargetRef",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727232,
+    "end_line": 727261,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "target",
+      "preferredRole",
+      "fullSnapshot",
+      "belt",
+      "disambiguation"
+    ],
+    "body_sha256": "b6a36eb6a60ba8ecc4cb3bf2ae0feae109daa2c74a339163bd28a7f4a9412e86",
+    "calls": [
+      "belt.trustResult",
+      "classifyFailedLookup",
+      "classifyUnresolvedSelector",
+      "firstRefFromSnapshot",
+      "fullSnapshot",
+      "resolveLabelRefFromSnapshot",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727262:27632283",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isStaleRefDriverError",
+    "qualified_name": "isStaleRefDriverError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727262,
+    "end_line": 727264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "4ef1e51855cddcd7929f77c6071273eadaf0b525c60d6b2c8560f0039384dd8b",
+    "calls": [
+      "error64.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727265:27632406",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isHiddenTargetDriverError",
+    "qualified_name": "isHiddenTargetDriverError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727265,
+    "end_line": 727267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "8b5cc6b4ad2853487d6ac24b119e53e8e651ea8a40982469a5e641fa5475d151",
+    "calls": [
+      "error64.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727268:27632537",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isFrameOriginDriverError",
+    "qualified_name": "isFrameOriginDriverError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727268,
+    "end_line": 727270,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fc087764e46304007ac319c10c6240229d980b01f03a68f563151904ab957bc0",
+    "calls": [
+      "error64.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727276:27632793",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "hostMatchesConsentedUserFormHost",
+    "qualified_name": "hostMatchesConsentedUserFormHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727276,
+    "end_line": 727287,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "consentedHost"
+    ],
+    "body_sha256": "c85c578bc9efd6b23ac2fd51abc183a1b2d4fff04688296c8390bb8cb7774b62",
+    "calls": [
+      "consentedHost.toLowerCase",
+      "consentedRaw.replace",
+      "host.toLowerCase",
+      "isLoopbackUserFormHost",
+      "liveRaw.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727288:27633406",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillablePageOfUrl",
+    "qualified_name": "fillablePageOfUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727288,
+    "end_line": 727295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "63871b35a53e4c105a09c82c204e49f97ddac4608f99333313a6cd61c3593603",
+    "calls": [
+      "URL.parse",
+      "isLoopbackUserFormHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727296:27633752",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillableHostOfUrl",
+    "qualified_name": "fillableHostOfUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727296,
+    "end_line": 727298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "964456245549ce7cbf5547976c4ffb6e7cf7e6649d51c8688cc44407ce7b9361",
+    "calls": [
+      "fillablePageOfUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727299:27633829",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "readLivePageHost",
+    "qualified_name": "readLivePageHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727299,
+    "end_line": 727301,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner"
+    ],
+    "body_sha256": "2c641823b452d8068391c993d4590e81a35f06aef66d201236dc1b1ba8810aa7",
+    "calls": [
+      "livePageHostOf",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727302:27633944",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "livePageHostOf",
+    "qualified_name": "livePageHostOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727302,
+    "end_line": 727305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "probe"
+    ],
+    "body_sha256": "1283e047f5f50a1a253a4bf6f9e6b900ad7c50e6f5af86ec773079c6347ac4e5",
+    "calls": [
+      "fillableHostOfUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727306:27634074",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "urlWithoutFragment",
+    "qualified_name": "urlWithoutFragment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727306,
+    "end_line": 727311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "2b4312ef0e9894ff125b8dad489f906f72c5092f0cb74389e705b830b64ebc05",
+    "calls": [
+      "URL.canParse",
+      "new URL"
+    ],
+    "writes": [
+      "parsed2.hash"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727312:27634229",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "listedTab",
+    "qualified_name": "listedTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727312,
+    "end_line": 727317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "7f0e291b3ecab79cf09cd2be2cdc40d6d314aa52bdd73480ee81ade6f1d3f06d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727318:27634517",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "preferredListedIndex",
+    "qualified_name": "preferredListedIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727318,
+    "end_line": 727321,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matches",
+      "wanted"
+    ],
+    "body_sha256": "cf475ad3598749547fbbb190fcbe014192b949fba1afca9ff97d96852ee92a1c",
+    "calls": [
+      "matches.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727322:27634668",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "selectTabOnConsentedHost",
+    "qualified_name": "selectTabOnConsentedHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727322,
+    "end_line": 727351,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost"
+    ],
+    "body_sha256": "0eff3553ebb846c5cd630ea23a0f5de39be269c6ecefd2a42e6e63b4ccb55a52",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "runner.run"
+    ],
+    "writes": [
+      "driverDied",
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:727352:27636029",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "createConsentedHostBelt",
+    "qualified_name": "createConsentedHostBelt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727352,
+    "end_line": 727406,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost"
+    ],
+    "body_sha256": "f09735a053dec4448cd38a66e85c8aff155cbef9ddd3c28eae7f4d92aed75b5c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727357:27636185",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "markLost",
+    "qualified_name": "createConsentedHostBelt/markLost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727357,
+    "end_line": 727361,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "50f0dccd1842fe95b63f0f6cdce1404de56c32da30dc58bbd5d5d5ed725b9729",
+    "calls": [],
+    "writes": [
+      "liveHost",
+      "lost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727362:27636342",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+    "qualified_name": "createConsentedHostBelt/anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727362,
+    "end_line": 727366,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "638d340e07c527c3a5a4caf6fb41f8c5222e04eea1266ac820a06b63d64230c3",
+    "calls": [],
+    "writes": [
+      "anchorUrl",
+      "moved"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727368:27636481",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "lost",
+    "qualified_name": "createConsentedHostBelt/lost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727368,
+    "end_line": 727370,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d9892528d8a26cbf88c5725e08a93ea0e929796cc728109948d310016d9cd4a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727371:27636556",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "movedToAnotherUrlWithinConsentedHost",
+    "qualified_name": "createConsentedHostBelt/movedToAnotherUrlWithinConsentedHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727371,
+    "end_line": 727373,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "a3c4f0d4b7bc4d6d498223d7dc833f3a087449db51f131923c735e2300ce45ab",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727374:27636604",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "liveHost",
+    "qualified_name": "createConsentedHostBelt/liveHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727374,
+    "end_line": 727376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "ad01cb07135888ed8535ff647a22d5197016cbd16392189030945a1cbda0233b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727377:27636659",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "filledOrigin",
+    "qualified_name": "createConsentedHostBelt/filledOrigin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727377,
+    "end_line": 727379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "a5c691d7546510c8f5874e839b119fae9d04abb36032e1a55822484ec57cee4e",
+    "calls": [
+      "URL.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727380:27636765",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "okToWrite",
+    "qualified_name": "createConsentedHostBelt/okToWrite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727380,
+    "end_line": 727395,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "8150d849e348be1b84356c382647094a0fa9e205e1cccab1f45936bd526f245e",
+    "calls": [
+      "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+      "hostMatchesConsentedUserFormHost",
+      "livePageHostOf",
+      "markLost",
+      "runner.run",
+      "selectTabOnConsentedHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727396:27637506",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "trustResult",
+    "qualified_name": "createConsentedHostBelt/trustResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727396,
+    "end_line": 727404,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "52a71a2878c511ca6a1b90cef38170fe56915b528aaf39fa5183e9ed234671f0",
+    "calls": [
+      "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "markLost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727410:27638037",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "scrubSubmittedUserFormValues",
+    "qualified_name": "scrubSubmittedUserFormValues",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727410,
+    "end_line": 727422,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "values"
+    ],
+    "body_sha256": "d2069da673df57d433b4b978a1e1104a6986ae7c294c4c01b1df94618aba2a6d",
+    "calls": [
+      ".filter",
+      ".sort",
+      "needle.replace",
+      "new RegExp",
+      "new Set",
+      "scrubbed.replace",
+      "values.map"
+    ],
+    "writes": [
+      "scrubbed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727423:27638645",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "scrubThenClampSoACutCanNeverSplitAValueBackIntoView",
+    "qualified_name": "scrubThenClampSoACutCanNeverSplitAValueBackIntoView",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727423,
+    "end_line": 727428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "data2",
+      "submittedValues"
+    ],
+    "body_sha256": "263af85ba7fa933ec8c8d38a26312445b26e1603487dd5c46531e3d9ec2cdea3",
+    "calls": [
+      "clampBlock",
+      "scrubSubmittedUserFormValues"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727429:27638852",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "failAllFills",
+    "qualified_name": "failAllFills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727429,
+    "end_line": 727433,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "8c7588dba58e9d79f278fc751920c386220cb9a3ccc2b14b398c7a7d0691ee85",
+    "calls": [
+      "values.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727434:27639052",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "driverUnavailableFillResult",
+    "qualified_name": "driverUnavailableFillResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727434,
+    "end_line": 727443,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values",
+      "submitAfterFill"
+    ],
+    "body_sha256": "1a2119f26028e20f1fc5d2f960fc867cc49014146850e5c14e5ca1a9374a9d9d",
+    "calls": [
+      ".map",
+      "Object.fromEntries",
+      "Object.keys",
+      "failAllFills",
+      "values.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727444:27639468",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "gateConsentedHostTab",
+    "qualified_name": "gateConsentedHostTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727444,
+    "end_line": 727457,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost"
+    ],
+    "body_sha256": "7e48c117ba81e90b3a032f39f5a3168b9d209bd10f7b63a09dd895d6f4e57a74",
+    "calls": [
+      "hostMatchesConsentedUserFormHost",
+      "livePageHostOf",
+      "runner.run",
+      "selectTabOnConsentedHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727458:27640218",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "gateOnPlaywrightCurrentTab",
+    "qualified_name": "gateOnPlaywrightCurrentTab",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727458,
+    "end_line": 727510,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost",
+      "currentTab"
+    ],
+    "body_sha256": "c75d15eb46f514da9563517eb8f384fd3f693238ce5f9270b00db4626e0eecdb",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "exact.push",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "listedTab",
+      "preferredListedIndex",
+      "runner.run",
+      "sameDocument.push",
+      "urlWithoutFragment"
+    ],
+    "writes": [
+      "driverCurrentIndex",
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 13,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:727512:27642562",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "sandSecureFillTargetKind",
+    "qualified_name": "sandSecureFillTargetKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727512,
+    "end_line": 727516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "e36d4457d480eb89ef276a46cc3b5c07174afdd31e96e51a7acc100ab69e5f1a",
+    "calls": [
+      "ID_CLASS_ATTRIBUTE_OR_PSEUDO_PATTERN.test",
+      "PLAYWRIGHT_REF_TARGET_PATTERN.test",
+      "target.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727517:27642797",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "completeSecureFillControl",
+    "qualified_name": "completeSecureFillControl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727517,
+    "end_line": 727531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "control"
+    ],
+    "body_sha256": "36629650962c1f9ce6927f32522413284537c92e1a41153dc5536b7f3f639bed",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727532:27643374",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "secureFillTargetNotFound",
+    "qualified_name": "secureFillTargetNotFound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727532,
+    "end_line": 727534,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "8f731a51df7a74f94bc4009c7d8c9dce34d7b2d8801ebbc06d6b1079171141be",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727535:27643485",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "inspectSandSecureFillTarget",
+    "qualified_name": "inspectSandSecureFillTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727535,
+    "end_line": 727617,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "args"
+    ],
+    "body_sha256": "48bc5f649270397bcaa2c010e2a26911ade6f8666caf4a4c6c986dea43866739",
+    "calls": [
+      "completeSecureFillControl",
+      "createConsentedHostBelt",
+      "fullSnapshot",
+      "gateOnPlaywrightCurrentTab",
+      "isStaleRefDriverError",
+      "labelDisambiguationFor",
+      "playwrightTargetOf",
+      "resolveRoleOrdinalRef",
+      "resolveTargetRef",
+      "runner.run",
+      "secureFillTargetNotFound",
+      "withSandDriverRefNamespace"
+    ],
+    "writes": [
+      "resolved",
+      "runner"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 22,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 14,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727549:27644208",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fullSnapshot",
+    "qualified_name": "inspectSandSecureFillTarget/fullSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727549,
+    "end_line": 727552,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6a0488afcb3cd813b01dafc4f5756b25ac0472bfa7b7c21e6c07c5361ac8d360",
+    "calls": [
+      "runner.run"
+    ],
+    "writes": [
+      "fullSnapshotResult"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727557:27644484",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "trust",
+    "qualified_name": "inspectSandSecureFillTarget/trust",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727557,
+    "end_line": 727557,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "badafff62bba638d7e0d1ceb688cf30d5cf6da95484f1653dcc0de2e0b05302d",
+    "calls": [
+      "belt.trustResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727618:27646737",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "writeSandSecureFillValue",
+    "qualified_name": "writeSandSecureFillValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727618,
+    "end_line": 727639,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "args"
+    ],
+    "body_sha256": "3471832926e336198c433059f2b16f18c6fe1f705aa0d9cc46b1fbc0b86a264d",
+    "calls": [
+      ".run",
+      "classifySecureFillWriteFailure",
+      "isStaleRefDriverError",
+      "result.error.includes",
+      "withSandDriverRefNamespace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727646:27647903",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillSandUserFormValues",
+    "qualified_name": "fillSandUserFormValues",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727646,
+    "end_line": 727890,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "values",
+      "consentedHost",
+      "submitAfterFill",
+      "observeTiming",
+      "clock = realClock",
+      "playwright2"
+    ],
+    "body_sha256": "da9480f63db849de2fa3f74ba7cb651d7865e4775e197643fb9e0c1dece2613a",
+    "calls": [
+      ".filter",
+      ".find",
+      ".map",
+      ".reverse",
+      ".sort",
+      "Math.max",
+      "Object.fromEntries",
+      "RETRY_CANNOT_CURE.has",
+      "belt.okToWrite",
+      "belt.trustResult",
+      "cardAware",
+      "classifyFailedWrite",
+      "clock.monotonicNow",
+      "createConsentedHostBelt",
+      "driverUnavailableFillResult",
+      "failAllFills",
+      "failureKinds.delete",
+      "failureKinds.get",
+      "failureKinds.set",
+      "fillOpFor",
+      "fillableSnapshotRole",
+      "filledControls.set",
+      "finalOutcomes.filter",
+      "finalOutcomes.some",
+      "gateConsentedHostTab",
+      "gateOnPlaywrightCurrentTab",
+      "labelDisambiguationFor",
+      "new Map",
+      "observeTiming",
+      "op.args",
+      "outcomes.get",
+      "outcomes.set",
+      "readTrustedFreshSnapshot",
+      "resolveTargetRef",
+      "resolvesAsCardLabel",
+      "retryFillOnce",
+      "runner.run",
+      "scrubThenClampSoACutCanNeverSplitAValueBackIntoView",
+      "submitByEnterInLastFilledField",
+      "targeted.includes",
+      "userFormControlLooksLikeCardNumber",
+      "values.filter",
+      "values.map",
+      "values.some",
+      "withSandDriverRefNamespace"
+    ],
+    "writes": [
+      "cardForm",
+      "failureKind",
+      "filled",
+      "healOutcome",
+      "lastFreshSnapshotForTheRemapOffer",
+      "pageMoved",
+      "refTargetsSuspectAfterTabSwitch",
+      "remap",
+      "runner",
+      "submit",
+      "tabSwitched"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 48,
+      "loops": 3,
+      "awaits": 9,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727677:27649539",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolvesAsCardLabel",
+    "qualified_name": "fillSandUserFormValues/resolvesAsCardLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727677,
+    "end_line": 727677,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "b2a855e7f912378a132f11df528a470cb8ac4ae87b1f5edbb7911ce8c238bd1e",
+    "calls": [
+      "isSandDriverNamespacedRef"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727678:27649696",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "rank",
+    "qualified_name": "fillSandUserFormValues/rank",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727678,
+    "end_line": 727683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "c253412e998c86ec68468e694d5f7bd85e9664d04e4f4fdbbe993549a958ef33",
+    "calls": [
+      "resolvesAsCardLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727684:27649936",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "cardCodeOrExpiry",
+    "qualified_name": "fillSandUserFormValues/cardCodeOrExpiry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727684,
+    "end_line": 727684,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "299af0f7eb93167359c53fddb12df10aa483212d507f410a3b3cfcb1ab50dc0c",
+    "calls": [
+      "userFormValueLooksLikeCardCodeOrExpiry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727689:27650239",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "cardAware",
+    "qualified_name": "fillSandUserFormValues/cardAware",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727689,
+    "end_line": 727692,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "op"
+    ],
+    "body_sha256": "da9608ea3a143bda5f4feafd374c62ff0ca3d3489d42db0380b0dd5dc36af466",
+    "calls": [
+      "cardFormAwareFillOp",
+      "withWriteFrameHosts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727694:27650385",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fullSnapshot",
+    "qualified_name": "fillSandUserFormValues/fullSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727694,
+    "end_line": 727697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6a0488afcb3cd813b01dafc4f5756b25ac0472bfa7b7c21e6c07c5361ac8d360",
+    "calls": [
+      "runner.run"
+    ],
+    "writes": [
+      "fullSnapshotResult"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727891:27657685",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "readTrustedFreshSnapshot",
+    "qualified_name": "readTrustedFreshSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727891,
+    "end_line": 727894,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "belt"
+    ],
+    "body_sha256": "3e204386bc7ed4bce71da10f7c3401951acf7b88284aee8864299b92981fad18",
+    "calls": [
+      "belt.trustResult",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727895:27657890",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "retryFillOnce",
+    "qualified_name": "retryFillOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727895,
+    "end_line": 727914,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "entry",
+      "target",
+      "op",
+      "belt",
+      "firstPassKind",
+      "disambiguation"
+    ],
+    "body_sha256": "f78965c7f4af6040e29a4f639b9ca8fc0bab270f510cf12ef37e64580cba00bc",
+    "calls": [
+      "belt.okToWrite",
+      "belt.trustResult",
+      "op.args",
+      "resolveRefFromFreshSnapshot",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727915:27658814",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolveRefFromFreshSnapshot",
+    "qualified_name": "resolveRefFromFreshSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727915,
+    "end_line": 727944,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "entry",
+      "target",
+      "belt",
+      "disambiguation"
+    ],
+    "body_sha256": "7dbd3ada9e9355f94313a33ac07c799a6afaa839396bd5ecc3a4161c01710d89",
+    "calls": [
+      "belt.trustResult",
+      "classifyUnresolvedSelector",
+      "fillableSnapshotRole",
+      "firstRefFromSnapshot",
+      "resolveLabelRefFromSnapshot",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:727945:27660020",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "submitByEnterInLastFilledField",
+    "qualified_name": "submitByEnterInLastFilledField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 727945,
+    "end_line": 727957,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "entry",
+      "belt"
+    ],
+    "body_sha256": "a29638025fcaf19170dd397e915b07a9590a5c5c926e63982905e14bebd06362",
+    "calls": [
+      "belt.okToWrite",
+      "belt.trustResult",
+      "resolveRefFromFreshSnapshot",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561415:20879101",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "createSandBrowserOpRunner",
+    "qualified_name": "createSandBrowserOpRunner",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561415,
+    "end_line": 561566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "df8ae4940f1f4680e819cf5442fc4a4a6b37503675171da207b90ee66b086cc1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561417:20879185",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "ensureUploaded",
+    "qualified_name": "createSandBrowserOpRunner/ensureUploaded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561417,
+    "end_line": 561428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "c37f7e2e088f84eb3bead5644bcc9118c4e5e156a164b4de8cd5d29fdf749469",
+    "calls": [
+      ".catch",
+      "deps.agentBox.uploadFile",
+      "import_node_buffer10.Buffer.from"
+    ],
+    "writes": [
+      "uploaded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561429:20879593",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "sensitiveRequest",
+    "qualified_name": "createSandBrowserOpRunner/sensitiveRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561429,
+    "end_line": 561506,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "encoded",
+      "op"
+    ],
+    "body_sha256": "94408609373078d595545f40051cdb85925a10f61c444b2813474ddee317d152",
+    "calls": [
+      ".execute",
+      "Date.now",
+      "deps.agentBox.downloadFile.bind",
+      "deps.resourceAccessor.get",
+      "downloadTerminal",
+      "new BackgroundShellSpawnArgs",
+      "new WriteShellStdinArgs",
+      "parseDriverResponse",
+      "parseShellTerminalFooter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561466:20881181",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "downloadTerminal",
+    "qualified_name": "createSandBrowserOpRunner/sensitiveRequest/downloadTerminal",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561466,
+    "end_line": 561474,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "cc22ac38601fec17a38865b14a02eed645b7ffac60aef079e316eafae863b3a0",
+    "calls": [
+      ".then",
+      "downloadFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561508:20882715",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "run",
+    "qualified_name": "createSandBrowserOpRunner/run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561508,
+    "end_line": 561564,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "op",
+      "args"
+    ],
+    "body_sha256": "a23a5140a79d76519f3264cce74156b28886e72d635435eeb95ad80affba84f8",
+    "calls": [
+      ".execute",
+      ".toString",
+      "Date.now",
+      "JSON.stringify",
+      "Object.hasOwn",
+      "buildHostShellArgs",
+      "deps.resourceAccessor.get",
+      "describeSandBrowserShellError",
+      "ensureUploaded",
+      "errorMessage2",
+      "import_node_buffer10.Buffer.from",
+      "parseDriverResponse",
+      "sensitiveRequest"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:561569:20885072",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "withSandDriverRefNamespace",
+    "qualified_name": "withSandDriverRefNamespace",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561569,
+    "end_line": 561577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runner"
+    ],
+    "body_sha256": "94f1f28f53eac0b333863f63566d02b481f8a8b64cc93bc5f9b61c611239d8ff",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561571:20885138",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "run",
+    "qualified_name": "withSandDriverRefNamespace/run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561571,
+    "end_line": 561575,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "op",
+      "args"
+    ],
+    "body_sha256": "76a46dab503c7cb284f566da1551bbe9c11c4e1e36befd7b191064a691c55f25",
+    "calls": [
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561580:20885422",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickRefLine",
+    "qualified_name": "pickRefLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561580,
+    "end_line": 561592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "preferredRole",
+      "matches"
+    ],
+    "body_sha256": "8e5ee8be2cf640957c5100effd01fd109d7e60fa0962ecd1aa2b991a196ab87f",
+    "calls": [
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "matches"
+    ],
+    "writes": [
+      "any2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561593:20885894",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+    "qualified_name": "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561593,
+    "end_line": 561595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "45d0868eb76062abb33364f361a28f71ef4afd9e507bed3c8a59d13d57875638",
+    "calls": [
+      ".replace",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561597:20886083",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "wordsOf3",
+    "qualified_name": "wordsOf3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561597,
+    "end_line": 561599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "6ed04182836dde9ceff19c0da878a4eaacde8077be67a0ce7fe8d804a1fdcecd",
+    "calls": [
+      ".match",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561600:20886174",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber",
+    "qualified_name": "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561600,
+    "end_line": 561615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "e5807abd64bd3cfa15d8a31b0a09d2d5bdc2cb07dccb9197ac602b5124fd7af9",
+    "calls": [
+      "collapsed.push",
+      "wordsOf3"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561616:20886643",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+    "qualified_name": "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561616,
+    "end_line": 561630,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole"
+    ],
+    "body_sha256": "1b71c2bfa033ff25295d287fcde20d3299ac40f60a7f4bc584d7f608b1da6a95",
+    "calls": [
+      "SNAPSHOT_LINE_NAME_PATTERN.exec",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "labelWords.every",
+      "new Set",
+      "wordsOf3",
+      "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber"
+    ],
+    "writes": [
+      "only"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561631:20887369",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+    "qualified_name": "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561631,
+    "end_line": 561647,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole"
+    ],
+    "body_sha256": "4759b19cf76f4af72b787406ea1501d01c1bea8ca770388564141cf737c12a8a",
+    "calls": [
+      "SNAPSHOT_LINE_NAME_PATTERN.exec",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "nameWords.every",
+      "new Set",
+      "wordsOfLabelAfterCollapsingEmailAddressAndPhoneNumber"
+    ],
+    "writes": [
+      "only"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561648:20888169",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "leadingIndent",
+    "qualified_name": "leadingIndent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561648,
+    "end_line": 561650,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "f40eaaeab9349e756df219a286f2499aa7755ca24cb5e476562ab2894c5a3740",
+    "calls": [
+      "/^\\s*/.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561651:20888247",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "unescapedSnapshotName",
+    "qualified_name": "unescapedSnapshotName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561651,
+    "end_line": 561661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "d768b033a3d828938e670a47a48d6435257cc705dfdc0e9099bef55b9743807a",
+    "calls": [
+      "JSON.parse",
+      "SNAPSHOT_LINE_NAME_PATTERN.exec"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:561662:20888581",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "exactMatchesInScope",
+    "qualified_name": "exactMatchesInScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561662,
+    "end_line": 561670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matches",
+      "frameNeedle",
+      "inFrame",
+      "uniqueExactAcrossFrames"
+    ],
+    "body_sha256": "d240a6fd097b7e71035733f92f9c34474056a479a4c00d3692a4ac2c921e73fc",
+    "calls": [
+      "inFrame",
+      "matches.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561671:20889041",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "exactAccessibleNameRef",
+    "qualified_name": "exactAccessibleNameRef",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561671,
+    "end_line": 561699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lines2",
+      "needle",
+      "preferredRole",
+      "frame",
+      "uniqueExactAcrossFrames"
+    ],
+    "body_sha256": "6be23d2be15e3d4aa082a5195267811b01c722727755276f41dbfac8f17c7db5",
+    "calls": [
+      ".toLowerCase",
+      ".trim",
+      "SNAPSHOT_LINE_ROLE_PATTERN.exec",
+      "SNAPSHOT_REF_PATTERN.exec",
+      "exactMatchesInScope",
+      "frame.trim",
+      "frames.pop",
+      "frames.push",
+      "leadingIndent",
+      "matches.push",
+      "unescapedSnapshotName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561690:20889949",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "inFrame",
+    "qualified_name": "exactAccessibleNameRef/inFrame",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561690,
+    "end_line": 561690,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "frameName"
+    ],
+    "body_sha256": "c63446e96d7d11227ff23c802e0e312a9b664a1b0d71e32460a2cfba09db0795",
+    "calls": [
+      "frameName.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561700:20890317",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolveLabelRefFromSnapshot",
+    "qualified_name": "resolveLabelRefFromSnapshot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561700,
+    "end_line": 561730,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot",
+      "label",
+      "preferredRole",
+      "disambiguation"
+    ],
+    "body_sha256": "d69de0970ec133eb55a0df57e82d3b28532d2b15b08ff99bbec2f66c36f9fdd6",
+    "calls": [
+      ".toLowerCase",
+      "disambiguation.frame.trim",
+      "exactAccessibleNameRef",
+      "label.trim",
+      "lettersAndDigitsSoAVisibleLabelMatchesItsCamelCaseAriaLabelName",
+      "pickRefLine",
+      "pickTheOnlyPreferredRoleRefWhoseNameCarriesEveryWordOfTheLabelInAnyOrder",
+      "pickTheOnlyPreferredRoleRefWhoseNameIsEntirelyContainedInTheLabel",
+      "snapshot.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561731:20891888",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "firstRefFromSnapshot",
+    "qualified_name": "firstRefFromSnapshot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561731,
+    "end_line": 561733,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot"
+    ],
+    "body_sha256": "fa7c9358a08cf54425792cb3a7eedc9f1fa8403458e739c0ca69d0ed6f40bbca",
+    "calls": [
+      "SNAPSHOT_REF_PATTERN.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561734:20891983",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyFailedLookup",
+    "qualified_name": "classifyFailedLookup",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561734,
+    "end_line": 561736,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "aea99dcf6f82acb265b0f8048e68c9ac08de6daa47d465dfab3cebd02d174a79",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561737:20892099",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "classifyUnresolvedSelector",
+    "qualified_name": "classifyUnresolvedSelector",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561737,
+    "end_line": 561740,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "meta3"
+    ],
+    "body_sha256": "f20e1cfeb0c1a54b95e545fbfc9dc29f9db5f67e3af74929a0c5512efab39c30",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561741:20892244",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "labelDisambiguationFor",
+    "qualified_name": "labelDisambiguationFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561741,
+    "end_line": 561748,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "playwright2",
+      "target"
+    ],
+    "body_sha256": "369d93ef3b7f3cc0830f2853dbd23023fadb9fad8f9860c2cffa128481a834c3",
+    "calls": [
+      "target.frame.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561749:20892527",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "resolveTargetRef",
+    "qualified_name": "resolveTargetRef",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561749,
+    "end_line": 561778,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "target",
+      "preferredRole",
+      "fullSnapshot",
+      "belt",
+      "disambiguation"
+    ],
+    "body_sha256": "b6a36eb6a60ba8ecc4cb3bf2ae0feae109daa2c74a339163bd28a7f4a9412e86",
+    "calls": [
+      "belt.trustResult",
+      "classifyFailedLookup",
+      "classifyUnresolvedSelector",
+      "firstRefFromSnapshot",
+      "fullSnapshot",
+      "resolveLabelRefFromSnapshot",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561779:20893641",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "isStaleRefDriverError",
+    "qualified_name": "isStaleRefDriverError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561779,
+    "end_line": 561781,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "2703258b98778deac80e38616c8154e06f5a324734328c11bcd70fca163499e4",
+    "calls": [
+      "error63.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561782:20893764",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "hostMatchesConsentedUserFormHost",
+    "qualified_name": "hostMatchesConsentedUserFormHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561782,
+    "end_line": 561793,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "consentedHost"
+    ],
+    "body_sha256": "c1d49b1d6c05d75e2a63c706bc18d422a4a1b9cf1f9430be10a8549754c443e0",
+    "calls": [
+      "consentedHost.toLowerCase",
+      "consentedRaw.replace",
+      "host.toLowerCase",
+      "isLoopbackUserFormHost",
+      "liveRaw.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561794:20894377",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillablePageOfUrl",
+    "qualified_name": "fillablePageOfUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561794,
+    "end_line": 561801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "a766553beb36d37af286ee45b49cbd5e5185116692c68c28d4efc6507751a8f1",
+    "calls": [
+      "URL.parse",
+      "isLoopbackUserFormHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561802:20894715",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fillableHostOfUrl",
+    "qualified_name": "fillableHostOfUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561802,
+    "end_line": 561804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "964456245549ce7cbf5547976c4ffb6e7cf7e6649d51c8688cc44407ce7b9361",
+    "calls": [
+      "fillablePageOfUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561805:20894792",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "readLivePageHost",
+    "qualified_name": "readLivePageHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561805,
+    "end_line": 561807,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner"
+    ],
+    "body_sha256": "2c641823b452d8068391c993d4590e81a35f06aef66d201236dc1b1ba8810aa7",
+    "calls": [
+      "livePageHostOf",
+      "runner.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561808:20894907",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "livePageHostOf",
+    "qualified_name": "livePageHostOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561808,
+    "end_line": 561811,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "probe"
+    ],
+    "body_sha256": "1283e047f5f50a1a253a4bf6f9e6b900ad7c50e6f5af86ec773079c6347ac4e5",
+    "calls": [
+      "fillableHostOfUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561812:20895037",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "urlWithoutFragment",
+    "qualified_name": "urlWithoutFragment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561812,
+    "end_line": 561817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "1a407217036d5dd0c64f28dbcb8f5f35e2a63b7399af26ec4b623300b094eefc",
+    "calls": [
+      "URL.canParse",
+      "new URL"
+    ],
+    "writes": [
+      "parsed.hash"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561818:20895189",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "listedTab",
+    "qualified_name": "listedTab",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561818,
+    "end_line": 561823,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "7f0e291b3ecab79cf09cd2be2cdc40d6d314aa52bdd73480ee81ade6f1d3f06d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561824:20895477",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "preferredListedIndex",
+    "qualified_name": "preferredListedIndex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561824,
+    "end_line": 561827,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "matches",
+      "wanted"
+    ],
+    "body_sha256": "cf475ad3598749547fbbb190fcbe014192b949fba1afca9ff97d96852ee92a1c",
+    "calls": [
+      "matches.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561828:20895628",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "selectTabOnConsentedHost",
+    "qualified_name": "selectTabOnConsentedHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561828,
+    "end_line": 561857,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost"
+    ],
+    "body_sha256": "0eff3553ebb846c5cd630ea23a0f5de39be269c6ecefd2a42e6e63b4ccb55a52",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "runner.run"
+    ],
+    "writes": [
+      "driverDied",
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:561858:20896989",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "createConsentedHostBelt",
+    "qualified_name": "createConsentedHostBelt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561858,
+    "end_line": 561912,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost"
+    ],
+    "body_sha256": "f09735a053dec4448cd38a66e85c8aff155cbef9ddd3c28eae7f4d92aed75b5c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561863:20897145",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "markLost",
+    "qualified_name": "createConsentedHostBelt/markLost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561863,
+    "end_line": 561867,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "50f0dccd1842fe95b63f0f6cdce1404de56c32da30dc58bbd5d5d5ed725b9729",
+    "calls": [],
+    "writes": [
+      "liveHost",
+      "lost"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561868:20897302",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+    "qualified_name": "createConsentedHostBelt/anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561868,
+    "end_line": 561872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "638d340e07c527c3a5a4caf6fb41f8c5222e04eea1266ac820a06b63d64230c3",
+    "calls": [],
+    "writes": [
+      "anchorUrl",
+      "moved"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561874:20897441",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "lost",
+    "qualified_name": "createConsentedHostBelt/lost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561874,
+    "end_line": 561876,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d9892528d8a26cbf88c5725e08a93ea0e929796cc728109948d310016d9cd4a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561877:20897516",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "movedToAnotherUrlWithinConsentedHost",
+    "qualified_name": "createConsentedHostBelt/movedToAnotherUrlWithinConsentedHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561877,
+    "end_line": 561879,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "a3c4f0d4b7bc4d6d498223d7dc833f3a087449db51f131923c735e2300ce45ab",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561880:20897564",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "liveHost",
+    "qualified_name": "createConsentedHostBelt/liveHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561880,
+    "end_line": 561882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "ad01cb07135888ed8535ff647a22d5197016cbd16392189030945a1cbda0233b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561883:20897619",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "filledOrigin",
+    "qualified_name": "createConsentedHostBelt/filledOrigin",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561883,
+    "end_line": 561885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "a5c691d7546510c8f5874e839b119fae9d04abb36032e1a55822484ec57cee4e",
+    "calls": [
+      "URL.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561886:20897725",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "okToWrite",
+    "qualified_name": "createConsentedHostBelt/okToWrite",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561886,
+    "end_line": 561901,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "8150d849e348be1b84356c382647094a0fa9e205e1cccab1f45936bd526f245e",
+    "calls": [
+      "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+      "hostMatchesConsentedUserFormHost",
+      "livePageHostOf",
+      "markLost",
+      "runner.run",
+      "selectTabOnConsentedHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561902:20898466",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "trustResult",
+    "qualified_name": "createConsentedHostBelt/trustResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561902,
+    "end_line": 561910,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "52a71a2878c511ca6a1b90cef38170fe56915b528aaf39fa5183e9ed234671f0",
+    "calls": [
+      "anchorFirstOnHostUrlAndMarkMovedWhenALaterOneDiffers",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "markLost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561913:20898832",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "gateOnPlaywrightCurrentTab",
+    "qualified_name": "gateOnPlaywrightCurrentTab",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561913,
+    "end_line": 561965,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "consentedHost",
+      "currentTab"
+    ],
+    "body_sha256": "c75d15eb46f514da9563517eb8f384fd3f693238ce5f9270b00db4626e0eecdb",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "exact.push",
+      "fillableHostOfUrl",
+      "hostMatchesConsentedUserFormHost",
+      "listedTab",
+      "preferredListedIndex",
+      "runner.run",
+      "sameDocument.push",
+      "urlWithoutFragment"
+    ],
+    "writes": [
+      "driverCurrentIndex",
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 13,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:561967:20901176",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "sandSecureFillTargetKind",
+    "qualified_name": "sandSecureFillTargetKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561967,
+    "end_line": 561971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "e36d4457d480eb89ef276a46cc3b5c07174afdd31e96e51a7acc100ab69e5f1a",
+    "calls": [
+      "ID_CLASS_ATTRIBUTE_OR_PSEUDO_PATTERN.test",
+      "PLAYWRIGHT_REF_TARGET_PATTERN.test",
+      "target.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561972:20901411",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "completeSecureFillControl",
+    "qualified_name": "completeSecureFillControl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561972,
+    "end_line": 561986,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "control"
+    ],
+    "body_sha256": "36629650962c1f9ce6927f32522413284537c92e1a41153dc5536b7f3f639bed",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561987:20901988",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "secureFillTargetNotFound",
+    "qualified_name": "secureFillTargetNotFound",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561987,
+    "end_line": 561989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "8f731a51df7a74f94bc4009c7d8c9dce34d7b2d8801ebbc06d6b1079171141be",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:561990:20902099",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "inspectSandSecureFillTarget",
+    "qualified_name": "inspectSandSecureFillTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 561990,
+    "end_line": 562072,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "args"
+    ],
+    "body_sha256": "c9bacce9a42c3e830690c7ea73b6c134d6ca5d26c4b2f76a7da1ea11084e572a",
+    "calls": [
+      "completeSecureFillControl",
+      "createConsentedHostBelt",
+      "fullSnapshot",
+      "gateOnPlaywrightCurrentTab",
+      "isStaleRefDriverError",
+      "labelDisambiguationFor",
+      "playwrightTargetOf",
+      "resolveRoleOrdinalRef",
+      "resolveTargetRef",
+      "runner.run",
+      "secureFillTargetNotFound",
+      "withSandDriverRefNamespace"
+    ],
+    "writes": [
+      "resolved",
+      "runner"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 22,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 14,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562004:20902822",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "fullSnapshot",
+    "qualified_name": "inspectSandSecureFillTarget/fullSnapshot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562004,
+    "end_line": 562007,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6a0488afcb3cd813b01dafc4f5756b25ac0472bfa7b7c21e6c07c5361ac8d360",
+    "calls": [
+      "runner.run"
+    ],
+    "writes": [
+      "fullSnapshotResult"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562012:20903098",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "trust",
+    "qualified_name": "inspectSandSecureFillTarget/trust",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562012,
+    "end_line": 562012,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "badafff62bba638d7e0d1ceb688cf30d5cf6da95484f1653dcc0de2e0b05302d",
+    "calls": [
+      "belt.trustResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:562073:20905351",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-browser-fill.ts",
+    "name": "writeSandSecureFillValue",
+    "qualified_name": "writeSandSecureFillValue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 562073,
+    "end_line": 562094,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "runner",
+      "args"
+    ],
+    "body_sha256": "3471832926e336198c433059f2b16f18c6fe1f705aa0d9cc46b1fbc0b86a264d",
+    "calls": [
+      ".run",
+      "classifySecureFillWriteFailure",
+      "isStaleRefDriverError",
+      "result.error.includes",
+      "withSandDriverRefNamespace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

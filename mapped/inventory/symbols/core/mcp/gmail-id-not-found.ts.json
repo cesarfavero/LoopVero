@@ -1,0 +1,270 @@
+[
+  {
+    "id": "evaluation:584483:21984675",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "toolNameOf",
+    "qualified_name": "toolNameOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584483,
+    "end_line": 584486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "30571417d88abd11e1c037425bb6d137ab45ee1b5a1bc6208d346cf4a54f7c55",
+    "calls": [
+      "args.name.lastIndexOf",
+      "args.name.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584487:21984817",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "gmailIdKindOf",
+    "qualified_name": "gmailIdKindOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584487,
+    "end_line": 584492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d4e6b659a86f3b96b825db9f0b02315c307c8aa3d0c06a1a8be3ab51dda28cca",
+    "calls": [
+      "TOOL_ID_KINDS.get",
+      "id.value.trim",
+      "toolNameOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584493:21985066",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "failureText",
+    "qualified_name": "failureText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584493,
+    "end_line": 584498,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "866a7dbb85571a8a7be7279f47397d8385b1c40ad812e09055b6dc161b426747",
+    "calls": [
+      ".join",
+      "outcome.value.content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584499:21985385",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "isGmailIdFailure",
+    "qualified_name": "isGmailIdFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584499,
+    "end_line": 584501,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fb378adeaaec6f3fd1deef3aa53ad19dc957b08de653eb9e4fde1975c1c5d7ec",
+    "calls": [
+      "ID_FAILURE.test",
+      "LABEL_FAILURE.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584502:21985485",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "withIdNote",
+    "qualified_name": "withIdNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584502,
+    "end_line": 584519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "note"
+    ],
+    "body_sha256": "0243360d7c04ea08a0593ba7901b8a2f63bc49b45f077feb63fdc0a599218fa8",
+    "calls": [
+      "new McpResult",
+      "new McpTextContent",
+      "new McpToolResultContentItem",
+      "outcome.value.clone",
+      "success2.content.push"
+    ],
+    "writes": [
+      "error63.error"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584520:21986071",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "withGmailIdNotFoundNote",
+    "qualified_name": "withGmailIdNotFoundNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584520,
+    "end_line": 584536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor",
+      "resolveServerHost"
+    ],
+    "body_sha256": "cd52f08df17eb9a63f1d827a6f5ee0c4909ae89d8c4f17a3e777dd6a10d345f5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584522:21986167",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "isBackendRouted",
+    "qualified_name": "withGmailIdNotFoundNote/isBackendRouted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584522,
+    "end_line": 584522,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "3326bf8889fdcbf666497666616b86468b240ccef3beb8400ba95d08005cbc08",
+    "calls": [
+      "executor.isBackendRouted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584523:21986245",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-id-not-found.ts",
+    "name": "execute",
+    "qualified_name": "withGmailIdNotFoundNote/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584523,
+    "end_line": 584534,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "559d3277f85a6de2cc31a3521a585b1174fb0e3573bb526a23810279a96dc474",
+    "calls": [
+      ".toLowerCase",
+      "executor.execute",
+      "failureText",
+      "gmailIdKindOf",
+      "isGmailIdFailure",
+      "noted2.increment",
+      "resolveServerHost",
+      "withIdNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

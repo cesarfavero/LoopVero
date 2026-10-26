@@ -1,0 +1,237 @@
+[
+  {
+    "id": "evaluation:596884:22665610",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "deduplicateDocuments",
+    "qualified_name": "deduplicateDocuments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596884,
+    "end_line": 596892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "documents"
+    ],
+    "body_sha256": "31660cb5f96c64208a60a8fc6067ba904757bbc76dff8ed05aa3375b0c17bd27",
+    "calls": [
+      "documents.filter",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:596893:22665871",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "formatFixtureDocuments",
+    "qualified_name": "formatFixtureDocuments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596893,
+    "end_line": 596897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "documents"
+    ],
+    "body_sha256": "4f1b5414db7a1281bc27cb3722922171be7df7d802df1cb7701867e834db9c1e",
+    "calls": [
+      ".join",
+      "documents.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:596898:22666051",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "augmentWebSearchResult",
+    "qualified_name": "augmentWebSearchResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596898,
+    "end_line": 596913,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "baseResult",
+      "config2"
+    ],
+    "body_sha256": "5a87930429ee349f941385bf4ffe153ba033406248840686f6da61c58be60199",
+    "calls": [
+      ".flatMap",
+      "args.searchTerm.toLowerCase",
+      "baseResult.answer.trim",
+      "config2.rules.filter",
+      "deduplicateDocuments",
+      "formatFixtureDocuments"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:596914:22666712",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "createFixtureAugmentedWebSearchService",
+    "qualified_name": "createFixtureAugmentedWebSearchService",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596914,
+    "end_line": 596919,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2",
+      "baseService = async () => ({ documents: [] })"
+    ],
+    "body_sha256": "c6ad6b6d275c0c387a039f14987ed19637cf5fa688f06434b927f866b8f8af74",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:596920:22666972",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "schemeAndQueryOrderInsensitiveUrlKey",
+    "qualified_name": "schemeAndQueryOrderInsensitiveUrlKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596920,
+    "end_line": 596929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawUrl"
+    ],
+    "body_sha256": "4f202d07a63a6fe8a1d8123cdb31af0e7713b087f918f62c846c1ed5d5d51e8d",
+    "calls": [
+      "new URL",
+      "rawUrl.trim",
+      "url2.pathname.replace",
+      "url2.searchParams.sort"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:596930:22667223",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "indexFixtureDocumentsByUrl",
+    "qualified_name": "indexFixtureDocumentsByUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596930,
+    "end_line": 596937,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2"
+    ],
+    "body_sha256": "5c439be0c773528a8842a5ee37f6d7c3b41e04d8dc2f152c6266c9664b7efb26",
+    "calls": [
+      "config2.rules.flatMap",
+      "documentsByUrl.has",
+      "documentsByUrl.set",
+      "new Map",
+      "schemeAndQueryOrderInsensitiveUrlKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:596938:22667587",
+    "artifact": "evaluation",
+    "module": "core/evals/web-search-fixtures.ts",
+    "name": "createFixtureAugmentedWebFetchService",
+    "qualified_name": "createFixtureAugmentedWebFetchService",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 596938,
+    "end_line": 596948,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2",
+      "baseService"
+    ],
+    "body_sha256": "3b7384b9ed1228a4cb9cdde6d1d817a74bf4ac9b525eab70203036ae8ad58222",
+    "calls": [
+      "indexFixtureDocumentsByUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

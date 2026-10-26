@@ -1,0 +1,544 @@
+[
+  {
+    "id": "host:737385:28012256",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "GroupChatOrchestrator.constructor",
+    "qualified_name": "GroupChatOrchestrator.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737385,
+    "end_line": 737387,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737389:28012310",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "GroupChatOrchestrator.run",
+    "qualified_name": "GroupChatOrchestrator.run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737389,
+    "end_line": 737525,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "6121d57710b0a4e8db36d545906c59aa6813f0cdbd911f51c66e252e85355583",
+    "calls": [
+      "Promise.allSettled",
+      "Promise.race",
+      "delivery.admit",
+      "forced.delete",
+      "forced.get",
+      "forcedTurns",
+      "heldTurns",
+      "mayStart",
+      "members2.filter",
+      "members2.flatMap",
+      "mergeForced",
+      "new Map",
+      "new Promise",
+      "new Set",
+      "settleNext",
+      "settled.shift",
+      "start",
+      "takeInbound",
+      "this.deps.isCurrent",
+      "this.deps.readHistory",
+      "this.deps.resolveMembers",
+      "this.deps.waitForInbound"
+    ],
+    "writes": [
+      "failure3",
+      "trigger2.waves",
+      "turn",
+      "woken"
+    ],
+    "throw_targets": [
+      "turnFailure.error"
+    ],
+    "control": {
+      "branches": 13,
+      "loops": 4,
+      "awaits": 7,
+      "returns": 3,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:737398:28012704",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "wakeSettled",
+    "qualified_name": "GroupChatOrchestrator.run/wakeSettled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737398,
+    "end_line": 737399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d8c7ff76b38a6ba1f0dfd0cae507faf3b110de37901ad7d18c725ff3358b6176",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737406:28013010",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "mayStart",
+    "qualified_name": "GroupChatOrchestrator.run/mayStart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737406,
+    "end_line": 737406,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "271ed1a9845498a5262cd5c0f17b250e55a2d2c39af5212f647744fd7bc68362",
+    "calls": [
+      "this.deps.shouldYield"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737407:28013123",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "takeInbound",
+    "qualified_name": "GroupChatOrchestrator.run/takeInbound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737407,
+    "end_line": 737417,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "fa716ef8bf41eb5253235dc0ab3f1034fcbdacd1a499dc77ac6373d5b508c9ff",
+    "calls": [
+      "forcedTurns",
+      "mayStart",
+      "mergeForced",
+      "this.admitInbound",
+      "this.deps.isCurrent",
+      "this.deps.takeInbound"
+    ],
+    "writes": [
+      "forced",
+      "trigger2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737418:28013520",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "start",
+    "qualified_name": "GroupChatOrchestrator.run/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737418,
+    "end_line": 737458,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "member",
+      "force"
+    ],
+    "body_sha256": "e0c5364a1ec3ca9cca4bfcb06556a112be189940d8189168ae51c8b031ff404d",
+    "calls": [
+      ".then",
+      "buildGroupTurnPrompt",
+      "delivery.noteDispatched",
+      "delivery.unseen",
+      "force.hiddenPrompts.join",
+      "members2.filter",
+      "pending.add",
+      "this.deps.readHistory",
+      "this.deps.runMemberTurn",
+      "trigger2.caughtUp.add",
+      "working.set"
+    ],
+    "writes": [
+      "dispatches"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737459:28015201",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "settleNext",
+    "qualified_name": "GroupChatOrchestrator.run/settleNext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737459,
+    "end_line": 737463,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "turn"
+    ],
+    "body_sha256": "d4cf86ddcfde8668cd6e70a4748616fb7fb2bfdba48c8d5d6983b1fa0a5a1ecb",
+    "calls": [
+      "mergeForced",
+      "new Map",
+      "this.settle",
+      "working.delete"
+    ],
+    "writes": [
+      "forced"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737526:28017660",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "GroupChatOrchestrator.mayWake",
+    "qualified_name": "GroupChatOrchestrator.mayWake",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737526,
+    "end_line": 737531,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "memberId",
+      "trigger2"
+    ],
+    "body_sha256": "443855427bca20adf7c20da636b7dc486d6580c1e4fd0fced3cafaa824f71fe3",
+    "calls": [
+      "delivery.isDue",
+      "delivery.isOwed",
+      "trigger2.caughtUp.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737532:28017951",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "GroupChatOrchestrator.admitInbound",
+    "qualified_name": "GroupChatOrchestrator.admitInbound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737532,
+    "end_line": 737535,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "members2"
+    ],
+    "body_sha256": "e1fffda2cb7f9c9557121e17fcf0cb6a02fab275493393d7906cc62105759b62",
+    "calls": [
+      "new Set",
+      "this.deps.delivery.admit",
+      "this.deps.readHistory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737536:28018141",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "GroupChatOrchestrator.settle",
+    "qualified_name": "GroupChatOrchestrator.settle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737536,
+    "end_line": 737560,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "turn",
+      "members2",
+      "trigger2"
+    ],
+    "body_sha256": "f1c0476123e696e14263a3d8f44863df2078309c3b8d61c7118019ad71cf8acd",
+    "calls": [
+      ".slice",
+      "Math.max",
+      "deliverablePosts",
+      "delivery.admit",
+      "delivery.noteShown",
+      "delivery.noteStopped",
+      "delivery.rearmAfterFailedTurn",
+      "this.deps.isCurrent",
+      "this.deps.postMemberMessages",
+      "this.deps.readHistory"
+    ],
+    "writes": [
+      "trigger2.posts"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737562:28019024",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "forcedTurns",
+    "qualified_name": "forcedTurns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737562,
+    "end_line": 737583,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "members2",
+      "isAttachmentOnlyTurn",
+      "receipts"
+    ],
+    "body_sha256": "cb943ee801e8dfd215ba2833d27f6f96a7683323d7375279138d4b0219f31372",
+    "calls": [
+      "forced.set",
+      "members2.some",
+      "mergeForced",
+      "new Map"
+    ],
+    "writes": [
+      "forced"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737584:28019657",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "carriesPayload",
+    "qualified_name": "carriesPayload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737584,
+    "end_line": 737586,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "turn"
+    ],
+    "body_sha256": "361825c8c0dafd83dedaa740b6635bbe1d4ed1e4d8794a085db54a729380bb04",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737587:28019760",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "heldTurns",
+    "qualified_name": "heldTurns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737587,
+    "end_line": 737598,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "members2",
+      "held"
+    ],
+    "body_sha256": "81edaf1bddee6395db31f3f9a82f82110ad854594525b432464bf59a330bb9f2",
+    "calls": [
+      "carriesPayload",
+      "forced.set",
+      "members2.some",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737599:28020149",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "mergeForced",
+    "qualified_name": "mergeForced",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737599,
+    "end_line": 737612,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "into",
+      "from2"
+    ],
+    "body_sha256": "07de8d9f4d324be445bcb39714720392ee38113fafcf0ce889ed7a69b782b798",
+    "calls": [
+      "merged.get",
+      "merged.set",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737613:28020569",
+    "artifact": "host",
+    "module": "core/groups/group-chat-orchestrator.ts",
+    "name": "deliverablePosts",
+    "qualified_name": "deliverablePosts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737613,
+    "end_line": 737622,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sent"
+    ],
+    "body_sha256": "e088b6453bc5b9c3199481caa5ee929074b5597ca449902ccb013845f04c478f",
+    "calls": [
+      "deliverableGroupPost",
+      "spoken.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

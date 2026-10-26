@@ -1,0 +1,296 @@
+[
+  {
+    "id": "host:716877:27208448",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "listAgentAutomationConfigFiles",
+    "qualified_name": "listAgentAutomationConfigFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716877,
+    "end_line": 716893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "automationsDir"
+    ],
+    "body_sha256": "90b97ff8c8aad0f8ab3d578e1204c0a00f78af381343d587cddbb468e6367490",
+    "calls": [
+      "configs.push",
+      "entry.isDirectory",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716894:27209069",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "rewriteClonedAgentIdentity",
+    "qualified_name": "rewriteClonedAgentIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716894,
+    "end_line": 716914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetDir",
+      "newAgentId",
+      "includesChatHistory",
+      "createAgentDb"
+    ],
+    "body_sha256": "c8e6a90b1c04d56df1ee4a7076a28dbe2a8f6c67d0d105e28ce354c531370d43",
+    "calls": [
+      "createAgentDb",
+      "db.clearAgentPurpose",
+      "db.clearConversation",
+      "db.clearTransientState",
+      "db.close",
+      "db.getSandProfile",
+      "db.set",
+      "db.setAgentOrigin",
+      "db.setSandProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716915:27209829",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "copyIfPresent",
+    "qualified_name": "copyIfPresent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716915,
+    "end_line": 716917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourcePath2",
+      "targetPath"
+    ],
+    "body_sha256": "bc59851ddfce884e5a8f4a3b7d44eafaff895850aa0d925bf6a38ba844011d83",
+    "calls": [
+      "copySandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716918:27209981",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "cloneStoreDb",
+    "qualified_name": "cloneStoreDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716918,
+    "end_line": 716925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourceDir",
+      "targetDir"
+    ],
+    "body_sha256": "f36e5d4a26aeeffcfbaea1077afab2a4eaa51887a25717d2645db6877a5237ec",
+    "calls": [
+      "checkpointSandAgentDb",
+      "copySandDataFileSync",
+      "new SandAgentCloneError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAgentCloneError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716926:27210398",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "writeClonedProfile",
+    "qualified_name": "writeClonedProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716926,
+    "end_line": 716935,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetDir",
+      "profile"
+    ],
+    "body_sha256": "e4ca0dee21a1acd91a58bcc26584db8af29d656757efe1fb8c87f7fbc83ac6f9",
+    "calls": [
+      "createSandProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716936:27210690",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "cloneAutomations",
+    "qualified_name": "cloneAutomations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716936,
+    "end_line": 716945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourceDir",
+      "targetDir"
+    ],
+    "body_sha256": "32d9e258cd2f3add6d32ceafe29caa4dfaf5a6c6341e6eebc84729565bba5d8f",
+    "calls": [
+      "copySandDataFileSync",
+      "ensureSandDataDirSync",
+      "getAgentAutomationsDir",
+      "listAgentAutomationConfigFiles"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716946:27211160",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "cloneAvatarFiles",
+    "qualified_name": "cloneAvatarFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716946,
+    "end_line": 716954,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourceDir",
+      "targetDir"
+    ],
+    "body_sha256": "773171d413372811f9198f81ab9ee1ee5b9f49d15c73c6f2d2428bad41dba54a",
+    "calls": [
+      "copySandDataFileSync",
+      "getSandProfilePath",
+      "listConventionalAvatarFilenames",
+      "readLegacyProfileAvatarField",
+      "resolveDerivedAvatarFilename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716955:27211527",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-clone.ts",
+    "name": "cloneAgentDir",
+    "qualified_name": "cloneAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716955,
+    "end_line": 716971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourceDir",
+      "targetDir",
+      "newAgentId",
+      "profile",
+      "createAgentDb"
+    ],
+    "body_sha256": "ffde1d9e02b5403f82259234f8a12f41aafbf886bcae0dad9f81250e5b879f42",
+    "calls": [
+      "cloneAutomations",
+      "cloneAvatarFiles",
+      "cloneStoreDb",
+      "copyIfPresent",
+      "ensureSandDataDirSync",
+      "getSandSettingsPath",
+      "removeSandDataTreeSync",
+      "rewriteClonedAgentIdentity",
+      "writeClonedProfile",
+      "writeSandSettingsFile"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

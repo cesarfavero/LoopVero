@@ -1,0 +1,428 @@
+[
+  {
+    "id": "host:736112:27962660",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "carriesBillingLimitHint",
+    "qualified_name": "carriesBillingLimitHint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736112,
+    "end_line": 736114,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "additionalInfo"
+    ],
+    "body_sha256": "628c210bcc1bd8a1f6a43942f69d476a0cb888549d481b7624b0367adf7c5dac",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736115:27962869",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailureErrorDetails",
+    "qualified_name": "classifyExpectedTurnFailureErrorDetails",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736115,
+    "end_line": 736133,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "details"
+    ],
+    "body_sha256": "b85d69e02ceb89c0c0dd36429ac58d66d2e84bf2f505e8a9c6715dcbba6f0db3",
+    "calls": [
+      "BILLING_HINTED_RATE_LIMITED_CODES.has",
+      "RATE_LIMIT_ERROR_CODES.has",
+      "USAGE_LIMIT_ERROR_CODES.has",
+      "USAGE_LIMIT_RATE_LIMIT_REASONS.has",
+      "carriesBillingLimitHint",
+      "inferenceHookFailureOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736134:27963822",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyNode",
+    "qualified_name": "classifyNode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736134,
+    "end_line": 736153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "seen"
+    ],
+    "body_sha256": "a8055d655f0e491e0be04807aea2696008690d7d0893fc863f2aafffda647ace",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "classifyExpectedTurnFailureErrorDetails",
+      "classifyNode",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736154:27964577",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailureDetails",
+    "qualified_name": "classifyExpectedTurnFailureDetails",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736154,
+    "end_line": 736156,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "4d1deb11be61a63e0ca6b88ac4d7748b3bf7552287e28dd73cedf1318dbcee6a",
+    "calls": [
+      "classifyNode",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736157:27964693",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailure",
+    "qualified_name": "classifyExpectedTurnFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736157,
+    "end_line": 736159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "fa82534666f0f3f83983ee1f08a9d0e81487b9986103b1badde25d552465108c",
+    "calls": [
+      "classifyExpectedTurnFailureDetails"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736160:27964803",
+    "artifact": "host",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyInferenceHookTurnFailure",
+    "qualified_name": "classifyInferenceHookTurnFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736160,
+    "end_line": 736163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "84160b23bfdc7c28faaf3ad3d3db32c999ed4bb5a8bc18f5f211f93449e5f242",
+    "calls": [
+      "classifyExpectedTurnFailure",
+      "isSandInferenceHookFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589612:22203390",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "carriesBillingLimitHint",
+    "qualified_name": "carriesBillingLimitHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589612,
+    "end_line": 589614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "additionalInfo"
+    ],
+    "body_sha256": "628c210bcc1bd8a1f6a43942f69d476a0cb888549d481b7624b0367adf7c5dac",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589615:22203599",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailureErrorDetails",
+    "qualified_name": "classifyExpectedTurnFailureErrorDetails",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589615,
+    "end_line": 589633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "details"
+    ],
+    "body_sha256": "b85d69e02ceb89c0c0dd36429ac58d66d2e84bf2f505e8a9c6715dcbba6f0db3",
+    "calls": [
+      "BILLING_HINTED_RATE_LIMITED_CODES.has",
+      "RATE_LIMIT_ERROR_CODES.has",
+      "USAGE_LIMIT_ERROR_CODES.has",
+      "USAGE_LIMIT_RATE_LIMIT_REASONS.has",
+      "carriesBillingLimitHint",
+      "inferenceHookFailureOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589634:22204552",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyNode",
+    "qualified_name": "classifyNode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589634,
+    "end_line": 589653,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "seen"
+    ],
+    "body_sha256": "044f26fe32a4bf1f77a79a8db41aa7fd5b6cf2d4d2387f74d2cef2db856f0574",
+    "calls": [
+      "Array.isArray",
+      "classifyError2",
+      "classifyExpectedTurnFailureErrorDetails",
+      "classifyNode",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589654:22205307",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailureDetails",
+    "qualified_name": "classifyExpectedTurnFailureDetails",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589654,
+    "end_line": 589656,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "1fc1ff38e5081a178947114b8366b2c2ce24c20584c75c290da9a4f98c8b8f2e",
+    "calls": [
+      "classifyNode",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589657:22205423",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyExpectedTurnFailure",
+    "qualified_name": "classifyExpectedTurnFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589657,
+    "end_line": 589659,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "6f39414d3aa47a9b39cb4951ecfe756f7e73a59311d5c51a8c72173ea2fce9a8",
+    "calls": [
+      "classifyExpectedTurnFailureDetails"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589660:22205533",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "classifyInferenceHookTurnFailure",
+    "qualified_name": "classifyInferenceHookTurnFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589660,
+    "end_line": 589663,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "57fd441801e26f4379f31b7bd486f3f56b959e3db93964dfbdd2ff4acdd8ea00",
+    "calls": [
+      "classifyExpectedTurnFailure",
+      "isSandInferenceHookFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:589664:22205719",
+    "artifact": "evaluation",
+    "module": "core/runner/failures/turn-failure-classification.ts",
+    "name": "resolveTurnOutcomeTags",
+    "qualified_name": "resolveTurnOutcomeTags",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 589664,
+    "end_line": 589674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d3bec040f10990ec47a66306ca1e3acb563a580d4fb2baa4986df8e1d5586652",
+    "calls": [
+      "adjustTurnOutcomeForBotBlock",
+      "classifyExpectedTurnFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

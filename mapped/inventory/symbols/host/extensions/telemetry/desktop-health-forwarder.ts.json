@@ -1,0 +1,345 @@
+[
+  {
+    "id": "host:731341:27779815",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "normalizeDesktopComponentName",
+    "qualified_name": "normalizeDesktopComponentName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731341,
+    "end_line": 731351,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "0524eaf910c7ebca5a211d515e5d8f092dcb336e72771c6f99c7455f170eff83",
+    "calls": [
+      "DESKTOP_COMPONENT_KINDS.find",
+      "DESKTOP_COMPONENT_NAME_PATTERN.exec"
+    ],
+    "writes": [
+      "scope"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731352:27780284",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "normalizeDesktopDownReason",
+    "qualified_name": "normalizeDesktopDownReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731352,
+    "end_line": 731359,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "b72950d15c8e5d4b91b0b94ac5ecec47c419128a46ea6557b7b770419cedfc7d",
+    "calls": [
+      "/^exit--?[0-9]+$/.test",
+      "/^signal-SIG[A-Z0-9]+$/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731360:27780624",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "normalizeCount",
+    "qualified_name": "normalizeCount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731360,
+    "end_line": 731365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "06e522ac7ec2abf17fb67b5962312c2d5e49a8478ccef1ce215308a234c30d74",
+    "calls": [
+      "Math.min",
+      "Number.isSafeInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731366:27780807",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "mergeDesktopComponentHealth",
+    "qualified_name": "mergeDesktopComponentHealth",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731366,
+    "end_line": 731384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "current2",
+      "next"
+    ],
+    "body_sha256": "fe48f17da51843362d99cf171fd66b09766b722a5aeb933f82103139bc1ad574",
+    "calls": [
+      "Math.min"
+    ],
+    "writes": [
+      "downReason"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731385:27781429",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "parseDesktopHealthSnapshot",
+    "qualified_name": "parseDesktopHealthSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731385,
+    "end_line": 731432,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "5f097d240286c23ba0e38cad5437d3dbc43fa320d8e5fc4ca7832a0995bdeded",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "Math.max",
+      "Number.isSafeInteger",
+      "components.filter",
+      "components.reduce",
+      "componentsByName.get",
+      "componentsByName.set",
+      "componentsByName.values",
+      "isUnknownRecord2",
+      "mergeDesktopComponentHealth",
+      "new Map",
+      "normalizeCount",
+      "normalizeDesktopComponentName",
+      "normalizeDesktopDownReason"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731433:27783174",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "desktopHealthOverall",
+    "qualified_name": "desktopHealthOverall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731433,
+    "end_line": 731437,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot"
+    ],
+    "body_sha256": "b42bc30438a2450ae44ed9eedf06d52bd22e70be992253b979ef3aa6adfb6612",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731438:27783335",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "desktopHealthLevel",
+    "qualified_name": "desktopHealthLevel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731438,
+    "end_line": 731440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "overall"
+    ],
+    "body_sha256": "9dc4449506a34257fac52dd03685ed70533459930b64d940bc56676fec2a0fc2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731441:27783426",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "computeDesktopHealthMetadata",
+    "qualified_name": "computeDesktopHealthMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731441,
+    "end_line": 731465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot"
+    ],
+    "body_sha256": "2410817d202f9688816c60fe2ce21d6567a06ad6ebb02f2071836ccfc564d32e",
+    "calls": [
+      "brandLiteralEnumList",
+      "desktopHealthOverall",
+      "logFields",
+      "new Set",
+      "problems.flatMap",
+      "problems.map",
+      "snapshot.components.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731466:27784230",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "decideDesktopHealthForward",
+    "qualified_name": "decideDesktopHealthForward",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731466,
+    "end_line": 731472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "078ce422d8a2a2f392812ddb1cd9efc8e449c748f8dfbd44495d929682a7af97",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731473:27784508",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/desktop-health-forwarder.ts",
+    "name": "forwardDesktopHealthWith",
+    "qualified_name": "forwardDesktopHealthWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731473,
+    "end_line": 731493,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a2b7a238262b2d1f01a883d5d90003dfb57d80674e0bbd42649330a031c433ef",
+    "calls": [
+      "computeDesktopHealthMetadata",
+      "decideDesktopHealthForward",
+      "deps.emit",
+      "deps.getLast",
+      "deps.now",
+      "deps.readRaw",
+      "deps.setLast",
+      "desktopHealthLevel",
+      "desktopHealthOverall",
+      "parseDesktopHealthSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

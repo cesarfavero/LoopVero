@@ -1,0 +1,2548 @@
+[
+  {
+    "id": "host:640931:23963930",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sanitizeProjectReminderCadenceInterval",
+    "qualified_name": "sanitizeProjectReminderCadenceInterval",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640931,
+    "end_line": 640943,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "interval"
+    ],
+    "body_sha256": "39672ed912a5ac61ab1ee8887c3c6f8b35b1307a7b9333a8afc0debe012db7cd",
+    "calls": [
+      "Math.floor",
+      "Number",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640944:23964382",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "resolveProjectCadenceKind",
+    "qualified_name": "resolveProjectCadenceKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640944,
+    "end_line": 640950,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4f11ccd1b74bfaa1a3187359da9340ccdd54e212067ec87b287abc13eb4fb8ba",
+    "calls": [
+      "sanitizeProjectReminderCadenceInterval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640951:23964621",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "collapseWhitespace",
+    "qualified_name": "collapseWhitespace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640951,
+    "end_line": 640953,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "7ec7c20226b10ae08b3c6dc1303238ca44f84f2721ae8f8b632cc666910ce684",
+    "calls": [
+      ".trim",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640954:23964720",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "normalizeProjectName",
+    "qualified_name": "normalizeProjectName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640954,
+    "end_line": 640960,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "projectName"
+    ],
+    "body_sha256": "95607b2a06d94a1a2a496720bf76ee06c7b4d79d27dc8ba81c5696514312a15d",
+    "calls": [
+      "collapseWhitespace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640961:23964918",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeForPrompt",
+    "qualified_name": "escapeForPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640961,
+    "end_line": 640963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1c710326a0f1cc0add1f2d76b4471d61d8f134b9ae7b3710e2340180efed6cec",
+    "calls": [
+      ".replaceAll",
+      ".slice",
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640964:23965053",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeProjectName",
+    "qualified_name": "escapeProjectName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640964,
+    "end_line": 640967,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "projectName"
+    ],
+    "body_sha256": "5256a8f28aa7a19a8b80ee58475289abcd8ca8cd8ce1ceedc974a1d9907e770f",
+    "calls": [
+      "escapeForPrompt",
+      "normalizeProjectName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640968:23965224",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeProjectInitDescription",
+    "qualified_name": "escapeProjectInitDescription",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640968,
+    "end_line": 640974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "initDescription"
+    ],
+    "body_sha256": "a849bf88139fcfba7b1af89739878afb0e1b427dd319e71941edf66f6ad3d5f4",
+    "calls": [
+      ".join",
+      ".slice",
+      "collapseWhitespace",
+      "escapeForPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640976:23965577",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "containsUnsafeControlCharacter",
+    "qualified_name": "containsUnsafeControlCharacter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640976,
+    "end_line": 640984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "f2ba71d149da545381abc60912cdc85832e7bfe7f80f3610078c00ff0fd28fbe",
+    "calls": [
+      "character.codePointAt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640985:23965888",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "promptOverrideOrDefault",
+    "qualified_name": "promptOverrideOrDefault",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640985,
+    "end_line": 640990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "override",
+      "defaultPrompt"
+    ],
+    "body_sha256": "1bb107b4d5354b7b8eb239079bc85c00525978143dc4e7201915ecdb044a6d78",
+    "calls": [
+      "RESERVED_PROJECT_PROMPT_TAG.test",
+      "containsUnsafeControlCharacter",
+      "override.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640991:23966116",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "isSafeStorePathForPrompt",
+    "qualified_name": "isSafeStorePathForPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640991,
+    "end_line": 640993,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "7b641f4baf22210a4ddea130e5e1160aaa69ec9af898e9e520650d37e4a8376b",
+    "calls": [
+      "/[<>`\\p{Cc}]/u.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640994:23966222",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "isSafeProjectSubagentId",
+    "qualified_name": "isSafeProjectSubagentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640994,
+    "end_line": 640996,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "24c97dea2cc60cc133a59c6110da1189f293a0b35b7fb5a3338afe5fec1f4a48",
+    "calls": [
+      "/^[A-Za-z0-9][A-Za-z0-9._:-]*$/u.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:640997:23966321",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "openingLine",
+    "qualified_name": "openingLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 640997,
+    "end_line": 641004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "0914fab927db189ab356100fe8e198ca90ec45f70f61477f77cf681c613cc70e",
+    "calls": [
+      "escapeProjectInitDescription",
+      "escapeProjectName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641007:23967349",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "suppliedBody",
+    "qualified_name": "suppliedBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641007,
+    "end_line": 641010,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "7db614692825c4bc2e86ba20e0d5d1ec5ca1cbdb1c1e8df2f79c08c72fd8e7d0",
+    "calls": [
+      "promptOverrideOrDefault"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641012:23967606",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "askThroughSendMessageBullet",
+    "qualified_name": "askThroughSendMessageBullet",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641012,
+    "end_line": 641014,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "2c49d81727f524748f6819a688031567bc53b695bc07ebb7345209811fd10d85",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641018:23968484",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendMessageSection",
+    "qualified_name": "sendMessageSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641018,
+    "end_line": 641033,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName",
+      "{ askQuestionAvailable, sendFirstRule, progressBullet }"
+    ],
+    "body_sha256": "01f8a31fa24310757f2aee8313d814dda92ca3eefd87ada081f407aab9a49a98",
+    "calls": [
+      ".join",
+      "askThroughSendMessageBullet",
+      "paragraphs.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641034:23969478",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "resolvedSendMessageSection",
+    "qualified_name": "resolvedSendMessageSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641034,
+    "end_line": 641049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName",
+      "options2"
+    ],
+    "body_sha256": "01a9d7ebd090278c5d6e5cfc6675b06cdf2254d578ae533ccb2e9186e0d86097",
+    "calls": [
+      "options2.guidanceText.firstMessageRule.replaceAll",
+      "options2.guidanceText.sendMessageGuidance.replaceAll",
+      "promptOverrideOrDefault",
+      "sendMessageSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641051:23971127",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "placementConsentClauses",
+    "qualified_name": "placementConsentClauses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641051,
+    "end_line": 641067,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ placementConsentEnabled, crossEnvironmentPlacementEnabled, repoPlacementEnabled }"
+    ],
+    "body_sha256": "53f0a053d54a604ac1ede36149704bc56566f734366bfda2d27a5020599b003d",
+    "calls": [
+      ".join",
+      "rows.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641068:23973015",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sharedCheckoutWorktreeHint",
+    "qualified_name": "sharedCheckoutWorktreeHint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641068,
+    "end_line": 641070,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoless"
+    ],
+    "body_sha256": "1c21e566ebc9a58617417c21494dee3a17774294b4f64d209ca6a83b86717df6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641071:23973227",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendToAgentDeliveryClause",
+    "qualified_name": "sendToAgentDeliveryClause",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641071,
+    "end_line": 641073,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "steerFollowupsEnabled"
+    ],
+    "body_sha256": "ce5c286303e0dbf5caff82750ca20e6096b776f36a46196acb0e0644c5c0258a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641074:23973455",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendToAgentResumeHint",
+    "qualified_name": "sendToAgentResumeHint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641074,
+    "end_line": 641076,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "steerFollowupsEnabled"
+    ],
+    "body_sha256": "7712c4c9ee915bbd45fcd80ac1de75c974f51a587cc268aed53c79933e604b34",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641079:23975887",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "coordinatingWorkersSection",
+    "qualified_name": "coordinatingWorkersSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641079,
+    "end_line": 641099,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "905d7adbff16e75b8e85d4bd21c80e50eadd45198ccc0528dc52e68d56d3fce2",
+    "calls": [
+      "paragraphs.join",
+      "placementConsentClauses",
+      "sendToAgentDeliveryClause",
+      "sendToAgentResumeHint",
+      "sharedCheckoutWorktreeHint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641100:23978127",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "progressSection",
+    "qualified_name": "progressSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641100,
+    "end_line": 641103,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "d17584daf0c09da6952acd9b3982bbc3de5fb3b7c9a30a79f230dcfe83698baf",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641104:23978450",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatConsolidatedWakeGuidance",
+    "qualified_name": "formatConsolidatedWakeGuidance",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641104,
+    "end_line": 641107,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentChatLinksEnabled"
+    ],
+    "body_sha256": "9c8cb660dda96a4c1e5f228c4dc9e9c3959504fa6ac49d15493a84e5912f07d7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641108:23978931",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "capabilitySections",
+    "qualified_name": "capabilitySections",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641108,
+    "end_line": 641131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "421bf171fb94b2de9eef8d75baf2ec3454dfcf89c3df4ce733921687f6b14dd5",
+    "calls": [
+      "coordinatingWorkersSection",
+      "formatConsolidatedWakeGuidance",
+      "progressSection",
+      "resolvedSendMessageSection",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641132:23980094",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "firstProjectKickoffScript",
+    "qualified_name": "firstProjectKickoffScript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641132,
+    "end_line": 641142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "dc22f7937b97391ffc9906bb46f1a7cc03133e6d529ee9994d9edb421992c3fc",
+    "calls": [
+      "sendMessageToolName.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641144:23981248",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "clampFirstProjectOnboardingForTurn",
+    "qualified_name": "clampFirstProjectOnboardingForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641144,
+    "end_line": 641152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "onboarding",
+      "priorTurnCount"
+    ],
+    "body_sha256": "96161f25858d543a0ae9313753d0523b56800ca1e250f134c910a3983b8ec244",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641153:23981542",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatFirstProjectOnboardingOverlay",
+    "qualified_name": "formatFirstProjectOnboardingOverlay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641153,
+    "end_line": 641166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5d36f1d6d7def900348c0cada1bdc878beb4f7fdb10c6ce8a5705ce115759c7e",
+    "calls": [
+      "firstProjectKickoffScript",
+      "sections.join",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641168:23982206",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "rootPromptFrom",
+    "qualified_name": "rootPromptFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641168,
+    "end_line": 641173,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "options2"
+    ],
+    "body_sha256": "5045763f1d910591bd41fc25f48b0db61c75c1eb30509486e5ee31e68f8c3465",
+    "calls": [
+      ".join",
+      "capabilitySections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641174:23982381",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectPrompt",
+    "qualified_name": "formatProjectPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641174,
+    "end_line": 641207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "options2 = {}"
+    ],
+    "body_sha256": "732e31dc1bcc3c15cd2fcd077ac0c4adc7e7893055b4683f32e4379ee8478182",
+    "calls": [
+      "formatFirstProjectOnboardingOverlay",
+      "new Error",
+      "openingLine",
+      "promptOverrideOrDefault",
+      "rootPromptFrom",
+      "suppliedBody"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641208:23983485",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectCompactionPrompt",
+    "qualified_name": "formatProjectCompactionPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641208,
+    "end_line": 641213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2 = {}"
+    ],
+    "body_sha256": "efdb8ef37859538217f367be5cc8c34391cce4777bef092f5c65b1fe1803de7c",
+    "calls": [
+      "rootPromptFrom",
+      "suppliedBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641224:23985003",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatWorkerParentMessagingPrompt",
+    "qualified_name": "formatWorkerParentMessagingPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641224,
+    "end_line": 641226,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "3f538a0487341d28b421b08dfb17eb3556c03cdf561cbaf206184ad0d3606e45",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641237:23987044",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatMidLevelParentMessagingPrompt",
+    "qualified_name": "formatMidLevelParentMessagingPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641237,
+    "end_line": 641239,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "8560cc8da174ee197085af6e2d500988c3c4668c3404909c0e705b279757ad4a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641241:23987387",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "cloudStoreMappingLine",
+    "qualified_name": "cloudStoreMappingLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641241,
+    "end_line": 641258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "storeDir"
+    ],
+    "body_sha256": "4dbd67bd3af4a7e784680c0194e4b80a027c83a02bd8c54865dd2a9f49e27b62",
+    "calls": [
+      "derivedLocalPrefix.includes",
+      "isSafeStorePathForPrompt",
+      "matchAgentStorePathForDisplay",
+      "normalized.startsWith",
+      "storeDir.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641260:23988723",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "threadStoreBody",
+    "qualified_name": "threadStoreBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641260,
+    "end_line": 641277,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ workerFileLinksEnabled, trackedTasks }"
+    ],
+    "body_sha256": "edc407a9c8608a19bf8ed63d6a6bf299337b0b805b9c1739274ad9a149766d63",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641278:23991682",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sideChatBody",
+    "qualified_name": "sideChatBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641278,
+    "end_line": 641288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trackedTasks"
+    ],
+    "body_sha256": "b88af03e71e6b9bcfaf897f7b55842b2be6263dd74044366ff1e27805c1f059d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641289:23992225",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "projectReference",
+    "qualified_name": "projectReference",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641289,
+    "end_line": 641291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "escapedName"
+    ],
+    "body_sha256": "6da37d8e826f60956129bd9990d7fbebf2ac1a8a3598c619119653e847c4e8e0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641292:23992355",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSubagentDocsPrompt",
+    "qualified_name": "formatProjectSubagentDocsPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641292,
+    "end_line": 641312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "b16771ae0087d914d9eb0c79c999ea10ca3a2af15b66913990f82d0fc0dd6fa6",
+    "calls": [
+      "cloudStoreMappingLine",
+      "isSafeProjectSubagentId",
+      "isSafeStorePathForPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641313:23994355",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectThreadPrompt",
+    "qualified_name": "formatProjectThreadPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641313,
+    "end_line": 641354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "eec0c676333f41a75f3c9213ad83f4fd794fb933d6d8872571b75b67f2f73240",
+    "calls": [
+      "cloudStoreMappingLine",
+      "escapeProjectName",
+      "formatProjectSubagentDocsPrompt",
+      "isSafeProjectSubagentId",
+      "isSafeStorePathForPrompt",
+      "options2.mountedAgentStores.find",
+      "projectReference",
+      "promptOverrideOrDefault",
+      "threadStoreBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641355:23996085",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSideChatPrompt",
+    "qualified_name": "formatProjectSideChatPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641355,
+    "end_line": 641365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "3a6f0ce0f690e61000c55d04ad358938da1880feb28dd397ec0343ebe1ad8405",
+    "calls": [
+      "escapeProjectName",
+      "isSafeStorePathForPrompt",
+      "projectReference",
+      "promptOverrideOrDefault",
+      "sideChatBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:641366:23996579",
+    "artifact": "host",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSubagentPrompt",
+    "qualified_name": "formatProjectSubagentPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 641366,
+    "end_line": 641368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "d0dc3cdf118f4096c27eefb6322d0f71f9e6cee94d5ab28667987258610a8b04",
+    "calls": [
+      "formatProjectSubagentDocsPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431544:15179103",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sanitizeProjectReminderCadenceInterval",
+    "qualified_name": "sanitizeProjectReminderCadenceInterval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431544,
+    "end_line": 431556,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "interval"
+    ],
+    "body_sha256": "39672ed912a5ac61ab1ee8887c3c6f8b35b1307a7b9333a8afc0debe012db7cd",
+    "calls": [
+      "Math.floor",
+      "Number",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431557:15179555",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "resolveProjectCadenceKind",
+    "qualified_name": "resolveProjectCadenceKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431557,
+    "end_line": 431563,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4f11ccd1b74bfaa1a3187359da9340ccdd54e212067ec87b287abc13eb4fb8ba",
+    "calls": [
+      "sanitizeProjectReminderCadenceInterval"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431564:15179794",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "collapseWhitespace",
+    "qualified_name": "collapseWhitespace",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431564,
+    "end_line": 431566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "7ec7c20226b10ae08b3c6dc1303238ca44f84f2721ae8f8b632cc666910ce684",
+    "calls": [
+      ".trim",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431567:15179893",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "normalizeProjectName",
+    "qualified_name": "normalizeProjectName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431567,
+    "end_line": 431573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "projectName"
+    ],
+    "body_sha256": "95607b2a06d94a1a2a496720bf76ee06c7b4d79d27dc8ba81c5696514312a15d",
+    "calls": [
+      "collapseWhitespace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431574:15180091",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeForPrompt",
+    "qualified_name": "escapeForPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431574,
+    "end_line": 431576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1c710326a0f1cc0add1f2d76b4471d61d8f134b9ae7b3710e2340180efed6cec",
+    "calls": [
+      ".replaceAll",
+      ".slice",
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431577:15180226",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeProjectName",
+    "qualified_name": "escapeProjectName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431577,
+    "end_line": 431580,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "projectName"
+    ],
+    "body_sha256": "5256a8f28aa7a19a8b80ee58475289abcd8ca8cd8ce1ceedc974a1d9907e770f",
+    "calls": [
+      "escapeForPrompt",
+      "normalizeProjectName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431581:15180397",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "escapeProjectInitDescription",
+    "qualified_name": "escapeProjectInitDescription",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431581,
+    "end_line": 431587,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "initDescription"
+    ],
+    "body_sha256": "a849bf88139fcfba7b1af89739878afb0e1b427dd319e71941edf66f6ad3d5f4",
+    "calls": [
+      ".join",
+      ".slice",
+      "collapseWhitespace",
+      "escapeForPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431589:15180750",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "containsUnsafeControlCharacter",
+    "qualified_name": "containsUnsafeControlCharacter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431589,
+    "end_line": 431597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "f2ba71d149da545381abc60912cdc85832e7bfe7f80f3610078c00ff0fd28fbe",
+    "calls": [
+      "character.codePointAt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431598:15181061",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "promptOverrideOrDefault",
+    "qualified_name": "promptOverrideOrDefault",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431598,
+    "end_line": 431603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "override",
+      "defaultPrompt"
+    ],
+    "body_sha256": "1bb107b4d5354b7b8eb239079bc85c00525978143dc4e7201915ecdb044a6d78",
+    "calls": [
+      "RESERVED_PROJECT_PROMPT_TAG.test",
+      "containsUnsafeControlCharacter",
+      "override.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431604:15181289",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "isSafeStorePathForPrompt",
+    "qualified_name": "isSafeStorePathForPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431604,
+    "end_line": 431606,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "7b641f4baf22210a4ddea130e5e1160aaa69ec9af898e9e520650d37e4a8376b",
+    "calls": [
+      "/[<>`\\p{Cc}]/u.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431607:15181395",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "isSafeProjectSubagentId",
+    "qualified_name": "isSafeProjectSubagentId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431607,
+    "end_line": 431609,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "24c97dea2cc60cc133a59c6110da1189f293a0b35b7fb5a3338afe5fec1f4a48",
+    "calls": [
+      "/^[A-Za-z0-9][A-Za-z0-9._:-]*$/u.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431610:15181494",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "openingLine",
+    "qualified_name": "openingLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431610,
+    "end_line": 431617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "0914fab927db189ab356100fe8e198ca90ec45f70f61477f77cf681c613cc70e",
+    "calls": [
+      "escapeProjectInitDescription",
+      "escapeProjectName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431620:15182522",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "suppliedBody",
+    "qualified_name": "suppliedBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431620,
+    "end_line": 431623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "7db614692825c4bc2e86ba20e0d5d1ec5ca1cbdb1c1e8df2f79c08c72fd8e7d0",
+    "calls": [
+      "promptOverrideOrDefault"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431625:15182779",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "askThroughSendMessageBullet",
+    "qualified_name": "askThroughSendMessageBullet",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431625,
+    "end_line": 431627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "2c49d81727f524748f6819a688031567bc53b695bc07ebb7345209811fd10d85",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431631:15183657",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendMessageSection",
+    "qualified_name": "sendMessageSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431631,
+    "end_line": 431646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName",
+      "{ askQuestionAvailable, sendFirstRule, progressBullet }"
+    ],
+    "body_sha256": "01f8a31fa24310757f2aee8313d814dda92ca3eefd87ada081f407aab9a49a98",
+    "calls": [
+      ".join",
+      "askThroughSendMessageBullet",
+      "paragraphs.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431647:15184651",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "resolvedSendMessageSection",
+    "qualified_name": "resolvedSendMessageSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431647,
+    "end_line": 431662,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName",
+      "options2"
+    ],
+    "body_sha256": "01a9d7ebd090278c5d6e5cfc6675b06cdf2254d578ae533ccb2e9186e0d86097",
+    "calls": [
+      "options2.guidanceText.firstMessageRule.replaceAll",
+      "options2.guidanceText.sendMessageGuidance.replaceAll",
+      "promptOverrideOrDefault",
+      "sendMessageSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431664:15186300",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "placementConsentClauses",
+    "qualified_name": "placementConsentClauses",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431664,
+    "end_line": 431680,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ placementConsentEnabled, crossEnvironmentPlacementEnabled, repoPlacementEnabled }"
+    ],
+    "body_sha256": "53f0a053d54a604ac1ede36149704bc56566f734366bfda2d27a5020599b003d",
+    "calls": [
+      ".join",
+      "rows.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431681:15188188",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sharedCheckoutWorktreeHint",
+    "qualified_name": "sharedCheckoutWorktreeHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431681,
+    "end_line": 431683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoless"
+    ],
+    "body_sha256": "1c21e566ebc9a58617417c21494dee3a17774294b4f64d209ca6a83b86717df6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431684:15188400",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendToAgentDeliveryClause",
+    "qualified_name": "sendToAgentDeliveryClause",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431684,
+    "end_line": 431686,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "steerFollowupsEnabled"
+    ],
+    "body_sha256": "ce5c286303e0dbf5caff82750ca20e6096b776f36a46196acb0e0644c5c0258a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431687:15188628",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sendToAgentResumeHint",
+    "qualified_name": "sendToAgentResumeHint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431687,
+    "end_line": 431689,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "steerFollowupsEnabled"
+    ],
+    "body_sha256": "7712c4c9ee915bbd45fcd80ac1de75c974f51a587cc268aed53c79933e604b34",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431692:15191060",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "coordinatingWorkersSection",
+    "qualified_name": "coordinatingWorkersSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431692,
+    "end_line": 431712,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "905d7adbff16e75b8e85d4bd21c80e50eadd45198ccc0528dc52e68d56d3fce2",
+    "calls": [
+      "paragraphs.join",
+      "placementConsentClauses",
+      "sendToAgentDeliveryClause",
+      "sendToAgentResumeHint",
+      "sharedCheckoutWorktreeHint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431713:15193300",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "progressSection",
+    "qualified_name": "progressSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431713,
+    "end_line": 431716,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "d17584daf0c09da6952acd9b3982bbc3de5fb3b7c9a30a79f230dcfe83698baf",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431717:15193623",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatConsolidatedWakeGuidance",
+    "qualified_name": "formatConsolidatedWakeGuidance",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431717,
+    "end_line": 431720,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentChatLinksEnabled"
+    ],
+    "body_sha256": "9c8cb660dda96a4c1e5f228c4dc9e9c3959504fa6ac49d15493a84e5912f07d7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431721:15194104",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "capabilitySections",
+    "qualified_name": "capabilitySections",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431721,
+    "end_line": 431744,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "421bf171fb94b2de9eef8d75baf2ec3454dfcf89c3df4ce733921687f6b14dd5",
+    "calls": [
+      "coordinatingWorkersSection",
+      "formatConsolidatedWakeGuidance",
+      "progressSection",
+      "resolvedSendMessageSection",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431745:15195267",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "firstProjectKickoffScript",
+    "qualified_name": "firstProjectKickoffScript",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431745,
+    "end_line": 431755,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sendMessageToolName"
+    ],
+    "body_sha256": "dc22f7937b97391ffc9906bb46f1a7cc03133e6d529ee9994d9edb421992c3fc",
+    "calls": [
+      "sendMessageToolName.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431757:15196421",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "clampFirstProjectOnboardingForTurn",
+    "qualified_name": "clampFirstProjectOnboardingForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431757,
+    "end_line": 431765,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "onboarding",
+      "priorTurnCount"
+    ],
+    "body_sha256": "96161f25858d543a0ae9313753d0523b56800ca1e250f134c910a3983b8ec244",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431766:15196715",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatFirstProjectOnboardingOverlay",
+    "qualified_name": "formatFirstProjectOnboardingOverlay",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431766,
+    "end_line": 431779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5d36f1d6d7def900348c0cada1bdc878beb4f7fdb10c6ce8a5705ce115759c7e",
+    "calls": [
+      "firstProjectKickoffScript",
+      "sections.join",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431781:15197379",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "rootPromptFrom",
+    "qualified_name": "rootPromptFrom",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431781,
+    "end_line": 431786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "options2"
+    ],
+    "body_sha256": "5045763f1d910591bd41fc25f48b0db61c75c1eb30509486e5ee31e68f8c3465",
+    "calls": [
+      ".join",
+      "capabilitySections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431787:15197554",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectPrompt",
+    "qualified_name": "formatProjectPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431787,
+    "end_line": 431820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kind",
+      "options2 = {}"
+    ],
+    "body_sha256": "732e31dc1bcc3c15cd2fcd077ac0c4adc7e7893055b4683f32e4379ee8478182",
+    "calls": [
+      "formatFirstProjectOnboardingOverlay",
+      "new Error",
+      "openingLine",
+      "promptOverrideOrDefault",
+      "rootPromptFrom",
+      "suppliedBody"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431821:15198658",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectCompactionPrompt",
+    "qualified_name": "formatProjectCompactionPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431821,
+    "end_line": 431826,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2 = {}"
+    ],
+    "body_sha256": "efdb8ef37859538217f367be5cc8c34391cce4777bef092f5c65b1fe1803de7c",
+    "calls": [
+      "rootPromptFrom",
+      "suppliedBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431837:15200176",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatWorkerParentMessagingPrompt",
+    "qualified_name": "formatWorkerParentMessagingPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431837,
+    "end_line": 431839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "3f538a0487341d28b421b08dfb17eb3556c03cdf561cbaf206184ad0d3606e45",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431850:15202217",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatMidLevelParentMessagingPrompt",
+    "qualified_name": "formatMidLevelParentMessagingPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431850,
+    "end_line": 431852,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "8560cc8da174ee197085af6e2d500988c3c4668c3404909c0e705b279757ad4a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431854:15202560",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "cloudStoreMappingLine",
+    "qualified_name": "cloudStoreMappingLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431854,
+    "end_line": 431871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "storeDir"
+    ],
+    "body_sha256": "4dbd67bd3af4a7e784680c0194e4b80a027c83a02bd8c54865dd2a9f49e27b62",
+    "calls": [
+      "derivedLocalPrefix.includes",
+      "isSafeStorePathForPrompt",
+      "matchAgentStorePathForDisplay",
+      "normalized.startsWith",
+      "storeDir.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431873:15203896",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "threadStoreBody",
+    "qualified_name": "threadStoreBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431873,
+    "end_line": 431890,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ workerFileLinksEnabled, trackedTasks }"
+    ],
+    "body_sha256": "edc407a9c8608a19bf8ed63d6a6bf299337b0b805b9c1739274ad9a149766d63",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431891:15206855",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "sideChatBody",
+    "qualified_name": "sideChatBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431891,
+    "end_line": 431901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trackedTasks"
+    ],
+    "body_sha256": "b88af03e71e6b9bcfaf897f7b55842b2be6263dd74044366ff1e27805c1f059d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431902:15207398",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "projectReference",
+    "qualified_name": "projectReference",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431902,
+    "end_line": 431904,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "escapedName"
+    ],
+    "body_sha256": "6da37d8e826f60956129bd9990d7fbebf2ac1a8a3598c619119653e847c4e8e0",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431905:15207528",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSubagentDocsPrompt",
+    "qualified_name": "formatProjectSubagentDocsPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431905,
+    "end_line": 431925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "b16771ae0087d914d9eb0c79c999ea10ca3a2af15b66913990f82d0fc0dd6fa6",
+    "calls": [
+      "cloudStoreMappingLine",
+      "isSafeProjectSubagentId",
+      "isSafeStorePathForPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431926:15209528",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectThreadPrompt",
+    "qualified_name": "formatProjectThreadPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431926,
+    "end_line": 431967,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "eec0c676333f41a75f3c9213ad83f4fd794fb933d6d8872571b75b67f2f73240",
+    "calls": [
+      "cloudStoreMappingLine",
+      "escapeProjectName",
+      "formatProjectSubagentDocsPrompt",
+      "isSafeProjectSubagentId",
+      "isSafeStorePathForPrompt",
+      "options2.mountedAgentStores.find",
+      "projectReference",
+      "promptOverrideOrDefault",
+      "threadStoreBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431968:15211258",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSideChatPrompt",
+    "qualified_name": "formatProjectSideChatPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431968,
+    "end_line": 431978,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "3a6f0ce0f690e61000c55d04ad358938da1880feb28dd397ec0343ebe1ad8405",
+    "calls": [
+      "escapeProjectName",
+      "isSafeStorePathForPrompt",
+      "projectReference",
+      "promptOverrideOrDefault",
+      "sideChatBody"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:431979:15211752",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/project-prompt.js",
+    "name": "formatProjectSubagentPrompt",
+    "qualified_name": "formatProjectSubagentPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 431979,
+    "end_line": 431981,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "d0dc3cdf118f4096c27eefb6322d0f71f9e6cee94d5ab28667987258610a8b04",
+    "calls": [
+      "formatProjectSubagentDocsPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

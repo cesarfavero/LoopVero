@@ -1,0 +1,324 @@
+[
+  {
+    "id": "host:591013:21820432",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "isBoxShellTransientError",
+    "qualified_name": "isBoxShellTransientError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591013,
+    "end_line": 591015,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "2a9d4acd46a5ea1de02e6c45e619770c857b10138cbac662753f9129f93f0672",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591016:21820603",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "isSignalKillFailure",
+    "qualified_name": "isSignalKillFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591016,
+    "end_line": 591018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "exitCode",
+      "signal"
+    ],
+    "body_sha256": "abdc67c7e49ae5c972318470eaccd34d16d02d2552f77ef13322f0d8cb670ded",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591019:21820698",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "shellSingleQuote",
+    "qualified_name": "shellSingleQuote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591019,
+    "end_line": 591021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "c6d96b32e8132dfe6dba7aa637f88cf9f1f8b841d5593ca077e5e1abb2ec8ea5",
+    "calls": [
+      "value.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591022:21820783",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "describeShellFailure",
+    "qualified_name": "describeShellFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591022,
+    "end_line": 591040,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "070bffb2ce4082db05ebdb216c2d5692ccc42e333d5ce142f9e97907a56363bc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591041:21821661",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "asTransientBoxShellError",
+    "qualified_name": "asTransientBoxShellError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591041,
+    "end_line": 591059,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "context2"
+    ],
+    "body_sha256": "642ffcca97cd9c35c0c63441d8f25da14087c45ba296c1e7dc48601f9f08e0e1",
+    "calls": [
+      "describeShellFailure",
+      "isSignalKillFailure",
+      "new BoxShellSignalKilledError",
+      "new BoxShellUnavailableError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591060:21822241",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "runBoxShell",
+    "qualified_name": "runBoxShell",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591060,
+    "end_line": 591079,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "accessor",
+      "script"
+    ],
+    "body_sha256": "933ac0c1724944ef7f32b896641ac686587d54ca1bf5df3cde5f5e1a555f9c25",
+    "calls": [
+      "accessor.get",
+      "asTransientBoxShellError",
+      "buildHostShellArgs",
+      "describeShellFailure",
+      "new SandBoxFileTransferError",
+      "shell.execute",
+      "shellSingleQuote"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxFileTransferError",
+      "transient"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:591080:21823056",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "uploadFileViaExecDaemon",
+    "qualified_name": "uploadFileViaExecDaemon",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591080,
+    "end_line": 591096,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "accessor",
+      "boxPath",
+      "data2"
+    ],
+    "body_sha256": "0847f9310b4e17955640856510f52442a807b2c584e6dc034ba3eed0c77cebb0",
+    "calls": [
+      ".catch",
+      ".toString",
+      "import_node_path97.posix.dirname",
+      "runBoxShell",
+      "shellSingleQuote",
+      "writeFileBytesViaExecDaemon"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:591097:21823720",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "probeDirectoryWritableViaExecDaemon",
+    "qualified_name": "probeDirectoryWritableViaExecDaemon",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591097,
+    "end_line": 591115,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "accessor",
+      "directory"
+    ],
+    "body_sha256": "36f7e320ce9d2da371ff3c1a11d448b10b77b6046b04d7361cb027755adddefd",
+    "calls": [
+      ".toString",
+      "import_node_path97.posix.join",
+      "new Uint8Array",
+      "runBoxShell",
+      "shellSingleQuote",
+      "uploadFileViaExecDaemon"
+    ],
+    "writes": [
+      "writeError"
+    ],
+    "throw_targets": [
+      "cleanupError",
+      "writeError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 3,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:591116:21824362",
+    "artifact": "host",
+    "module": "host/box/box-file-transfer.ts",
+    "name": "writeFileBytesViaExecDaemon",
+    "qualified_name": "writeFileBytesViaExecDaemon",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 591116,
+    "end_line": 591146,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "accessor",
+      "boxPath",
+      "data2"
+    ],
+    "body_sha256": "be3ad214fe73a28d49155a5cde0a61ba0247bb9a1a3c6737ceab1511f25d58ec",
+    "calls": [
+      "Uint8Array.from",
+      "accessor.get",
+      "new SandBoxFileTransferError",
+      "new WriteArgs",
+      "writer.execute"
+    ],
+    "writes": [
+      "reason"
+    ],
+    "throw_targets": [
+      "SandBoxFileTransferError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

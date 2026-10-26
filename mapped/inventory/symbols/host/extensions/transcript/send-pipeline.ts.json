@@ -1,0 +1,312 @@
+[
+  {
+    "id": "host:740160:28128361",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.constructor",
+    "qualified_name": "SendPipeline.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740160,
+    "end_line": 740163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "7cd9d4c4c94155a9369e2349315863b9332abf945d8b3af277f894387f2209e0",
+    "calls": [
+      "new BoxRequestEntries"
+    ],
+    "writes": [
+      "this.boxRequests",
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740167:28128527",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.promptAcceptanceStatus",
+    "qualified_name": "SendPipeline.promptAcceptanceStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740167,
+    "end_line": 740169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f7104772e9ad04dde4baeb381e59a201771c9c313c96e0f5b8dd55d58585d0ed",
+    "calls": [
+      "this.tm.acceptanceLedger.lookup"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740170:28128608",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.sendPrompt",
+    "qualified_name": "SendPipeline.sendPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740170,
+    "end_line": 740188,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "prompt",
+      "options2"
+    ],
+    "body_sha256": "e8a5f64a47f8448a35de345b637e87eda01da2ff212d35e08cac9ca0df1bd207",
+    "calls": [
+      ".some",
+      "new AgentGoneError",
+      "new SandBoxHarnessRetiredError",
+      "new SandServerRoomSendError",
+      "prompt.trim",
+      "this.refuseBoxTurn",
+      "this.tm.boxHarnessRefusals.reportServerHostedSkipped",
+      "this.tm.groupChat.isGroupAgentId",
+      "this.tm.sessions.ensureActionTarget",
+      "this.tm.sessions.isAgentGone",
+      "this.tm.sessions.isServerHostedAgent"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AgentGoneError",
+      "ConditionalExpression"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740189:28129618",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.refuseBoxTurn",
+    "qualified_name": "SendPipeline.refuseBoxTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740189,
+    "end_line": 740192,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "b080d47e57832399de61765a6d2b4d67bb17176cc15b09c423e56a0d8005c287",
+    "calls": [
+      "new SandBoxHarnessRetiredError",
+      "this.tm.boxHarnessRefusals.reportBlocked"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxHarnessRetiredError"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740193:28129797",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.nextTurnEpoch",
+    "qualified_name": "SendPipeline.nextTurnEpoch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740193,
+    "end_line": 740201,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "4b6e98db9576081e6736d3d69c31169c423d1749e622beeda7e8f53961d715a9",
+    "calls": [
+      "this.tm.groupChat.cancelTemporalMemberTurns",
+      "this.turnEpochs.get",
+      "this.turnEpochs.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740202:28130073",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.currentTurnEpoch",
+    "qualified_name": "SendPipeline.currentTurnEpoch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740202,
+    "end_line": 740204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "4e1c6ba3f1f520f4e909c223efdcae6bc283aaaa0bbfbed3adc67e8fdbf56348",
+    "calls": [
+      "this.turnEpochs.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740205:28130162",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.appendSendMessageEntry",
+    "qualified_name": "SendPipeline.appendSendMessageEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740205,
+    "end_line": 740208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "0a4990f1249a099731e44d3c7d2d01c723ceec8a4e54df4867b74718355575ff",
+    "calls": [
+      "this.boxRequests.trackBoxRequestEntry",
+      "this.tm.appendEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740209:28130288",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.resolveBoxRequestEntry",
+    "qualified_name": "SendPipeline.resolveBoxRequestEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740209,
+    "end_line": 740211,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "requestId2",
+      "resolution",
+      "options2"
+    ],
+    "body_sha256": "d27f014b92c8f4cf62641fdeb22d35a015c5669be1ecab31ae388c05e9d42013",
+    "calls": [
+      "this.boxRequests.resolveBoxRequestEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740212:28130460",
+    "artifact": "host",
+    "module": "host/extensions/transcript/send-pipeline.ts",
+    "name": "SendPipeline.appendConnectorCard",
+    "qualified_name": "SendPipeline.appendConnectorCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740212,
+    "end_line": 740224,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "54b211922fdd5a0fe93d18beaa795b03d19e088e3e9598d4fd1e036f73e251b9",
+    "calls": [
+      "Date.now",
+      "createSendMessageEntry",
+      "getTranscript",
+      "nextEntryId",
+      "this.appendSendMessageEntry",
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

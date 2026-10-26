@@ -1,0 +1,113 @@
+[
+  {
+    "id": "host:485998:17797681",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-approval-gateway.ts",
+    "name": "parseItems",
+    "qualified_name": "parseItems",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485998,
+    "end_line": 486005,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "c537e86a3667956da7c08f3d0209af2f3221bac35dc5ef6401c785860a29ca06",
+    "calls": [
+      "items.push",
+      "parseCookieOriginApprovalItem"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:486006:17797875",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-approval-gateway.ts",
+    "name": "parseResponseFrame",
+    "qualified_name": "parseResponseFrame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 486006,
+    "end_line": 486061,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "782b04cb8e74dfd694f1505d66ba3c0de206c202317ab83022ec444b1ecc9c85",
+    "calls": [
+      "cookies.push",
+      "hasUnknownKind",
+      "parseChromeCookieRecord",
+      "parseCookieOriginApprovalRefusalReason",
+      "parseCookieOriginGrants",
+      "parseItems",
+      "sandCookieOriginApprovalFailedSchema.safeParse",
+      "sandCookieOriginApprovalHelloSchema.safeParse",
+      "sandCookieOriginApprovalListedSchema.safeParse",
+      "sandCookieOriginApprovalPingSchema.safeParse",
+      "sandCookieOriginApprovalRefusedSchema.safeParse",
+      "sandCookieOriginApprovalResolvedSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:486066:17800148",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-approval-gateway.ts",
+    "name": "parseSandCookieOriginApprovalResponseBatch",
+    "qualified_name": "parseSandCookieOriginApprovalResponseBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 486066,
+    "end_line": 486079,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "u2"
+    ],
+    "body_sha256": "1aa2d9ddd20f75921b4325c6a9530c942c06f1bf7b7bf3c1243c9f8d04644896",
+    "calls": [
+      "describeZodIssues",
+      "frames.push",
+      "new SandWireParseError",
+      "parseResponseFrame",
+      "sandCookieOriginApprovalResponseBatchSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandWireParseError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

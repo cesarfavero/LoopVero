@@ -1,0 +1,31 @@
+# `BoxStoreManifestStore.writeManifestAttempt`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../../guide/architecture/README.md).
+
+**Módulo:** `host/extensions/box-store-sync/box-store-manifest.ts` · [README do módulo](../../../../../../modules/host/extensions/box-store-sync/box-store-manifest-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:477347-477366](../../../../../../../reference/runtime/host-main.cjs#L477347-L477366) | `method` | sim | `storeId, manifest` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:477347-477366](../../../../../../../reference/runtime/host-main.cjs#L477347-L477366) | 4 | 0 | 2 | 0 | 2 | 1 |
+
+### host:477347
+
+Chamadas escritas diretamente neste corpo: `.get`, `.put`, `Buffer.from`, `JSON.stringify`, `new ManifestRetryStoppedError`, `new Uint8Array`, `this.isDisposed`, `this.log`, `this.objectStore`, `this.parseManifest`.
+
+Alvos de lançamento explícito: `ManifestRetryStoppedError`, `error64`.
+
+SHA-256 do trecho: `49358a9d7000f72fa245389c7e4d7744c5818069d6be6b53bc9119c1e051c737`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../../guide/methodology/README.md).

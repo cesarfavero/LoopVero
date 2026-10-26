@@ -1,0 +1,240 @@
+[
+  {
+    "id": "host:717787:27240795",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "openConfiguredDb",
+    "qualified_name": "openConfiguredDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717787,
+    "end_line": 717834,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "agentDirName",
+      "options2",
+      "hasOtherLiveHandles",
+      "initDb = initConfiguredDb"
+    ],
+    "body_sha256": "23ba49a8e344826747433f012aaaa87218510ffa35beba42ef7b816a83afbdda",
+    "calls": [
+      "db.close",
+      "errorLogTag",
+      "initDb",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "isStoreDbHealthy",
+      "new Error",
+      "new SandAgentDbIntegrityError",
+      "recoverCorruptStoreDb",
+      "reportSessionDiagnostic"
+    ],
+    "writes": [
+      "attempt",
+      "db",
+      "openError"
+    ],
+    "throw_targets": [
+      "SandAgentDbIntegrityError",
+      "openError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:717835:27242288",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "isStoreDbHealthy",
+    "qualified_name": "isStoreDbHealthy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717835,
+    "end_line": 717842,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "58e9333e92d89071eaa0c79ff1752eda1d3774a1458e95e187d22d61f8d9deec",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717843:27242458",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "initConfiguredDb",
+    "qualified_name": "initConfiguredDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717843,
+    "end_line": 717869,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "agentDirName",
+      "options2"
+    ],
+    "body_sha256": "88dfbf203912db5a8f4395639074e8f7d88d1de119fc1e85fdbd24a191763e62",
+    "calls": [
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "errorLogTag",
+      "new import_node_sqlite5.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync",
+      "reportSessionDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:717870:27243193",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "recoverCorruptStoreDb",
+    "qualified_name": "recoverCorruptStoreDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717870,
+    "end_line": 717902,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "agentDirName",
+      "options2",
+      "cause"
+    ],
+    "body_sha256": "237aef74eacfc722bb8b6d1c5c77374eaf8a605add1324e351767023d27d18b0",
+    "calls": [
+      "errorLogTag",
+      "initConfiguredDb",
+      "options2.onCorruptionRecovered",
+      "publishTranscriptMutation",
+      "quarantineCorruptDb",
+      "reportSessionDiagnostic",
+      "salvageStoreDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717903:27244485",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "quarantineCorruptDb",
+    "qualified_name": "quarantineCorruptDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717903,
+    "end_line": 717922,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "agentDirName"
+    ],
+    "body_sha256": "1864d7a2cab17332305c65c3c6f36d8a746327bd4113f32486ca4cf1157935ec",
+    "calls": [
+      "quarantineCorruptSqliteDb",
+      "reportSessionDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717923:27245085",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-recovery.ts",
+    "name": "salvageStoreDb",
+    "qualified_name": "salvageStoreDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717923,
+    "end_line": 717965,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourcePath2",
+      "freshDb",
+      "log5"
+    ],
+    "body_sha256": "d7111668d722fb7fbcd7fce9490e2dbc13b0210cb5dbaa2601d805c969976fa8",
+    "calls": [
+      "copySalvageableSqliteRows",
+      "freshDb.prepare",
+      "openSqliteForSalvage",
+      "source.close"
+    ],
+    "writes": [
+      "counts.automationCompletions",
+      "counts.blobs",
+      "counts.kv",
+      "counts.transcript"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

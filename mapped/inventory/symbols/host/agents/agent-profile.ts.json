@@ -1,0 +1,762 @@
+[
+  {
+    "id": "host:491494:18005597",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "hasPlaceholderProfileName",
+    "qualified_name": "hasPlaceholderProfileName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491494,
+    "end_line": 491500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profile"
+    ],
+    "body_sha256": "98612cf4d6c4511296f2a1819f6678d9cff152ab2c1a011790c41ea25f75eed3",
+    "calls": [
+      "isSandDefaultAgentName",
+      "profile.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491501:18005848",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "getSandProfilePath",
+    "qualified_name": "getSandProfilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491501,
+    "end_line": 491503,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "3a80eb3cc7e2253258d96b9bb318ee7953cd7e48b67dcc6c6f41805fe5f5b3b6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491504:18005962",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readProfileText",
+    "qualified_name": "readProfileText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491504,
+    "end_line": 491511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "647ab2df2132ab06e0aaf979b3eb10d9b78c2e7c593a27a64f26cb2002422fda",
+    "calls": [
+      "readSandDataFileIfPresentSync",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:491512:18006200",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "parseProfileJson2",
+    "qualified_name": "parseProfileJson2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491512,
+    "end_line": 491515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "e39b76f7bf40082a59637c453d0ff2bc56bb5340dda06662837a869bc0d1942e",
+    "calls": [
+      "parseProfileJson",
+      "readProfileText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491516:18006334",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readSandProfileFile",
+    "qualified_name": "readSandProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491516,
+    "end_line": 491520,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "78a8b7eeef7c09ff35889dfb56c872cfea2d0b5084597c483c79ae6c20ef9cfb",
+    "calls": [
+      "parseProfileJson2",
+      "profileConfigFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491521:18006497",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readLegacyProfileAvatarField",
+    "qualified_name": "readLegacyProfileAvatarField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491521,
+    "end_line": 491526,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "454bd92c468d61fe86dba8dfa93b17ce85352b518497ab97de2b2684edaf8ae4",
+    "calls": [
+      "avatar.trim",
+      "parseProfileJson2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491527:18006725",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readSandProfileServerId",
+    "qualified_name": "readSandProfileServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491527,
+    "end_line": 491530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "8090a282a3d82a2b5bf67b81f189ac6e1c7ee96984f0d2b27c5170959a005411",
+    "calls": [
+      "parseProfileJson2",
+      "profileServerIdFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491531:18006883",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "isSandAgentServerBound",
+    "qualified_name": "isSandAgentServerBound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491531,
+    "end_line": 491533,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "c73abbce29f09db0312e968c27a4e4dc0fa6269d3e071a41e974250eaf695b26",
+    "calls": [
+      "getSandProfilePath",
+      "readSandProfileServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491534:18007002",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readSandProfileHarness",
+    "qualified_name": "readSandProfileHarness",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491534,
+    "end_line": 491537,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "5c0263d4d37fd969a1fc9aca047c622fc137e65d8b11a0f9d58d15c9babc49d1",
+    "calls": [
+      "parseProfileJson2",
+      "profileHarnessFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491538:18007158",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "readSandProfileCreationMetadata",
+    "qualified_name": "readSandProfileCreationMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491538,
+    "end_line": 491542,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "6a921a7ba5d8b3ded499553aea177d8177eccc0829163f60e7e6abc98801876a",
+    "calls": [
+      "parseProfileJson2",
+      "profileServerBindingFromJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491544:18007407",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "writeProfileJson",
+    "qualified_name": "writeProfileJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491544,
+    "end_line": 491547,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "serialized"
+    ],
+    "body_sha256": "bb0729bca7f91a84a4eb6befaf6cc83e80cdc9d68653aaf16598c0de0f9a2e7c",
+    "calls": [
+      "profileFileMode",
+      "readProfileText",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491548:18007634",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "profileFileMode",
+    "qualified_name": "profileFileMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491548,
+    "end_line": 491555,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "49e4ad9134a370948cc8b5b8dc5fb3206662f0ec3e485a14843834a4b6a15f4e",
+    "calls": [
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:491556:18007845",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "writeSandProfileFile",
+    "qualified_name": "writeSandProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491556,
+    "end_line": 491562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "profile"
+    ],
+    "body_sha256": "b87296a1f24ad75f25b07234dead18060bfe738f0ff466b5c1523907fa0c8ed3",
+    "calls": [
+      "parseProfileJson2",
+      "profileServerBindingFromJson",
+      "serializeSandProfileFile",
+      "writeProfileJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491563:18008078",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "writeServerBackedProfileFile",
+    "qualified_name": "writeServerBackedProfileFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491563,
+    "end_line": 491573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "profile",
+      "binding"
+    ],
+    "body_sha256": "6168a0867e6002438526ffc64aef99459ae5288b7743ec57a69c3ebb8b7de5ca",
+    "calls": [
+      "readSandProfileCreationMetadata",
+      "serializeSandProfileFile",
+      "writeProfileJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491574:18008408",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "createSandProfile",
+    "qualified_name": "createSandProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491574,
+    "end_line": 491581,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "profile",
+      "binding"
+    ],
+    "body_sha256": "d113c9f2af39c038748e34fe37c2107ef098c3d44f4362c5660f47b1dbf57e6b",
+    "calls": [
+      "getSandProfilePath",
+      "writeSandProfileFile",
+      "writeServerBackedProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491582:18008660",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "keptProfileName",
+    "qualified_name": "keptProfileName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491582,
+    "end_line": 491585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "current2"
+    ],
+    "body_sha256": "5fd57191e84aca58219d8996be124cca84f02c90efae2e78fc166c7d1d07b698",
+    "calls": [
+      "current2.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491586:18008815",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "editSandProfile",
+    "qualified_name": "editSandProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491586,
+    "end_line": 491599,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "edit"
+    ],
+    "body_sha256": "5132ddea99ff89d517c0bf0ad5cf1742cd9f92a77a2116e14302a5043805c66c",
+    "calls": [
+      "current2.name.trim",
+      "edit.avatarColor.trim",
+      "edit.avatarShape.trim",
+      "edit.description.trim",
+      "edit.name.trim",
+      "edit.title.trim",
+      "getSandProfilePath",
+      "keptProfileName",
+      "readSandProfileFile",
+      "writeSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491600:18009524",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "stampAppProfileName",
+    "qualified_name": "stampAppProfileName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491600,
+    "end_line": 491610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stamp"
+    ],
+    "body_sha256": "9cfccaec1f985db9bab34e3fd6b8b0cb6b4d0235a2c4b2c7a46d6572d6bf1f30",
+    "calls": [
+      "getSandProfilePath",
+      "writeSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491611:18009897",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "clearProfileNameStamp",
+    "qualified_name": "clearProfileNameStamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491611,
+    "end_line": 491614,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "clear"
+    ],
+    "body_sha256": "744c35c5f1b63ef131e7a7e5b1f4f171960d6a60e28e90bc752423442bb39785",
+    "calls": [
+      "getSandProfilePath",
+      "writeSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491615:18010069",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "bindSandProfileToServer",
+    "qualified_name": "bindSandProfileToServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491615,
+    "end_line": 491617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "profile",
+      "binding"
+    ],
+    "body_sha256": "c6bdc525dd5ef35b4b7f7f8a8ac7437d29d19e4306be90f59f3e46b886fd06bf",
+    "calls": [
+      "getSandProfilePath",
+      "writeServerBackedProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491618:18010214",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "assertSandProfileNotLinked",
+    "qualified_name": "assertSandProfileNotLinked",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491618,
+    "end_line": 491621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "8af2697e9ab1719d37050c8d093157dcb632ca09dbf8c95a063cf5c70abc9837",
+    "calls": [
+      "getSandProfilePath",
+      "openNoFollowSync2",
+      "sandDataNoFollowRoot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491622:18010413",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "dropLegacyProfileAvatar",
+    "qualified_name": "dropLegacyProfileAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491622,
+    "end_line": 491627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "3c4584aca695fdeb127b2919c0ab0a25287453761ae5f069cde2dc38f34e0ef3",
+    "calls": [
+      "getSandProfilePath",
+      "readLegacyProfileAvatarField",
+      "readSandProfileFile",
+      "writeSandProfileFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491628:18010681",
+    "artifact": "host",
+    "module": "host/agents/agent-profile.ts",
+    "name": "seedRoomProfileName",
+    "qualified_name": "seedRoomProfileName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491628,
+    "end_line": 491641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "seed"
+    ],
+    "body_sha256": "e7a0eb1bd03a012e19836eda869d8cf21efa582d444cca6a8dd6b8bb9cb1522f",
+    "calls": [
+      "conversationNameFromPrompt",
+      "getSandProfilePath",
+      "isUnnamedSingleBotRoom",
+      "readSandGroupConfig",
+      "readSandProfileFile",
+      "stampAppProfileName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "host:616423:22858718",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "NearbyBlobDecryptError.constructor",
+    "qualified_name": "NearbyBlobDecryptError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616423,
+    "end_line": 616428,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "4dee5830848482363f42e4195da96d2ed2b082d4468b80e24ef1a2d20895b5f3",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616436:22859133",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.constructor",
+    "qualified_name": "_EncryptedBlobStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616436,
+    "end_line": 616440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobStore",
+      "encryptionKeyStr",
+      "fallbackDecryptKeyStr = null"
+    ],
+    "body_sha256": "d7642746f2deaeac73fb71c4bc91569bab30c71f1577096cebdb5dd19f113c3e",
+    "calls": [],
+    "writes": [
+      "this.blobStore",
+      "this.encryptionKeyStr",
+      "this.fallbackDecryptKeyStr"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616441:22859357",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.deriveKey",
+    "qualified_name": "_EncryptedBlobStore.deriveKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616441,
+    "end_line": 616446,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "keyStr"
+    ],
+    "body_sha256": "8d3d1e99af82744f753c53f1338612c107cd43ac5730d73e4f9d19a7b0283295",
+    "calls": [
+      "crypto.subtle.digest",
+      "crypto.subtle.importKey",
+      "encoder2.encode",
+      "new TextEncoder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616447:22859693",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getEncryptionKey",
+    "qualified_name": "_EncryptedBlobStore.getEncryptionKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616447,
+    "end_line": 616452,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ce31ba47300fc24a886e1cc8811a64a15d98451a136b614b318de1b9ba4038e7",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.encryptionKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616453:22859896",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "qualified_name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616453,
+    "end_line": 616461,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ca4d38a6d417e57ef24784a4315a4f39215df90e2848349a7424d32114a5ecd6",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.fallbackDecryptKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616462:22860177",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getBlob",
+    "qualified_name": "_EncryptedBlobStore.getBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616462,
+    "end_line": 616491,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId"
+    ],
+    "body_sha256": "77ff952ad0a2c26a8a4e80bf55acacbfe22999a0911d50d0a01fc316080b7836",
+    "calls": [
+      "cachedNearbyDecryptFallbackSuccess.increment",
+      "crypto.subtle.decrypt",
+      "encryptedGetBlobLatency.histogram",
+      "encryptedValue.slice",
+      "new NearbyBlobDecryptError",
+      "new Uint8Array",
+      "performance.now",
+      "this.blobStore.getBlob",
+      "this.getEncryptionKey",
+      "this.getFallbackDecryptKey"
+    ],
+    "writes": [
+      "decryptedValue"
+    ],
+    "throw_targets": [
+      "NearbyBlobDecryptError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:616492:22861416",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.encryptBlob",
+    "qualified_name": "_EncryptedBlobStore.encryptBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616492,
+    "end_line": 616499,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobData"
+    ],
+    "body_sha256": "5dba5ca36e85b29a2eb75e4a5291fbf701582f1a9a2995ce5705e837e2a73591",
+    "calls": [
+      "combined.set",
+      "crypto.getRandomValues",
+      "crypto.subtle.encrypt",
+      "new Uint8Array",
+      "this.getEncryptionKey",
+      "toUint8Array2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616500:22861874",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlob",
+    "qualified_name": "_EncryptedBlobStore.setBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616500,
+    "end_line": 616509,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "b5ddc2dcadd2b50743df71f043c7ac60c98f99811ac0e1b84c59a7799926a8f9",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlob",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616510:22862241",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "qualified_name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616510,
+    "end_line": 616519,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "8be0116f26a2bfa3cb7ff9968af24ea03ae1ac58d40f1ba73a56183fbad736d3",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlobLocallyOnly",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:616520:22862606",
+    "artifact": "host",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.flush",
+    "qualified_name": "_EncryptedBlobStore.flush",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 616520,
+    "end_line": 616522,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "3ded32513d7c19e851b32a2b5f56d9ceb34c045a049c38467993b616aca47b8e",
+    "calls": [
+      "this.blobStore.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284963:9193372",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "NearbyBlobDecryptError.constructor",
+    "qualified_name": "NearbyBlobDecryptError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284963,
+    "end_line": 284968,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "4dee5830848482363f42e4195da96d2ed2b082d4468b80e24ef1a2d20895b5f3",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284976:9193787",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.constructor",
+    "qualified_name": "_EncryptedBlobStore.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284976,
+    "end_line": 284980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobStore",
+      "encryptionKeyStr",
+      "fallbackDecryptKeyStr = null"
+    ],
+    "body_sha256": "d7642746f2deaeac73fb71c4bc91569bab30c71f1577096cebdb5dd19f113c3e",
+    "calls": [],
+    "writes": [
+      "this.blobStore",
+      "this.encryptionKeyStr",
+      "this.fallbackDecryptKeyStr"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284981:9194011",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.deriveKey",
+    "qualified_name": "_EncryptedBlobStore.deriveKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284981,
+    "end_line": 284986,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "keyStr"
+    ],
+    "body_sha256": "8d3d1e99af82744f753c53f1338612c107cd43ac5730d73e4f9d19a7b0283295",
+    "calls": [
+      "crypto.subtle.digest",
+      "crypto.subtle.importKey",
+      "encoder2.encode",
+      "new TextEncoder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284987:9194347",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getEncryptionKey",
+    "qualified_name": "_EncryptedBlobStore.getEncryptionKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284987,
+    "end_line": 284992,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ce31ba47300fc24a886e1cc8811a64a15d98451a136b614b318de1b9ba4038e7",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.encryptionKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284993:9194550",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "qualified_name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284993,
+    "end_line": 285001,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ca4d38a6d417e57ef24784a4315a4f39215df90e2848349a7424d32114a5ecd6",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.fallbackDecryptKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285002:9194831",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getBlob",
+    "qualified_name": "_EncryptedBlobStore.getBlob",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285002,
+    "end_line": 285031,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId"
+    ],
+    "body_sha256": "77ff952ad0a2c26a8a4e80bf55acacbfe22999a0911d50d0a01fc316080b7836",
+    "calls": [
+      "cachedNearbyDecryptFallbackSuccess.increment",
+      "crypto.subtle.decrypt",
+      "encryptedGetBlobLatency.histogram",
+      "encryptedValue.slice",
+      "new NearbyBlobDecryptError",
+      "new Uint8Array",
+      "performance.now",
+      "this.blobStore.getBlob",
+      "this.getEncryptionKey",
+      "this.getFallbackDecryptKey"
+    ],
+    "writes": [
+      "decryptedValue"
+    ],
+    "throw_targets": [
+      "NearbyBlobDecryptError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:285032:9196070",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.encryptBlob",
+    "qualified_name": "_EncryptedBlobStore.encryptBlob",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285032,
+    "end_line": 285039,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobData"
+    ],
+    "body_sha256": "c343ed0ad18cc1531050a579bed3f3680ac7802ccde53880ba05286ed7a84dd0",
+    "calls": [
+      "combined.set",
+      "crypto.getRandomValues",
+      "crypto.subtle.encrypt",
+      "new Uint8Array",
+      "this.getEncryptionKey",
+      "toUint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285040:9196527",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlob",
+    "qualified_name": "_EncryptedBlobStore.setBlob",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285040,
+    "end_line": 285049,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "b5ddc2dcadd2b50743df71f043c7ac60c98f99811ac0e1b84c59a7799926a8f9",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlob",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285050:9196894",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "qualified_name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285050,
+    "end_line": 285059,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "8be0116f26a2bfa3cb7ff9968af24ea03ae1ac58d40f1ba73a56183fbad736d3",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlobLocallyOnly",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285060:9197259",
+    "artifact": "evaluation",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.flush",
+    "qualified_name": "_EncryptedBlobStore.flush",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285060,
+    "end_line": 285062,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "3ded32513d7c19e851b32a2b5f56d9ceb34c045a049c38467993b616aca47b8e",
+    "calls": [
+      "this.blobStore.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21796:743907",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "NearbyBlobDecryptError.constructor",
+    "qualified_name": "NearbyBlobDecryptError.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21796,
+    "end_line": 21801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "cause"
+    ],
+    "body_sha256": "4dee5830848482363f42e4195da96d2ed2b082d4468b80e24ef1a2d20895b5f3",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21809:744322",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.constructor",
+    "qualified_name": "_EncryptedBlobStore.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21809,
+    "end_line": 21813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobStore",
+      "encryptionKeyStr",
+      "fallbackDecryptKeyStr = null"
+    ],
+    "body_sha256": "d7642746f2deaeac73fb71c4bc91569bab30c71f1577096cebdb5dd19f113c3e",
+    "calls": [],
+    "writes": [
+      "this.blobStore",
+      "this.encryptionKeyStr",
+      "this.fallbackDecryptKeyStr"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21814:744546",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.deriveKey",
+    "qualified_name": "_EncryptedBlobStore.deriveKey",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21814,
+    "end_line": 21819,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "keyStr"
+    ],
+    "body_sha256": "8d3d1e99af82744f753c53f1338612c107cd43ac5730d73e4f9d19a7b0283295",
+    "calls": [
+      "crypto.subtle.digest",
+      "crypto.subtle.importKey",
+      "encoder2.encode",
+      "new TextEncoder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21820:744882",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getEncryptionKey",
+    "qualified_name": "_EncryptedBlobStore.getEncryptionKey",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21820,
+    "end_line": 21825,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ce31ba47300fc24a886e1cc8811a64a15d98451a136b614b318de1b9ba4038e7",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.encryptionKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21826:745085",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "qualified_name": "_EncryptedBlobStore.getFallbackDecryptKey",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21826,
+    "end_line": 21834,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ca4d38a6d417e57ef24784a4315a4f39215df90e2848349a7424d32114a5ecd6",
+    "calls": [
+      "_EncryptedBlobStore.deriveKey"
+    ],
+    "writes": [
+      "this.fallbackDecryptKey"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21835:745366",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.getBlob",
+    "qualified_name": "_EncryptedBlobStore.getBlob",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21835,
+    "end_line": 21864,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId"
+    ],
+    "body_sha256": "4682f75bba5513f84ae4de407e1a590296d0b2b391d6b256cae6ef9202c6195a",
+    "calls": [
+      "cachedNearbyDecryptFallbackSuccess.increment",
+      "crypto.subtle.decrypt",
+      "encryptedGetBlobLatency.histogram",
+      "encryptedValue.slice",
+      "new NearbyBlobDecryptError",
+      "new Uint8Array",
+      "performance.now",
+      "this.blobStore.getBlob",
+      "this.getEncryptionKey",
+      "this.getFallbackDecryptKey"
+    ],
+    "writes": [
+      "decryptedValue"
+    ],
+    "throw_targets": [
+      "NearbyBlobDecryptError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 2,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:21865:746603",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.encryptBlob",
+    "qualified_name": "_EncryptedBlobStore.encryptBlob",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21865,
+    "end_line": 21872,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blobData"
+    ],
+    "body_sha256": "c343ed0ad18cc1531050a579bed3f3680ac7802ccde53880ba05286ed7a84dd0",
+    "calls": [
+      "combined.set",
+      "crypto.getRandomValues",
+      "crypto.subtle.encrypt",
+      "new Uint8Array",
+      "this.getEncryptionKey",
+      "toUint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21873:747060",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlob",
+    "qualified_name": "_EncryptedBlobStore.setBlob",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21873,
+    "end_line": 21882,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "42d085a1d7db84c06c5c22da1d375cf671357eead2867a36f96bc48f08b0780a",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlob",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21883:747425",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "qualified_name": "_EncryptedBlobStore.setBlobLocallyOnly",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21883,
+    "end_line": 21892,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "blobId",
+      "blobData"
+    ],
+    "body_sha256": "a24e941ce127a2be53a7a88094d1cf05cfaf300a8dda87c78b48de44e2e8a601",
+    "calls": [
+      "encryptedSetBlobLatency.histogram",
+      "performance.now",
+      "this.blobStore.setBlobLocallyOnly",
+      "this.encryptBlob"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:21893:747788",
+    "artifact": "state-worker",
+    "module": "agent-kv/cached-blob-store.js",
+    "name": "_EncryptedBlobStore.flush",
+    "qualified_name": "_EncryptedBlobStore.flush",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 21893,
+    "end_line": 21895,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "3ded32513d7c19e851b32a2b5f56d9ceb34c045a049c38467993b616aca47b8e",
+    "calls": [
+      "this.blobStore.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,666 @@
+[
+  {
+    "id": "host:717341:27225716",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removeSqliteSidecars",
+    "qualified_name": "removeSqliteSidecars",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717341,
+    "end_line": 717348,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "795a320a0764669c9ed4f1a4f559e508aee12574b852683dc541eb6619879db1",
+    "calls": [
+      "removeSandDataTreeSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717349:27225897",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removePathWithRetries",
+    "qualified_name": "removePathWithRetries",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717349,
+    "end_line": 717366,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "0ca95ddf7c1ab0c51fe1ed9e54d2b354b243cb22735bf0f671a4a9e904796f6a",
+    "calls": [
+      "Atomics.wait",
+      "Math.max",
+      "new Int32Array",
+      "new SharedArrayBuffer",
+      "removeSandDataFileSync",
+      "removeSandDataTreeSync"
+    ],
+    "writes": [
+      "attempt",
+      "removeError"
+    ],
+    "throw_targets": [
+      "removeError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717367:27226511",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removeSqliteDb",
+    "qualified_name": "removeSqliteDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717367,
+    "end_line": 717381,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "c27485867914acbb3e708a1462ec7993841de1c03ae3e51cc5b40b4d9b8e1feb",
+    "calls": [
+      "removePathWithRetries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717382:27226917",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "quarantineCorruptSqliteDb",
+    "qualified_name": "quarantineCorruptSqliteDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717382,
+    "end_line": 717440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "7c94b53b685a783fbd2937d787b7e8962424d2fa37049161ffb397d27a82faa9",
+    "calls": [
+      ".replace",
+      ".toISOString",
+      "copySandDataFileSync",
+      "new Date",
+      "removeSandDataFileSync",
+      "removeSqliteDb",
+      "removeSqliteSidecars"
+    ],
+    "writes": [
+      "copied"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 5
+    }
+  },
+  {
+    "id": "host:717441:27228684",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "openSqliteForSalvage",
+    "qualified_name": "openSqliteForSalvage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717441,
+    "end_line": 717452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "4804df30e1dd67b4c05d0077f874081b577f67f8a6d5b5b4a18e695a1dd2a2a6",
+    "calls": [
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "openSqliteForSalvageInPlace",
+      "reportFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717453:27228998",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "openSqliteForSalvageInPlace",
+    "qualified_name": "openSqliteForSalvageInPlace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717453,
+    "end_line": 717500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "55154303fadc612187acc9e7ceebfa45146ec2ce499b0165a3e312aa719e4641",
+    "calls": [
+      "isRefusedSandDataFile",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "new import_node_sqlite4.DatabaseSync",
+      "open13",
+      "refuseSandDataDatabaseLinksSync",
+      "removeSqliteSidecars",
+      "reportFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:717456:27229159",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "open13",
+    "qualified_name": "openSqliteForSalvageInPlace/open13",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717456,
+    "end_line": 717473,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "de93ebc4a651f48527b31bee07c9575e351ecdc352fcb33ba8637eefb47ced1e",
+    "calls": [
+      ".get",
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "db.prepare",
+      "new import_node_sqlite4.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:717502:27230415",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "pinnedRowIterator",
+    "qualified_name": "pinnedRowIterator",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717502,
+    "end_line": 717506,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statement"
+    ],
+    "body_sha256": "b62bf1ba42502e33864fb03b80d726711b8e638c1e1d2cdf41b1b2196f2002cd",
+    "calls": [
+      "statement.iterate",
+      "statementByRowIterator.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717507:27230567",
+    "artifact": "host",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "copySalvageableSqliteRows",
+    "qualified_name": "copySalvageableSqliteRows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717507,
+    "end_line": 717550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "selectSql",
+      "insert",
+      "toParams",
+      "log5"
+    ],
+    "body_sha256": "f304c25bf631a33c095790df65e7fffe3846a81c17205758be9cdbde93fecf25",
+    "calls": [
+      "insert.run",
+      "isUnknownRecord2",
+      "iterator.next",
+      "iterator.return",
+      "log5",
+      "pinnedRowIterator",
+      "source.prepare",
+      "toParams"
+    ],
+    "writes": [
+      "copied",
+      "iterator",
+      "next",
+      "skipped2",
+      "tail"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 4
+    }
+  },
+  {
+    "id": "state-worker:749:27327",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removeSqliteSidecars",
+    "qualified_name": "removeSqliteSidecars",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 749,
+    "end_line": 756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "795a320a0764669c9ed4f1a4f559e508aee12574b852683dc541eb6619879db1",
+    "calls": [
+      "removeSandDataTreeSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:757:27508",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removePathWithRetries",
+    "qualified_name": "removePathWithRetries",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 757,
+    "end_line": 774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "816986afdc3a2dcaef63aa7e858b11af109c76590c59b8f0c57ce525bc029ee8",
+    "calls": [
+      "Atomics.wait",
+      "Math.max",
+      "new Int32Array",
+      "new SharedArrayBuffer",
+      "removeSandDataFileSync",
+      "removeSandDataTreeSync"
+    ],
+    "writes": [
+      "attempt",
+      "removeError"
+    ],
+    "throw_targets": [
+      "removeError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:775:28109",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "removeSqliteDb",
+    "qualified_name": "removeSqliteDb",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 775,
+    "end_line": 789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "80999ef48ca7d1fd01300b332111e8e5281ca5496c2a83c8b1ba7c949fdfb2db",
+    "calls": [
+      "removePathWithRetries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:790:28508",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "quarantineCorruptSqliteDb",
+    "qualified_name": "quarantineCorruptSqliteDb",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 790,
+    "end_line": 848,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "9ed29c33606a01d0dc3a3f89a280cbbd3b91570b4620ebcca23bfe6bebab063f",
+    "calls": [
+      ".replace",
+      ".toISOString",
+      "copySandDataFileSync",
+      "new Date",
+      "removeSandDataFileSync",
+      "removeSqliteDb",
+      "removeSqliteSidecars"
+    ],
+    "writes": [
+      "copied"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 5
+    }
+  },
+  {
+    "id": "state-worker:849:30261",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "openSqliteForSalvage",
+    "qualified_name": "openSqliteForSalvage",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 849,
+    "end_line": 860,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "d519173ca856a3ab782039903c8f598ffb5c4324507e6eaf2754233fe7a550a2",
+    "calls": [
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "openSqliteForSalvageInPlace",
+      "reportFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:861:30568",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "openSqliteForSalvageInPlace",
+    "qualified_name": "openSqliteForSalvageInPlace",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 861,
+    "end_line": 908,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "556cc3827a361ea396d9485d8594233d96efb8c23cd7f1ba798093c789625524",
+    "calls": [
+      "isRefusedSandDataFile",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "new import_node_sqlite2.DatabaseSync",
+      "open",
+      "refuseSandDataDatabaseLinksSync",
+      "removeSqliteSidecars",
+      "reportFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "state-worker:864:30724",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "open",
+    "qualified_name": "openSqliteForSalvageInPlace/open",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 864,
+    "end_line": 881,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d3aadaad5e504f02afe75aeeeeffa567a4bd1bff032c248f88e3dea442eeece7",
+    "calls": [
+      ".get",
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "db.prepare",
+      "new import_node_sqlite2.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:910:31956",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "pinnedRowIterator",
+    "qualified_name": "pinnedRowIterator",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 910,
+    "end_line": 914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statement"
+    ],
+    "body_sha256": "b62bf1ba42502e33864fb03b80d726711b8e638c1e1d2cdf41b1b2196f2002cd",
+    "calls": [
+      "statement.iterate",
+      "statementByRowIterator.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:915:32108",
+    "artifact": "state-worker",
+    "module": "host/storage/sqlite-recovery.ts",
+    "name": "copySalvageableSqliteRows",
+    "qualified_name": "copySalvageableSqliteRows",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 915,
+    "end_line": 958,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "selectSql",
+      "insert",
+      "toParams",
+      "log"
+    ],
+    "body_sha256": "e89661dba84c4f4b655b6b64398ac667890d84586b2a18884b34bece2474fd06",
+    "calls": [
+      "insert.run",
+      "isUnknownRecord",
+      "iterator.next",
+      "iterator.return",
+      "log",
+      "pinnedRowIterator",
+      "source.prepare",
+      "toParams"
+    ],
+    "writes": [
+      "copied",
+      "iterator",
+      "next",
+      "skipped",
+      "tail"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 4
+    }
+  }
+]

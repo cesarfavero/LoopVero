@@ -1,0 +1,2017 @@
+[
+  {
+    "id": "host:716003:27174610",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "isGithubEventKind",
+    "qualified_name": "isGithubEventKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716003,
+    "end_line": 716005,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "d35ff9540b3bf401abaf885add3f88ec3ffb42ccd7ebca0d8f6c048d100e14ac",
+    "calls": [
+      "GITHUB_EVENT_KINDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716006:27174737",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "isOriginEventKind",
+    "qualified_name": "isOriginEventKind",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716006,
+    "end_line": 716008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "61bc1cc5320701c821c7f390754559d3ab7684211c61fc84dde8f641ef911354",
+    "calls": [
+      "ORIGIN_EVENT_KINDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716009:27174864",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "normalizeScopeToken",
+    "qualified_name": "normalizeScopeToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716009,
+    "end_line": 716013,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "maxLength"
+    ],
+    "body_sha256": "c110129423ea6ace593250f37421090f00c2a0e17e56c6bced1673f991a05fbd",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716014:27175048",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseStringList",
+    "qualified_name": "parseStringList",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716014,
+    "end_line": 716023,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f2c4131a4318a7f11e337348a236c7cf373cc5b925819a49a63573690408ac79",
+    "calls": [
+      "Array.isArray",
+      "normalizeScopeToken",
+      "values.includes",
+      "values.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716024:27175386",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseReactionEmoji",
+    "qualified_name": "parseReactionEmoji",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716024,
+    "end_line": 716035,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b1296e4211dcf9dead2dbe353f189dabe3b8aa0314bb76214ac080bdf620bc6f",
+    "calls": [
+      "Array.isArray",
+      "REACTION_EMOJI_PATTERN.test",
+      "names3.includes",
+      "names3.push",
+      "normalizeReactionEmoji"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716036:27175795",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSlackMatch",
+    "qualified_name": "parseSlackMatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716036,
+    "end_line": 716066,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "933ccf9d9946f9a942d2e59b5c15acba448a89e359c72bd9f3f2fd836e9cc128",
+    "calls": [
+      "isUnknownRecord2",
+      "normalizeScopeToken",
+      "parseReactionEmoji",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716067:27176777",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSlackListener",
+    "qualified_name": "parseSlackListener",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716067,
+    "end_line": 716075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3b74fd11e4f404dfd600af203d349dd5eaf3f31201cc045f880deb147f8aab08",
+    "calls": [
+      "isTriggerParseFailure",
+      "normalizeScopeToken",
+      "parseSlackMatch",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716076:27177170",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseGithubUserAllowlist",
+    "qualified_name": "parseGithubUserAllowlist",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716076,
+    "end_line": 716092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d5e929fc60df83e1a506945513a2670c202df80f833ad8008b4e17405a6b98a3",
+    "calls": [
+      "Array.isArray",
+      "login.toLowerCase",
+      "logins.push",
+      "new Set",
+      "normalizeScopeToken",
+      "seenLogins.add",
+      "seenLogins.has",
+      "token.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716093:27177790",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCiBranch",
+    "qualified_name": "parseCiBranch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716093,
+    "end_line": 716096,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "0aac30cf8fc54b4b2db39f7a262078d6ac09fbdd093b036cbdb043c66c4ddf8c",
+    "calls": [
+      "isValidGitBranch",
+      "normalizeScopeToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716097:27177963",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseGithubListener",
+    "qualified_name": "parseGithubListener",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716097,
+    "end_line": 716131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3d0e85012c76e96d044f08c542c02480412761c313725bb5c6e32a2236652e2e",
+    "calls": [
+      "Array.isArray",
+      "Number.isSafeInteger",
+      "events.some",
+      "isGithubEventKind",
+      "isValidGithubRepo",
+      "normalizeScopeToken",
+      "parseCiBranch",
+      "parseGithubUserAllowlist",
+      "parsedEvents.filter",
+      "parsedEvents.includes",
+      "parsedEvents.push",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716132:27179437",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseOriginListener",
+    "qualified_name": "parseOriginListener",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716132,
+    "end_line": 716163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fa92c0bffc97f44d37b8ac83f259157a1ac33ae18800c09cbaca6df2c14a3163",
+    "calls": [
+      "Array.isArray",
+      "Number.isSafeInteger",
+      "isOriginEventKind",
+      "isValidOriginRepo",
+      "normalizeScopeToken",
+      "parseGithubUserAllowlist",
+      "parsedEvents.filter",
+      "parsedEvents.includes",
+      "parsedEvents.push",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716164:27180704",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseMicrosoftTeamsTrigger",
+    "qualified_name": "parseMicrosoftTeamsTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716164,
+    "end_line": 716191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "6d0d6efcc70d8ec885e2068b8c6c7159d22adb8ca2796141a2bc001e329f4aa8",
+    "calls": [
+      "clampLine",
+      "normalizeScopeToken",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "teamIds"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716192:27181790",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseLinearTrigger",
+    "qualified_name": "parseLinearTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716192,
+    "end_line": 716221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "743bebb7fe8188a106b5318c0b0386b214d9fc0f0e341f361ae06117929e79df",
+    "calls": [
+      "LINEAR_EVENT_CASES.join",
+      "isSandLinearEventCase",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "event"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716222:27182704",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSentryTrigger",
+    "qualified_name": "parseSentryTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716222,
+    "end_line": 716240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "5beef7e6e29e41bfe63b1413ada2f7a561fea521e4b6e333539dc8d085f4874d",
+    "calls": [
+      "SENTRY_EVENT_CASES.join",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716241:27183331",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parsePagerDutyTrigger",
+    "qualified_name": "parsePagerDutyTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716241,
+    "end_line": 716258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "2a1128a56516c8c7e02ffe8a83f22b0c88ff9bfd3585cd1626ea9a117d0e7d07",
+    "calls": [
+      "PAGERDUTY_EVENT_CASES.join",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716259:27183967",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "normalizeEmailAddress",
+    "qualified_name": "normalizeEmailAddress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716259,
+    "end_line": 716262,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "1a08832196f8a6506c9c4840071d7a04dd8385f884faee986bf351ba590242db",
+    "calls": [
+      "normalizeScopeToken",
+      "token.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716263:27184137",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseEmailFromAddresses",
+    "qualified_name": "parseEmailFromAddresses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716263,
+    "end_line": 716273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "036c9e3af5307f4e2fbdef43e69ec5a8d0d751b52be908459f0938f0af913028",
+    "calls": [
+      "Array.isArray",
+      "addresses.includes",
+      "addresses.push",
+      "normalizeEmailAddress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716274:27184545",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseEmailTrigger",
+    "qualified_name": "parseEmailTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716274,
+    "end_line": 716286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fc9b34a795f9c8ede5f57488e6c0a656e26709154b0ac64f862ea570722c0e8f",
+    "calls": [
+      "normalizeEmailAddress",
+      "parseEmailFromAddresses",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716287:27184977",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "windowMinutes",
+    "qualified_name": "windowMinutes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716287,
+    "end_line": 716289,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "dd56973118c93b6b0743f3dad69cbcbab3f331377be92e89c08250e7dab999f6",
+    "calls": [
+      "Number.isInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716290:27185105",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCronWindow",
+    "qualified_name": "parseCronWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716290,
+    "end_line": 716296,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "window2"
+    ],
+    "body_sha256": "379743e52acc3896442abcb1e8736e91449100bdb064588e8f8862c6df4c1725",
+    "calls": [
+      "windowMinutes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716297:27185514",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCronTiming",
+    "qualified_name": "parseCronTiming",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716297,
+    "end_line": 716301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e83ce81e4c24991801ba1a45a88f5b797b664313c69ad20d6a74923ea2d9e1bf",
+    "calls": [
+      "parseCronWindow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716302:27185812",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseTriggerMember",
+    "qualified_name": "parseTriggerMember",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716302,
+    "end_line": 716335,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8c666b64e776344f75a266731c30631287b8fdc388c87de75e5198ba3ec9b3ec",
+    "calls": [
+      "cronTrigger",
+      "isUnknownRecord2",
+      "normalizeScopeToken",
+      "parseCronTiming",
+      "parseEmailTrigger",
+      "parseGithubListener",
+      "parseLinearTrigger",
+      "parseMicrosoftTeamsTrigger",
+      "parseOriginListener",
+      "parsePagerDutyTrigger",
+      "parseSentryTrigger",
+      "parseSlackListener",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 12,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716336:27186992",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseTriggerMembers",
+    "qualified_name": "parseTriggerMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716336,
+    "end_line": 716362,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "92cd951374ae5966a5753886a246ffefcefbfefe98bbdc932160edb7077c3846",
+    "calls": [
+      "isTriggerParseFailure",
+      "members2.find",
+      "members2.push",
+      "members2.some",
+      "parseTriggerMember",
+      "triggerFromList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "firstFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716363:27187936",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseStoredTrigger",
+    "qualified_name": "parseStoredTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716363,
+    "end_line": 716372,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "afe8f1e97f2cee9297937e415ba22661e7780bbd682d3928d5a9ea35d7f0334d",
+    "calls": [
+      "Array.isArray",
+      "isUnknownRecord2",
+      "parseTriggerMember",
+      "parseTriggerMembers",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716373:27188334",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "serializeTriggerMember",
+    "qualified_name": "serializeTriggerMember",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716373,
+    "end_line": 716435,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "1b3fc2b06301685db4bdc2cb48ea0dd8439d18d6167e038d54e6122b22d614be",
+    "calls": [
+      "cronTrigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 17,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716436:27190407",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "serializeStoredTrigger",
+    "qualified_name": "serializeStoredTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716436,
+    "end_line": 716444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "78b74e04b37f88326b7b0b143d48b6a8b27e884679422fb0ebedb38c4a66728f",
+    "calls": [
+      "serializeTriggerMember",
+      "trigger2.listeners.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716445:27190660",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "triggerIdentity",
+    "qualified_name": "triggerIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716445,
+    "end_line": 716447,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "d8af1467eb2895cd61533e4058056d3ba5d665ff8e5a5acd8d86ef2178643f27",
+    "calls": [
+      "JSON.stringify",
+      "serializeStoredTrigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716449:27190873",
+    "artifact": "host",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "unescapeEventText",
+    "qualified_name": "unescapeEventText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716449,
+    "end_line": 716455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "7a9b4b2cd1e6f4f6a23e468cf27ecd2ea12faceff3a7977b94f1530b2acf1e0d",
+    "calls": [
+      "unescapeEventText",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527686:19213327",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "isGithubEventKind",
+    "qualified_name": "isGithubEventKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527686,
+    "end_line": 527688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "d35ff9540b3bf401abaf885add3f88ec3ffb42ccd7ebca0d8f6c048d100e14ac",
+    "calls": [
+      "GITHUB_EVENT_KINDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527689:19213454",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "isOriginEventKind",
+    "qualified_name": "isOriginEventKind",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527689,
+    "end_line": 527691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "61bc1cc5320701c821c7f390754559d3ab7684211c61fc84dde8f641ef911354",
+    "calls": [
+      "ORIGIN_EVENT_KINDS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527692:19213581",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "normalizeScopeToken",
+    "qualified_name": "normalizeScopeToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527692,
+    "end_line": 527696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "maxLength"
+    ],
+    "body_sha256": "c110129423ea6ace593250f37421090f00c2a0e17e56c6bced1673f991a05fbd",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527697:19213765",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseStringList",
+    "qualified_name": "parseStringList",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527697,
+    "end_line": 527706,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f2c4131a4318a7f11e337348a236c7cf373cc5b925819a49a63573690408ac79",
+    "calls": [
+      "Array.isArray",
+      "normalizeScopeToken",
+      "values.includes",
+      "values.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527707:19214103",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseReactionEmoji",
+    "qualified_name": "parseReactionEmoji",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527707,
+    "end_line": 527718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b1296e4211dcf9dead2dbe353f189dabe3b8aa0314bb76214ac080bdf620bc6f",
+    "calls": [
+      "Array.isArray",
+      "REACTION_EMOJI_PATTERN.test",
+      "names3.includes",
+      "names3.push",
+      "normalizeReactionEmoji"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527719:19214512",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSlackMatch",
+    "qualified_name": "parseSlackMatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527719,
+    "end_line": 527749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "933ccf9d9946f9a942d2e59b5c15acba448a89e359c72bd9f3f2fd836e9cc128",
+    "calls": [
+      "isUnknownRecord2",
+      "normalizeScopeToken",
+      "parseReactionEmoji",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527750:19215494",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSlackListener",
+    "qualified_name": "parseSlackListener",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527750,
+    "end_line": 527758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3b74fd11e4f404dfd600af203d349dd5eaf3f31201cc045f880deb147f8aab08",
+    "calls": [
+      "isTriggerParseFailure",
+      "normalizeScopeToken",
+      "parseSlackMatch",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527759:19215887",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseGithubUserAllowlist",
+    "qualified_name": "parseGithubUserAllowlist",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527759,
+    "end_line": 527775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d5e929fc60df83e1a506945513a2670c202df80f833ad8008b4e17405a6b98a3",
+    "calls": [
+      "Array.isArray",
+      "login.toLowerCase",
+      "logins.push",
+      "new Set",
+      "normalizeScopeToken",
+      "seenLogins.add",
+      "seenLogins.has",
+      "token.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527776:19216507",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCiBranch",
+    "qualified_name": "parseCiBranch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527776,
+    "end_line": 527779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "0aac30cf8fc54b4b2db39f7a262078d6ac09fbdd093b036cbdb043c66c4ddf8c",
+    "calls": [
+      "isValidGitBranch",
+      "normalizeScopeToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527780:19216680",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseGithubListener",
+    "qualified_name": "parseGithubListener",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527780,
+    "end_line": 527814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3d0e85012c76e96d044f08c542c02480412761c313725bb5c6e32a2236652e2e",
+    "calls": [
+      "Array.isArray",
+      "Number.isSafeInteger",
+      "events.some",
+      "isGithubEventKind",
+      "isValidGithubRepo",
+      "normalizeScopeToken",
+      "parseCiBranch",
+      "parseGithubUserAllowlist",
+      "parsedEvents.filter",
+      "parsedEvents.includes",
+      "parsedEvents.push",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527815:19218154",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseOriginListener",
+    "qualified_name": "parseOriginListener",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527815,
+    "end_line": 527846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fa92c0bffc97f44d37b8ac83f259157a1ac33ae18800c09cbaca6df2c14a3163",
+    "calls": [
+      "Array.isArray",
+      "Number.isSafeInteger",
+      "isOriginEventKind",
+      "isValidOriginRepo",
+      "normalizeScopeToken",
+      "parseGithubUserAllowlist",
+      "parsedEvents.filter",
+      "parsedEvents.includes",
+      "parsedEvents.push",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527847:19219421",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseMicrosoftTeamsTrigger",
+    "qualified_name": "parseMicrosoftTeamsTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527847,
+    "end_line": 527874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "6d0d6efcc70d8ec885e2068b8c6c7159d22adb8ca2796141a2bc001e329f4aa8",
+    "calls": [
+      "clampLine",
+      "normalizeScopeToken",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "teamIds"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527875:19220507",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseLinearTrigger",
+    "qualified_name": "parseLinearTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527875,
+    "end_line": 527904,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "743bebb7fe8188a106b5318c0b0386b214d9fc0f0e341f361ae06117929e79df",
+    "calls": [
+      "LINEAR_EVENT_CASES.join",
+      "isSandLinearEventCase",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "event"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527905:19221421",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseSentryTrigger",
+    "qualified_name": "parseSentryTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527905,
+    "end_line": 527923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "5beef7e6e29e41bfe63b1413ada2f7a561fea521e4b6e333539dc8d085f4874d",
+    "calls": [
+      "SENTRY_EVENT_CASES.join",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527924:19222048",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parsePagerDutyTrigger",
+    "qualified_name": "parsePagerDutyTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527924,
+    "end_line": 527941,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "2a1128a56516c8c7e02ffe8a83f22b0c88ff9bfd3585cd1626ea9a117d0e7d07",
+    "calls": [
+      "PAGERDUTY_EVENT_CASES.join",
+      "isUnknownRecord2",
+      "parseStringList",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527942:19222684",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "normalizeEmailAddress",
+    "qualified_name": "normalizeEmailAddress",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527942,
+    "end_line": 527945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "1a08832196f8a6506c9c4840071d7a04dd8385f884faee986bf351ba590242db",
+    "calls": [
+      "normalizeScopeToken",
+      "token.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527946:19222854",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseEmailFromAddresses",
+    "qualified_name": "parseEmailFromAddresses",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527946,
+    "end_line": 527956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "036c9e3af5307f4e2fbdef43e69ec5a8d0d751b52be908459f0938f0af913028",
+    "calls": [
+      "Array.isArray",
+      "addresses.includes",
+      "addresses.push",
+      "normalizeEmailAddress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527957:19223262",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseEmailTrigger",
+    "qualified_name": "parseEmailTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527957,
+    "end_line": 527969,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "fc9b34a795f9c8ede5f57488e6c0a656e26709154b0ac64f862ea570722c0e8f",
+    "calls": [
+      "normalizeEmailAddress",
+      "parseEmailFromAddresses",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527970:19223694",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "windowMinutes",
+    "qualified_name": "windowMinutes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527970,
+    "end_line": 527972,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "dd56973118c93b6b0743f3dad69cbcbab3f331377be92e89c08250e7dab999f6",
+    "calls": [
+      "Number.isInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527973:19223822",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCronWindow",
+    "qualified_name": "parseCronWindow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527973,
+    "end_line": 527979,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "window2"
+    ],
+    "body_sha256": "379743e52acc3896442abcb1e8736e91449100bdb064588e8f8862c6df4c1725",
+    "calls": [
+      "windowMinutes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527980:19224231",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseCronTiming",
+    "qualified_name": "parseCronTiming",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527980,
+    "end_line": 527984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "e83ce81e4c24991801ba1a45a88f5b797b664313c69ad20d6a74923ea2d9e1bf",
+    "calls": [
+      "parseCronWindow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:527985:19224529",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseTriggerMember",
+    "qualified_name": "parseTriggerMember",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 527985,
+    "end_line": 528018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "8c666b64e776344f75a266731c30631287b8fdc388c87de75e5198ba3ec9b3ec",
+    "calls": [
+      "cronTrigger",
+      "isUnknownRecord2",
+      "normalizeScopeToken",
+      "parseCronTiming",
+      "parseEmailTrigger",
+      "parseGithubListener",
+      "parseLinearTrigger",
+      "parseMicrosoftTeamsTrigger",
+      "parseOriginListener",
+      "parsePagerDutyTrigger",
+      "parseSentryTrigger",
+      "parseSlackListener",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 12,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528019:19225709",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseTriggerMembers",
+    "qualified_name": "parseTriggerMembers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528019,
+    "end_line": 528045,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "3d9b6e53b1a6974170fed3dc90a23802e323bd71dcbd0342180e981b98ead14d",
+    "calls": [
+      "isTriggerParseFailure",
+      "members2.find",
+      "members2.push",
+      "members2.some",
+      "parseTriggerMember",
+      "triggerFromList",
+      "triggerParseFailure"
+    ],
+    "writes": [
+      "firstFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528046:19226650",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "parseStoredTrigger",
+    "qualified_name": "parseStoredTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528046,
+    "end_line": 528055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "afe8f1e97f2cee9297937e415ba22661e7780bbd682d3928d5a9ea35d7f0334d",
+    "calls": [
+      "Array.isArray",
+      "isUnknownRecord2",
+      "parseTriggerMember",
+      "parseTriggerMembers",
+      "triggerParseFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528056:19227048",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "serializeTriggerMember",
+    "qualified_name": "serializeTriggerMember",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528056,
+    "end_line": 528118,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "member"
+    ],
+    "body_sha256": "1b3fc2b06301685db4bdc2cb48ea0dd8439d18d6167e038d54e6122b22d614be",
+    "calls": [
+      "cronTrigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 17,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528119:19229121",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "serializeStoredTrigger",
+    "qualified_name": "serializeStoredTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528119,
+    "end_line": 528127,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger"
+    ],
+    "body_sha256": "0a6b666ccf81dae1e17b24bf1b8687bf01630f0ef0c11afb82173a9e2dcff901",
+    "calls": [
+      "serializeTriggerMember",
+      "trigger.listeners.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528128:19229370",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "triggerIdentity",
+    "qualified_name": "triggerIdentity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528128,
+    "end_line": 528130,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger"
+    ],
+    "body_sha256": "f530a90d8d3591236fcef39e3170c1c6d910a323d19be4a6124b3804323536b1",
+    "calls": [
+      "JSON.stringify",
+      "serializeStoredTrigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528183:19231480",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "describeTriggerEvent",
+    "qualified_name": "describeTriggerEvent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528183,
+    "end_line": 528217,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "7923ab3cfed3fcd5d6c868ef04efe7fd02b89d432e46aa3d25bcc9aab584cf04",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528218:19233049",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "escapeEventText",
+    "qualified_name": "escapeEventText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528218,
+    "end_line": 528220,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "9f6d2988c7d1a7841405d13df8b341470a50b429c5a9c3def501e73c1783e8fb",
+    "calls": [
+      ".replace",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528222:19233226",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "unescapeEventText",
+    "qualified_name": "unescapeEventText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528222,
+    "end_line": 528228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "7a9b4b2cd1e6f4f6a23e468cf27ecd2ea12faceff3a7977b94f1530b2acf1e0d",
+    "calls": [
+      "unescapeEventText",
+      "value.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528229:19233437",
+    "artifact": "evaluation",
+    "module": "core/automations/automation-trigger.ts",
+    "name": "buildTriggerEventContextBlock",
+    "qualified_name": "buildTriggerEventContextBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528229,
+    "end_line": 528375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "886fd68a7f66accca4c34ccdb9a21bcc4a160f43e747c3f549dc309feebf130b",
+    "calls": [
+      "JSON.stringify",
+      "escapeEventText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 42,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

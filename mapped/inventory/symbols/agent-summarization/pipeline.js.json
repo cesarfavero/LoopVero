@@ -1,0 +1,148 @@
+[
+  {
+    "id": "host:620451:22998409",
+    "artifact": "host",
+    "module": "agent-summarization/pipeline.js",
+    "name": "warnIfPreservedTailShapeInvalid",
+    "qualified_name": "warnIfPreservedTailShapeInvalid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620451,
+    "end_line": 620474,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2"
+    ],
+    "body_sha256": "661507963fa6850e4c81e4bb20f20881c85bca9cd452ab523d304ce902b0c7b5",
+    "calls": [
+      "logger37.warn",
+      "tail.findIndex",
+      "tail.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620475:22999337",
+    "artifact": "host",
+    "module": "agent-summarization/pipeline.js",
+    "name": "runSummarizationPipeline",
+    "qualified_name": "runSummarizationPipeline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620475,
+    "end_line": 620508,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summarizer",
+      "ctx",
+      "messages2",
+      "options2"
+    ],
+    "body_sha256": "eb7519792250d79d853821bfb9371d8e5d792d9d4b69400a041e11dbd2406829",
+    "calls": [
+      "summarizer.assembleFinalMessages",
+      "summarizer.buildSummaryMessage",
+      "summarizer.generateSummary",
+      "summarizer.partitionMessages",
+      "warnIfPreservedTailShapeInvalid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304805:9902292",
+    "artifact": "evaluation",
+    "module": "agent-summarization/pipeline.js",
+    "name": "warnIfPreservedTailShapeInvalid",
+    "qualified_name": "warnIfPreservedTailShapeInvalid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304805,
+    "end_line": 304828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "partitioned",
+      "options2"
+    ],
+    "body_sha256": "bc8a9084596bbbd77384086d7d2213f70153c89639ed6a16438c9e1f43a15a4d",
+    "calls": [
+      "logger12.warn",
+      "tail.findIndex",
+      "tail.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304829:9903220",
+    "artifact": "evaluation",
+    "module": "agent-summarization/pipeline.js",
+    "name": "runSummarizationPipeline",
+    "qualified_name": "runSummarizationPipeline",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304829,
+    "end_line": 304862,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summarizer",
+      "ctx",
+      "messages",
+      "options2"
+    ],
+    "body_sha256": "7b267281e1dbe5cae6fd2e3caafece65a0c08accaeb8b58532497de7d5d5240a",
+    "calls": [
+      "summarizer.assembleFinalMessages",
+      "summarizer.buildSummaryMessage",
+      "summarizer.generateSummary",
+      "summarizer.partitionMessages",
+      "warnIfPreservedTailShapeInvalid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

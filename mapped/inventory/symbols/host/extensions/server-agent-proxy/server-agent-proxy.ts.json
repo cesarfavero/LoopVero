@@ -1,0 +1,1237 @@
+[
+  {
+    "id": "host:714559:27124195",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "isTransientRoomCreateFailure",
+    "qualified_name": "isTransientRoomCreateFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714559,
+    "end_line": 714562,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "5a835a2e0902181aaee9c483a5f90aef010ea9226bc68e20993385775f6fcab3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714563:27124387",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "classifyServerRoomActionError",
+    "qualified_name": "classifyServerRoomActionError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714563,
+    "end_line": 714567,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "224201a5148162f1455eaba4e460d782a458ac05be50c088d279e963bcc76ec0",
+    "calls": [
+      "classifyServerAgentActionError",
+      "invariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714568:27124596",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "createSameIdRoomCreateRetryPolicy",
+    "qualified_name": "createSameIdRoomCreateRetryPolicy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714568,
+    "end_line": 714577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "clock"
+    ],
+    "body_sha256": "8913088fe53c911f36269189bfabbfd2e9970673b3899ab044577176eb90a28d",
+    "calls": [
+      "createRetryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714578:27124883",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "createServerAgentProxy",
+    "qualified_name": "createServerAgentProxy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714578,
+    "end_line": 714965,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "9f755306a4ebb015b2fee265c7e3aef50adfb7435223a497175cb020049567d9",
+    "calls": [
+      "createSameIdRoomCreateRetryPolicy",
+      "createSandCursorBackendClient",
+      "createServerAgentActionCore",
+      "createServerAgentActivity",
+      "createServerTranscriptClient",
+      "createServerTranscriptIndexer",
+      "createServerTranscriptTail",
+      "new Map",
+      "new RPCVoiceCallHarness",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714585:27125331",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "refreshRoster",
+    "qualified_name": "createServerAgentProxy/refreshRoster",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714585,
+    "end_line": 714597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "09f7c0d9e9e6ee474086300d1e30040fee93f8fc9719bcea023ee4689307896c",
+    "calls": [
+      "agents.filter",
+      "deps.listAgentsSync",
+      "indexer.noteAgent",
+      "knownAgents.add",
+      "knownAgents.clear",
+      "requiredAgents.add",
+      "requiredAgents.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714611:27126372",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "patchClientOverlay",
+    "qualified_name": "createServerAgentProxy/patchClientOverlay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714611,
+    "end_line": 714616,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "patch2"
+    ],
+    "body_sha256": "d36822545d8c5b3be70867d187ed176ef7bae9f7c08fc7bc1eae1db1edb85508",
+    "calls": [
+      "activityOverlays.get",
+      "activityOverlays.set",
+      "boundRunStateChanged",
+      "patch2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714618:27126694",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "requiresServer",
+    "qualified_name": "createServerAgentProxy/requiresServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714618,
+    "end_line": 714618,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId }"
+    ],
+    "body_sha256": "38514ebd537130f5a14cd88689b2d747a3bb7947e0b5a0e8ee1559e415a36e94",
+    "calls": [
+      "requiredAgents.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714619:27126750",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "emit",
+    "qualified_name": "createServerAgentProxy/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714619,
+    "end_line": 714626,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "4327ea7a4f1aeb993f655b09942babdff6c6afa9873cce9bb6ba0238459a29ac",
+    "calls": [
+      "activityOverlays.delete",
+      "activityOverlays.set",
+      "boundRunStateChanged"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714631:27127119",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "scheduleReconcile",
+    "qualified_name": "createServerAgentProxy/scheduleReconcile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714631,
+    "end_line": 714644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "17c36eaab623027a82a7acc51ed820eb7e5db5c6bfb6ba49f2831a156334d119",
+    "calls": [
+      "Math.max",
+      "clock.monotonicNow",
+      "clock.schedule"
+    ],
+    "writes": [
+      "reconcileWait"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714645:27127750",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "noteObservedAgent",
+    "qualified_name": "createServerAgentProxy/noteObservedAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714645,
+    "end_line": 714653,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "a1147589dbeca24fc05badb9bf25185acfc8784b58f2795b4a76ab5cb1792ce1",
+    "calls": [
+      "knownAgents.has",
+      "reconciledUnknownAgents.add",
+      "reconciledUnknownAgents.has",
+      "refreshRoster",
+      "scheduleReconcile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714657:27128163",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "createTransport",
+    "qualified_name": "createServerAgentProxy/createTransport",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714657,
+    "end_line": 714667,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ baseUrl, interceptors }"
+    ],
+    "body_sha256": "4e2c21fcede0e6bef8aa1f3fc338d82db6463501f5575326045384b89398db8c",
+    "calls": [
+      "createConnectTransport",
+      "createIdleDestroyingAgent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714674:27128607",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "log",
+    "qualified_name": "createServerAgentProxy/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714674,
+    "end_line": 714674,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "c79c25e5833e0c53254872f41ca66d0cb091a27f205487db85674b4af7b81127",
+    "calls": [
+      "deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714681:27128830",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "acceptsAgent",
+    "qualified_name": "createServerAgentProxy/acceptsAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714681,
+    "end_line": 714684,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId }"
+    ],
+    "body_sha256": "d612fee101b66beab209bdf757bd54fe8a1d267b13b2a027db3cd5f3cd4e04e8",
+    "calls": [
+      "noteObservedAgent",
+      "requiredAgents.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714685:27128942",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "emit",
+    "qualified_name": "createServerAgentProxy/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714685,
+    "end_line": 714688,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "9976d46980bf6308d29af67500b108ee02ed91f0f62aa8010171580d0b8de96c",
+    "calls": [
+      "boundEmit",
+      "indexer.noteEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714689:27129038",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "onAgentState",
+    "qualified_name": "createServerAgentProxy/onAgentState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714689,
+    "end_line": 714689,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "frame"
+    ],
+    "body_sha256": "33076b098a9abbb8851cb014803bb0e1ae8f7ae8dc24c6542fcdd871ee9f7df5",
+    "calls": [
+      "serverAgentActivity.ingest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714690:27129093",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "log",
+    "qualified_name": "createServerAgentProxy/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714690,
+    "end_line": 714690,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "c79c25e5833e0c53254872f41ca66d0cb091a27f205487db85674b4af7b81127",
+    "calls": [
+      "deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714723:27130446",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "serverRoomsEnabled",
+    "qualified_name": "createServerAgentProxy/serverRoomsEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714723,
+    "end_line": 714740,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d2c630248bb0974042740ff0cb04c10a375764ea599aed2f62f8ca2be09b7d8",
+    "calls": [
+      "clock.monotonicNow",
+      "deps.log",
+      "errorLogTag",
+      "roomClient.getGrokBotRuntimeCapabilities"
+    ],
+    "writes": [
+      "enabled",
+      "roomsCapability"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:714741:27131143",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "roomSummaryAfterAdopt",
+    "qualified_name": "createServerAgentProxy/roomSummaryAfterAdopt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714741,
+    "end_line": 714750,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "confirmed"
+    ],
+    "body_sha256": "1740676fae4d5efcbf40adf1d8a6b56562ca3eb56725a6801953498d1990cf76",
+    "calls": [
+      ".find",
+      "deps.adoptServerAgent",
+      "deps.listAgentsSync",
+      "deps.log",
+      "refreshRoster"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714751:27131514",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "roomRowFromFallback",
+    "qualified_name": "createServerAgentProxy/roomRowFromFallback",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714751,
+    "end_line": 714758,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "confirmed",
+      "previous"
+    ],
+    "body_sha256": "8830eac77fd2129c05b4eace880871cb844efe574bb196114b11640e4628dc0f",
+    "calls": [
+      "confirmed.memberAgentIds.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714763:27131918",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "cancelLinger",
+    "qualified_name": "createServerAgentProxy/cancelLinger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714763,
+    "end_line": 714766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1a46e31852f1c6eb5ae321bf635795fe5907333bbdb044731a4b86eee68077aa",
+    "calls": [
+      "lingerWait.dispose"
+    ],
+    "writes": [
+      "lingerWait"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714767:27132011",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "stopTailAfterLinger",
+    "qualified_name": "createServerAgentProxy/stopTailAfterLinger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714767,
+    "end_line": 714776,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2b8328570005cc70106d5e81f4b74b5ac705b960bc0071e39554294e5d892ce5",
+    "calls": [
+      "cancelLinger",
+      "clock.schedule"
+    ],
+    "writes": [
+      "lingerWait"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714777:27132276",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "ensureTailStarted",
+    "qualified_name": "createServerAgentProxy/ensureTailStarted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714777,
+    "end_line": 714787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2e3ea071a0a14185ad8ce50485294f52d26be9271d3a6f6759b72a69dc832bf6",
+    "calls": [
+      "cancelLinger",
+      "indexer.start",
+      "refreshRoster",
+      "stopTailAfterLinger",
+      "tail.start"
+    ],
+    "writes": [
+      "tailStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714789:27132545",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "isProxiedAgent",
+    "qualified_name": "createServerAgentProxy/isProxiedAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714789,
+    "end_line": 714792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "dc3a1eb210eccd0cf2d3c4e67cc1f13aa38e5333ed55514840b60fa457a87ad9",
+    "calls": [
+      "refreshRoster",
+      "requiredAgents.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714793:27132651",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "performAction",
+    "qualified_name": "createServerAgentProxy/performAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714793,
+    "end_line": 714804,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "2a961bdd223e8340edfb439988009324e80db53582db5eaeb718a40db1379feb",
+    "calls": [
+      "actionCore",
+      "ensureTailStarted",
+      "patchClientOverlay"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714806:27133162",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "createRoom",
+    "qualified_name": "createServerAgentProxy/createRoom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714806,
+    "end_line": 714861,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2d543b6d04eb17646c194668f7d1033908c21b02a7a1d0832ad8b5b5d2490323",
+    "calls": [
+      ".map",
+      ".slice",
+      "assertValidSandAgentId",
+      "classifyServerRoomActionError",
+      "clock.monotonicNow",
+      "deps.ensureServerRoomMembers",
+      "deps.listAgentsSync",
+      "ensureTailStarted",
+      "memberAgentIds.filter",
+      "new Map",
+      "new Set",
+      "roomCreateRetry.runWithRetry",
+      "roomSummaryAfterAdopt"
+    ],
+    "writes": [
+      "confirmed",
+      "roomsCapability"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:714862:27135407",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "setRoomMembers",
+    "qualified_name": "createServerAgentProxy/setRoomMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714862,
+    "end_line": 714884,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "472df6831ce18660b0381723f5e3a49eb97bc7cfa258aed48d9cbb4fefa56378",
+    "calls": [
+      ".find",
+      "classifyServerRoomActionError",
+      "deps.listAgentsSync",
+      "ensureTailStarted",
+      "roomClient.setGrokBotRoomMembers",
+      "roomRowFromFallback",
+      "roomSummaryAfterAdopt"
+    ],
+    "writes": [
+      "confirmed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:714885:27136316",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "setAgentHidden",
+    "qualified_name": "createServerAgentProxy/setAgentHidden",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714885,
+    "end_line": 714897,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "isHidden"
+    ],
+    "body_sha256": "494e40eba69379d62dd0995e79b30d69bb7f28762229ac5840c9dedbf1dd5ca2",
+    "calls": [
+      "actionClient.setGrokBotAgentClientState",
+      "classifyServerAgentActionError",
+      "ensureTailStarted",
+      "patchClientOverlay"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:714898:27136815",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "openAgentTail",
+    "qualified_name": "createServerAgentProxy/openAgentTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714898,
+    "end_line": 714901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args",
+      "signal"
+    ],
+    "body_sha256": "5574e56e181783b00098e14260b46f89c68ec23850bf72d62941626ebd387ba7",
+    "calls": [
+      "ensureTailStarted",
+      "tail.openAgentTail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714902:27136944",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "getAgentTranscriptTail",
+    "qualified_name": "createServerAgentProxy/getAgentTranscriptTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714902,
+    "end_line": 714905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args",
+      "signal"
+    ],
+    "body_sha256": "11ed92d075f528e0bbbf9c5b50dbb2d8eff96d4c02894c6d159b6055a157e405",
+    "calls": [
+      "ensureTailStarted",
+      "tail.getAgentTranscriptTail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714906:27137077",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "bindGatewayEvents",
+    "qualified_name": "createServerAgentProxy/bindGatewayEvents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714906,
+    "end_line": 714908,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "emit"
+    ],
+    "body_sha256": "0618bc56cf575dfe634031c5d91a391f53ab519e740034189c60f2176e07c57d",
+    "calls": [],
+    "writes": [
+      "boundEmit"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714909:27137149",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "publishVoiceCallReceipt",
+    "qualified_name": "createServerAgentProxy/publishVoiceCallReceipt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714909,
+    "end_line": 714927,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "91825f3d6b6736c5ff983a7505f56cef440c8f01ff44356fccc500b6ab5a8b6f",
+    "calls": [
+      "publishVoiceCallReceiptToServer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714928:27137841",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "relayVoiceCallNudge",
+    "qualified_name": "createServerAgentProxy/relayVoiceCallNudge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714928,
+    "end_line": 714942,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId, callId, request: request5 }"
+    ],
+    "body_sha256": "6c275c1addd4b1a3afba829ef70c8ff5447149f47c220caa57ac85ac7e465459",
+    "calls": [
+      "SendTaskTool.definition.output.parse",
+      "new ServerVoiceHarnessRefusedError",
+      "voiceHarness.callTool"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ServerVoiceHarnessRefusedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714943:27138378",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "bindRunStateChanged",
+    "qualified_name": "createServerAgentProxy/bindRunStateChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714943,
+    "end_line": 714945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "notify"
+    ],
+    "body_sha256": "b578a77e112a19c6aca0e97b9ca587d337b6346869132f9f384591ead36617d3",
+    "calls": [],
+    "writes": [
+      "boundRunStateChanged"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714946:27138460",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "activityOverlayFor",
+    "qualified_name": "createServerAgentProxy/activityOverlayFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714946,
+    "end_line": 714946,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "527765cbfe762f715867ee1cfa1a5da01998669151881492ee31d94b64f3194b",
+    "calls": [
+      "activityOverlays.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714947:27138542",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "noteEventStreamListeners",
+    "qualified_name": "createServerAgentProxy/noteEventStreamListeners",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714947,
+    "end_line": 714951,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "count2"
+    ],
+    "body_sha256": "4e157167aed1c9adef1c2da7f048e4d0b4a70db479b6a18c537510e484f7476d",
+    "calls": [
+      "ensureTailStarted",
+      "stopTailAfterLinger"
+    ],
+    "writes": [
+      "listenerCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714952:27138696",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "log",
+    "qualified_name": "createServerAgentProxy/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714952,
+    "end_line": 714952,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "c79c25e5833e0c53254872f41ca66d0cb091a27f205487db85674b4af7b81127",
+    "calls": [
+      "deps.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714954:27138779",
+    "artifact": "host",
+    "module": "host/extensions/server-agent-proxy/server-agent-proxy.ts",
+    "name": "dispose",
+    "qualified_name": "createServerAgentProxy/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714954,
+    "end_line": 714963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7a181ded6dede9782e6914609f5edb67027c875a59194f879f6983187cb875da",
+    "calls": [
+      "cancelLinger",
+      "indexer.stop",
+      "reconcileWait.dispose",
+      "serverAgentActivity.stop",
+      "tail.stop"
+    ],
+    "writes": [
+      "disposed",
+      "reconcileWait",
+      "tailStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

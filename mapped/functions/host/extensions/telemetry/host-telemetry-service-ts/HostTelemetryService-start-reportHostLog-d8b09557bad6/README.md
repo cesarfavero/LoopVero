@@ -1,0 +1,41 @@
+# `HostTelemetryService.start/reportHostLog`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../../guide/components/observability/README.md).
+
+**Módulo:** `host/extensions/telemetry/host-telemetry-service.ts` · [README do módulo](../../../../../../modules/host/extensions/telemetry/host-telemetry-service-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:732045-732045](../../../../../../../reference/runtime/host-main.cjs#L732045-L732045) | `ArrowFunctionExpression` | não | `level, line` |
+| [host:732082-732082](../../../../../../../reference/runtime/host-main.cjs#L732082-L732082) | `ArrowFunctionExpression` | não | `level, line` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:732045-732045](../../../../../../../reference/runtime/host-main.cjs#L732045-L732045) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+A ocorrência em host:732045 usa retorno implícito de arrow function.
+| [host:732082-732082](../../../../../../../reference/runtime/host-main.cjs#L732082-L732082) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+A ocorrência em host:732082 usa retorno implícito de arrow function.
+
+### host:732045
+
+Chamadas escritas diretamente neste corpo: `this.logs.reportHostLog`.
+
+SHA-256 do trecho: `63d97fb920da58a3652254174b0fb98dc590e2bdc074913669f92e1140f9e93a`.
+
+### host:732082
+
+Chamadas escritas diretamente neste corpo: `this.logs.reportHostLog`.
+
+SHA-256 do trecho: `63d97fb920da58a3652254174b0fb98dc590e2bdc074913669f92e1140f9e93a`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../../guide/methodology/README.md).

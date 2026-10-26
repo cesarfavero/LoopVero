@@ -1,0 +1,830 @@
+[
+  {
+    "id": "host:476230:17431791",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPromptContextParts",
+    "qualified_name": "visitPromptContextParts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476230,
+    "end_line": 476238,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2",
+      "visit3"
+    ],
+    "body_sha256": "32acd56e70bc8598f9d7f2da849c63cf793f0fb597eee004fa9443411175e239",
+    "calls": [
+      "findInitialUserPromptIndex",
+      "visitPromptContextMessageParts"
+    ],
+    "writes": [
+      "messageIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476239:17432194",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPromptContextMessageParts",
+    "qualified_name": "visitPromptContextMessageParts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476239,
+    "end_line": 476260,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "messageIndex",
+      "isInitialUserPrompt",
+      "visit3"
+    ],
+    "body_sha256": "916fb1221378d57701a1034f49c005f71cb34fa69c1ffc6ab7dd53d9301697ff",
+    "calls": [
+      "Array.isArray",
+      "isSummaryCarrierMessage",
+      "visitContentPart",
+      "visitValue"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476261:17432822",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "promptContextPartText",
+    "qualified_name": "promptContextPartText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476261,
+    "end_line": 476272,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "ddb4e5e2d4d591a2c34af65ce29e7dd87036645e5403a5ff7d6fdf19602f4266",
+    "calls": [
+      "text3.slice"
+    ],
+    "writes": [
+      "joined"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476273:17433217",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "findInitialUserPromptIndex",
+    "qualified_name": "findInitialUserPromptIndex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476273,
+    "end_line": 476281,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "465e83552c9ad9e0a6822f55137e102cf4f7da7442eb04b3efef649e117c4960",
+    "calls": [
+      "settlesInitialUserPrompt"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476282:17433487",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "settlesInitialUserPrompt",
+    "qualified_name": "settlesInitialUserPrompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476282,
+    "end_line": 476284,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "cbc0f4b96184ddc02c6c6eca1bfdc3fdc165bc0b08ed9b41d25b20d27b3ce65d",
+    "calls": [
+      "isSummaryCarrierMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476287:17433688",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "contentPath",
+    "qualified_name": "contentPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476287,
+    "end_line": 476295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index",
+      "field"
+    ],
+    "body_sha256": "a1b1165e100d6c1f29e356e5fc0a966362b0b4b5a99da604a8d3c9c963b2842c",
+    "calls": [
+      "new Map",
+      "paths.get",
+      "paths.set"
+    ],
+    "writes": [
+      "CONTENT_PATHS[computed]",
+      "path33"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476296:17434037",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitContentPart",
+    "qualified_name": "visitContentPart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476296,
+    "end_line": 476336,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "part",
+      "index"
+    ],
+    "body_sha256": "89e1cb9adb858b3b1e3aabe7b0494e03ac7aa7bf1af32ece64bc5e0ae009fe69",
+    "calls": [
+      "contentPath",
+      "visitField",
+      "visitValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476337:17435548",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitField",
+    "qualified_name": "visitField",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476337,
+    "end_line": 476344,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "index",
+      "field",
+      "value",
+      "valueKind",
+      "toolName"
+    ],
+    "body_sha256": "ddb62f4a5269f7fa37f89c96d5ba2fb7e51d0ea6c2908474f6e22d2a0f8b14c3",
+    "calls": [
+      "contentPath",
+      "stringifyPromptContextValue",
+      "visitValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476345:17435767",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitValue",
+    "qualified_name": "visitValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476345,
+    "end_line": 476365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "value"
+    ],
+    "body_sha256": "35654968fce18c17e88c0061eca20c4c73532e36f422cf25bb7d533b2bda42a9",
+    "calls": [
+      "extractCompleteTagRangesMatching",
+      "initialPromptBlocks",
+      "rangesOutsideTagBlocks",
+      "selectOutermostRanges",
+      "visitPart",
+      "wholeText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476366:17436753",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "wholeText",
+    "qualified_name": "wholeText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476366,
+    "end_line": 476368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "53a4322d7b08edd2f3e69f5f25821359ab26fc6a3465ef8a109a990cd1cd8757",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476369:17436851",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPart",
+    "qualified_name": "visitPart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476369,
+    "end_line": 476384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "value",
+      "categoryId",
+      "ranges",
+      "tagName2"
+    ],
+    "body_sha256": "4333339753417ad61f63a5416391faefbcd01ba88c71245dbd1b829d76dd12e8",
+    "calls": [
+      "scope.visit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476391:17437583",
+    "artifact": "host",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "initialPromptBlocks",
+    "qualified_name": "initialPromptBlocks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476391,
+    "end_line": 476398,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "515b3b18567b66289dc3d2324a2d07e8f4a7004cb8c84e5cdbff358802e43dea",
+    "calls": [
+      "INITIAL_PROMPT_BLOCKS.flatMap",
+      "extractCompleteTagRanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255540:8006479",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPromptContextParts",
+    "qualified_name": "visitPromptContextParts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255540,
+    "end_line": 255548,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "visit3"
+    ],
+    "body_sha256": "748ed8accc07250f852c2219ad4c6956a1c15bd92ab2b59f69f7afa82a767b97",
+    "calls": [
+      "findInitialUserPromptIndex",
+      "visitPromptContextMessageParts"
+    ],
+    "writes": [
+      "messageIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255549:8006878",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPromptContextMessageParts",
+    "qualified_name": "visitPromptContextMessageParts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255549,
+    "end_line": 255570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "messageIndex",
+      "isInitialUserPrompt",
+      "visit3"
+    ],
+    "body_sha256": "916fb1221378d57701a1034f49c005f71cb34fa69c1ffc6ab7dd53d9301697ff",
+    "calls": [
+      "Array.isArray",
+      "isSummaryCarrierMessage",
+      "visitContentPart",
+      "visitValue"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255571:8007506",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "promptContextPartText",
+    "qualified_name": "promptContextPartText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255571,
+    "end_line": 255582,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "7f9226f92156f8f2f7ba76d17b2c017d923d31b9e8236cf3f193da561c46ef83",
+    "calls": [
+      "text3.slice"
+    ],
+    "writes": [
+      "joined2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255583:8007904",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "findInitialUserPromptIndex",
+    "qualified_name": "findInitialUserPromptIndex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255583,
+    "end_line": 255591,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "27412c8bfadab43868498bb74cfabd0cf52ab7308efa2f3113c4be29f7afebb6",
+    "calls": [
+      "settlesInitialUserPrompt"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255592:8008171",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "settlesInitialUserPrompt",
+    "qualified_name": "settlesInitialUserPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255592,
+    "end_line": 255594,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "cbc0f4b96184ddc02c6c6eca1bfdc3fdc165bc0b08ed9b41d25b20d27b3ce65d",
+    "calls": [
+      "isSummaryCarrierMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255597:8008372",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "contentPath",
+    "qualified_name": "contentPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255597,
+    "end_line": 255605,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "index",
+      "field"
+    ],
+    "body_sha256": "a1b1165e100d6c1f29e356e5fc0a966362b0b4b5a99da604a8d3c9c963b2842c",
+    "calls": [
+      "new Map",
+      "paths.get",
+      "paths.set"
+    ],
+    "writes": [
+      "CONTENT_PATHS[computed]",
+      "path33"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255606:8008721",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitContentPart",
+    "qualified_name": "visitContentPart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255606,
+    "end_line": 255646,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "part",
+      "index"
+    ],
+    "body_sha256": "89e1cb9adb858b3b1e3aabe7b0494e03ac7aa7bf1af32ece64bc5e0ae009fe69",
+    "calls": [
+      "contentPath",
+      "visitField",
+      "visitValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255647:8010232",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitField",
+    "qualified_name": "visitField",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255647,
+    "end_line": 255654,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "index",
+      "field",
+      "value",
+      "valueKind",
+      "toolName"
+    ],
+    "body_sha256": "ddb62f4a5269f7fa37f89c96d5ba2fb7e51d0ea6c2908474f6e22d2a0f8b14c3",
+    "calls": [
+      "contentPath",
+      "stringifyPromptContextValue",
+      "visitValue"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255655:8010451",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitValue",
+    "qualified_name": "visitValue",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255655,
+    "end_line": 255675,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "value"
+    ],
+    "body_sha256": "35654968fce18c17e88c0061eca20c4c73532e36f422cf25bb7d533b2bda42a9",
+    "calls": [
+      "extractCompleteTagRangesMatching",
+      "initialPromptBlocks",
+      "rangesOutsideTagBlocks",
+      "selectOutermostRanges",
+      "visitPart",
+      "wholeText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255676:8011437",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "wholeText",
+    "qualified_name": "wholeText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255676,
+    "end_line": 255678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "53a4322d7b08edd2f3e69f5f25821359ab26fc6a3465ef8a109a990cd1cd8757",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255679:8011535",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "visitPart",
+    "qualified_name": "visitPart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255679,
+    "end_line": 255694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "scope",
+      "value",
+      "categoryId",
+      "ranges",
+      "tagName"
+    ],
+    "body_sha256": "6853aa3d0a970124b6431ee1866f4020995d07457d9305244bf7f36e8ab796ec",
+    "calls": [
+      "scope.visit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:255701:8012256",
+    "artifact": "evaluation",
+    "module": "agent-core/prompt-context-usage/prompt-context-parts.js",
+    "name": "initialPromptBlocks",
+    "qualified_name": "initialPromptBlocks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 255701,
+    "end_line": 255708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "515b3b18567b66289dc3d2324a2d07e8f4a7004cb8c84e5cdbff358802e43dea",
+    "calls": [
+      "INITIAL_PROMPT_BLOCKS.flatMap",
+      "extractCompleteTagRanges"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

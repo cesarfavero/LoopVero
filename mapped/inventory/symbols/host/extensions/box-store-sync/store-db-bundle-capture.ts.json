@@ -1,0 +1,554 @@
+[
+  {
+    "id": "host:479942:17566598",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "createStoreDbCaptureTrace",
+    "qualified_name": "createStoreDbCaptureTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479942,
+    "end_line": 479949,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "f065f8c588d47ab5bfecd415f5b233ebb820e77857cea91113dcc14c73ae16d4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479950:17566766",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "recordStoreDbCaptureFailure",
+    "qualified_name": "recordStoreDbCaptureFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479950,
+    "end_line": 479954,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trace2",
+      "phase"
+    ],
+    "body_sha256": "e3387e5f2d5c181c215860a28a71b04979795ac1398994ce140d882807f9b588",
+    "calls": [],
+    "writes": [
+      "trace2.failurePhase"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479966:17567241",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.constructor",
+    "qualified_name": "StoreDbBundleCapture.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479966,
+    "end_line": 479976,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3f60222eb89b067cb7df022e0299b1c144c468820293fe73d70d37b2cb1c7d9c",
+    "calls": [],
+    "writes": [
+      "this.getWriteGeneration",
+      "this.largeObjectThreshold",
+      "this.log",
+      "this.manifestStore",
+      "this.now",
+      "this.snapshotUpload",
+      "this.storeDbCaptures",
+      "this.transfer",
+      "this.vacuumInto"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479977:17567757",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.elapsedDurationMs",
+    "qualified_name": "StoreDbBundleCapture.elapsedDurationMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479977,
+    "end_line": 479979,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "startedAt"
+    ],
+    "body_sha256": "8a1f6c890e13ddbb6cc1656a6076e8aa08f627ca49b91342faccf6ee5b7d8ad1",
+    "calls": [
+      "Math.max",
+      "this.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479980:17567849",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.isAgentDbBundleCommitted",
+    "qualified_name": "StoreDbBundleCapture.isAgentDbBundleCommitted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479980,
+    "end_line": 479984,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "manifest",
+      "targets"
+    ],
+    "body_sha256": "8edbd4705e2cc0a3f40a8fe31a3b3c7e0effdbcf7011f053dd0b7c76455d5492",
+    "calls": [
+      "targets.every",
+      "this.manifestStore.isLiveManifest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:479985:17568121",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.captureAgentDbBundle",
+    "qualified_name": "StoreDbBundleCapture.captureAgentDbBundle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 479985,
+    "end_line": 480008,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c53bbd8bc31070dba90aba39100a08d1f6b5339eb0ece47a09b1509680b9bbb4",
+    "calls": [
+      ".then",
+      "Promise.resolve",
+      "operation.then",
+      "this.agentDbCaptureQueues.delete",
+      "this.agentDbCaptureQueues.get",
+      "this.agentDbCaptureQueues.set",
+      "this.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480009:17568875",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.captureAgentDbBundleUnlocked",
+    "qualified_name": "StoreDbBundleCapture.captureAgentDbBundleUnlocked",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480009,
+    "end_line": 480071,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3e882e795ba958b37842ecd5e2026ad5bcacedac0c3e99d5967e56d407384298",
+    "calls": [
+      "args.manifest.get",
+      "errorMessage",
+      "initialIdentity.includes",
+      "isBoxStoreManifestFileEntry",
+      "new Map",
+      "recordStoreDbCaptureFailure",
+      "stagedManifest.get",
+      "tallyFileOutcome",
+      "this.agentDbBundleIdentity",
+      "this.captureAgentSqliteDb",
+      "this.log",
+      "this.manifestStore.setManifestEntry",
+      "this.manifestStore.uncommittedStoreDbEntries.set"
+    ],
+    "writes": [
+      "args.captureTrace.blobUploadDurationMs",
+      "args.captureTrace.captureDurationMs",
+      "args.summary.failures",
+      "args.summary.filesScanned",
+      "complete"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 3,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480072:17571444",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.agentDbBundleIdentity",
+    "qualified_name": "StoreDbBundleCapture.agentDbBundleIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480072,
+    "end_line": 480092,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "12f008d8b241bcaee24f300138120feb3728a168b45d184f2128c5fc2554d2a0",
+    "calls": [
+      "args.manifest.has",
+      "args.targets.map",
+      "findSystemErrno",
+      "identities.join",
+      "identities.push",
+      "new Set",
+      "targetPaths.has",
+      "this.agentHasPendingDbRecovery"
+    ],
+    "writes": [
+      "fileStat"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480093:17572449",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.agentHasPendingDbRecovery",
+    "qualified_name": "StoreDbBundleCapture.agentHasPendingDbRecovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480093,
+    "end_line": 480112,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "b34851e309750ab178a1605a3c95fded3558604dc2b59aee04fdab9f52a6b0b7",
+    "calls": [
+      "errorLogTag",
+      "isMissingPathError",
+      "name18.endsWith",
+      "name18.startsWith",
+      "reportBoxStoreDiagnostic"
+    ],
+    "writes": [
+      "names3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480113:17573106",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.captureAgentSqliteDb",
+    "qualified_name": "StoreDbBundleCapture.captureAgentSqliteDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480113,
+    "end_line": 480203,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId",
+      "manifest",
+      "relPath",
+      "absPath",
+      "fileStat"
+    ],
+    "body_sha256": "c9154ddde59d16ea9172c95ecaa687310be0299ee46d654e40ab2cbbb18b19f3",
+    "calls": [
+      ".catch",
+      ".toString",
+      "Math.max",
+      "errorMessage",
+      "isBoxStoreManifestFileEntry",
+      "manifest.get",
+      "this.agentDbWriteGeneration",
+      "this.elapsedDurationMs",
+      "this.isAgentDbDurablyCaptured",
+      "this.log",
+      "this.now",
+      "this.readWalStat",
+      "this.snapshotUpload.discardSnapshotTemp",
+      "this.snapshotUpload.uploadAgentDbSnapshot",
+      "this.storeDbCaptures.delete",
+      "this.storeDbCaptures.get",
+      "this.storeDbCaptures.set",
+      "this.transfer.hasDiskSpaceForLargeObject",
+      "this.vacuumInto"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480204:17576431",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.readWalStat",
+    "qualified_name": "StoreDbBundleCapture.readWalStat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480204,
+    "end_line": 480212,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "f6729ecf96ab5d3bbc17e0900ac2ad80ca6d9c9534cf1915ec40a08bcc8b89fb",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480213:17576738",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.walHasNoNewFramesSince",
+    "qualified_name": "StoreDbBundleCapture.walHasNoNewFramesSince",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480213,
+    "end_line": 480219,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "dbPath",
+      "ref2"
+    ],
+    "body_sha256": "992b927605bf0330ff9aa489a21d255352c7b80851f626937ccaa6f1fe80b59c",
+    "calls": [
+      "this.readWalStat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480220:17577016",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.isAgentDbDurablyCaptured",
+    "qualified_name": "StoreDbBundleCapture.isAgentDbDurablyCaptured",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480220,
+    "end_line": 480227,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "relPath",
+      "absPath",
+      "fileStat",
+      "manifest"
+    ],
+    "body_sha256": "6ff5ec729aef972e9272f3523daafe1276a12bade057e75afb0598877ec71e38",
+    "calls": [
+      "isBoxStoreManifestFileEntry",
+      "manifest.get",
+      "this.agentDbWriteGeneration",
+      "this.storeDbCaptures.get",
+      "this.walHasNoNewFramesSince"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480228:17577678",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.agentDbWriteGeneration",
+    "qualified_name": "StoreDbBundleCapture.agentDbWriteGeneration",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480228,
+    "end_line": 480230,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0cc5112b4566ba304dd198ecc078c1f148afa5a3d56e3da0ad073415457c43e5",
+    "calls": [
+      "args.relPath.endsWith",
+      "this.getWriteGeneration"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480231:17577814",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-bundle-capture.ts",
+    "name": "StoreDbBundleCapture.isAgentDbSnapshotDurable",
+    "qualified_name": "StoreDbBundleCapture.isAgentDbSnapshotDurable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480231,
+    "end_line": 480237,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "relPath",
+      "absPath",
+      "fileStat",
+      "manifest",
+      "capturedThisSweep"
+    ],
+    "body_sha256": "2d1c6450b983658aca747bfa1017da27224a81644cc286f4370de634c6684e6f",
+    "calls": [
+      "capturedThisSweep.has",
+      "isBoxStoreManifestFileEntry",
+      "manifest.get",
+      "this.isAgentDbDurablyCaptured"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

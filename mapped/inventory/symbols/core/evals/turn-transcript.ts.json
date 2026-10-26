@@ -1,0 +1,560 @@
+[
+  {
+    "id": "evaluation:628351:23829482",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "sandTurnTranscriptSegment",
+    "qualified_name": "sandTurnTranscriptSegment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628351,
+    "end_line": 628359,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "31b7fabdb3c317236980ebb8f4c038b45c8c1107878e290d64d321efa2efeac4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628360:23829799",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "sandTurnTranscripts",
+    "qualified_name": "sandTurnTranscripts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628360,
+    "end_line": 628393,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "segments"
+    ],
+    "body_sha256": "10a3cec915fcad8e641f9b076ce4ca2da15e34034f31f92a73281b0cdfde82eb",
+    "calls": [
+      ".map",
+      "byRequestId.get",
+      "byRequestId.set",
+      "existing.push",
+      "groups.map",
+      "groups.push",
+      "mergeSegmentMessages",
+      "new Map",
+      "new Set",
+      "segments.filter",
+      "subagentLaunches"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628394:23831198",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "sandTranscriptToolInputs",
+    "qualified_name": "sandTranscriptToolInputs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628394,
+    "end_line": 628402,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "transcripts"
+    ],
+    "body_sha256": "afeb8bf7135387b3a3205bbe95e643ea8a61c95c2cdc949bbdf438249fbc7919",
+    "calls": [
+      "inputs.has",
+      "inputs.set",
+      "new Map",
+      "toolCallParts",
+      "transcripts.subagents.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628403:23831548",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "sandToolCallAgents",
+    "qualified_name": "sandToolCallAgents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628403,
+    "end_line": 628439,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "transcripts",
+      "segments",
+      "updates"
+    ],
+    "body_sha256": "4da87bdf1e8cf6d3d4ffd405b0e3eaf3a08d0e01d120a970bbea2f3e201538a3",
+    "calls": [
+      "agentFromClientToolArgs",
+      "agents.has",
+      "agents.set",
+      "isUnknownRecord2",
+      "new Map",
+      "new Set",
+      "requestAgent",
+      "segments.flatMap",
+      "subagentAgent",
+      "subagentByRequestId.set",
+      "toolCallIds2"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 4,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628440:23833106",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "requestAgent",
+    "qualified_name": "requestAgent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628440,
+    "end_line": 628451,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "update",
+      "subagentByRequestId",
+      "mainRequestIds"
+    ],
+    "body_sha256": "ba428b6a420c294488a5a483a81a7aeaa4a59d4cc4f2b1336f2dc16d15c4ecb2",
+    "calls": [
+      "mainRequestIds.has",
+      "subagentByRequestId.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628452:23833544",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "agentFromClientToolArgs",
+    "qualified_name": "agentFromClientToolArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628452,
+    "end_line": 628465,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "subagentByRequestId",
+      "mainRequestIds"
+    ],
+    "body_sha256": "734acef54216be8befe06a0dccb0c9eaa1756ebd091477ece2734400ed420850",
+    "calls": [
+      "isUnknownRecord2",
+      "mainRequestIds.has",
+      "parsed.conversationId.startsWith",
+      "parsedModelArgs",
+      "subagentByRequestId.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628466:23834249",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "withSandToolCallAgentsAndInputs",
+    "qualified_name": "withSandToolCallAgentsAndInputs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628466,
+    "end_line": 628479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "calls",
+      "inputs",
+      "agents"
+    ],
+    "body_sha256": "73214b7b3cedd682233a1f35135d85be15f42b5fae4d28730a45e7948c670c75",
+    "calls": [
+      "calls.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628480:23834805",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "subagentAgent",
+    "qualified_name": "subagentAgent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628480,
+    "end_line": 628486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagent"
+    ],
+    "body_sha256": "a81d6df9ec7e3ae7012a710c71b36d0f0356b74cf6f913fa57bf736e9128353a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628487:23835047",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "parsedModelArgs",
+    "qualified_name": "parsedModelArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628487,
+    "end_line": 628494,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8e149f1f9b79b72e4801c79e65f9501181106ac208d013a501a3bbde61750b9e",
+    "calls": [
+      "decodeSandToolActivity",
+      "isUnknownRecord2",
+      "parseJsonOrUndefined2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628495:23835360",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "mergeSegmentMessages",
+    "qualified_name": "mergeSegmentMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628495,
+    "end_line": 628517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "batches"
+    ],
+    "body_sha256": "8e821ab9d4f58509e5efeb8ee7a1c101fa930056d9723cdd58aeb128497a351d",
+    "calls": [
+      "JSON.stringify",
+      "ids.every",
+      "isUnknownRecord2",
+      "merged.map",
+      "merged.push",
+      "mergedIds.every",
+      "new Set",
+      "seenMessages.add",
+      "seenMessages.has",
+      "toolCallIds2",
+      "toolCallIdsOf2"
+    ],
+    "writes": [
+      "merged"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628518:23836207",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "toolCallParts",
+    "qualified_name": "toolCallParts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628518,
+    "end_line": 628535,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "7708ae4f5469a2e1d9eab453e90c60cb57d2d1a73f1cdf3f8248924d387524f7",
+    "calls": [
+      "Array.isArray",
+      "isUnknownRecord2",
+      "parts.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628536:23836788",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "toolCallIdsOf2",
+    "qualified_name": "toolCallIdsOf2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628536,
+    "end_line": 628541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "50e487047b94f49c5cca013f7608737441fcb2afeef3e3b147af67ba8519207e",
+    "calls": [
+      "Array.isArray",
+      "isUnknownRecord2",
+      "message.content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628542:23837107",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "toolCallIds2",
+    "qualified_name": "toolCallIds2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628542,
+    "end_line": 628544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "f87ad24147bf754ff9f85bfde2c8856f86f8e9276deb141f9ef2b2fa809c8107",
+    "calls": [
+      ".map",
+      "new Set",
+      "toolCallParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628545:23837222",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "subagentLaunches",
+    "qualified_name": "subagentLaunches",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628545,
+    "end_line": 628550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "b29867c4ec510936deb7e4db7c963a1b15f23bf266d737b425dc1d8347ff6c6b",
+    "calls": [
+      ".flatMap",
+      "toolCallParts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628551:23837528",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "matchLaunch",
+    "qualified_name": "matchLaunch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628551,
+    "end_line": 628559,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "launches",
+      "messages",
+      "claimed"
+    ],
+    "body_sha256": "3fcd9dbf2605f0655ac7d50f7416552182db92c13425ef506c4e2b07ef5c152a",
+    "calls": [
+      ".join",
+      "launches.find",
+      "messages.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:628560:23837916",
+    "artifact": "evaluation",
+    "module": "core/evals/turn-transcript.ts",
+    "name": "messageText2",
+    "qualified_name": "messageText2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 628560,
+    "end_line": 628564,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "565316b80c14392d8ae922bed9337447ef636ad4598869e75056e08e63fae0ff",
+    "calls": [
+      ".join",
+      "Array.isArray",
+      "content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

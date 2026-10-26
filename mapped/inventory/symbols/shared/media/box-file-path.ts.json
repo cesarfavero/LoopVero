@@ -1,0 +1,141 @@
+[
+  {
+    "id": "host:497234:18243040",
+    "artifact": "host",
+    "module": "shared/media/box-file-path.ts",
+    "name": "fileUrlPath",
+    "qualified_name": "fileUrlPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497234,
+    "end_line": 497241,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "5fc3b44a388fd236030b357540ba9f0f6f8016c3e2b886d23205dc9e750c1d33",
+    "calls": [
+      "URL.canParse",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497242:18243404",
+    "artifact": "host",
+    "module": "shared/media/box-file-path.ts",
+    "name": "hasPrivateStoreMarker",
+    "qualified_name": "hasPrivateStoreMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497242,
+    "end_line": 497244,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "733cd3e99a5beb3ec0d2e267390c8881023e35f1f0dbe3750ba54b6cbfc0cdd9",
+    "calls": [
+      "PRIVATE_STORE_MARKERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497245:18243525",
+    "artifact": "host",
+    "module": "shared/media/box-file-path.ts",
+    "name": "lexicalBoxFilePath",
+    "qualified_name": "lexicalBoxFilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497245,
+    "end_line": 497263,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "0f327be6accfc02c7fd458d6335b9474cd5226ba26294bb88b382e3dcc97f5a2",
+    "calls": [
+      ".join",
+      "/^file:/i.test",
+      "BOX_FILE_ROOTS.some",
+      "fileUrlPath",
+      "getFilePreviewKind",
+      "hasPrivateStoreMarker",
+      "path33.includes",
+      "path33.split",
+      "path33.startsWith",
+      "segments.slice",
+      "segments.some",
+      "source.trim",
+      "trimmed.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:497265:18244472",
+    "artifact": "host",
+    "module": "shared/media/box-file-path.ts",
+    "name": "resolvedBoxFilePath",
+    "qualified_name": "resolvedBoxFilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 497265,
+    "end_line": 497270,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "realPath"
+    ],
+    "body_sha256": "c3fb5a65eea29e3e8e691252333a7abf384ee173f10e950fc3bd0a17c6291495",
+    "calls": [
+      "lexicalBoxFilePath",
+      "realPath.slice",
+      "realPath.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

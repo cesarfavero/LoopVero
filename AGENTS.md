@@ -1,17 +1,14 @@
-# TheGrok
+# Harness reference workspace
 
-- `Grok Bot.app/` e `GrokBotResearch/` são referências originais: não modifique os artefatos locais. O usuário autorizou manter o conteúdo integral de `GrokBotResearch/` no repositório privado, inclusive dependências vendorizadas, binários e conteúdo licenciado. Não publique fora desse repositório. Credenciais reais, tokens, cookies, sessões e dados pessoais continuam excluídos conforme as regras de segurança; inspecione e faça scan antes de incluir novas extrações.
-- A implementação independente fica em `apps/desktop/`; pesquisas verificáveis ficam em `docs/research/`.
-- Registre separadamente código identificado, contrato recuperado, comportamento observado, inferência e lógica remota indisponível.
-- No Grok Bot, diferencie a task documental do Sand (`CreateTask`/`UpdateTask`/`ReadTask`, ID hexadecimal de dez caracteres e transcript em sessão própria) da lista de progresso `GrokBotTask` e das delegações locais `subagentRuns`; IDs e fluxos não são intercambiáveis sem contrato comprovado.
-- O adaptador documental local fica em `apps/desktop/src/persistence/task-document-store.cjs`, separado do JSON agregado de bots; ele não reproduz o servidor remoto. O transcript local fica em `task-transcript-store.cjs` e é indexado por agente e task, com lock por task nas escritas; o envio por `sendTarget:{kind:'task',taskId}` valida que o documento existe e está aberto. O ID UUID do turno não é o ID documental de dez dígitos.
-- `task-sidebar.jsx` e `task-document-view.jsx` consomem esses stores locais e permanecem distintos das delegações UUID. A thread local mantém estado de leitura e pin em store separado, correlacionado pelo `entryId` do transcript; isso não implementa o RPC remoto, watch/replay nem os layouts completos do original, e não deve ser apresentado como paridade plena.
-- Nunca atribua proatividade espontânea ao cliente local sem localizar a decisão inicial ou a fronteira remota.
-- O CodexRouter é usado pelo próprio Codex neste Mac. A aplicação TheGrok pode consumir apenas a API existente pelo loopback; não altere configuração global, padrões, autenticação, processo ou armazenamento do CodexRouter, nem exponha o serviço na rede ou reutilize credenciais do Grok Bot.
-- O escopo inclui reconstruir as responsabilidades verificáveis do cliente Electron, Coordinator, serviços de controle e Sand Host/harness distribuído. Não trate uma execução local como substituta do fluxo remoto original; registre fronteiras indisponíveis e só implemente protocolos sustentados por código ou observação autorizada.
-- Derive a interface dos bundles, estilos, tokens e componentes do app original. Use capturas pareadas para validar depois da reconstrução de cada superfície; screenshots não substituem a investigação do código.
-- Para teste de runtime Electron, use `apps/desktop/scripts/launch-electron.cjs` com `--user-data-dir=/caminho/absoluto/temporario` e, quando necessário, porta CDP em loopback; não abra o executável Electron sem o entrypoint do TheGrok. O perfil temporário serve para não misturar validação aos dados locais usuais.
-- Preserve `window-state.json` no `userData` ao editar o Main: schema v1 com bounds normais e `isMaximized`, restauração pelo monitor visível, padrão 1040×760, mínimo 512×520, escrita atômica 0600 e flush ao fechar. A variante 1440×960 pertence ao contexto cloud VM do original.
-- A memória privada local usa Markdown em `userData/agents/<hash do id>/memory/`, com `profile.md` e `log/AAAA-MM.md`. Preserve a migração idempotente do legado em `thegrok-state.json` e a recusa de symlinks ao editar essa camada. Escopos compartilhados e Dream exigem rastrear ACL, identidade e origem do agendamento no harness antes de serem ativados.
-- Valide o fluxo real antes de declarar paridade visual, funcional ou comportamental.
-- Preserve trabalho preexistente e faça commits coesos com push quando houver entrega verificável.
+- The user selected a harness-only research scope. Do not restore the former application, UI, product parity work, or desktop implementation.
+- `reference/` contains original evidence. Preserve the bytes and executable modes of the files listed in `mapped/inventory/original-files.json`. Folder names are our organizational names. Never silently rewrite original bundles to match the guide.
+- The repository is private. Keep the supplied originals and licensed dependencies within this repository. Do not include secrets, credentials, cookies, session state, or unrelated personal data.
+- Do not document how the original files were obtained, acquisition procedures, disclosure details, or reproduction of an extraction. The guide concerns the operation of the supplied harness only.
+- `guide/` contains manually reviewed functional explanations. `mapped/` contains generated static inventories and individual module/function READMEs. Label these evidence levels accurately.
+- Cite precise reference paths and LF-based line ranges for behavioral claims. Python `splitlines()` also splits Unicode separators and gives incorrect source anchors for these bundles; use `split('\n')`.
+- Separate host, evaluation runner, state worker, and remote services. In this snapshot the BOX SendPipeline refuses turns; the temporal proxy and evaluation runner are distinct paths.
+- Do not claim that WakeParent, a periodic reconciliation timer, or a generated protocol schema implements spontaneous opportunity selection. Mark missing remote implementation as unknown.
+- Keep documentary tasks, transcript entries, turn IDs, subagent IDs, primary-bot selection and scheduler lanes distinct.
+- Research tooling may parse reference text. Do not execute, import or require the reference bundles, start their services, or connect them to real accounts as part of static verification.
+- Regenerate catalog pages using `tools/research/`; edit manually reviewed explanations under `guide/` instead of generated READMEs. Inspect all verification failures before publishing.
+- Preserve the Git history, use normal commits, and verify the remote branch and original blob identities after delivery. Never use a force push for this reorganization.

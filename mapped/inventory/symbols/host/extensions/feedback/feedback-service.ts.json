@@ -1,0 +1,104 @@
+[
+  {
+    "id": "host:553612:20351301",
+    "artifact": "host",
+    "module": "host/extensions/feedback/feedback-service.ts",
+    "name": "createSandFeedbackReporter",
+    "qualified_name": "createSandFeedbackReporter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553612,
+    "end_line": 553625,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "client = createSandCursorBackendClient(AiService, deps)"
+    ],
+    "body_sha256": "41fcb869123735335daeda353b58d18f66633e2d017961b39e21685d823c26e2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:553627:20352008",
+    "artifact": "host",
+    "module": "host/extensions/feedback/feedback-service.ts",
+    "name": "SandFeedbackService.constructor",
+    "qualified_name": "SandFeedbackService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553627,
+    "end_line": 553629,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:553631:20352071",
+    "artifact": "host",
+    "module": "host/extensions/feedback/feedback-service.ts",
+    "name": "SandFeedbackService.voteFeedback",
+    "qualified_name": "SandFeedbackService.voteFeedback",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 553631,
+    "end_line": 553673,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1cb94ac56bf39d36f993dabb4c3d4d3b2aba6622b73ca8e2d886918639a71c57",
+    "calls": [
+      "String",
+      "new SandFeedbackVoteTargetError",
+      "parseAgentId",
+      "this.deps.logReportFailure",
+      "this.deps.report",
+      "this.deps.trackDialogDismissed",
+      "this.deps.trackSubmitted",
+      "this.deps.trackVote",
+      "this.deps.transcript.setFeedbackVote"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandFeedbackVoteTargetError"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 3,
+      "catches": 1
+    }
+  }
+]

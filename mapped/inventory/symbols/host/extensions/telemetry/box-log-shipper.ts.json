@@ -1,0 +1,1172 @@
+[
+  {
+    "id": "host:730756:27759646",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "cookiePersistShapeIssue",
+    "qualified_name": "cookiePersistShapeIssue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730756,
+    "end_line": 730774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "93ea9f215e3f78c64360698d7bb1558f2ae362c2245eca4d1858742ea6a13ad8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730817:27761810",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.constructor",
+    "qualified_name": "BoxLogShipper.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730817,
+    "end_line": 730835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "6d2999e498b400464a6f3dcc5a39e8084bf1c4a4685acdbe716e421fd6ec83cb",
+    "calls": [
+      "new Set"
+    ],
+    "writes": [
+      "this.clock",
+      "this.excludeSourcePrefixes",
+      "this.logDir",
+      "this.maxBytesPerReadPerFile",
+      "this.maxLagBytes",
+      "this.maxLineBytes",
+      "this.maxLinesPerPoll",
+      "this.offsetsPath",
+      "this.openFile",
+      "this.polling",
+      "this.reportBatch",
+      "this.reportBoxLogShip",
+      "this.reportHostLog",
+      "this.skip",
+      "this.statFile",
+      "this.subdirPattern",
+      "this.writeOffsets"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730836:27762897",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.start",
+    "qualified_name": "BoxLogShipper.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730836,
+    "end_line": 730858,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "aefd4088180f4b1395c8a9f929d83515510aa92e5326a83e3da0dfac7282a68d",
+    "calls": [
+      "new Promise",
+      "this.loadOffsets",
+      "this.polling.start"
+    ],
+    "writes": [
+      "this.hasLoadedOffsets",
+      "this.pollingHandle"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730840:27763011",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "resolveFirst",
+    "qualified_name": "BoxLogShipper.start/resolveFirst",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730840,
+    "end_line": 730841,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d8c7ff76b38a6ba1f0dfd0cae507faf3b110de37901ad7d18c725ff3358b6176",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730859:27763492",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.dispose",
+    "qualified_name": "BoxLogShipper.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730859,
+    "end_line": 730862,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5e4c019b732fddb7903f4e7b741ba03cfedc5e044333ea1af993b5c30478cf68",
+    "calls": [
+      "this.saveOffsets",
+      "this.stopPolling"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730863:27763586",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.checkpointOffsets",
+    "qualified_name": "BoxLogShipper.checkpointOffsets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730863,
+    "end_line": 730865,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7842db847069d94b132537a45e72317ea607f48fbe46f9e3a129452ab538f6d5",
+    "calls": [
+      "this.saveOffsets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730866:27763648",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.stopPolling",
+    "qualified_name": "BoxLogShipper.stopPolling",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730866,
+    "end_line": 730871,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a53dbd36b18e6f15906e1d623f1706aefa379a7b182c6fde046dfea66327131e",
+    "calls": [
+      "this.pollingHandle.dispose"
+    ],
+    "writes": [
+      "this.isDisposed",
+      "this.pollingHandle"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730872:27763792",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.poll",
+    "qualified_name": "BoxLogShipper.poll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730872,
+    "end_line": 730883,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e8c19ca17a8c22401d34535ea7edb0168c79f48638fc7a6b798bff065204a3ab",
+    "calls": [
+      "this.pollOnce"
+    ],
+    "writes": [
+      "this.activePoll"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730884:27764096",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.pollOnce",
+    "qualified_name": "BoxLogShipper.pollOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730884,
+    "end_line": 730911,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f2a4b9876af4659a75156305ff2ef0322f2a6eb28f62cff3da31e14ccdd9054c",
+    "calls": [
+      "listedPaths.add",
+      "listedPaths.has",
+      "new Set",
+      "this.listLogFiles",
+      "this.maybeReportProgress",
+      "this.maybeRetryOffsetSaveFailure",
+      "this.notePumpFailed",
+      "this.notePumpSucceeded",
+      "this.pumpFailedPaths.add",
+      "this.pumpFailedPaths.delete",
+      "this.pumpFile",
+      "this.reconcileTruncatedOffsets",
+      "this.reportRejectedBoxTelemetryLines",
+      "this.saveOffsets",
+      "this.snapshotLogFileSizes"
+    ],
+    "writes": [
+      "budget"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 3,
+      "awaits": 4,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:730912:27765253",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.listLogFiles",
+    "qualified_name": "BoxLogShipper.listLogFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730912,
+    "end_line": 730948,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5f5469da6f939200c835bc8c062d4d3e63930047b61c522753c9388f54027ecc",
+    "calls": [
+      "entry.isDirectory",
+      "entry.isFile",
+      "entry.name.endsWith",
+      "files.push",
+      "reportFallbackUnlessAbsent",
+      "sub.isFile",
+      "sub.name.endsWith",
+      "this.isExcludedSource",
+      "this.skip.has",
+      "this.subdirPattern.test",
+      "toSourceName"
+    ],
+    "writes": [
+      "complete",
+      "entries",
+      "subEntries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:730949:27766752",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.snapshotLogFileSizes",
+    "qualified_name": "BoxLogShipper.snapshotLogFileSizes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730949,
+    "end_line": 730973,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listing"
+    ],
+    "body_sha256": "8f423a20f7e2a2e4dd2d7558b9f8aa2fa329a6f351388129808819ea9bea3550",
+    "calls": [
+      "errorLogTag",
+      "fileStat.isFile",
+      "files.push",
+      "findSystemErrno",
+      "this.reportHostLog",
+      "this.statFailedPaths.add",
+      "this.statFailedPaths.delete",
+      "this.statFailedPaths.has",
+      "this.statFile"
+    ],
+    "writes": [
+      "complete",
+      "fileStat"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:730974:27767534",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.isExcludedSource",
+    "qualified_name": "BoxLogShipper.isExcludedSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730974,
+    "end_line": 730976,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "leaf"
+    ],
+    "body_sha256": "a5c2eb0249aeb570cd8f07d9f1bb5aeac7c00c806a457540dcd85293b242226e",
+    "calls": [
+      "this.excludeSourcePrefixes.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730977:27767655",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.reconcileTruncatedOffsets",
+    "qualified_name": "BoxLogShipper.reconcileTruncatedOffsets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730977,
+    "end_line": 730990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "f87c5ae96f2552881fe1893261d2c9aa34f0110dfae75f00ab97ca0621f80379",
+    "calls": [
+      "this.offsets.get",
+      "this.pendingDeliveryWindows.get",
+      "this.pendingWindowStartedAtMs.delete",
+      "this.setOffset"
+    ],
+    "writes": [
+      "pending.invalidated"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:730991:27768107",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.pumpFile",
+    "qualified_name": "BoxLogShipper.pumpFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 730991,
+    "end_line": 731060,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "file2",
+      "budget"
+    ],
+    "body_sha256": "61244cfbe2d3bac3e9b7ab877cf42296ec5ac407cd303b1dc8e1dae7ea9c8223",
+    "calls": [
+      ".toString",
+      "Buffer.alloc",
+      "Math.min",
+      "buffer.subarray",
+      "chunk.indexOf",
+      "chunk.lastIndexOf",
+      "chunk.subarray",
+      "handle.close",
+      "handle.read",
+      "line.endsWith",
+      "line.slice",
+      "records2.push",
+      "this.offsets.get",
+      "this.openFile",
+      "this.pendingDeliveryWindows.has",
+      "this.pendingWindowStartedAtMs.delete",
+      "this.reportDeliveryWindow",
+      "this.toTelemetryRecord"
+    ],
+    "writes": [
+      "candidateEndOffset",
+      "cursor",
+      "from2",
+      "line",
+      "processed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731061:27770778",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.toTelemetryRecord",
+    "qualified_name": "BoxLogShipper.toTelemetryRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731061,
+    "end_line": 731083,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entry",
+      "segment"
+    ],
+    "body_sha256": "3b6942bcc0ca6714018e82027d1563cf50322b99667c49af370c824f98c73381",
+    "calls": [
+      "JSON.parse",
+      "boxInfrastructureEventSchema.safeParse",
+      "this.countRejectedBoxTelemetryLine"
+    ],
+    "writes": [
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731084:27771473",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.countRejectedBoxTelemetryLine",
+    "qualified_name": "BoxLogShipper.countRejectedBoxTelemetryLine",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731084,
+    "end_line": 731087,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "3361849df84b8361cbdef230430a41d8cca0f298c7ac01e3c3dc460e6543180c",
+    "calls": [
+      "saturatingAdd"
+    ],
+    "writes": [
+      "tally.total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731088:27771628",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.reportRejectedBoxTelemetryLines",
+    "qualified_name": "BoxLogShipper.reportRejectedBoxTelemetryLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731088,
+    "end_line": 731098,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9bcf42b466a2c4c11616aa3474860f069a5b7c39207e8e5e2f7d2ee2255fa660",
+    "calls": [
+      "this.reportHostLog"
+    ],
+    "writes": [
+      "tally.logged"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731099:27772012",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.reportDeliveryWindow",
+    "qualified_name": "BoxLogShipper.reportDeliveryWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731099,
+    "end_line": 731115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "candidateEndOffset",
+      "records2"
+    ],
+    "body_sha256": "2f4bccf1b532b9c4ab320fe2354f3f13a59de918adc5b955131b05603652f930",
+    "calls": [
+      "this.clock.monotonicNow",
+      "this.pendingDeliveryWindows.set",
+      "this.pendingWindowStartedAtMs.has",
+      "this.pendingWindowStartedAtMs.set",
+      "this.reportBatch",
+      "this.setOffset"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731116:27772629",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.settleDeliveryWindow",
+    "qualified_name": "BoxLogShipper.settleDeliveryWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731116,
+    "end_line": 731126,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "window2",
+      "settlement"
+    ],
+    "body_sha256": "9d5304bbbeeaa7ceaa94c0245c01645f5b5e589d19a0e6562a5b4dbcec553fa2",
+    "calls": [
+      "this.pendingDeliveryWindows.delete",
+      "this.setOffset"
+    ],
+    "writes": [
+      "window2.didDropRecord",
+      "window2.unsettledRecordCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731127:27773013",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.setOffset",
+    "qualified_name": "BoxLogShipper.setOffset",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731127,
+    "end_line": 731136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "path33",
+      "offset2"
+    ],
+    "body_sha256": "d0e44f3e833bf87e9026626321013d47c1360058c837054a15096855b0a5c1d2",
+    "calls": [
+      "this.offsets.get",
+      "this.offsets.set",
+      "this.pendingWindowStartedAtMs.delete"
+    ],
+    "writes": [
+      "this.isOffsetsDirty",
+      "this.offsetsRevision"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731137:27773338",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.loadOffsets",
+    "qualified_name": "BoxLogShipper.loadOffsets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731137,
+    "end_line": 731158,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "3f8f204992613889367fc17a38310fc7ff6d5ce33ff5ca0e8777310cf6a73f81",
+    "calls": [
+      ".catch",
+      "JSON.parse",
+      "Object.entries",
+      "offsetsSchema.safeParse",
+      "this.offsets.set"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731159:27773986",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.saveOffsets",
+    "qualified_name": "BoxLogShipper.saveOffsets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731159,
+    "end_line": 731174,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "force = false"
+    ],
+    "body_sha256": "f3f696ae16655440272a07b47a7e228a4bdc9e1fd1a2a5f67bada425416ea4f7",
+    "calls": [
+      "Buffer.from",
+      "JSON.stringify",
+      "this.noteOffsetSaveFailed",
+      "this.noteOffsetSaveSucceeded",
+      "this.writeOffsets"
+    ],
+    "writes": [
+      "record3[computed]",
+      "this.isOffsetsDirty"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731175:27774582",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.maybeReportProgress",
+    "qualified_name": "BoxLogShipper.maybeReportProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731175,
+    "end_line": 731204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "files"
+    ],
+    "body_sha256": "22a304bddb2cc4173287bada5b7e69d72ff9bfa63da983f64a1198d08476dc4d",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "saturatingAdd",
+      "this.clock.monotonicNow",
+      "this.offsets.get",
+      "this.pendingWindowStartedAtMs.values",
+      "this.reportBoxLogShip",
+      "toNonnegativeSafeInteger"
+    ],
+    "writes": [
+      "bytesDelivered",
+      "bytesWritten",
+      "oldestPendingWindowAgeMs",
+      "this.lastProgressReportAtMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731205:27775602",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.notePumpFailed",
+    "qualified_name": "BoxLogShipper.notePumpFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731205,
+    "end_line": 731215,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64",
+      "failureCount"
+    ],
+    "body_sha256": "c7cafaa9e5b7770ecc4d3252124dda9ee2f6390c0b49d8446426f39b3277e698",
+    "calls": [
+      "classifyOffsetSaveError",
+      "saturatingAdd",
+      "this.reportBoxLogShip"
+    ],
+    "writes": [
+      "failure3.errorClass",
+      "failure3.failureCount",
+      "this.pumpFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731216:27776051",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.notePumpSucceeded",
+    "qualified_name": "BoxLogShipper.notePumpSucceeded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731216,
+    "end_line": 731225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e51e939de2e5bd9e44c0a6ad48fd93a7c114f935933b06bb2979749b127b3a45",
+    "calls": [
+      "this.reportBoxLogShip"
+    ],
+    "writes": [
+      "this.pumpFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731226:27776343",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.maybeRetryOffsetSaveFailure",
+    "qualified_name": "BoxLogShipper.maybeRetryOffsetSaveFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731226,
+    "end_line": 731231,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "9d1a77e931c3158327a097b8b0d0ee57cee6324884f37cde380ee5a8d2c47dd8",
+    "calls": [
+      "this.clock.monotonicNow",
+      "this.reportOffsetSaveFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731232:27776596",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.noteOffsetSaveFailed",
+    "qualified_name": "BoxLogShipper.noteOffsetSaveFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731232,
+    "end_line": 731247,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "44898621a8b873288b119b5cfb2bda3b20a7b6be480dd10c6450dc517faac398",
+    "calls": [
+      "classifyOffsetSaveError",
+      "saturatingAdd",
+      "this.reportOffsetSaveFailure"
+    ],
+    "writes": [
+      "failure3.errorClass",
+      "failure3.failureCount",
+      "this.offsetSaveFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731248:27777084",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.reportOffsetSaveFailure",
+    "qualified_name": "BoxLogShipper.reportOffsetSaveFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731248,
+    "end_line": 731266,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "failure3"
+    ],
+    "body_sha256": "62d2d0e9fb22d805dd2cb69875a6072e76fd08f98822e6c7b7786fef95268c2d",
+    "calls": [
+      "this.reportBoxLogShip"
+    ],
+    "writes": [
+      "failure3.reportState"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731267:27777714",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "BoxLogShipper.noteOffsetSaveSucceeded",
+    "qualified_name": "BoxLogShipper.noteOffsetSaveSucceeded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731267,
+    "end_line": 731276,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "83af9127f2b89c76c349496bc9428d8ce246d6ef11edd6b276fa3242a88a5f1f",
+    "calls": [
+      "this.reportBoxLogShip"
+    ],
+    "writes": [
+      "this.offsetSaveFailure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731278:27777992",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "toSourceName",
+    "qualified_name": "toSourceName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731278,
+    "end_line": 731280,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fileName2"
+    ],
+    "body_sha256": "9a4dfd5debb16c886d2dd4082e66a9f961788e72287d026679ce932d6adc7ad5",
+    "calls": [
+      "fileName2.endsWith",
+      "fileName2.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731281:27778123",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "classifyOffsetSaveError",
+    "qualified_name": "classifyOffsetSaveError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731281,
+    "end_line": 731298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "47007a9f5e7db36380e5e03ff115595c5a7848122927c778b916c08b7bcb31bb",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731299:27778512",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "saturatingAdd",
+    "qualified_name": "saturatingAdd",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731299,
+    "end_line": 731302,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "total",
+      "value"
+    ],
+    "body_sha256": "e4790a1a2c9c9e4ab51af2fa714a7cc42331f39114ccef42b988f689cc3df287",
+    "calls": [
+      "toNonnegativeSafeInteger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731303:27778716",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/box-log-shipper.ts",
+    "name": "toNonnegativeSafeInteger",
+    "qualified_name": "toNonnegativeSafeInteger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731303,
+    "end_line": 731306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "3529287b051507fc5decfee0ebd0ffd9ae6ccd746e3a7fd6cfd7b87e83ff0f0b",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Math.round",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

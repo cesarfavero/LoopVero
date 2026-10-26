@@ -1,0 +1,1338 @@
+[
+  {
+    "id": "host:679138:25805962",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "applyBoxEnvironmentAt",
+    "qualified_name": "applyBoxEnvironmentAt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679138,
+    "end_line": 679138,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "endpoint",
+      "update"
+    ],
+    "body_sha256": "97bfb6ab42cc0126c2c35bea8ccdf98599b35b9f9bec06e3ea67aa94bc0c74ed",
+    "calls": [
+      "applyBoxEnvironmentViaTransport",
+      "createBoxTransport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679171:25806871",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.constructor",
+    "qualified_name": "LoopbackSandBox.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679171,
+    "end_line": 679201,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2 = {}"
+    ],
+    "body_sha256": "3a274a55c67f83c560722e26cf75f61a0adc821f7bae77cfa0c20810ca5eb128",
+    "calls": [
+      "options2.cursorDataDir.trim",
+      "this.setTelemetry"
+    ],
+    "writes": [
+      "this.applyEnvironmentAt",
+      "this.authToken",
+      "this.createRemoteAccessor",
+      "this.host",
+      "this.pingBox",
+      "this.pingBoxClassified",
+      "this.pollIntervalMs",
+      "this.protectedBoxPaths",
+      "this.readyTimeoutMs",
+      "this.runCompareAndSetFile",
+      "this.runParkWindow",
+      "this.runReadDesktopActivity",
+      "this.runStartWindow",
+      "this.runStopWindow",
+      "this.runWindowOwnerCheck",
+      "this.shellKeepAwakeCapMs",
+      "this.terminalsFolder",
+      "this.uploadFileViaExecDaemon",
+      "this.watchdogIntervalMs",
+      "this.windowTokenDir"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679202:25808790",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.setTelemetry",
+    "qualified_name": "LoopbackSandBox.setTelemetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679202,
+    "end_line": 679205,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "telemetry"
+    ],
+    "body_sha256": "f84ddd67496485152fa96c5e3127a7ee0076207fb83e585cefc516ca5777344b",
+    "calls": [],
+    "writes": [
+      "this.hasTelemetry",
+      "this.telemetry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679206:25808899",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.assertFileReadAllowed",
+    "qualified_name": "LoopbackSandBox.assertFileReadAllowed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679206,
+    "end_line": 679208,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "boxPath"
+    ],
+    "body_sha256": "e3d4cad4ec0031380e00a31df7e8cf720ee4966667095263ee4bdea9e3c41d35",
+    "calls": [
+      "assertPathOutsideProtectedRoots"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679209:25809028",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.protectRemoteAccessor",
+    "qualified_name": "LoopbackSandBox.protectRemoteAccessor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679209,
+    "end_line": 679218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "remoteAccessor"
+    ],
+    "body_sha256": "8787c3dfacdfdf29bccc74ebad0e138b2ec17a6890a7e2ceb10e4f5519c5b535",
+    "calls": [
+      "new CombinedResourceAccessor",
+      "resourceEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679212:25809166",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "execute",
+    "qualified_name": "LoopbackSandBox.protectRemoteAccessor/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679212,
+    "end_line": 679215,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "aa7897c72d69f8fee2f17b4c1dc0850776921318d4c7d3b27e3a21c736fed614",
+    "calls": [
+      ".execute",
+      "remoteAccessor.get",
+      "this.assertFileReadAllowed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679219:25809389",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.describe",
+    "qualified_name": "LoopbackSandBox.describe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679219,
+    "end_line": 679221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f2cd5855047dc9f9b6e8f68567d1ff0f302ff597c0429f66f5d7062b8fbb65ab",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679222:25809454",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.getTerminalsFolder",
+    "qualified_name": "LoopbackSandBox.getTerminalsFolder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679222,
+    "end_line": 679224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "786eb7bde9843bff916cfef473d3da241b9634c3f2de188b9f34e4b2ed8fe3da",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679225:25809520",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.getShellKeepAwakeCapMs",
+    "qualified_name": "LoopbackSandBox.getShellKeepAwakeCapMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679225,
+    "end_line": 679227,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7a1ad91c0a8d7da20974396daa9111355a6d5bee8fde56c5a430d6092b3fb394",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679228:25809585",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.isAvailable",
+    "qualified_name": "LoopbackSandBox.isAvailable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679228,
+    "end_line": 679230,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "c849e93d23027512d489954ca0fd78c4f3f0986a989141d342114e5b7a49cb41",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679231:25809628",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.primaryEndpoint",
+    "qualified_name": "LoopbackSandBox.primaryEndpoint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679231,
+    "end_line": 679237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "68f7a215ec23ccfdbcc445ad14cb8dbb578fc9fbfcb4c6205b41b947dcf7d8d9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679238:25809761",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.ensureReady",
+    "qualified_name": "LoopbackSandBox.ensureReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679238,
+    "end_line": 679251,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "_agentId"
+    ],
+    "body_sha256": "0557ce79688963d2fd824564012c74828a0321b7b9c5af7b77fa1804404be61d",
+    "calls": [
+      "reportBackgroundShells",
+      "this.createRemoteAccessor",
+      "this.primaryEndpoint",
+      "this.protectRemoteAccessor",
+      "this.waitUntilReady"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679252:25810224",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.applyEnvironment",
+    "qualified_name": "LoopbackSandBox.applyEnvironment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679252,
+    "end_line": 679257,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "update"
+    ],
+    "body_sha256": "63ec17487874ca0641b380415fbc7b5a325d9091bd3c841bd4621eedef3fbb0c",
+    "calls": [
+      "this.applyEnvironmentAt",
+      "this.applyEnvironmentToLiveForkWindows",
+      "this.primaryEndpoint",
+      "this.waitUntilReady"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679258:25810497",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.applyEnvironmentToLiveForkWindows",
+    "qualified_name": "LoopbackSandBox.applyEnvironmentToLiveForkWindows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679258,
+    "end_line": 679279,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "update"
+    ],
+    "body_sha256": "d38adf44dbb42cab5e9aa6681ff8495398173e5c378eb0fb396900503fe97ae6",
+    "calls": [
+      "asyncMapValues",
+      "this.listBoundForkWindows"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679280:25811228",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.listBoundForkWindows",
+    "qualified_name": "LoopbackSandBox.listBoundForkWindows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679280,
+    "end_line": 679296,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "92c8a61b14721815ad2e9f8408054d18ed64270fc7d1dcf9ce64074fe3295fdb",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "entries.filter",
+      "errorLogTag",
+      "isMissingPathError",
+      "reportHostDiagnosticOrStderr"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679297:25811822",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.loadMcpServers",
+    "qualified_name": "LoopbackSandBox.loadMcpServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679297,
+    "end_line": 679301,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "configJson"
+    ],
+    "body_sha256": "06a547985c5a2d75b12641958737dac72272da0564b446d1df137cff4b3b6a44",
+    "calls": [
+      "createBoxTransport",
+      "loadBoxMcpServersViaTransport",
+      "this.primaryEndpoint",
+      "this.waitUntilReady"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679302:25812059",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.mcpResourceAccessor",
+    "qualified_name": "LoopbackSandBox.mcpResourceAccessor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679302,
+    "end_line": 679306,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "e3c95b39f170aa96894ddfd1687187d86d02996f7942a845d099262897e65cf3",
+    "calls": [
+      "this.createRemoteAccessor",
+      "this.primaryEndpoint",
+      "this.waitUntilReady"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679307:25812222",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.maxWindows",
+    "qualified_name": "LoopbackSandBox.maxWindows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679307,
+    "end_line": 679309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7b22d1e7a7e4b8d5be6694750d314c4d212cca493938218f809d20e412daa31d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679310:25812284",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.ensureWindow",
+    "qualified_name": "LoopbackSandBox.ensureWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679310,
+    "end_line": 679354,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex",
+      "opts"
+    ],
+    "body_sha256": "64fe00bc8b5a6f70d62fdd192974f0b37bf0d9f207757ca58e39709d9ab8977e",
+    "calls": [
+      "String",
+      "createWindowMcpHost",
+      "encodeURIComponent",
+      "isPrimaryWindowIndex",
+      "opts.beforeStart",
+      "primarySandBoxWindow",
+      "sandBoxWindowKey",
+      "this.createRemoteAccessor",
+      "this.ensureReady",
+      "this.pingBox",
+      "this.protectRemoteAccessor",
+      "this.reportWindowShells",
+      "this.runStartWindow",
+      "this.waitUntilReady",
+      "this.windowConnections.delete",
+      "this.windowConnections.get",
+      "this.windowConnections.set"
+    ],
+    "writes": [
+      "headers[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679348:25813795",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "loadMcpServers",
+    "qualified_name": "LoopbackSandBox.ensureWindow/loadMcpServers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679348,
+    "end_line": 679348,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "loadCtx",
+      "configJson"
+    ],
+    "body_sha256": "48ddaea08fcdb3f1be0e7819d9fdda2822edfeaa10ea1d6d41e934584df81714",
+    "calls": [
+      "createBoxTransport",
+      "loadBoxMcpServersViaTransport"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679349:25813931",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "mcpResourceAccessor",
+    "qualified_name": "LoopbackSandBox.ensureWindow/mcpResourceAccessor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679349,
+    "end_line": 679349,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b0d31ea137c62b6dabd639bb4baf977d64eb5968afe98316792d7ad8f05829a2",
+    "calls": [
+      "this.createRemoteAccessor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679355:25814149",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.reportWindowShells",
+    "qualified_name": "LoopbackSandBox.reportWindowShells",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679355,
+    "end_line": 679365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "window2"
+    ],
+    "body_sha256": "bcdf2dc2c9128c83d3d7ac080dde4e021b80fc84bfa6a25243ba9bfe06bcdc4b",
+    "calls": [
+      "reportBackgroundShells"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679366:25814385",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.releaseWindow",
+    "qualified_name": "LoopbackSandBox.releaseWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679366,
+    "end_line": 679380,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex",
+      "opts"
+    ],
+    "body_sha256": "1ad109dc9626e36e9be57d06a3d752ede38285eb47a57dbe85e58a55004c3666",
+    "calls": [
+      "isPrimaryWindowIndex",
+      "sandBoxWindowKey",
+      "this.ensureReady",
+      "this.runStopWindow",
+      "this.windowConnections.delete"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679381:25814954",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.parkWindow",
+    "qualified_name": "LoopbackSandBox.parkWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679381,
+    "end_line": 679393,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex",
+      "opts"
+    ],
+    "body_sha256": "670a62cecbbb656564c6faf8b9a2dfa37a5817c2ec6f191edcc032342d012c89",
+    "calls": [
+      "isPrimaryWindowIndex",
+      "sandBoxWindowKey",
+      "this.ensureReady",
+      "this.runParkWindow",
+      "this.windowConnections.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679394:25815476",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.readDesktopActivity",
+    "qualified_name": "LoopbackSandBox.readDesktopActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679394,
+    "end_line": 679397,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndexes"
+    ],
+    "body_sha256": "174421827fbfbe82155e088a858aa2526238f63dd5fbc108d1390f3a40b8ced1",
+    "calls": [
+      "this.ensureReady",
+      "this.runReadDesktopActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679398:25815681",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.windowOwnedBy",
+    "qualified_name": "LoopbackSandBox.windowOwnedBy",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679398,
+    "end_line": 679408,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "windowIndex",
+      "ownerToken"
+    ],
+    "body_sha256": "d5f1b3032e6816c7a2bb83c07d9e88e38fa0e907e7ca99a1cf7bbdbfa582c015",
+    "calls": [
+      "sandBoxWindowKey",
+      "this.ensureReady",
+      "this.runWindowOwnerCheck",
+      "this.windowConnections.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679409:25816049",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.compareAndSetFile",
+    "qualified_name": "LoopbackSandBox.compareAndSetFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679409,
+    "end_line": 679418,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "boxPath",
+      "expected",
+      "data2"
+    ],
+    "body_sha256": "80d499908c6c1e05c875a4250899885d250312397f89498e647713307947d24f",
+    "calls": [
+      "resolveBoxWorkspacePath",
+      "this.ensureReady",
+      "this.runCompareAndSetFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679419:25816331",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.hibernate",
+    "qualified_name": "LoopbackSandBox.hibernate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679419,
+    "end_line": 679421,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "agentId"
+    ],
+    "body_sha256": "16185206f4c999c282bb8fc03d9e2b1079a02c42a106e8431a3b299d8e78486e",
+    "calls": [
+      "clearAgentWindowConnections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679422:25816435",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.runState",
+    "qualified_name": "LoopbackSandBox.runState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679422,
+    "end_line": 679424,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "_agentId"
+    ],
+    "body_sha256": "1419e0ea04b0e47032f29be62062aeb36b227bad24626853663d605669cf50a8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679425:25816497",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.listBoxes",
+    "qualified_name": "LoopbackSandBox.listBoxes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679425,
+    "end_line": 679427,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e421ea7f2cc0fe366e8dd8c00ff3798bc23497a002b635e2d5dc506eb9151316",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679428:25816566",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.dispose",
+    "qualified_name": "LoopbackSandBox.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679428,
+    "end_line": 679431,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4ffd958991c9c4473f7adc1403dbccf8fa1e9e3ddb3ed444dcf54840e303e031",
+    "calls": [
+      "this.daemonWatchdogAbort.abort"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679432:25816665",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.uploadFile",
+    "qualified_name": "LoopbackSandBox.uploadFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679432,
+    "end_line": 679440,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "agentId",
+      "boxPath",
+      "data2"
+    ],
+    "body_sha256": "20980b3b051950eeaf41a4df48f8fddedc39e20165939847b56eb2d06180d222",
+    "calls": [
+      "resolveBoxWorkspacePath",
+      "this.ensureReady",
+      "this.uploadFileViaExecDaemon"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679441:25816926",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.downloadFile",
+    "qualified_name": "LoopbackSandBox.downloadFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679441,
+    "end_line": 679463,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "_ctx",
+      "_agentId",
+      "boxPath",
+      "options2"
+    ],
+    "body_sha256": "51d0396658525e2ab504d96ef7c878a88ac990d09e792fd194aea1f1a79b420b",
+    "calls": [
+      "findSystemErrno",
+      "new BoxFileTooLargeError",
+      "new BoxFileUnreadableError",
+      "resolveBoxWorkspacePath",
+      "this.assertFileReadAllowed"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxFileTooLargeError",
+      "BoxFileUnreadableError",
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 3,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679464:25817783",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.waitUntilReady",
+    "qualified_name": "LoopbackSandBox.waitUntilReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679464,
+    "end_line": 679475,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "endpoint",
+      "timeoutMs = this.readyTimeoutMs"
+    ],
+    "body_sha256": "cbf9b1411b343453b0e8f617e259fadc69a0ae41db707a312885e147f220dccd",
+    "calls": [
+      "this.waitUntilReadyUncoordinated"
+    ],
+    "writes": [
+      "this.daemonForegroundReadyWaits"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679476:25818238",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.waitUntilReadyUncoordinated",
+    "qualified_name": "LoopbackSandBox.waitUntilReadyUncoordinated",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679476,
+    "end_line": 679533,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "endpoint",
+      "timeoutMs"
+    ],
+    "body_sha256": "8c32966afad8b3399ebdbe526f947bc06f3c01b178e6520daafa722999bda1fe",
+    "calls": [
+      "Date.now",
+      "daemonPingReadinessState",
+      "new SandBoxDaemonUnreachableError",
+      "this.pingBoxClassified",
+      "this.startDaemonWatchdog",
+      "this.telemetry.reportDaemonPing"
+    ],
+    "writes": [
+      "attempts2",
+      "last",
+      "this.daemonWatchdogState",
+      "this.daemonWatchdogUnreadyAttempts",
+      "this.daemonWatchdogUnreadySince",
+      "unreadySince"
+    ],
+    "throw_targets": [
+      "SandBoxDaemonUnreachableError"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679534:25820702",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.startDaemonWatchdog",
+    "qualified_name": "LoopbackSandBox.startDaemonWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679534,
+    "end_line": 679541,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "endpoint"
+    ],
+    "body_sha256": "d0f67f333245a6e0e386a11b450614feaefc1acde8298dcbec3eac6bb1ee7df7",
+    "calls": [
+      "this.runDaemonWatchdog"
+    ],
+    "writes": [
+      "this.daemonWatchdogRun",
+      "this.daemonWatchdogStarted",
+      "this.daemonWatchdogState"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679542:25820998",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.runDaemonWatchdog",
+    "qualified_name": "LoopbackSandBox.runDaemonWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679542,
+    "end_line": 679563,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "endpoint"
+    ],
+    "body_sha256": "864c36689e6963ef0bcc4f456cf31f228c2183512f09c898899a8c696f81b053",
+    "calls": [
+      "this.pollDaemonWatchdog"
+    ],
+    "writes": [
+      "this.daemonWatchdogPoll"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679564:25821709",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "LoopbackSandBox.pollDaemonWatchdog",
+    "qualified_name": "LoopbackSandBox.pollDaemonWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679564,
+    "end_line": 679601,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "endpoint"
+    ],
+    "body_sha256": "534bf97a2eae56f7d496852461b524fe2877236d3caee43756421160d1aa3c00",
+    "calls": [
+      "Date.now",
+      "createContext",
+      "daemonPingReadinessState",
+      "this.pingBoxClassified",
+      "this.telemetry.reportDaemonPing"
+    ],
+    "writes": [
+      "this.daemonWatchdogState",
+      "this.daemonWatchdogUnreadyAttempts",
+      "this.daemonWatchdogUnreadySince"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679603:25823145",
+    "artifact": "host",
+    "module": "host/box/loopback-sand-box.ts",
+    "name": "daemonPingReadinessState",
+    "qualified_name": "daemonPingReadinessState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679603,
+    "end_line": 679607,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "099ad38698f03df16408d56f01f32b211c300cda78aadff173cc16f2a2f32769",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

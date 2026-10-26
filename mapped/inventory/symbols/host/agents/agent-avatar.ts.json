@@ -1,0 +1,355 @@
+[
+  {
+    "id": "host:716744:27202870",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "listConventionalAvatarFilenames",
+    "qualified_name": "listConventionalAvatarFilenames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716744,
+    "end_line": 716753,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "ccdd4a3de9c51b04c4fceb4d03263d81afe943be5e55eb81a79db2a606b1fb2d",
+    "calls": [
+      "reportFallbackUnlessAbsent",
+      "sortConventionalAvatarFilenames"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716754:27203156",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "resolveDerivedAvatarFilename",
+    "qualified_name": "resolveDerivedAvatarFilename",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716754,
+    "end_line": 716772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "legacyFieldValue"
+    ],
+    "body_sha256": "b3eebbc5ffff936a97575c7ed827fbc683f029020f25f8c2df054bef6ff55b30",
+    "calls": [
+      ".isFile",
+      ".slice",
+      ".toLowerCase",
+      "CONVENTIONAL_AVATAR_EXTENSIONS.includes",
+      "extensionForMime",
+      "listConventionalAvatarFilenames",
+      "reportFallbackUnlessAbsent",
+      "resolveAvatarPathWithinDir",
+      "sniffAvatarMimeType"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716773:27204221",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "resolveAvatarPathWithinDir",
+    "qualified_name": "resolveAvatarPathWithinDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716773,
+    "end_line": 716791,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "candidate"
+    ],
+    "body_sha256": "c3135df1fe5bf738105017e9d0f6ed1c50a222e7cf4a7f3538bb6437062111ac",
+    "calls": [
+      "candidate.trim",
+      "isPathWithin4",
+      "reanchorSandPath",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [
+      "realDir",
+      "realFile"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716792:27205066",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "isPathWithin4",
+    "qualified_name": "isPathWithin4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716792,
+    "end_line": 716795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dir",
+      "target"
+    ],
+    "body_sha256": "04be6ef21ac1775efa3de82e7c0a243ce2be62071f79b0ff2a0808b192c3b42b",
+    "calls": [
+      "rel.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716796:27205305",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "resolveAndStatAvatar",
+    "qualified_name": "resolveAndStatAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716796,
+    "end_line": 716809,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "candidate"
+    ],
+    "body_sha256": "69679c99c0b069cc0c0459305312701265368df3ee17a332b0ffbc59c6701b53",
+    "calls": [
+      "reportFallbackUnlessAbsent",
+      "resolveAvatarPathWithinDir",
+      "stats.isFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716810:27205812",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "readValidatedAvatar",
+    "qualified_name": "readValidatedAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716810,
+    "end_line": 716822,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "candidate"
+    ],
+    "body_sha256": "3edd8880fc4224f16f47d93e0d5f5cec3b42a16e06a694b7d9ab78154ef8c597",
+    "calls": [
+      "reportFallbackUnlessAbsent",
+      "resolveAndStatAvatar",
+      "sniffAvatarMimeType"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716823:27206265",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "readAvatarBytesWithinDir",
+    "qualified_name": "readAvatarBytesWithinDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716823,
+    "end_line": 716825,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "candidate"
+    ],
+    "body_sha256": "6adeda817df4db34da4c0d950f54a8ca483f9fc0ad76e374ecbffafd1e880822",
+    "calls": [
+      "readValidatedAvatar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716826:27206404",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "avatarVersionForBytes",
+    "qualified_name": "avatarVersionForBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716826,
+    "end_line": 716828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "a62875a4b4104bad3cca6d374b2d0e547d283f1ad706e985904b17580fabf780",
+    "calls": [
+      ".digest",
+      ".slice",
+      ".update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:716832:27206666",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "readAvatarWithinDir",
+    "qualified_name": "readAvatarWithinDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716832,
+    "end_line": 716863,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "candidate"
+    ],
+    "body_sha256": "7abc87f31bdc6c9ca6701383633aceae54da9a4cf95b90f65e9314fc02a25705",
+    "calls": [
+      ".next",
+      "avatarDataUrlCache.delete",
+      "avatarDataUrlCache.get",
+      "avatarDataUrlCache.keys",
+      "avatarDataUrlCache.set",
+      "avatarVersionForBytes",
+      "bytes.toString",
+      "reportFallbackUnlessAbsent",
+      "resolveAndStatAvatar",
+      "sniffAvatarMimeType"
+    ],
+    "writes": [
+      "bytes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:716864:27207993",
+    "artifact": "host",
+    "module": "host/agents/agent-avatar.ts",
+    "name": "invalidateAvatarDataUrlCache",
+    "qualified_name": "invalidateAvatarDataUrlCache",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 716864,
+    "end_line": 716869,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir"
+    ],
+    "body_sha256": "734e949d564df7b49decede799907b008908d2210a6b5b4750e5670ea3101767",
+    "calls": [
+      "avatarDataUrlCache.delete",
+      "avatarDataUrlCache.keys",
+      "key.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,353 @@
+[
+  {
+    "id": "host:455584:16672712",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "boundedConnectorTag",
+    "qualified_name": "boundedConnectorTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455584,
+    "end_line": 455592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName",
+      "serverUrl"
+    ],
+    "body_sha256": "81431782e9a0feec6b3e08fe92b06288b6244c49ef44a6a9acb2024bc72004cb",
+    "calls": [
+      ".replace",
+      "CONNECTOR_TAG_ALIASES.get",
+      "SAND_KNOWN_CONNECTOR_TAGS.has",
+      "proxiedConnectorTag",
+      "serverName.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455596:16673608",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "proxiedConnectorTag",
+    "qualified_name": "proxiedConnectorTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455596,
+    "end_line": 455604,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverUrl"
+    ],
+    "body_sha256": "0349b4b99778c2ba50e74dc07133dc77849c47f20b5bb516d9f869944e14e260",
+    "calls": [
+      "URL.canParse",
+      "boundedConnectorTag",
+      "new URL",
+      "providerPath.exec",
+      "url2.hostname.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455667:16676306",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "knownConnectorTag",
+    "qualified_name": "knownConnectorTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455667,
+    "end_line": 455670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d926c9a7b58051b4469cb8029619022989373395f176021f76b60308ad35eede",
+    "calls": [
+      ".replace",
+      "SAND_KNOWN_CONNECTOR_TAGS.has",
+      "raw.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455671:16676508",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "connectorTagFromServerUrl",
+    "qualified_name": "connectorTagFromServerUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455671,
+    "end_line": 455681,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverUrl"
+    ],
+    "body_sha256": "e4f8c1c82ecf22cfb62eca40bd7dd7b29b5e9001e0d1334b30d54934e43cc748",
+    "calls": [
+      "CONNECTOR_HOST_TAGS.get",
+      "PROXY_CONNECTOR_HOSTS.has",
+      "URL.canParse",
+      "VENDOR_MCP_HOST_PREFIXES.has",
+      "hostname4.split",
+      "knownConnectorTag",
+      "new URL",
+      "url2.hostname.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455686:16677246",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "connectorAuthTag",
+    "qualified_name": "connectorAuthTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455686,
+    "end_line": 455690,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "4b818bba99263889381580c034eb7eaeca1291b7e7b45ced6b7dbd624f1a3219",
+    "calls": [
+      "boundedConnectorTag",
+      "brandLiteralEnum",
+      "brandedConnectorTag",
+      "connectorTagFromServerUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455691:16677589",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "analyticsOnlyUnboundedConnectorDomain",
+    "qualified_name": "analyticsOnlyUnboundedConnectorDomain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455691,
+    "end_line": 455696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverUrl"
+    ],
+    "body_sha256": "99072348e9f8aa87e42da843539cf15c3eb56ff8f4bbbed198e96ef82080908f",
+    "calls": [
+      ".hostname.toLowerCase",
+      "URL.canParse",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455697:16677884",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "connectorAuthAnalyticsProps",
+    "qualified_name": "connectorAuthAnalyticsProps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455697,
+    "end_line": 455724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "report",
+      "surface"
+    ],
+    "body_sha256": "906c13fc4a613e828e2bc3711e0162a0b369895f4fc6e2ed9544ebd9c36114ae",
+    "calls": [
+      "analyticsOnlyUnboundedConnectorDomain",
+      "brandedHost",
+      "brandedId",
+      "connectorAuthTag",
+      "sandErrorTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 16,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:455725:16679450",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "connectorAuthTelemetry",
+    "qualified_name": "connectorAuthTelemetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 455725,
+    "end_line": 455743,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "report",
+      "surface"
+    ],
+    "body_sha256": "dbbc3aec8f3c24d4e1ffac89ab4d4e3ca294ff134f79fe1df016bc12611ddd21",
+    "calls": [
+      "brandedId",
+      "connectorAuthTag",
+      "logFields",
+      "sandErrorTags"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:477380:17306173",
+    "artifact": "evaluation",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "boundedConnectorTag",
+    "qualified_name": "boundedConnectorTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 477380,
+    "end_line": 477388,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverName",
+      "serverUrl"
+    ],
+    "body_sha256": "81431782e9a0feec6b3e08fe92b06288b6244c49ef44a6a9acb2024bc72004cb",
+    "calls": [
+      ".replace",
+      "CONNECTOR_TAG_ALIASES.get",
+      "SAND_KNOWN_CONNECTOR_TAGS.has",
+      "proxiedConnectorTag",
+      "serverName.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:477392:17307069",
+    "artifact": "evaluation",
+    "module": "shared/observability/connector-auth-telemetry.ts",
+    "name": "proxiedConnectorTag",
+    "qualified_name": "proxiedConnectorTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 477392,
+    "end_line": 477400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverUrl"
+    ],
+    "body_sha256": "0349b4b99778c2ba50e74dc07133dc77849c47f20b5bb516d9f869944e14e260",
+    "calls": [
+      "URL.canParse",
+      "boundedConnectorTag",
+      "new URL",
+      "providerPath.exec",
+      "url2.hostname.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

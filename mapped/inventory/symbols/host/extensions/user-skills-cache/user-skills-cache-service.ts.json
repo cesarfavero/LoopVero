@@ -1,0 +1,317 @@
+[
+  {
+    "id": "host:784610:30239499",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "createUserSkillsCacheDebounce",
+    "qualified_name": "createUserSkillsCacheDebounce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784610,
+    "end_line": 784615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "delayMs = USER_SKILLS_CACHE_PUBLISH_DEBOUNCE_MS"
+    ],
+    "body_sha256": "c0857c77aa4dedb804d767389a67d0e2828d600285bd3542ee6fb848fba2a292",
+    "calls": [
+      "createDebouncePolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784616:30239680",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "createUserSkillsCachePublishRetry",
+    "qualified_name": "createUserSkillsCachePublishRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784616,
+    "end_line": 784626,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8f8a08327fc9d4cf52c17db0dcc1f21787b0e3515fadf2bd4c3e7141be800ab7",
+    "calls": [
+      "createRetryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784627:30240036",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "createUserSkillsCacheService",
+    "qualified_name": "createUserSkillsCacheService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784627,
+    "end_line": 784701,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "bcc258c96cd20e47dad9cc878ff7ee45ed3fc266e00ba73502f22c9c65d9bb21",
+    "calls": [
+      "createDebouncePolicy",
+      "createSingleFlight",
+      "deps.debounce.wrap",
+      "new AbortController",
+      "new WatchedDirectory",
+      "publishSoon",
+      "watch4.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784631:30240166",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "dispose",
+    "qualified_name": "createUserSkillsCacheService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784631,
+    "end_line": 784632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c06ced4b21d0ea86e2519613de1622ea7a7f6418077693a5654338485131b7ae",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784648:30240573",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "publishAttempt",
+    "qualified_name": "createUserSkillsCacheService/publishAttempt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784648,
+    "end_line": 784659,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "attempt",
+      "signal"
+    ],
+    "body_sha256": "af398573c2d28c177c6d86251caddf83872d4d39ce27216ef4ed146e1343d39f",
+    "calls": [
+      "deps.fingerprintLibrary",
+      "deps.log",
+      "deps.publishDeadline.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784661:30241050",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "read",
+    "qualified_name": "createUserSkillsCacheService/read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784661,
+    "end_line": 784669,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e67170cd9e67812fb2fc0a5198832a454ed3238588f7f45fb62b94c7b617d0e3",
+    "calls": [
+      "deps.publishRetry.runWithRetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784670:30241399",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "install",
+    "qualified_name": "createUserSkillsCacheService/install",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784670,
+    "end_line": 784672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "fingerprint"
+    ],
+    "body_sha256": "89f507bae8661e0541790a2ce3f10f4cd89e10ac8131d1bc2d3a5323bc654862",
+    "calls": [],
+    "writes": [
+      "lastFingerprint"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784673:30241510",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "installFailure",
+    "qualified_name": "createUserSkillsCacheService/installFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784673,
+    "end_line": 784676,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "f0d73cc449e12b15ee39052d770cd6b027ff8bde751aa23e9c9308c3f48ff93e",
+    "calls": [
+      "deps.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784678:30241691",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "publishSnapshot",
+    "qualified_name": "createUserSkillsCacheService/publishSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784678,
+    "end_line": 784687,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e8cba6768272099e06a573f1bfee8f6d3cec91ec9e4f184acc6d8489008205df",
+    "calls": [
+      "publishes.run"
+    ],
+    "writes": [
+      "changedWhilePublishing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:784694:30242066",
+    "artifact": "host",
+    "module": "host/extensions/user-skills-cache/user-skills-cache-service.ts",
+    "name": "dispose",
+    "qualified_name": "createUserSkillsCacheService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 784694,
+    "end_line": 784699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5f791f1baab3c0aad387b1dd66ac552e41219a745749592ccac31572518ab4d0",
+    "calls": [
+      "publishSoon.dispose",
+      "publishes.dispose",
+      "stopped2.abort",
+      "watch4.setOnChange"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,705 @@
+[
+  {
+    "id": "host:489666:17930560",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "gatewayAgentId",
+    "qualified_name": "gatewayAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489666,
+    "end_line": 489672,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "396e3f2942436873af67e4835e485b96230f2aa2381c566314a6babe9ac21a15",
+    "calls": [
+      "new SandGatewayRequestError",
+      "parseAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandGatewayRequestError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489937:17939870",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "isSandGatewayMethod",
+    "qualified_name": "isSandGatewayMethod",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489937,
+    "end_line": 489939,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "194f2829d56b440b4ac5b0e2ffca1e2c9084f2fb2e16eb8ede245c0ca0e4a293",
+    "calls": [
+      "isKeyOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489941:17940003",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "parseGatewayCommandBody",
+    "qualified_name": "parseGatewayCommandBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489941,
+    "end_line": 489956,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "method",
+      "body"
+    ],
+    "body_sha256": "5b9044b723898f18c878bfb5838eb16c8cb5f93c59aa8a25b4977880a0ad2566",
+    "calls": [
+      "JSON.parse",
+      "String",
+      "describeIssues",
+      "new SandGatewayRequestError",
+      "schema3[computed].validate"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [
+      "SandGatewayRequestError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:489957:17940567",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "handlersOf",
+    "qualified_name": "handlersOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489957,
+    "end_line": 489959,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api"
+    ],
+    "body_sha256": "f2279fb288ef227ff69e4a48a61c5aab80538aa001a5e5353059c8ca0ef245cd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489960:17940610",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "runGatewayCommand",
+    "qualified_name": "runGatewayCommand",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489960,
+    "end_line": 489966,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api",
+      "method",
+      "body",
+      "avatars"
+    ],
+    "body_sha256": "bdfac77b5e53fcae3ea13411b2aa11eddfe7087a03acd99927a147c1f262e315",
+    "calls": [
+      "[computed]",
+      "handlersOf",
+      "isSlimShapedMethod",
+      "parseGatewayCommandBody",
+      "slimAvatarOverrides"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489968:17940955",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "stripSummaryInlineAvatar",
+    "qualified_name": "stripSummaryInlineAvatar",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489968,
+    "end_line": 489971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "0006e2babe6d90191342eaffc95092af58f559e2ffa2b96322b9ccf25993243f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489972:17941101",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "stripSummaryRows",
+    "qualified_name": "stripSummaryRows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489972,
+    "end_line": 489980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rows"
+    ],
+    "body_sha256": "810a624ee689baab3a9a01ac2b3205cd40d78cf1eeb6245b2b55aa46ecd96a04",
+    "calls": [
+      "rows.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489981:17941350",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "stripNullableSummary",
+    "qualified_name": "stripNullableSummary",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489981,
+    "end_line": 489983,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summary"
+    ],
+    "body_sha256": "f888f30dd9517f0b09330f8fd6f4c9dbecb8f174166531dd14de88fc5459dbb7",
+    "calls": [
+      "stripSummaryInlineAvatar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489984:17941462",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "stripCreateAgentResult",
+    "qualified_name": "stripCreateAgentResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489984,
+    "end_line": 489987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "d7a87894fec07f76bfca30da45a53c965af9d082add0bd588c83e604ef9166ae",
+    "calls": [
+      "stripSummaryInlineAvatar"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:489999:17941845",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "isSlimShapedMethod",
+    "qualified_name": "isSlimShapedMethod",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 489999,
+    "end_line": 490001,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "method"
+    ],
+    "body_sha256": "139e436f172de567a7f0061085404e45c98dc8c77a4e1f248cb3d1ba74274a5d",
+    "calls": [
+      "SLIM_SHAPED_METHODS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490002:17941951",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "slimAvatarOverrides",
+    "qualified_name": "slimAvatarOverrides",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490002,
+    "end_line": 490018,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "api"
+    ],
+    "body_sha256": "705743840c265c452484b75cf0020aeca62b9d6d675872bc4c8754999066094d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490004:17942014",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "listAgents",
+    "qualified_name": "slimAvatarOverrides/listAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490004,
+    "end_line": 490004,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7cb9e758157efcc67f40d5d36946f233f997e9503c4e20f262ef52664811334f",
+    "calls": [
+      "api.listAgents",
+      "stripSummaryRows"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490005:17942085",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "updateAgent",
+    "qualified_name": "slimAvatarOverrides/updateAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490005,
+    "end_line": 490005,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "27a17293d7793b1cd271206d670d4bbbe5d687f0e0ce1350eb1129b8a8691310",
+    "calls": [
+      "api.updateAgent",
+      "stripNullableSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490006:17942178",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "seedConversationName",
+    "qualified_name": "slimAvatarOverrides/seedConversationName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490006,
+    "end_line": 490010,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9b539841f44c979d269368f37086422b3581f608bdc324a3f715851df0716360",
+    "calls": [
+      "api.seedConversationName",
+      "stripNullableSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490011:17942413",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "setGroupMembers",
+    "qualified_name": "slimAvatarOverrides/setGroupMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490011,
+    "end_line": 490011,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f26c5fbb2cb22e6fd909bb8ba5a9d699ac9083eafc339e44eb95b3496872efe0",
+    "calls": [
+      "api.setGroupMembers",
+      "stripNullableSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490012:17942509",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "setAgentAvatarBytes",
+    "qualified_name": "slimAvatarOverrides/setAgentAvatarBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490012,
+    "end_line": 490012,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ead21e3c7fa588126a0d7c938d9da3639677ae3ee088ac6a2160fe25b0856b23",
+    "calls": [
+      "api.setAgentAvatarBytes",
+      "stripNullableSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490013:17942601",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "createAgent",
+    "qualified_name": "slimAvatarOverrides/createAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490013,
+    "end_line": 490013,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2aba6c306dfd44f548b8b8c0279c1edc280001af487655093521fd96398a63ae",
+    "calls": [
+      "api.createAgent",
+      "stripCreateAgentResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490014:17942699",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "createAgentFromTemplate",
+    "qualified_name": "slimAvatarOverrides/createAgentFromTemplate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490014,
+    "end_line": 490014,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "33082ea92f4ae57abc6bc875fefc0e6c1ada74e851799f359d350f57327f77ed",
+    "calls": [
+      "api.createAgentFromTemplate",
+      "stripCreateAgentResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490015:17942797",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "createGroup",
+    "qualified_name": "slimAvatarOverrides/createGroup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490015,
+    "end_line": 490015,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1e9e4d42a6cd70cfd089da23541779f72e13f36d17a13f08081e7f7adbb58ce0",
+    "calls": [
+      "api.createGroup",
+      "stripCreateAgentResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490016:17942886",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "duplicateAgent",
+    "qualified_name": "slimAvatarOverrides/duplicateAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490016,
+    "end_line": 490016,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ce2b339be49035c972191f4fff5917081d3451844c06de787999dd8bd2d75265",
+    "calls": [
+      "api.duplicateAgent",
+      "stripCreateAgentResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490019:17942964",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "stripInlineAvatarsFromEvent",
+    "qualified_name": "stripInlineAvatarsFromEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490019,
+    "end_line": 490031,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "92232142467f808877f9b8fcdc0e9df20880cf47a9c15e9cdfd298ec5533ca43",
+    "calls": [
+      "stripSummaryInlineAvatar",
+      "stripSummaryRows"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490032:17943501",
+    "artifact": "host",
+    "module": "host/gateway-protocol.ts",
+    "name": "refuseSwapRunningTurns",
+    "qualified_name": "refuseSwapRunningTurns",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490032,
+    "end_line": 490034,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runningTurns"
+    ],
+    "body_sha256": "088f0f8f977774d395a41219776201b0bb4b90f62fd4ae71a991f18cab0daed1",
+    "calls": [
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

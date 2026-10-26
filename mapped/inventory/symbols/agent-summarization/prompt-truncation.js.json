@@ -1,0 +1,308 @@
+[
+  {
+    "id": "host:617250:22890186",
+    "artifact": "host",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "formatOmittedMessagesPreamble",
+    "qualified_name": "formatOmittedMessagesPreamble",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617250,
+    "end_line": 617254,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "omittedCount"
+    ],
+    "body_sha256": "3bcc21504fb797bd2072dd615441fb17b7be3615bc4ffe6ffbd5195659724348",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617255:22890409",
+    "artifact": "host",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "computeMaxMinFairAllocations",
+    "qualified_name": "computeMaxMinFairAllocations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617255,
+    "end_line": 617277,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sizes",
+      "totalBudget"
+    ],
+    "body_sha256": "220649ea6bbdc163aef6e30476dd8d1c6d261386b36cd0f24d5e2b28ea4db9af",
+    "calls": [
+      ".fill",
+      "Array.from",
+      "Math.floor",
+      "new Array",
+      "sortedIndices.sort"
+    ],
+    "writes": [
+      "allocations[computed]",
+      "remainingBudget",
+      "remainingCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617278:22891142",
+    "artifact": "host",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "truncatePreservingUserQuery",
+    "qualified_name": "truncatePreservingUserQuery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617278,
+    "end_line": 617296,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "maxChars"
+    ],
+    "body_sha256": "1e892db4758de506ef3c689e285e8de79c6263cf4ede1d25eff7ac2707cd2bd3",
+    "calls": [
+      ".join",
+      ".replace",
+      ".trim",
+      "entry.matchAll",
+      "entry.replace",
+      "entry.slice",
+      "matches.map",
+      "queryBlocks.slice",
+      "rest.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617297:22891838",
+    "artifact": "host",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "truncatePromptFairly",
+    "qualified_name": "truncatePromptFairly",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617297,
+    "end_line": 617334,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "fc172598e6605d7a8eb81823113827f591c36c94bfdb58d78b4f4139e9b2f347",
+    "calls": [
+      "Math.max",
+      "computeMaxMinFairAllocations",
+      "computeMaxMinFairAllocationsDurationMs.histogram",
+      "entry.slice",
+      "formatOmittedMessagesPreamble",
+      "performance.now",
+      "resultParts.push",
+      "serialized.map",
+      "truncatePreservingUserQuery"
+    ],
+    "writes": [
+      "droppedCount",
+      "fullCount",
+      "i",
+      "truncatedCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285790:9224825",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "formatOmittedMessagesPreamble",
+    "qualified_name": "formatOmittedMessagesPreamble",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285790,
+    "end_line": 285794,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "omittedCount"
+    ],
+    "body_sha256": "3bcc21504fb797bd2072dd615441fb17b7be3615bc4ffe6ffbd5195659724348",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285795:9225048",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "computeMaxMinFairAllocations",
+    "qualified_name": "computeMaxMinFairAllocations",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285795,
+    "end_line": 285817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sizes",
+      "totalBudget"
+    ],
+    "body_sha256": "220649ea6bbdc163aef6e30476dd8d1c6d261386b36cd0f24d5e2b28ea4db9af",
+    "calls": [
+      ".fill",
+      "Array.from",
+      "Math.floor",
+      "new Array",
+      "sortedIndices.sort"
+    ],
+    "writes": [
+      "allocations[computed]",
+      "remainingBudget",
+      "remainingCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285818:9225781",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "truncatePreservingUserQuery",
+    "qualified_name": "truncatePreservingUserQuery",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285818,
+    "end_line": 285836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "maxChars"
+    ],
+    "body_sha256": "4d668a484ed22935eaf172b0f8a45a6d5a200ad124ec7750ebe3aca94b0c007a",
+    "calls": [
+      ".join",
+      ".replace",
+      ".trim",
+      "entry.matchAll",
+      "entry.replace",
+      "entry.slice",
+      "matches.map",
+      "queryBlocks.slice",
+      "rest.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:285837:9226477",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prompt-truncation.js",
+    "name": "truncatePromptFairly",
+    "qualified_name": "truncatePromptFairly",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 285837,
+    "end_line": 285874,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "fc172598e6605d7a8eb81823113827f591c36c94bfdb58d78b4f4139e9b2f347",
+    "calls": [
+      "Math.max",
+      "computeMaxMinFairAllocations",
+      "computeMaxMinFairAllocationsDurationMs.histogram",
+      "entry.slice",
+      "formatOmittedMessagesPreamble",
+      "performance.now",
+      "resultParts.push",
+      "serialized.map",
+      "truncatePreservingUserQuery"
+    ],
+    "writes": [
+      "droppedCount",
+      "fullCount",
+      "i",
+      "truncatedCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

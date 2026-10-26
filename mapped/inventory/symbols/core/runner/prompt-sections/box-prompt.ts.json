@@ -1,0 +1,221 @@
+[
+  {
+    "id": "evaluation:528974:19302342",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "sitePlaybookDispatchLine",
+    "qualified_name": "sitePlaybookDispatchLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528974,
+    "end_line": 528980,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "desktopExecutor",
+      "skillAccess = \"read\""
+    ],
+    "body_sha256": "16cd3306783b92efd9d514c787b5f7813b1f66345317a0361c0498961048f26d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528982:19303917",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "slowStepHeadsUpLine",
+    "qualified_name": "slowStepHeadsUpLine",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528982,
+    "end_line": 528985,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "configured2"
+    ],
+    "body_sha256": "88bd1268ae758da09daeddcdf85f0525b15be72f47716ddcc987cab3e9794015",
+    "calls": [
+      ".trim",
+      "configured2.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528986:19304090",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "combinedBoxDesktopLines",
+    "qualified_name": "combinedBoxDesktopLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528986,
+    "end_line": 529006,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "includeHumanSteps = true",
+      "desktopExecutor = false",
+      "{\n  contradictionFixes = false,\n  skillAccess = \"read\",\n  slowStepHeadsUp\n} = {}"
+    ],
+    "body_sha256": "c1d23a97a643c9041365877c29f138a9c1c1a3813274dce20f1dfa84d7db334d",
+    "calls": [
+      "SKILL_OPEN_COPY[computed].openAndFollow",
+      "sitePlaybookDispatchLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529007:19306714",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "renderRemoteBoxSection",
+    "qualified_name": "renderRemoteBoxSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529007,
+    "end_line": 529038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "canUseUserComputer"
+    ],
+    "body_sha256": "60f31566fb94b3452b75501fc94fb82bc0c55b5c9467f99ce74e78acec316b43",
+    "calls": [
+      ".join",
+      "offersShellUserComputer",
+      "renderComputerUseRemoteBoxSection"
+    ],
+    "writes": [
+      "boxIntro",
+      "fileTransferLines",
+      "toolTargetLines"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529039:19311865",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "renderComputerUseRemoteBoxSection",
+    "qualified_name": "renderComputerUseRemoteBoxSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529039,
+    "end_line": 529046,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "e423547605dc5efb6038d7262d755d48dfd45a6185edbd3f3fd0ad7cbdff141e",
+    "calls": [
+      ".join",
+      "availableDesktopExecutor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529047:19313770",
+    "artifact": "evaluation",
+    "module": "core/runner/prompt-sections/box-prompt.ts",
+    "name": "renderComputerSection",
+    "qualified_name": "renderComputerSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529047,
+    "end_line": 529124,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "builtinSkillPointers",
+      "skillAccess = \"read\""
+    ],
+    "body_sha256": "bba1b43f5b8dd59f0922a89a5391aa2cb9d52da561f7da069940668416183b85",
+    "calls": [
+      ".join",
+      "availableDesktopExecutor",
+      "boxDriverDisplayLine",
+      "builtinSkillPointer",
+      "combinedBoxDesktopLines",
+      "desktopExecutorPort.computerPrompt",
+      "desktopExecutorPort.sharesBrowserTools",
+      "host.gates.passwordRulesReport",
+      "host.gates.promptContradictionFixes",
+      "host.gates.secureValues",
+      "host.gates.slowStepHeadsUp",
+      "host.isCombinedComputerUseAvailable",
+      "host.passwordRulesReportCopy",
+      "host.playwrightRunCode.current",
+      "host.resolveBoxBrowser",
+      "host.slowStepHeadsUpCopy",
+      "leanComputerPrompt",
+      "passwordRulesReportClause",
+      "sitePlaybookDispatchLine",
+      "slowStepHeadsUpLine",
+      "subagentHumanStepRule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

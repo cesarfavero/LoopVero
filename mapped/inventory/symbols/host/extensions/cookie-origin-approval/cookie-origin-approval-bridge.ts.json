@@ -1,0 +1,687 @@
+[
+  {
+    "id": "host:542594:19906622",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "isLive",
+    "qualified_name": "isLive",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542594,
+    "end_line": 542596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "provider",
+      "now"
+    ],
+    "body_sha256": "336280cbdb52e2b9c4cd48dde08a3e96e42ef9bb2d7c7c12b1580878d54d9f8d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542598:19906827",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.constructor",
+    "qualified_name": "SandCookieOriginApprovalBridge.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542598,
+    "end_line": 542605,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "deed23379d9c756c8f1f31430cf297eb5569ca62bb3a0e1cfce0acba0162e5ff",
+    "calls": [
+      "createExpiryPolicy"
+    ],
+    "writes": [
+      "this.askTtl",
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542613:19907301",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.hasPendingRequest",
+    "qualified_name": "SandCookieOriginApprovalBridge.hasPendingRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542613,
+    "end_line": 542615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "dc2138aa57d117f98ed8bfbd90d557a8408fc017be1dc39b32e61a09c2bcf1f7",
+    "calls": [
+      "this.pending.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542616:19907379",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.registerProvider",
+    "qualified_name": "SandCookieOriginApprovalBridge.registerProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542616,
+    "end_line": 542632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "send"
+    ],
+    "body_sha256": "cf23d046ab8d16a978bee067e6a05af852fd3efad734752a25fd29545c56427d",
+    "calls": [
+      "send",
+      "this.deps.clock.now",
+      "this.providers.add",
+      "this.providersById.set",
+      "this.represent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542633:19907920",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.dropProvider",
+    "qualified_name": "SandCookieOriginApprovalBridge.dropProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542633,
+    "end_line": 542639,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "3af7d2d285557d02636645a312a4bb004ea81db5b38ce6f27ccd00db3f7c89b8",
+    "calls": [
+      "this.park",
+      "this.providers.delete",
+      "this.providersById.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542640:19908174",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.represent",
+    "qualified_name": "SandCookieOriginApprovalBridge.represent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542640,
+    "end_line": 542652,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2",
+      "pending",
+      "provider"
+    ],
+    "body_sha256": "4e28fc6c81cdca62f42d0003bae6c03bf0d21a87da3e4cf3091449d89fe81cb9",
+    "calls": [
+      "pending.origins.map",
+      "provider.send",
+      "this.dropProvider"
+    ],
+    "writes": [
+      "pending.providerId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542653:19908553",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.park",
+    "qualified_name": "SandCookieOriginApprovalBridge.park",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542653,
+    "end_line": 542660,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2",
+      "pending"
+    ],
+    "body_sha256": "adb1c20546f97218f34b3abd486a1ac6abababb2e2d2d0d7904e609a2e0b7a33",
+    "calls": [
+      "this.represent",
+      "this.selectProvider"
+    ],
+    "writes": [
+      "pending.providerId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542661:19908765",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.submitResponses",
+    "qualified_name": "SandCookieOriginApprovalBridge.submitResponses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542661,
+    "end_line": 542708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "batch"
+    ],
+    "body_sha256": "80089ff94c3285dd92f02aa34eeff63eaab73a532144b93463c6570671d285f4",
+    "calls": [
+      "this.deps.clock.now",
+      "this.providersById.get",
+      "this.settle"
+    ],
+    "writes": [
+      "provider.hasHeartbeat",
+      "provider.lastSeenAt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 14,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542709:19910350",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.begin",
+    "qualified_name": "SandCookieOriginApprovalBridge.begin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542709,
+    "end_line": 542753,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b216859cf3e691ee8313ed8f7a322c55c6c8ddd0cec8e82be47216d6b2cd2c9e",
+    "calls": [
+      "args.origins.map",
+      "new Set",
+      "provider.send",
+      "this.askTtl.arm",
+      "this.cancelledByRequestId.has",
+      "this.dropProvider",
+      "this.pending.has",
+      "this.pending.set",
+      "this.selectProvider",
+      "this.settledByRequestId.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542754:19911826",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.awaitOutcome",
+    "qualified_name": "SandCookieOriginApprovalBridge.awaitOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542754,
+    "end_line": 542783,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2",
+      "waitMs"
+    ],
+    "body_sha256": "50d3f34f1541a7370f0bf5531a267c2b36567b7b8cf876b1191a26f8aab1fd8c",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Number.isFinite",
+      "Promise.resolve",
+      "new Promise",
+      "this.cancelledByRequestId.has",
+      "this.pending.get",
+      "this.takeSettled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542773:19912595",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "waiter",
+    "qualified_name": "SandCookieOriginApprovalBridge.awaitOutcome/<callback>/waiter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542773,
+    "end_line": 542776,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "0ebf885676c1f1755a25e239bbdff64f708a3771fe2b92bb8335bc101233ec71",
+    "calls": [
+      "resolve31",
+      "timeout2.dispose"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542784:19912891",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.cancel",
+    "qualified_name": "SandCookieOriginApprovalBridge.cancel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542784,
+    "end_line": 542788,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "c960d8ec33b608b73708218781f73a4bfb4186d8316ff3a62268d75908edf9a2",
+    "calls": [
+      "this.cancelAndRefuse",
+      "this.rememberCancelled",
+      "this.takeSettled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542789:19913097",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.rememberCancelled",
+    "qualified_name": "SandCookieOriginApprovalBridge.rememberCancelled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542789,
+    "end_line": 542796,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "eda0150fbbb67a7715b14cc188640a20455435d49f8b21e0361dddd54b28c7c2",
+    "calls": [
+      ".dispose",
+      "this.cancelledByRequestId.get",
+      "this.cancelledByRequestId.set",
+      "this.deps.clock.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542797:19913404",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.request",
+    "qualified_name": "SandCookieOriginApprovalBridge.request",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542797,
+    "end_line": 542821,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5975269cfe9c531797a7b390cf494d4e229a7f9e9b88ced9bdc7d50ad5ef47d8",
+    "calls": [
+      "args.signal.addEventListener",
+      "args.signal.removeEventListener",
+      "this.begin",
+      "this.settledOutcome"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542812:19913898",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "abort",
+    "qualified_name": "SandCookieOriginApprovalBridge.request/abort",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542812,
+    "end_line": 542814,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d94c5b14ba440849cf3241a8e0e3b5923ff2dc5994fa4c2d6d74a0f4fd1af400",
+    "calls": [
+      "this.cancelAndRefuse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542822:19914236",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.settledOutcome",
+    "qualified_name": "SandCookieOriginApprovalBridge.settledOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542822,
+    "end_line": 542834,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "1cce22d98c78e42465dbf0f0db279d8d765ac6f78ab34c31ac5573425f86eff3",
+    "calls": [
+      "Promise.resolve",
+      "new Promise",
+      "this.pending.get",
+      "this.takeSettled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542835:19914696",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.takeSettled",
+    "qualified_name": "SandCookieOriginApprovalBridge.takeSettled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542835,
+    "end_line": 542841,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "159e5b37a92c2a943b2bb6da3f5ca4989403f3ade62bd930727e8240733f3a4e",
+    "calls": [
+      "settled.expiry.dispose",
+      "this.settledByRequestId.delete",
+      "this.settledByRequestId.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542842:19914942",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.cancelAndRefuse",
+    "qualified_name": "SandCookieOriginApprovalBridge.cancelAndRefuse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542842,
+    "end_line": 542851,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2",
+      "message",
+      "reason"
+    ],
+    "body_sha256": "c6f4e499ffac8a9b307d21a43de1ce374da4433e8e0a4f8f5f38f62f8451e134",
+    "calls": [
+      "bound.send",
+      "this.pending.get",
+      "this.providersById.get",
+      "this.settle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542852:19915338",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.settle",
+    "qualified_name": "SandCookieOriginApprovalBridge.settle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542852,
+    "end_line": 542869,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "requestId2",
+      "outcome"
+    ],
+    "body_sha256": "36f9231435e6e42764ce3f4d5399fe429cfe66a3d53b0356486553e3af81f695",
+    "calls": [
+      "pending.ttl.dispose",
+      "pending.waiters.clear",
+      "this.deps.clock.schedule",
+      "this.pending.delete",
+      "this.pending.get",
+      "this.settledByRequestId.set",
+      "waiter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542870:19915952",
+    "artifact": "host",
+    "module": "host/extensions/cookie-origin-approval/cookie-origin-approval-bridge.ts",
+    "name": "SandCookieOriginApprovalBridge.selectProvider",
+    "qualified_name": "SandCookieOriginApprovalBridge.selectProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542870,
+    "end_line": 542880,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b301bc6c5faf8c1594ef5e5d5fdc32024bfaa0f4d39903d4e16cb3c592c1f124",
+    "calls": [
+      "isLive",
+      "this.deps.clock.now"
+    ],
+    "writes": [
+      "best"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

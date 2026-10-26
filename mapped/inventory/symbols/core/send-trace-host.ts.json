@@ -1,0 +1,359 @@
+[
+  {
+    "id": "host:484122:17715628",
+    "artifact": "host",
+    "module": "core/send-trace-host.ts",
+    "name": "adoptRemoteParent",
+    "qualified_name": "adoptRemoteParent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 484122,
+    "end_line": 484141,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "traceparent",
+      "spanName"
+    ],
+    "body_sha256": "a6befc6ed2ce82222a1561bde22162044813afa23147d9b15c60c507ca8bc1bd",
+    "calls": [
+      "createContext",
+      "createContextFromSpanContext",
+      "getSpan2",
+      "new DisposableSpan",
+      "parseTraceparent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:484142:17716142",
+    "artifact": "host",
+    "module": "core/send-trace-host.ts",
+    "name": "beginGatewayCommandTrace",
+    "qualified_name": "beginGatewayCommandTrace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 484142,
+    "end_line": 484144,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "f2c8eb1a78d011ddd48fea33eca3ac6fb36b4d54c0da096bc810825ceb0237ac",
+    "calls": [
+      "adoptRemoteParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:484146:17716307",
+    "artifact": "host",
+    "module": "core/send-trace-host.ts",
+    "name": "setTurnTraceHostBundleVersion",
+    "qualified_name": "setTurnTraceHostBundleVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 484146,
+    "end_line": 484149,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "hostBundleVersion"
+    ],
+    "body_sha256": "581b8811eaca9d24f10aae6b5802f51d54125fe464a7df2f5c13123ebb370250",
+    "calls": [
+      "hostBundleVersion.trim"
+    ],
+    "writes": [
+      "turnTraceHostBundleVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528711:19282039",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "resolveTurnTraceSampleRatio",
+    "qualified_name": "resolveTurnTraceSampleRatio",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528711,
+    "end_line": 528715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw = process.env.SAND_TURN_TRACE_SAMPLE_RATIO"
+    ],
+    "body_sha256": "c241bbe5b48a31b8c6be679ed576f17ddf06386dc41bc0f3f76684811bdf53e3",
+    "calls": [
+      "Number.isFinite",
+      "Number.parseFloat"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528716:19282295",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "resolveTurnTraceType",
+    "qualified_name": "resolveTurnTraceType",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528716,
+    "end_line": 528722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "207dd855fd8578941ea2b03671bc8966e37bd5991604a64ef65359bd3e52193b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528723:19282570",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "beginTurnTrace",
+    "qualified_name": "beginTurnTrace",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528723,
+    "end_line": 528760,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "7bc0a247cc6a2937104661a36c09369fd73473b62c94454f70bb8ba4a044fdd6",
+    "calls": [
+      "Object.entries",
+      "base.withName",
+      "createContext",
+      "createContextFromRemoteSpanContext",
+      "getSpan2",
+      "mintTraceparent",
+      "new DisposableSpan",
+      "parseTraceparent",
+      "resolveTurnTraceSampleRatio",
+      "shouldSampleSend",
+      "span.setAttribute",
+      "withInheritableAttribute",
+      "withSpan"
+    ],
+    "writes": [
+      "base",
+      "ctx"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:528761:19283945",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "resolveTurnTraceOutcome",
+    "qualified_name": "resolveTurnTraceOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528761,
+    "end_line": 528766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "78b315c95eeb7fb358a56abeaab5de0ac976efed1e6fc45fe50ba246eccdcc50",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528767:19284190",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "setTurnTraceAttributes",
+    "qualified_name": "setTurnTraceAttributes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528767,
+    "end_line": 528777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trace2",
+      "attributes"
+    ],
+    "body_sha256": "07ad7f48c2629b17d4cc1a55964eb3480a605f8aaad039f9ad513be7df5b154f",
+    "calls": [
+      "Object.entries",
+      "errorLogTag",
+      "process.stderr.write",
+      "trace2.span.setAttribute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:528778:19284523",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "markTurnTraceError",
+    "qualified_name": "markTurnTraceError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528778,
+    "end_line": 528790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trace2",
+      "error63"
+    ],
+    "body_sha256": "1f7cb8e1755715c91d20f99491b6082c8f0be033783e030f44dc960a1560f845",
+    "calls": [
+      "String",
+      "errorLogTag",
+      "new Error",
+      "process.stderr.write",
+      "trace2.span.recordException",
+      "trace2.span.setAttribute",
+      "trace2.span.setStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:528791:19284948",
+    "artifact": "evaluation",
+    "module": "core/send-trace-host.ts",
+    "name": "traceSendPhase",
+    "qualified_name": "traceSendPhase",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528791,
+    "end_line": 528828,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "name18",
+      "fn"
+    ],
+    "body_sha256": "72b5464d9922b29fb6ad6c1e84111b2189e53da9852a084d3b5c34f58904c002",
+    "calls": [
+      "String",
+      "createContext",
+      "ctx.withName",
+      "errorLogTag",
+      "fn",
+      "getSpan2",
+      "new Error",
+      "process.stderr.write",
+      "span.end",
+      "span.recordException",
+      "span.setStatus",
+      "withSpan"
+    ],
+    "writes": [
+      "childCtx"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 4,
+      "throws": 1,
+      "catches": 4
+    }
+  }
+]

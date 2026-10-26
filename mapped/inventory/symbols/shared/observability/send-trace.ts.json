@@ -1,0 +1,174 @@
+[
+  {
+    "id": "host:484107:17714938",
+    "artifact": "host",
+    "module": "shared/observability/send-trace.ts",
+    "name": "parseTraceparent",
+    "qualified_name": "parseTraceparent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 484107,
+    "end_line": 484119,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "traceparent"
+    ],
+    "body_sha256": "13548de5213b25d265594f9fd5fd6924ed70041ee97e786e0c6902d614a58a98",
+    "calls": [
+      ".split",
+      "HEX_FLAGS.test",
+      "HEX_SPAN_ID.test",
+      "HEX_TRACE_ID.test",
+      "Number.isNaN",
+      "Number.parseInt",
+      "traceparent.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528670:19280597",
+    "artifact": "evaluation",
+    "module": "shared/observability/send-trace.ts",
+    "name": "randomHex",
+    "qualified_name": "randomHex",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528670,
+    "end_line": 528678,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "byteLength"
+    ],
+    "body_sha256": "b0e1f7bd1e8911f037138c84e20b4ba441afa856ed23e0bc5f2703825ca81c02",
+    "calls": [
+      ".padStart",
+      "byte.toString",
+      "globalThis.crypto.getRandomValues",
+      "new Uint8Array"
+    ],
+    "writes": [
+      "out"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528679:19280831",
+    "artifact": "evaluation",
+    "module": "shared/observability/send-trace.ts",
+    "name": "shouldSampleSend",
+    "qualified_name": "shouldSampleSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528679,
+    "end_line": 528683,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ratio = SEND_TRACE_SAMPLE_RATIO"
+    ],
+    "body_sha256": "45c6059bda8ad39b9883470be9f4fc9755172fe4c4801ae1c07c202d6ae9ceed",
+    "calls": [
+      "Math.random"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:528684:19280991",
+    "artifact": "evaluation",
+    "module": "shared/observability/send-trace.ts",
+    "name": "mintTraceparent",
+    "qualified_name": "mintTraceparent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528684,
+    "end_line": 528693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sampled = true"
+    ],
+    "body_sha256": "a865dfc79b73d51c086c0303ab6fa3f9645568609194d872eb6107e3f65ff6f6",
+    "calls": [
+      "randomHex"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:528694:19281269",
+    "artifact": "evaluation",
+    "module": "shared/observability/send-trace.ts",
+    "name": "parseTraceparent",
+    "qualified_name": "parseTraceparent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 528694,
+    "end_line": 528706,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "traceparent"
+    ],
+    "body_sha256": "13548de5213b25d265594f9fd5fd6924ed70041ee97e786e0c6902d614a58a98",
+    "calls": [
+      ".split",
+      "HEX_FLAGS.test",
+      "HEX_SPAN_ID.test",
+      "HEX_TRACE_ID.test",
+      "Number.isNaN",
+      "Number.parseInt",
+      "traceparent.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

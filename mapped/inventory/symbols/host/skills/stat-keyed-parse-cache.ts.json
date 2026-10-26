@@ -1,0 +1,145 @@
+[
+  {
+    "id": "host:684509:26005430",
+    "artifact": "host",
+    "module": "host/skills/stat-keyed-parse-cache.ts",
+    "name": "mtimeTickCouldStillHideAnEdit",
+    "qualified_name": "mtimeTickCouldStillHideAnEdit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684509,
+    "end_line": 684511,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fingerprint",
+      "nowMs2"
+    ],
+    "body_sha256": "adc6313e4891fb3f38c6977fa3f085e84795fc09fe449e553449d0e02e0f4627",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684512:26005567",
+    "artifact": "host",
+    "module": "host/skills/stat-keyed-parse-cache.ts",
+    "name": "fingerprintOf",
+    "qualified_name": "fingerprintOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684512,
+    "end_line": 684522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "paths"
+    ],
+    "body_sha256": "195c24228f7cbf7a5ef5a5b9b49c6e37de41f09a9cea822ccb5b92d86a6a0e0b",
+    "calls": [
+      "BigInt",
+      "Math.max",
+      "Number",
+      "parts.join",
+      "parts.push"
+    ],
+    "writes": [
+      "newestMtimeMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684524:26006063",
+    "artifact": "host",
+    "module": "host/skills/stat-keyed-parse-cache.ts",
+    "name": "StatKeyedParseCache.constructor",
+    "qualified_name": "StatKeyedParseCache.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684524,
+    "end_line": 684527,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "capacity = DEFAULT_CAPACITY",
+      "nowMs2 = () => Date.now()"
+    ],
+    "body_sha256": "5bfdcbb08d033b1e7b8bfbe1f1f658b52a6bdcfefdd8b99452fc9dc868d1e131",
+    "calls": [],
+    "writes": [
+      "this.capacity",
+      "this.nowMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684531:26006247",
+    "artifact": "host",
+    "module": "host/skills/stat-keyed-parse-cache.ts",
+    "name": "StatKeyedParseCache.read",
+    "qualified_name": "StatKeyedParseCache.read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684531,
+    "end_line": 684556,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "statPaths",
+      "parse17"
+    ],
+    "body_sha256": "e55b14d56107a2f92066cd1fe7f667b55453109674cd970fae73e09294963bac",
+    "calls": [
+      ".next",
+      "fingerprintOf",
+      "mtimeTickCouldStillHideAnEdit",
+      "parse17",
+      "statPaths.join",
+      "this.entries.delete",
+      "this.entries.get",
+      "this.entries.keys",
+      "this.entries.set",
+      "this.nowMs"
+    ],
+    "writes": [
+      "fingerprint"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

@@ -1,0 +1,845 @@
+[
+  {
+    "id": "host:430861:15815247",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "lstatIfExists",
+    "qualified_name": "lstatIfExists",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430861,
+    "end_line": 430868,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "bbc88d18534dc5375d8229b9bec8e21cd51ca6f43174b92a37542d59269ad52e",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:430869:15815455",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "ensureDataRootAlias",
+    "qualified_name": "ensureDataRootAlias",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430869,
+    "end_line": 430880,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "45c8ca67862bcfef97bcf6f311c2779b793350ae0bf014e0b2371d2c2a74295e",
+    "calls": [
+      "existing.isSymbolicLink",
+      "lstatIfExists",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430881:15815951",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "readUserDataDirArg",
+    "qualified_name": "readUserDataDirArg",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430881,
+    "end_line": 430892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv"
+    ],
+    "body_sha256": "6bb33792392a37cbb65074755f3f68bf09a2b5160110c9d43d28796d3210c8cb",
+    "calls": [
+      "arg.slice",
+      "arg.startsWith",
+      "next.startsWith"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430893:15816328",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandUserDataDir",
+    "qualified_name": "resolveSandUserDataDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430893,
+    "end_line": 430898,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv = []",
+      "env = process.env",
+      "cwd = process.cwd()"
+    ],
+    "body_sha256": "d891ac00b7c6f766278a1a32c68bdef7f262a5cba79c424d0429485844b07681",
+    "calls": [
+      "raw.trim",
+      "readUserDataDirArg"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430899:15816687",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getSandProductionRootDir",
+    "qualified_name": "getSandProductionRootDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430899,
+    "end_line": 430901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "f53101cf987e16f2ed65085269ed27d15f418325c727be418d3907d590be49e9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430902:15816843",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandDataRootOverride",
+    "qualified_name": "resolveSandDataRootOverride",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430902,
+    "end_line": 430905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env = process.env"
+    ],
+    "body_sha256": "f6831a46f8faaffe67286dceafd7f6ea0a6a678be166093898c97d39e6674ffe",
+    "calls": [
+      "env[computed].trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430906:15817070",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getSandRootDir",
+    "qualified_name": "getSandRootDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430906,
+    "end_line": 430915,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "f799b4744901836ce67d0543078ed47999fd368afd181f82632572c0c090b98b",
+    "calls": [
+      "getSandProductionRootDir",
+      "getSandVariant",
+      "resolveSandDataRootOverride",
+      "resolveSandUserDataDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430916:15817558",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "sandDataRelativeTail",
+    "qualified_name": "sandDataRelativeTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430916,
+    "end_line": 430923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "storedPath",
+      "options2"
+    ],
+    "body_sha256": "1a5b4ab235fd8c36eb02dfcb75dae222c6415eaa47cd75bd416411153bbe2c79",
+    "calls": [
+      "/(?:[/\\\\]\\.cursor[/\\\\]sand(?:-[^/\\\\]+)?|[/\\\\]\\.grokbot)[/\\\\](.+)$/.exec",
+      "isPathWithin"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430924:15818042",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "reanchorSandPath",
+    "qualified_name": "reanchorSandPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430924,
+    "end_line": 430934,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "storedPath",
+      "options2 = {}"
+    ],
+    "body_sha256": "facff1d85d2f64e80d9828a5ef3dbf4fc1b608f263bc90436536304d7f088f02",
+    "calls": [
+      "getSandRootDir",
+      "isPathWithin",
+      "sandDataRelativeTail",
+      "segments.some",
+      "tail.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430935:15818508",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getGatewayDiscoveryPath",
+    "qualified_name": "getGatewayDiscoveryPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430935,
+    "end_line": 430937,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "ada7be2ca3badc88fd79d8efd9d0a0c85c80a13e7170575f63b34b8e8c87bd46",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430938:15818665",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getHostLockPath",
+    "qualified_name": "getHostLockPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430938,
+    "end_line": 430940,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "ece4cd7909403d83650e89f6cff118e587f18f82fed304d7c7ffaa0c0cda6261",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430941:15818811",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getHostSecretsPath",
+    "qualified_name": "getHostSecretsPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430941,
+    "end_line": 430943,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "b02586ce6bfc716979c57f26410fcdcb7e26829df75a877dff7cf4afff416632",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430946:15819088",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getHostUpgradeMarkerPath",
+    "qualified_name": "getHostUpgradeMarkerPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430946,
+    "end_line": 430948,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "834edb688040faf1266a3de5b5ff69c15ebfaae34e4ebe36b23bdc6b89fa71e8",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430949:15819260",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getHostCrashMarkerPath",
+    "qualified_name": "getHostCrashMarkerPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430949,
+    "end_line": 430951,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "cd1996488e91d42e83f1ce263933597609e78eb8e484ee84750a7bf2fd28f1ab",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430953:15819498",
+    "artifact": "host",
+    "module": "core/host-paths.ts",
+    "name": "getHttpProxyNameOverridePath",
+    "qualified_name": "getHttpProxyNameOverridePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430953,
+    "end_line": 430955,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "35c34243a93a1f28f9b530afeb7abf724e495ba94eae648ec69674c3064649a3",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530470:19390877",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "toModelVisibleText",
+    "qualified_name": "toModelVisibleText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530470,
+    "end_line": 530472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c7fe380b6ecc7b7aef736eb1517ac2a9305a25541b884583d8fc47fb29f8c1f7",
+    "calls": [
+      "text3.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530473:19390997",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "readUserDataDirArg",
+    "qualified_name": "readUserDataDirArg",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530473,
+    "end_line": 530484,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv"
+    ],
+    "body_sha256": "6bb33792392a37cbb65074755f3f68bf09a2b5160110c9d43d28796d3210c8cb",
+    "calls": [
+      "arg.slice",
+      "arg.startsWith",
+      "next.startsWith"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530485:19391374",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandUserDataDir",
+    "qualified_name": "resolveSandUserDataDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530485,
+    "end_line": 530490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv = []",
+      "env = process.env",
+      "cwd = process.cwd()"
+    ],
+    "body_sha256": "c3a8d9a5990dafa5e87d53089d63d68a4a4a9fc9c801a271e705bdb105a9e3f4",
+    "calls": [
+      "raw.trim",
+      "readUserDataDirArg"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530491:19391735",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "getSandProductionRootDir",
+    "qualified_name": "getSandProductionRootDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530491,
+    "end_line": 530493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os8.homedir)()"
+    ],
+    "body_sha256": "71b8dada3417863c31db65a0a5412c4e918f04c393e2cda8636d944f8e0e4a8c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530494:19391893",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandDataRootOverride",
+    "qualified_name": "resolveSandDataRootOverride",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530494,
+    "end_line": 530497,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env = process.env"
+    ],
+    "body_sha256": "a48bc204a2b46b166b043d0cd59f6f57f7d01fd6943ca0f75c730c928f98e579",
+    "calls": [
+      "env[computed].trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530498:19392121",
+    "artifact": "evaluation",
+    "module": "core/host-paths.ts",
+    "name": "getSandRootDir",
+    "qualified_name": "getSandRootDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530498,
+    "end_line": 530507,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os8.homedir)()"
+    ],
+    "body_sha256": "6877eb9366304e1c96e66deb34966f68be68a4e954378fbb6f73ac9bc68f7bd9",
+    "calls": [
+      "getSandProductionRootDir",
+      "getSandVariant",
+      "resolveSandDataRootOverride",
+      "resolveSandUserDataDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:392:14000",
+    "artifact": "state-worker",
+    "module": "core/host-paths.ts",
+    "name": "readUserDataDirArg",
+    "qualified_name": "readUserDataDirArg",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 392,
+    "end_line": 403,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv"
+    ],
+    "body_sha256": "6bb33792392a37cbb65074755f3f68bf09a2b5160110c9d43d28796d3210c8cb",
+    "calls": [
+      "arg.slice",
+      "arg.startsWith",
+      "next.startsWith"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:404:14377",
+    "artifact": "state-worker",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandUserDataDir",
+    "qualified_name": "resolveSandUserDataDir",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 404,
+    "end_line": 409,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "argv = []",
+      "env = process.env",
+      "cwd = process.cwd()"
+    ],
+    "body_sha256": "88830741d2ba43edaf62c81a84d2613a95d56bd770a36b770f5c9c166fc117b5",
+    "calls": [
+      "raw.trim",
+      "readUserDataDirArg"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:410:14736",
+    "artifact": "state-worker",
+    "module": "core/host-paths.ts",
+    "name": "getSandProductionRootDir",
+    "qualified_name": "getSandProductionRootDir",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 410,
+    "end_line": 412,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "1f6e7842f1e2d7a3ec24f254ebbcfc081274265335fd889f164804ed19028962",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:413:14892",
+    "artifact": "state-worker",
+    "module": "core/host-paths.ts",
+    "name": "resolveSandDataRootOverride",
+    "qualified_name": "resolveSandDataRootOverride",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 413,
+    "end_line": 416,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env = process.env"
+    ],
+    "body_sha256": "5d0f1cbc143c87a5bddbdf4c1089c9f9d4050569b2fbff891215f65bb86dbb21",
+    "calls": [
+      "env[computed].trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:417:15119",
+    "artifact": "state-worker",
+    "module": "core/host-paths.ts",
+    "name": "getSandRootDir",
+    "qualified_name": "getSandRootDir",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 417,
+    "end_line": 426,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os.homedir)()"
+    ],
+    "body_sha256": "b9a41f2b57232962c0c8a09542d77342a21d91a7ab6a7f1155306f0e2f59ae6a",
+    "calls": [
+      "getSandProductionRootDir",
+      "getSandVariant",
+      "resolveSandDataRootOverride",
+      "resolveSandUserDataDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

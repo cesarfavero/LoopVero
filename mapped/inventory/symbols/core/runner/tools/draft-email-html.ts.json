@@ -1,0 +1,1524 @@
+[
+  {
+    "id": "host:732464:27818599",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailBodyHtmlTag",
+    "qualified_name": "emailBodyHtmlTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732464,
+    "end_line": 732466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "7ad35506e62c72b7bcb235fd2eeb73c53d9045eb61c18c44b063c16480fc72f9",
+    "calls": [
+      "HTML_MARKUP.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732467:27818673",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailHtmlNonTextTag",
+    "qualified_name": "emailHtmlNonTextTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732467,
+    "end_line": 732472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "d3f286f137263f8e2177f162e27f3f4fc2dbb6b287fb0e2c4a883932bc84678c",
+    "calls": [
+      "html.matchAll",
+      "parseTag",
+      "textTagAllowed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732473:27818842",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "parseTag",
+    "qualified_name": "parseTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732473,
+    "end_line": 732483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "3e54ed07c059e6217f54b7a703adb36b3bb79a6293ec58811bdacefcf42a4027",
+    "calls": [
+      "TAG_PARTS.exec",
+      "attributes.has",
+      "attributes.set",
+      "name18.toLowerCase",
+      "new Map",
+      "parts[computed].matchAll",
+      "parts[computed].toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732484:27819348",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "textTagAllowed",
+    "qualified_name": "textTagAllowed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732484,
+    "end_line": 732489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "c01f911eac7b117e6f0fbd7e460d997abeea2eb83fca69261539e52a5bde65a6",
+    "calls": [
+      ".every",
+      "TEXT_ELEMENTS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732490:27819610",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailHtmlMatchesBody",
+    "qualified_name": "emailHtmlMatchesBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732490,
+    "end_line": 732497,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  html,\n  body\n}"
+    ],
+    "body_sha256": "785b9d0419c1a1d629670808fb0f16b918aa598c99d2bdd36699f3a8cd62f13e",
+    "calls": [
+      ".map",
+      "body.split",
+      "bodyWords",
+      "matchesBodyWords",
+      "new Set",
+      "readHtml",
+      "reading.targets.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732498:27819941",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "bodyWords",
+    "qualified_name": "bodyWords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732498,
+    "end_line": 732505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "3de5b81da1423d913e63bf96d08305395a451eea4e2ee4acd8d37ae1c04c0550",
+    "calls": [
+      ".flatMap",
+      "body.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732506:27820326",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "matchesBodyWords",
+    "qualified_name": "matchesBodyWords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732506,
+    "end_line": 732517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html",
+      "body"
+    ],
+    "body_sha256": "747277d0ff6f68956e978a0dc2bcb56c8da6619b2a815d5ff7491d7651ff81dd",
+    "calls": [
+      "new Set",
+      "next.add",
+      "reachable.has"
+    ],
+    "writes": [
+      "reachable"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732518:27820711",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readHtml",
+    "qualified_name": "readHtml",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732518,
+    "end_line": 732530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "fb59b8f1aef7f896bb86d2c20b2702e3b26ed26d186812c1e8a94bff07e909a6",
+    "calls": [
+      "closeLink",
+      "decodeEntities",
+      "html.replace",
+      "parseTag",
+      "readTag",
+      "readText3",
+      "visible.matchAll",
+      "visible.slice"
+    ],
+    "writes": [
+      "cursor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732531:27821174",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readText3",
+    "qualified_name": "readText3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732531,
+    "end_line": 732534,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading",
+      "text3"
+    ],
+    "body_sha256": "4ee54705dbb0b8efb13eb2ac457aa66c6cb8e5bba6f8746c4d1a9d222da8c6a1",
+    "calls": [
+      "reading.words.push",
+      "wordsOf3"
+    ],
+    "writes": [
+      "reading.link.text"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732535:27821311",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readTag",
+    "qualified_name": "readTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732535,
+    "end_line": 732545,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading",
+      "tag"
+    ],
+    "body_sha256": "beda02b190b6380876e381fe929098a725c811fbdaecb3ed67c946da1cfab83c",
+    "calls": [
+      ".replace",
+      "closeLink",
+      "decodeEntities",
+      "tag.attributes.get"
+    ],
+    "writes": [
+      "reading.link"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732546:27821614",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "closeLink",
+    "qualified_name": "closeLink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732546,
+    "end_line": 732558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading"
+    ],
+    "body_sha256": "880614130abb9203015773b22d361d6128375c77949ced9f24df12f5e1e377ba",
+    "calls": [
+      "LINK_LIKE_TEXT.test",
+      "reading.targets.push",
+      "reading.words.push",
+      "reading.words.slice",
+      "sameWords",
+      "showsTarget",
+      "wordsOf3"
+    ],
+    "writes": [
+      "reading.link",
+      "reading.misleadingLink"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732559:27822038",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "showsTarget",
+    "qualified_name": "showsTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732559,
+    "end_line": 732561,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "target"
+    ],
+    "body_sha256": "cec2e13ad1dd6386d7fa5d710ed48e7aacdc095ee8cfd9c1b34f8d6f37f8ae39",
+    "calls": [
+      ".replace",
+      "normalizedTarget",
+      "text3.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732562:27822168",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "shownTarget",
+    "qualified_name": "shownTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732562,
+    "end_line": 732565,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "chunk"
+    ],
+    "body_sha256": "7325086f6e11927e54b86c5dfbd2d69a2ce5e61fc878ad5aaa1a949bf9d68c19",
+    "calls": [
+      ".replace",
+      "chunk.replace",
+      "normalizedTarget",
+      "withoutTrailingProsePunctuation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732566:27822357",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "normalizedTarget",
+    "qualified_name": "normalizedTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732566,
+    "end_line": 732569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "72efad7547912f14ad9d66af613088219769d9fdb2f0fec201f140b291d5e5fb",
+    "calls": [
+      "URL.canParse",
+      "WEB_LINK.test",
+      "new URL",
+      "target.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732570:27822517",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "decodeEntities",
+    "qualified_name": "decodeEntities",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732570,
+    "end_line": 732572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "9fae0fa52cf6320a6726d09cce79f848c9a750dca190416469aaf67c8477f10f",
+    "calls": [
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732573:27822644",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "entityText",
+    "qualified_name": "entityText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732573,
+    "end_line": 732577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "72da96ba4defa8c24b9399171b3ad3d70d3ae1d3673e4c686de7c57442913f74",
+    "calls": [
+      "Number",
+      "String.fromCodePoint",
+      "name18.slice",
+      "name18.startsWith",
+      "parseInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732578:27822919",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "wordsOf3",
+    "qualified_name": "wordsOf3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732578,
+    "end_line": 732580,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "02d8ed17b968c1e41eb297c9151e7d5fcbf04d19a25a1355ef717962cf3a6029",
+    "calls": [
+      ".match",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732581:27822996",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "sameWords",
+    "qualified_name": "sameWords",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732581,
+    "end_line": 732583,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "f8acf4f112b290a656d996e135eeeb6c011d02822e94a9426c7714598801e81c",
+    "calls": [
+      "left.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732584:27823125",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailDraftHtmlBody",
+    "qualified_name": "emailDraftHtmlBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732584,
+    "end_line": 732595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "options2 = {}"
+    ],
+    "body_sha256": "a05f476b9eddbc6f6b75016b86c4519b1da37a380fa202a8c1de475e87dbaa4d",
+    "calls": [
+      "body.replace",
+      "escapeHtml",
+      "proseHtml",
+      "text3.matchAll",
+      "text3.slice",
+      "withoutTrailingProsePunctuation"
+    ],
+    "writes": [
+      "cursor",
+      "html"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732596:27823682",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "proseHtml",
+    "qualified_name": "proseHtml",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732596,
+    "end_line": 732598,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "9bf9e0412e0e492f8c523ce4b14a44c2343e1085fd1f279037859d5ea326187f",
+    "calls": [
+      ".replace",
+      "escapeHtml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732599:27823763",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "withoutTrailingProsePunctuation",
+    "qualified_name": "withoutTrailingProsePunctuation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732599,
+    "end_line": 732605,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "2c92c4c22c9722dc811aecc9a81470b6ee063c05051bbdceec335e5ed929cd01",
+    "calls": [
+      "TRAILING_PROSE_PUNCTUATION.test",
+      "closesUnopenedParenthesis",
+      "url2.slice"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732606:27823977",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "closesUnopenedParenthesis",
+    "qualified_name": "closesUnopenedParenthesis",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732606,
+    "end_line": 732608,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "d97129337cf3a883ac27e0e9684aba9f860c157914c195925ccefb78cf841104",
+    "calls": [
+      "url2.endsWith",
+      "url2.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539476:19898128",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailBodyHtmlTag",
+    "qualified_name": "emailBodyHtmlTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539476,
+    "end_line": 539478,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "7ad35506e62c72b7bcb235fd2eeb73c53d9045eb61c18c44b063c16480fc72f9",
+    "calls": [
+      "HTML_MARKUP.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539479:19898202",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailHtmlNonTextTag",
+    "qualified_name": "emailHtmlNonTextTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539479,
+    "end_line": 539484,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "d3f286f137263f8e2177f162e27f3f4fc2dbb6b287fb0e2c4a883932bc84678c",
+    "calls": [
+      "html.matchAll",
+      "parseTag",
+      "textTagAllowed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539485:19898371",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "parseTag",
+    "qualified_name": "parseTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539485,
+    "end_line": 539495,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "3e54ed07c059e6217f54b7a703adb36b3bb79a6293ec58811bdacefcf42a4027",
+    "calls": [
+      "TAG_PARTS.exec",
+      "attributes.has",
+      "attributes.set",
+      "name18.toLowerCase",
+      "new Map",
+      "parts[computed].matchAll",
+      "parts[computed].toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539496:19898877",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "textTagAllowed",
+    "qualified_name": "textTagAllowed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539496,
+    "end_line": 539501,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tag"
+    ],
+    "body_sha256": "c01f911eac7b117e6f0fbd7e460d997abeea2eb83fca69261539e52a5bde65a6",
+    "calls": [
+      ".every",
+      "TEXT_ELEMENTS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539502:19899139",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailHtmlMatchesBody",
+    "qualified_name": "emailHtmlMatchesBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539502,
+    "end_line": 539509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  html,\n  body\n}"
+    ],
+    "body_sha256": "785b9d0419c1a1d629670808fb0f16b918aa598c99d2bdd36699f3a8cd62f13e",
+    "calls": [
+      ".map",
+      "body.split",
+      "bodyWords",
+      "matchesBodyWords",
+      "new Set",
+      "readHtml",
+      "reading.targets.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539510:19899470",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "bodyWords",
+    "qualified_name": "bodyWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539510,
+    "end_line": 539517,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "b589c52ea66bcfb6a9aaff106d10787a30f12826c2c6508f78d523e380fa3c51",
+    "calls": [
+      ".flatMap",
+      "body.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539518:19899853",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "matchesBodyWords",
+    "qualified_name": "matchesBodyWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539518,
+    "end_line": 539529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html",
+      "body"
+    ],
+    "body_sha256": "747277d0ff6f68956e978a0dc2bcb56c8da6619b2a815d5ff7491d7651ff81dd",
+    "calls": [
+      "new Set",
+      "next.add",
+      "reachable.has"
+    ],
+    "writes": [
+      "reachable"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539530:19900238",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readHtml",
+    "qualified_name": "readHtml",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539530,
+    "end_line": 539542,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "474c683d2346aa9424b4d337ba7f20ef0492dd7a5062c01bf784acfa59b45ca1",
+    "calls": [
+      "closeLink",
+      "decodeEntities",
+      "html.replace",
+      "parseTag",
+      "readTag",
+      "readText",
+      "visible.matchAll",
+      "visible.slice"
+    ],
+    "writes": [
+      "cursor"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539543:19900699",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readText",
+    "qualified_name": "readText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539543,
+    "end_line": 539546,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading",
+      "text3"
+    ],
+    "body_sha256": "8e9f0b3e7b5e036e235953dc1d2d49950dd5e60d082ababc94b53877daed864d",
+    "calls": [
+      "reading.words.push",
+      "wordsOf2"
+    ],
+    "writes": [
+      "reading.link.text"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539547:19900835",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "readTag",
+    "qualified_name": "readTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539547,
+    "end_line": 539557,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading",
+      "tag"
+    ],
+    "body_sha256": "beda02b190b6380876e381fe929098a725c811fbdaecb3ed67c946da1cfab83c",
+    "calls": [
+      ".replace",
+      "closeLink",
+      "decodeEntities",
+      "tag.attributes.get"
+    ],
+    "writes": [
+      "reading.link"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539558:19901138",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "closeLink",
+    "qualified_name": "closeLink",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539558,
+    "end_line": 539570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reading"
+    ],
+    "body_sha256": "87ca050c25e5ddaeb7849660162b5df4281e4eb56c4821e752e607f1719f7191",
+    "calls": [
+      "LINK_LIKE_TEXT.test",
+      "reading.targets.push",
+      "reading.words.push",
+      "reading.words.slice",
+      "sameWords",
+      "showsTarget",
+      "wordsOf2"
+    ],
+    "writes": [
+      "reading.link",
+      "reading.misleadingLink"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539571:19901562",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "showsTarget",
+    "qualified_name": "showsTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539571,
+    "end_line": 539573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "target"
+    ],
+    "body_sha256": "cec2e13ad1dd6386d7fa5d710ed48e7aacdc095ee8cfd9c1b34f8d6f37f8ae39",
+    "calls": [
+      ".replace",
+      "normalizedTarget",
+      "text3.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539574:19901692",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "shownTarget",
+    "qualified_name": "shownTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539574,
+    "end_line": 539577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "chunk"
+    ],
+    "body_sha256": "7325086f6e11927e54b86c5dfbd2d69a2ce5e61fc878ad5aaa1a949bf9d68c19",
+    "calls": [
+      ".replace",
+      "chunk.replace",
+      "normalizedTarget",
+      "withoutTrailingProsePunctuation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539578:19901881",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "normalizedTarget",
+    "qualified_name": "normalizedTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539578,
+    "end_line": 539581,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "72efad7547912f14ad9d66af613088219769d9fdb2f0fec201f140b291d5e5fb",
+    "calls": [
+      "URL.canParse",
+      "WEB_LINK.test",
+      "new URL",
+      "target.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539582:19902041",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "decodeEntities",
+    "qualified_name": "decodeEntities",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539582,
+    "end_line": 539584,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "9fae0fa52cf6320a6726d09cce79f848c9a750dca190416469aaf67c8477f10f",
+    "calls": [
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539585:19902168",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "entityText",
+    "qualified_name": "entityText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539585,
+    "end_line": 539589,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "72da96ba4defa8c24b9399171b3ad3d70d3ae1d3673e4c686de7c57442913f74",
+    "calls": [
+      "Number",
+      "String.fromCodePoint",
+      "name18.slice",
+      "name18.startsWith",
+      "parseInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539590:19902443",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "wordsOf2",
+    "qualified_name": "wordsOf2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539590,
+    "end_line": 539592,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "ca332a62b95481f69282e7378094e608e0033d3edba43ed050a49a0bcd7f2dd7",
+    "calls": [
+      ".match",
+      "text3.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539593:19902520",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "sameWords",
+    "qualified_name": "sameWords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539593,
+    "end_line": 539595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "f8acf4f112b290a656d996e135eeeb6c011d02822e94a9426c7714598801e81c",
+    "calls": [
+      "left.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539596:19902649",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "emailDraftHtmlBody",
+    "qualified_name": "emailDraftHtmlBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539596,
+    "end_line": 539607,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body",
+      "options2 = {}"
+    ],
+    "body_sha256": "a05f476b9eddbc6f6b75016b86c4519b1da37a380fa202a8c1de475e87dbaa4d",
+    "calls": [
+      "body.replace",
+      "escapeHtml",
+      "proseHtml",
+      "text3.matchAll",
+      "text3.slice",
+      "withoutTrailingProsePunctuation"
+    ],
+    "writes": [
+      "cursor",
+      "html"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539608:19903206",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "proseHtml",
+    "qualified_name": "proseHtml",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539608,
+    "end_line": 539610,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "9bf9e0412e0e492f8c523ce4b14a44c2343e1085fd1f279037859d5ea326187f",
+    "calls": [
+      ".replace",
+      "escapeHtml"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539611:19903287",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "withoutTrailingProsePunctuation",
+    "qualified_name": "withoutTrailingProsePunctuation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539611,
+    "end_line": 539617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "2c92c4c22c9722dc811aecc9a81470b6ee063c05051bbdceec335e5ed929cd01",
+    "calls": [
+      "TRAILING_PROSE_PUNCTUATION.test",
+      "closesUnopenedParenthesis",
+      "url2.slice"
+    ],
+    "writes": [
+      "url2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:539618:19903501",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-email-html.ts",
+    "name": "closesUnopenedParenthesis",
+    "qualified_name": "closesUnopenedParenthesis",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 539618,
+    "end_line": 539620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "d97129337cf3a883ac27e0e9684aba9f860c157914c195925ccefb78cf841104",
+    "calls": [
+      "url2.endsWith",
+      "url2.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

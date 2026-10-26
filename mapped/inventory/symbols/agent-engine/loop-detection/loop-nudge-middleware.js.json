@@ -1,0 +1,291 @@
+[
+  {
+    "id": "evaluation:458220:16380325",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "thrownValueClass",
+    "qualified_name": "thrownValueClass",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458220,
+    "end_line": 458233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "1c6812c2aa713f7106a91dbb16eff9576067317f3093222005994edaadd969ef",
+    "calls": [
+      "Reflect.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458234:16380784",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "createLoopNudgeMiddleware",
+    "qualified_name": "createLoopNudgeMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458234,
+    "end_line": 458308,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "minRepetitionsOrOptions",
+      "minMessageLengthArg = 0",
+      "shouldInjectReminderArg = false"
+    ],
+    "body_sha256": "98243ee6095e615b5fcb8224ab3be5c186f4b7f9f05e77229b2d81963493e534",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458243:16381264",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "checkForLoop",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/checkForLoop",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458243,
+    "end_line": 458275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "be72c5e9ce4e7ec9c3520a813e07ebfef7778e0e64589943c3d903bc7d30a4e1",
+    "calls": [
+      "checkAndHandleLoopOnToolResultAppend",
+      "executor.getMessages",
+      "logger58.warn",
+      "thrownValueClass"
+    ],
+    "writes": [
+      "errorClass"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "evaluation:458249:16381481",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "appendMessage",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/checkForLoop/appendMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458249,
+    "end_line": 458249,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "msg"
+    ],
+    "body_sha256": "e6299d027c8e3dc926c42c7a7a3a31c17fdb772508f93cd1d2bb3c7f0367e9c8",
+    "calls": [
+      "executor.appendMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458278:16382723",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "appendMessages",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/appendMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458278,
+    "end_line": 458286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "15d5daf22b5096b795f6dca063d9622441ee24632e3fd504ce2bb708d7fce56c",
+    "calls": [
+      "Array.isArray",
+      "checkForLoop",
+      "executor.appendMessages",
+      "messagesToAppend.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458288:16383147",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "stream",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458288,
+    "end_line": 458294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "54457396ffa7893e3aba3b6f651b7f932f5b062847702c05d2875639ea89d6cb",
+    "calls": [
+      ".at",
+      "checkForLoop",
+      "executor.getMessages",
+      "executor.stream"
+    ],
+    "writes": [
+      "lastCtx"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458296:16383487",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "getMessages",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/getMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458296,
+    "end_line": 458298,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "d3ed8be1e4a9b0ac96472867f916d6b319ad2fcd17cd27a729bf53df9146a83c",
+    "calls": [
+      "executor.getMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458299:16383554",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "getState",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/getState",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458299,
+    "end_line": 458301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "58c3c4a001c030525b59894750aad39d0fe8298b88bcdc77b9eb5c3b4498d958",
+    "calls": [
+      "executor.getState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:458302:16383623",
+    "artifact": "evaluation",
+    "module": "agent-engine/loop-detection/loop-nudge-middleware.js",
+    "name": "clearMessages",
+    "qualified_name": "createLoopNudgeMiddleware/<callback>/clearMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 458302,
+    "end_line": 458304,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "69ea2ec0490fd44af8c7f5a8d76b01bde9b51ef22b8f7b2a4f5967713a0ebe26",
+    "calls": [
+      "executor.clearMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

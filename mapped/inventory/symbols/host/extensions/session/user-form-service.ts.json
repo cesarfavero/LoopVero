@@ -1,0 +1,625 @@
+[
+  {
+    "id": "host:728005:27661937",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.constructor",
+    "qualified_name": "UserFormService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728005,
+    "end_line": 728008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "9eebe1f1fe499518b96a1989c1f90f3f187ef790118584dfd3653bd2e0fabfbb",
+    "calls": [],
+    "writes": [
+      "this.clock",
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728012:27662096",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.forget",
+    "qualified_name": "UserFormService.forget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728012,
+    "end_line": 728014,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "5eeea97330547f2a3221e13179277f9926455d1a0ef24d1ad674120f1348ae51",
+    "calls": [
+      "this.remapHoldRequestIdByAgent.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728015:27662178",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.holdForRemap",
+    "qualified_name": "UserFormService.holdForRemap",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728015,
+    "end_line": 728019,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "requestId2"
+    ],
+    "body_sha256": "ef12c84c8fb0d243695220cf9413348d92dd03c5cff3efd0ab638372dc29d85f",
+    "calls": [
+      "this.remapHoldRequestIdByAgent.has",
+      "this.remapHoldRequestIdByAgent.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728020:27662364",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.settleRemap",
+    "qualified_name": "UserFormService.settleRemap",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728020,
+    "end_line": 728024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ agentId, requestId: requestId2 }"
+    ],
+    "body_sha256": "496657c0ec085507c3651d55dd6fe3d00e08dedab24159422cd0ab8c29b39ff4",
+    "calls": [
+      "this.remapHoldRequestIdByAgent.delete",
+      "this.remapHoldRequestIdByAgent.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728025:27662555",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.recordResolution",
+    "qualified_name": "UserFormService.recordResolution",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728025,
+    "end_line": 728097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "3ae824ac04e81a2978fa31905d6cb4a61c2e975dc637fb6d7fcb1f1bec5f0d28",
+    "calls": [
+      "String",
+      "optionalBooleanMetricTag",
+      "reportStage",
+      "this.domainTag",
+      "userFormDriverUnavailable.increment",
+      "userFormResolution.increment",
+      "userFormResolutionTimingMissing.increment",
+      "userFormTimeToResolve.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728069:27664349",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "reportStage",
+    "qualified_name": "UserFormService.recordResolution/reportStage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728069,
+    "end_line": 728075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ stage, durationMs, timingSource }"
+    ],
+    "body_sha256": "3a21c1a30f7727626f1bc08778acb07271523bc8fcd8129388d585d05d7b1b2b",
+    "calls": [
+      "userFormStageDuration.histogram"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728098:27665256",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.domainTag",
+    "qualified_name": "UserFormService.domainTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728098,
+    "end_line": 728101,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "domain2"
+    ],
+    "body_sha256": "e02e75ba90bb550ecba94df92cfe2f7c8489e8533912873b4fbad19dc6b72cf1",
+    "calls": [
+      "this.deps.privacyMode.get",
+      "userFormDomainMetricTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728102:27665413",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.fill",
+    "qualified_name": "UserFormService.fill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728102,
+    "end_line": 728140,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "values",
+      "consentedHost",
+      "submitAfterFill"
+    ],
+    "body_sha256": "027bd32ec35ca218d8f46a6b0ddff3eb113d4849610c88781a065c5157d0fe97",
+    "calls": [
+      ".includes",
+      "Object.values",
+      "createUserFormHostFillTiming",
+      "driverUnavailableFillResult",
+      "fillSandUserFormValues",
+      "observeUserFormDriverFailures",
+      "observed.firstFailureStage",
+      "reportFallback",
+      "this.createRunner",
+      "timing.finish"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:728141:27666768",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.createRunner",
+    "qualified_name": "UserFormService.createRunner",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728141,
+    "end_line": 728146,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "13025453b69497ee0d9df982f36ad581eba2e0b21913e9cb2ffa26652ee29fca",
+    "calls": [
+      ".schedule",
+      "this.createRunnerOnce"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728147:27667024",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "UserFormService.createRunnerOnce",
+    "qualified_name": "UserFormService.createRunnerOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728147,
+    "end_line": 728168,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d5d9901b07c1c3bf0f6a20782f6df5dff05d9c8123516d1948df1d731611f3ff",
+    "calls": [
+      "boxAgentWindowIndex",
+      "createSandBrowserOpRunner",
+      "reportFallback",
+      "this.deps.box.ensureReady"
+    ],
+    "writes": [
+      "connection"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:728170:27667763",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "createUserFormHostFillTiming",
+    "qualified_name": "createUserFormHostFillTiming",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728170,
+    "end_line": 728193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "clock"
+    ],
+    "body_sha256": "29e31931de2dc5fb4428df0ad7588c65fd5ad8848a375ada548b3e2193e11aef",
+    "calls": [
+      "clock.monotonicNow",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728174:27667923",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "observe",
+    "qualified_name": "createUserFormHostFillTiming/observe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728174,
+    "end_line": 728177,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "stage",
+      "durationMs"
+    ],
+    "body_sha256": "09731206d560a8a568e8ae8f3a1cc9f110c73076585b9dbb8c132e497b42f6d0",
+    "calls": [
+      "Math.max",
+      "Number.isFinite",
+      "durations.get",
+      "durations.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728178:27668119",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "finish",
+    "qualified_name": "createUserFormHostFillTiming/finish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728178,
+    "end_line": 728191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5accd8e344dd5653adf3bf091173a954573fb44b694bc0c6e6ca86772ac241e3",
+    "calls": [
+      "Math.max",
+      "clock.monotonicNow",
+      "durations.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728194:27668666",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "observeUserFormDriverFailures",
+    "qualified_name": "observeUserFormDriverFailures",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728194,
+    "end_line": 728208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runner"
+    ],
+    "body_sha256": "e3d8c13265bd6fe925e35df6ac1273a324f3fa76272ba1ca3df3a9b244469adc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728198:27668776",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "run",
+    "qualified_name": "observeUserFormDriverFailures/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728198,
+    "end_line": 728204,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "op",
+      "args"
+    ],
+    "body_sha256": "503ea81a0884c3fd6a2b823b4af81e9eaed0020c76a756fc1122e4cf54cf8550",
+    "calls": [
+      "runner.run",
+      "userFormDriverFailureStage"
+    ],
+    "writes": [
+      "firstFailureStage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728206:27669031",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "firstFailureStage",
+    "qualified_name": "observeUserFormDriverFailures/firstFailureStage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728206,
+    "end_line": 728206,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c01c5e353d7710eb62457103ad4ca6424332da44028fc31da57e310e6626d621",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728209:27669062",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "userFormDriverFailureStage",
+    "qualified_name": "userFormDriverFailureStage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728209,
+    "end_line": 728225,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "op"
+    ],
+    "body_sha256": "1bd56de52e6256e3fd1b28210b83cafd9b4bb849cd04e4d1fe267a387874cb8d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728226:27669414",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "optionalBooleanMetricTag",
+    "qualified_name": "optionalBooleanMetricTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728226,
+    "end_line": 728228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "97415605e2828d3e72eca20c49ec361bbba6b65c3b321876fd459ce0bbc387fe",
+    "calls": [
+      "String"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728229:27669511",
+    "artifact": "host",
+    "module": "host/extensions/session/user-form-service.ts",
+    "name": "userFormDomainMetricTag",
+    "qualified_name": "userFormDomainMetricTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728229,
+    "end_line": 728235,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "domain2",
+      "privacyMode"
+    ],
+    "body_sha256": "d110f8506d35bf181cf5631d547c287bb773e3e8ff3bbecbfb5c48510946e463",
+    "calls": [
+      "boundedSiteBucket",
+      "siteDomainTelemetryAllowed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

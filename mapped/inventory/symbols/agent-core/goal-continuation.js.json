@@ -1,0 +1,520 @@
+[
+  {
+    "id": "host:475448:17405659",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalWorkedMs",
+    "qualified_name": "goalWorkedMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475448,
+    "end_line": 475450,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState"
+    ],
+    "body_sha256": "cbdc75c7eb5c65b51c4fe3311c56e8ac70f65d5b0d0a629c48bc4ea744a38ec0",
+    "calls": [
+      "BigInt",
+      "Number"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475451:17405755",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalElapsedMsFrom",
+    "qualified_name": "goalElapsedMsFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475451,
+    "end_line": 475456,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accruedMs",
+      "accrualAnchorMs",
+      "nowMs2"
+    ],
+    "body_sha256": "5deffa68720830c1a56354b15b0ffe4515bb3cdb5a84ee5a8e44d73e7001dd20",
+    "calls": [
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475457:17405944",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalElapsedMs",
+    "qualified_name": "goalElapsedMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475457,
+    "end_line": 475460,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs2"
+    ],
+    "body_sha256": "3d4d37fb4a96f0db1fb676f17bac5587773b5cc29a00f9bdbceb4e65a86a4cc3",
+    "calls": [
+      "Number",
+      "goalElapsedMsFrom",
+      "goalWorkedMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475461:17406147",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalClockOnActivation",
+    "qualified_name": "goalClockOnActivation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475461,
+    "end_line": 475466,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs2"
+    ],
+    "body_sha256": "a2c9062156af2804d0828cd0b3f86a67dbb6ec50f0792d87ce5ee41941466c21",
+    "calls": [
+      "BigInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475467:17406317",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalClockOnDeactivation",
+    "qualified_name": "goalClockOnDeactivation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475467,
+    "end_line": 475472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs2"
+    ],
+    "body_sha256": "369d797e55a2814ee8c9ebfc4f06dba31ba5472fc2fe37a7a15e72609ea78b00",
+    "calls": [
+      "BigInt",
+      "goalElapsedMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475474:17406570",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalStateShapeValid",
+    "qualified_name": "isGoalStateShapeValid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475474,
+    "end_line": 475476,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "identity"
+    ],
+    "body_sha256": "b23633e3b18e580cfb23b3779f059a4a93ab3e0e09afe54e3fecf38d231ea489",
+    "calls": [
+      "GOAL_ID_PATTERN.test",
+      "isGoalIdentityValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475477:17406786",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalIdentityValid",
+    "qualified_name": "isGoalIdentityValid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475477,
+    "end_line": 475479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "identity"
+    ],
+    "body_sha256": "87acd69bf64fe3f7f50785e7c72053ebdbb9955e547f7b2030654fab074a8602",
+    "calls": [
+      "isGoalOwnerValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475480:17406996",
+    "artifact": "host",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalOwnerValid",
+    "qualified_name": "isGoalOwnerValid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475480,
+    "end_line": 475485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "agentSessionId"
+    ],
+    "body_sha256": "e6940fd958fb9426f9eacd0a117db4a8ed877d37b190ffe098bce0a1ba69232f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254668:7977241",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalWorkedMs",
+    "qualified_name": "goalWorkedMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254668,
+    "end_line": 254670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState"
+    ],
+    "body_sha256": "cbdc75c7eb5c65b51c4fe3311c56e8ac70f65d5b0d0a629c48bc4ea744a38ec0",
+    "calls": [
+      "BigInt",
+      "Number"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254671:7977337",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalElapsedMsFrom",
+    "qualified_name": "goalElapsedMsFrom",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254671,
+    "end_line": 254676,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "accruedMs",
+      "accrualAnchorMs",
+      "nowMs"
+    ],
+    "body_sha256": "31b4c2331917cc0f399ee2ae28b5c26d03ab99161e6325d479ddf482f7e30e2e",
+    "calls": [
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254677:7977524",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalElapsedMs",
+    "qualified_name": "goalElapsedMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254677,
+    "end_line": 254680,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs"
+    ],
+    "body_sha256": "07fe2074b119aac34d3e4452f485d56b6bba07e6005715ab6453011d5bfe0bfc",
+    "calls": [
+      "Number",
+      "goalElapsedMsFrom",
+      "goalWorkedMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254681:7977725",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalClockOnActivation",
+    "qualified_name": "goalClockOnActivation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254681,
+    "end_line": 254686,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs"
+    ],
+    "body_sha256": "2c44a677398495baf8e6cadac044f4000cf1558c49141bb9db854b4085e39f2f",
+    "calls": [
+      "BigInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254687:7977893",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "goalClockOnDeactivation",
+    "qualified_name": "goalClockOnDeactivation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254687,
+    "end_line": 254692,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "nowMs"
+    ],
+    "body_sha256": "b50af8aba40670f81469b13451af4d1906747add78f8d5d4f9675320db8568d4",
+    "calls": [
+      "BigInt",
+      "goalElapsedMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254694:7978144",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalStateShapeValid",
+    "qualified_name": "isGoalStateShapeValid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254694,
+    "end_line": 254696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "identity2"
+    ],
+    "body_sha256": "aae57a3d245940090d6d5141852e0d6227c4f4fd115195d0c84d879e9d6a46ce",
+    "calls": [
+      "GOAL_ID_PATTERN.test",
+      "isGoalIdentityValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254697:7978362",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalIdentityValid",
+    "qualified_name": "isGoalIdentityValid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254697,
+    "end_line": 254699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "identity2"
+    ],
+    "body_sha256": "38c05eb71674e157d4abf038fb4d2f5da67b880c6582bc5862d6b3849ac70841",
+    "calls": [
+      "isGoalOwnerValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:254700:7978575",
+    "artifact": "evaluation",
+    "module": "agent-core/goal-continuation.js",
+    "name": "isGoalOwnerValid",
+    "qualified_name": "isGoalOwnerValid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 254700,
+    "end_line": 254705,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "goalState",
+      "agentSessionId"
+    ],
+    "body_sha256": "e6940fd958fb9426f9eacd0a117db4a8ed877d37b190ffe098bce0a1ba69232f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

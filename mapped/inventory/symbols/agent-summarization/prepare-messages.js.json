@@ -1,0 +1,534 @@
+[
+  {
+    "id": "host:620512:23001105",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "hasUserInfoTag",
+    "qualified_name": "hasUserInfoTag",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620512,
+    "end_line": 620519,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "ffa66518db43f3433c8c253f34ca1ee9729230d42b2e19afafc7fb71004c8f61",
+    "calls": [
+      ".join",
+      ".map",
+      "USER_INFO_TAG_REGEX.test",
+      "content.filter",
+      "content.search",
+      "isRedactedString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620520:23001473",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isEmptyAssistantMessage3",
+    "qualified_name": "isEmptyAssistantMessage3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620520,
+    "end_line": 620529,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "e64c9de0520a904df0d25e5b1ac20fdc6f8dd641ae2717b4b228a614b6003922",
+    "calls": [
+      "Array.isArray",
+      "isRedactedString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620533:23001959",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "plainTextOf",
+    "qualified_name": "plainTextOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620533,
+    "end_line": 620539,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "40fbf39f0be00ccfbf89a25142481cfd5cc8fcd23033b69de6db53e04104b021",
+    "calls": [
+      "isRedactedString",
+      "value.unwrap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620540:23002156",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "textOnlyContentOf",
+    "qualified_name": "textOnlyContentOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620540,
+    "end_line": 620554,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "b5f1faf2642e806d3d77995238c386c863c3b3e2c3481d606b0dea974b8f5e8f",
+    "calls": [
+      "Array.isArray",
+      "plainTextOf"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620555:23002542",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isInjectedReminderMessage",
+    "qualified_name": "isInjectedReminderMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620555,
+    "end_line": 620565,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "d1e5e0c1d80e2f51310326f5533b7cb34b4f163cc40839f24963fae68524e672",
+    "calls": [
+      "SYSTEM_REMINDER_ONLY_RE.test",
+      "text3.trim",
+      "textOnlyContentOf",
+      "trimmed.endsWith",
+      "trimmed.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620567:23002972",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isSyntheticUserTurnMessage",
+    "qualified_name": "isSyntheticUserTurnMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620567,
+    "end_line": 620569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "fb15f768909d67406c97b11a1e2594ef7e3bfa0658914939833ffe8615cf16ad",
+    "calls": [
+      "isInjectedReminderMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620571:23003233",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isAgentMessageTurnMessage",
+    "qualified_name": "isAgentMessageTurnMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620571,
+    "end_line": 620573,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "ce56d92ca908e3c8fba702f365a32a2c75cd0dcdc3d6115cb2d53f4b95ad8d90",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:620574:23003394",
+    "artifact": "host",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "prepareMessagesForCompaction",
+    "qualified_name": "prepareMessagesForCompaction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 620574,
+    "end_line": 620587,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "b8af272fc54ab300217b7c663bef182b30ca84eeae2ef1a246b00e55b694e9ee",
+    "calls": [
+      "hasUserInfoTag",
+      "messages2.filter",
+      "messages2.find",
+      "messagesForSummarization.slice"
+    ],
+    "writes": [
+      "messagesForSummarization",
+      "userInfoMessage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304866:9904986",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "hasUserInfoTag",
+    "qualified_name": "hasUserInfoTag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304866,
+    "end_line": 304873,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "004e0f29cb51d44abdf8e17bde0ba6d84e005bacd9713a51e6ddb64ecabbbfe1",
+    "calls": [
+      ".join",
+      ".map",
+      "USER_INFO_TAG_REGEX.test",
+      "content.filter",
+      "content.search",
+      "isRedactedString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304874:9905356",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isEmptyAssistantMessage3",
+    "qualified_name": "isEmptyAssistantMessage3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304874,
+    "end_line": 304883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "e64c9de0520a904df0d25e5b1ac20fdc6f8dd641ae2717b4b228a614b6003922",
+    "calls": [
+      "Array.isArray",
+      "isRedactedString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304887:9905842",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "plainTextOf",
+    "qualified_name": "plainTextOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304887,
+    "end_line": 304893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "40fbf39f0be00ccfbf89a25142481cfd5cc8fcd23033b69de6db53e04104b021",
+    "calls": [
+      "isRedactedString",
+      "value.unwrap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304894:9906039",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "textOnlyContentOf",
+    "qualified_name": "textOnlyContentOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304894,
+    "end_line": 304908,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "013ac0772597e57b62f4ccf1536b6b09b02fa2a088fdbd29b67f63e74d0790c4",
+    "calls": [
+      "Array.isArray",
+      "plainTextOf"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304909:9906428",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isInjectedReminderMessage",
+    "qualified_name": "isInjectedReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304909,
+    "end_line": 304919,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "d1e5e0c1d80e2f51310326f5533b7cb34b4f163cc40839f24963fae68524e672",
+    "calls": [
+      "SYSTEM_REMINDER_ONLY_RE.test",
+      "text3.trim",
+      "textOnlyContentOf",
+      "trimmed.endsWith",
+      "trimmed.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304921:9906858",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isSyntheticUserTurnMessage",
+    "qualified_name": "isSyntheticUserTurnMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304921,
+    "end_line": 304923,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "fb15f768909d67406c97b11a1e2594ef7e3bfa0658914939833ffe8615cf16ad",
+    "calls": [
+      "isInjectedReminderMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304925:9907119",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "isAgentMessageTurnMessage",
+    "qualified_name": "isAgentMessageTurnMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304925,
+    "end_line": 304927,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "ce56d92ca908e3c8fba702f365a32a2c75cd0dcdc3d6115cb2d53f4b95ad8d90",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304928:9907280",
+    "artifact": "evaluation",
+    "module": "agent-summarization/prepare-messages.js",
+    "name": "prepareMessagesForCompaction",
+    "qualified_name": "prepareMessagesForCompaction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304928,
+    "end_line": 304941,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "d6117786d8c377a5587040992cd0716d74be57a9005eecd9145b3e9636164a6a",
+    "calls": [
+      "hasUserInfoTag",
+      "messages.filter",
+      "messages.find",
+      "messagesForSummarization.slice"
+    ],
+    "writes": [
+      "messagesForSummarization",
+      "userInfoMessage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,398 @@
+[
+  {
+    "id": "evaluation:587150:22099592",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "isDeliveryToolCall",
+    "qualified_name": "isDeliveryToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587150,
+    "end_line": 587155,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "8c7ab4c99001ad41e66be1c504b15205d8b2c1116ff3e9fedfb55b30958190c6",
+    "calls": [
+      "invokesFirstPartyTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587156:22099774",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "asCoreMessage",
+    "qualified_name": "asCoreMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587156,
+    "end_line": 587164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "98c41656c79e308fc0ad83190685d846c60b9df31908d7bc668182e65af2471a",
+    "calls": [
+      "Array.isArray"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587165:22100075",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "toolCalls2",
+    "qualified_name": "toolCalls2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587165,
+    "end_line": 587170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "30a4e0431528f2964850fb9e5df35d98bbf31932800769557acc81203f1f14cf",
+    "calls": [
+      "message.content.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587171:22100274",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "hasDeliveryToolCall",
+    "qualified_name": "hasDeliveryToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587171,
+    "end_line": 587173,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "calls"
+    ],
+    "body_sha256": "eb1459925237ebced553cde2d7523a9f84d8c2a87d02b435e4fd5f546b250103",
+    "calls": [
+      "calls.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587174:22100355",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "deliveryToolCallIds",
+    "qualified_name": "deliveryToolCallIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587174,
+    "end_line": 587176,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "3f971e214b3a99db58c7e0c2374bf3cfa572efa42b2c05c99567cc628ba2ee77",
+    "calls": [
+      ".flatMap",
+      "toolCalls2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587177:22100496",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "erroredToolResultIds",
+    "qualified_name": "erroredToolResultIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587177,
+    "end_line": 587193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "9935e682a9435e9f6020c8596539e7e852f8c706893155ce12f19cb5da897e8d",
+    "calls": [
+      "Array.isArray",
+      "ids.add",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587194:22101105",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "lastAssistantText",
+    "qualified_name": "lastAssistantText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587194,
+    "end_line": 587197,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawMessages"
+    ],
+    "body_sha256": "2b8d48c6954fda849498320ab9e559d0d3dd8c401a86078df1bb7b18be51e054",
+    "calls": [
+      "asCoreMessage",
+      "assistantTextOf2",
+      "rawMessages.at"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587198:22101275",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "isUndeliveredAssistantText",
+    "qualified_name": "isUndeliveredAssistantText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587198,
+    "end_line": 587200,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "86e00f894b39267d765d66a6b88c86e3cd2fe81433c14069ca3d8d548c91b71b",
+    "calls": [
+      "toolCalls2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587201:22101399",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "assistantTextOf2",
+    "qualified_name": "assistantTextOf2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587201,
+    "end_line": 587204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "1df3ab202c2c443e58639841990767ced5b0b9019159c5fcdb9dff4ee32c64bf",
+    "calls": [
+      ".join",
+      "message.content.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587205:22101599",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "isPageWriteToolCall",
+    "qualified_name": "isPageWriteToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587205,
+    "end_line": 587207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "part"
+    ],
+    "body_sha256": "1ac3feb8511c680365c4a09f191e5becda131af28a8bc4a8218ab1045a4b4e2f",
+    "calls": [
+      "invokesFirstPartyTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587208:22101723",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "hasUndeliveredTextAfter",
+    "qualified_name": "hasUndeliveredTextAfter",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587208,
+    "end_line": 587212,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages",
+      "index"
+    ],
+    "body_sha256": "4ee483e24c3b955d185e2328d1e0bdabf2b869a18d94d97b3e9a942c1ea6f8e7",
+    "calls": [
+      ".some",
+      "messages.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587213:22101945",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-shape.ts",
+    "name": "turnEndedOnSilentToolCalls",
+    "qualified_name": "turnEndedOnSilentToolCalls",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587213,
+    "end_line": 587264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawMessages"
+    ],
+    "body_sha256": "b71b6a0e7b279272ee0a8aac436034e4d6575f53464fedc3a207254ae6d1c229",
+    "calls": [
+      ".some",
+      "deliveryToolCallIds",
+      "erroredToolResultIds",
+      "hasDeliveryToolCall",
+      "hasUndeliveredTextAfter",
+      "isInjectedReminderMessage",
+      "isUndeliveredAssistantText",
+      "rawMessages.map",
+      "tailCalls.some",
+      "toolCalls2"
+    ],
+    "writes": [
+      "ackedFirst",
+      "boundary",
+      "firstCallingIndex",
+      "index",
+      "lastDeliveryIndex",
+      "tailIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 15,
+      "loops": 4,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

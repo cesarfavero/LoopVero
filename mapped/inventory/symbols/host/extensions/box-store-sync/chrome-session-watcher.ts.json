@@ -1,0 +1,233 @@
+[
+  {
+    "id": "host:481799:17633725",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.constructor",
+    "qualified_name": "ChromeSessionWatcher.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481799,
+    "end_line": 481828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "eb74f80eae5806240f1f3b145dca98cea3547dfbf859b8f0accd99da0d20636e",
+    "calls": [
+      "deps.debounce.wrap"
+    ],
+    "writes": [
+      "this.deps",
+      "this.log",
+      "this.startWatch",
+      "this.statMtimeMs",
+      "this.trigger"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:481837:17634803",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.start",
+    "qualified_name": "ChromeSessionWatcher.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481837,
+    "end_line": 481846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1daa818ee59dd4a984c46a973a23f6e9af17c2c7dfcf46ca85fcba5b144db1ba",
+    "calls": [
+      "errorLogTag",
+      "this.log",
+      "this.refreshSessionDbMtimes",
+      "this.startWatch"
+    ],
+    "writes": [
+      "this.watcher"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:481847:17635227",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.handleFsEvent",
+    "qualified_name": "ChromeSessionWatcher.handleFsEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481847,
+    "end_line": 481855,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "filename"
+    ],
+    "body_sha256": "0fb03b15cb4828ba53f19a72cca98cda7e8c31cc43b2b1f036e4c8dce5628c0a",
+    "calls": [
+      "this.isSessionDbFile",
+      "this.sessionDbChangedSinceLastCheck",
+      "this.trigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:481856:17635468",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.isSessionDbFile",
+    "qualified_name": "ChromeSessionWatcher.isSessionDbFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481856,
+    "end_line": 481858,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "filename"
+    ],
+    "body_sha256": "3abaac0024532637f371138e3dc783dd9a720f7ef8c8ac9e97aeffb0365606e9",
+    "calls": [
+      "this.deps.sessionDbNames.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:481859:17635600",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.sessionDbChangedSinceLastCheck",
+    "qualified_name": "ChromeSessionWatcher.sessionDbChangedSinceLastCheck",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481859,
+    "end_line": 481871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f5c38fec562b1ac1d8961641a3aea6d4912161313db0befd2e6b417e6acbdacb",
+    "calls": [
+      "this.lastMtimes.get",
+      "this.lastMtimes.set",
+      "this.statMtimeMs"
+    ],
+    "writes": [
+      "changed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:481872:17636040",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.refreshSessionDbMtimes",
+    "qualified_name": "ChromeSessionWatcher.refreshSessionDbMtimes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481872,
+    "end_line": 481877,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a4ffdd8e25b23dfe0f9d99da6d98f071365e8f055099503849542d2280a3ff54",
+    "calls": [
+      "this.lastMtimes.set",
+      "this.statMtimeMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:481878:17636274",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/chrome-session-watcher.ts",
+    "name": "ChromeSessionWatcher.stop",
+    "qualified_name": "ChromeSessionWatcher.stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 481878,
+    "end_line": 481886,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "bcf18320187ebb01c7b3700d3774ec61183492356e8d560f80040b297c118287",
+    "calls": [
+      "this.trigger.dispose",
+      "this.watcher.close"
+    ],
+    "writes": [
+      "this.stopped",
+      "this.watcher"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

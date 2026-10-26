@@ -1,0 +1,696 @@
+[
+  {
+    "id": "host:775283:29790141",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "hasStripeLinkConnector",
+    "qualified_name": "hasStripeLinkConnector",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775283,
+    "end_line": 775285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpTools"
+    ],
+    "body_sha256": "51c9ec3bb6c522a44e9f439e52666fccff718307a66b8636d5fc09a7db514f38",
+    "calls": [
+      "mcpTools.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775286:29790267",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeMerchantUrl",
+    "qualified_name": "normalizeMerchantUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775286,
+    "end_line": 775300,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "e57a6959a8404a02cfe72e4274af64e0bc38405449f6f815df9408938772dcf1",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError",
+      "parseMerchantUrl"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775301:29790784",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeCurrency",
+    "qualified_name": "normalizeCurrency",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775301,
+    "end_line": 775308,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "718fd0815ec728445439ad2f1a7c755da736c236d20b24f5e6ed9d92589452fd",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775309:29791113",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeTitle",
+    "qualified_name": "normalizeTitle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775309,
+    "end_line": 775318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2b386081ca61f715bc3ef05eeae7d2a63c14f340867a57a826696d2763271d99",
+    "calls": [
+      ".filter",
+      "clampLine",
+      "new SandToolInputError",
+      "title.split"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775319:29791576",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeLineItems",
+    "qualified_name": "normalizeLineItems",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775319,
+    "end_line": 775332,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "amountCents"
+    ],
+    "body_sha256": "739730eff258f73f5959374c3858bd3f96e9bdf839e33c74df2b0a4392d70703",
+    "calls": [
+      "items.map",
+      "items.reduce",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775333:29792224",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeShipTo",
+    "qualified_name": "normalizeShipTo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775333,
+    "end_line": 775338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "shipTo"
+    ],
+    "body_sha256": "0a7d84da4307f3b9dbb4fce6c3e27f50ebf3ef4fab0c0ee97a0491c42b2cf357",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775339:29792429",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeVirtualCardRequest",
+    "qualified_name": "normalizeVirtualCardRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775339,
+    "end_line": 775350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3d9f82614d4f1c7119773caacf09cd5de87d53b08d9507e7b17b54a7a1e12e19",
+    "calls": [
+      "clampBlock",
+      "clampLine",
+      "normalizeCurrency",
+      "normalizeLineItems",
+      "normalizeMerchantUrl",
+      "normalizeShipTo",
+      "normalizeTitle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775351:29792977",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "runRequestVirtualCard",
+    "qualified_name": "runRequestVirtualCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775351,
+    "end_line": 775375,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "deps"
+    ],
+    "body_sha256": "df00504e653f59786cf09bd5a920cdba9c26c109ba18d9af5e243275a74fb5db",
+    "calls": [
+      "Date.now",
+      "buildVirtualCardApprovalMessage",
+      "deps.endTurn",
+      "deps.getAgentId",
+      "deps.onSendMessage",
+      "deps.requestCard",
+      "deps.retireCard",
+      "deps.toolDecisions.askAPerson",
+      "invariant",
+      "normalizeVirtualCardRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775376:29794770",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "createRequestVirtualCardTool",
+    "qualified_name": "createRequestVirtualCardTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775376,
+    "end_line": 775388,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "e047031b9f9ba271db92d3d5b293b10929e308bf437408fff102b3a611897883",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775382:29796253",
+    "artifact": "host",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRequestVirtualCardTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775382,
+    "end_line": 775386,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "529bf4fd6e2a206ca378f22307479d80fc1c86058f52d9d039147a233bafe746",
+    "calls": [
+      "noteToolTargetHost",
+      "parseMerchantUrl",
+      "runRequestVirtualCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574928:21516444",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "hasStripeLinkConnector",
+    "qualified_name": "hasStripeLinkConnector",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574928,
+    "end_line": 574930,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcpTools"
+    ],
+    "body_sha256": "51c9ec3bb6c522a44e9f439e52666fccff718307a66b8636d5fc09a7db514f38",
+    "calls": [
+      "mcpTools.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574931:21516570",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeMerchantUrl",
+    "qualified_name": "normalizeMerchantUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574931,
+    "end_line": 574945,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "484f8406f8dfa8a05937cd60f3142aaa3796ac9d07e5433c3dd2e21c5710ff1a",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError",
+      "parseMerchantUrl"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574946:21517083",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeCurrency",
+    "qualified_name": "normalizeCurrency",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574946,
+    "end_line": 574953,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "718fd0815ec728445439ad2f1a7c755da736c236d20b24f5e6ed9d92589452fd",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574954:21517412",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeTitle",
+    "qualified_name": "normalizeTitle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574954,
+    "end_line": 574963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "ea6daed9a44f5952f8de39d8a9fe8a3697638aab8a2e31cc7f0608dfb6ad93e1",
+    "calls": [
+      ".filter",
+      "clampLine",
+      "new SandToolInputError",
+      "title.split"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574964:21517872",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeLineItems",
+    "qualified_name": "normalizeLineItems",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574964,
+    "end_line": 574977,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "amountCents"
+    ],
+    "body_sha256": "739730eff258f73f5959374c3858bd3f96e9bdf839e33c74df2b0a4392d70703",
+    "calls": [
+      "items.map",
+      "items.reduce",
+      "new SandToolInputError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574978:21518520",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeShipTo",
+    "qualified_name": "normalizeShipTo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574978,
+    "end_line": 574983,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "shipTo"
+    ],
+    "body_sha256": "0a7d84da4307f3b9dbb4fce6c3e27f50ebf3ef4fab0c0ee97a0491c42b2cf357",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574984:21518725",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "normalizeVirtualCardRequest",
+    "qualified_name": "normalizeVirtualCardRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574984,
+    "end_line": 574995,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "3d9f82614d4f1c7119773caacf09cd5de87d53b08d9507e7b17b54a7a1e12e19",
+    "calls": [
+      "clampBlock",
+      "clampLine",
+      "normalizeCurrency",
+      "normalizeLineItems",
+      "normalizeMerchantUrl",
+      "normalizeShipTo",
+      "normalizeTitle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574996:21519273",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "runRequestVirtualCard",
+    "qualified_name": "runRequestVirtualCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574996,
+    "end_line": 575020,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "deps"
+    ],
+    "body_sha256": "df00504e653f59786cf09bd5a920cdba9c26c109ba18d9af5e243275a74fb5db",
+    "calls": [
+      "Date.now",
+      "buildVirtualCardApprovalMessage",
+      "deps.endTurn",
+      "deps.getAgentId",
+      "deps.onSendMessage",
+      "deps.requestCard",
+      "deps.retireCard",
+      "deps.toolDecisions.askAPerson",
+      "invariant",
+      "normalizeVirtualCardRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575021:21521066",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "createRequestVirtualCardTool",
+    "qualified_name": "createRequestVirtualCardTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575021,
+    "end_line": 575033,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "e047031b9f9ba271db92d3d5b293b10929e308bf437408fff102b3a611897883",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:575027:21522549",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/virtual-card-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRequestVirtualCardTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 575027,
+    "end_line": 575031,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "529bf4fd6e2a206ca378f22307479d80fc1c86058f52d9d039147a233bafe746",
+    "calls": [
+      "noteToolTargetHost",
+      "parseMerchantUrl",
+      "runRequestVirtualCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,330 @@
+[
+  {
+    "id": "host:703423:26730766",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "createSandMobilePushSender",
+    "qualified_name": "createSandMobilePushSender",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703423,
+    "end_line": 703436,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client"
+    ],
+    "body_sha256": "7a4e5128f62daf9ba99a2de3fd866186c95d75453ca7b77c7f3b51ff102a2b97",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703438:26731380",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "isBoxHarness",
+    "qualified_name": "isBoxHarness",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703438,
+    "end_line": 703440,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "ced42a4c91d7efa3de1fc32f949f92dfe8a77d4d77ab77ce7d3de642dd3ea638",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703442:26731502",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.constructor",
+    "qualified_name": "SandMobilePushNotifier.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703442,
+    "end_line": 703446,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "216621eeb0d82958dbcbbe14c3a3a54ca3e8e4876aea58448db33d1deb88df32",
+    "calls": [
+      "new SandOsNotificationDecider"
+    ],
+    "writes": [
+      "this.decider",
+      "this.deps",
+      "this.now"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703452:26731717",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.seedBaseline",
+    "qualified_name": "SandMobilePushNotifier.seedBaseline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703452,
+    "end_line": 703455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agents"
+    ],
+    "body_sha256": "fa14b61186d18be1f11a1a648932cb49ecf2dd57b6817245e81f4c2e9aeeb46b",
+    "calls": [
+      ".map",
+      "agents.filter",
+      "this.decider.seedBaseline",
+      "this.flushPreSeedDeltas"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703456:26731870",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.handleAgentsEvent",
+    "qualified_name": "SandMobilePushNotifier.handleAgentsEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703456,
+    "end_line": 703468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event",
+      "presence"
+    ],
+    "body_sha256": "dd21a0ca1c074fb5a4a37e8b37e74e5db4131ad8d889047e63b52c6c2cbf88ac",
+    "calls": [
+      ".map",
+      "event.agents.filter",
+      "this.decider.decide",
+      "this.fire",
+      "this.flushPreSeedDeltas",
+      "this.resolvePresence"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703469:26732318",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.handleAgentUpsertedEvent",
+    "qualified_name": "SandMobilePushNotifier.handleAgentUpsertedEvent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703469,
+    "end_line": 703482,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event",
+      "presence"
+    ],
+    "body_sha256": "0ae295e485d733616520df2bec37cfe63f738bac653b9217d33fe0b52173bdc8",
+    "calls": [
+      "isBoxHarness",
+      "this.decider.decideAgent",
+      "this.fire",
+      "this.preSeedDeltas.push",
+      "this.resolvePresence",
+      "toNotificationSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703483:26732748",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.resolvePresence",
+    "qualified_name": "SandMobilePushNotifier.resolvePresence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703483,
+    "end_line": 703488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "presence"
+    ],
+    "body_sha256": "2871dffd6c43dd528d62bb3d663fe3e2507f1f3bee75b5b372b6f62acad2e8ef",
+    "calls": [
+      "this.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703489:26733060",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.forget",
+    "qualified_name": "SandMobilePushNotifier.forget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703489,
+    "end_line": 703491,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "6a29cc8a2f9b90cc0d95ca587b87cbcb837d63f1101fa061902039b5d74d4e79",
+    "calls": [
+      "this.decider.forget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703492:26733130",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.flushPreSeedDeltas",
+    "qualified_name": "SandMobilePushNotifier.flushPreSeedDeltas",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703492,
+    "end_line": 703502,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "ea384be8327b8074ae9803257fffd4635c2658fab626586b7872e2d677b0738b",
+    "calls": [
+      "this.handleAgentUpsertedEvent"
+    ],
+    "writes": [
+      "this.hasSeededBaseline",
+      "this.preSeedDeltas"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:703503:26733438",
+    "artifact": "host",
+    "module": "host/extensions/notifications/mobile-push-notifier.ts",
+    "name": "SandMobilePushNotifier.fire",
+    "qualified_name": "SandMobilePushNotifier.fire",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 703503,
+    "end_line": 703515,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "transition"
+    ],
+    "body_sha256": "9156ac53cf240afb5a25f0627ad559022dd976f30093e57f7a22c8da76af6393",
+    "calls": [
+      ".catch",
+      "parseAgentId",
+      "this.deps.notify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

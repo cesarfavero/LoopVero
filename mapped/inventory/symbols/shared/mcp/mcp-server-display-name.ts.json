@@ -1,0 +1,202 @@
+[
+  {
+    "id": "evaluation:577215:21614715",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "stripAccountSuffix",
+    "qualified_name": "stripAccountSuffix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577215,
+    "end_line": 577218,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "39ef15df954033a14432c45bb6ee074879e390b2348b8d83e0a507d8bce73454",
+    "calls": [
+      "serverIdentifier.lastIndexOf",
+      "serverIdentifier.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577219:21614930",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "stripGrokMintedSuffix",
+    "qualified_name": "stripGrokMintedSuffix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577219,
+    "end_line": 577221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "1a3d7e042d36df2e75f0f770a506872f271db1b7077778b4ed170628bd5f12fc",
+    "calls": [
+      "name18.endsWith",
+      "name18.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577222:21615122",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "configuredServerName",
+    "qualified_name": "configuredServerName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577222,
+    "end_line": 577235,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "96c733a834367f682d8f960c8800967bfba45893503ffea2ab5f7c45bcdeeaf1",
+    "calls": [
+      "MCP_SERVER_IDENTIFIER_SCOPE2.exec",
+      "connectCardManifest",
+      "rowIdentifier.slice",
+      "stripAccountSuffix",
+      "stripGrokMintedSuffix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577236:21615606",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "capitalizeLowercaseWord",
+    "qualified_name": "capitalizeLowercaseWord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577236,
+    "end_line": 577240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "word"
+    ],
+    "body_sha256": "958ad80ea1df21036a36712da20623cd487815b053a34a500df9d7bfc6ce26e9",
+    "calls": [
+      ".toLocaleUpperCase",
+      "word.charAt",
+      "word.slice",
+      "word.toLocaleLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577241:21615824",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "humanizeServerName",
+    "qualified_name": "humanizeServerName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577241,
+    "end_line": 577244,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "e038846d00dfaee4129120df8e3d37098ce045b70a48b243a1ca6aa9eec70d13",
+    "calls": [
+      ".filter",
+      ".join",
+      "/\\s/.test",
+      "name18.split",
+      "words.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577245:21616036",
+    "artifact": "evaluation",
+    "module": "shared/mcp/mcp-server-display-name.ts",
+    "name": "mcpServerDisplayName",
+    "qualified_name": "mcpServerDisplayName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577245,
+    "end_line": 577247,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "serverIdentifier"
+    ],
+    "body_sha256": "80f3002780efde4db01a3310f29089d5485912ae99123b9420180ea7cc54b4fc",
+    "calls": [
+      "configuredServerName",
+      "humanizeServerName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

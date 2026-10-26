@@ -1,0 +1,163 @@
+[
+  {
+    "id": "evaluation:490113:17794034",
+    "artifact": "evaluation",
+    "module": "core/runner/auto-review-gate.ts",
+    "name": "sameAutoReviewModes",
+    "qualified_name": "sameAutoReviewModes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490113,
+    "end_line": 490116,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "9f554cb777336b9a3fe8401aea12ba658d21c7d687081f7da5b30edde881dd15",
+    "calls": [
+      ".every",
+      "Object.entries",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490117:17794209",
+    "artifact": "evaluation",
+    "module": "core/runner/auto-review-gate.ts",
+    "name": "createAutoReviewGate",
+    "qualified_name": "createAutoReviewGate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490117,
+    "end_line": 490169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "a737ffcd61f7f6d4f916278d12b9333ec9400d6f7fbad14bc00d3a71069aa050",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490120:17794295",
+    "artifact": "evaluation",
+    "module": "core/runner/auto-review-gate.ts",
+    "name": "currentModes",
+    "qualified_name": "createAutoReviewGate/currentModes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490120,
+    "end_line": 490151,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "e8ed28af6a28540a78f955c59bf381fb57e19926a6d278dc5aea5bfe7def7698",
+    "calls": [
+      ".expireSurfaces",
+      "deps.controller",
+      "deps.getModes",
+      "new Set",
+      "retiredSurfaces.add",
+      "sameAutoReviewModes"
+    ],
+    "writes": [
+      "lastSeenModes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490152:17795387",
+    "artifact": "evaluation",
+    "module": "core/runner/auto-review-gate.ts",
+    "name": "assertNoPendingApproval",
+    "qualified_name": "createAutoReviewGate/assertNoPendingApproval",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490152,
+    "end_line": 490157,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "2156df4fcc099b6b924574cc646bf9d5bb85079131c0f10d116e0844c9d17bfd",
+    "calls": [
+      ".getPendingApprovals",
+      "deps.controller",
+      "new SandAutoReviewPendingApprovalError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAutoReviewPendingApprovalError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:490158:17795625",
+    "artifact": "evaluation",
+    "module": "core/runner/auto-review-gate.ts",
+    "name": "userInstructions",
+    "qualified_name": "createAutoReviewGate/userInstructions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 490158,
+    "end_line": 490167,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "40fe34155b33dc02676c886bda4da11e1550d227d3c4f3aac8910b0b54b43f22",
+    "calls": [
+      "deps.getInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

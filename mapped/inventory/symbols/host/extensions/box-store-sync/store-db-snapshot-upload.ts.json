@@ -1,0 +1,316 @@
+[
+  {
+    "id": "host:480493:17587248",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.constructor",
+    "qualified_name": "StoreDbSnapshotUpload.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480493,
+    "end_line": 480500,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "27ecb50312206dc9f304288702c68efbac97e7a52c8fdf92d451ee6d7064b174",
+    "calls": [],
+    "writes": [
+      "this.largeObjectThreshold",
+      "this.log",
+      "this.manifestStore",
+      "this.maxObjectBytes",
+      "this.now",
+      "this.objectStoreProvider"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480501:17587532",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.objectStore",
+    "qualified_name": "StoreDbSnapshotUpload.objectStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480501,
+    "end_line": 480503,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId"
+    ],
+    "body_sha256": "d45f4f4e93197fa7ab588594d57a3482ceb9eb0a705e1a5b3438049a482f11ba",
+    "calls": [
+      "this.objectStoreProvider.forStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480504:17587622",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.elapsedDurationMs",
+    "qualified_name": "StoreDbSnapshotUpload.elapsedDurationMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480504,
+    "end_line": 480506,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "startedAt"
+    ],
+    "body_sha256": "8a1f6c890e13ddbb6cc1656a6076e8aa08f627ca49b91342faccf6ee5b7d8ad1",
+    "calls": [
+      "Math.max",
+      "this.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480507:17587717",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.uploadAgentDbSnapshot",
+    "qualified_name": "StoreDbSnapshotUpload.uploadAgentDbSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480507,
+    "end_line": 480591,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId",
+      "manifest",
+      "relPath",
+      "snapshotPath",
+      "mode"
+    ],
+    "body_sha256": "82fbeda8b21ab4d7f6f192874e1f49f36a26114ab9d4d50e9da1d34073d3f24f",
+    "calls": [
+      ".put",
+      ".putFromFile",
+      "errorMessage",
+      "isBoxStoreManifestFileEntry",
+      "manifest.get",
+      "sha256File",
+      "sha256Hex",
+      "this.elapsedDurationMs",
+      "this.log",
+      "this.manifestStore.setManifestEntry",
+      "this.now",
+      "this.objectStore"
+    ],
+    "writes": [
+      "bytes",
+      "sha",
+      "size"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 6,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "host:480597:17590478",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.runVacuumOffThread",
+    "qualified_name": "StoreDbSnapshotUpload.runVacuumOffThread",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480597,
+    "end_line": 480622,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7bac18deb6d848ea0be0e9f1c7db74ffc4965255bb7c52ccf8e4d728770993b3",
+    "calls": [
+      "defaultVacuumWorkerEntryPath",
+      "errorMessage",
+      "runVacuumInWorker",
+      "sqliteVacuumInto",
+      "this.discardSnapshotTemp",
+      "this.log"
+    ],
+    "writes": [
+      "this.vacuumWorkerAvailable"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480623:17591497",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "StoreDbSnapshotUpload.discardSnapshotTemp",
+    "qualified_name": "StoreDbSnapshotUpload.discardSnapshotTemp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480623,
+    "end_line": 480630,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "998f75e160ee6d27fc02528fed72d6f8849c5f1755cd1038153cb4ae00996543",
+    "calls": [
+      "errorMessage",
+      "findSystemErrno",
+      "this.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480632:17591746",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "defaultVacuumWorkerEntryPath",
+    "qualified_name": "defaultVacuumWorkerEntryPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480632,
+    "end_line": 480637,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "756ed9448419cf89c3402a5eaa4d9a6e8b5e98a6c917118a6df598c745afed3d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480641:17592098",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "runVacuumInWorker",
+    "qualified_name": "runVacuumInWorker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480641,
+    "end_line": 480679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a824fb13269224d4a9d456806494be6e7b80aae68f515f69bee5354e1b767e38",
+    "calls": [
+      "new Promise"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480652:17592495",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/store-db-snapshot-upload.ts",
+    "name": "finish",
+    "qualified_name": "runVacuumInWorker/<callback>/finish",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480652,
+    "end_line": 480657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "run"
+    ],
+    "body_sha256": "972985ba047bcad6441f1e4c71343506e8d3d82f727a914c958cd73f7b9b591b",
+    "calls": [
+      "run",
+      "worker.terminate"
+    ],
+    "writes": [
+      "settled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

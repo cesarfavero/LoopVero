@@ -1,0 +1,146 @@
+[
+  {
+    "id": "evaluation:566922:21114202",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-publish-app.ts",
+    "name": "runPublishAppAction",
+    "qualified_name": "runPublishAppAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566922,
+    "end_line": 566944,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "beec14689a4729ad624897b4ae016569f3c38e578101644ee78c1e2150b6002a",
+    "calls": [
+      "args.agent_id.trim",
+      "args.project_dir.trim",
+      "deps.api.publishApp",
+      "describePublishAppResult",
+      "publishAppRejectionMessage",
+      "raiseCard"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:566945:21115067",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-publish-app.ts",
+    "name": "raiseCard",
+    "qualified_name": "raiseCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566945,
+    "end_line": 566957,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "result"
+    ],
+    "body_sha256": "85580f21a9663fa1b79cd8e0707245a529c64fe3a25425c98323a157a2128cc3",
+    "calls": [
+      "deps.raisePublishCard",
+      "errorLogTag",
+      "process.stderr.write"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:566958:21115404",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-publish-app.ts",
+    "name": "describePublishAppResult",
+    "qualified_name": "describePublishAppResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566958,
+    "end_line": 566972,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "carded",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "8162e72399f1d563d1e3d20e74e0dd5e980948cd7268e4aac54b752c44504eba",
+    "calls": [
+      "cloudAgentPageUrl",
+      "folderLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:566973:21117180",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/cloud-agent-publish-app.ts",
+    "name": "publishAppRejectionMessage",
+    "qualified_name": "publishAppRejectionMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 566973,
+    "end_line": 566997,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63",
+      "agentId"
+    ],
+    "body_sha256": "888f44b17f1b567c793207808313ce09467121e53b512270bf390a079981d14c",
+    "calls": [
+      "/does not have a running pod/.test",
+      "[computed].details.detail.trim",
+      "error63.findDetails",
+      "error63.rawMessage.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

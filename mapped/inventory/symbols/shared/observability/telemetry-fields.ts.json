@@ -1,0 +1,225 @@
+[
+  {
+    "id": "host:450899:16523379",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "isLogText",
+    "qualified_name": "isLogText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450899,
+    "end_line": 450901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "cap"
+    ],
+    "body_sha256": "a6c51b824b44f1c1bfeee1d0cb1dd6b15974ca0bf09d7e580f8da3ca1e2afa9c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450902:16523460",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "logText",
+    "qualified_name": "logText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450902,
+    "end_line": 450905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "cap"
+    ],
+    "body_sha256": "74961fa28ee106677765245cdfa9ec949c702bfc2351c1160c14a2c814e1d3e9",
+    "calls": [
+      "isLogText",
+      "value.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450919:16524037",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "isLogFieldValue",
+    "qualified_name": "isLogFieldValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450919,
+    "end_line": 450921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "40353bb935080e073bd643e9add59c8fc42b0b8fe71dc72bc80649644c4cb6fb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450922:16524096",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "encodeFields",
+    "qualified_name": "encodeFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450922,
+    "end_line": 450930,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "cf3d36f4cc35749436b7f5c0dea8aa7c0517315e6657bbaae04bbdf4b06f08cb",
+    "calls": [
+      "Object.entries",
+      "String",
+      "isLogFieldValue"
+    ],
+    "writes": [
+      "encoded[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450931:16524351",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "logFields",
+    "qualified_name": "logFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450931,
+    "end_line": 450933,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "d60b42cefcffc2a81d7863f4862cddf5d78b2494bc204706227d796db6fd7fd7",
+    "calls": [
+      "encodeFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450934:16524415",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "isEventLogFields",
+    "qualified_name": "isEventLogFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450934,
+    "end_line": 450936,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3",
+      "event"
+    ],
+    "body_sha256": "3d072f62e231e9e293b1a0756d15c471aef03dafae8963a0f61a30ffbd2b250d",
+    "calls": [
+      "Object.hasOwn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:450937:16524559",
+    "artifact": "host",
+    "module": "shared/observability/telemetry-fields.ts",
+    "name": "eventLogFields",
+    "qualified_name": "eventLogFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 450937,
+    "end_line": 450940,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event",
+      "fields3"
+    ],
+    "body_sha256": "c43903d1d7a69ed7c7442411d0e1963fbd107bff447ade1b402840fd4dc22ede",
+    "calls": [
+      "encodeFields",
+      "isEventLogFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

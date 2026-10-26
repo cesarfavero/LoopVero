@@ -1,0 +1,166 @@
+[
+  {
+    "id": "evaluation:533449:19573620",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/image-attachments.ts",
+    "name": "unreadableImageAttachment",
+    "qualified_name": "unreadableImageAttachment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533449,
+    "end_line": 533451,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "1549fe67d704ca680cfdc36705d91ce5beacddb55aac024421f003b20290f626",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533452:19573778",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/image-attachments.ts",
+    "name": "downloadImageBytes",
+    "qualified_name": "downloadImageBytes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533452,
+    "end_line": 533467,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  ctx,\n  box,\n  boxId,\n  path: path33,\n  failure: failure3\n}"
+    ],
+    "body_sha256": "271002fb556bf67f3ccff8889c23e195768114934f59564de72eb62c33d5157f",
+    "calls": [
+      "box.downloadFile",
+      "failure3"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63",
+      "failure3"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:533468:19574180",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/image-attachments.ts",
+    "name": "readBoundBoxImages",
+    "qualified_name": "readBoundBoxImages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533468,
+    "end_line": 533502,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  ctx,\n  box,\n  boxId,\n  images,\n  source,\n  failure: failure3,\n  rejectUndecodable,\n  readStore: readStore2\n}"
+    ],
+    "body_sha256": "08abc33e7ae242604c3fdc3c383917356ae8ba37062eaaea6958ed0f3132be5a",
+    "calls": [
+      "forEachBounded",
+      "images.entries",
+      "images.flatMap",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533503:19575320",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/image-attachments.ts",
+    "name": "readSubagentImageAttachments",
+    "qualified_name": "readSubagentImageAttachments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533503,
+    "end_line": 533530,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  ctx,\n  box,\n  boxId,\n  attachments,\n  readStore: readStore2\n}"
+    ],
+    "body_sha256": "8474b235e28b0523eaaa7eabfd63537a0f073d502c6c39e2bf762e713fd61a47",
+    "calls": [
+      "images.map",
+      "readBoundBoxImages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:533516:19575579",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/image-attachments.ts",
+    "name": "failure",
+    "qualified_name": "readSubagentImageAttachments/failure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 533516,
+    "end_line": 533519,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33",
+      "_reason",
+      "cause"
+    ],
+    "body_sha256": "bfce50456884b9e031ee5c4e2175ce8b8c87ae418fbb005fac9119f17dd8eb74",
+    "calls": [
+      "new SandImageAttachmentError",
+      "unreadableImageAttachment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

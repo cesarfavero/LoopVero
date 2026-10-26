@@ -1,0 +1,105 @@
+[
+  {
+    "id": "host:494893:18158288",
+    "artifact": "host",
+    "module": "host/storage/agent-paths.ts",
+    "name": "getSandAgentsRootDir",
+    "qualified_name": "getSandAgentsRootDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494893,
+    "end_line": 494895,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "homeDir = (0, import_node_os9.homedir)()"
+    ],
+    "body_sha256": "83a9c068e06408dbca40adad8d7191003cd98ee9ab0e48324b91cd97f94514c9",
+    "calls": [
+      "getSandRootDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494896:18158438",
+    "artifact": "host",
+    "module": "host/storage/agent-paths.ts",
+    "name": "assertValidSandAgentId",
+    "qualified_name": "assertValidSandAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494896,
+    "end_line": 494902,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "c8b1fdcb67787cb51362a38236d7a0bbe4bfc833c7ecd897a1cd56cc76dd0349",
+    "calls": [
+      "new SandInvalidAgentIdError",
+      "parseAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandInvalidAgentIdError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:494903:18158636",
+    "artifact": "host",
+    "module": "host/storage/agent-paths.ts",
+    "name": "resolveSandAgentDir",
+    "qualified_name": "resolveSandAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 494903,
+    "end_line": 494912,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId",
+      "homeDir = (0, import_node_os9.homedir)()"
+    ],
+    "body_sha256": "6f6e490b0b89eb0d89f09f10afb37ddff96379e726c2ce2aeb37ed88664cde11",
+    "calls": [
+      "assertValidSandAgentId",
+      "getSandAgentsRootDir",
+      "new SandInvalidAgentIdError",
+      "rel.includes",
+      "rel.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandInvalidAgentIdError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

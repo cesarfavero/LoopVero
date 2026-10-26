@@ -1,0 +1,176 @@
+[
+  {
+    "id": "host:513789:18864363",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-new-repo.ts",
+    "name": "originGetStartedUrl",
+    "qualified_name": "originGetStartedUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513789,
+    "end_line": 513795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "0c22845e6dd8a0b7e7c74ef183cd60a4fed2c78ac4c6025363997d6cda972859",
+    "calls": [
+      "resolvePortalBaseUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:513796:18864638",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-new-repo.ts",
+    "name": "pickOriginNewRepoNamespace",
+    "qualified_name": "pickOriginNewRepoNamespace",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513796,
+    "end_line": 513810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "b4f676da8044bba7ecbf96cc924e69c20f89ba9b61c52708f13c1b2b76d662c6",
+    "calls": [
+      "BigInt",
+      "entry.namespace.namespace.trim",
+      "entry.namespace.ownerEntityId.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:513811:18865517",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-new-repo.ts",
+    "name": "createOriginNewRepo",
+    "qualified_name": "createOriginNewRepo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513811,
+    "end_line": 513849,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "68fcedfe07e80fee4c4325a4075f8caed5ecb6045d39c5fadcf35d1c01b99001",
+    "calls": [
+      ".catch",
+      "args.callOptions",
+      "args.canProvisionUserNamespace",
+      "args.client.createRepoAndEnsureUserNamespace",
+      "args.client.getAuthorizedNamespaces",
+      "new CreateRepoRequest",
+      "new GetAuthorizedNamespacesRequest",
+      "new SandCloudAgentLaunchError",
+      "originGetStartedUrl",
+      "pickOriginNewRepoNamespace",
+      "response.repository.defaultBranch.trim",
+      "response.repository.identifier.name.trim",
+      "response.repository.identifier.org.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:513850:18867216",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-new-repo.ts",
+    "name": "describeOriginNewRepoRefusal",
+    "qualified_name": "describeOriginNewRepoRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513850,
+    "end_line": 513855,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "target",
+      "readPortalBaseUrl"
+    ],
+    "body_sha256": "95b62848193fdf10bff42e1376591603b512a752269a34de3969be302e77bedf",
+    "calls": [
+      "new SandCloudAgentLaunchError",
+      "originGetStartedUrl",
+      "refusalMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:513856:18867534",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-new-repo.ts",
+    "name": "refusalMessage",
+    "qualified_name": "refusalMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513856,
+    "end_line": 513867,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "provisioning"
+    ],
+    "body_sha256": "9ed0aa28576a85fd4c0dfd38ef7550094cae35a0c6b82b4ce75976a95f6e68f9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

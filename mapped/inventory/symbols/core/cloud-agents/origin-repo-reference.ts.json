@@ -1,0 +1,446 @@
+[
+  {
+    "id": "host:509090:18681462",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originPrIdentityHostsFor",
+    "qualified_name": "originPrIdentityHostsFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509090,
+    "end_line": 509097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readOriginPrIdentityHosts",
+      "callSite"
+    ],
+    "body_sha256": "d0d1112f1aab3dffd09fc8a2865702730cf4ac2782538f24e90114e799df6efc",
+    "calls": [
+      "readOriginPrIdentityHosts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509098:18681753",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "repoReferenceAsUrl",
+    "qualified_name": "repoReferenceAsUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509098,
+    "end_line": 509109,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "41c279f645cee2a47d8823f4af026849b0e8566531893e08293c610caf4f90ce",
+    "calls": [
+      "/^[a-z][a-z0-9+.-]*:\\/\\//i.test",
+      "new URL",
+      "raw.trim",
+      "trimmed.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509110:18682096",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "portalRepoCloneUrl",
+    "qualified_name": "portalRepoCloneUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509110,
+    "end_line": 509115,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "identityHosts"
+    ],
+    "body_sha256": "3d55b13099f3549d0ceb5bb7e3ee7a67eea4840bd8a64ece0c82470187d2284c",
+    "calls": [
+      "originRepoClonePath",
+      "parseOriginPortalRepoPage",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509116:18682379",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "isOriginRepoReference",
+    "qualified_name": "isOriginRepoReference",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509116,
+    "end_line": 509125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "e2dbab76e0dc5f32446778980f5c058385f4e88b3dee6d336a93bd7e9f8fbce0",
+    "calls": [
+      "isOriginGitHost",
+      "originPrIdentityHostsFor",
+      "portalRepoCloneUrl",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509126:18682770",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "normalizeLaunchRepoReference",
+    "qualified_name": "normalizeLaunchRepoReference",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509126,
+    "end_line": 509128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "identityHosts"
+    ],
+    "body_sha256": "7c1e3ae4d702bc6391b551bb6b7d54f88f0fd6b8546ad8826bb35a7c65933bb9",
+    "calls": [
+      "portalRepoCloneUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509130:18682967",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originPortalHostnames",
+    "qualified_name": "originPortalHostnames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509130,
+    "end_line": 509140,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readProductionPortalHostname",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "5e51d9c4a27a8a4763743d43e25b1594ae78a100cc6426ebd9876c2d52e66709",
+    "calls": [
+      "originPrIdentityHostsFor",
+      "readProductionPortalHostname"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509141:18683444",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originRepoPortalUrl",
+    "qualified_name": "originRepoPortalUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509141,
+    "end_line": 509153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repo",
+      "portalHostnames = ORIGIN_PORTAL_HOSTNAMES",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "62f2c96675f1546fe28f0d598ea03945b6cba3fa26733374a3e1a989cb9ddc4e",
+    "calls": [
+      ".hostname.toLowerCase",
+      "encodeURIComponent",
+      "originPrIdentityHostsFor",
+      "parseOriginPortalRepoPage",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509154:18684125",
+    "artifact": "host",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originRepoIdentityFromReference",
+    "qualified_name": "originRepoIdentityFromReference",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509154,
+    "end_line": 509166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "db73056c13eef1141925d8bd28252bdc3b933fd9af484769aa88d08ae16abaec",
+    "calls": [
+      "originPrIdentityHostsFor",
+      "parseOriginPortalRepoPage",
+      "parseOriginRepoCloneUrl",
+      "raw.trim",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556843:20650107",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originPrIdentityHostsFor",
+    "qualified_name": "originPrIdentityHostsFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556843,
+    "end_line": 556850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readOriginPrIdentityHosts",
+      "callSite"
+    ],
+    "body_sha256": "d0d1112f1aab3dffd09fc8a2865702730cf4ac2782538f24e90114e799df6efc",
+    "calls": [
+      "readOriginPrIdentityHosts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:556851:20650398",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "repoReferenceAsUrl",
+    "qualified_name": "repoReferenceAsUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556851,
+    "end_line": 556862,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "41c279f645cee2a47d8823f4af026849b0e8566531893e08293c610caf4f90ce",
+    "calls": [
+      "/^[a-z][a-z0-9+.-]*:\\/\\//i.test",
+      "new URL",
+      "raw.trim",
+      "trimmed.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:556863:20650741",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "portalRepoCloneUrl",
+    "qualified_name": "portalRepoCloneUrl",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556863,
+    "end_line": 556868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "identityHosts"
+    ],
+    "body_sha256": "3d55b13099f3549d0ceb5bb7e3ee7a67eea4840bd8a64ece0c82470187d2284c",
+    "calls": [
+      "originRepoClonePath",
+      "parseOriginPortalRepoPage",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556869:20651024",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "isOriginRepoReference",
+    "qualified_name": "isOriginRepoReference",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556869,
+    "end_line": 556878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "7238f235d161f514e9a8a48c9900ffb55126ec2b911b01fdee2333d89c0e9680",
+    "calls": [
+      "isOriginGitHost",
+      "originPrIdentityHostsFor",
+      "portalRepoCloneUrl",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556879:20651415",
+    "artifact": "evaluation",
+    "module": "core/cloud-agents/origin-repo-reference.ts",
+    "name": "originRepoIdentityFromReference",
+    "qualified_name": "originRepoIdentityFromReference",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556879,
+    "end_line": 556891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "db73056c13eef1141925d8bd28252bdc3b933fd9af484769aa88d08ae16abaec",
+    "calls": [
+      "originPrIdentityHostsFor",
+      "parseOriginPortalRepoPage",
+      "parseOriginRepoCloneUrl",
+      "raw.trim",
+      "repoReferenceAsUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

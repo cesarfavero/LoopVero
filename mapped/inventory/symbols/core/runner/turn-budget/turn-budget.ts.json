@@ -1,0 +1,191 @@
+[
+  {
+    "id": "evaluation:587801:22128401",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "inProcessComputerUseTurnBudget",
+    "qualified_name": "inProcessComputerUseTurnBudget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587801,
+    "end_line": 587808,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parent",
+      "maxSteps"
+    ],
+    "body_sha256": "086ecd72809dbc0785688bdec58d5e31df1253e20953105ba307a74d9c5ff36b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587809:22128745",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "createSandTurnBudgetGuard",
+    "qualified_name": "createSandTurnBudgetGuard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587809,
+    "end_line": 587844,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "bc500591e6ec9447a49187ba32509f5e7908d1f974e580179eef7946b52b4421",
+    "calls": [
+      "Math.max",
+      "clock.now",
+      "clock.schedule"
+    ],
+    "writes": [
+      "timer2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587815:22128985",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "exceed",
+    "qualified_name": "createSandTurnBudgetGuard/exceed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587815,
+    "end_line": 587819,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "d919b0a6d6b9e673d9ed788b592b621d34886cf540c0807243f95c5dda0f8bab",
+    "calls": [
+      "args.onExceeded"
+    ],
+    "writes": [
+      "exceeded"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587826:22129351",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "exceeded",
+    "qualified_name": "createSandTurnBudgetGuard/exceeded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587826,
+    "end_line": 587828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "8de38bc2afd9d949f39efb745ba87ca3ea8ce822a4663db4459679a33cd62ac4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587829:22129411",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "observeToolCallEvents",
+    "qualified_name": "createSandTurnBudgetGuard/observeToolCallEvents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587829,
+    "end_line": 587838,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "events"
+    ],
+    "body_sha256": "cb0ae301c51ba7a64911c1c19577e6b699034ce2ad6eb6b16284b9c3a215d851",
+    "calls": [
+      "exceed"
+    ],
+    "writes": [
+      "consecutiveTimeouts"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587839:22129782",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/turn-budget.ts",
+    "name": "dispose",
+    "qualified_name": "createSandTurnBudgetGuard/dispose",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587839,
+    "end_line": 587842,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "b9a3f28510ee1f6eb17327af69b59318cc1552dbb6743f3fda17c4e8b88b6acd",
+    "calls": [
+      "timer2.dispose"
+    ],
+    "writes": [
+      "disposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,223 @@
+[
+  {
+    "id": "host:506433:18586118",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "createBoxTimezoneApplier",
+    "qualified_name": "createBoxTimezoneApplier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506433,
+    "end_line": 506443,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "c831633d981d79b909b89be0a836495325e97c6a720b7b177504f27c7640eec7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506444:18586560",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "createBoxTimezoneService",
+    "qualified_name": "createBoxTimezoneService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506444,
+    "end_line": 506485,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "eb1c7254dfe186ffd1a40b3eebc9d6c2e7147f27ac81bb4cdd3448e345f0d4c3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506450:18586707",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "drain",
+    "qualified_name": "createBoxTimezoneService/drain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506450,
+    "end_line": 506463,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "91a461e8ba9936d28c00babecca46b88dc936fce8190eaf7edf5b3b2dfdbee45",
+    "calls": [
+      "deps.applyZone",
+      "deps.log",
+      "errorLogTag"
+    ],
+    "writes": [
+      "applied",
+      "pending"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:506464:18587142",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "request5",
+    "qualified_name": "createBoxTimezoneService/request5",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506464,
+    "end_line": 506472,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "timeZone"
+    ],
+    "body_sha256": "c4e81d667dba661471e4ed00293f3569cd484546e79feb46af1142e42c1d4134",
+    "calls": [
+      ".finally",
+      "drain"
+    ],
+    "writes": [
+      "inFlight",
+      "pending"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506474:18587371",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "start",
+    "qualified_name": "createBoxTimezoneService/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506474,
+    "end_line": 506477,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "c2d1acd87423e6cfc0d582ae78ecc9e8d40ce646321f226ca5db13d521fdd54c",
+    "calls": [
+      "deps.getUserTimeZone",
+      "deps.subscribeToUserTimeZone",
+      "request5"
+    ],
+    "writes": [
+      "unsubscribe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506478:18587494",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "dispose",
+    "qualified_name": "createBoxTimezoneService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506478,
+    "end_line": 506482,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "89e31b0fa7604e5ffa7f28ca4272b43f2661d63c7daae397ce88729097bf4817",
+    "calls": [
+      "unsubscribe"
+    ],
+    "writes": [
+      "disposed",
+      "unsubscribe"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506483:18587593",
+    "artifact": "host",
+    "module": "host/extensions/box-timezone/box-timezone-service.ts",
+    "name": "settled",
+    "qualified_name": "createBoxTimezoneService/settled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506483,
+    "end_line": 506483,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "60a0b919ec1c83546b8b56278ddbf6654bd7813b4fcdcea2c8b9dffaa7929b0c",
+    "calls": [
+      "Promise.resolve"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

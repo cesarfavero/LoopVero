@@ -1,0 +1,294 @@
+[
+  {
+    "id": "host:506652:18594065",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "resolveImportScript",
+    "qualified_name": "resolveImportScript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506652,
+    "end_line": 506655,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7c53d3da9330ccf517b7cc84f64f389e9d9e104d211b18a0b586a14b81e9c1c8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506662:18594563",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "asCount",
+    "qualified_name": "asCount",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506662,
+    "end_line": 506664,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "721bff87815993fb3071db064a4f96eb05d3926ec2450bfa957b76f714a20a71",
+    "calls": [
+      "Math.floor",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506665:18594694",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "parseImportOutcome",
+    "qualified_name": "parseImportOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506665,
+    "end_line": 506693,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stdout"
+    ],
+    "body_sha256": "2cd72cf773f97747dbf51201fb2c4c6752e03a77d97eef32689500cc5e86abbc",
+    "calls": [
+      ".at",
+      ".filter",
+      ".map",
+      "JSON.parse",
+      "asCount",
+      "new ChromeCookieImportResultError",
+      "stdout.split"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [
+      "ChromeCookieImportResultError"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 3,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:506694:18595974",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "isChromeCookieRecord",
+    "qualified_name": "isChromeCookieRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506694,
+    "end_line": 506697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "81e52aa834b2ba8ff8805d34619ae110a41766c0f0b6b692ce31fdaa0f0bc7d4",
+    "calls": [
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506698:18596259",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "createChromeCookieImporter",
+    "qualified_name": "createChromeCookieImporter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506698,
+    "end_line": 506722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "5cc5321fcded6620a6a59c9c52fb30ae4b68cbbc6a8863e21bcbf0bbb79d8597",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506700:18596326",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "inject",
+    "qualified_name": "createChromeCookieImporter/inject",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506700,
+    "end_line": 506720,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "cookies"
+    ],
+    "body_sha256": "becde4560824b1210b6f4b9207cfc8e6637590727e6e87046fe800f26b02c7ca",
+    "calls": [
+      ".catch",
+      "JSON.stringify",
+      "cookies.filter",
+      "deps.isEnabled",
+      "deps.log",
+      "deps.removeBatchFile",
+      "deps.runImportScript",
+      "deps.writeBatchFile",
+      "new ChromeCookieImportGateOffError",
+      "parseImportOutcome"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ChromeCookieImportGateOffError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506723:18597277",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "writeCookieBatchToTmp",
+    "qualified_name": "writeCookieBatchToTmp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506723,
+    "end_line": 506728,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "json3"
+    ],
+    "body_sha256": "f7026b0e7c31842fd1626ece4cc6563cf290f2920b7fe7d00bf478c76973aee9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506729:18597636",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "removeCookieBatchDir",
+    "qualified_name": "removeCookieBatchDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506729,
+    "end_line": 506731,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "batchPath"
+    ],
+    "body_sha256": "01f20abb1487a40a664bf0098b0ac1c583e6d6b6a5cd4d091990490a6d773f22",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:506732:18597800",
+    "artifact": "host",
+    "module": "host/extensions/chrome-cookie-import/chrome-cookie-import-service.ts",
+    "name": "runCookieImportScript",
+    "qualified_name": "runCookieImportScript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 506732,
+    "end_line": 506741,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "batchPath"
+    ],
+    "body_sha256": "9a11bfe0b0ec159f57b69fb0139a3e3033112f949a296c7b1bbf3f171ccc267b",
+    "calls": [
+      "resolveImportScript",
+      "runFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

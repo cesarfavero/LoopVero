@@ -1,0 +1,166 @@
+[
+  {
+    "id": "host:490985:17981953",
+    "artifact": "host",
+    "module": "shared/agents/group-chat.ts",
+    "name": "groupChatPeople",
+    "qualified_name": "groupChatPeople",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490985,
+    "end_line": 490987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "62148ec4c2bf5cf98320af0ae82c93f8ed686c9c932b21f501f751f70aded1b9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490988:17982067",
+    "artifact": "host",
+    "module": "shared/agents/group-chat.ts",
+    "name": "isGroupChat",
+    "qualified_name": "isGroupChat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490988,
+    "end_line": 490990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent"
+    ],
+    "body_sha256": "d588e495eb87489bce91d46e4f47ee6493935e6e96d03f00e86dc2af0512bb2c",
+    "calls": [
+      "groupChatPeople"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490991:17982143",
+    "artifact": "host",
+    "module": "shared/agents/group-chat.ts",
+    "name": "groupChatMembers",
+    "qualified_name": "groupChatMembers",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490991,
+    "end_line": 491000,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agent",
+      "agents"
+    ],
+    "body_sha256": "15f899e075ecd1816224be9d4ca3618b13a67ff029a76d2cfa59d688df5c4f9e",
+    "calls": [
+      ".filter",
+      "agent.memberIds.flatMap",
+      "agents.map",
+      "groupChatPeople",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491001:17982480",
+    "artifact": "host",
+    "module": "shared/agents/group-chat.ts",
+    "name": "firstNameOf",
+    "qualified_name": "firstNameOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491001,
+    "end_line": 491003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "displayName2"
+    ],
+    "body_sha256": "5d5887a83c08bb0c2a1821bcf17eb26b856a62cc99a334f6aba32844b114d85c",
+    "calls": [
+      ".split",
+      "displayName2.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:491004:17982572",
+    "artifact": "host",
+    "module": "shared/agents/group-chat.ts",
+    "name": "groupChatShortNames",
+    "qualified_name": "groupChatShortNames",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 491004,
+    "end_line": 491013,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "people"
+    ],
+    "body_sha256": "6dd573c85b6154decea00d9f6fe42b83548158625136626ef29dff723850cb2b",
+    "calls": [
+      ".filter",
+      "counts.get",
+      "counts.set",
+      "named2.map",
+      "new Map",
+      "people.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

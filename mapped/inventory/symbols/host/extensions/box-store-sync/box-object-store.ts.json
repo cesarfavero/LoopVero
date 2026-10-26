@@ -1,0 +1,813 @@
+[
+  {
+    "id": "host:475190:17397179",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStoreProvider.constructor",
+    "qualified_name": "AgentStoreObjectStoreProvider.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475190,
+    "end_line": 475193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "890ac16709d00fb190676d60fe244842a849ee83b5218c0b1300b295321074ad",
+    "calls": [],
+    "writes": [
+      "this.clientInstance",
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475197:17397341",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStoreProvider.forStore",
+    "qualified_name": "AgentStoreObjectStoreProvider.forStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475197,
+    "end_line": 475199,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId"
+    ],
+    "body_sha256": "934118d804e38f77e400970e7e4b54b5d38137675b327c65d5c778bc8d14ce2e",
+    "calls": [
+      "new AgentStoreObjectStore",
+      "this.client"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475200:17397465",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStoreProvider.client",
+    "qualified_name": "AgentStoreObjectStoreProvider.client",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475200,
+    "end_line": 475213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "53537e254b3f87046e6d67f5d0129f07c6382c1284dabd91e3c1f45503ff3911",
+    "calls": [
+      "createAgentStoreClient"
+    ],
+    "writes": [
+      "this.clientInstance"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475217:17398068",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.constructor",
+    "qualified_name": "AgentStoreObjectStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475217,
+    "end_line": 475222,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "backend",
+      "client",
+      "storeId",
+      "mutableEtags"
+    ],
+    "body_sha256": "2fe9ea5804a3dc3a1ff101a468dbb4125279160e8edda0068670d699dfb00506",
+    "calls": [],
+    "writes": [
+      "this.backend",
+      "this.client",
+      "this.mutableEtags",
+      "this.storeId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475228:17398351",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.prefetchReads",
+    "qualified_name": "AgentStoreObjectStore.prefetchReads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475228,
+    "end_line": 475233,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "keys"
+    ],
+    "body_sha256": "17042f272fdf7483167f3f3ee5b84de3c25167d9a6f7b36cb62f986cdc9913c4",
+    "calls": [
+      "presignAgentStoreReadBatch",
+      "this.prefetchedReads.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475234:17398565",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.takePrefetchedRead",
+    "qualified_name": "AgentStoreObjectStore.takePrefetchedRead",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475234,
+    "end_line": 475239,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "912707de03849c6ec141ca703404a933a37b2192cc813f1db37ddc896fa89801",
+    "calls": [
+      "Date.now",
+      "this.prefetchedReads.delete",
+      "this.prefetchedReads.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475240:17398820",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.get",
+    "qualified_name": "AgentStoreObjectStore.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475240,
+    "end_line": 475250,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "36573aa9bf87fd9e6359e48a213d0fd6f6d50637f328a29238c221933a23a1af",
+    "calls": [
+      "fetchAgentStoreObjectFromUrl",
+      "getAgentStoreObject",
+      "this.takePrefetchedRead"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:475251:17399152",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.put",
+    "qualified_name": "AgentStoreObjectStore.put",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475251,
+    "end_line": 475277,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "bytes",
+      "opts"
+    ],
+    "body_sha256": "f25e4866f517ca99e2ef69e15c53a0d45f37141e28fc32c825c123e8117b50f4",
+    "calls": [
+      "new BoxStoreCanonicalWriteConflictError",
+      "putAgentStoreObject",
+      "putAgentStoreObjectContentAddressed"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxStoreCanonicalWriteConflictError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475278:17399885",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.getToFile",
+    "qualified_name": "AgentStoreObjectStore.getToFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475278,
+    "end_line": 475293,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "destPath",
+      "opts"
+    ],
+    "body_sha256": "4f4e06a5987ca4efbee4465bbf859792837094c264bee4d84500b5e3d0fd25f3",
+    "calls": [
+      "fetchAgentStoreObjectToFileFromUrl",
+      "getAgentStoreObjectToFile",
+      "this.takePrefetchedRead"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:475294:17400349",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.putFromFile",
+    "qualified_name": "AgentStoreObjectStore.putFromFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475294,
+    "end_line": 475303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "srcPath",
+      "sha",
+      "size"
+    ],
+    "body_sha256": "5f258769847412d3f71caa0c018d37fbb6604a21f85522304dcb46b333987786",
+    "calls": [
+      "putAgentStoreObjectFromFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475304:17400550",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "AgentStoreObjectStore.list",
+    "qualified_name": "AgentStoreObjectStore.list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475304,
+    "end_line": 475306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "prefix"
+    ],
+    "body_sha256": "593040c1a4b5164c15823f829ff757698e6a6792e8cb6b47eb021dbcf3d3a287",
+    "calls": [
+      "listAgentStoreObjects"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475309:17400691",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStoreProvider.constructor",
+    "qualified_name": "LocalFsObjectStoreProvider.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475309,
+    "end_line": 475311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "baseDir"
+    ],
+    "body_sha256": "d737e9e03c00d6a148e35097ebba8937ea252d982979638f67a24a31414cf652",
+    "calls": [],
+    "writes": [
+      "this.baseDir"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475313:17400756",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStoreProvider.forStore",
+    "qualified_name": "LocalFsObjectStoreProvider.forStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475313,
+    "end_line": 475315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "storeId"
+    ],
+    "body_sha256": "ae2d498dd3c4c72c24588694d9bbb97e9432949c5928f828d4d958845fa66f71",
+    "calls": [
+      "new LocalFsObjectStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475318:17400909",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.constructor",
+    "qualified_name": "LocalFsObjectStore.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475318,
+    "end_line": 475320,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "root"
+    ],
+    "body_sha256": "ac728c93abf9a5e0a4dcb77c04f61a40d4987d7ddd02428ca1792fa04040cc74",
+    "calls": [],
+    "writes": [
+      "this.root"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475322:17400963",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.get",
+    "qualified_name": "LocalFsObjectStore.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475322,
+    "end_line": 475329,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "e08d6a2f90a3da30b5e7d70ebf9973aafa202064bcd08f6ec1282f7a2e37955a",
+    "calls": [
+      "findSystemErrno",
+      "new Uint8Array",
+      "this.pathFor"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:475330:17401196",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.put",
+    "qualified_name": "LocalFsObjectStore.put",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475330,
+    "end_line": 475334,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "bytes",
+      "_opts"
+    ],
+    "body_sha256": "2ecee2864e0e7a6a72446251a8fe1aa51721d5169db7126d92b63cc29e72c9a5",
+    "calls": [
+      "this.pathFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475335:17401432",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.getToFile",
+    "qualified_name": "LocalFsObjectStore.getToFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475335,
+    "end_line": 475351,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "destPath",
+      "opts"
+    ],
+    "body_sha256": "baa59f6e7f04cb44c12b45c1be79f309ef048d25bf04e662771d8b1a88abe57b",
+    "calls": [
+      "destination.createWriteStream",
+      "findSystemErrno",
+      "new SandBoxStoreSyncError",
+      "openFreshDestination",
+      "this.pathFor"
+    ],
+    "writes": [
+      "size"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError",
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:475352:17402178",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.putFromFile",
+    "qualified_name": "LocalFsObjectStore.putFromFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475352,
+    "end_line": 475356,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key",
+      "srcPath",
+      "_sha",
+      "_size2"
+    ],
+    "body_sha256": "f9342790bceb66b79c063187d8e7be6bdd2493044ff91b398bbefdfbfb6575da",
+    "calls": [
+      "this.pathFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475357:17402500",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.list",
+    "qualified_name": "LocalFsObjectStore.list",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475357,
+    "end_line": 475361,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "prefix"
+    ],
+    "body_sha256": "37c0d596a3958c1b868df0727bb58abe7c0325874f7fca8dcf260fc72ec8d954",
+    "calls": [
+      ".filter",
+      ".sort",
+      "found.map",
+      "walkFiles"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475362:17402762",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.delete",
+    "qualified_name": "LocalFsObjectStore.delete",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475362,
+    "end_line": 475368,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "d476bff9ce9effcc8a165f55d2a48397f206df46db2448c0dff798b300c47649",
+    "calls": [
+      "findSystemErrno",
+      "this.pathFor"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:475369:17402949",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "LocalFsObjectStore.pathFor",
+    "qualified_name": "LocalFsObjectStore.pathFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475369,
+    "end_line": 475371,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "key"
+    ],
+    "body_sha256": "34d2ea392a5b877747f6052bc777ddc8a1f0708942345c20be5c9c5440f741ff",
+    "calls": [
+      "key.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475373:17403035",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "resolveBoxObjectStoreProvider",
+    "qualified_name": "resolveBoxObjectStoreProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475373,
+    "end_line": 475393,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "2b0eafaa887edad0f0180e9283eb35d1f9ff84277f3c549085e0d105bda7ac82",
+    "calls": [
+      "invariant",
+      "new AgentStoreObjectStoreProvider",
+      "new LocalFsObjectStoreProvider",
+      "new SandBoxStoreServiceProvider"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475394:17403834",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "isUnderPrefix",
+    "qualified_name": "isUnderPrefix",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475394,
+    "end_line": 475396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "key",
+      "prefix"
+    ],
+    "body_sha256": "474c2423cf01e76d42cfef4db2e28113c7580457720963146e32de8adcefa647",
+    "calls": [
+      "key.startsWith",
+      "prefix.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:475397:17403950",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/box-object-store.ts",
+    "name": "walkFiles",
+    "qualified_name": "walkFiles",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 475397,
+    "end_line": 475414,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dir",
+      "out"
+    ],
+    "body_sha256": "814c009d88af516ecdf77d9e4ee4e07b1655a1982b902fbe03de9b69fafa1980",
+    "calls": [
+      "entry.isDirectory",
+      "entry.isFile",
+      "entry.isSymbolicLink",
+      "findSystemErrno",
+      "out.push",
+      "walkFiles"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

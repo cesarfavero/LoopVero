@@ -1,0 +1,131 @@
+[
+  {
+    "id": "host:430990:15820769",
+    "artifact": "host",
+    "module": "shared/observability/buffered-reporter-pin.ts",
+    "name": "createBufferedReporterPin",
+    "qualified_name": "createBufferedReporterPin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430990,
+    "end_line": 431024,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "03a0cb524ab6d9b650dfbcc46f5cea60d8274345cb03796e292acc8137918a6b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:430993:15820872",
+    "artifact": "host",
+    "module": "shared/observability/buffered-reporter-pin.ts",
+    "name": "replay",
+    "qualified_name": "createBufferedReporterPin/replay",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 430993,
+    "end_line": 431003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "next",
+      "args"
+    ],
+    "body_sha256": "3a51fd44857a474fac5a3e3f8c5773df8e8bf13184782459dec58ce06db2b577",
+    "calls": [
+      "next",
+      "options2.onReplayFailure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:431005:15821107",
+    "artifact": "host",
+    "module": "shared/observability/buffered-reporter-pin.ts",
+    "name": "install",
+    "qualified_name": "createBufferedReporterPin/install",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 431005,
+    "end_line": 431011,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "7a562c999f08a4bc4f0c12f4d75ec485ee675251e59b5d02e79d0da2f29c68fd",
+    "calls": [
+      "replay"
+    ],
+    "writes": [
+      "buffered3",
+      "installed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:431012:15821301",
+    "artifact": "host",
+    "module": "shared/observability/buffered-reporter-pin.ts",
+    "name": "report",
+    "qualified_name": "createBufferedReporterPin/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 431012,
+    "end_line": 431022,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "1c47f0a30a07ab1dbce0c97e874cd084bb62641a2eabe25101fb523a9622c255",
+    "calls": [
+      "buffered3.push",
+      "buffered3.shift",
+      "installed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

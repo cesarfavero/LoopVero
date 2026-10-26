@@ -1,0 +1,1481 @@
+[
+  {
+    "id": "evaluation:529175:19324703",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "selectUnconfirmedUserMessages",
+    "qualified_name": "selectUnconfirmedUserMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529175,
+    "end_line": 529192,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "8f8fcedafb406307e1a697f9b7190b76705f2e0fe0fadf4695357ef07ed9e446",
+    "calls": [
+      ".filter",
+      "recentUserMessages.findIndex",
+      "recentUserMessages.slice"
+    ],
+    "writes": [
+      "startIndex"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529194:19326001",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "skippedQuestionsSection",
+    "qualified_name": "skippedQuestionsSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529194,
+    "end_line": 529209,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skipped",
+      "path33"
+    ],
+    "body_sha256": "605f4ec51cbf37b97f4200940974b0edd494fb08bc473cc2510c326df38a2351",
+    "calls": [
+      ".join",
+      "skipped.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529210:19328489",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "buildUnansweredQuestionsNote",
+    "qualified_name": "buildUnansweredQuestionsNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529210,
+    "end_line": 529315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "prompts"
+    ],
+    "body_sha256": "f71f4d53e87b328184460caa19cf579f025ccf03ed08e1202380998a7706abb3",
+    "calls": [
+      ".flatMap",
+      ".join",
+      "clean",
+      "discardedDrafts.map",
+      "dismissed.map",
+      "hiddenPromptMarker",
+      "sections.join",
+      "sections.push",
+      "skippedQuestionsSection",
+      "unconfirmedDrafts.map",
+      "unseenCardChoices.map",
+      "unseenCloudAgentReports.map",
+      "unseenPostedLines.map",
+      "unseenWakeOutcomes.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529211:19328554",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "clean",
+    "qualified_name": "buildUnansweredQuestionsNote/clean",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529211,
+    "end_line": 529214,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "b3f6ec762fd83ba722b13275496373965e0d991e62a3874720636e1e43c53304",
+    "calls": [
+      "values.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529316:19334662",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "toSafeTokenCount2",
+    "qualified_name": "toSafeTokenCount2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529316,
+    "end_line": 529318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "caa17f58f9752bf544453b675646866acb6edccd8eb0b970e43f24e9600cf381",
+    "calls": [
+      "Math.floor",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529319:19334799",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "awaitBlockUntilMs",
+    "qualified_name": "awaitBlockUntilMs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529319,
+    "end_line": 529322,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "awaitCall"
+    ],
+    "body_sha256": "6c2e0af7dc2a8ff326d8be5b4272a158fff90fc49755b1b881dab33d0faee2ac",
+    "calls": [
+      "Number"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529323:19334925",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "classifyCompletedAwaitOutcome",
+    "qualified_name": "classifyCompletedAwaitOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529323,
+    "end_line": 529336,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "awaitCall"
+    ],
+    "body_sha256": "e9dca6c3788dfd6849c25e28997e52ffabc78da598805a96f02c5824bc2af2ca",
+    "calls": [
+      "inner.value.taskId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529337:19335444",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizeUsage",
+    "qualified_name": "sanitizeUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529337,
+    "end_line": 529347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "ad1c0db4cada0867604bd35c46493e9049d95ef3f81a52410eca1ca82745e7e2",
+    "calls": [
+      "toSafeTokenCount2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529349:19335860",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "lastReportedContextWindow",
+    "qualified_name": "lastReportedContextWindow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529349,
+    "end_line": 529351,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "2693e68483837dd5ddddccba300f8c4833e253e860903775a53ce62ac8730f57",
+    "calls": [
+      "contextWindowByModelForHostLifetime.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529354:19336114",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "lastReportedSelfSummarySupport",
+    "qualified_name": "lastReportedSelfSummarySupport",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529354,
+    "end_line": 529356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "fc73fa94fb624226a974083194e66cb8a59d3ccc586534ef259b7674dbd42cef",
+    "calls": [
+      "selfSummarySupportByModelForHostLifetime.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529363:19336364",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "isSelfSummaryFlavor",
+    "qualified_name": "isSelfSummaryFlavor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529363,
+    "end_line": 529365,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "flavor"
+    ],
+    "body_sha256": "5d78d6c9f6b8b055af5dd8ce9f64e35752d9cd35340e7f09511f8d0efccb2f6b",
+    "calls": [
+      "Object.hasOwn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529366:19336465",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sandAdoptedSelfSummaryFlavor",
+    "qualified_name": "sandAdoptedSelfSummaryFlavor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529366,
+    "end_line": 529368,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "flavor"
+    ],
+    "body_sha256": "7bf5db96184ec53f98aff7e8f9c024f32c4739b951f24637b99becff7124565a",
+    "calls": [
+      "isSelfSummaryFlavor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529369:19336592",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "lastReportedSelfSummaryFlavor",
+    "qualified_name": "lastReportedSelfSummaryFlavor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529369,
+    "end_line": 529371,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "530797d88c16a70fcc44f768b1e288914b8ddd7939b3017d0ae97ca66bc403cf",
+    "calls": [
+      "sandAdoptedSelfSummaryFlavor",
+      "selfSummaryFlavorByModelForHostLifetime.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529372:19336737",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sandModelCallUsageObserver",
+    "qualified_name": "sandModelCallUsageObserver",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529372,
+    "end_line": 529400,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "onModelCallUsage"
+    ],
+    "body_sha256": "061f94a325e24efcdedce0e89cd192ca4ecd27b6bb927f795e344a548aec272f",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529375:19336872",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onRequestStart",
+    "qualified_name": "sandModelCallUsageObserver/onRequestStart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529375,
+    "end_line": 529398,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "66d886f7786d09fcb6baed822b387911e25312b3ef622593030d9e663f590870",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529378:19336945",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "report",
+    "qualified_name": "sandModelCallUsageObserver/onRequestStart/report",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529378,
+    "end_line": 529382,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "eb62f1efb605e4b28ae961267464b10a7dd764035b952b51c75071b0de76b4a8",
+    "calls": [
+      "onModelCallUsage"
+    ],
+    "writes": [
+      "usage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529384:19337106",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onStreamEnd",
+    "qualified_name": "sandModelCallUsageObserver/onRequestStart/onStreamEnd",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529384,
+    "end_line": 529387,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "20789c99f500946772e2d0c897c9bd793782412cb9eb1c5aef06670bde789509",
+    "calls": [
+      "report"
+    ],
+    "writes": [
+      "succeeded2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529388:19337210",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onUsage",
+    "qualified_name": "sandModelCallUsageObserver/onRequestStart/onUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529388,
+    "end_line": 529396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "extended2"
+    ],
+    "body_sha256": "0b9befb4e4bd80caa7b7b77be4cf5a1afc87567bb2670ed77cc4ab500ea970db",
+    "calls": [
+      "report"
+    ],
+    "writes": [
+      "usage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529401:19337520",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "composeSandPromptStreamObservers",
+    "qualified_name": "composeSandPromptStreamObservers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529401,
+    "end_line": 529446,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "...observers"
+    ],
+    "body_sha256": "b2e1b9ca7ff58894a67974a98f01d526106ed219d3e6727fe44e578ace8c5468",
+    "calls": [
+      "observers.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529408:19337780",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onRequestStart",
+    "qualified_name": "composeSandPromptStreamObservers/onRequestStart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529408,
+    "end_line": 529444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "request3"
+    ],
+    "body_sha256": "e49358bd2927e2aa9d5dd34f6afa556b4d0cf888333b4055d7435801f51253f6",
+    "calls": [
+      "new Set",
+      "requestObservers.filter",
+      "safelyObservePromptStream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529428:19338695",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onStreamEnd",
+    "qualified_name": "composeSandPromptStreamObservers/onRequestStart/onStreamEnd",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529428,
+    "end_line": 529432,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "97e57a2b3375ed78366ec3484dbc5015b5827162fcb2fcbb190e1a3c408c8682",
+    "calls": [
+      "safelyObservePromptStream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529433:19338885",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onServedModel",
+    "qualified_name": "composeSandPromptStreamObservers/onRequestStart/onServedModel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529433,
+    "end_line": 529437,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "e7b918fd11fc24a07f3a8b8ce6e2ec5045c00077af83524bb1a5a2f46faaa6a1",
+    "calls": [
+      "safelyObservePromptStream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529438:19339073",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onUsage",
+    "qualified_name": "composeSandPromptStreamObservers/onRequestStart/onUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529438,
+    "end_line": 529442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "829e6f51509326a3a4d636592650489937d14942a1afb767bb0e51fb090c4325",
+    "calls": [
+      "safelyObservePromptStream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529447:19339257",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "safelyObservePromptStream",
+    "qualified_name": "safelyObservePromptStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529447,
+    "end_line": 529455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "callback"
+    ],
+    "body_sha256": "163aaccbec49d2f794c96037d9a82a138a096bf54a54a6d9d56cc193f539a233",
+    "calls": [
+      "callback",
+      "errorLogTag",
+      "logger92.warn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:529456:19339479",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizeExtendedUsage",
+    "qualified_name": "sanitizeExtendedUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529456,
+    "end_line": 529468,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage",
+      "modelId"
+    ],
+    "body_sha256": "dbfa3de73cce661bf199ff3d46cd294b8542b8f59db7556f7ecec551bc3731d5",
+    "calls": [
+      "contextWindowByModelForHostLifetime.set",
+      "toSafeTokenCount2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529469:19339948",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizeFullStream",
+    "qualified_name": "sanitizeFullStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529469,
+    "end_line": 529510,
+    "async": true,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "fullStream",
+      "observer"
+    ],
+    "body_sha256": "eee192bdbbcf4dd3a849415aa201fb102c36add964e99b23c556e18908addad1",
+    "calls": [
+      "String",
+      "new Error",
+      "observer.onStreamPart",
+      "safelyObservePromptStream",
+      "sanitizeUsage"
+    ],
+    "writes": [
+      "observeParts",
+      "outcome",
+      "streamError"
+    ],
+    "throw_targets": [
+      "error63",
+      "streamError"
+    ],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:529511:19341013",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizeStreamResult",
+    "qualified_name": "sanitizeStreamResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529511,
+    "end_line": 529551,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "result",
+      "modelId",
+      "onResolvedModelId",
+      "streamObserver"
+    ],
+    "body_sha256": "97f6f3a6f7d41b77a0bf94c69f79d6c38d127521e7f6fe32b53ec46c85147220",
+    "calls": [
+      ".then",
+      "Promise.all",
+      "result.usage.then",
+      "sanitizeFullStream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529552:19342577",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "createSandResolvedModelTracker",
+    "qualified_name": "createSandResolvedModelTracker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529552,
+    "end_line": 529572,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "c91d10d1046eecc8c59cf8b9c23a0110d7a965e553b399ea4cec09b9321b6165",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529556:19342734",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "get",
+    "qualified_name": "createSandResolvedModelTracker/get",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529556,
+    "end_line": 529556,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "requestedModelId"
+    ],
+    "body_sha256": "8e04ae3ed112bd46a761aa4a053f004ced585883d25b0ed1ee06c6a73495e6cc",
+    "calls": [
+      "acceptedByRequestedModel.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529557:19342831",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "beginRequest",
+    "qualified_name": "createSandResolvedModelTracker/beginRequest",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529557,
+    "end_line": 529570,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "requestedModelId"
+    ],
+    "body_sha256": "0cf9fec8d37da1e8700a710f6249e18ec04744f53c918d86dc01ede8f25ec732",
+    "calls": [],
+    "writes": [
+      "nextRequestSequence"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529574:19343383",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "UsageSanitizingMiddleware.constructor",
+    "qualified_name": "UsageSanitizingMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529574,
+    "end_line": 529579,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "modelId",
+      "resolvedModelTracking",
+      "streamObserver"
+    ],
+    "body_sha256": "1bdbce7367f2cba080fe0f116fc2c9eb60e9f78650f96c653517c1eba60c1b0a",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.modelId",
+      "this.resolvedModelTracking",
+      "this.streamObserver"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529583:19343667",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "UsageSanitizingMiddleware.stream",
+    "qualified_name": "UsageSanitizingMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529583,
+    "end_line": 529620,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "f2580e95c839fd044e8e694fd5c9b435e64ac2509b2114f6d47ba6fca5f657a6",
+    "calls": [
+      "safelyObservePromptStream",
+      "sanitizeStreamResult",
+      "this.innerExecutor.stream",
+      "this.resolvedModelTracking.onRequestStart",
+      "this.resolvedModelTracking.tracker.beginRequest"
+    ],
+    "writes": [
+      "streamResult"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:529586:19343884",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onResolvedModelId",
+    "qualified_name": "UsageSanitizingMiddleware.stream/onResolvedModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529586,
+    "end_line": 529590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "resolvedModelId",
+      "response",
+      "usage"
+    ],
+    "body_sha256": "1e489aa4517bb973b7ca1658307a363166be7fdc8ba92c869ce55a48c726db8b",
+    "calls": [
+      "acceptResolvedModelId",
+      "this.resolvedModelTracking.onResolvedModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529622:19344929",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizePromptExecutorUsage",
+    "qualified_name": "sanitizePromptExecutorUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529622,
+    "end_line": 529624,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor",
+      "modelId",
+      "resolvedModelTracking",
+      "streamObserver"
+    ],
+    "body_sha256": "984d670f758ae561c590ef45bd4aca7dac23086a21789fd3a04b95ea1e960173",
+    "calls": [
+      "new UsageSanitizingMiddleware"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529625:19345126",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sanitizePromptSessionUsage",
+    "qualified_name": "sanitizePromptSessionUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529625,
+    "end_line": 529670,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "session",
+      "resolvedModelTracker = createSandResolvedModelTracker()",
+      "onResolvedModelId",
+      "streamObserver",
+      "untrackedStreamObserver"
+    ],
+    "body_sha256": "ebe68f03562ac73bd24d1f1d122323bbc923c2c3d3587c3f75c6803d7c1a5834",
+    "calls": [
+      "resolvedModelTracker.get",
+      "session.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529628:19345414",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "getEarlyCompaction",
+    "qualified_name": "sanitizePromptSessionUsage/getEarlyCompaction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529628,
+    "end_line": 529633,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f344b824775097eea7cf43c3f65af9474d2da89b99842b1a83ff072f1a765b1e",
+    "calls": [
+      "session.getModelId"
+    ],
+    "writes": [
+      "earlyCompaction"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529635:19345582",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "getExecutor",
+    "qualified_name": "sanitizePromptSessionUsage/getExecutor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529635,
+    "end_line": 529659,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "ea71621552025a3da23454f824d1ebabf7f65b267533d78da9d5388fb370f7fc",
+    "calls": [
+      "getEarlyCompaction",
+      "sanitizePromptExecutorUsage",
+      "session.getExecutor",
+      "session.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529643:19345857",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onRequestStart",
+    "qualified_name": "sanitizePromptSessionUsage/getExecutor/onRequestStart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529643,
+    "end_line": 529645,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ec8c11c6ca534ed30151a793552f7061df45686a21c87df6c1a20153307e2546",
+    "calls": [],
+    "writes": [
+      "earlyCompaction"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529646:19345945",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "onResolvedModelId",
+    "qualified_name": "sanitizePromptSessionUsage/getExecutor/onResolvedModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529646,
+    "end_line": 529655,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "modelId",
+      "response",
+      "usage"
+    ],
+    "body_sha256": "597c913a3daf9691c1bf0534dd9e4773d1c59d801047938a9e9c13a301a24d70",
+    "calls": [
+      "onResolvedModelId",
+      "session.getModelId",
+      "toSafeTokenCount2"
+    ],
+    "writes": [
+      "earlyCompaction",
+      "resolvedModelId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529660:19346493",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "getExecutorWithoutResolvedModelTracking",
+    "qualified_name": "sanitizePromptSessionUsage/getExecutorWithoutResolvedModelTracking",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529660,
+    "end_line": 529665,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "a3314fdab27a9802c185e9035560279117e89f01f15b8b484dd12d2cb0e33faa",
+    "calls": [
+      "sanitizePromptExecutorUsage",
+      "session.getExecutor",
+      "session.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529666:19346662",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "getModelId",
+    "qualified_name": "sanitizePromptSessionUsage/getModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529666,
+    "end_line": 529666,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6701420ae703fc0aa636e012b65cd99d06129e2712ef63e9c129960ae0483727",
+    "calls": [
+      "session.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529667:19346714",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "getResolvedModelId",
+    "qualified_name": "sanitizePromptSessionUsage/getResolvedModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529667,
+    "end_line": 529667,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9ae4537e7416bbc5e3b051ae4568da4b903e453fd74f552a24228795bd62b896",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529679:19346971",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "sandSelfSummarySupported",
+    "qualified_name": "sandSelfSummarySupported",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529679,
+    "end_line": 529681,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "2a2db054509277631cbbbc78afacd9c108e63b226fac590b391afa99f0a7030c",
+    "calls": [
+      "lastReportedSelfSummarySupport",
+      "shouldUseSandSelfSummary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529682:19347105",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "shouldUseSandSelfSummary",
+    "qualified_name": "shouldUseSandSelfSummary",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529682,
+    "end_line": 529687,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelId"
+    ],
+    "body_sha256": "4d302573de1ae18342fcf11619dd0488b3c3f5b2e8c848e88bda996afa7e7b34",
+    "calls": [
+      "DEPRECATED_CURSOR_GROK_4_5_MODELS.has",
+      "model.split",
+      "model.startsWith",
+      "modelId.split",
+      "xaiExternalProviderModel.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529689:19347893",
+    "artifact": "evaluation",
+    "module": "core/runner/conversation-state.ts",
+    "name": "createSandSummarizationHandler",
+    "qualified_name": "createSandSummarizationHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529689,
+    "end_line": 529696,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "summarizationSession",
+      "options2"
+    ],
+    "body_sha256": "dee01d28f55e13e8c0c29e1de6aad336d2f1587f9f1b9a73816d8d1c64d34a4c",
+    "calls": [
+      "new SummarizationHandler"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

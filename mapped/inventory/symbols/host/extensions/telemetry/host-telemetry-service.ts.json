@@ -1,0 +1,1422 @@
+[
+  {
+    "id": "host:731947:27799695",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "sandMessageLengthBucket",
+    "qualified_name": "sandMessageLengthBucket",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731947,
+    "end_line": 731954,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "length"
+    ],
+    "body_sha256": "560832e6537441cea3cb5d86c0bca426f321503340cbe0529a1f2018e963f737",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731955:27799918",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "subscribeToCredentialRenewalTelemetry",
+    "qualified_name": "subscribeToCredentialRenewalTelemetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731955,
+    "end_line": 731971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "auth2",
+      "logs"
+    ],
+    "body_sha256": "6eab378ae371d4facbe5d96ea06f99ba8951cc2257e850cb14fa2112cc8b6195",
+    "calls": [
+      "auth2.getLastRenewalEvent",
+      "auth2.subscribeToRenewal",
+      "reportRenewal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731956:27800004",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportRenewal",
+    "qualified_name": "subscribeToCredentialRenewalTelemetry/reportRenewal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731956,
+    "end_line": 731966,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "5f1a4af6988efbec3b145c57b71520f6dc5f2941ec2a95042b06d2a5707ba733",
+    "calls": [
+      "logFields",
+      "logs.reportInferenceCredentialRenewal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731973:27800572",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.constructor",
+    "qualified_name": "HostTelemetryService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731973,
+    "end_line": 732015,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "526aa606716e8da72588a25c06a7380d612039e4b28abb8d98bb4903d2995e2f",
+    "calls": [
+      "new GrokBotMetricsBackend",
+      "new SandProductAnalytics",
+      "new SandStructuredLogTelemetry",
+      "withAutomationRunAnalytics"
+    ],
+    "writes": [
+      "this.analytics",
+      "this.brain",
+      "this.logs",
+      "this.metrics",
+      "this.options",
+      "this.tracing"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731993:27801419",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportHostLog",
+    "qualified_name": "HostTelemetryService.constructor/reportHostLog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731993,
+    "end_line": 731993,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "line"
+    ],
+    "body_sha256": "63d97fb920da58a3652254174b0fb98dc590e2bdc074913669f92e1140f9e93a",
+    "calls": [
+      "this.logs.reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732003:27801856",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "onAccessTokenFailure",
+    "qualified_name": "HostTelemetryService.constructor/onAccessTokenFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732003,
+    "end_line": 732003,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "160cc7018843110034a9223f88a170d7e495868229a1158c0efc712694ec5cf0",
+    "calls": [
+      "reportFallback"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732011:27802215",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "isEnabled",
+    "qualified_name": "HostTelemetryService.constructor/isEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732011,
+    "end_line": 732011,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "58ce3db29bd23baab1e25c371f1f257560e85f9676060da3438405d3ffa818e2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732013:27802320",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "onFlushError",
+    "qualified_name": "HostTelemetryService.constructor/onFlushError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732013,
+    "end_line": 732013,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "0b4302552a38e0d3cf8b093f43ac728feb92e61988ef61dbd2fad6c7130f13f4",
+    "calls": [
+      "this.reportMetricsFlushError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732036:27802887",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.start",
+    "qualified_name": "HostTelemetryService.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732036,
+    "end_line": 732090,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "d9d5cc645130ab8549290c1b98fd9db6214a218c7d447bcb8e2743220a3bfcd4",
+    "calls": [
+      "createEventLoopTelemetry",
+      "createPressureCpuProfiler",
+      "processOutput.installConsoleForwarding",
+      "subscribeToCredentialRenewalTelemetry",
+      "this.adoptPersistedHttpProxyName",
+      "this.analytics.activate",
+      "this.analytics.markActive",
+      "this.logs.setFlushTickListener",
+      "this.options.desktopHealthPolling.start",
+      "this.options.egressIpPolling.start"
+    ],
+    "writes": [
+      "this.boxLogShipper",
+      "this.desktopHealthPolling",
+      "this.egressIpPolling",
+      "this.eventLoop",
+      "this.pressureProfiler",
+      "this.restoreConsole",
+      "this.unsubscribeEvents"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732045:27803342",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportHostLog",
+    "qualified_name": "HostTelemetryService.start/reportHostLog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732045,
+    "end_line": 732045,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "line"
+    ],
+    "body_sha256": "63d97fb920da58a3652254174b0fb98dc590e2bdc074913669f92e1140f9e93a",
+    "calls": [
+      "this.logs.reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732046:27803416",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "overrides",
+    "qualified_name": "HostTelemetryService.start/overrides",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732046,
+    "end_line": 732048,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ebfeb166998e00d49c0f3ebb9a195bc2df25a42801f7f29553cbf5c76d367ac8",
+    "calls": [
+      "this.options.experiments.getDynamicConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732051:27803625",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "report",
+    "qualified_name": "HostTelemetryService.start/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732051,
+    "end_line": 732065,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "summary",
+      "trigger2"
+    ],
+    "body_sha256": "8f84b7b72bf4588c2a18850e98f30a6162021d7a7daf1c1cc7b06df3978205b5",
+    "calls": [
+      "this.logs.reportHostEventLoop",
+      "this.options.experiments.checkFeatureGate",
+      "this.pressureProfiler.onPressure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732080:27804851",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportBatch",
+    "qualified_name": "HostTelemetryService.start/reportBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732080,
+    "end_line": 732080,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "records2",
+      "onEntrySettled"
+    ],
+    "body_sha256": "53d0b0636afd5a414ad62da3e14928868481537f7f3591afe942ec01afea74e9",
+    "calls": [
+      "this.logs.reportBoxLogBatch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732081:27804962",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportBoxLogShip",
+    "qualified_name": "HostTelemetryService.start/reportBoxLogShip",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732081,
+    "end_line": 732081,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report",
+      "onSettled"
+    ],
+    "body_sha256": "af1cc10ff30c297b55a8d84130b57a3a5ea315a15b8322508a5d61388f8c0970",
+    "calls": [
+      "this.logs.reportBoxLogShip"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732082:27805055",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportHostLog",
+    "qualified_name": "HostTelemetryService.start/reportHostLog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732082,
+    "end_line": 732082,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "line"
+    ],
+    "body_sha256": "63d97fb920da58a3652254174b0fb98dc590e2bdc074913669f92e1140f9e93a",
+    "calls": [
+      "this.logs.reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732091:27805311",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.api",
+    "qualified_name": "HostTelemetryService.api",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732091,
+    "end_line": 732109,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6f0f8734478db4b16982dea1bcfbe4c2cccbf8539f9917cc24cd010aa154bc3d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732097:27805474",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "createHostLifecycleProgress",
+    "qualified_name": "HostTelemetryService.api/createHostLifecycleProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732097,
+    "end_line": 732102,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "startedAt"
+    ],
+    "body_sha256": "6b0ae9d0083bf8b60bbc5625ca0b7b0f8ea5483eca8a08eb2a60f8fed0c6f296",
+    "calls": [
+      "new HostLifecycleProgress"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732099:27805549",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "now",
+    "qualified_name": "HostTelemetryService.api/createHostLifecycleProgress/now",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732099,
+    "end_line": 732099,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "32d29940e0b3b4aeab2989a51a4d1f74b6a7f1da8de8ef8f93e106b45f0ccfea",
+    "calls": [
+      "this.options.clock.monotonicNow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732101:27805660",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "report",
+    "qualified_name": "HostTelemetryService.api/createHostLifecycleProgress/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732101,
+    "end_line": 732101,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "b79472fc374e65f536cd0195c2ae9120d94232c755810d19fb820cd5c63d9c0f",
+    "calls": [
+      "this.logs.reportHostLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732103:27805749",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "setHostBundleIdentity",
+    "qualified_name": "HostTelemetryService.api/setHostBundleIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732103,
+    "end_line": 732103,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "identity"
+    ],
+    "body_sha256": "abf95718302cb6f8427a321499e47b5cc612988f5cdefbf76f202bad5a5e2e2b",
+    "calls": [
+      "this.setHostBundleIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732104:27805825",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "setHttpProxyName",
+    "qualified_name": "HostTelemetryService.api/setHttpProxyName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732104,
+    "end_line": 732104,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "95c614bb0818220c770cfe4c8d0a11926d570a97634e15aeeb24ff2c185649e4",
+    "calls": [
+      "this.setHttpProxyName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732105:27805888",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "flushTracing",
+    "qualified_name": "HostTelemetryService.api/flushTracing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732105,
+    "end_line": 732105,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "66a161f30fde825db83098405e411d12d1c7c101e671ea4aa29764326a2cd28e",
+    "calls": [
+      "this.tracing.flush"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732106:27805941",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "flushForFatalExit",
+    "qualified_name": "HostTelemetryService.api/flushForFatalExit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732106,
+    "end_line": 732106,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4206e8a294d58acfab37138e89b1ce4854c8b6cad9068a6b2b6d2b1f11fc8962",
+    "calls": [
+      "this.flushForFatalExit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732107:27805998",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "reportMessageSent",
+    "qualified_name": "HostTelemetryService.api/reportMessageSent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732107,
+    "end_line": 732107,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "34dbe2f02fd0035c2a7164f1ff4ba344a693b35fc3c4435132fa301a9770bc6b",
+    "calls": [
+      "this.reportMessageSent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732110:27806087",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.adoptPersistedHttpProxyName",
+    "qualified_name": "HostTelemetryService.adoptPersistedHttpProxyName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732110,
+    "end_line": 732123,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "46b8fcfdf785264fa433fece304f54bedf9b91fd60e63d5a5ac3548c2f796935",
+    "calls": [
+      "reportFallback",
+      "resolveStartupHttpProxyName",
+      "this.logs.getHttpProxyName",
+      "this.logs.setHttpProxyName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732124:27806567",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.setHttpProxyName",
+    "qualified_name": "HostTelemetryService.setHttpProxyName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732124,
+    "end_line": 732149,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rawName"
+    ],
+    "body_sha256": "815329ef05cf69e85da93024575b266cb95f860d0a858b0020d4ec877d28ca16",
+    "calls": [
+      "brandedId",
+      "new Error",
+      "normalizeHttpProxyName",
+      "reportFallback",
+      "store.write",
+      "this.logs.getHttpProxyName",
+      "this.logs.reportHttpProxyNameChanged",
+      "this.logs.setHttpProxyName",
+      "this.options.clock.now"
+    ],
+    "writes": [
+      "persisted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732150:27807538",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.setHostBundleIdentity",
+    "qualified_name": "HostTelemetryService.setHostBundleIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732150,
+    "end_line": 732157,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "identity"
+    ],
+    "body_sha256": "e947cbd70973453907a543fc8c94728644aa7f1da63124bf7800bd5f4de1c311",
+    "calls": [
+      "this.boxLogShipper.start",
+      "this.logs.setHostBundleIdentity",
+      "this.startHostCrashMarkerForwarding"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732158:27807820",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.reportMessageSent",
+    "qualified_name": "HostTelemetryService.reportMessageSent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732158,
+    "end_line": 732170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "ce8312826d696e341ef30e1120b8c9b3d624106a48bf5d93d3418164d6f9316d",
+    "calls": [
+      "Array.isArray",
+      "report.prompt.trim",
+      "this.analytics.markActive",
+      "this.trackMessageSent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732171:27808448",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.trackMessageSent",
+    "qualified_name": "HostTelemetryService.trackMessageSent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732171,
+    "end_line": 732183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "report",
+      "sent"
+    ],
+    "body_sha256": "bae8915bc388640a40e1ea1fe51f909640bd5828e4ba65f553d2451fc11d3858",
+    "calls": [
+      "brandedId",
+      "sandMessageLengthBucket",
+      "this.analytics.trackEvent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732184:27808962",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.dispose",
+    "qualified_name": "HostTelemetryService.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732184,
+    "end_line": 732209,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "73e14b71b06e157c34507fbbc40b7184e36224700c0c097a20680285defecf69",
+    "calls": [
+      "boxLogShipper.checkpointOffsets",
+      "boxLogShipper.dispose",
+      "boxLogShipper.stopPolling",
+      "this.analytics.dispose",
+      "this.desktopHealthPolling.dispose",
+      "this.egressIpPolling.dispose",
+      "this.eventLoop.dispose",
+      "this.hostCrashMarkerForwarding.dispose",
+      "this.logs.dispose",
+      "this.logs.setFlushTickListener",
+      "this.metrics.dispose",
+      "this.pressureProfiler.dispose",
+      "this.restoreConsole",
+      "this.tracing.dispose",
+      "this.unsubscribeEvents"
+    ],
+    "writes": [
+      "this.boxLogShipper",
+      "this.desktopHealthPolling",
+      "this.egressIpPolling",
+      "this.eventLoop",
+      "this.hostCrashMarkerForwarding",
+      "this.pressureProfiler",
+      "this.restoreConsole",
+      "this.unsubscribeEvents"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 7,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732210:27809895",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.startHostCrashMarkerForwarding",
+    "qualified_name": "HostTelemetryService.startHostCrashMarkerForwarding",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732210,
+    "end_line": 732229,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "383eb88cb3e69aaaa8b21ef7c929f80a8ae4d27011b56832806d3c7da2311807",
+    "calls": [
+      "this.options.hostCrashMarkerPolling.start"
+    ],
+    "writes": [
+      "this.hostCrashMarkerForwarding"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732215:27810172",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "emit",
+    "qualified_name": "HostTelemetryService.startHostCrashMarkerForwarding/<callback>/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732215,
+    "end_line": 732215,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "marker17"
+    ],
+    "body_sha256": "1956e3221cf1ddde7104c8e7eb607f0137b276af3b9d5e2b089410d87e3f16fc",
+    "calls": [
+      "this.logs.reportHostProcessExitConfirmed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732216:27810263",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "emitUnparseable",
+    "qualified_name": "HostTelemetryService.startHostCrashMarkerForwarding/<callback>/emitUnparseable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732216,
+    "end_line": 732218,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6cf6443ec1e94db7db529f71c01501fad81e578f79f2a610e72c818fa79f3e0a",
+    "calls": [
+      "this.logs.reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732219:27810391",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "wasForwarded",
+    "qualified_name": "HostTelemetryService.startHostCrashMarkerForwarding/<callback>/wasForwarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732219,
+    "end_line": 732219,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "e32679e93f678d55a81b7921b4918ad5df0d4d51e025b38100a23cb0b2c3d594",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732220:27810464",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "markForwarded",
+    "qualified_name": "HostTelemetryService.startHostCrashMarkerForwarding/<callback>/markForwarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732220,
+    "end_line": 732222,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "55ff57ccf1f7fc500a35b21ff400498870c170db5e4446bc4841825bef51d614",
+    "calls": [],
+    "writes": [
+      "this.lastHandledHostCrashMarker"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732230:27810776",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.flushForFatalExit",
+    "qualified_name": "HostTelemetryService.flushForFatalExit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732230,
+    "end_line": 732241,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8f9143123906e038e2f071439634ccc4697120516b47f2111374a2189540af30",
+    "calls": [
+      "this.options.fatalFlushDeadline.run"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732242:27811131",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.reportMetricsFlushError",
+    "qualified_name": "HostTelemetryService.reportMetricsFlushError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732242,
+    "end_line": 732247,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "2aa9146b9a428b2a85f1c94e7efa7e6e9b74d9e6ccc300a8236387e53a79d970",
+    "calls": [
+      "errorLogTag",
+      "this.logs.reportHostLog",
+      "this.reportedMetricsFlushErrorReasons.add",
+      "this.reportedMetricsFlushErrorReasons.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732248:27811429",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.probeEgressIp",
+    "qualified_name": "HostTelemetryService.probeEgressIp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732248,
+    "end_line": 732266,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "52fa5c80fcb0f498fe3fd5275b67861cd56237d3248930064c402197523546fa",
+    "calls": [
+      "errorLogTag",
+      "probeEgressIpHash",
+      "this.analytics.setEgressIpHash",
+      "this.logs.reportHostLog",
+      "this.logs.setEgressIpHash",
+      "this.options.experiments.checkFeatureGate",
+      "this.reportedEgressIpProbeFailureReasons.add",
+      "this.reportedEgressIpProbeFailureReasons.has"
+    ],
+    "writes": [
+      "this.lastEgressIpHash"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732267:27812198",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "HostTelemetryService.forwardDesktopHealth",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732267,
+    "end_line": 732294,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "81c4ae3d5649c14f1434fde2347787c4ee4474fa801f9c8bd2918c6ebdde3d41",
+    "calls": [
+      "forwardDesktopHealthWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732271:27812319",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "readRaw",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth/readRaw",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732271,
+    "end_line": 732280,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e273c0d73c6f8818331306b5054103374d25e0de9dddb3cb42d3c68f7faa96ba",
+    "calls": [
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732281:27812760",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "emit",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth/emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732281,
+    "end_line": 732281,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "metadata2"
+    ],
+    "body_sha256": "639e366d1180e67e62ddd65adba192a9909b6e7db79fbcd29f736bcc1d83b379",
+    "calls": [
+      "this.logs.reportDesktopHealth"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732282:27812844",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "now",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth/now",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732282,
+    "end_line": 732282,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b1e9721521c7ba40640c6e2e78fee73430ca6d88fa530457caee88039714affd",
+    "calls": [
+      "Date.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732283:27812879",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "getLast",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth/getLast",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732283,
+    "end_line": 732286,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8625381a9ba0b078062869738e29c0603852204fc2e297f9cc7b4bdf2792ae71",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732287:27813030",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-telemetry-service.ts",
+    "name": "setLast",
+    "qualified_name": "HostTelemetryService.forwardDesktopHealth/setLast",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732287,
+    "end_line": 732290,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "revision",
+      "atMs"
+    ],
+    "body_sha256": "bbd5caeeb14cd3144c761c1a9d9cb43cecc26dc7f2e1f25916afca2ef1190e1b",
+    "calls": [],
+    "writes": [
+      "this.lastForwardedDesktopHealthAtMs",
+      "this.lastForwardedDesktopHealthRevision"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,589 @@
+[
+  {
+    "id": "state-worker:970:33361",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "readConversationBlobMigrationState",
+    "qualified_name": "readConversationBlobMigrationState",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 970,
+    "end_line": 987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "4d7781f1d4b91678c276f84b475d84ec9e54e2f623a7134e14de5478dde046ff",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [
+      "version"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:994:34054",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "ConversationBlobRecoveryError.constructor",
+    "qualified_name": "ConversationBlobRecoveryError.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 994,
+    "end_line": 997,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "code",
+      "message"
+    ],
+    "body_sha256": "8e6615d0faf89266d9efa1144243c18881ca7f9e61fb8fefbcc0a49ccb997d66",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.code"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1001:34171",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "openConfiguredConversationBlobDb",
+    "qualified_name": "openConfiguredConversationBlobDb",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1001,
+    "end_line": 1016,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "busyTimeoutMs"
+    ],
+    "body_sha256": "3f69317dc573debc76c46b8cc7a2f8778d919f6294466a62cfcc75d0e7a038b3",
+    "calls": [
+      "applyStorePragmas",
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "new import_node_sqlite3.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:1017:34605",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "runQuickCheck",
+    "qualified_name": "runQuickCheck",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1017,
+    "end_line": 1020,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "5dd954847e21ad95a63eac0f3167ff0504cc761b0c717431b73b5a4ea0a52ab5",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1021:34750",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "getHealth",
+    "qualified_name": "getHealth",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1021,
+    "end_line": 1027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "56ad4292bd9bdee9c1b124e7b7fbb7c95de0b806fa413c61b9e5b08c4eaff46e",
+    "calls": [
+      "isSqliteCorruptError",
+      "runQuickCheck"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:1028:34907",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "getHealthOnDisk",
+    "qualified_name": "getHealthOnDisk",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1028,
+    "end_line": 1056,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "b85ef35e1d04cf75ac7a35425cb8c3fb9f3e2b29397b7f1b187380ba63122155",
+    "calls": [
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "db.exec",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "new import_node_sqlite3.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync",
+      "removeSqliteSidecars",
+      "runQuickCheck"
+    ],
+    "writes": [
+      "attempt",
+      "db"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 3
+    }
+  },
+  {
+    "id": "state-worker:1057:35754",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "recoverConversationBlobDb",
+    "qualified_name": "recoverConversationBlobDb",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1057,
+    "end_line": 1092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "980ac4f0d2f8b85abc8c6f7c32b5b4557853380ad2a93f0232f4152099798541",
+    "calls": [
+      ".replace",
+      ".toISOString",
+      "Math.ceil",
+      "finishConversationBlobRecovery",
+      "new Date",
+      "options.log",
+      "recovery.quarantineCorruptSqliteDb",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1093:37385",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "openConversationBlobRecoveryTarget",
+    "qualified_name": "openConversationBlobRecoveryTarget",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1093,
+    "end_line": 1136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options",
+      "dbPath"
+    ],
+    "body_sha256": "62a7c629ac95915cdd40c61aed70f4eae92a93360da8089d0b48533dc6ec3f06",
+    "calls": [
+      "db.close",
+      "getHealth",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "new ConversationBlobRecoveryError",
+      "open",
+      "remove",
+      "removeSqliteSidecars"
+    ],
+    "writes": [
+      "attempt",
+      "db",
+      "retriedWithoutSidecars"
+    ],
+    "throw_targets": [
+      "ConversationBlobRecoveryError",
+      "error"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 3,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:1095:37517",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "open",
+    "qualified_name": "openConversationBlobRecoveryTarget/open",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1095,
+    "end_line": 1095,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8dca3f630cc491756328b3f4eb1909b1f7d2c1b63e33dcc61768d9e7bea1c881",
+    "calls": [
+      "openConfiguredConversationBlobDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1096:37605",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "remove",
+    "qualified_name": "openConversationBlobRecoveryTarget/remove",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1096,
+    "end_line": 1100,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4094f9abcafa1e8608951fe12472721aa53cf45e6a1b29375941a3d6ad018782",
+    "calls": [
+      "Math.ceil",
+      "recovery.removeSqliteDb"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1137:38762",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "installCompletedConversationBlobReplacement",
+    "qualified_name": "installCompletedConversationBlobReplacement",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1137,
+    "end_line": 1190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "7f920386f2bf08de657169a45fb535e2809970dcffffad09086847db08c96615",
+    "calls": [
+      "getHealth",
+      "getHealthOnDisk",
+      "installed.close",
+      "isSqliteCorruptError",
+      "new ConversationBlobRecoveryError",
+      "openConfiguredConversationBlobDb",
+      "options.recovery.removeSqliteDb",
+      "readConversationBlobMigrationState",
+      "removeSandDataFileSync",
+      "removeSqliteSidecars",
+      "replacement.close",
+      "replacement.exec"
+    ],
+    "writes": [
+      "replacement"
+    ],
+    "throw_targets": [
+      "ConversationBlobRecoveryError",
+      "error"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 4,
+      "catches": 2
+    }
+  },
+  {
+    "id": "state-worker:1191:40770",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "finishConversationBlobRecovery",
+    "qualified_name": "finishConversationBlobRecovery",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1191,
+    "end_line": 1354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "aea834775ff49e99cf3c1d143ca0239c32e25c86c1c0681b1f5e40eef2230535",
+    "calls": [
+      "Math.ceil",
+      "copySalvageableSqliteRows",
+      "existing.close",
+      "freshDb.close",
+      "freshDb.exec",
+      "freshDb.prepare",
+      "getHealth",
+      "getHealthOnDisk",
+      "installCompletedConversationBlobReplacement",
+      "installedDb.close",
+      "isSqliteCorruptError",
+      "new ConversationBlobRecoveryError",
+      "openConfiguredConversationBlobDb",
+      "openConversationBlobRecoveryTarget",
+      "options.log",
+      "options.onRecovery",
+      "recovery.openSqliteForSalvage",
+      "recovery.quarantineCorruptSqliteDb",
+      "recovery.removeSqliteDb",
+      "removeSandDataFileSync",
+      "removeSqliteSidecars",
+      "source.close"
+    ],
+    "writes": [
+      "existing",
+      "pendingPath",
+      "quarantinePath",
+      "replacementPath",
+      "salvagedBlobs"
+    ],
+    "throw_targets": [
+      "ConversationBlobRecoveryError"
+    ],
+    "control": {
+      "branches": 23,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 5,
+      "catches": 6
+    }
+  },
+  {
+    "id": "state-worker:1355:46783",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "findPendingRecovery",
+    "qualified_name": "findPendingRecovery",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1355,
+    "end_line": 1396,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath",
+      "recovery"
+    ],
+    "body_sha256": "79e72454a0c544446937f009ed4bf37d86cb2ae609a1062d1f5a2ef997e53d9a",
+    "calls": [
+      ".sort",
+      "markerNames.at",
+      "markerNames.slice",
+      "name.endsWith",
+      "name.startsWith",
+      "names.filter",
+      "names.includes",
+      "quarantinePathFor",
+      "recovery.removeSqliteDb",
+      "removeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1369:47438",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "quarantinePathFor",
+    "qualified_name": "findPendingRecovery/quarantinePathFor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1369,
+    "end_line": 1374,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "name"
+    ],
+    "body_sha256": "7c4df0c82cda23c06019458066314c2e35e93ff0f664ef6d280bf73a3746c0d7",
+    "calls": [
+      "markerPath.slice",
+      "name.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:1397:48553",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-db.ts",
+    "name": "openConversationBlobDb",
+    "qualified_name": "openConversationBlobDb",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 1397,
+    "end_line": 1461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options"
+    ],
+    "body_sha256": "f4d888e9f8fc3928a8350296ca122bd840c7c8e0ca0dd95677da71160a9c7f1d",
+    "calls": [
+      "db.close",
+      "ensureSandDataDirSync",
+      "findPendingRecovery",
+      "finishConversationBlobRecovery",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError",
+      "new ConversationBlobRecoveryError",
+      "openConfiguredConversationBlobDb",
+      "recoverConversationBlobDb",
+      "removeSqliteSidecars",
+      "runQuickCheck"
+    ],
+    "writes": [
+      "db",
+      "health"
+    ],
+    "throw_targets": [
+      "ConversationBlobRecoveryError",
+      "error",
+      "retryError"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 4,
+      "catches": 6
+    }
+  }
+]

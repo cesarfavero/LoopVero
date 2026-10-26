@@ -1,0 +1,246 @@
+[
+  {
+    "id": "state-worker:22181:761799",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "liveBlobTypeNameOf",
+    "qualified_name": "liveBlobTypeNameOf",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22181,
+    "end_line": 22183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name"
+    ],
+    "body_sha256": "918c032134389bff0c9fbe03ef76db067261e4f242de7aa1a6ddde034369aa32",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22189:762139",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "toHexId",
+    "qualified_name": "toHexId",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22189,
+    "end_line": 22191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "2dc1b48009e8332fbe00b4b031fdb3f6568ae9c1edb98a1f31876044aba5ecbd",
+    "calls": [
+      ".toString",
+      "Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22192:762255",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "fieldValue",
+    "qualified_name": "fieldValue",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22192,
+    "end_line": 22201,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "field"
+    ],
+    "body_sha256": "8303283b036942791f5910e8062fd54f773fb6a7297e689a4c0cca6cf186fa9d",
+    "calls": [
+      "isUnknownRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22202:762595",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "blobIdsIn",
+    "qualified_name": "blobIdsIn",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22202,
+    "end_line": 22218,
+    "async": false,
+    "generator": true,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawValue"
+    ],
+    "body_sha256": "6f6f2d21679dbb65b4c969122d4772c17dd6fb27601d5e356d0d3b4cbe4357d7",
+    "calls": [
+      "Array.isArray",
+      "Object.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22219:763019",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "collectReachableBlobHexIds",
+    "qualified_name": "collectReachableBlobHexIds",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22219,
+    "end_line": 22291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  rootBytes,\n  getBlobByHexId,\n  onBlobReference\n}"
+    ],
+    "body_sha256": "85e439d82bf90c2180a5173d0da0d2475b66ea1a481e30de4493b1b35f9430f8",
+    "calls": [
+      "ConversationStateStructure.fromBinary",
+      "new Map",
+      "visitMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:22226:763197",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "visitBlobReference",
+    "qualified_name": "collectReachableBlobHexIds/visitBlobReference",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22226,
+    "end_line": 22246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "blobId",
+      "blobReferenceType"
+    ],
+    "body_sha256": "21e635f9c2628b3916941cb769cc3ec67e5c58a71ca84d3c4773c0e76b24167c",
+    "calls": [
+      "BLOB_REFERENCE_MESSAGE_TYPE_BY_NAME[computed].fromBinary",
+      "blobTypeByHexId.has",
+      "blobTypeByHexId.set",
+      "getBlobByHexId",
+      "isProtoBlobReferenceTypeName",
+      "onBlobReference",
+      "toHexId",
+      "visitMessage"
+    ],
+    "writes": [
+      "child",
+      "unresolvedProtoRefs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "state-worker:22247:763860",
+    "artifact": "state-worker",
+    "module": "host/agent-isolation/conversation-blob-gc.ts",
+    "name": "visitMessage",
+    "qualified_name": "collectReachableBlobHexIds/visitMessage",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 22247,
+    "end_line": 22288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "687e3f301a1fed21136e20b15f03c9e1002c81fdd56970c22fe1fffd458543e7",
+    "calls": [
+      ".map",
+      "Array.isArray",
+      "EDGES_NOT_WALKED_SO_REFERENTS_COLLECT.has",
+      "Object.values",
+      "blobFieldsByLocalName.get",
+      "blobIdsIn",
+      "fieldValue",
+      "getBlobReferenceMessageMetadata",
+      "isMessage",
+      "message.getType",
+      "messageType.fields.list",
+      "new Map",
+      "visitBlobReference",
+      "visitMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 4,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

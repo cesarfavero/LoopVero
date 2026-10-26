@@ -1,0 +1,686 @@
+[
+  {
+    "id": "host:779480:29981120",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "queryTerms2",
+    "qualified_name": "queryTerms2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779480,
+    "end_line": 779486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "fe75148ad79aee7a0997cafe2156b04dfbfd9422a51ecf6830ca6633f2f84118",
+    "calls": [
+      ".filter",
+      ".split",
+      "new Set",
+      "query2.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779487:29981272",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "isSearchableToken",
+    "qualified_name": "isSearchableToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779487,
+    "end_line": 779489,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "term"
+    ],
+    "body_sha256": "989be32a1ca9c50d7baea4b500463aba9cb2cb480e7eb4f12b483f16655d5f58",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779490:29981364",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "withAliases",
+    "qualified_name": "withAliases",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779490,
+    "end_line": 779492,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "terms"
+    ],
+    "body_sha256": "deb31bbb10987db4cd9fdd7b58e85e92dddec438b51a0f06f25ec52afd651c78",
+    "calls": [
+      "new Set",
+      "terms.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779493:29981493",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "scorePluginForToken",
+    "qualified_name": "scorePluginForToken",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779493,
+    "end_line": 779504,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugin",
+      "token"
+    ],
+    "body_sha256": "5850eda6b56b843397748dbf9ef31dd6d20eb9e3f43c624c2c8fed9b1bdaffb8",
+    "calls": [
+      ".includes",
+      "displayName2.includes",
+      "name18.includes",
+      "plugin.category.toLowerCase",
+      "plugin.description.toLowerCase",
+      "plugin.displayName.toLowerCase",
+      "plugin.name.toLowerCase",
+      "plugin.skills.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779505:29982029",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "scorePluginForTerm",
+    "qualified_name": "scorePluginForTerm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779505,
+    "end_line": 779509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugin",
+      "term"
+    ],
+    "body_sha256": "82ce03a0ade8c6436ee7875b609341d54a5b23628873b89a5f3d3c73c8966ad0",
+    "calls": [
+      "isSearchableToken",
+      "plugin.displayName.toLowerCase",
+      "plugin.name.toLowerCase",
+      "scorePluginForToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779510:29982284",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "byName2",
+    "qualified_name": "byName2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779510,
+    "end_line": 779512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "2e42f52475a6f8e9accef79b8fc3c98a25f32ec31ec2fde9fe9f231c056de943",
+    "calls": [
+      "a.displayName.localeCompare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779513:29982366",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankByTerms",
+    "qualified_name": "rankByTerms",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779513,
+    "end_line": 779518,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "terms",
+      "score"
+    ],
+    "body_sha256": "cb153c3a9ca7e9fb58ec3df7271cd7e487eacc772f31e6f7a2ea4490f2db52f0",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "plugins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779519:29982670",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankWithRecall",
+    "qualified_name": "rankWithRecall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779519,
+    "end_line": 779524,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "query2"
+    ],
+    "body_sha256": "da128468c844ff011ded594b2043895f4bca4280831054ce75f76c82911354f5",
+    "calls": [
+      ".sort",
+      "queryTerms2",
+      "rankByTerms",
+      "terms.some",
+      "withAliases"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779525:29982941",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankPluginsLexically",
+    "qualified_name": "rankPluginsLexically",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779525,
+    "end_line": 779530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "query2",
+      "options2 = {}"
+    ],
+    "body_sha256": "d9bab56f8e9dc26e5307faded60b5805ec60fef04ea2e8cd698c243316a10438",
+    "calls": [
+      ".filter",
+      ".sort",
+      "queryTerms2",
+      "rankByTerms",
+      "rankWithRecall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:779531:29983265",
+    "artifact": "host",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "nativeProviderSearchNote",
+    "qualified_name": "nativeProviderSearchNote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 779531,
+    "end_line": 779534,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "3545fd0c18e9fb3f2f0dce14657bbbc32ec86c6f3df102d78b91657672ef9763",
+    "calls": [
+      ".some",
+      "queryTerms2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579718:21731307",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "queryTerms2",
+    "qualified_name": "queryTerms2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579718,
+    "end_line": 579724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "fe75148ad79aee7a0997cafe2156b04dfbfd9422a51ecf6830ca6633f2f84118",
+    "calls": [
+      ".filter",
+      ".split",
+      "new Set",
+      "query2.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579725:21731459",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "isSearchableToken",
+    "qualified_name": "isSearchableToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579725,
+    "end_line": 579727,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "term"
+    ],
+    "body_sha256": "989be32a1ca9c50d7baea4b500463aba9cb2cb480e7eb4f12b483f16655d5f58",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579728:21731551",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "withAliases",
+    "qualified_name": "withAliases",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579728,
+    "end_line": 579730,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "terms"
+    ],
+    "body_sha256": "deb31bbb10987db4cd9fdd7b58e85e92dddec438b51a0f06f25ec52afd651c78",
+    "calls": [
+      "new Set",
+      "terms.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579731:21731680",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "scorePluginForToken",
+    "qualified_name": "scorePluginForToken",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579731,
+    "end_line": 579742,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugin",
+      "token"
+    ],
+    "body_sha256": "5850eda6b56b843397748dbf9ef31dd6d20eb9e3f43c624c2c8fed9b1bdaffb8",
+    "calls": [
+      ".includes",
+      "displayName2.includes",
+      "name18.includes",
+      "plugin.category.toLowerCase",
+      "plugin.description.toLowerCase",
+      "plugin.displayName.toLowerCase",
+      "plugin.name.toLowerCase",
+      "plugin.skills.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579743:21732216",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "scorePluginForTerm",
+    "qualified_name": "scorePluginForTerm",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579743,
+    "end_line": 579747,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugin",
+      "term"
+    ],
+    "body_sha256": "82ce03a0ade8c6436ee7875b609341d54a5b23628873b89a5f3d3c73c8966ad0",
+    "calls": [
+      "isSearchableToken",
+      "plugin.displayName.toLowerCase",
+      "plugin.name.toLowerCase",
+      "scorePluginForToken"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579748:21732471",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "byName",
+    "qualified_name": "byName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579748,
+    "end_line": 579750,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "c257f9e63e1c19ad164f84b12732b8fd264442cee9d39e37f712247822d0085e",
+    "calls": [
+      "a.displayName.localeCompare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579751:21732552",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankByTerms",
+    "qualified_name": "rankByTerms",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579751,
+    "end_line": 579756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "terms",
+      "score"
+    ],
+    "body_sha256": "df449216effe8d9a895f92df2616427361646ad7da859dd3f7455e96a8bfbfa7",
+    "calls": [
+      ".filter",
+      ".map",
+      ".sort",
+      "plugins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579757:21732855",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankWithRecall",
+    "qualified_name": "rankWithRecall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579757,
+    "end_line": 579762,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "query2"
+    ],
+    "body_sha256": "c86415aeda2f266dff15e94f79d2a0e9a5e9d6ecce3e66716fb9649378cd1357",
+    "calls": [
+      ".sort",
+      "queryTerms2",
+      "rankByTerms",
+      "terms.some",
+      "withAliases"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579763:21733125",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "rankPluginsLexically",
+    "qualified_name": "rankPluginsLexically",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579763,
+    "end_line": 579768,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "plugins",
+      "query2",
+      "options2 = {}"
+    ],
+    "body_sha256": "82ded7bfb9a69200fc76a5f3afb933f0fe7f4c2060bbded9dd98bdb13d069b08",
+    "calls": [
+      ".filter",
+      ".sort",
+      "queryTerms2",
+      "rankByTerms",
+      "rankWithRecall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:579769:21733448",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/plugin-search/plugin-search.ts",
+    "name": "nativeProviderSearchNote",
+    "qualified_name": "nativeProviderSearchNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 579769,
+    "end_line": 579772,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "3545fd0c18e9fb3f2f0dce14657bbbc32ec86c6f3df102d78b91657672ef9763",
+    "calls": [
+      ".some",
+      "queryTerms2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

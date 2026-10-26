@@ -1,0 +1,156 @@
+[
+  {
+    "id": "evaluation:587605:22119754",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/subagent-roster.ts",
+    "name": "buildSandSubagentConfigs",
+    "qualified_name": "buildSandSubagentConfigs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587605,
+    "end_line": 587621,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "f5c0bd9b9aa452195f286ce2bc74a8b616ab7f2b2458c6c855f23c547524e3ef",
+    "calls": [
+      "buildSubagentConfigs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587622:22120297",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/subagent-roster.ts",
+    "name": "sandMediaReviewSystemPrompt",
+    "qualified_name": "sandMediaReviewSystemPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587622,
+    "end_line": 587627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentType"
+    ],
+    "body_sha256": "b62ec794da2d1447cf0faa4100d5205dbebc494a1250ed3aca6ca9491aa6f8ee",
+    "calls": [
+      ".systemReminder",
+      "buildSandSubagentConfigs",
+      "findSubagentConfigByName",
+      "isMediaReviewSubagentType"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587628:22120526",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/subagent-roster.ts",
+    "name": "forksExecutor",
+    "qualified_name": "forksExecutor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587628,
+    "end_line": 587630,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "gates",
+      "subagentType"
+    ],
+    "body_sha256": "ec939652a9a6c2bfadc40b608b12fe8b64d0f675617ea0f8fabf913c7ebbb144",
+    "calls": [
+      "gates.executorForkContext"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587631:22120655",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-composition/subagent-roster.ts",
+    "name": "buildTurnSubagentRoster",
+    "qualified_name": "buildTurnSubagentRoster",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587631,
+    "end_line": 587701,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "turnToolHost",
+      "turn"
+    ],
+    "body_sha256": "2c1f5bc16760b685c3797f8c6c592ece1a3787f07a59822d9e3fca29566dd8d9",
+    "calls": [
+      "artifactToolOffers",
+      "availableDesktopExecutor",
+      "buildSandSubagentConfigs",
+      "createSandComputerUseSubagentConfig",
+      "createSandExecutorProfileModels",
+      "createSandExecutorSubagentConfig",
+      "createSandKnowledgeWorkSubagentConfig",
+      "createSandUserComputerUseSubagentConfig",
+      "createSubagentModels",
+      "executorWritesPages",
+      "hasExecutorSubagent",
+      "host.inference.getExecutorProfiles",
+      "host.knowledgeWorkSubagentDescription",
+      "offersUserComputerUseSubagent",
+      "sandSubagentToolName",
+      "subagentConfigs.findIndex",
+      "subagentConfigs.forEach",
+      "subagentConfigs.push",
+      "subagentConfigs.some",
+      "subagentConfigs.splice",
+      "turnToolHost.gates.executorForkContext",
+      "turnToolHost.gates.knowledgeWork",
+      "turnToolHost.gates.taskSubagentRoster",
+      "turnToolHost.getRemoteBoxAvailable",
+      "turnToolHost.isCombinedComputerUseAvailable"
+    ],
+    "writes": [
+      "userInfoPromptVariant"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

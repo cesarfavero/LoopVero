@@ -1,0 +1,436 @@
+[
+  {
+    "id": "host:498123:18275826",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "isDefaultDisposition",
+    "qualified_name": "isDefaultDisposition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498123,
+    "end_line": 498125,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "a6e8c4c159de9fe4c40fa5c77654fdd306cc75f649526b2f425574dca3130860",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498126:18275910",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "videoStreamsOf",
+    "qualified_name": "videoStreamsOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498126,
+    "end_line": 498138,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "probe"
+    ],
+    "body_sha256": "700e8cbfe5180e40260f22cb5dce633f908968cd502573232e8a40e124401a79",
+    "calls": [
+      "isDefaultDisposition",
+      "streams.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498139:18276301",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "tileGridOf",
+    "qualified_name": "tileGridOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498139,
+    "end_line": 498159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "group",
+      "streams"
+    ],
+    "body_sha256": "398ca0f70440e9cf50e4cea9157cdc7a9e65c4a9b18e6d6d19a72207e667dcf7",
+    "calls": [
+      "knownStreams.has",
+      "new Set",
+      "streams.map",
+      "tiles.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498160:18277164",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "primaryStreamOf",
+    "qualified_name": "primaryStreamOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498160,
+    "end_line": 498170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "streams"
+    ],
+    "body_sha256": "08523c0690cffd654a77f7b63d00fcf0cb3b5a79494ddeeedc29b99d501aa789",
+    "calls": [
+      "streams.find"
+    ],
+    "writes": [
+      "largest"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498171:18277536",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "parseProbeJson",
+    "qualified_name": "parseProbeJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498171,
+    "end_line": 498177,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "json3"
+    ],
+    "body_sha256": "008f643324a9b5e38149f34698a58524dee3136e231f7fb0b80b5079a65e8bdf",
+    "calls": [
+      "JSON.parse",
+      "new ImageProbeUnrecognizedError",
+      "probeSchema.safeParse"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ImageProbeUnrecognizedError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498178:18277783",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "parseImageProbe",
+    "qualified_name": "parseImageProbe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498178,
+    "end_line": 498189,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "json3"
+    ],
+    "body_sha256": "47c5fcc5a12cd36804a3cb91f25b57ebd9ae00176ba6415e1058fe743c97951a",
+    "calls": [
+      "gridGroups.find",
+      "parseProbeJson",
+      "primaryStreamOf",
+      "probe.stream_groups.filter",
+      "tileGridOf",
+      "videoStreamsOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498190:18278320",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "transformFilters",
+    "qualified_name": "transformFilters",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498190,
+    "end_line": 498209,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "transform3"
+    ],
+    "body_sha256": "984db96ec945ffe7f05a09b4e9dfbe753c93302b94e5f39cff3b3644b2beccb4",
+    "calls": [
+      "filters.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498210:18278835",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "displayFilterGraph",
+    "qualified_name": "displayFilterGraph",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498210,
+    "end_line": 498232,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "layout",
+      "transform3"
+    ],
+    "body_sha256": "965715fa03ffed53d6f28abc3f2ba89c7b6d9d2d6c657230e63c07138151d29b",
+    "calls": [
+      ".join",
+      "filters.join",
+      "filters.push",
+      "fitLongEdge",
+      "tiles.map",
+      "transformFilters"
+    ],
+    "writes": [
+      "inputs",
+      "presented"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498233:18279808",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "displayRenditionArgs",
+    "qualified_name": "displayRenditionArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498233,
+    "end_line": 498261,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  sourcePath: sourcePath2,\n  filterGraph,\n  outputPath\n}"
+    ],
+    "body_sha256": "d59014081941eafa2ea2a5aeb7a52bfd8e72e7e48cf7b8d5b19c2d838b8fce8d",
+    "calls": [
+      "attachmentInputArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498262:18280252",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "needsDisplayRendition",
+    "qualified_name": "needsDisplayRendition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498262,
+    "end_line": 498264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourcePath2"
+    ],
+    "body_sha256": "98203e79f5e543009fcb962f3946d919fe23145121c42ee3c23bfcf7953989a5",
+    "calls": [
+      "imageMimeFromPath",
+      "servableImageMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498265:18280399",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "readContainerHead",
+    "qualified_name": "readContainerHead",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498265,
+    "end_line": 498274,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sourcePath2"
+    ],
+    "body_sha256": "350bdf6ecedaf6b4c0166ec64f989db0b8e14a8644ed388d2d193ee2542b3fca",
+    "calls": [
+      "buffer.subarray",
+      "handle.close",
+      "handle.read",
+      "import_node_fs41.promises.open",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498279:18280879",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "plan",
+    "qualified_name": "plan",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498279,
+    "end_line": 498304,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "{ path: path33, ioPath }",
+      "step"
+    ],
+    "body_sha256": "e484240f9df420cb2ad1835f9d99de92fe84ccbfd11e26514f8fc6a5739a0772",
+    "calls": [
+      "displayFilterGraph",
+      "needsDisplayRendition",
+      "step.attempt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498302:18281732",
+    "artifact": "host",
+    "module": "host/extensions/attachments/image-display-rendition.ts",
+    "name": "ffmpegArgs",
+    "qualified_name": "plan/ffmpegArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498302,
+    "end_line": 498302,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outputPath"
+    ],
+    "body_sha256": "28ab3c5665694d0a6a2e6c8933a820369ba0ded8ebea14722e18810b793c3f33",
+    "calls": [
+      "displayRenditionArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,561 @@
+[
+  {
+    "id": "host:717235:27221599",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "includesAgentProfileUpdateMarker",
+    "qualified_name": "includesAgentProfileUpdateMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717235,
+    "end_line": 717237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "063f5d1301bc32e7e31d6e5485b3a4a2f71af926fe4766e002dbcb3e934709a1",
+    "calls": [
+      "AGENT_PROFILE_UPDATE_MARKERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717239:27221950",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "parseAgentProfileIdentity",
+    "qualified_name": "parseAgentProfileIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717239,
+    "end_line": 717244,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "003a3b80c5c6f7a2af1383d99d312b3ce9aa271611499ef59ff2509917756b7b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717245:27222283",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "parseAgentProfilePromptSnapshot",
+    "qualified_name": "parseAgentProfilePromptSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717245,
+    "end_line": 717270,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "50ebcaeaf6c7d1c55845451397977bfc26925fca09e18ab576f120be00152c45",
+    "calls": [
+      "JSON.parse",
+      "Number.isFinite",
+      "parseAgentProfileIdentity"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717281:27223818",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "escapeRegExp5",
+    "qualified_name": "escapeRegExp5",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717281,
+    "end_line": 717283,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "047e9f04e27a0dc93f990e8c1758aa9d82a0391f186ba93fb55ede7831e7ba71",
+    "calls": [
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717284:27223907",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "alternation",
+    "qualified_name": "alternation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717284,
+    "end_line": 717286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markers"
+    ],
+    "body_sha256": "8f5a40c6bbe20b7cbdbacfecf403bd7d582925c238f3fb4ebea19b78f208b771",
+    "calls": [
+      ".join",
+      "markers.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717287:27223988",
+    "artifact": "host",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "stripAgentProfileUpdates",
+    "qualified_name": "stripAgentProfileUpdates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717287,
+    "end_line": 717294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b5dd95f93a02bca2fdec3422222a06726cdcb9e1468f60d36f555d75a8c3fe42",
+    "calls": [
+      ".replace",
+      ".trim",
+      "includesAgentProfileUpdateMarker",
+      "stripped.replace",
+      "text3.includes",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529764:19354904",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "includesAgentProfileUpdateMarker",
+    "qualified_name": "includesAgentProfileUpdateMarker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529764,
+    "end_line": 529766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "063f5d1301bc32e7e31d6e5485b3a4a2f71af926fe4766e002dbcb3e934709a1",
+    "calls": [
+      "AGENT_PROFILE_UPDATE_MARKERS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529768:19355255",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "normalizeAgentProfileIdentity",
+    "qualified_name": "normalizeAgentProfileIdentity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529768,
+    "end_line": 529770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profile"
+    ],
+    "body_sha256": "f8d5c2925623bf99fb94012b924129ba5a3359164f34edd97fdb0844f11f3169",
+    "calls": [
+      "profile.description.trim",
+      "profile.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529771:19355388",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "promptedAgentProfileIdentity",
+    "qualified_name": "promptedAgentProfileIdentity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529771,
+    "end_line": 529774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "profile",
+      "isDescriptionPrompted"
+    ],
+    "body_sha256": "63d9bb526b5b64e03ee2b71b4c98c2ec3730b54c9e94819b74f3296773a879ac",
+    "calls": [
+      "normalizeAgentProfileIdentity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529775:19355610",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "agentProfileIdentitiesEqual",
+    "qualified_name": "agentProfileIdentitiesEqual",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529775,
+    "end_line": 529777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "9095d1725abe9e051b71114e77c475f0bdf4abb2c8d81546005eb7040c13e833",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529778:19355741",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "resolveAgentProfilePromptSnapshot",
+    "qualified_name": "resolveAgentProfilePromptSnapshot",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529778,
+    "end_line": 529790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "be4210213df0a35eef7507af5678d22b0d60916caeb93117afcbdfb0b2f54d99",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529791:19356170",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "renderAgentProfileUpdate",
+    "qualified_name": "renderAgentProfileUpdate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529791,
+    "end_line": 529804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "identity2",
+      "isRenamedSpelling"
+    ],
+    "body_sha256": "2d547fa2d9ed830a8e784d7b71872e44aa7bdb3ab1b09b6147ec2b6db9eb3e21",
+    "calls": [
+      ".join",
+      ".toString",
+      "JSON.stringify",
+      "hiddenPromptMarker",
+      "import_node_buffer6.Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529815:19357359",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "escapeRegExp4",
+    "qualified_name": "escapeRegExp4",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529815,
+    "end_line": 529817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "16638bb92fbbc9727b649dc1b1f9282e225020a84415b436eb72737adc21b5e0",
+    "calls": [
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529818:19357448",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "alternation",
+    "qualified_name": "alternation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529818,
+    "end_line": 529820,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markers"
+    ],
+    "body_sha256": "ea256517436b5035e7faceb27ef5d04e9b56adec32ab27526fe5bc31e2c81e55",
+    "calls": [
+      ".join",
+      "markers.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529821:19357529",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "stripAgentProfileUpdates",
+    "qualified_name": "stripAgentProfileUpdates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529821,
+    "end_line": 529828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b5dd95f93a02bca2fdec3422222a06726cdcb9e1468f60d36f555d75a8c3fe42",
+    "calls": [
+      ".replace",
+      ".trim",
+      "includesAgentProfileUpdateMarker",
+      "stripped.replace",
+      "text3.includes",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:529829:19357894",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "parseLatestAgentProfileUpdate",
+    "qualified_name": "parseLatestAgentProfileUpdate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529829,
+    "end_line": 529856,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "d3c14760d1fa20645e0bd064630e343cee83c956225b2ae1222821766f6f4f34",
+    "calls": [
+      ".toString",
+      "JSON.parse",
+      "errorLogTag",
+      "import_node_buffer6.Buffer.from",
+      "nextAgentProfileUpdateMarker",
+      "normalizeAgentProfileIdentity",
+      "process.stderr.write",
+      "text3.indexOf",
+      "text3.slice"
+    ],
+    "writes": [
+      "latest",
+      "searchFrom"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:529857:19358944",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-agent-profile-prompt.ts",
+    "name": "nextAgentProfileUpdateMarker",
+    "qualified_name": "nextAgentProfileUpdateMarker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 529857,
+    "end_line": 529866,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "from2"
+    ],
+    "body_sha256": "4c231bf4985bf896e73f0b52708bab56d13ac0a28b6ce918191b6c1266f491c9",
+    "calls": [
+      "text3.indexOf"
+    ],
+    "writes": [
+      "found"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

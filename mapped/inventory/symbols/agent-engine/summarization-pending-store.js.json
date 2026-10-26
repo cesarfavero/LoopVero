@@ -1,0 +1,770 @@
+[
+  {
+    "id": "host:647790:24263797",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "toBase642",
+    "qualified_name": "toBase642",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647790,
+    "end_line": 647792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "60fed149a4c7a5c1f02fdaf4579aa9c769399ea94026824e44e5bb605c227472",
+    "calls": [
+      ".toString",
+      "Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647793:24263875",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "fromBase642",
+    "qualified_name": "fromBase642",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647793,
+    "end_line": 647795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "b64"
+    ],
+    "body_sha256": "10c983a35fad8768cf5a59a44df72552c62871b259aafd505c4f82c910900fef",
+    "calls": [
+      "Buffer.from",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647796:24263958",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "hashMessagesPrefix",
+    "qualified_name": "hashMessagesPrefix",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647796,
+    "end_line": 647807,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "privacyMode",
+      "messages2"
+    ],
+    "body_sha256": "0a2ad7d40b0a8ccd0eb39702ae7d4a50f6b7abc7439034178e51717c4317c764",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "createRedactedCoreMessageSerde",
+      "hash2.digest",
+      "hash2.update",
+      "lengthPrefix.writeUInt32BE",
+      "serde.serialize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647808:24264430",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "buildPendingSummaryRecord",
+    "qualified_name": "buildPendingSummaryRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647808,
+    "end_line": 647869,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "69f992fa96756cbc9919ed52b4c93d65cca5765ceedd277939a03e85d92c16b8",
+    "calls": [
+      "Date.now",
+      "args.messagesSummarized.forEach",
+      "args.result.preservedOriginalTailMessages.map",
+      "args.result.summary.summary.unwrap",
+      "createRedactedCoreMessageSerde",
+      "fullReplacementMessages.indexOf",
+      "fullReplacementMessages.map",
+      "hashMessagesPrefix",
+      "new Error",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647870:24267356",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "rehydrateSummarizationResult",
+    "qualified_name": "rehydrateSummarizationResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647870,
+    "end_line": 647909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "c003c59b2bfe01168c3b66aed583742ce904db61b5547eac3ee9ffd065501587",
+    "calls": [
+      "args.validatedPrefixMessages.slice",
+      "createRedactedCoreMessageSerde",
+      "createRedactedString",
+      "new Error",
+      "record3.preservedTailIndices.map",
+      "record3.replacementLayout.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647910:24269031",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashSummarizationResultWhenOrphaned",
+    "qualified_name": "stashSummarizationResultWhenOrphaned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647910,
+    "end_line": 647987,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f1e0946a39668dbe5d456f2d9f30fbaa09e5a429320e95fc66a9fe28f2bc81a3",
+    "calls": [
+      ".catch",
+      "Date.now",
+      "args.summarizationPromise.then"
+    ],
+    "writes": [
+      "args.cancellationToken.onCancelled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647915:24269217",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashResult",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/stashResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647915,
+    "end_line": 647967,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "e8487e3b147cfd6f356c4821ad2dad1a8918b6e8c5ac826b0108631822d5adc8",
+    "calls": [
+      "args.store.store",
+      "backgroundSummarizationStashed.increment",
+      "buildPendingSummaryRecord",
+      "logger61.info",
+      "logger61.warn"
+    ],
+    "writes": [
+      "stashStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:647968:24271229",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashAndTrack",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/stashAndTrack",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647968,
+    "end_line": 647975,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "52872f23e04b06f683081db53103933338efcda08d4717a4172575ee125b5300",
+    "calls": [
+      "args.store.trackPendingWrite",
+      "stashResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647976:24271499",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "args.cancellationToken.onCancelled",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/args.cancellationToken.onCancelled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647976,
+    "end_line": 647978,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9994e80cd9397897e63922ac3eb72b094bc345d68fd27684f356c96fbffd0f23",
+    "calls": [
+      "stashAndTrack"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647988:24271763",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "takePendingSummaryForAdoption",
+    "qualified_name": "takePendingSummaryForAdoption",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647988,
+    "end_line": 648049,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "601392e431deff29eefa6bd8a399e49eec405f0f8ea7a90394ac3db7e8e87727",
+    "calls": [
+      "Date.now",
+      "abandonPrefixInvalid",
+      "args.currentMessages.slice",
+      "args.stillWarrantsCompaction",
+      "args.store.take",
+      "hashMessagesPrefix",
+      "logger61.info",
+      "pendingSummaryAdoption.increment",
+      "pendingSummaryAgeAtTake.histogram",
+      "rehydrateSummarizationResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:647998:24272195",
+    "artifact": "host",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "abandonPrefixInvalid",
+    "qualified_name": "takePendingSummaryForAdoption/abandonPrefixInvalid",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 647998,
+    "end_line": 648007,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7e1e18ccd217aec3b09ada4b85521c0a860884f0ed1eed9a06289af171fa2c0f",
+    "calls": [
+      "emitSummaryLifecycleAbandoned",
+      "resumeSummaryLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439447:15518538",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "toBase642",
+    "qualified_name": "toBase642",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439447,
+    "end_line": 439449,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "60fed149a4c7a5c1f02fdaf4579aa9c769399ea94026824e44e5bb605c227472",
+    "calls": [
+      ".toString",
+      "Buffer.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439450:15518616",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "fromBase642",
+    "qualified_name": "fromBase642",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439450,
+    "end_line": 439452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "b64"
+    ],
+    "body_sha256": "10c983a35fad8768cf5a59a44df72552c62871b259aafd505c4f82c910900fef",
+    "calls": [
+      "Buffer.from",
+      "new Uint8Array"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439453:15518699",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "hashMessagesPrefix",
+    "qualified_name": "hashMessagesPrefix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439453,
+    "end_line": 439464,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "privacyMode",
+      "messages"
+    ],
+    "body_sha256": "d78fc579eb19e574a7092278d4eaa3b4dd517f42d0b0c7096afe3ef2a1be9deb",
+    "calls": [
+      "Buffer.allocUnsafe",
+      "createRedactedCoreMessageSerde",
+      "hash2.digest",
+      "hash2.update",
+      "lengthPrefix.writeUInt32BE",
+      "serde.serialize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439465:15519168",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "buildPendingSummaryRecord",
+    "qualified_name": "buildPendingSummaryRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439465,
+    "end_line": 439526,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "69f992fa96756cbc9919ed52b4c93d65cca5765ceedd277939a03e85d92c16b8",
+    "calls": [
+      "Date.now",
+      "args.messagesSummarized.forEach",
+      "args.result.preservedOriginalTailMessages.map",
+      "args.result.summary.summary.unwrap",
+      "createRedactedCoreMessageSerde",
+      "fullReplacementMessages.indexOf",
+      "fullReplacementMessages.map",
+      "hashMessagesPrefix",
+      "new Error",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439527:15522094",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "rehydrateSummarizationResult",
+    "qualified_name": "rehydrateSummarizationResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439527,
+    "end_line": 439566,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cbc9ba31945df62a2aebd33ebf7e88576f95f46008dcd83e4a587529cdfb5d94",
+    "calls": [
+      "args.validatedPrefixMessages.slice",
+      "createRedactedCoreMessageSerde",
+      "createRedactedString",
+      "new Error",
+      "record4.preservedTailIndices.map",
+      "record4.replacementLayout.map"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439567:15523769",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashSummarizationResultWhenOrphaned",
+    "qualified_name": "stashSummarizationResultWhenOrphaned",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439567,
+    "end_line": 439644,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4c7f26b7b37950ba810c88a856b0622f23f01cf9637a94799da3fabffea82eb2",
+    "calls": [
+      ".catch",
+      "Date.now",
+      "args.summarizationPromise.then"
+    ],
+    "writes": [
+      "args.cancellationToken.onCancelled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439572:15523955",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashResult",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/stashResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439572,
+    "end_line": 439624,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "7da2bf706ad5394167e3cf4df75ff3b5d02ee43e53d65784e31e2cbfc1c5707e",
+    "calls": [
+      "args.store.store",
+      "backgroundSummarizationStashed.increment",
+      "buildPendingSummaryRecord",
+      "logger38.info",
+      "logger38.warn"
+    ],
+    "writes": [
+      "stashStarted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:439625:15525967",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "stashAndTrack",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/stashAndTrack",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439625,
+    "end_line": 439632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "e742a28b6f9d691e00d5b351085db9cb102cf6e5c842fc2523f8f787f7909b94",
+    "calls": [
+      "args.store.trackPendingWrite",
+      "stashResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439633:15526237",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "args.cancellationToken.onCancelled",
+    "qualified_name": "stashSummarizationResultWhenOrphaned/args.cancellationToken.onCancelled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439633,
+    "end_line": 439635,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9994e80cd9397897e63922ac3eb72b094bc345d68fd27684f356c96fbffd0f23",
+    "calls": [
+      "stashAndTrack"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439645:15526501",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "takePendingSummaryForAdoption",
+    "qualified_name": "takePendingSummaryForAdoption",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439645,
+    "end_line": 439706,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8048668343b50bbceceb20434c2c46ad793143c48fdf5fa0047f49c2d1b5fe63",
+    "calls": [
+      "Date.now",
+      "abandonPrefixInvalid",
+      "args.currentMessages.slice",
+      "args.stillWarrantsCompaction",
+      "args.store.take",
+      "hashMessagesPrefix",
+      "logger38.info",
+      "pendingSummaryAdoption.increment",
+      "pendingSummaryAgeAtTake.histogram",
+      "rehydrateSummarizationResult"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:439655:15526933",
+    "artifact": "evaluation",
+    "module": "agent-engine/summarization-pending-store.js",
+    "name": "abandonPrefixInvalid",
+    "qualified_name": "takePendingSummaryForAdoption/abandonPrefixInvalid",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 439655,
+    "end_line": 439664,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "891e5f94738ba3c3a32024c4804d137d6ab1f518a36c807142d2af929376bc70",
+    "calls": [
+      "emitSummaryLifecycleAbandoned",
+      "resumeSummaryLifecycle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

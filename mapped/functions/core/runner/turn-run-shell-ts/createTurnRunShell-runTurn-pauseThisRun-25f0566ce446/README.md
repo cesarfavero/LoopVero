@@ -1,0 +1,31 @@
+# `createTurnRunShell/runTurn/pauseThisRun`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/components/turns/README.md).
+
+**Módulo:** `core/runner/turn-run-shell.ts` · [README do módulo](../../../../../modules/core/runner/turn-run-shell-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [evaluation:591852-591864](../../../../../../reference/runtime/sand-eval-runner.cjs#L591852-L591864) | `ArrowFunctionExpression` | não | `requestId = inferenceRequestId` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [evaluation:591852-591864](../../../../../../reference/runtime/sand-eval-runner.cjs#L591852-L591864) | 2 | 0 | 0 | 2 | 0 | 0 |
+
+### evaluation:591852
+
+Chamadas escritas diretamente neste corpo: `cancelRun`, `new SandRunAbortError`.
+
+Alvos de atribuição ou incremento: `stopRequest`.
+
+SHA-256 do trecho: `b3910c3a3b766d2cec34980ccad44db6562fd5afdab98f0f2d60d128eb201ad5`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

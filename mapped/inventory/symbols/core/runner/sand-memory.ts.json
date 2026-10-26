@@ -1,0 +1,1223 @@
+[
+  {
+    "id": "host:702646:26703826",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "normalizeMemoryContent",
+    "qualified_name": "normalizeMemoryContent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702646,
+    "end_line": 702648,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "7d82ddc1de2b26ae3c42fbdb57ab00d790815b37edb75ee82b63126c27a8d2ef",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702649:26703919",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryDedupeKey",
+    "qualified_name": "memoryDedupeKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702649,
+    "end_line": 702651,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "1983ca25e36c038ba85ef603dd7c3701b6ffc909315117fc9fd6ae49c5945ebc",
+    "calls": [
+      ".toLowerCase",
+      "normalizeMemoryContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702654:26704085",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryImportance",
+    "qualified_name": "memoryImportance",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702654,
+    "end_line": 702658,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "d819462a29e12c3e94cda6049350614a1a5254d39513d9c84dd017e4b60c6130",
+    "calls": [
+      "content.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702659:26704255",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryRecallRank",
+    "qualified_name": "memoryRecallRank",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702659,
+    "end_line": 702661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memory"
+    ],
+    "body_sha256": "6c787ecd73794a57b5afa33223b61b8a4416013fab747e57893abbb77535affb",
+    "calls": [
+      "Math.log2",
+      "memoryImportance"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702662:26704408",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "formatMemoryDate",
+    "qualified_name": "formatMemoryDate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702662,
+    "end_line": 702665,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "createdAtMs2"
+    ],
+    "body_sha256": "4b745099865cf8dfb6f9ada25181df5094ce7a2154b5fe87f0d476bfae6194d2",
+    "calls": [
+      ".slice",
+      ".toISOString",
+      "Number.isFinite",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702717:26705666",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "relevanceTokens",
+    "qualified_name": "relevanceTokens",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702717,
+    "end_line": 702724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b4ea2c998e9f2e4fd99b8ad18604a5616feb54ee1a69ed6e1663f4d927fb2d1c",
+    "calls": [
+      ".matchAll",
+      "RELEVANCE_STOPWORDS.has",
+      "new Set",
+      "text3.toLowerCase",
+      "tokens.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:702727:26706074",
+    "artifact": "host",
+    "module": "core/runner/sand-memory.ts",
+    "name": "stripMemoryContextBlocks",
+    "qualified_name": "stripMemoryContextBlocks",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 702727,
+    "end_line": 702729,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "3998ecc113662a0479fed6889f6aa6c8127c0d8f5f8f4c201e1c8d266ec33811",
+    "calls": [
+      ".replace",
+      ".trim",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536078:19701629",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryRecallHasFacts",
+    "qualified_name": "memoryRecallHasFacts",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536078,
+    "end_line": 536080,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "recall2"
+    ],
+    "body_sha256": "3452523b6db88ee65142bca49b26d84571787f0a808358992003bd1dc1dab5f9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536095:19702359",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "isMemoryFreezeEnabled",
+    "qualified_name": "isMemoryFreezeEnabled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536095,
+    "end_line": 536097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "env = process.env"
+    ],
+    "body_sha256": "2e2a669a329e522ba873cb9e9fe4b88468476d501ec584756af760831f21ce0d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536098:19702462",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "resolveFrozenMemoryPrompt",
+    "qualified_name": "resolveFrozenMemoryPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536098,
+    "end_line": 536106,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a4f9aed79c2d87b424a7334f01f5f149b1181d37e550fde6ee2ce51ea57bab20",
+    "calls": [
+      "renderLive"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536141:19703237",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "isMemorableExchange",
+    "qualified_name": "isMemorableExchange",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536141,
+    "end_line": 536147,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userMessage"
+    ],
+    "body_sha256": "28d67b8ae4203d535dd406c9d534020415348d8fd2c38d2c3ea44a54af6d96bf",
+    "calls": [
+      ".replace",
+      ".trim",
+      "TRIVIAL_EXCHANGES.has",
+      "user.includes",
+      "user.toLowerCase",
+      "userMessage.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536148:19703561",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "normalizeMemoryContent",
+    "qualified_name": "normalizeMemoryContent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536148,
+    "end_line": 536150,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "7d82ddc1de2b26ae3c42fbdb57ab00d790815b37edb75ee82b63126c27a8d2ef",
+    "calls": [
+      "clampLine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536151:19703654",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryDedupeKey",
+    "qualified_name": "memoryDedupeKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536151,
+    "end_line": 536153,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "1983ca25e36c038ba85ef603dd7c3701b6ffc909315117fc9fd6ae49c5945ebc",
+    "calls": [
+      ".toLowerCase",
+      "normalizeMemoryContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536156:19703820",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryImportance",
+    "qualified_name": "memoryImportance",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536156,
+    "end_line": 536160,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "d819462a29e12c3e94cda6049350614a1a5254d39513d9c84dd017e4b60c6130",
+    "calls": [
+      "content.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536161:19703990",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "memoryRecallRank",
+    "qualified_name": "memoryRecallRank",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536161,
+    "end_line": 536163,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memory"
+    ],
+    "body_sha256": "e25ecb598f585beee13303c63fb54e2f92f57de74c86b185628329b7e4477189",
+    "calls": [
+      "Math.log2",
+      "memoryImportance"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536164:19704143",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "formatMemoryDate",
+    "qualified_name": "formatMemoryDate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536164,
+    "end_line": 536167,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "createdAtMs"
+    ],
+    "body_sha256": "08a0e148336ab2ddd2a844e11fc35a5b4838af19dfab45693485644b16f7d9f7",
+    "calls": [
+      ".slice",
+      ".toISOString",
+      "Number.isFinite",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536174:19705146",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "buildProfileOnlyExtractionSystemPrompt",
+    "qualified_name": "buildProfileOnlyExtractionSystemPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536174,
+    "end_line": 536191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "isRenamedSpelling",
+      "{ vaultMounted = false } = {}"
+    ],
+    "body_sha256": "bc18b464751e0e9bfc38c3508553ac681cc5330cee1258476e33060b71533534",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536192:19706827",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "exchangeLines",
+    "qualified_name": "exchangeLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536192,
+    "end_line": 536197,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userMessage",
+      "agentMessage"
+    ],
+    "body_sha256": "aa7e4b873316c0b2148631e015c8fdedd945f8152ad449b11d30437db7785a5e",
+    "calls": [
+      "agentMessage.trim",
+      "userMessage.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536198:19707071",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "buildExtractionUserPrompt",
+    "qualified_name": "buildExtractionUserPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536198,
+    "end_line": 536213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userMessage",
+      "agentMessage",
+      "existingMemories",
+      "earlierExchanges",
+      "today"
+    ],
+    "body_sha256": "a0afdfb7569fc7edc51b78c636c51765e5f5c6308194babb33e1ad1bfa51ba0c",
+    "calls": [
+      ".join",
+      "earlierExchanges.flatMap",
+      "exchangeLines",
+      "existingMemories.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536214:19707675",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "stripLineMarkers",
+    "qualified_name": "stripLineMarkers",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536214,
+    "end_line": 536216,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "line"
+    ],
+    "body_sha256": "79bfe613aa1524a14609950874d64ed38d84f858fb8b5f297f84468ddebb9808",
+    "calls": [
+      "line.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536218:19707829",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "parseExtractedMemories",
+    "qualified_name": "parseExtractedMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536218,
+    "end_line": 536244,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "existingMemories"
+    ],
+    "body_sha256": "dd89bb313e30aa4b31524782df649ae5d8deb6b03e907a6f5b57f942823e29ea",
+    "calls": [
+      "CATEGORY_LINE.exec",
+      "additions.push",
+      "bare.toUpperCase",
+      "category[computed].toLowerCase",
+      "existingMemories.map",
+      "memoryDedupeKey",
+      "new Set",
+      "normalizeMemoryContent",
+      "raw.trim",
+      "removals.push",
+      "seen.add",
+      "seen.has",
+      "stripLineMarkers",
+      "trimmed.split",
+      "trimmed.toUpperCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536294:19709596",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "relevanceTokens",
+    "qualified_name": "relevanceTokens",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536294,
+    "end_line": 536301,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "b4ea2c998e9f2e4fd99b8ad18604a5616feb54ee1a69ed6e1663f4d927fb2d1c",
+    "calls": [
+      ".matchAll",
+      "RELEVANCE_STOPWORDS.has",
+      "new Set",
+      "text3.toLowerCase",
+      "tokens.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536302:19709858",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "selectRelevantMemories",
+    "qualified_name": "selectRelevantMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536302,
+    "end_line": 536315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "memories",
+      "max"
+    ],
+    "body_sha256": "a944bae3041627e9b062408a4a580ea0b6a42d0d00374551f8fa4fadd3e66074",
+    "calls": [
+      ".map",
+      ".slice",
+      "queryTokens.has",
+      "relevanceTokens",
+      "scored.push",
+      "scored.sort"
+    ],
+    "writes": [
+      "overlap"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536316:19710450",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "gatherExtractionMemories",
+    "qualified_name": "gatherExtractionMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536316,
+    "end_line": 536331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "recall2",
+      "archive",
+      "exchangeText"
+    ],
+    "body_sha256": "c07bdf80537e6b1d22f6c3a5d44bc3d449f46ef0606adfd04820c4f978eaf5e7",
+    "calls": [
+      ".map",
+      "archive.filter",
+      "inPrompt.map",
+      "new Set",
+      "selectRelevantMemories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536332:19711033",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "collectExecutorText",
+    "qualified_name": "collectExecutorText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536332,
+    "end_line": 536343,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor",
+      "ctx"
+    ],
+    "body_sha256": "c033e829fa7c185ecd426f1167136231528f113896cda115b8a8e2aa153f2811",
+    "calls": [
+      "String",
+      "executor.stream",
+      "new Error"
+    ],
+    "writes": [
+      "text3"
+    ],
+    "throw_targets": [
+      "ConditionalExpression"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536344:19711433",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "extractMemories",
+    "qualified_name": "extractMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536344,
+    "end_line": 536367,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7955062b0fd485eec91e3b765d0faa66853153840fde6c826042f05c314f4bb3",
+    "calls": [
+      "buildExtractionUserPrompt",
+      "buildProfileOnlyExtractionSystemPrompt",
+      "collectExecutorText",
+      "executor.appendMessages",
+      "parseExtractedMemories"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536368:19712162",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "applyExtractedMemories",
+    "qualified_name": "applyExtractedMemories",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536368,
+    "end_line": 536381,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "store",
+      "extraction",
+      "now",
+      "knownMemories",
+      "provenance"
+    ],
+    "body_sha256": "1d83999d5c6b35c4c9890819a1fa29357129f3e24f18da12773ef237b7d84d7f",
+    "calls": [
+      "added.push",
+      "knownKeys.has",
+      "knownMemories.map",
+      "memoryDedupeKey",
+      "new Set",
+      "removed.push",
+      "store.addMemory",
+      "store.removeMemoryByContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536386:19712909",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "byRecordRecency",
+    "qualified_name": "byRecordRecency",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536386,
+    "end_line": 536390,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "99c4fdb0896e4db451494bd81c08677996c90ba41629d523001747a420ec782a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536391:19713100",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "mergeMemoryRecords",
+    "qualified_name": "mergeMemoryRecords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536391,
+    "end_line": 536401,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "records2",
+      "compare",
+      "limit3"
+    ],
+    "body_sha256": "a3110882fffa0d030adc548c94849562bc5a544d64a20d347fa7ef6f61e18d2e",
+    "calls": [
+      ".slice",
+      ".sort",
+      "byKey.get",
+      "byKey.set",
+      "byKey.values",
+      "memoryDedupeKey",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536402:19713497",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "mergeProvenanced",
+    "qualified_name": "mergeProvenanced",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536402,
+    "end_line": 536406,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "records2",
+      "compare",
+      "limit3"
+    ],
+    "body_sha256": "5288649884a947d186af78e65d234e2a153e4ba11e2a615c2e227c2464a58646",
+    "calls": [
+      "Math.floor",
+      "Number.isFinite",
+      "mergeMemoryRecords"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536407:19713731",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "mergeUserMemoryShards",
+    "qualified_name": "mergeUserMemoryShards",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536407,
+    "end_line": 536442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "shards",
+      "limits",
+      "ownAgentId"
+    ],
+    "body_sha256": "fb5f96b7b26d65cf59e5c5e44ca74be368d2a36d725a407bfe799251711f0060",
+    "calls": [
+      ".map",
+      "JSON.stringify",
+      "merge4",
+      "sha256HexOfText",
+      "shards.filter",
+      "shards.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536408:19713809",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "merge4",
+    "qualified_name": "mergeUserMemoryShards/merge4",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536408,
+    "end_line": 536424,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "selected"
+    ],
+    "body_sha256": "a71cf2670570b85589b18c0bdc82b0e49a48b44ae08b6ec0063dbb61bfdd3d77",
+    "calls": [
+      "mergeProvenanced",
+      "selected.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536409:19713841",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "tag",
+    "qualified_name": "mergeUserMemoryShards/merge4/tag",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536409,
+    "end_line": 536413,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "records2",
+      "shard"
+    ],
+    "body_sha256": "9e57215377d96a431b7258e35f4e0268fb1fcb13d81488695b2e79b3ca99ef69",
+    "calls": [
+      "records2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536443:19715034",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "mergeUserMemoryShardRecords",
+    "qualified_name": "mergeUserMemoryShardRecords",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536443,
+    "end_line": 536452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "shards"
+    ],
+    "body_sha256": "4af7f57293e88beac27baee7bff851063ec8a053ac898549f30a4cd88d1970df",
+    "calls": [
+      "mergeProvenanced",
+      "shards.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536454:19715447",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "isRecentlyActive",
+    "qualified_name": "isRecentlyActive",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536454,
+    "end_line": 536458,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "session",
+      "nowMs"
+    ],
+    "body_sha256": "a3f8a2bd075d19fb5296fef62761285110b7eeaf091f1e497efac2a96e28068d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:536460:19715769",
+    "artifact": "evaluation",
+    "module": "core/runner/sand-memory.ts",
+    "name": "stripMemoryContextBlocks",
+    "qualified_name": "stripMemoryContextBlocks",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 536460,
+    "end_line": 536462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "3998ecc113662a0479fed6889f6aa6c8127c0d8f5f8f4c201e1c8d266ec33811",
+    "calls": [
+      ".replace",
+      ".trim",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

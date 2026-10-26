@@ -1,0 +1,117 @@
+[
+  {
+    "id": "host:404480:14650133",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-marketplace-logo.ts",
+    "name": "withLogoFetchSlot",
+    "qualified_name": "withLogoFetchSlot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404480,
+    "end_line": 404491,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "run"
+    ],
+    "body_sha256": "39f98a6e58255e4b1ab82381f46745c98831cf2ad4231e1c81921968b45ce4b9",
+    "calls": [
+      "new Promise",
+      "pendingLogoFetches.shift",
+      "run"
+    ],
+    "writes": [
+      "activeLogoFetches"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:404492:14650446",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-marketplace-logo.ts",
+    "name": "resolvePluginLogo",
+    "qualified_name": "resolvePluginLogo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404492,
+    "end_line": 404525,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2"
+    ],
+    "body_sha256": "95d4920eeb8877bb125df14bb0ca752b7a21546c47cf99643ee8d533c14bc4cf",
+    "calls": [
+      "Date.now",
+      "isKnownPluginLogoUrl",
+      "logoCache.get",
+      "logoCache.set",
+      "new URL",
+      "withLogoFetchSlot"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 6,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:404528:14651641",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-marketplace-logo.ts",
+    "name": "src/shared/node/mcp/mcp-marketplace-logo.ts",
+    "qualified_name": "src/shared/node/mcp/mcp-marketplace-logo.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404528,
+    "end_line": 404544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "2c5be4065afbf96f1ddf9580354864b6233611ef55583ea796886606c8140c66",
+    "calls": [
+      "createDeadlinePolicy",
+      "init_cursor_marketplace_client",
+      "init_cursor_marketplace_logo_registry",
+      "init_http_image",
+      "init_scheduling",
+      "new Map"
+    ],
+    "writes": [
+      "LOGO_CACHE_MAX_AGE_MS",
+      "LOGO_FETCH_CONCURRENCY",
+      "LOGO_MAX_BYTES",
+      "MARKETPLACE_FETCH_DEADLINE",
+      "activeLogoFetches",
+      "logoCache",
+      "pendingLogoFetches"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

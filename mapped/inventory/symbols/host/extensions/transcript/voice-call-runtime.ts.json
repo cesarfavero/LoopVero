@@ -1,0 +1,880 @@
+[
+  {
+    "id": "host:742176:28227113",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "voiceCallsDir",
+    "qualified_name": "voiceCallsDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742176,
+    "end_line": 742178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "026d067efc7820092d30304c8b3923dd71341ad5b6b572345a26da2f18104545",
+    "calls": [
+      "resolveSandAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742179:28227236",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "voiceCallPath",
+    "qualified_name": "voiceCallPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742179,
+    "end_line": 742181,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ agentId, callId }"
+    ],
+    "body_sha256": "8d85ea1d806d7025813a3a7cdf4c9acd427a6c640045e7eb607dd3c2e43e868c",
+    "calls": [
+      "voiceCallsDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742182:28227366",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "readRecordFile",
+    "qualified_name": "readRecordFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742182,
+    "end_line": 742190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ref2"
+    ],
+    "body_sha256": "0e077cbbc3f6a8d9c110ab65d654b2c589050d6c4850056db7cca2851f329c84",
+    "calls": [
+      "JSON.parse",
+      "SandVoiceCallRecords.isRecord",
+      "readSandDataFileSync",
+      "reportFallbackUnlessAbsent",
+      "voiceCallPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:742191:28227715",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "writeRecordFile",
+    "qualified_name": "writeRecordFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742191,
+    "end_line": 742196,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId",
+      "record3"
+    ],
+    "body_sha256": "e8102d34959e804f47d293f8cf145c5f1cd8c0e135c0192d96e42ae9b5bbc964",
+    "calls": [
+      ".encode",
+      "JSON.stringify",
+      "new TextEncoder",
+      "voiceCallPath",
+      "writeSandDataFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742208:28228298",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "isWorthOverhearing",
+    "qualified_name": "isWorthOverhearing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742208,
+    "end_line": 742210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "df73f0feb0de736a7481962c311ef24ef54245933376b54e1275f989fe3a54b2",
+    "calls": [
+      "NOT_WORTH_OVERHEARING.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742211:28228387",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "overheardStep",
+    "qualified_name": "overheardStep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742211,
+    "end_line": 742213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{ tool, detail }"
+    ],
+    "body_sha256": "564be8408e0fc6621227e11d9e3f4b0d0c2a4ddaa7d0317b33fa357fb9af4e4f",
+    "calls": [
+      ".filter",
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742215:28228560",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.constructor",
+    "qualified_name": "_VoiceCallRuntime.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742215,
+    "end_line": 742217,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742226:28228967",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.isOverheardEnabled",
+    "qualified_name": "_VoiceCallRuntime.isOverheardEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742226,
+    "end_line": 742226,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "28a21f75dc2cf097876424d53bf5bf062c83312ddcda54b87e88d6efbb3c1529",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742227:28229004",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.subscribeInboundNudges",
+    "qualified_name": "_VoiceCallRuntime.subscribeInboundNudges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742227,
+    "end_line": 742230,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "f97c44c3a3a4ade3c8a4b9e8f3a490184a9e9e4bd1bf702712ae385cfdfcd4d4",
+    "calls": [
+      "this.nudgeListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742231:28229138",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.setOverheardGate",
+    "qualified_name": "_VoiceCallRuntime.setOverheardGate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742231,
+    "end_line": 742233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "isEnabled"
+    ],
+    "body_sha256": "b913e401af3a4f623fdcfdc9e364741c14f02f42c7c9927d5f56f471afb375da",
+    "calls": [],
+    "writes": [
+      "this.isOverheardEnabled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742234:28229219",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.setVoiceCallPresence",
+    "qualified_name": "_VoiceCallRuntime.setVoiceCallPresence",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742234,
+    "end_line": 742254,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    callId,\n    isOnTheLine,\n    acceptsOverheard = false\n  }"
+    ],
+    "body_sha256": "e2e89b03e5a9f2e13043c3c7360027c8ce761a779be8b2b8c03c776c110a056a",
+    "calls": [
+      "this.liveCallByAgent.delete",
+      "this.liveCallByAgent.get",
+      "this.liveCallByAgent.set",
+      "this.overheardCallers.add",
+      "this.overheardCallers.delete",
+      "this.overheardSpentByAgent.delete",
+      "this.retiredCallByAgent.get",
+      "this.retiredCallByAgent.set",
+      "this.serverStepHeardByAgent.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742255:28229946",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.overhearServerActivity",
+    "qualified_name": "_VoiceCallRuntime.overhearServerActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742255,
+    "end_line": 742267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "live"
+    ],
+    "body_sha256": "53d1344062dec885e0ea58243c81ea1f16d09e27604d99ee2a0d349d0e16af09",
+    "calls": [
+      "_VoiceCallRuntime.ownerSessionServerStep",
+      "areAgentActivitiesEqual",
+      "isWorthOverhearing",
+      "overheardStep",
+      "this.deliverOverheard",
+      "this.isOverheardEnabled",
+      "this.serverStepHeardByAgent.delete",
+      "this.serverStepHeardByAgent.get",
+      "this.serverStepHeardByAgent.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742268:28230487",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.ownerSessionServerStep",
+    "qualified_name": "_VoiceCallRuntime.ownerSessionServerStep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742268,
+    "end_line": 742273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "live"
+    ],
+    "body_sha256": "df154507c89952d633da4f1271ed96dbddf75673ec6e3b17e09d817f45ebcb22",
+    "calls": [
+      "live.runningSessionIds.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742274:28230755",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.deliverOverheard",
+    "qualified_name": "_VoiceCallRuntime.deliverOverheard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742274,
+    "end_line": 742286,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "step",
+      "agentId"
+    ],
+    "body_sha256": "628fe8cc2ceeb66914f35e965b193e20b4729a7e81c793250c50cffdde7bdf24",
+    "calls": [
+      "step.slice",
+      "this.deliverToLiveCall",
+      "this.overheardCallers.has",
+      "this.overheardSpentByAgent.get",
+      "this.overheardSpentByAgent.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742287:28231372",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.lineIsOpen",
+    "qualified_name": "_VoiceCallRuntime.lineIsOpen",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742287,
+    "end_line": 742293,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    agentId,\n    address\n  }"
+    ],
+    "body_sha256": "836908a24e75b85470491d89f04885c3e416ebeae3bc35e307fd9fad33aec6b0",
+    "calls": [
+      "VoiceCallChannel.callIdOf",
+      "this.liveCallByAgent.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742294:28231573",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.forwardServerVoiceChannelSend",
+    "qualified_name": "_VoiceCallRuntime.forwardServerVoiceChannelSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742294,
+    "end_line": 742305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "4da564db886c9c0ae15304351243b2d86f8d226a4f8f912f4c5e5dac57657935",
+    "calls": [
+      "spokenLineSendOf",
+      "this.emitInbound",
+      "this.lineIsOpen",
+      "this.spokenServerSendIds.add",
+      "this.spokenServerSendIds.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742306:28232110",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.deliverToLiveCall",
+    "qualified_name": "_VoiceCallRuntime.deliverToLiveCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742306,
+    "end_line": 742311,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ agentId, update, kind }"
+    ],
+    "body_sha256": "af1cc7e3bd558fcd5050fe201ff00a394c366dcca16e04d15ea6274c4ed7d618",
+    "calls": [
+      "this.emitInbound",
+      "this.liveCallByAgent.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742312:28232355",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.readMainAgentContext",
+    "qualified_name": "_VoiceCallRuntime.readMainAgentContext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742312,
+    "end_line": 742317,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ agentId }"
+    ],
+    "body_sha256": "8a84a0841c79295fb60b13ac9ee7345bd54626e325509f56df171645f3244c77",
+    "calls": [
+      ".has",
+      "Promise.resolve",
+      "this.tm.runLifecycle.runningAgentIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742318:28232517",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.readWrittenMessages",
+    "qualified_name": "_VoiceCallRuntime.readWrittenMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742318,
+    "end_line": 742322,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "113eb71d0d1436b98506f23afc45aa82ed8e82d02d498302e33eed0c91bb44ee",
+    "calls": [
+      "VoiceCallWrittenMessages.recall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742323:28232677",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.nudge",
+    "qualified_name": "_VoiceCallRuntime.nudge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742323,
+    "end_line": 742337,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8d612b00d6a991f9205fd66de115a12c2b6787397808676216d54d2b2e38946e",
+    "calls": [
+      "VoiceCallRequests.parse",
+      "args.request.trim",
+      "args.sink.relay",
+      "new SandWireParseError",
+      "reportFallback"
+    ],
+    "writes": [
+      "output2"
+    ],
+    "throw_targets": [
+      "SandWireParseError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:742338:28233365",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.record",
+    "qualified_name": "_VoiceCallRuntime.record",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742338,
+    "end_line": 742364,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3",
+      "sink"
+    ],
+    "body_sha256": "15a817f9e610e390e440dc1aa9bb8b9b3fa5ce571d63a651800d30325705dc05",
+    "calls": [
+      "isSafeFolderId",
+      "new SandVoiceCallReceiptUndeliverableError",
+      "parseAgentId",
+      "sink.publish",
+      "this.appendReceiptToBoxChat",
+      "this.liveCallByAgent.get",
+      "this.setVoiceCallPresence",
+      "writeRecordFile"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandVoiceCallReceiptUndeliverableError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742365:28234325",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.appendReceiptToBoxChat",
+    "qualified_name": "_VoiceCallRuntime.appendReceiptToBoxChat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742365,
+    "end_line": 742393,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "record3"
+    ],
+    "body_sha256": "9e441c9e37722ec2614e4ed81f2a75a9a38239c6390dcf4c68f1fa5029bc9b19",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "new SandVoiceCallReceiptUndeliverableError",
+      "session.db.appendTranscriptEntry",
+      "this.leaseReceiptSession",
+      "this.tm.appendEntry",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "voiceCallHangupEntries"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandVoiceCallReceiptUndeliverableError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:742394:28235398",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.read",
+    "qualified_name": "_VoiceCallRuntime.read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742394,
+    "end_line": 742398,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{ agentId, callId }"
+    ],
+    "body_sha256": "987b37ef6d66aa89943468368365a78e94923a046a08526c9f232c9900a9eeae",
+    "calls": [
+      "isSafeFolderId",
+      "readRecordFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742399:28235601",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.emitInbound",
+    "qualified_name": "_VoiceCallRuntime.emitInbound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742399,
+    "end_line": 742401,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "nudge"
+    ],
+    "body_sha256": "900f3e49113168d4cf3198ac079346cd98ec0fb92ec4a5bf7a269d825b5c7e34",
+    "calls": [
+      "listener"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742402:28235707",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "_VoiceCallRuntime.leaseReceiptSession",
+    "qualified_name": "_VoiceCallRuntime.leaseReceiptSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742402,
+    "end_line": 742410,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d7e5c7b2760f627108345a9aa6330135173a3928ad7053aadbba34d5e6cad4e4",
+    "calls": [
+      "resolveSessionOrRefusal",
+      "resolved.lease[computed]",
+      "this.tm.groupChat.isGroupSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:742412:28236016",
+    "artifact": "host",
+    "module": "host/extensions/transcript/voice-call-runtime.ts",
+    "name": "resolveSessionOrRefusal",
+    "qualified_name": "resolveSessionOrRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 742412,
+    "end_line": 742422,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "tm",
+      "agentId"
+    ],
+    "body_sha256": "593a69cb5c10e108cdc672945ee905bb16b10978701a1ee9bacb3b0d4ca7d125",
+    "calls": [
+      "isAgentAbsent",
+      "reportFallback",
+      "tm.sessions.deletedAgentIds.has",
+      "tm.sessions.leaseBackgroundSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

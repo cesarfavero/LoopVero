@@ -1,0 +1,314 @@
+[
+  {
+    "id": "host:541855:19881621",
+    "artifact": "host",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyMimeType",
+    "qualified_name": "classifyMimeType",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541855,
+    "end_line": 541868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawMimeType"
+    ],
+    "body_sha256": "3f4cb60895ee38cebe5c335dca55e9d86dbc06a5f0516ade8f4877e98c86e650",
+    "calls": [
+      ".toLowerCase",
+      ".trim",
+      "ARCHIVE_MIME_TYPES.has",
+      "DOCUMENT_MIME_TYPES.has",
+      "TABLE_MIME_TYPES.has",
+      "mime2.endsWith",
+      "mime2.startsWith",
+      "rawMimeType.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541869:19882291",
+    "artifact": "host",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "extensionSubject",
+    "qualified_name": "extensionSubject",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541869,
+    "end_line": 541881,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "8feae3f9c7489f0b7a0a0307fdd2234f1e038d63b1bc0063a053bd937d1374f0",
+    "calls": [
+      "decodeURIComponent",
+      "new URL"
+    ],
+    "writes": [
+      "pathname"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:541882:19882515",
+    "artifact": "host",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyPathLike",
+    "qualified_name": "classifyPathLike",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541882,
+    "end_line": 541910,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "8b87df92993a405e1577effb82c85fa3acc3052beb93f4518c0d8569b1b0975e",
+    "calls": [
+      "ARCHIVE_EXTENSIONS.has",
+      "JSON_EXTENSIONS2.has",
+      "attachmentExtension",
+      "extensionSubject",
+      "getFilePreviewKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541911:19883291",
+    "artifact": "host",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyAttachment",
+    "qualified_name": "classifyAttachment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541911,
+    "end_line": 541925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "16bdad3ec2dcba0233a2b42bca6524a65cfcf9ad4500196bb34c19f32ff70dfe",
+    "calls": [
+      "classifyMimeType",
+      "classifyPathLike"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541926:19883834",
+    "artifact": "host",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "countAttachmentKinds",
+    "qualified_name": "countAttachmentKinds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541926,
+    "end_line": 541932,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "kinds"
+    ],
+    "body_sha256": "8fec9a23dc3f0716a3c61c9ed2ee1787519084aea35de392ff0c5f9d86bfb663",
+    "calls": [
+      ".map",
+      "counts.get",
+      "counts.set",
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:480871:17424561",
+    "artifact": "evaluation",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyMimeType",
+    "qualified_name": "classifyMimeType",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 480871,
+    "end_line": 480884,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawMimeType"
+    ],
+    "body_sha256": "3f4cb60895ee38cebe5c335dca55e9d86dbc06a5f0516ade8f4877e98c86e650",
+    "calls": [
+      ".toLowerCase",
+      ".trim",
+      "ARCHIVE_MIME_TYPES.has",
+      "DOCUMENT_MIME_TYPES.has",
+      "TABLE_MIME_TYPES.has",
+      "mime2.endsWith",
+      "mime2.startsWith",
+      "rawMimeType.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 11,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:480885:17425231",
+    "artifact": "evaluation",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "extensionSubject",
+    "qualified_name": "extensionSubject",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 480885,
+    "end_line": 480897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "8feae3f9c7489f0b7a0a0307fdd2234f1e038d63b1bc0063a053bd937d1374f0",
+    "calls": [
+      "decodeURIComponent",
+      "new URL"
+    ],
+    "writes": [
+      "pathname"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:480898:17425455",
+    "artifact": "evaluation",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyPathLike",
+    "qualified_name": "classifyPathLike",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 480898,
+    "end_line": 480926,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "8b87df92993a405e1577effb82c85fa3acc3052beb93f4518c0d8569b1b0975e",
+    "calls": [
+      "ARCHIVE_EXTENSIONS.has",
+      "JSON_EXTENSIONS2.has",
+      "attachmentExtension",
+      "extensionSubject",
+      "getFilePreviewKind"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 13,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:480927:17426231",
+    "artifact": "evaluation",
+    "module": "shared/media/attachment-summary.ts",
+    "name": "classifyAttachment",
+    "qualified_name": "classifyAttachment",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 480927,
+    "end_line": 480941,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "2b6723bfab9dfb1918ef175d130c6d55d930199dee2f0334f09ca7a395c5423d",
+    "calls": [
+      "classifyMimeType",
+      "classifyPathLike"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

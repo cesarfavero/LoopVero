@@ -1,0 +1,338 @@
+[
+  {
+    "id": "host:631414:23436824",
+    "artifact": "host",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "automationToolNameToSnakeCase",
+    "qualified_name": "automationToolNameToSnakeCase",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 631414,
+    "end_line": 631416,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "bc44aac59db69659b3bad6ce03f1d322e1cbc28ae2cc4510551e6741244c58bf",
+    "calls": [
+      ".replace",
+      ".toLowerCase",
+      "name18.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:631421:23437363",
+    "artifact": "host",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "getMountedPathModule",
+    "qualified_name": "getMountedPathModule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 631421,
+    "end_line": 631423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mountPath"
+    ],
+    "body_sha256": "6f6430fce46b056a9a8e5a0ad48f7f94240d8f31405b6312dcd59028520979c4",
+    "calls": [
+      "import_node_path101.default.posix.isAbsolute",
+      "import_node_path101.default.win32.isAbsolute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:631424:23437606",
+    "artifact": "host",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "resolveAutomationMemoryDirectory",
+    "qualified_name": "resolveAutomationMemoryDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 631424,
+    "end_line": 631431,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stores"
+    ],
+    "body_sha256": "daf14b08a040e742fe7989a63deb8f37e5d2cb258b9f66f5ec6026fb88e9fe8a",
+    "calls": [
+      ".join",
+      "automationStore.path.trim",
+      "getMountedPathModule",
+      "stores.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:631432:23438033",
+    "artifact": "host",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "buildAutomationMemoryInstruction",
+    "qualified_name": "buildAutomationMemoryInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 631432,
+    "end_line": 631444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memoryDirectory"
+    ],
+    "body_sha256": "9a171a8fb2fa64d65a75c6d8ce140190187f03219fcbe2c85f5e5c9bbc7d4fa0",
+    "calls": [
+      ".join",
+      "getMountedPathModule",
+      "pathModule.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:631445:23438974",
+    "artifact": "host",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "materializeAutomationMemoryInstruction",
+    "qualified_name": "materializeAutomationMemoryInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 631445,
+    "end_line": 631452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "automationInstructions",
+      "stores"
+    ],
+    "body_sha256": "51141d647f3c5f0965c0cb899cb64890b1da6f2612cc7f069fb497a02cdf6402",
+    "calls": [
+      ".join",
+      "automationInstructions.includes",
+      "automationInstructions.split",
+      "buildAutomationMemoryInstruction",
+      "resolveAutomationMemoryDirectory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:410599:14049944",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "automationToolNameToSnakeCase",
+    "qualified_name": "automationToolNameToSnakeCase",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 410599,
+    "end_line": 410601,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "bc44aac59db69659b3bad6ce03f1d322e1cbc28ae2cc4510551e6741244c58bf",
+    "calls": [
+      ".replace",
+      ".toLowerCase",
+      "name18.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:410606:14050483",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "getMountedPathModule",
+    "qualified_name": "getMountedPathModule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 410606,
+    "end_line": 410608,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mountPath"
+    ],
+    "body_sha256": "37ff323801d1df6d7447fe2c8a5e22ea6d51d61e6392ea482d6ec1816f85291f",
+    "calls": [
+      "import_node_path6.default.posix.isAbsolute",
+      "import_node_path6.default.win32.isAbsolute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:410609:14050718",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "resolveAutomationMemoryDirectory",
+    "qualified_name": "resolveAutomationMemoryDirectory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 410609,
+    "end_line": 410616,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "stores"
+    ],
+    "body_sha256": "daf14b08a040e742fe7989a63deb8f37e5d2cb258b9f66f5ec6026fb88e9fe8a",
+    "calls": [
+      ".join",
+      "automationStore.path.trim",
+      "getMountedPathModule",
+      "stores.find"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:410617:14051145",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "buildAutomationMemoryInstruction",
+    "qualified_name": "buildAutomationMemoryInstruction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 410617,
+    "end_line": 410629,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "memoryDirectory"
+    ],
+    "body_sha256": "9a171a8fb2fa64d65a75c6d8ce140190187f03219fcbe2c85f5e5c9bbc7d4fa0",
+    "calls": [
+      ".join",
+      "getMountedPathModule",
+      "pathModule.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:410630:14052086",
+    "artifact": "evaluation",
+    "module": "agent-engine/prompts/bugbot/automations.js",
+    "name": "materializeAutomationMemoryInstruction",
+    "qualified_name": "materializeAutomationMemoryInstruction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 410630,
+    "end_line": 410637,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "automationInstructions",
+      "stores"
+    ],
+    "body_sha256": "51141d647f3c5f0965c0cb899cb64890b1da6f2612cc7f069fb497a02cdf6402",
+    "calls": [
+      ".join",
+      "automationInstructions.includes",
+      "automationInstructions.split",
+      "buildAutomationMemoryInstruction",
+      "resolveAutomationMemoryDirectory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

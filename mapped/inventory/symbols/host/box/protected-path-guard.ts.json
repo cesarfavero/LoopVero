@@ -1,0 +1,206 @@
+[
+  {
+    "id": "host:679096:25804070",
+    "artifact": "host",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "refusalMessage2",
+    "qualified_name": "refusalMessage2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679096,
+    "end_line": 679098,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "5a8109e649d41fb6b7c116ca54a613c75741b66a20eb98a1decb004003025f7e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679108:25804397",
+    "artifact": "host",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "isModelReadableStorePath",
+    "qualified_name": "isModelReadableStorePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679108,
+    "end_line": 679113,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "root",
+      "path33"
+    ],
+    "body_sha256": "99a21605656dfb4f05c53dc252b46e039e4e8b1cba9da2ab5185738288c3acb5",
+    "calls": [
+      ".split",
+      "MODEL_READABLE_STORE_TREES.has",
+      "segments.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679114:25804735",
+    "artifact": "host",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "assertPathOutsideProtectedRoots",
+    "qualified_name": "assertPathOutsideProtectedRoots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679114,
+    "end_line": 679129,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "protectedRoots",
+      "candidatePath",
+      "baseDir"
+    ],
+    "body_sha256": "ce945eeccf4940fae7cc26d76514105a006071785b75d01a7a0efc11afe44d47",
+    "calls": [
+      "isModelReadableStorePath",
+      "isPathWithin",
+      "new SandProtectedPathError",
+      "realpathNearestExisting",
+      "refusalMessage2"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandProtectedPathError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:626961:23779289",
+    "artifact": "evaluation",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "refusalMessage",
+    "qualified_name": "refusalMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 626961,
+    "end_line": 626963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "925eec124bf1555713be3b0dea6c88b8540c5855534526459f53710195238959",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:626973:23779615",
+    "artifact": "evaluation",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "isModelReadableStorePath",
+    "qualified_name": "isModelReadableStorePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 626973,
+    "end_line": 626978,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "root",
+      "path33"
+    ],
+    "body_sha256": "08e8e171dbb225b27daf6c1fdc33b4d4675e57bf4f8b43ffd85078ce48caae14",
+    "calls": [
+      ".split",
+      "MODEL_READABLE_STORE_TREES.has",
+      "segments.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:626979:23779951",
+    "artifact": "evaluation",
+    "module": "host/box/protected-path-guard.ts",
+    "name": "assertPathOutsideProtectedRoots",
+    "qualified_name": "assertPathOutsideProtectedRoots",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 626979,
+    "end_line": 626994,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "protectedRoots",
+      "candidatePath",
+      "baseDir"
+    ],
+    "body_sha256": "1af73f0e21fd9eabbb70fb003900f775905d3b1da30b443473770022580057ec",
+    "calls": [
+      "isModelReadableStorePath",
+      "isPathWithin2",
+      "new SandProtectedPathError",
+      "realpathNearestExisting",
+      "refusalMessage"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandProtectedPathError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

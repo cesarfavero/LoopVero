@@ -1,0 +1,668 @@
+[
+  {
+    "id": "host:476453:17439693",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "isBoxRootPath",
+    "qualified_name": "isBoxRootPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476453,
+    "end_line": 476455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "a09616a16d5f22f195b2aa7d0b9238ebd61dfafe590fd4ff18bf2fe20ff11831",
+    "calls": [
+      "BOX_PATH_ROOTS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476456:17439818",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "resolveBoxWorkspacePath",
+    "qualified_name": "resolveBoxWorkspacePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476456,
+    "end_line": 476458,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "boxPath"
+    ],
+    "body_sha256": "d011e20b1e80746e41e07058c176d6c006c3e7ce5d5ba532eb56e4e3cf0a1a05",
+    "calls": [
+      "import_node_path15.posix.isAbsolute",
+      "import_node_path15.posix.join",
+      "import_node_path15.posix.normalize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476460:17440089",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "BoxTransferError.constructor",
+    "qualified_name": "BoxTransferError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476460,
+    "end_line": 476464,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "code",
+      "message",
+      "options2"
+    ],
+    "body_sha256": "fe9df5cc4ae069bdf64df56e532e5a5785298124b9161e1273f36b93c6ecdb20",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.code",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476472:17440382",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "isBoxFileMissingError",
+    "qualified_name": "isBoxFileMissingError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476472,
+    "end_line": 476477,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "aa5f1c342b803108d35ce1b731b4f4a8f29150fd938a995ef0e1cf150d7ac665",
+    "calls": [
+      "error64.message.toLowerCase",
+      "findSystemErrno",
+      "message.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476478:17440713",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "transferFileBetweenBoxes",
+    "qualified_name": "transferFileBetweenBoxes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476478,
+    "end_line": 476516,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "869b523d322e284838ad34bf92ce317015299cbfac51319ad9cb93ea7f763f8a",
+    "calls": [
+      "dest.box.uploadFile",
+      "errorMessage",
+      "isBoxFileMissingError",
+      "new BoxTransferError",
+      "source.box.downloadFile"
+    ],
+    "writes": [
+      "data2"
+    ],
+    "throw_targets": [
+      "BoxTransferError",
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 6,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:476517:17442058",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "forEachBounded",
+    "qualified_name": "forEachBounded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476517,
+    "end_line": 476533,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "limit3",
+      "fn"
+    ],
+    "body_sha256": "fb4f5c9c0d0e706c9dc8ce4e93823cbd91ae580f681dabd82f281d4caf91240e",
+    "calls": [
+      "Array.from",
+      "Math.max",
+      "Math.min",
+      "Promise.all"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476521:17442192",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "worker",
+    "qualified_name": "forEachBounded/worker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476521,
+    "end_line": 476531,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "0c2f4f95fbf9b0dd400a673b898890eb798997e696709bf2f3a4988c0a332fc7",
+    "calls": [
+      "fn"
+    ],
+    "writes": [
+      "cursor",
+      "isAborted3"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:476534:17442521",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "forEachWavePipelined",
+    "qualified_name": "forEachWavePipelined",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476534,
+    "end_line": 476591,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "opts"
+    ],
+    "body_sha256": "0ca68fe7d4a91b5d90c140f55f639cbc6553bdbb85560f4682da1a271e59aef9",
+    "calls": [
+      "Array.from",
+      "Math.max",
+      "Promise.all",
+      "beginPrepareIfNeeded"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "failure3"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476543:17442821",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "wakeAll",
+    "qualified_name": "forEachWavePipelined/wakeAll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476543,
+    "end_line": 476547,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5f795c423a6b6158d9a9faf75866b7b719910b19d6b3a713340f700805637288",
+    "calls": [
+      "wake"
+    ],
+    "writes": [
+      "wakeWaiters"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476548:17442960",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "beginPrepareIfNeeded",
+    "qualified_name": "forEachWavePipelined/beginPrepareIfNeeded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476548,
+    "end_line": 476564,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "441eb8e59fd3ed55f04b613b33142811462551172c169f544637100bbe23fa33",
+    "calls": [
+      ".catch",
+      ".finally",
+      ".then",
+      "items.slice",
+      "opts.prepareWave"
+    ],
+    "writes": [
+      "nextWaveStart",
+      "prepareInFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:476565:17443510",
+    "artifact": "host",
+    "module": "core/box/box-transfer.ts",
+    "name": "worker",
+    "qualified_name": "forEachWavePipelined/worker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 476565,
+    "end_line": 476587,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4371305c4a92c3c4da67f1db7e582340068ccfe424a6d0cdcfcb1f021514a2c4",
+    "calls": [
+      "beginPrepareIfNeeded",
+      "new Promise",
+      "opts.process",
+      "queue.splice",
+      "wakeAll"
+    ],
+    "writes": [
+      "failed2",
+      "failure3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:515591:18730707",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "isBoxRootPath",
+    "qualified_name": "isBoxRootPath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515591,
+    "end_line": 515593,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "a09616a16d5f22f195b2aa7d0b9238ebd61dfafe590fd4ff18bf2fe20ff11831",
+    "calls": [
+      "BOX_PATH_ROOTS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515594:18730832",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "resolveBoxWorkspacePath",
+    "qualified_name": "resolveBoxWorkspacePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515594,
+    "end_line": 515596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "boxPath"
+    ],
+    "body_sha256": "cd1e6bb41324ebb6380ae4aaf98b8ba3e5fc1802383bfa2f73d863b4a2af471d",
+    "calls": [
+      "import_node_path22.posix.isAbsolute",
+      "import_node_path22.posix.join",
+      "import_node_path22.posix.normalize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515598:18731103",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "BoxTransferError.constructor",
+    "qualified_name": "BoxTransferError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515598,
+    "end_line": 515602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "code",
+      "message",
+      "options2"
+    ],
+    "body_sha256": "fe9df5cc4ae069bdf64df56e532e5a5785298124b9161e1273f36b93c6ecdb20",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.code",
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515610:18731396",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "isBoxFileMissingError",
+    "qualified_name": "isBoxFileMissingError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515610,
+    "end_line": 515615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "8eeee64615372a195a88ee393886ae7e5f455b3966e387e065022737d1670e12",
+    "calls": [
+      "error63.message.toLowerCase",
+      "findSystemErrno",
+      "message.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515616:18731727",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "transferFileBetweenBoxes",
+    "qualified_name": "transferFileBetweenBoxes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515616,
+    "end_line": 515654,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "667a3c83f2ab024cfd9c617a4863cf28eaf7ddc311134fea72a96ad5d8a1d13e",
+    "calls": [
+      "dest.box.uploadFile",
+      "errorMessage2",
+      "isBoxFileMissingError",
+      "new BoxTransferError",
+      "source.box.downloadFile"
+    ],
+    "writes": [
+      "data2"
+    ],
+    "throw_targets": [
+      "BoxTransferError",
+      "error63"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 6,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:515656:18733116",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "forEachBounded",
+    "qualified_name": "forEachBounded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515656,
+    "end_line": 515672,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items",
+      "limit3",
+      "fn"
+    ],
+    "body_sha256": "a0289d3d54ce8e3aa8ffbac7f7021f3ac52a0405f5afa249932de8624e00f910",
+    "calls": [
+      "Array.from",
+      "Math.max",
+      "Math.min",
+      "Promise.all"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:515660:18733250",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "worker",
+    "qualified_name": "forEachBounded/worker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515660,
+    "end_line": 515670,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "02be5ae6d805e089c5184b1ce3b213a19bed43f92d9116cde321a388c626d367",
+    "calls": [
+      "fn"
+    ],
+    "writes": [
+      "cursor",
+      "isAborted3"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:515673:18733579",
+    "artifact": "evaluation",
+    "module": "core/box/box-transfer.ts",
+    "name": "downloadBoxFiles",
+    "qualified_name": "downloadBoxFiles",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 515673,
+    "end_line": 515690,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "box",
+      "agentId",
+      "boxPaths",
+      "opts"
+    ],
+    "body_sha256": "3e6e226ef1eed802445dd83a72ded569f8ed831dd010b59f1f03f1ca30943cd9",
+    "calls": [
+      "forEachBounded",
+      "new Map",
+      "new Set",
+      "uniquePaths.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

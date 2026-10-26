@@ -1,0 +1,140 @@
+[
+  {
+    "id": "host:740401:28137007",
+    "artifact": "host",
+    "module": "host/extensions/transcript/todos/agent-todos.ts",
+    "name": "readAgentTodos",
+    "qualified_name": "readAgentTodos",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740401,
+    "end_line": 740419,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "session",
+      "structure = session.agentStore.getConversationStateStructure()"
+    ],
+    "body_sha256": "fff699df0cd0cd0a93daf11b76d2398cd2d3cb36f9ba5dec0f08833512852a31",
+    "calls": [
+      "TodoItem.fromBinary",
+      "blobStore.getBlob",
+      "createContext",
+      "reportFallback",
+      "sandAgentTodoFromItem",
+      "session.agentStore.getBlobStore",
+      "todos.push"
+    ],
+    "writes": [
+      "item"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:740421:28137663",
+    "artifact": "host",
+    "module": "host/extensions/transcript/todos/agent-todos.ts",
+    "name": "AgentTodosRuntime.constructor",
+    "qualified_name": "AgentTodosRuntime.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740421,
+    "end_line": 740423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "6739b592404421f682b6affe527a447ef0b00db07005ef6c3d68a9152c25e657",
+    "calls": [],
+    "writes": [
+      "this.host"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740425:28137717",
+    "artifact": "host",
+    "module": "host/extensions/transcript/todos/agent-todos.ts",
+    "name": "AgentTodosRuntime.subscribe",
+    "qualified_name": "AgentTodosRuntime.subscribe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740425,
+    "end_line": 740430,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "40830889e7bb13a3e2af914e84cdbf94470beafeca4a7c179b9daf7a4a4e380f",
+    "calls": [
+      "this.host.roster.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:740431:28137878",
+    "artifact": "host",
+    "module": "host/extensions/transcript/todos/agent-todos.ts",
+    "name": "AgentTodosRuntime.get",
+    "qualified_name": "AgentTodosRuntime.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 740431,
+    "end_line": 740446,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "8609e095e1c7287e229ae6164f7f578c23393be46137ec042088c49baa9a6916",
+    "calls": [
+      "__callDispose",
+      "__using",
+      "readAgentTodos",
+      "this.host.sessions.leaseBackgroundSession"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 2
+    }
+  }
+]

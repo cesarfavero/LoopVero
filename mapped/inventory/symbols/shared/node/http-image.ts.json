@@ -1,0 +1,138 @@
+[
+  {
+    "id": "host:404441:14648839",
+    "artifact": "host",
+    "module": "shared/node/http-image.ts",
+    "name": "imageContentType",
+    "qualified_name": "imageContentType",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404441,
+    "end_line": 404444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response"
+    ],
+    "body_sha256": "41eb8e6fb383f4b0cf055db559936827267f5f0431a485d99d01e1d76a81ed3a",
+    "calls": [
+      ".split",
+      "[computed].trim",
+      "contentType.startsWith",
+      "response.headers.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:404445:14649032",
+    "artifact": "host",
+    "module": "shared/node/http-image.ts",
+    "name": "readCappedImageBytes",
+    "qualified_name": "readCappedImageBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404445,
+    "end_line": 404464,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response",
+      "maxBytes"
+    ],
+    "body_sha256": "0c4b49c72dac0c33ede00c2997687d5d7a648768a6d82cd9e47a4010aad09217",
+    "calls": [
+      "Buffer.concat",
+      "Number",
+      "Number.isFinite",
+      "body.getReader",
+      "chunks.push",
+      "reader.cancel",
+      "reader.read",
+      "response.headers.get"
+    ],
+    "writes": [
+      "total"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:404465:14649641",
+    "artifact": "host",
+    "module": "shared/node/http-image.ts",
+    "name": "responseToImageDataUrl",
+    "qualified_name": "responseToImageDataUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404465,
+    "end_line": 404472,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "response",
+      "maxBytes"
+    ],
+    "body_sha256": "64f8787e84372182ee760854b2e3d4b4287278b8bd490414e03eb46019321c6c",
+    "calls": [
+      "bytes.toString",
+      "imageContentType",
+      "readCappedImageBytes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:404474:14650054",
+    "artifact": "host",
+    "module": "shared/node/http-image.ts",
+    "name": "src/shared/node/http-image.ts",
+    "qualified_name": "src/shared/node/http-image.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 404474,
+    "end_line": 404476,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "4882d075d21d4d177435ee1b2e6a8931a043b738def391451f410d26d45553e5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

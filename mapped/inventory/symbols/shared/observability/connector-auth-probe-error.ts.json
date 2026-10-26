@@ -1,0 +1,100 @@
+[
+  {
+    "id": "host:685440:26039552",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-probe-error.ts",
+    "name": "probeErrorForStatus",
+    "qualified_name": "probeErrorForStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685440,
+    "end_line": 685448,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "6148479e9383bd946cd37ad80b3409272a06bc75473c458ccc9e3370c129fd83",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685449:26039898",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-probe-error.ts",
+    "name": "connectorAuthProbeError",
+    "qualified_name": "connectorAuthProbeError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685449,
+    "end_line": 685457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "1c1f8022d347288babe6632ce1e0ecda7690c65ebf66a3dc7ef4761f637588a8",
+    "calls": [
+      ".toLowerCase",
+      ".trim",
+      "HTTP_STATUS_IN_TEXT.exec",
+      "Number",
+      "Number.isInteger",
+      "PROBE_ERROR_PATTERNS.find",
+      "probeErrorForStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:685459:26040476",
+    "artifact": "host",
+    "module": "shared/observability/connector-auth-probe-error.ts",
+    "name": "brandedConnectorAuthProbeError",
+    "qualified_name": "brandedConnectorAuthProbeError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 685459,
+    "end_line": 685461,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "d90ac709c1a802af0b882d6189079caf7c0ffc931b193d7a0d8b9ffde20a84ee",
+    "calls": [
+      "brandProbeError",
+      "connectorAuthProbeError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

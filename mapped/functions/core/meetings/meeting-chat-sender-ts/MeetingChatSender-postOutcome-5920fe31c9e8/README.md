@@ -1,0 +1,37 @@
+# `_MeetingChatSender.postOutcome`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/architecture/README.md).
+
+**Módulo:** `core/meetings/meeting-chat-sender.ts` · [README do módulo](../../../../../modules/core/meetings/meeting-chat-sender-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:760480-760483](../../../../../../reference/runtime/host-main.cjs#L760480-L760483) | `method` | não | `sent` |
+| [evaluation:551295-551298](../../../../../../reference/runtime/sand-eval-runner.cjs#L551295-L551298) | `method` | não | `sent` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:760480-760483](../../../../../../reference/runtime/host-main.cjs#L760480-L760483) | 2 | 0 | 0 | 2 | 0 | 0 |
+| [evaluation:551295-551298](../../../../../../reference/runtime/sand-eval-runner.cjs#L551295-L551298) | 2 | 0 | 0 | 2 | 0 | 0 |
+
+### host:760480
+
+Chamadas escritas diretamente neste corpo: nenhuma chamada identificável por nome.
+
+SHA-256 do trecho: `f3aacfa548121b9ae2fdafa9a2d9ab2a66a94fc69fd95a194702f66d2551de6e`.
+
+### evaluation:551295
+
+Chamadas escritas diretamente neste corpo: nenhuma chamada identificável por nome.
+
+SHA-256 do trecho: `f3aacfa548121b9ae2fdafa9a2d9ab2a66a94fc69fd95a194702f66d2551de6e`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

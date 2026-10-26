@@ -1,0 +1,194 @@
+[
+  {
+    "id": "host:718096:27251885",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-transcript-pages.ts",
+    "name": "readTranscriptPage",
+    "qualified_name": "readTranscriptPage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 718096,
+    "end_line": 718120,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statements",
+      "query2"
+    ],
+    "body_sha256": "9b3395b8a5957434064bcf856dede44581ad08d8422a663c2f8a431ca817dd9e",
+    "calls": [
+      "entries.push",
+      "parseSandSpendInitiationEntry",
+      "parseTranscriptEntry",
+      "rows.slice",
+      "selected.at",
+      "selected.toReversed",
+      "statements.listTranscriptPage.all"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:718121:27252682",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-transcript-pages.ts",
+    "name": "readTranscriptWindow",
+    "qualified_name": "readTranscriptWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 718121,
+    "end_line": 718139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statements",
+      "query2",
+      "threadCountsFor"
+    ],
+    "body_sha256": "b2f0750620368b0e455e3d82957842d6ee5a929bcf593455d3ded41a66c14e9d",
+    "calls": [
+      "Math.min",
+      "Number.isFinite",
+      "Number.isInteger",
+      "entries.push",
+      "parseTranscriptEntry",
+      "rows.slice",
+      "selected.at",
+      "selected.toReversed",
+      "statements.listTranscriptWindow.all",
+      "threadCountsFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:718140:27253558",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-transcript-pages.ts",
+    "name": "readCloudAgentPeerIds",
+    "qualified_name": "readCloudAgentPeerIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 718140,
+    "end_line": 718146,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statements"
+    ],
+    "body_sha256": "614466f6f7da16e660a9b11944cb52f4a0709f0800e6bf2de34410cb949c7fd4",
+    "calls": [
+      "ids.push",
+      "statements.listCloudAgentPeerIds.all"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:718147:27253800",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-transcript-pages.ts",
+    "name": "readUnreadAnchor",
+    "qualified_name": "readUnreadAnchor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 718147,
+    "end_line": 718160,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statements",
+      "boundaryAt"
+    ],
+    "body_sha256": "28a11cc0609c26460a2275d2c318a10973604fa0340810abe75a53355622b39b",
+    "calls": [
+      "Math.max",
+      "statements.countUnreadRows.get",
+      "statements.findUnreadAnchor.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:718161:27254399",
+    "artifact": "host",
+    "module": "host/extensions/session/agent-db-transcript-pages.ts",
+    "name": "readTranscriptTail",
+    "qualified_name": "readTranscriptTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 718161,
+    "end_line": 718191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "statements",
+      "query2"
+    ],
+    "body_sha256": "777a9c0d4841f2e10108f3960bdbd815ae6aede44d8e21810e2df118f5f6fbe9",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Number.isFinite",
+      "Number.isInteger",
+      "alignTranscriptWindowStart",
+      "isUnreadBoundary",
+      "new Map",
+      "parseTranscriptEntry",
+      "parsed2.push",
+      "readCloudAgentPeerIds",
+      "readUnreadAnchor",
+      "rows.toReversed",
+      "seqByEntry.get",
+      "seqByEntry.set",
+      "statements.listTranscriptTail.all"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

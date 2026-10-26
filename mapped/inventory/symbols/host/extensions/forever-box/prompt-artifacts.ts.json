@@ -1,0 +1,334 @@
+[
+  {
+    "id": "host:680745:25862392",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "isFlagName",
+    "qualified_name": "isFlagName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680745,
+    "end_line": 680747,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "9ab684e30701dcb7d25890d893a2ecc1449161e72e100f2d19ca2b297fe92fac",
+    "calls": [
+      "Object.hasOwn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680748:25862463",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "accountCanRunTeamBots",
+    "qualified_name": "accountCanRunTeamBots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680748,
+    "end_line": 680750,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "policy"
+    ],
+    "body_sha256": "844c79b13959bfae4ceabc2f7b9ae94fa773713c35113f1de7c239e44d43ac2c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680754:25862689",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "readHostSandUiFacts",
+    "qualified_name": "readHostSandUiFacts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680754,
+    "end_line": 680784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "97f134194ac5e84993f2c5631eb4fb1702be451ee0e825d595cd789377b24ce6",
+    "calls": [
+      "accountCanRunTeamBots",
+      "isFlagName",
+      "source.getAdminPolicy",
+      "source.getPhoneGates",
+      "source.hasAuthenticatedBootstrap",
+      "source.peekFeatureGate"
+    ],
+    "writes": [
+      "gates[computed]",
+      "phoneGates",
+      "sandUiAct",
+      "sandUiMap",
+      "sandUiOpen"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680792:25863980",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "startPromptArtifactProvisioning",
+    "qualified_name": "startPromptArtifactProvisioning",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680792,
+    "end_line": 680851,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "33cd07ed5a7967f02d3d8627815ff0c664f14afe6e291e4bad87fd1b0378a945",
+    "calls": [
+      "Promise.resolve",
+      "createRetryPolicy",
+      "deps.subscribe.map",
+      "schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680799:25864248",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "clearRetry",
+    "qualified_name": "startPromptArtifactProvisioning/clearRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680799,
+    "end_line": 680802,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3c767e3512b201377fd8e9399ad99bc1c70ee77fe544a5f6601a123eeaecb9a9",
+    "calls": [
+      "pendingRetry.dispose"
+    ],
+    "writes": [
+      "pendingRetry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680803:25864343",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "provisionLatest",
+    "qualified_name": "startPromptArtifactProvisioning/provisionLatest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680803,
+    "end_line": 680811,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "06fae664c834050809803185badf312e91a9d7a1ca6fcf635ce3d385ddd410b4",
+    "calls": [
+      "JSON.stringify",
+      "deps.provision",
+      "deps.readFacts"
+    ],
+    "writes": [
+      "failures2",
+      "lastRendered"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680812:25864620",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "retryAfterFailure",
+    "qualified_name": "startPromptArtifactProvisioning/retryAfterFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680812,
+    "end_line": 680836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "8d53d9e670e65abca494c86397ed937b08ce9633904a85daa07e1808f29b06d7",
+    "calls": [
+      "Math.round",
+      "clearRetry",
+      "delay5.elapsed.then",
+      "deps.log",
+      "errorMessage",
+      "retry2.schedule"
+    ],
+    "writes": [
+      "failures2",
+      "pendingRetry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680837:25865391",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "schedule",
+    "qualified_name": "startPromptArtifactProvisioning/schedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680837,
+    "end_line": 680840,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a189fdab75ca2ed77b63c20e355a1966cc456149e876dcc49d800392adbf5945",
+    "calls": [
+      ".catch",
+      "chain.then",
+      "clearRetry"
+    ],
+    "writes": [
+      "chain"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680844:25865605",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "settled",
+    "qualified_name": "startPromptArtifactProvisioning/settled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680844,
+    "end_line": 680844,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7bcb31c0032d7a75782fc3e35fdde0a2013507b46b5e6b8d3409badac4aaf4d5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:680845:25865631",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/prompt-artifacts.ts",
+    "name": "dispose",
+    "qualified_name": "startPromptArtifactProvisioning/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 680845,
+    "end_line": 680849,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "edd0a41a0f7f92ac5365b2935d53a5214cd3e4886f9f6d5e37281ad4cb565629",
+    "calls": [
+      "clearRetry",
+      "unsubscribe"
+    ],
+    "writes": [
+      "disposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

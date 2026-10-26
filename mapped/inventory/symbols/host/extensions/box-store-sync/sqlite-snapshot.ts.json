@@ -1,0 +1,195 @@
+[
+  {
+    "id": "host:480320:17580761",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/sqlite-snapshot.ts",
+    "name": "sqliteVacuumInto",
+    "qualified_name": "sqliteVacuumInto",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480320,
+    "end_line": 480328,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "srcPath",
+      "destPath",
+      "busyTimeoutMs = DB_BUSY_TIMEOUT_MS"
+    ],
+    "body_sha256": "a16ab8c118e4b463b39b3a03f78b1008f26291ff4b9299163d50aac37b75deb1",
+    "calls": [
+      "db.close",
+      "db.exec",
+      "destPath.replace",
+      "new import_node_sqlite2.DatabaseSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480330:17581118",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/sqlite-snapshot.ts",
+    "name": "classifySqliteSnapshotFailure",
+    "qualified_name": "classifySqliteSnapshotFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480330,
+    "end_line": 480367,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "operation",
+      "pathStage"
+    ],
+    "body_sha256": "9fed4f7d1c3df3e10d855e601d195d79fd030d4a7fb9b30e071b786f4db35e39",
+    "calls": [
+      "Number.isSafeInteger",
+      "brandedErrno",
+      "findSystemErrno",
+      "isSqliteBusyError",
+      "isSqliteCantOpenError",
+      "isSqliteCorruptError",
+      "isSqliteIoError"
+    ],
+    "writes": [
+      "cause",
+      "errorClass",
+      "resolvedPathStage"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480368:17583014",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/sqlite-snapshot.ts",
+    "name": "readFileNoFollowSync2",
+    "qualified_name": "readFileNoFollowSync2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480368,
+    "end_line": 480375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "f348fd35c4f7ceda1fdc04718b239222329ead453294399c8d56bc64dda2e5a5",
+    "calls": [
+      "hostNoFollowRoot",
+      "openNoFollowSync2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:480376:17583284",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/sqlite-snapshot.ts",
+    "name": "readSidecarNoFollowSync",
+    "qualified_name": "readSidecarNoFollowSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480376,
+    "end_line": 480383,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "c8ff15ba7d7a890a63d40d004c6689c46cb07147d0462de0ed070a3b322ad6ad",
+    "calls": [
+      "isMissingPathError",
+      "readFileNoFollowSync2"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:480384:17583476",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/sqlite-snapshot.ts",
+    "name": "copyLockedSqliteDb",
+    "qualified_name": "copyLockedSqliteDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 480384,
+    "end_line": 480482,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a47fe042cae529244463079cf838da679b2d5c758e8d9be4723df0dd3299723e",
+    "calls": [
+      ".equals",
+      ".get",
+      "args.onFailure",
+      "classifySqliteSnapshotFailure",
+      "db.close",
+      "db.exec",
+      "db.prepare",
+      "new import_node_sqlite2.DatabaseSync",
+      "readFile31",
+      "readSidecarNoFollowSync"
+    ],
+    "writes": [
+      "attempt",
+      "attemptFailure",
+      "db",
+      "lastFailure",
+      "operation",
+      "pathStage",
+      "verified"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 4,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 4
+    }
+  }
+]

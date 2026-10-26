@@ -1,0 +1,401 @@
+[
+  {
+    "id": "host:720161:27326699",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "clearStaleCheckpointRootsOnce",
+    "qualified_name": "clearStaleCheckpointRootsOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720161,
+    "end_line": 720211,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "dbPath",
+      "db",
+      "agentStore"
+    ],
+    "body_sha256": "be9db9af4e5af8c727ec7a4dd0e323e9666eed3f610800f69ec87f79156d9bbf",
+    "calls": [
+      ".clearStaleCheckpointRoots",
+      "agentIdFromDbPath",
+      "agentStore.getConversationStateStructure",
+      "db.get",
+      "db.getStaleRootCleanupVersion",
+      "db.setStaleRootCleanupVersion",
+      "defer2",
+      "errorLogTag",
+      "getSandAgentDbWriteGeneration",
+      "host.reportHostLog",
+      "host.requireWorkerPool",
+      "liveDbHandleCount",
+      "reportSessionDiagnostic",
+      "toHex3"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720164:27326965",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "defer2",
+    "qualified_name": "clearStaleCheckpointRootsOnce/defer2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720164,
+    "end_line": 720167,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "bfb913fb302313bf9cd20c5bcfc009085772d9342d55113e73cd8424c58c15ea",
+    "calls": [
+      "host.reportHostLog"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720212:27328707",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "resumeIndexByIdentity",
+    "qualified_name": "resumeIndexByIdentity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720212,
+    "end_line": 720226,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "persistedEntries",
+      "rebuiltEntries"
+    ],
+    "body_sha256": "b3ed6620c2d26b57e1e8f9b9013b182fce9ac8918b809ac6eb418f31bbb9ca54",
+    "calls": [
+      "isRebuiltEntry",
+      "new Map",
+      "rebuiltEntries.map",
+      "rebuiltIndexById.get",
+      "transcriptEntryMatchesRecovered"
+    ],
+    "writes": [
+      "matchedCount",
+      "skipped2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720227:27329410",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "resumeIndexByPosition",
+    "qualified_name": "resumeIndexByPosition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720227,
+    "end_line": 720233,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "persistedEntries",
+      "rebuiltEntries"
+    ],
+    "body_sha256": "b889bb64cfdf9ddca255fa7129095ff04017ab975588bb7efe4e31e9ddda9508",
+    "calls": [
+      "persistedEntries.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720234:27329719",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "backfillTranscript",
+    "qualified_name": "backfillTranscript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720234,
+    "end_line": 720250,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "state"
+    ],
+    "body_sha256": "317301813bbf0debe1845c846f9c949ef7e4b07b10029a1ec6ee95251ef442f0",
+    "calls": [
+      "db.appendTranscriptEntries",
+      "db.getTranscriptEntries",
+      "persistedEntries.findLast",
+      "rebuildTranscriptEntriesFromState",
+      "rebuiltEntries.at",
+      "rebuiltEntries.filter",
+      "rebuiltEntries.findIndex",
+      "resumeIndexByIdentity",
+      "resumeIndexByPosition",
+      "stampRestoredRows"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720251:27330724",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "stampRestoredRows",
+    "qualified_name": "stampRestoredRows",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720251,
+    "end_line": 720260,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "predecessorStampMs"
+    ],
+    "body_sha256": "c78c326e75f6fee29f764071419476acb8c1b8060413228ccf8c4cf5fcac08d3",
+    "calls": [
+      "entries.find",
+      "entries.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:720261:27331175",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "recoverConversationIfRootMissing",
+    "qualified_name": "recoverConversationIfRootMissing",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720261,
+    "end_line": 720311,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "dbPath",
+      "db",
+      "agentStore"
+    ],
+    "body_sha256": "8d52cbcbf2bdc656db71e040a2e4ea86ec8340e95c1a91fb780d25369003f118",
+    "calls": [
+      ".name.trim",
+      "ConversationStateStructure.fromBinary",
+      "agentStore.getBlobStore",
+      "agentStore.resetFromDb",
+      "backfillTranscript",
+      "blobStore.getBlob",
+      "db.compareAndSetLatestRootBlobId",
+      "db.get",
+      "db.hasLegacyConversationBlobs",
+      "db.set",
+      "errorLogTag",
+      "findLatestDurableRootBlobId",
+      "getSandAgentDbWriteGeneration",
+      "getSandProfilePath",
+      "host.resolveConversationState",
+      "readSandProfileFile",
+      "reportSessionDiagnostic",
+      "toHex3"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 8,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720312:27333337",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "repairHiddenTranscriptEntriesOnce",
+    "qualified_name": "repairHiddenTranscriptEntriesOnce",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720312,
+    "end_line": 720352,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "dbPath",
+      "db",
+      "agentStore"
+    ],
+    "body_sha256": "e4180ee4f2c4629e5b4579382e7b29f607ea8fcb51088df92f577898e907d9da",
+    "calls": [
+      "agentStore.getBlobStore",
+      "agentStore.getConversationStateStructure",
+      "agentStore.getFullConversation",
+      "conversationStructureFullyResolves",
+      "db.deleteTranscriptEntry",
+      "db.getHiddenEntryRepairVersion",
+      "db.getTranscriptEntries",
+      "db.setHiddenEntryRepairVersion",
+      "deriveOutlineFromConversationState",
+      "entries.some",
+      "errorLogTag",
+      "host.reportHostLog",
+      "reportSessionDiagnostic",
+      "selectHiddenArtifactEntryIds"
+    ],
+    "writes": [
+      "allDeleted"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:720353:27335093",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "cleanupLegacyGroupMemberDirs",
+    "qualified_name": "cleanupLegacyGroupMemberDirs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720353,
+    "end_line": 720373,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "a5eba9e475dca000413db14479ddbe148fa29bf7c3b4b5667cd51516211f713b",
+    "calls": [
+      "entry.isDirectory",
+      "errorLogTag",
+      "removeSandDataTree",
+      "reportSessionDiagnostic"
+    ],
+    "writes": [
+      "entries"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:720374:27335707",
+    "artifact": "host",
+    "module": "host/extensions/session/session-maintenance.ts",
+    "name": "findLatestDurableRootBlobId",
+    "qualified_name": "findLatestDurableRootBlobId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 720374,
+    "end_line": 720387,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "{\n  dbPath,\n  blobsPath\n}"
+    ],
+    "body_sha256": "14b2fbc5256748bdb7669d6986740cc2cf11cc635347cb7ed0abde95febb669f",
+    "calls": [
+      ".findLatestRootBlobId",
+      "agentIdFromDbPath",
+      "errorLogTag",
+      "host.requireWorkerPool",
+      "new ConversationRecoveryScanError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "ConversationRecoveryScanError"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  }
+]

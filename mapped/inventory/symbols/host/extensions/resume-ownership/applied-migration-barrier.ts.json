@@ -1,0 +1,171 @@
+[
+  {
+    "id": "host:708481:26909184",
+    "artifact": "host",
+    "module": "host/extensions/resume-ownership/applied-migration-barrier.ts",
+    "name": "AppliedMigrationBarrier.constructor",
+    "qualified_name": "AppliedMigrationBarrier.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708481,
+    "end_line": 708483,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708486:26909263",
+    "artifact": "host",
+    "module": "host/extensions/resume-ownership/applied-migration-barrier.ts",
+    "name": "AppliedMigrationBarrier.prepare",
+    "qualified_name": "AppliedMigrationBarrier.prepare",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708486,
+    "end_line": 708495,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6efac50123cc9d941a80695e18c0c40a606f66c8baa3d6597ef6f574da57de48",
+    "calls": [
+      "errorLogTag",
+      "this.deps.readOperation",
+      "this.deps.retainOperation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:708496:26909591",
+    "artifact": "host",
+    "module": "host/extensions/resume-ownership/applied-migration-barrier.ts",
+    "name": "AppliedMigrationBarrier.run",
+    "qualified_name": "AppliedMigrationBarrier.run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708496,
+    "end_line": 708532,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "prepared",
+      "signal"
+    ],
+    "body_sha256": "9405e216737114f06673dea77fae0308ffaf58bc09d8c9a93af4af71e1d70f5c",
+    "calls": [
+      "errorLogTag",
+      "invariant",
+      "signal.throwIfAborted",
+      "this.abandon",
+      "this.deps.log",
+      "this.deps.releaseOperation",
+      "this.deps.runWindow"
+    ],
+    "writes": [
+      "state",
+      "this.activeOperationId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:708533:26910880",
+    "artifact": "host",
+    "module": "host/extensions/resume-ownership/applied-migration-barrier.ts",
+    "name": "AppliedMigrationBarrier.abandon",
+    "qualified_name": "AppliedMigrationBarrier.abandon",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708533,
+    "end_line": 708538,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "operation",
+      "signal",
+      "drain"
+    ],
+    "body_sha256": "846c5b4fc2711685a41b33cd1f627c3b65060b6e51a4281a5472b541a543c33c",
+    "calls": [
+      "this.deps.releaseOperation",
+      "this.deps.waitForCutoverDrain"
+    ],
+    "writes": [
+      "this.activeOperationId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:708539:26911106",
+    "artifact": "host",
+    "module": "host/extensions/resume-ownership/applied-migration-barrier.ts",
+    "name": "AppliedMigrationBarrier.getWindow",
+    "qualified_name": "AppliedMigrationBarrier.getWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 708539,
+    "end_line": 708550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f1c86b0c1a36864d344bfd54f387e58885026d8c10c18d9707fa2b3b43bbc5b6",
+    "calls": [
+      "this.deps.isLocalWorkAllowed",
+      "this.deps.isQuiescent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,1276 @@
+[
+  {
+    "id": "host:551435:20268774",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "applyOnePasswordExtensionMarker",
+    "qualified_name": "applyOnePasswordExtensionMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551435,
+    "end_line": 551460,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0f61899460082c9a41ed9ad05baf00643d22c97a40c5c839f96b496a8b9b6a3b",
+    "calls": [
+      "execFileAsync2",
+      "findSystemErrno"
+    ],
+    "writes": [
+      "present"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:551465:20270066",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "fillOutcome",
+    "qualified_name": "fillOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551465,
+    "end_line": 551470,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "0286f0d5ef5cd029b777ce1c500c403ebc648214e5e5711e965cabc11c941fe7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551471:20270207",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "usernameFirstFillDetail",
+    "qualified_name": "usernameFirstFillDetail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551471,
+    "end_line": 551478,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1b6dc53909b2dc31f720a4189bcd2e0b7c45ce8bc2ceb7dfc4c35614ab2587c9",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551479:20271432",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "auditEventOf",
+    "qualified_name": "auditEventOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551479,
+    "end_line": 551481,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "approvalMode"
+    ],
+    "body_sha256": "2432219bc07bfa393aa82852c97977cd0711150b1d28c0a6657d8a4fc86fec28",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551482:20271543",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "credentialTargetDomain",
+    "qualified_name": "credentialTargetDomain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551482,
+    "end_line": 551487,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "targetUrl",
+      "privacyMode"
+    ],
+    "body_sha256": "ff91f10ba8a0e1a12ae82410166504ddfb6f17d6dd58e7a2a54e339c1e4e783f",
+    "calls": [
+      "siteDomainTelemetryAllowed",
+      "targetUrl.includes",
+      "visitedSiteBucket"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551488:20271839",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "startCredentialProvider",
+    "qualified_name": "startCredentialProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551488,
+    "end_line": 551970,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "1f55ef8dcf60582dac9582f86fd910ef8422499dfcd07ec977327bc92a939fe3",
+    "calls": [
+      ".withName",
+      "applyMarker",
+      "context2.deps.experiments.checkGate",
+      "context2.onStop",
+      "createBrokerGrantWriter",
+      "createBrokerSessionReader",
+      "createContext",
+      "createCredentialAuditLogger",
+      "createCredentialAutoFillRequestResolver",
+      "createCredentialFillRemoteHolds",
+      "createCredentialOneTimeCodeResolver",
+      "createCredentialPasswordStepResolver",
+      "createCredentialProviderDirectoryReader",
+      "createLeasedCredentialFill",
+      "createPollingPolicy2",
+      "createSandCursorBackendClient",
+      "installAndArm",
+      "new AbortController",
+      "new BrowserCredentialFiller",
+      "new CredentialCoordinator",
+      "new CredentialFillLease",
+      "new CredentialOneTimeCodeFollowUp",
+      "new CredentialPasswordStepFollowUp",
+      "new OnePasswordBrokerBridge",
+      "new OnePasswordBrokerService",
+      "removeOnePasswordExtension"
+    ],
+    "writes": [
+      "broker"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551490:20271940",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "extensionHost",
+    "qualified_name": "startCredentialProvider/extensionHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551490,
+    "end_line": 551499,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7f15bfd07d47f207f53455dfc9490c78e1cd05effb4e90b709b7683cbcbc304c",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "Number.isFinite",
+      "process.uptime",
+      "readSandEgressRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551501:20272482",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "audit",
+    "qualified_name": "startCredentialProvider/audit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551501,
+    "end_line": 551516,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry",
+      "sensitiveValues"
+    ],
+    "body_sha256": "c3aba0561580d0c082bdf5ea47fa4445400f227d1ec8b8a38adb309ac64a0d71",
+    "calls": [
+      "auditLine",
+      "context2.deps.telemetry.logs.reportCredentialFillOutcome",
+      "context2.deps[computed].get",
+      "credentialTargetDomain",
+      "extensionHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551520:20273314",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "applyMarker",
+    "qualified_name": "startCredentialProvider/applyMarker",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551520,
+    "end_line": 551534,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "armed"
+    ],
+    "body_sha256": "0217919ade7d13a203f56150cc74d6f6e495e04a83fc9c35d779584bfb874b60",
+    "calls": [
+      ".catch",
+      "applyOnePasswordExtensionMarker",
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551540:20274031",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "probeExtensionApi",
+    "qualified_name": "startCredentialProvider/probeExtensionApi",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551540,
+    "end_line": 551561,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "69b1c589dd7b326485de511eefcd11bf4b1237be974d7378d082ee219dd226fe",
+    "calls": [
+      ".start",
+      "createPollingPolicy2",
+      "probing.stopped.then"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551568:20275073",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "installAndArm",
+    "qualified_name": "startCredentialProvider/installAndArm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551568,
+    "end_line": 551604,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "77daf9813d2b345623c5123af3ac78ec36fd0411ff152e418d41b94d43ee0cfe",
+    "calls": [
+      "applyMarker",
+      "context2.deps.telemetry.logs.reportOnePasswordExtensionInstall",
+      "context2.host.log",
+      "installOnePasswordExtension",
+      "probeExtensionApi",
+      "removeOnePasswordExtension"
+    ],
+    "writes": [
+      "installedExtension",
+      "summary"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551570:20275170",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "requestDownload",
+    "qualified_name": "startCredentialProvider/installAndArm/requestDownload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551570,
+    "end_line": 551570,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5",
+      "signal"
+    ],
+    "body_sha256": "23d0e19725fc392b56dd743ae2fdde6ec934c79aeea79b70083c25e844a53757",
+    "calls": [
+      "grokBot.getGrokBotOnePasswordExtensionDownload"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551572:20275311",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/installAndArm/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551572,
+    "end_line": 551572,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551611:20277066",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "getBackendUrl",
+    "qualified_name": "startCredentialProvider/getBackendUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551611,
+    "end_line": 551611,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "db48cadeb5cb2719c8dd771b2d99103955113c3cb489acecc9273100d99ec275",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551618:20277385",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "executeFill",
+    "qualified_name": "startCredentialProvider/executeFill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551618,
+    "end_line": 551618,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "8f201e500dea0934c8d79d3c5cdb76618363ed6f42b8be89d164b7a222790ab6",
+    "calls": [
+      "credentialFill.fill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551619:20277449",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "reportFailure",
+    "qualified_name": "startCredentialProvider/reportFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551619,
+    "end_line": 551619,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "f71d3d5bc0b2fcc058f270734edc1403a9a562605f723cb09f730b6035db3f97",
+    "calls": [
+      "context2.host.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551622:20277609",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551622,
+    "end_line": 551622,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551624:20277730",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551624,
+    "end_line": 551624,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551629:20277909",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "verifyCleared",
+    "qualified_name": "startCredentialProvider/verifyCleared",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551629,
+    "end_line": 551629,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "c48cc92609a4a1cccfcd61d2ee34b85c837d4bd1e1a2dc1e20d403c0f459506c",
+    "calls": [
+      "credentialFill.verifyCleared"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551635:20278127",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551635,
+    "end_line": 551635,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551640:20278378",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "resolveAgentWindow",
+    "qualified_name": "startCredentialProvider/resolveAgentWindow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551640,
+    "end_line": 551650,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "0acfed279f228da10f837208b51961b20558b10a484803272fa0db67ff4cd8d1",
+    "calls": [
+      "boxAgentWindowIndex",
+      "boxRefreshAssignedWindows",
+      "context2.host.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:551652:20278830",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "launchBoxBrowser",
+    "qualified_name": "startCredentialProvider/launchBoxBrowser",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551652,
+    "end_line": 551676,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "bfd8f5d4919b505cae61b448c34681c92ac84987f1b8c7e8eafb41f9d66b887f",
+    "calls": [
+      ".execute",
+      "box.ensureReady",
+      "buildHostShellArgs",
+      "connection.remoteAccessor.get",
+      "context2.host.log",
+      "errorLogTag",
+      "withSandBoxTouchReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:551679:20279972",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551679,
+    "end_line": 551679,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551680:20280037",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "reportApiState",
+    "qualified_name": "startCredentialProvider/reportApiState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551680,
+    "end_line": 551683,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "report"
+    ],
+    "body_sha256": "42050637488ba9e4928854b334695dae654e57a91affa341b35539899af313f9",
+    "calls": [
+      "context2.deps.telemetry.logs.reportOnePasswordExtensionApiState",
+      "extensionHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551691:20280356",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551691,
+    "end_line": 551691,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551701:20280790",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "resolveBrowserTarget",
+    "qualified_name": "startCredentialProvider/resolveBrowserTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551701,
+    "end_line": 551701,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item",
+      "siteHint",
+      "windowIndex"
+    ],
+    "body_sha256": "e633749dc48e16aa1654b4b8bff68044460652147d5e27deaf1a3f9e41e02c8a",
+    "calls": [
+      "filler.resolveTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551702:20280883",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "log",
+    "qualified_name": "startCredentialProvider/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551702,
+    "end_line": 551702,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551720:20281446",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "reportFailure",
+    "qualified_name": "startCredentialProvider/reportFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551720,
+    "end_line": 551720,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "f71d3d5bc0b2fcc058f270734edc1403a9a562605f723cb09f730b6035db3f97",
+    "calls": [
+      "context2.host.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551731:20281843",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "canRequest",
+    "qualified_name": "startCredentialProvider/canRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551731,
+    "end_line": 551731,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "d2945e5fcf568d11ee282ecc8a4c88dafc1c7e37a2107dd2b87ff706617e3c63",
+    "calls": [
+      "browserWindowIndexOfCdpPort",
+      "lease.canStartAutofill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551736:20282086",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "reportFailure",
+    "qualified_name": "startCredentialProvider/reportFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551736,
+    "end_line": 551736,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "stage",
+      "error64"
+    ],
+    "body_sha256": "f71d3d5bc0b2fcc058f270734edc1403a9a562605f723cb09f730b6035db3f97",
+    "calls": [
+      "context2.host.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551740:20282289",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "armOneTimeCodeFollowUp",
+    "qualified_name": "startCredentialProvider/armOneTimeCodeFollowUp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551740,
+    "end_line": 551751,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args",
+      "result"
+    ],
+    "body_sha256": "a64e5217812dc683154d46e0930653a88677b4e9cdb13563cf33d5d3634e39c2",
+    "calls": [
+      "oneTimeCodeFollowUp.watch",
+      "trustedBrowserOrigin"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551755:20282910",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "getFreshDirectory",
+    "qualified_name": "startCredentialProvider/getFreshDirectory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551755,
+    "end_line": 551755,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f5e44c9edabe093936ee0add9aaf2cc34e992ad43d61af4bdc0634fedc992a3f",
+    "calls": [
+      "coordinator.getFreshDirectory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551756:20282985",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "resolveBrowserCredentialTarget",
+    "qualified_name": "startCredentialProvider/resolveBrowserCredentialTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551756,
+    "end_line": 551756,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agentId, item, siteHint }"
+    ],
+    "body_sha256": "8c0361bd6452398720d3365b40de0050474b07b68905e4e993d37556b3d4ce43",
+    "calls": [
+      "coordinator.resolveBrowserTarget",
+      "resolveAgentWindow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551757:20283130",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "requestAutoFill",
+    "qualified_name": "startCredentialProvider/requestAutoFill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551757,
+    "end_line": 551794,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "837ffeaa58bcf4b3ea75550759b9f6dbfea8741111ed8bbc90e7d8cc3539338a",
+    "calls": [
+      "auditRequest",
+      "context2.host.log",
+      "errorLogTag",
+      "requestAutoFillOnBackend"
+    ],
+    "writes": [
+      "decision"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:551758:20283175",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "auditRequest",
+    "qualified_name": "startCredentialProvider/requestAutoFill/auditRequest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551758,
+    "end_line": 551766,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "outcome",
+      "reason"
+    ],
+    "body_sha256": "0039cdce1ef8f102462a6882a624c4dee1f07759d57a4ba5088877fdda15fe0a",
+    "calls": [
+      "audit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551795:20284456",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "fillBrowserCredential",
+    "qualified_name": "startCredentialProvider/fillBrowserCredential",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551795,
+    "end_line": 551860,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "6a64ad875323db15e68b7977cc67dd464d60ee5e68b58024cde90b96827a96d9",
+    "calls": [
+      "armOneTimeCodeFollowUp",
+      "audit",
+      "auditEventOf",
+      "browserWindowIndexOfCdpPort",
+      "browserWindowIndexOfDebuggerUrl",
+      "fillOutcome",
+      "filler.pickFillTarget",
+      "leasedFill.run",
+      "new URL",
+      "passwordStepFollowUp.markFilled",
+      "passwordStepFollowUp.watch",
+      "resolveAgentWindow",
+      "trustedBrowserOrigin",
+      "usernameFirstFillDetail"
+    ],
+    "writes": [
+      "outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551861:20286989",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "fillBrowserPasswordStep",
+    "qualified_name": "startCredentialProvider/fillBrowserPasswordStep",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551861,
+    "end_line": 551918,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "bddf05a66e8c010363332778c1fe7cb4e32507cf52cf9fe1a9c2521a52ee55bc",
+    "calls": [
+      ".filter",
+      "armOneTimeCodeFollowUp",
+      "audit",
+      "auditEventOf",
+      "browserWindowIndexOfDebuggerUrl",
+      "fillOutcome",
+      "leasedFill.runFollowUp",
+      "passwordStepFollowUp.markFilled",
+      "passwordStepFollowUp.sessionFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:551919:20289096",
+    "artifact": "host",
+    "module": "host/extensions/credential-provider/extension.ts",
+    "name": "fillBrowserOneTimeCode",
+    "qualified_name": "startCredentialProvider/fillBrowserOneTimeCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 551919,
+    "end_line": 551968,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cdd013d13e6221362914e31fe5b2f0a775157e923dd58fbe376c939cade0e5b8",
+    "calls": [
+      "audit",
+      "auditEventOf",
+      "browserWindowIndexOfDebuggerUrl",
+      "fillOutcome",
+      "leasedFill.runFollowUp",
+      "oneTimeCodeFollowUp.retryAfterLeaseRefusal",
+      "oneTimeCodeFollowUp.sessionFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

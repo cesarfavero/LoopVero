@@ -1,0 +1,369 @@
+[
+  {
+    "id": "host:688431:26150731",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.constructor",
+    "qualified_name": "SandMcpInstructionsAndToggles.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688431,
+    "end_line": 688433,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688435:26150801",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.migrateCustomInstructions",
+    "qualified_name": "SandMcpInstructionsAndToggles.migrateCustomInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688435,
+    "end_line": 688447,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "servers"
+    ],
+    "body_sha256": "6fae681f271a8ec9fefff336492cb4992f44e6242ccead407bbb9e20cd5e2440",
+    "calls": [
+      "skipRefusedSettingsWrite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688448:26151224",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.setServerCustomInstructions",
+    "qualified_name": "SandMcpInstructionsAndToggles.setServerCustomInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688448,
+    "end_line": 688464,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "cd19f09caf41f45b66eec7afc1268149c13cbc1ee32948607682ca243b6ed793",
+    "calls": [
+      ".filter",
+      ".setMcpCustomInstructionByServerId",
+      "new SandMcpConfigError",
+      "this.deps.lastAccountDisplayConfig",
+      "this.deps.listServers",
+      "this.deps.resolveListedDisplayServer",
+      "this.deps.settingsStore",
+      "validateMcpDisplayServerId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688465:26151883",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.displayRowForIdentifier",
+    "qualified_name": "SandMcpInstructionsAndToggles.displayRowForIdentifier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688465,
+    "end_line": 688469,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "identifier2"
+    ],
+    "body_sha256": "24dbf9d02623570d072f70daa01084a11af6647ba183be63605af7436ca40413",
+    "calls": [
+      ".servers.find",
+      "this.deps.lastAccountDisplayConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688470:26152129",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.listServerTools",
+    "qualified_name": "SandMcpInstructionsAndToggles.listServerTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688470,
+    "end_line": 688517,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "rawServerId"
+    ],
+    "body_sha256": "04c066e4f33b88a4bd9f328ce1e219527554f5a5b26534a08647253d958f7d83",
+    "calls": [
+      "byName3.has",
+      "byName3.set",
+      "byName3.values",
+      "disabled.includes",
+      "effectiveMcpToolPermission",
+      "isDeclaredReadOnlyMcpTool",
+      "isReadForToolPermissions",
+      "mcpToolGroupPermissionOf",
+      "mcpToolPermissionScope",
+      "new Map",
+      "new SandMcpConfigError",
+      "routedToolCarriedPermission",
+      "rowServerHost",
+      "settings.getMcpDisabledToolsByServerId",
+      "settings.getToolPermissions",
+      "this.deps.getToolsRaw",
+      "this.deps.resolveListedDisplayServer",
+      "this.deps.settingsStore",
+      "this.displayRowForIdentifier",
+      "validateMcpDisplayServerId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688492:26153116",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "isDisabled",
+    "qualified_name": "SandMcpInstructionsAndToggles.listServerTools/isDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688492,
+    "end_line": 688492,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "258eb576930b6b4ba238e80f8ef488021cce4fb324b3587c7ccffa46c9d5a937",
+    "calls": [
+      "disabled.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688518:26154138",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.toggleMcpToolDisabled",
+    "qualified_name": "SandMcpInstructionsAndToggles.toggleMcpToolDisabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688518,
+    "end_line": 688550,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f6832b66603e6da9b9250dd0c35885bf3a7f407af288933f2f6f2fe62f0e4563",
+    "calls": [
+      "mcpToolPermissionScope",
+      "new SandMcpConfigError",
+      "nextRoutedToolDisableToggle",
+      "rowServerHost",
+      "settings.getMcpDisabledToolsByServerId",
+      "settings.getToolPermissions",
+      "settings.setMcpDisabledToolsByServerId",
+      "settings.setToolPermissions",
+      "this.deps.resolveListedDisplayServer",
+      "this.deps.settingsStore",
+      "this.listServerTools",
+      "validateMcpDisplayServerId",
+      "withMcpToolPermissionPolicy"
+    ],
+    "writes": [
+      "disabledByServerId[computed]"
+    ],
+    "throw_targets": [
+      "SandMcpConfigError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688551:26155534",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.deleteDisabledToolsForServer",
+    "qualified_name": "SandMcpInstructionsAndToggles.deleteDisabledToolsForServer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688551,
+    "end_line": 688564,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverId"
+    ],
+    "body_sha256": "33ed817c5a244b0e68750e643c8651ed63ad548973905d75f4b91ee423ebfef9",
+    "calls": [
+      "mcpToolPermissionScope",
+      "settings.getMcpDisabledToolsByServerId",
+      "settings.getToolPermissions",
+      "settings.setMcpDisabledToolsByServerId",
+      "skipRefusedSettingsWrite",
+      "this.deps.settingsStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688565:26156183",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "SandMcpInstructionsAndToggles.getMcpCustomInstructions",
+    "qualified_name": "SandMcpInstructionsAndToggles.getMcpCustomInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688565,
+    "end_line": 688582,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "77e652d7f64fa60e092a966c92b14ac0a330d1b75e513ccb117d873221be643c",
+    "calls": [
+      ".getMcpCustomInstructions",
+      ".getMcpCustomInstructionsByServerId",
+      "Object.entries",
+      "new Map",
+      "resolveMcpCustomInstruction",
+      "result.set",
+      "this.deps.lastAccountDisplayConfig",
+      "this.deps.settingsStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:688584:26156926",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-instructions-and-toggles.ts",
+    "name": "rowServerHost",
+    "qualified_name": "rowServerHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 688584,
+    "end_line": 688587,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "row"
+    ],
+    "body_sha256": "15692f8d701fcea4882f0d3c3e47cfc8a6fdc62bea7357fbbf9e51eca648ed3c",
+    "calls": [
+      "mcpPermissionServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

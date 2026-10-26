@@ -1,0 +1,600 @@
+[
+  {
+    "id": "host:754775:28796814",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "TeamsChatAddressError.constructor",
+    "qualified_name": "TeamsChatAddressError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754775,
+    "end_line": 754777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message = TEAMS_ADDRESS_INVALID_ERROR"
+    ],
+    "body_sha256": "316768f615a5e155da7a3f27f4aa6db782ac768e02cd8ade1fceb844218ed949",
+    "calls": [
+      "super"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754779:28796883",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsChannelConversationId",
+    "qualified_name": "isTeamsChannelConversationId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754779,
+    "end_line": 754781,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "764874aea146d3678c18d00210d81d7eff64696a43eb51a71ec959435dbb440b",
+    "calls": [
+      "conversationId.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754782:28797010",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsLegacyConversationId",
+    "qualified_name": "isTeamsLegacyConversationId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754782,
+    "end_line": 754784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "98a8da1baf65cb03599c2f770c151811663ffd123ec3c30983b9e205cb2f706a",
+    "calls": [
+      "conversationId.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754785:28797135",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "mayBeTeamsChannelConversationId",
+    "qualified_name": "mayBeTeamsChannelConversationId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754785,
+    "end_line": 754787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "f54107680e9c3c0ebfb939a735a321fded90d0e5a94677791ddc25945349b3c8",
+    "calls": [
+      "isTeamsChannelConversationId",
+      "isTeamsLegacyConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754788:28797298",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsMeetingConversationId",
+    "qualified_name": "isTeamsMeetingConversationId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754788,
+    "end_line": 754790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "0d8144c6b730207a6fab6900230793cfef54b53b0014a2bf623f832a362c13ee",
+    "calls": [
+      "conversationId.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754791:28797427",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "parseTeamsChatTarget",
+    "qualified_name": "parseTeamsChatTarget",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754791,
+    "end_line": 754818,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "chat"
+    ],
+    "body_sha256": "9828ee7045b85c07163224dcc86e406b30e4f8e4e9da3d691566ad83beba3428",
+    "calls": [
+      "TEAMS_AAD_OBJECT_ID_PATTERN.test",
+      "TEAMS_CONVERSATION_ID_PATTERN.test",
+      "TEAMS_MESSAGE_ID_PATTERN.test",
+      "chat.indexOf",
+      "chat.slice",
+      "chat.startsWith",
+      "isTeamsChannelConversationId",
+      "isTeamsMeetingConversationId",
+      "mayBeTeamsChannelConversationId",
+      "new TeamsChatAddressError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "TeamsChatAddressError"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754819:28798707",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "describeTeamsChannelAddressProblem",
+    "qualified_name": "describeTeamsChannelAddressProblem",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754819,
+    "end_line": 754842,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "2d91c09d4d61ced1367fbae1cc7a6ae17d89fd7fee06c6f0663c104e714e86e0",
+    "calls": [
+      ".startsWith",
+      "address.trim",
+      "parseChannelAddress",
+      "parseTeamsChatTarget",
+      "trimmed.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:754843:28799763",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "teamsConversationKeyOf",
+    "qualified_name": "teamsConversationKeyOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754843,
+    "end_line": 754846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "99cc2aaf488e21f1b7bafc6d2afb90d99e85de1cf2fe80e65ea9cb99e649d19d",
+    "calls": [
+      "conversationId.indexOf",
+      "conversationId.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:754847:28799945",
+    "artifact": "host",
+    "module": "shared/channels/teams-address.ts",
+    "name": "teamsConversationRootMessageIdOf",
+    "qualified_name": "teamsConversationRootMessageIdOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 754847,
+    "end_line": 754854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "07892d4ae038509d1c9db0955d04b00c1f5217572ddd521e8dba895cf3e66592",
+    "calls": [
+      "conversationId.indexOf",
+      "conversationId.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538127:19807635",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "TeamsChatAddressError.constructor",
+    "qualified_name": "TeamsChatAddressError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538127,
+    "end_line": 538129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message = TEAMS_ADDRESS_INVALID_ERROR"
+    ],
+    "body_sha256": "316768f615a5e155da7a3f27f4aa6db782ac768e02cd8ade1fceb844218ed949",
+    "calls": [
+      "super"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538131:19807704",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsChannelConversationId",
+    "qualified_name": "isTeamsChannelConversationId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538131,
+    "end_line": 538133,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "764874aea146d3678c18d00210d81d7eff64696a43eb51a71ec959435dbb440b",
+    "calls": [
+      "conversationId.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538134:19807831",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsLegacyConversationId",
+    "qualified_name": "isTeamsLegacyConversationId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538134,
+    "end_line": 538136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "98a8da1baf65cb03599c2f770c151811663ffd123ec3c30983b9e205cb2f706a",
+    "calls": [
+      "conversationId.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538137:19807956",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "mayBeTeamsChannelConversationId",
+    "qualified_name": "mayBeTeamsChannelConversationId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538137,
+    "end_line": 538139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "f54107680e9c3c0ebfb939a735a321fded90d0e5a94677791ddc25945349b3c8",
+    "calls": [
+      "isTeamsChannelConversationId",
+      "isTeamsLegacyConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538140:19808119",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "isTeamsMeetingConversationId",
+    "qualified_name": "isTeamsMeetingConversationId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538140,
+    "end_line": 538142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "0d8144c6b730207a6fab6900230793cfef54b53b0014a2bf623f832a362c13ee",
+    "calls": [
+      "conversationId.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538143:19808248",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "parseTeamsChatTarget",
+    "qualified_name": "parseTeamsChatTarget",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538143,
+    "end_line": 538170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "chat"
+    ],
+    "body_sha256": "9828ee7045b85c07163224dcc86e406b30e4f8e4e9da3d691566ad83beba3428",
+    "calls": [
+      "TEAMS_AAD_OBJECT_ID_PATTERN.test",
+      "TEAMS_CONVERSATION_ID_PATTERN.test",
+      "TEAMS_MESSAGE_ID_PATTERN.test",
+      "chat.indexOf",
+      "chat.slice",
+      "chat.startsWith",
+      "isTeamsChannelConversationId",
+      "isTeamsMeetingConversationId",
+      "mayBeTeamsChannelConversationId",
+      "new TeamsChatAddressError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "TeamsChatAddressError"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538171:19809528",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "describeTeamsChannelAddressProblem",
+    "qualified_name": "describeTeamsChannelAddressProblem",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538171,
+    "end_line": 538194,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "address"
+    ],
+    "body_sha256": "b4432197cfc2f0d4e66c6052f40677713576d5bb9cfa1c663d6d56abb053c3cf",
+    "calls": [
+      ".startsWith",
+      "address.trim",
+      "parseChannelAddress",
+      "parseTeamsChatTarget",
+      "trimmed.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 2,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:538195:19810580",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "teamsConversationKeyOf",
+    "qualified_name": "teamsConversationKeyOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538195,
+    "end_line": 538198,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "99cc2aaf488e21f1b7bafc6d2afb90d99e85de1cf2fe80e65ea9cb99e649d19d",
+    "calls": [
+      "conversationId.indexOf",
+      "conversationId.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:538199:19810762",
+    "artifact": "evaluation",
+    "module": "shared/channels/teams-address.ts",
+    "name": "teamsConversationRootMessageIdOf",
+    "qualified_name": "teamsConversationRootMessageIdOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 538199,
+    "end_line": 538206,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "conversationId"
+    ],
+    "body_sha256": "07892d4ae038509d1c9db0955d04b00c1f5217572ddd521e8dba895cf3e66592",
+    "calls": [
+      "conversationId.indexOf",
+      "conversationId.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,243 @@
+[
+  {
+    "id": "host:679669:25825439",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "aggregateDiskPressureLevel",
+    "qualified_name": "aggregateDiskPressureLevel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679669,
+    "end_line": 679674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "states"
+    ],
+    "body_sha256": "a701dc3e46821b875aa5e9d978df79c9562c481830323861cf21e2c2698a84bb",
+    "calls": [
+      "states.values",
+      "volumes.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679675:25825687",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "classifyDiskPressure",
+    "qualified_name": "classifyDiskPressure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679675,
+    "end_line": 679691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "snapshot",
+      "previous = \"healthy\""
+    ],
+    "body_sha256": "98d0afdea02e6bf61e0f974c796e3e03263790f899b87e501278e88b92064677",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679692:25826613",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "readDiskVolumeSnapshots",
+    "qualified_name": "readDiskVolumeSnapshots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679692,
+    "end_line": 679717,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "roots"
+    ],
+    "body_sha256": "65210a271abf12a38aeefebe43791143e9b7c0210e3a667467b3c4b2bf8ca8ee",
+    "calls": [
+      "Number",
+      "Promise.all",
+      "String",
+      "new Set",
+      "reportFallback",
+      "seenDevices.add",
+      "seenDevices.has",
+      "snapshots.push"
+    ],
+    "writes": [
+      "complete"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679718:25827485",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "createDiskPressureGuard",
+    "qualified_name": "createDiskPressureGuard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679718,
+    "end_line": 679784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "3d42a3b87a977f295bea6cda67bfec41490c3b3ce51918b64f93bae47010c6bd",
+    "calls": [
+      "new Map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679724:25827718",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "check2",
+    "qualified_name": "createDiskPressureGuard/check2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679724,
+    "end_line": 679771,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "69bd57885586122d5ef70650c227dd20811de1d8282164086a4b4146ebdd0f4d",
+    "calls": [
+      "aggregateDiskPressureLevel",
+      "classifyDiskPressure",
+      "clock.monotonicNow",
+      "errorLogTag",
+      "new Set",
+      "options2.log",
+      "options2.onPressureChange",
+      "options2.onSuccessfulSample",
+      "options2.readVolumes",
+      "options2.report",
+      "sampledDeviceIds.add",
+      "sampledDeviceIds.has",
+      "states.delete",
+      "states.get",
+      "states.keys",
+      "states.set"
+    ],
+    "writes": [
+      "aggregateLevel",
+      "sample"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:679773:25829734",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "onTick",
+    "qualified_name": "createDiskPressureGuard/onTick",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679773,
+    "end_line": 679779,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "875ac58f184f25790dacd9c91ec48c6dd793e3a03f2f49720443b8acb2893675",
+    "calls": [
+      ".finally",
+      "check2"
+    ],
+    "writes": [
+      "inFlight"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679780:25829897",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure-guard.ts",
+    "name": "dispose",
+    "qualified_name": "createDiskPressureGuard/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679780,
+    "end_line": 679782,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3d529ca5f036a3c19369d633df6a97cc1ff9ab41718496d29daa87d3cd41a6df",
+    "calls": [],
+    "writes": [
+      "disposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

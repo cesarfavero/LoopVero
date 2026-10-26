@@ -1,0 +1,726 @@
+[
+  {
+    "id": "host:781909:30129042",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "fieldLines",
+    "qualified_name": "fieldLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781909,
+    "end_line": 781913,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "531920f5cb5abfb43b0f09fc6ba8506e41eaaa3cf876af25eed22416281b8d28",
+    "calls": [
+      "fields3.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781914:30129199",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "bullets",
+    "qualified_name": "bullets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781914,
+    "end_line": 781916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items"
+    ],
+    "body_sha256": "b29ce5614c778e6379d0d5468383647509a69526d111af09299ad7cec1b51a11",
+    "calls": [
+      "items.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781917:30129325",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "optionBlock",
+    "qualified_name": "optionBlock",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781917,
+    "end_line": 781919,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "label",
+      "options2"
+    ],
+    "body_sha256": "221f612223994142cc214793e5fda19a2ed33fe31d0117afed10988987686cdc",
+    "calls": [
+      "options2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781920:30129460",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "offerLines",
+    "qualified_name": "offerLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781920,
+    "end_line": 781940,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "offer"
+    ],
+    "body_sha256": "79627b24e0afd5dc24f148c9b00360e3cd154719f771bd84ac598a88b6d9fbcf",
+    "calls": [
+      ".map",
+      "fieldLines",
+      "optionBlock"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781941:30130272",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "renderProduct",
+    "qualified_name": "renderProduct",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781941,
+    "end_line": 781961,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "product",
+      "index"
+    ],
+    "body_sha256": "7a66d90d446540b65760d8c7e2dea845494fee67dc943d6abf84680212726475",
+    "calls": [
+      " .repeat",
+      ".join",
+      ".map",
+      "bullets",
+      "fieldLines",
+      "items.push",
+      "optionBlock",
+      "product.offers.map",
+      "product.rating.toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781962:30131120",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "renderProductSearchResult",
+    "qualified_name": "renderProductSearchResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781962,
+    "end_line": 781970,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "result"
+    ],
+    "body_sha256": "490a633c3cd38aa8619c4d3879f0ca5b58394fb5ee3a77957950ac9b9cedb080",
+    "calls": [
+      ".join",
+      "result.products.map",
+      "result.warnings.join",
+      "sections.join",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781972:30131912",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "createProductSearchTool",
+    "qualified_name": "createProductSearchTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781972,
+    "end_line": 782007,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "options2 = {}"
+    ],
+    "body_sha256": "85125761df7b594264ad7a25f6524e6db26cba8e81a9f993431c5b05ee123564",
+    "calls": [
+      "defineZod4CommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781973:30131994",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "shoppingOffered",
+    "qualified_name": "createProductSearchTool/shoppingOffered",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781973,
+    "end_line": 781973,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ca09ae25d14cc982dd914e6299a2e60a97c82979ee771567fde0174749665248",
+    "calls": [
+      "options2.shoppingOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781979:30132180",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "description",
+    "qualified_name": "createProductSearchTool/description",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781979,
+    "end_line": 781979,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1f691aa67b07a0eeebbc91c040dee4a6adaa2945bff4c27dd4fcd2672481448c",
+    "calls": [
+      "shoppingOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781981:30132405",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createProductSearchTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781981,
+    "end_line": 781981,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:781982:30132456",
+    "artifact": "host",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "execute",
+    "qualified_name": "createProductSearchTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 781982,
+    "end_line": 782004,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "237c869bf9232eb952b1778d56ea689b2147dd0e930e5cd66fbfa4a61a9c8e72",
+    "calls": [
+      "new SandModelVisibleError",
+      "port.search",
+      "renderProductSearchResult",
+      "shoppingOffered"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [
+      "SandModelVisibleError",
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:582254:21885081",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "fieldLines",
+    "qualified_name": "fieldLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582254,
+    "end_line": 582258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "531920f5cb5abfb43b0f09fc6ba8506e41eaaa3cf876af25eed22416281b8d28",
+    "calls": [
+      "fields3.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582259:21885238",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "bullets",
+    "qualified_name": "bullets",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582259,
+    "end_line": 582261,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items"
+    ],
+    "body_sha256": "b29ce5614c778e6379d0d5468383647509a69526d111af09299ad7cec1b51a11",
+    "calls": [
+      "items.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582262:21885364",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "optionBlock",
+    "qualified_name": "optionBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582262,
+    "end_line": 582264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "label",
+      "options2"
+    ],
+    "body_sha256": "221f612223994142cc214793e5fda19a2ed33fe31d0117afed10988987686cdc",
+    "calls": [
+      "options2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582265:21885499",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "offerLines",
+    "qualified_name": "offerLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582265,
+    "end_line": 582285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "offer"
+    ],
+    "body_sha256": "79627b24e0afd5dc24f148c9b00360e3cd154719f771bd84ac598a88b6d9fbcf",
+    "calls": [
+      ".map",
+      "fieldLines",
+      "optionBlock"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582286:21886311",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "renderProduct",
+    "qualified_name": "renderProduct",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582286,
+    "end_line": 582306,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "product",
+      "index"
+    ],
+    "body_sha256": "7a66d90d446540b65760d8c7e2dea845494fee67dc943d6abf84680212726475",
+    "calls": [
+      " .repeat",
+      ".join",
+      ".map",
+      "bullets",
+      "fieldLines",
+      "items.push",
+      "optionBlock",
+      "product.offers.map",
+      "product.rating.toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582307:21887159",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "renderProductSearchResult",
+    "qualified_name": "renderProductSearchResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582307,
+    "end_line": 582315,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2",
+      "result"
+    ],
+    "body_sha256": "490a633c3cd38aa8619c4d3879f0ca5b58394fb5ee3a77957950ac9b9cedb080",
+    "calls": [
+      ".join",
+      "result.products.map",
+      "result.warnings.join",
+      "sections.join",
+      "sections.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582317:21887951",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "createProductSearchTool",
+    "qualified_name": "createProductSearchTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582317,
+    "end_line": 582352,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port",
+      "options2 = {}"
+    ],
+    "body_sha256": "75315c8db6e8ff65cf2f86ef6b58ec598f9b2558d19bd416080bdfac12bc879b",
+    "calls": [
+      "defineZod4CommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582318:21888033",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "shoppingOffered",
+    "qualified_name": "createProductSearchTool/shoppingOffered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582318,
+    "end_line": 582318,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ca09ae25d14cc982dd914e6299a2e60a97c82979ee771567fde0174749665248",
+    "calls": [
+      "options2.shoppingOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582324:21888219",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "description",
+    "qualified_name": "createProductSearchTool/description",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582324,
+    "end_line": 582324,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1f691aa67b07a0eeebbc91c040dee4a6adaa2945bff4c27dd4fcd2672481448c",
+    "calls": [
+      "shoppingOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582326:21888444",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createProductSearchTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582326,
+    "end_line": 582326,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:582327:21888495",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/product-search/product-search-tool.ts",
+    "name": "execute",
+    "qualified_name": "createProductSearchTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 582327,
+    "end_line": 582349,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "448ffc35a87ce83b704b03f283f3ad8cbbb2cad078d7d2a91477cc4d148fe6ee",
+    "calls": [
+      "new SandModelVisibleError",
+      "port.search",
+      "renderProductSearchResult",
+      "shoppingOffered"
+    ],
+    "writes": [
+      "result"
+    ],
+    "throw_targets": [
+      "SandModelVisibleError",
+      "error63"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  }
+]

@@ -1,0 +1,685 @@
+[
+  {
+    "id": "host:679790:25830103",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "hasErrorCode",
+    "qualified_name": "hasErrorCode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679790,
+    "end_line": 679792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "code"
+    ],
+    "body_sha256": "77b2cbe882f91ea64d29c83f028b165826baa528565bca9a0aa9d549390c6a61",
+    "calls": [
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679793:25830205",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "readLedgerText",
+    "qualified_name": "readLedgerText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679793,
+    "end_line": 679800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "onLedgerError"
+    ],
+    "body_sha256": "a50f72d336fe53f03528d47ef3456edc094f1749192adce56d4f01f12eae1285",
+    "calls": [
+      "hasErrorCode",
+      "onLedgerError",
+      "readSandDataFileIfPresentSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679801:25830467",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "createDiskPressureReminderEpisodes",
+    "qualified_name": "createDiskPressureReminderEpisodes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679801,
+    "end_line": 679959,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "a2788a77cff246dd961003832c5324a3691cefbc9679c1753953439aa1604fb6",
+    "calls": [
+      "Array.isArray",
+      "JSON.parse",
+      "enqueue",
+      "handledAgentIds.add",
+      "isUnknownRecord2",
+      "new Map",
+      "new SandDiskPressureLedgerError",
+      "new Set",
+      "options2.onLedgerError",
+      "parseAgentId",
+      "readLedgerText"
+    ],
+    "writes": [
+      "activeEpisodeId",
+      "restoredEpisodeAwaitingPressure"
+    ],
+    "throw_targets": [
+      "SandDiskPressureLedgerError"
+    ],
+    "control": {
+      "branches": 10,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679808:25830920",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "enqueue",
+    "qualified_name": "createDiskPressureReminderEpisodes/enqueue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679808,
+    "end_line": 679813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId",
+      "episodeId"
+    ],
+    "body_sha256": "efd227151e21fc3fceb19a3eb50bdf665b77bb5fe92be6b6ef6d55d557c75786",
+    "calls": [
+      "pending.includes",
+      "pendingEpisodeIds.get",
+      "pendingEpisodeIds.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679842:25832409",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "persist",
+    "qualified_name": "createDiskPressureReminderEpisodes/persist",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679842,
+    "end_line": 679863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1527d95db040246c019fd02a389a69f9cd096f2a4d7b4e0f0bb7db1506dc2b1e",
+    "calls": [
+      ".flatMap",
+      "JSON.stringify",
+      "options2.onLedgerError",
+      "removeSandDataFileSync",
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:679865:25833116",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "claim",
+    "qualified_name": "createDiskPressureReminderEpisodes/claim",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679865,
+    "end_line": 679879,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "{ agentId: rawAgentId, claimId }"
+    ],
+    "body_sha256": "e3b79a24f0e3a00e2e236910302abd0ba4900d63bea950deff6dd06c669cdcb4",
+    "calls": [
+      "claims.get",
+      "claims.set",
+      "enqueue",
+      "handledAgentIds.has",
+      "parseAgentId",
+      "pendingEpisodeIds.get",
+      "persist"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679880:25833735",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "release",
+    "qualified_name": "createDiskPressureReminderEpisodes/release",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679880,
+    "end_line": 679882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "{ agentId, claimId }"
+    ],
+    "body_sha256": "a8ef84afa7d7d7194929dfb5ed8a52bc6fdbb0760bd0f646f34f40ba6831b940",
+    "calls": [
+      "claims.delete",
+      "claims.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679883:25833853",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "enroll",
+    "qualified_name": "createDiskPressureReminderEpisodes/enroll",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679883,
+    "end_line": 679893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "agentIds"
+    ],
+    "body_sha256": "5e7df95551b41445366a9cb2fdadc5720363579549022f0dbeeafb62f0dc4eac",
+    "calls": [
+      "enqueue",
+      "handledAgentIds.has",
+      "parseAgentId",
+      "persist"
+    ],
+    "writes": [
+      "changed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679894:25834225",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "commit",
+    "qualified_name": "createDiskPressureReminderEpisodes/commit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679894,
+    "end_line": 679916,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "{ agentId: rawAgentId, claimId }"
+    ],
+    "body_sha256": "da6e9bb76213055c0e1b4ecee1d66874b50030cf38a644112ced255f6350e2e6",
+    "calls": [
+      "claims.delete",
+      "claims.get",
+      "handledAgentIds.add",
+      "handledAgentIds.delete",
+      "handledAgentIds.has",
+      "parseAgentId",
+      "pending.slice",
+      "pendingEpisodeIds.delete",
+      "pendingEpisodeIds.get",
+      "pendingEpisodeIds.set",
+      "persist"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679917:25835127",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "forgetAgent",
+    "qualified_name": "createDiskPressureReminderEpisodes/forgetAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679917,
+    "end_line": 679924,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "rawAgentId"
+    ],
+    "body_sha256": "b5a26df4b1384b0b77027019f661545ff99b76d293c33e94cc865c5f9ec36759",
+    "calls": [
+      "claims.delete",
+      "handledAgentIds.delete",
+      "parseAgentId",
+      "pendingEpisodeIds.delete",
+      "persist"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679925:25835462",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "observePressure",
+    "qualified_name": "createDiskPressureReminderEpisodes/observePressure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679925,
+    "end_line": 679957,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "level",
+      "complete = true"
+    ],
+    "body_sha256": "4da34f9dab496c125bd0e2df1fe165403ea25036a962fc2efc4a7a9b4ea3d5d0",
+    "calls": [
+      "createEpisodeId",
+      "handledAgentIds.add",
+      "handledAgentIds.clear",
+      "persist"
+    ],
+    "writes": [
+      "activeEpisodeId",
+      "activeEpisodePersistencePending",
+      "restoredEpisodeAwaitingPressure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679960:25836705",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "startDiskPressureWatch",
+    "qualified_name": "startDiskPressureWatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679960,
+    "end_line": 680006,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "c7711423708f7fb4858c82c28088d29b66a3043321a1cbf0d2ef6aa413e421dc",
+    "calls": [
+      "createDiskPressureGuard",
+      "createDiskPressureReminderEpisodes",
+      "deps.polling.start",
+      "getSandRootDir",
+      "new Set"
+    ],
+    "writes": [
+      "guard",
+      "polling"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679967:25836980",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "createEpisodeId",
+    "qualified_name": "startDiskPressureWatch/createEpisodeId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679967,
+    "end_line": 679967,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c3d35f51d0f1bbf106e4c82e29561ae564d3de556e1754df8ddd178adc818dc8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679968:25837045",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "onLedgerError",
+    "qualified_name": "startDiskPressureWatch/onLedgerError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679968,
+    "end_line": 679968,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "7a24c817aa01a33c6971270042f99ec297a2b8ca292c15cd76d1db3d8b52034e",
+    "calls": [
+      "deps.log",
+      "errorLogTag"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679972:25837217",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "readVolumes",
+    "qualified_name": "startDiskPressureWatch/readVolumes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679972,
+    "end_line": 679976,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "4eb9ec0055d96aa25160a357f012f0132577857b80f8eff7b144dd9bf588c3c3",
+    "calls": [
+      "getSandRootDir",
+      "readDiskVolumeSnapshots"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679978:25837461",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "onPressureChange",
+    "qualified_name": "startDiskPressureWatch/onPressureChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679978,
+    "end_line": 679981,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "next"
+    ],
+    "body_sha256": "34227a79436c1e6c0a77e1732a57427a79d9d495854eb831ed284456e9720823",
+    "calls": [
+      "listener"
+    ],
+    "writes": [
+      "level"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679982:25837593",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "onSuccessfulSample",
+    "qualified_name": "startDiskPressureWatch/onSuccessfulSample",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679982,
+    "end_line": 679982,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "next",
+      "complete"
+    ],
+    "body_sha256": "503eb94d38d4b9a0fa4f3267ced1dec34f8ee69f21954aef1e556b5effa0df91",
+    "calls": [
+      "reminderEpisodes.observePressure"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679990:25837797",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "level",
+    "qualified_name": "startDiskPressureWatch/level",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679990,
+    "end_line": 679992,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "e6f4f02d5d4a2b5f13cd69dfdd0228de43a0a0c9a25a7e4febc33aed84273e57",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679994:25837864",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "subscribe",
+    "qualified_name": "startDiskPressureWatch/subscribe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679994,
+    "end_line": 679997,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "7874bdb3cbe28f757143771684719e02d4915ba81aa8f221f5214c2c43eaf7e9",
+    "calls": [
+      "listeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:679998:25837973",
+    "artifact": "host",
+    "module": "host/extensions/forever-box/disk-pressure.ts",
+    "name": "dispose",
+    "qualified_name": "startDiskPressureWatch/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 679998,
+    "end_line": 680004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "2bb8abd200025f1f79db128320f16ca10328f9ce5a28781059cbc92e5f3b4918",
+    "calls": [
+      "guard.dispose",
+      "listeners.clear",
+      "polling.dispose"
+    ],
+    "writes": [
+      "guard",
+      "polling"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

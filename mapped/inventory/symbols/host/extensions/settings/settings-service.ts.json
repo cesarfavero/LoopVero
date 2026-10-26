@@ -1,0 +1,1220 @@
+[
+  {
+    "id": "host:728516:27680604",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "createHostSettingsFileIo",
+    "qualified_name": "createHostSettingsFileIo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728516,
+    "end_line": 728525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "settingsPath"
+    ],
+    "body_sha256": "d44684889786028e8ae77e53ba4025ac97ce940181b417f97b12c17d045f27d9",
+    "calls": [
+      "createNodeSettingsFileIo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728519:27680726",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "readText",
+    "qualified_name": "createHostSettingsFileIo/readText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728519,
+    "end_line": 728519,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f1833aff3a23386da74b89cf04bfba2212f4647a70e546126b97d35f40ffe9ae",
+    "calls": [
+      "readSandDataFileIfPresentSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728520:27680832",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "writeText",
+    "qualified_name": "createHostSettingsFileIo/writeText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728520,
+    "end_line": 728522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "contents"
+    ],
+    "body_sha256": "ba125f4c611bbf484fad9ac23622846818331abfc0e453fa121d98844a8d997d",
+    "calls": [
+      "writeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728523:27680927",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "isRefusedRead",
+    "qualified_name": "createHostSettingsFileIo/isRefusedRead",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728523,
+    "end_line": 728523,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "bbd939a611ddd1b9932e5223635bf3c2c42e763baed2cf496881be2d407c9b11",
+    "calls": [
+      "isRefusedSandDataFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728538:27681415",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.constructor",
+    "qualified_name": "SettingsService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728538,
+    "end_line": 728550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "settingsPath = (0, import_node_path156.join)(getSandRootDir(), \"settings.json\")",
+      "refusedWriteLog",
+      "io2 = createHostSettingsFileIo(settingsPath)"
+    ],
+    "body_sha256": "ac674aa6bf6284a1c852ec42c5aaef1134a785adee7dba165b5977976abf6d80",
+    "calls": [
+      "createSandDurableFileOwner",
+      "new SandSettingsStore"
+    ],
+    "writes": [
+      "this.settingsPath",
+      "this.store"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728546:27681760",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "report",
+    "qualified_name": "SettingsService.constructor/report",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728546,
+    "end_line": 728546,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_event",
+      "errorClass"
+    ],
+    "body_sha256": "9c00eb2990b60463ea7e8306391c67b6a8912a30417ac53f836d1a8f1e823b84",
+    "calls": [
+      "reportHostDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728551:27681944",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getSettingsPath",
+    "qualified_name": "SettingsService.getSettingsPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728551,
+    "end_line": 728553,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "6dbd91f57a8e11aa41b539723def9477fc21cde3f39859c82d5aed26701cd3db",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728554:27682000",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getHostSettings",
+    "qualified_name": "SettingsService.getHostSettings",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728554,
+    "end_line": 728591,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8ff625780d64157da6e1864af293ac78f407bf645704cc79418fccbbab4765f4",
+    "calls": [
+      "this.getSelectedTeamId",
+      "this.store.getActiveAccountScope",
+      "this.store.getAutoReviewInstructions",
+      "this.store.getComputerUseModel",
+      "this.store.getDetectedUserTimeZone",
+      "this.store.getHasSeenOnboarding",
+      "this.store.getHasSeenOnboardingAccountScope",
+      "this.store.getHeldAccountScopes",
+      "this.store.getLocalToolPermission",
+      "this.store.getLocalToolPermissionByMachineId",
+      "this.store.getMcpBoxServers",
+      "this.store.getMcpCustomInstructions",
+      "this.store.getMcpCustomInstructionsByServerId",
+      "this.store.getMcpDisabledToolsByServerId",
+      "this.store.getMessagesEnabled",
+      "this.store.getNotificationConfig",
+      "this.store.getPinnedAgentIds",
+      "this.store.getSelectedTeam",
+      "this.store.getSidebarSections",
+      "this.store.getToolPermissions",
+      "this.store.getUserTimeZoneOverride",
+      "this.store.getWebauthnProxyEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728592:27684420",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.setHostSettings",
+    "qualified_name": "SettingsService.setHostSettings",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728592,
+    "end_line": 728700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "update"
+    ],
+    "body_sha256": "789bf69d5007fc1c2842d7ab878e9d21910ed23b8c237df2b206ef9b1c5eaa66",
+    "calls": [
+      ".map",
+      "Number.isSafeInteger",
+      "Object.entries",
+      "Object.fromEntries",
+      "isValidIanaTimeZone",
+      "listener",
+      "normalizeSandLocalToolPermission",
+      "sandComputerUseModelSchema.safeParse",
+      "storedSandSettingText",
+      "this.announceChange",
+      "this.getHostSettings",
+      "this.getSelectedTeamId",
+      "this.setLocalToolPermission",
+      "this.store.clearAccountScope",
+      "this.store.getUserTimeZone",
+      "this.store.scopeToAccount",
+      "this.store.setAutoReviewInstructions",
+      "this.store.setComputerUseModel",
+      "this.store.setHasSeenOnboarding",
+      "this.store.setLocalToolPermissionsForMachines",
+      "this.store.setMcpBoxServers",
+      "this.store.setMcpCustomInstructions",
+      "this.store.setMcpCustomInstructionsByServerId",
+      "this.store.setMcpDisabledToolsByServerId",
+      "this.store.setMessagesEnabled",
+      "this.store.setNotificationConfig",
+      "this.store.setPinnedAgentIds",
+      "this.store.setSelectedTeam",
+      "this.store.setSidebarSections",
+      "this.store.setToolPermissions",
+      "this.store.setUserTimeZone",
+      "this.store.setUserTimeZoneOverride",
+      "this.store.setWebauthnProxyEnabled"
+    ],
+    "writes": [
+      "this.experimentOverrides",
+      "this.featureFlagOverrides",
+      "this.lastAnnouncedSelectedTeamId",
+      "this.osLocale"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 27,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728701:27689190",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.noteSelectedTeamScopeSourceChanged",
+    "qualified_name": "SettingsService.noteSelectedTeamScopeSourceChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728701,
+    "end_line": 728706,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "628e70073b78287c98ba51fadc1786e02c41cae17f1fce6b4e28ba12163e269c",
+    "calls": [
+      "this.announceChange",
+      "this.getSelectedTeamId"
+    ],
+    "writes": [
+      "this.lastAnnouncedSelectedTeamId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728707:27689497",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.announceChange",
+    "qualified_name": "SettingsService.announceChange",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728707,
+    "end_line": 728713,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "update"
+    ],
+    "body_sha256": "f5dffea067430ed7dfecb2f5032b08b9fa7d593e5533b68c324b6d4fca90e512",
+    "calls": [
+      "Object.keys",
+      "listener"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728714:27689710",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.subscribeToChanges",
+    "qualified_name": "SettingsService.subscribeToChanges",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728714,
+    "end_line": 728719,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "be895e8c7a5e4fc5d3d1f6b8fae624f98995a11051ea7ef90aa5adc463e659dc",
+    "calls": [
+      "this.changeListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728720:27689855",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getUserTimeZone",
+    "qualified_name": "SettingsService.getUserTimeZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728720,
+    "end_line": 728722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "5c5eb59dd45946d1dabe4dad26a1301065873f185ea00d7b99ca2a02ffef65ee",
+    "calls": [
+      "this.store.getUserTimeZone"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728723:27689918",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getOsLocale",
+    "qualified_name": "SettingsService.getOsLocale",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728723,
+    "end_line": 728725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f61db402abba94a8041f74624147bb9d4e5c3da6c873eba156cbf202ed05f277",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728726:27689980",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getAutoReviewInstructions",
+    "qualified_name": "SettingsService.getAutoReviewInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728726,
+    "end_line": 728728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4b05994ca5354dee580faddff9be9681548a3de8c2f641f30096c50a4548ac33",
+    "calls": [
+      "this.store.getAutoReviewInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728729:27690060",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getToolPermissions",
+    "qualified_name": "SettingsService.getToolPermissions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728729,
+    "end_line": 728731,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b0856c8e35ae198b8784be81b2656eb60aa7ee8a0a9d7037e0a175c9100bf252",
+    "calls": [
+      "this.store.getToolPermissions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728732:27690137",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getLocalToolPermission",
+    "qualified_name": "SettingsService.getLocalToolPermission",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728732,
+    "end_line": 728734,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "machineId"
+    ],
+    "body_sha256": "ecbf65c01416b7e9c12c168e25092a8427b4d3143dd6c3420331b6ee47911bf4",
+    "calls": [
+      "this.store.getLocalToolPermissionForMachine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728735:27690374",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.setSelectedTeamScopeSource",
+    "qualified_name": "SettingsService.setSelectedTeamScopeSource",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728735,
+    "end_line": 728737,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "source"
+    ],
+    "body_sha256": "2a761520b02075d338c520f8d419b860be49e44825b42b26638ace48d5b99f3f",
+    "calls": [],
+    "writes": [
+      "this.selectedTeamScopeSource"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728738:27690451",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getSelectedTeamId",
+    "qualified_name": "SettingsService.getSelectedTeamId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728738,
+    "end_line": 728741,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "cd76e22d6c372817e840906da799abb152d9dc74192d9f8092f28dad28c71237",
+    "calls": [
+      "this.getSelectedTeamIdForAccountScope",
+      "this.selectedTeamScopeSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728742:27690652",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getSelectedTeamIdForAccountScope",
+    "qualified_name": "SettingsService.getSelectedTeamIdForAccountScope",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728742,
+    "end_line": 728745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "accountScope"
+    ],
+    "body_sha256": "6c1b19e60ba2cc92425f69172d88c8983e805edd1c6921243d650df1b2914f9b",
+    "calls": [
+      "this.store.getSelectedTeam"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728746:27690833",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.setLocalToolPermission",
+    "qualified_name": "SettingsService.setLocalToolPermission",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728746,
+    "end_line": 728752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "permission",
+      "machineId"
+    ],
+    "body_sha256": "dff66905cb204958b7f0fd8d25c52dfcd053b3218b536f5e109003f73a9697b2",
+    "calls": [
+      "this.store.setLocalToolPermission",
+      "this.store.setLocalToolPermissionForMachine"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728753:27691066",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getWebauthnProxyEnabled",
+    "qualified_name": "SettingsService.getWebauthnProxyEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728753,
+    "end_line": 728755,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "45275fb28dff01150d207259213105b302005d6569e7a9a370594f5ab0ce2f9e",
+    "calls": [
+      "this.store.getWebauthnProxyEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728756:27691144",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getMessagesEnabled",
+    "qualified_name": "SettingsService.getMessagesEnabled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728756,
+    "end_line": 728758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b142623917cd1dba1131fd160df5ead8db6fa8ec9425a9748f3dec97626724bb",
+    "calls": [
+      "this.store.getMessagesEnabled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728759:27691218",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.listSidebarSections",
+    "qualified_name": "SettingsService.listSidebarSections",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728759,
+    "end_line": 728761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "149af6a15fa191c0c90897d6c7dddb6c5f585b5b1944d90eb3bff2b7ce97e0dc",
+    "calls": [
+      "this.store.getSidebarSections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728762:27691306",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.assignAgentToSidebarSection",
+    "qualified_name": "SettingsService.assignAgentToSidebarSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728762,
+    "end_line": 728768,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "sectionId"
+    ],
+    "body_sha256": "ea00471f20ab090c18fd7209b37d314f5c3c8aed6d7205401bda8a4a70b7e0de",
+    "calls": [
+      "SidebarSections.assignAgents",
+      "this.announceChange",
+      "this.listSidebarSections",
+      "this.store.setSidebarSections"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728769:27691631",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.subscribeToFeatureFlagOverrides",
+    "qualified_name": "SettingsService.subscribeToFeatureFlagOverrides",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728769,
+    "end_line": 728774,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "a911bb72add852cac92ae39999732d384d1acc98a8a353edb265ddebf0ef3011",
+    "calls": [
+      "this.featureFlagOverrideListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728775:27691817",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.subscribeToExperimentOverrides",
+    "qualified_name": "SettingsService.subscribeToExperimentOverrides",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728775,
+    "end_line": 728780,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "2867575089ebba6d1913cda618ee5c27717c2aadd74acd3826bd7a3e7bdc1f45",
+    "calls": [
+      "this.experimentOverrideListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728781:27691994",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.subscribeToUserTimeZone",
+    "qualified_name": "SettingsService.subscribeToUserTimeZone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728781,
+    "end_line": 728786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "05082cc386cbc1139db7044493877024f9645287b13c76f7f198be1e96471399",
+    "calls": [
+      "this.userTimeZoneListeners.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728787:27692157",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getActiveAccountScope",
+    "qualified_name": "SettingsService.getActiveAccountScope",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728787,
+    "end_line": 728789,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "a116f9d8e282619bb77146bca734d700e1c2b5214ec6de73013750422eef96f4",
+    "calls": [
+      "this.store.getActiveAccountScope"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728790:27692252",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.migrateMcpCustomInstructionToServerId",
+    "qualified_name": "SettingsService.migrateMcpCustomInstructionToServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728790,
+    "end_line": 728792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d2e6ec3f61e150e0dca1815865d52c5d1b782df727f68b4e231c1c4635d32e53",
+    "calls": [
+      "this.store.migrateMcpCustomInstructionToServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728793:27692351",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getMcpCustomInstructions",
+    "qualified_name": "SettingsService.getMcpCustomInstructions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728793,
+    "end_line": 728795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b4aa2c4436fc86316269f1869199518e623ddeebc7da5c7d0d8adf26a65a8bfa",
+    "calls": [
+      "this.store.getMcpCustomInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728796:27692446",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getMcpCustomInstructionsByServerId",
+    "qualified_name": "SettingsService.getMcpCustomInstructionsByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728796,
+    "end_line": 728798,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "85ddff98024de171ad6f13a88a5eb03710e12daf880b379a457b651119e54e7f",
+    "calls": [
+      "this.store.getMcpCustomInstructionsByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728799:27692546",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getMcpDisabledToolsByServerId",
+    "qualified_name": "SettingsService.getMcpDisabledToolsByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728799,
+    "end_line": 728801,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b341b7d6c68eec9b917d73380d283ff25c32171809b7c9057918d18aa080848a",
+    "calls": [
+      "this.store.getMcpDisabledToolsByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728802:27692641",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.setMcpDisabledToolsByServerId",
+    "qualified_name": "SettingsService.setMcpDisabledToolsByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728802,
+    "end_line": 728804,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "map4"
+    ],
+    "body_sha256": "a00b8efe82259e2d5cc591011f97ee2bbbb8430ecd20e8c799cc110b3a011e8c",
+    "calls": [
+      "this.store.setMcpDisabledToolsByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728805:27692734",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getRawMcpCustomInstruction",
+    "qualified_name": "SettingsService.getRawMcpCustomInstruction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728805,
+    "end_line": 728807,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "c0d79bae6b47eb52b9fcf77d8990ecdd9e4789eb4dffddaebc9239c4aea8d920",
+    "calls": [
+      "this.store.getRawMcpCustomInstruction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728808:27692845",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.getRawMcpCustomInstructionByServerId",
+    "qualified_name": "SettingsService.getRawMcpCustomInstructionByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728808,
+    "end_line": 728810,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "serverId"
+    ],
+    "body_sha256": "5e82decd260be2de07d538b4a8f86332d5f81549014644d79c96d4feba828fe8",
+    "calls": [
+      "this.store.getRawMcpCustomInstructionByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728811:27692967",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.setMcpCustomInstructionByServerId",
+    "qualified_name": "SettingsService.setMcpCustomInstructionByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728811,
+    "end_line": 728813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "d40a05505c7dda293ef7056d2c8a0bda6a433f347aee2d29ed2ab2a9636414da",
+    "calls": [
+      "this.store.setMcpCustomInstructionByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:728814:27693074",
+    "artifact": "host",
+    "module": "host/extensions/settings/settings-service.ts",
+    "name": "SettingsService.deleteMcpCustomInstructionByServerId",
+    "qualified_name": "SettingsService.deleteMcpCustomInstructionByServerId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 728814,
+    "end_line": 728816,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "faf74f8498acbfbfbcae3b60113ab53bd4d782ed442e023ac48c64818e89ae74",
+    "calls": [
+      "this.store.deleteMcpCustomInstructionByServerId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

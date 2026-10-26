@@ -1,0 +1,594 @@
+[
+  {
+    "id": "host:763685:29239674",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "sourceSchema",
+    "qualified_name": "sourceSchema",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763685,
+    "end_line": 763691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sources"
+    ],
+    "body_sha256": "a740af041741372ecf00ab4411658a51091eceaa9f05fb7a6988a42a110bab7a",
+    "calls": [
+      "external_exports2.enum",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763692:29239935",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "describeSources",
+    "qualified_name": "describeSources",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763692,
+    "end_line": 763694,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sources"
+    ],
+    "body_sha256": "233aadcd39aef7ec266679a797f77ad80480be89e1e89f98dd4ff87f40d89395",
+    "calls": [
+      ".join",
+      "sources.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763695:29240039",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "isoTimeOf",
+    "qualified_name": "isoTimeOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763695,
+    "end_line": 763697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2"
+    ],
+    "body_sha256": "d13eb36faa726388776a9c360454cb0aadcfcd37b276833dd518496263a2b849",
+    "calls": [
+      ".toISOString",
+      "Number.isFinite",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763698:29240168",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "emptyNote",
+    "qualified_name": "emptyNote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763698,
+    "end_line": 763704,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "found"
+    ],
+    "body_sha256": "32682b3f34e8ee844f62e8e7c30a7e041dba9f77dc256912f0d57d176ce9b10b",
+    "calls": [
+      "isLocalAiToolActivitySource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763705:29240615",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "formatUsage",
+    "qualified_name": "formatUsage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763705,
+    "end_line": 763711,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "832e6b4ad7ff8f96072d3d090481c022195efc1c55cee34a1045dfe93d624f68",
+    "calls": [
+      "isoTimeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763712:29240829",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "formatConnectedActivity",
+    "qualified_name": "formatConnectedActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763712,
+    "end_line": 763738,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "result"
+    ],
+    "body_sha256": "88fb6b690831a0d29aeb417f6f49a1b261de6ee514d0c7f9cac5973f61f6c9b8",
+    "calls": [
+      "JSON.stringify",
+      "emptyNote",
+      "formatUsage",
+      "result.items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763739:29241681",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "createFetchConnectedActivityTool",
+    "qualified_name": "createFetchConnectedActivityTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763739,
+    "end_line": 763754,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port"
+    ],
+    "body_sha256": "839b114cc2bc3fac332f8cfe9de8da23dde9c53f707aa004e7fd4ae06478b399",
+    "calls": [
+      ".describe",
+      "defineCommunicateTool",
+      "describeSources",
+      "external_exports2.object",
+      "sourceSchema",
+      "sources.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763751:29243375",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFetchConnectedActivityTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763751,
+    "end_line": 763751,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "029417d651d715b5e81760e80b057b8573af0ca92d48f7bd9d042074f653ca20",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763752:29243425",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "execute",
+    "qualified_name": "createFetchConnectedActivityTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763752,
+    "end_line": 763752,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "33bfb3b15b44424d5bc3ef3653b2acf79f83a4d72e3e0c41775f7c70394a2280",
+    "calls": [
+      "deps.fetch",
+      "formatConnectedActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556733:20644935",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "sourceSchema",
+    "qualified_name": "sourceSchema",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556733,
+    "end_line": 556739,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sources"
+    ],
+    "body_sha256": "de515ae469a08cf1b3166f6fd81249f411c97df4fffff59afbaf214932154433",
+    "calls": [
+      "external_exports3.enum",
+      "new Error"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "Error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556740:20645196",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "describeSources",
+    "qualified_name": "describeSources",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556740,
+    "end_line": 556742,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sources"
+    ],
+    "body_sha256": "233aadcd39aef7ec266679a797f77ad80480be89e1e89f98dd4ff87f40d89395",
+    "calls": [
+      ".join",
+      "sources.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556743:20645300",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "isoTimeOf",
+    "qualified_name": "isoTimeOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556743,
+    "end_line": 556745,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ms2"
+    ],
+    "body_sha256": "d13eb36faa726388776a9c360454cb0aadcfcd37b276833dd518496263a2b849",
+    "calls": [
+      ".toISOString",
+      "Number.isFinite",
+      "new Date"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556746:20645429",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "emptyNote",
+    "qualified_name": "emptyNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556746,
+    "end_line": 556752,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "found"
+    ],
+    "body_sha256": "32682b3f34e8ee844f62e8e7c30a7e041dba9f77dc256912f0d57d176ce9b10b",
+    "calls": [
+      "isLocalAiToolActivitySource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556753:20645876",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "formatUsage",
+    "qualified_name": "formatUsage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556753,
+    "end_line": 556759,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "usage"
+    ],
+    "body_sha256": "832e6b4ad7ff8f96072d3d090481c022195efc1c55cee34a1045dfe93d624f68",
+    "calls": [
+      "isoTimeOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556760:20646090",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "formatConnectedActivity",
+    "qualified_name": "formatConnectedActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556760,
+    "end_line": 556786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "result"
+    ],
+    "body_sha256": "88fb6b690831a0d29aeb417f6f49a1b261de6ee514d0c7f9cac5973f61f6c9b8",
+    "calls": [
+      "JSON.stringify",
+      "emptyNote",
+      "formatUsage",
+      "result.items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556787:20646942",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "createFetchConnectedActivityTool",
+    "qualified_name": "createFetchConnectedActivityTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556787,
+    "end_line": 556802,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "port"
+    ],
+    "body_sha256": "f534cc764c3cfb5e15946b19ba59d2995cdb122776c27257b32b186600344773",
+    "calls": [
+      ".describe",
+      "defineCommunicateTool",
+      "describeSources",
+      "external_exports3.object",
+      "sourceSchema",
+      "sources.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556799:20648636",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFetchConnectedActivityTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556799,
+    "end_line": 556799,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "029417d651d715b5e81760e80b057b8573af0ca92d48f7bd9d042074f653ca20",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556800:20648686",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-connected-activity-tool.ts",
+    "name": "execute",
+    "qualified_name": "createFetchConnectedActivityTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556800,
+    "end_line": 556800,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "33bfb3b15b44424d5bc3ef3653b2acf79f83a4d72e3e0c41775f7c70394a2280",
+    "calls": [
+      "deps.fetch",
+      "formatConnectedActivity"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

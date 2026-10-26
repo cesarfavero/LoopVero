@@ -1,0 +1,519 @@
+[
+  {
+    "id": "host:739619:28108849",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "takeNextUserTask",
+    "qualified_name": "takeNextUserTask",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739619,
+    "end_line": 739623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pending"
+    ],
+    "body_sha256": "b0e015781417fe0b64bbe333b1f03ab1c7ef74f3e9767ec2c7324d1706f2450d",
+    "calls": [
+      "pending.findIndex",
+      "pending.splice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739625:28109121",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.constructor",
+    "qualified_name": "SandRunScheduler.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739625,
+    "end_line": 739628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2",
+      "clock = realClock"
+    ],
+    "body_sha256": "e8f3c030abc5cd488067c6bc5a0dd5613f1f92250c43a84c550cacf4e3dbdb31",
+    "calls": [],
+    "writes": [
+      "this.clock",
+      "this.options"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739633:28109297",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.enqueue",
+    "qualified_name": "SandRunScheduler.enqueue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739633,
+    "end_line": 739680,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "task",
+      "options2"
+    ],
+    "body_sha256": "b4e77dae5d4c957445b5d4c10a5b760e13c24e44da2ccf2df32e103d2214c52e",
+    "calls": [
+      ".then",
+      "Promise.resolve",
+      "new Promise",
+      "queue.pendingAgent.push",
+      "queue.pendingBackground.push",
+      "queue.pendingUser.push",
+      "this.armWatchdog",
+      "this.clock.now",
+      "this.options.telemetry.onAccepted",
+      "this.queueFor"
+    ],
+    "writes": [
+      "pendingAhead"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739681:28111053",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.drain",
+    "qualified_name": "SandRunScheduler.drain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739681,
+    "end_line": 739692,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "7e27a1a94096feff32d0b124eba594879741ad2a2ba245e22eecb0686798e594",
+    "calls": [
+      "Promise.allSettled",
+      "queue.pendingAgent.map",
+      "queue.pendingBackground.map",
+      "queue.pendingUser.map",
+      "this.queues.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739693:28111489",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.getDiagnostics",
+    "qualified_name": "SandRunScheduler.getDiagnostics",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739693,
+    "end_line": 739723,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "359398b5f45c1f704fbcc7992d7d79d73cfb1fcf23abda8a1f63ebd25bea09a1",
+    "calls": [
+      "diagnostics.push",
+      "this.clock.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739724:28112548",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.dispose",
+    "qualified_name": "SandRunScheduler.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739724,
+    "end_line": 739739,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8450833191594e17676a62f97402e55f1bfcf9c514a5aaec3fcf94b097519292",
+    "calls": [
+      ".then",
+      "Promise.resolve",
+      "queue.graceTimer.dispose",
+      "queue.pendingAgent.splice",
+      "queue.pendingBackground.splice",
+      "queue.pendingUser.splice",
+      "queue.watchdogTimer.dispose",
+      "this.queues.values"
+    ],
+    "writes": [
+      "queue.graceTimer",
+      "queue.watchdogTimer",
+      "this.disposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739740:28113048",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.queueFor",
+    "qualified_name": "SandRunScheduler.queueFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739740,
+    "end_line": 739753,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "f8a92030a5d0aa9f1f4f4865ddc28a7f054515871f8963afd3c6989b6898d782",
+    "calls": [
+      "new Set",
+      "this.queues.get",
+      "this.queues.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739754:28113413",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.pump",
+    "qualified_name": "SandRunScheduler.pump",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739754,
+    "end_line": 739813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "20c61c4473c5dbdc7fc812cce7b54f61cfc509282407f71ac08813b6907941f5",
+    "calls": [
+      "Promise.reject",
+      "new Promise",
+      "next.task",
+      "queue.pendingAgent.shift",
+      "queue.pendingBackground.shift",
+      "takeNextUserTask",
+      "taskPromise.then",
+      "this.armWatchdog",
+      "this.clock.now",
+      "this.disarmWatchdog",
+      "this.options.telemetry.onDequeued",
+      "this.queues.get"
+    ],
+    "writes": [
+      "next",
+      "queue.active",
+      "queue.generationCounter",
+      "taskPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:739814:28115243",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.onTaskSettled",
+    "qualified_name": "SandRunScheduler.onTaskSettled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739814,
+    "end_line": 739833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "queue",
+      "active",
+      "failure3"
+    ],
+    "body_sha256": "d50aef005f461375f51606c404b5213f223420ce8de712c4727b6ce352063433",
+    "calls": [
+      "active.item.reject",
+      "active.item.resolve",
+      "this.clock.now",
+      "this.disarmWatchdog",
+      "this.options.telemetry.onWatchdog",
+      "this.pump"
+    ],
+    "writes": [
+      "queue.active"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739834:28115828",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.waitedBehindActiveMs",
+    "qualified_name": "SandRunScheduler.waitedBehindActiveMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739834,
+    "end_line": 739839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "queue"
+    ],
+    "body_sha256": "533948934a498592ebd29888163a718383b7512907c0bc95f8666b7f35b853a0",
+    "calls": [
+      "Math.max",
+      "this.clock.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739840:28116059",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.armWatchdog",
+    "qualified_name": "SandRunScheduler.armWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739840,
+    "end_line": 739850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "queue"
+    ],
+    "body_sha256": "4393095ae6d856c01d859621fb47e268e04cc7027c480b507021d8a07e9965c7",
+    "calls": [
+      "Math.max",
+      "this.clock.schedule",
+      "this.waitedBehindActiveMs"
+    ],
+    "writes": [
+      "queue.watchdogTimer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739851:28116515",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.disarmWatchdog",
+    "qualified_name": "SandRunScheduler.disarmWatchdog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739851,
+    "end_line": 739856,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "queue"
+    ],
+    "body_sha256": "541b03e15cefe24b7d111a712a3fc74f24ce2d1a18d26e070d8c9893292073de",
+    "calls": [
+      "queue.graceTimer.dispose",
+      "queue.watchdogTimer.dispose"
+    ],
+    "writes": [
+      "queue.graceTimer",
+      "queue.watchdogTimer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739857:28116680",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.onWatchdogFired",
+    "qualified_name": "SandRunScheduler.onWatchdogFired",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739857,
+    "end_line": 739882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "queue"
+    ],
+    "body_sha256": "a2233d111d2bf0307312636295a9f1ec8cabb0b00aeaec5f67680f8b018a3a0d",
+    "calls": [
+      "this.armWatchdog",
+      "this.clock.now",
+      "this.clock.schedule",
+      "this.options.telemetry.onWatchdog",
+      "this.waitedBehindActiveMs"
+    ],
+    "writes": [
+      "active.phase",
+      "queue.graceTimer"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739883:28117622",
+    "artifact": "host",
+    "module": "host/extensions/transcript/run-scheduler.ts",
+    "name": "SandRunScheduler.escapeWedgedRun",
+    "qualified_name": "SandRunScheduler.escapeWedgedRun",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739883,
+    "end_line": 739901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "queue",
+      "active"
+    ],
+    "body_sha256": "d1fc0fc9224527564fdb093af5e1a1531b85f2d1b79e211447560ad61d1887c2",
+    "calls": [
+      "active.item.resolve",
+      "active.settled.then",
+      "queue.zombies.add",
+      "this.clock.now",
+      "this.options.telemetry.onWatchdog",
+      "this.pump"
+    ],
+    "writes": [
+      "queue.active"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

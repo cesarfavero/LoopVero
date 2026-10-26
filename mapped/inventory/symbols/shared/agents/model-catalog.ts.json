@@ -1,0 +1,318 @@
+[
+  {
+    "id": "host:513577:18856750",
+    "artifact": "host",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "toSandModelCatalogEntry",
+    "qualified_name": "toSandModelCatalogEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513577,
+    "end_line": 513608,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "model"
+    ],
+    "body_sha256": "d7519411ac6b0db6e7c7224bfe2e2075362c714a4a593021a20d69a9bc2e7c71",
+    "calls": [
+      "def.name.trim",
+      "model.clientDisplayName.trim",
+      "model.variants.map",
+      "params.push",
+      "rawValues.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:513609:18857877",
+    "artifact": "host",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "mapAvailableModels",
+    "qualified_name": "mapAvailableModels",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 513609,
+    "end_line": 513611,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "models"
+    ],
+    "body_sha256": "739d214b3031cb2befaec28945eefc89c31b2dc06c26c34954cf82e52d914260",
+    "calls": [
+      ".map",
+      "models.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567542:21153738",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "findCatalogEntry",
+    "qualified_name": "findCatalogEntry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567542,
+    "end_line": 567550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "catalog",
+      "modelId"
+    ],
+    "body_sha256": "82e501288a7e198ea9c9b1c49338cbec53955ce182fe405c8bcab68f1ed9e8de",
+    "calls": [
+      ".toLowerCase",
+      "catalog.find",
+      "modelId.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567551:21154029",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "validateModelParams",
+    "qualified_name": "validateModelParams",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567551,
+    "end_line": 567576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "params"
+    ],
+    "body_sha256": "a105f3c5eaf6b3b08217726e4e03aba00af449aae3fb74b615fd528c14c968ae",
+    "calls": [
+      ".join",
+      "Object.entries",
+      "def.values.map",
+      "def.values.some",
+      "entry.params.find",
+      "entry.params.map",
+      "errors.push",
+      "validateParamCombination"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567577:21154958",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "variantMatchesRequested",
+    "qualified_name": "variantMatchesRequested",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567577,
+    "end_line": 567580,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "variant",
+      "requested"
+    ],
+    "body_sha256": "c10a3aff850fc392bef2435cc0fc552b4231410359e1609ef4ea58fb6d90412f",
+    "calls": [
+      "new Map",
+      "requested.every",
+      "variant.params.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567581:21155153",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "resolveModelMaxMode",
+    "qualified_name": "resolveModelMaxMode",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567581,
+    "end_line": 567585,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "params"
+    ],
+    "body_sha256": "fafe1eb521c2624351d932be1d9abdb154363fb995fabc5d7e7fb74f6cf55728",
+    "calls": [
+      "Object.entries",
+      "entry.variants.filter",
+      "matching2.every"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567586:21155428",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "validateParamCombination",
+    "qualified_name": "validateParamCombination",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567586,
+    "end_line": 567604,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "params"
+    ],
+    "body_sha256": "118ce07a8994af2fa5b873c22ceb3484988a2edebc72adbedd49ad594f5775d9",
+    "calls": [
+      ".join",
+      ".map",
+      "Object.entries",
+      "conflicting.join",
+      "entry.variants.some",
+      "requested.filter",
+      "requested.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567605:21156411",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "describeParamIncompatibilities",
+    "qualified_name": "describeParamIncompatibilities",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567605,
+    "end_line": 567636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "3593ff185f850b565ce397e5a4ba38b10ea851d4e393ad13d55acce8dd6a6146",
+    "calls": [
+      "coOccurs",
+      "new Set",
+      "notes.push",
+      "present2.entries",
+      "present2.push",
+      "present2.slice",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 4,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:567620:21156835",
+    "artifact": "evaluation",
+    "module": "shared/agents/model-catalog.ts",
+    "name": "coOccurs",
+    "qualified_name": "describeParamIncompatibilities/coOccurs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 567620,
+    "end_line": 567623,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "a",
+      "b2"
+    ],
+    "body_sha256": "0e1b5381444799c67ecb03097725231c2e646af57c90a0b271773811d92ec096",
+    "calls": [
+      "entry.variants.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,932 @@
+[
+  {
+    "id": "host:755218:28831676",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "DraftRefusedError.constructor",
+    "qualified_name": "DraftRefusedError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755218,
+    "end_line": 755221,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message",
+      "category"
+    ],
+    "body_sha256": "0d067d6c770c9b2b33d04a92d56343129704720f81cab0f738a5286713611599",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.category"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755234:28835707",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "nonEmpty4",
+    "qualified_name": "nonEmpty4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755234,
+    "end_line": 755236,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "f7ff44c98d38c2b38018ac2bfdcc2f740b5b0049647a3e912d1026163a7960b6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755237:28835798",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "requirePresent",
+    "qualified_name": "requirePresent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755237,
+    "end_line": 755243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "field",
+      "platform2"
+    ],
+    "body_sha256": "c16289a48a812c5ec650ee7b89cf32819d88e16be1b9134c02bed9000a9270fe",
+    "calls": [
+      "invariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755244:28836091",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "buildDraftEmission",
+    "qualified_name": "buildDraftEmission",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755244,
+    "end_line": 755293,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a9be72a8dfb24c750817cda57c9e8add16d6fe6661d4f230af904b71574b15c3",
+    "calls": [
+      "invariant",
+      "nonEmpty4",
+      "requirePresent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755294:28837623",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "verifyDraftAgainstRoute",
+    "qualified_name": "verifyDraftAgainstRoute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755294,
+    "end_line": 755331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "draft",
+      "resolution"
+    ],
+    "body_sha256": "1b7d0c4c8d2d2f9148a56a75c1dbd319f05fdeab084698bd1b1915b650db9f3f",
+    "calls": [
+      "Math.ceil",
+      "canSendAs",
+      "isHostedGmailRoute",
+      "new DraftRefusedError",
+      "sendable.join"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755332:28839900",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "resolveAgentInboxDraft",
+    "qualified_name": "resolveAgentInboxDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755332,
+    "end_line": 755362,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentInbox",
+      "draft",
+      "attachments"
+    ],
+    "body_sha256": "7baf74c83157b11627fe45a6a5da025be68a71eca4e58bb14fc6461b19d2ec0b",
+    "calls": [
+      "agentInbox.getAgentDir",
+      "invariant",
+      "new DraftRefusedError",
+      "nonEmpty4",
+      "resolution.reason.replace",
+      "verifyAgentInboxDraft"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755363:28840940",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "draftDeliverTo",
+    "qualified_name": "draftDeliverTo",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755363,
+    "end_line": 755370,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "getSendBlockReason",
+      "message"
+    ],
+    "body_sha256": "1ba93e7439eebc3acdbcd08141b61b9678f9597db7db3937b9ac227262a88425",
+    "calls": [
+      "getSendBlockReason",
+      "new DraftRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755371:28841221",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "meetingDraftMessage",
+    "qualified_name": "meetingDraftMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755371,
+    "end_line": 755407,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "meetings",
+      "{ meetingId, body }"
+    ],
+    "body_sha256": "2a092b0cd4b455b6300e91f00de780b4c480bd88bcca346c550b724bf42a5dfe",
+    "calls": [
+      "MeetingChannelAddress.of",
+      "meetings.getMeeting",
+      "meetings.readMarkedInternal",
+      "new DraftRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755409:28843682",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "cardLocation",
+    "qualified_name": "cardLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755409,
+    "end_line": 755415,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deliverTo",
+      "draftId",
+      "taskId"
+    ],
+    "body_sha256": "6ac713a1715788e12fb185014f8e466d614fa830cc2e0bcaf61637b3161b3a01",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755416:28844057",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "createDraftExternalMessageTool",
+    "qualified_name": "createDraftExternalMessageTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755416,
+    "end_line": 755525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "b530bda6677acda47b60e8065857c05ae0ebcde901d48646959e4d0854209c26",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755420:28844234",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "description",
+    "qualified_name": "createDraftExternalMessageTool/description",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755420,
+    "end_line": 755423,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e9841b4035744938fd46d283e5af9703aea57000e8dd3b246069e76c5de6e71a",
+    "calls": [
+      "deps.draftByDefault"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755429:28844713",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createDraftExternalMessageTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755429,
+    "end_line": 755431,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9f89127e5603c2b1778d1f814a37be691e47a47d4203c307eb6e19b0fd7cd49c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:755432:28844854",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "execute",
+    "qualified_name": "createDraftExternalMessageTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 755432,
+    "end_line": 755523,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "fff2fe3ccdd0349761431b42d7210cd50018b054a5cea994fffa56fd85677ed6",
+    "calls": [
+      "Date.now",
+      "bindMessageDeliveryReport",
+      "buildDraftEmission",
+      "cardLocation",
+      "ctx.signal.throwIfAborted",
+      "d.cardHiddenFromChannel",
+      "d.onDraftMessage",
+      "d.proposeRule",
+      "d.resolveRouteVerification",
+      "draftDeliverTo",
+      "emission.message.draft.to.join",
+      "isAgentInboxRoute",
+      "meetingDraftMessage",
+      "new DraftRefusedError",
+      "nonEmpty4",
+      "reportDelivery.failed",
+      "reportDelivery.settled",
+      "requirePresent",
+      "resolveAgentInboxDraft",
+      "resolveCardTaskThread",
+      "verifyDraftAgainstRoute"
+    ],
+    "writes": [
+      "deliverTo",
+      "deliverTo2",
+      "draftId",
+      "draftId2",
+      "emission",
+      "taskId",
+      "taskId2"
+    ],
+    "throw_targets": [
+      "DraftRefusedError",
+      "error64",
+      "refusal4"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 2,
+      "throws": 4,
+      "catches": 2
+    }
+  },
+  {
+    "id": "evaluation:541098:19965648",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "DraftRefusedError.constructor",
+    "qualified_name": "DraftRefusedError.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541098,
+    "end_line": 541101,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message",
+      "category"
+    ],
+    "body_sha256": "0d067d6c770c9b2b33d04a92d56343129704720f81cab0f738a5286713611599",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.category"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541114:19969679",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "nonEmpty2",
+    "qualified_name": "nonEmpty2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541114,
+    "end_line": 541116,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "a64e694206765781b76d9524c9cb25a9c1b8855541097d1661709560a00bf945",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541117:19969770",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "requirePresent",
+    "qualified_name": "requirePresent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541117,
+    "end_line": 541123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "field",
+      "platform"
+    ],
+    "body_sha256": "9cddcf06e06c5549e8689494b019abd2a9c7d1817cd2e751ce8ae20b8ca5a8f6",
+    "calls": [
+      "invariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541124:19970061",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "buildDraftEmission",
+    "qualified_name": "buildDraftEmission",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541124,
+    "end_line": 541173,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e1af0757fa7e411e9ad5a4affc2cecbe21c629bdb0eaf687e846b00216165267",
+    "calls": [
+      "invariant",
+      "nonEmpty2",
+      "requirePresent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541174:19971593",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "verifyDraftAgainstRoute",
+    "qualified_name": "verifyDraftAgainstRoute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541174,
+    "end_line": 541211,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "draft",
+      "resolution"
+    ],
+    "body_sha256": "1b7d0c4c8d2d2f9148a56a75c1dbd319f05fdeab084698bd1b1915b650db9f3f",
+    "calls": [
+      "Math.ceil",
+      "canSendAs",
+      "isHostedGmailRoute",
+      "new DraftRefusedError",
+      "sendable.join"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541212:19973870",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "resolveAgentInboxDraft",
+    "qualified_name": "resolveAgentInboxDraft",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541212,
+    "end_line": 541242,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentInbox",
+      "draft",
+      "attachments"
+    ],
+    "body_sha256": "50592654c286cd2984772c450e0cc4b2b70bd39e671d8fcf691fe9f5df5c3d0e",
+    "calls": [
+      "agentInbox.getAgentDir",
+      "invariant",
+      "new DraftRefusedError",
+      "nonEmpty2",
+      "resolution.reason.replace",
+      "verifyAgentInboxDraft"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541243:19974910",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "draftDeliverTo",
+    "qualified_name": "draftDeliverTo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541243,
+    "end_line": 541250,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "getSendBlockReason",
+      "message"
+    ],
+    "body_sha256": "1ba93e7439eebc3acdbcd08141b61b9678f9597db7db3937b9ac227262a88425",
+    "calls": [
+      "getSendBlockReason",
+      "new DraftRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541251:19975191",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "meetingDraftMessage",
+    "qualified_name": "meetingDraftMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541251,
+    "end_line": 541287,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "meetings",
+      "{ meetingId, body }"
+    ],
+    "body_sha256": "2a092b0cd4b455b6300e91f00de780b4c480bd88bcca346c550b724bf42a5dfe",
+    "calls": [
+      "MeetingChannelAddress.of",
+      "meetings.getMeeting",
+      "meetings.readMarkedInternal",
+      "new DraftRefusedError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "DraftRefusedError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541289:19977652",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "cardLocation",
+    "qualified_name": "cardLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541289,
+    "end_line": 541295,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deliverTo",
+      "draftId",
+      "taskId"
+    ],
+    "body_sha256": "6ac713a1715788e12fb185014f8e466d614fa830cc2e0bcaf61637b3161b3a01",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541296:19978027",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "createDraftExternalMessageTool",
+    "qualified_name": "createDraftExternalMessageTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541296,
+    "end_line": 541405,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "7a631c40a8b2ba49a90bbdd99f0244a0ba36b8de632ea1e9abc387b726be158f",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541300:19978204",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "description",
+    "qualified_name": "createDraftExternalMessageTool/description",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541300,
+    "end_line": 541303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e9841b4035744938fd46d283e5af9703aea57000e8dd3b246069e76c5de6e71a",
+    "calls": [
+      "deps.draftByDefault"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541309:19978683",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createDraftExternalMessageTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541309,
+    "end_line": 541311,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9f89127e5603c2b1778d1f814a37be691e47a47d4203c307eb6e19b0fd7cd49c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541312:19978824",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-external-message-tool.ts",
+    "name": "execute",
+    "qualified_name": "createDraftExternalMessageTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541312,
+    "end_line": 541403,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "042df5335b2e0e8ee9e6a5192d74b96acd8dea76b52e72247ee31c819fae9afa",
+    "calls": [
+      "Date.now",
+      "bindMessageDeliveryReport",
+      "buildDraftEmission",
+      "cardLocation",
+      "ctx.signal.throwIfAborted",
+      "d.cardHiddenFromChannel",
+      "d.onDraftMessage",
+      "d.proposeRule",
+      "d.resolveRouteVerification",
+      "draftDeliverTo",
+      "emission.message.draft.to.join",
+      "isAgentInboxRoute",
+      "meetingDraftMessage",
+      "new DraftRefusedError",
+      "nonEmpty2",
+      "reportDelivery.failed",
+      "reportDelivery.settled",
+      "requirePresent",
+      "resolveAgentInboxDraft",
+      "resolveCardTaskThread",
+      "verifyDraftAgainstRoute"
+    ],
+    "writes": [
+      "deliverTo",
+      "deliverTo2",
+      "draftId",
+      "draftId2",
+      "emission",
+      "taskId",
+      "taskId2"
+    ],
+    "throw_targets": [
+      "DraftRefusedError",
+      "error63",
+      "refusal4"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 2,
+      "throws": 4,
+      "catches": 2
+    }
+  }
+]

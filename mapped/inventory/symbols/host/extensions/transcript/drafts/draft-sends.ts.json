@@ -1,0 +1,842 @@
+[
+  {
+    "id": "host:736954:27995934",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "isDraftMessage",
+    "qualified_name": "isDraftMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736954,
+    "end_line": 736956,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "d5bc91f2d6137d9ba64d4be8a7fd66946d633719baf78c8cb6b7b06bcd85ea04",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736957:27996046",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "replyFactVerified",
+    "qualified_name": "replyFactVerified",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736957,
+    "end_line": 736965,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "verified"
+    ],
+    "body_sha256": "64764f7e4e769968864d09ac6e2fb6ef866d5443a94db5610a227fa0274bfa07",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736966:27996405",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "withEditedDraft",
+    "qualified_name": "withEditedDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736966,
+    "end_line": 736974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry",
+      "draft"
+    ],
+    "body_sha256": "b9ca145080d3521710e04d1e58ad362f2d78f4cb24e6435d9a14a41b8ea45bf7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736976:27996818",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.constructor",
+    "qualified_name": "DraftSends.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736976,
+    "end_line": 736978,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "05e16ed0616df28ee80161307a93cb467e00d19f0e63557b50654b4b18bf7037",
+    "calls": [],
+    "writes": [
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:736981:27996915",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.sendDraft",
+    "qualified_name": "DraftSends.sendDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 736981,
+    "end_line": 737067,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    entryId,\n    draft,\n    agentId\n  }"
+    ],
+    "body_sha256": "19caa8830df4750115014de8b7f57e5118760c8ddac93850dc6ffcad5b9936e4",
+    "calls": [
+      ".find",
+      "buildDraftSendCall",
+      "isDraftMessage",
+      "replyFactVerified",
+      "session.db.updateTranscriptEntry",
+      "this.readSessionTranscript",
+      "this.resolveTargetSession",
+      "this.runClaimedDraftSend",
+      "this.tm.trayErrors.pushError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737005:27998134",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "markSending",
+    "qualified_name": "DraftSends.sendDraft/markSending",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737005,
+    "end_line": 737009,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "9684a8f74ddc2f8f2713106231de1bf62720def3b2212b586694bf38a3f57fe2",
+    "calls": [
+      "withEditedDraft"
+    ],
+    "writes": [
+      "didStamp"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737068:28000684",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.runClaimedDraftSend",
+    "qualified_name": "DraftSends.runClaimedDraftSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737068,
+    "end_line": 737076,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "entryId",
+      "run"
+    ],
+    "body_sha256": "ef64ecda1da75a93dbc954534fc77886e9802a84904b10205622ef8c13008692",
+    "calls": [
+      "run",
+      "this.inFlightSends.add",
+      "this.inFlightSends.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737077:28000923",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.finishSend",
+    "qualified_name": "DraftSends.finishSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737077,
+    "end_line": 737194,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "7a59f218e8484ced76f770ce2959ff774617e1a2f16a4624f98b7b918f99d067",
+    "calls": [
+      "completion.run",
+      "this.appendConnectCard",
+      "this.executeCall",
+      "this.rollbackSendingDraft",
+      "this.settleSentDraft",
+      "this.settleUnconfirmedDraft",
+      "this.tm.hostLog",
+      "this.tm.telemetry.reportToolCallError",
+      "this.tm.trayErrors.pushError"
+    ],
+    "writes": [
+      "errorClass",
+      "settledState"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 20,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737195:28005454",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.discardDraft",
+    "qualified_name": "DraftSends.discardDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737195,
+    "end_line": 737215,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    entryId,\n    agentId\n  }"
+    ],
+    "body_sha256": "00aca7be87c53f13acbde4df898a9957a276d115654c95cf7b561ddf0935e1bc",
+    "calls": [
+      ".find",
+      "isDraftMessage",
+      "session.db.updateTranscriptEntry",
+      "this.emitDraftEntryUpdate",
+      "this.readSessionTranscript",
+      "this.resolveTargetSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737206:28005928",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "markDiscarded",
+    "qualified_name": "DraftSends.discardDraft/markDiscarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737206,
+    "end_line": 737210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "834256bfc1ae6af8b700423b673e8ae883af36818d869d7bda88d9488673f7cb",
+    "calls": [],
+    "writes": [
+      "didStamp"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737216:28006407",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.sweepStrandedDraftSends",
+    "qualified_name": "DraftSends.sweepStrandedDraftSends",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737216,
+    "end_line": 737249,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "dc865b460e0940eb06d4fecdf6dfcd873f3d34fa845d37eb6213b3d479c4cafb",
+    "calls": [
+      "classifyAgentError",
+      "this.isLiveTranscriptFor",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sessionStore.listAgentIds",
+      "this.tm.sessionStore.settleStrandedDraftSends",
+      "this.tm.telemetry.reportAgentError",
+      "updateEntry"
+    ],
+    "writes": [
+      "agentIds",
+      "settled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:737250:28007493",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.executeCall",
+    "qualified_name": "DraftSends.executeCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737250,
+    "end_line": 737263,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4c5946cf511a5225a515dfa7f5a58aa6643a14877ed8455667bf7fbd03c0262e",
+    "calls": [
+      "errorMessage",
+      "execution.executeDraftCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:737264:28007935",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.verifyExecute",
+    "qualified_name": "DraftSends.verifyExecute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737264,
+    "end_line": 737285,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "request5"
+    ],
+    "body_sha256": "3eb57084a8cf02b78e1309fcc1b768852931c59018cae94e931ad34f57d0b051",
+    "calls": [
+      "this.executeCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737286:28008804",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.resolveTargetSession",
+    "qualified_name": "DraftSends.resolveTargetSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737286,
+    "end_line": 737291,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "7e567796a54665e52882e6e27c3f6fd1534dfaecafb8ab052f04cb27637355b7",
+    "calls": [
+      "this.tm.sessions.ensureActionTarget"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737292:28009035",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.readSessionTranscript",
+    "qualified_name": "DraftSends.readSessionTranscript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737292,
+    "end_line": 737294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "3bf2244ca4df9d6441922e39fd9c0e8189df9e36edcfda23c8d1ddc650b543fb",
+    "calls": [
+      "getTranscript",
+      "session.db.getTranscriptEntries",
+      "this.isSessionOnScreen"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737295:28009170",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.isLiveTranscriptFor",
+    "qualified_name": "DraftSends.isLiveTranscriptFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737295,
+    "end_line": 737297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "2341d852bf70aef15808d22f0758c19c21f8b6946f61017ce598d5bcfa6a6593",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737298:28009322",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.isSessionOnScreen",
+    "qualified_name": "DraftSends.isSessionOnScreen",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737298,
+    "end_line": 737300,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "847a9d6d9eb0451167561b1ca6cf30dbb4a43e40f87f12da0418ad9a1ea334ba",
+    "calls": [
+      "this.isLiveTranscriptFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737301:28009406",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.appendConnectCard",
+    "qualified_name": "DraftSends.appendConnectCard",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737301,
+    "end_line": 737323,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "{\n    session,\n    connector,\n    serverId\n  }"
+    ],
+    "body_sha256": "31ef982f0081f9587c2fb6d9faceda1ecb5e6fe696027f5719f5942026d7e1e9",
+    "calls": [
+      "Date.now",
+      "createSendMessageEntry",
+      "nextEntryId",
+      "session.db.appendTranscriptEntry",
+      "this.isSessionOnScreen",
+      "this.readSessionTranscript",
+      "this.tm.roster.emitAgentUpdate",
+      "this.tm.sendPipeline.appendSendMessageEntry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737324:28009977",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.emitDraftEntryUpdate",
+    "qualified_name": "DraftSends.emitDraftEntryUpdate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737324,
+    "end_line": 737335,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "entryId",
+      "updater"
+    ],
+    "body_sha256": "a868458e2f4edbd3317cb79232f1de995a3ad1ed93b550200f5a4eaa08174b48",
+    "calls": [
+      "session.db.getEntryById",
+      "this.isSessionOnScreen",
+      "this.tm.roster.emit",
+      "this.tm.roster.emitAgentUpdate",
+      "updateEntry",
+      "updater"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737336:28010448",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.settleSentDraft",
+    "qualified_name": "DraftSends.settleSentDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737336,
+    "end_line": 737348,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "entryId",
+      "state",
+      "draft"
+    ],
+    "body_sha256": "f058e3bbf27c95823d377c828575f9e1f9d21e61825d769a4252a0989685c79e",
+    "calls": [
+      "session.db.updateTranscriptEntry",
+      "this.emitDraftEntryUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737338:28010530",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "settle3",
+    "qualified_name": "DraftSends.settleSentDraft/settle3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737338,
+    "end_line": 737343,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "272fb6cbaff8a8467b5ebb6c241a1094abd9cd90384d76ee7fe44feff0e5bb6f",
+    "calls": [
+      "settleSendingDraftEntry"
+    ],
+    "writes": [
+      "didSettle"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737349:28010978",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.settleUnconfirmedDraft",
+    "qualified_name": "DraftSends.settleUnconfirmedDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737349,
+    "end_line": 737361,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "entryId",
+      "draft"
+    ],
+    "body_sha256": "03816720c84d865c8a05643971e99ac855214f370d52f4a105fd1bc0c3f5815c",
+    "calls": [
+      "session.db.updateTranscriptEntry",
+      "this.emitDraftEntryUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737351:28011059",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "toUnconfirmed",
+    "qualified_name": "DraftSends.settleUnconfirmedDraft/toUnconfirmed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737351,
+    "end_line": 737356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "2ac5959d0bfce8a132ce54d8267a3df459f11d3089c2f883469cf751365b2a19",
+    "calls": [
+      "settleSendingDraftEntry"
+    ],
+    "writes": [
+      "didSettle"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737362:28011487",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "DraftSends.rollbackSendingDraft",
+    "qualified_name": "DraftSends.rollbackSendingDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737362,
+    "end_line": 737376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session",
+      "entryId",
+      "draft"
+    ],
+    "body_sha256": "2b518d320a471f6c817a3d43973ee90eb43fcd0f5606bf0da137c03634b3dadc",
+    "calls": [
+      "session.db.updateTranscriptEntry",
+      "this.emitDraftEntryUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:737364:28011568",
+    "artifact": "host",
+    "module": "host/extensions/transcript/drafts/draft-sends.ts",
+    "name": "withoutSending",
+    "qualified_name": "DraftSends.rollbackSendingDraft/withoutSending",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 737364,
+    "end_line": 737369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "f10d319dbb1d834cc4752652ce17ff6403e1bad163589315ffc6fc1aadcd8290",
+    "calls": [
+      "clearSendingDraftEntry"
+    ],
+    "writes": [
+      "didClear"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

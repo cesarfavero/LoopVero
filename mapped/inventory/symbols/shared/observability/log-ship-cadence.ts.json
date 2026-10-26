@@ -1,0 +1,234 @@
+[
+  {
+    "id": "host:452654:16586804",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "nextLogShipDelayMs",
+    "qualified_name": "nextLogShipDelayMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452654,
+    "end_line": 452666,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "input2"
+    ],
+    "body_sha256": "c7441ddb606b1dacb8b450948ee108adb326e0725997f953124538ee6197d06b",
+    "calls": [
+      "Math.max",
+      "Math.round",
+      "backoff2",
+      "random"
+    ],
+    "writes": [
+      "baseMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452656:16586908",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "backoff2",
+    "qualified_name": "nextLogShipDelayMs/backoff2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452656,
+    "end_line": 452656,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "capMs"
+    ],
+    "body_sha256": "0069c67b7d8cfd5ffac9fed2bac4cad20dbd3b1e448fe4ee495d7cf92d2e279c",
+    "calls": [
+      "Math.max",
+      "Math.min"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452671:16587465",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "LogShipSchedule.isDue",
+    "qualified_name": "LogShipSchedule.isDue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452671,
+    "end_line": 452674,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "eager",
+      "nowMs2 = Date.now()"
+    ],
+    "body_sha256": "d722dda69dd0be8271e576c1ada176d78a2ed654e7407d7e889cdb31e1440b5c",
+    "calls": [
+      "this.isBackingOff"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452675:16587602",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "LogShipSchedule.shipNext",
+    "qualified_name": "LogShipSchedule.shipNext",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452675,
+    "end_line": 452677,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "b6cd3ecfaec1dde27221439acf3eabef4dff63cee4671d0ff883fc903abf1522",
+    "calls": [
+      "this.isBackingOff"
+    ],
+    "writes": [
+      "this.nextShipAtMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452678:16587672",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "LogShipSchedule.record",
+    "qualified_name": "LogShipSchedule.record",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452678,
+    "end_line": 452697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "result",
+      "nowMs2 = Date.now()"
+    ],
+    "body_sha256": "1301aa5e0315bc6d4338d9633d68a0119c8bdd1df3d2ca0ca6e813b5f5d655ea",
+    "calls": [
+      "getConnectRetryAfterMs",
+      "isRateLimitConnectError",
+      "nextLogShipDelayMs"
+    ],
+    "writes": [
+      "this.failureStreak",
+      "this.nextShipAtMs",
+      "this.rateLimitStreak"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452698:16588375",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "LogShipSchedule.isBackingOff",
+    "qualified_name": "LogShipSchedule.isBackingOff",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452698,
+    "end_line": 452700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "80b98d6cf412caa29a445f34bb9897bf15a9cb8aa9fb39d8714d076afabfa28e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:452702:16588445",
+    "artifact": "host",
+    "module": "shared/observability/log-ship-cadence.ts",
+    "name": "takeLogShipBatch",
+    "qualified_name": "takeLogShipBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 452702,
+    "end_line": 452716,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "buffer"
+    ],
+    "body_sha256": "77d826e71a55279f8d5632986baf50e7d4d11f58aaee760660fb731e3ed02f39",
+    "calls": [
+      "Object.entries",
+      "buffer.slice"
+    ],
+    "writes": [
+      "bytes",
+      "count2",
+      "entryBytes"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

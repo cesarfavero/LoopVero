@@ -1,0 +1,503 @@
+[
+  {
+    "id": "host:537755:19749474",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "visibilityToProto",
+    "qualified_name": "visibilityToProto",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537755,
+    "end_line": 537766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "visibility"
+    ],
+    "body_sha256": "409d8f2fe225b4dde6c66b56f94f9c9b00a1067f4e3b3e25fa898338f5855ec4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537767:19749762",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "toSandCloudAgentPublishState",
+    "qualified_name": "toSandCloudAgentPublishState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537767,
+    "end_line": 537777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "a7f234834fcb7cd23c4c3b44c5899335be6fdc81c439281f4b19e809c66b3c5b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537778:19750178",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "isPublishNotConfiguredError",
+    "qualified_name": "isPublishNotConfiguredError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537778,
+    "end_line": 537780,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "9f13e9f3a64893d684ae6655b198053c721fa0c13f25a4d906cd98278e4f9e75",
+    "calls": [
+      "/not (enabled|configured|available)/i.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537788:19750512",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "isNotFound",
+    "qualified_name": "isNotFound",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537788,
+    "end_line": 537790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "8a2bc2ce74f1be0afb2dfd599665fc9e048295fecd5cc73bedfe4ed0743ede00",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537791:19750621",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "isRunGone",
+    "qualified_name": "isRunGone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537791,
+    "end_line": 537793,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "d12e6645926e090c91435a7bf3ca687e3d72061b01cae899b6a750497edc807e",
+    "calls": [
+      "error64.findDetails"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537794:19750747",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "readPublishState",
+    "qualified_name": "readPublishState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537794,
+    "end_line": 537807,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "proposal"
+    ],
+    "body_sha256": "4da62f63d2d52406bb9728164c54c2836b52576563a7e6d912f2bf55a6f5ec1d",
+    "calls": [
+      "client.getPublishStatus",
+      "isNotFound",
+      "new GetPublishStatusRequest",
+      "toSandCloudAgentPublishState"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537808:19751276",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "readCloudAgentPublishProposals",
+    "qualified_name": "readCloudAgentPublishProposals",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537808,
+    "end_line": 537823,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "bcId"
+    ],
+    "body_sha256": "f0afd6a77816b6d478b082a6d8e0542319137e6d8e06a49d855f74df732c3d92",
+    "calls": [
+      "asyncMapValues",
+      "classifyReadFailure",
+      "client.listPublishProposals",
+      "isNotFound",
+      "isPublishNotConfiguredError",
+      "isRunGone",
+      "listed.map",
+      "new ListPublishProposalsRequest"
+    ],
+    "writes": [
+      "listed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537824:19751960",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "readCloudAgentPublishedApps",
+    "qualified_name": "readCloudAgentPublishedApps",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537824,
+    "end_line": 537849,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client"
+    ],
+    "body_sha256": "bb1522eb7765f07cd1e944becb9192aaf17e23056e258fba43a85b72d58f97b2",
+    "calls": [
+      "apps.map",
+      "classifyReadFailure",
+      "client.listApps",
+      "isPublishNotConfiguredError",
+      "new ListAppsRequest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537851:19752841",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "refusalDetail",
+    "qualified_name": "refusalDetail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537851,
+    "end_line": 537854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "7b65d7fd074b41fcdae316d85fe0739edef23aacf66f94335fe4aa2d3a31940a",
+    "calls": [
+      "[computed].details.detail.trim",
+      "error64.findDetails"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537855:19753016",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "refusalOf",
+    "qualified_name": "refusalOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537855,
+    "end_line": 537888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "aede361376774f1683ff96027c9a354c3b7fff5f622dbf6cc2d514b39bcc9afe",
+    "calls": [
+      "/changed after the agent proposed|no longer describes/i.test",
+      "/decided elsewhere|already (published|dismissed|confirming)/i.test",
+      "connectRefusalTitle",
+      "isPublishNotConfiguredError",
+      "isRunGone",
+      "refusalDetail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 10,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537889:19754300",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "confirmCloudAgentPublishProposal",
+    "qualified_name": "confirmCloudAgentPublishProposal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537889,
+    "end_line": 537921,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "args"
+    ],
+    "body_sha256": "dd8a0acc55608dc82132b989cd37cf00ef7c8ab3b4a5750a2b5fc4d8f8cd4ff5",
+    "calls": [
+      "client.confirmPublishProposal",
+      "new ConfirmPublishProposalRequest",
+      "refusalOf",
+      "toSandCloudAgentPublishProposal",
+      "toSandCloudAgentPublishState",
+      "visibilityToProto"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537922:19755454",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "updateCloudAgentPublishApp",
+    "qualified_name": "updateCloudAgentPublishApp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537922,
+    "end_line": 537952,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "args"
+    ],
+    "body_sha256": "410a74f9c24b9436f17507041de15435b33c4ca09c0a72d33cf8d1f80f1b162d",
+    "calls": [
+      "client.updateApp",
+      "new UpdateAppRequest",
+      "updateRefusalOf",
+      "visibilityOf2",
+      "visibilityToProto"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537953:19756653",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "updateRefusalOf",
+    "qualified_name": "updateRefusalOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537953,
+    "end_line": 537958,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "6bf91dd9a49749c7e093899f4c40354192fcead94d9ea2d956d7eff88089c8c3",
+    "calls": [
+      "refusalOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:537959:19756866",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "unpublishCloudAgentPublishApp",
+    "qualified_name": "unpublishCloudAgentPublishApp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537959,
+    "end_line": 537966,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "args"
+    ],
+    "body_sha256": "06e383df2870a3f2ec8de18e89d70cbef83eca68db967b344858245dadf12ff0",
+    "calls": [
+      "client.unpublishApp",
+      "new UnpublishAppRequest",
+      "updateRefusalOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:537967:19757154",
+    "artifact": "host",
+    "module": "host/extensions/cloud-agents/cloud-agent-publish-proposals.ts",
+    "name": "dismissCloudAgentPublishProposal",
+    "qualified_name": "dismissCloudAgentPublishProposal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 537967,
+    "end_line": 537982,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "args"
+    ],
+    "body_sha256": "63e08dfe0cbc6897a739c596376a6c8b8b2a64d85635220cbf1d95626a7e6c73",
+    "calls": [
+      "client.dismissPublishProposal",
+      "new DismissPublishProposalRequest",
+      "refusalOf",
+      "toSandCloudAgentPublishProposal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "host:682082:25908833",
+    "artifact": "host",
+    "module": "host/extensions/local-exec/local-exec-bridge.ts",
+    "name": "boundedVariant",
+    "qualified_name": "boundedVariant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682082,
+    "end_line": 682085,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "variant"
+    ],
+    "body_sha256": "7b7b651230f5f9080cfcbc1d70fff4cafc9139ac7236c57e06d728efd5fc51bb",
+    "calls": [
+      "TELEMETRY_VARIANTS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682087:25909022",
+    "artifact": "host",
+    "module": "host/extensions/local-exec/local-exec-bridge.ts",
+    "name": "SandLocalExecBridge.constructor",
+    "qualified_name": "SandLocalExecBridge.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682087,
+    "end_line": 682089,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d7ee338eb56478cb43eec8acb4eddb624cadc5f21da267c82edc7dd2fae01923",
+    "calls": [],
+    "writes": [
+      "this.deps"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682093:25909160",
+    "artifact": "host",
+    "module": "host/extensions/local-exec/local-exec-bridge.ts",
+    "name": "SandLocalExecBridge.registerProvider",
+    "qualified_name": "SandLocalExecBridge.registerProvider",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682093,
+    "end_line": 682129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "send"
+    ],
+    "body_sha256": "27f92085fd62ebf635252fee5fce7ad2599aea745e3259e20c77e9ea81c0a054",
+    "calls": [
+      "send",
+      "this.byId.set",
+      "this.deps.clock.now",
+      "this.deps.reportProvider",
+      "this.providers.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:682130:25910345",
+    "artifact": "host",
+    "module": "host/extensions/local-exec/local-exec-bridge.ts",
+    "name": "SandLocalExecBridge.submitResponses",
+    "qualified_name": "SandLocalExecBridge.submitResponses",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682130,
+    "end_line": 682162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "batch"
+    ],
+    "body_sha256": "b22d34bfb933eec0685b267d9794f5671549fc2823d6f6579a55077637103de7",
+    "calls": [
+      "boundedVariant",
+      "this.deps.clock.now",
+      "this.deps.reportProvider",
+      "this.providerForBatch"
+    ],
+    "writes": [
+      "provider.computerIdPresent",
+      "provider.hadHello",
+      "provider.hasHeartbeat",
+      "provider.lastSeenAt",
+      "provider.supervised",
+      "provider.variant"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:682163:25911746",
+    "artifact": "host",
+    "module": "host/extensions/local-exec/local-exec-bridge.ts",
+    "name": "SandLocalExecBridge.providerForBatch",
+    "qualified_name": "SandLocalExecBridge.providerForBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 682163,
+    "end_line": 682169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "providerId"
+    ],
+    "body_sha256": "1a075c7b1b7ae1359146a0fbe1aed1b288be2bb8028a4f927a2bddd30621f517",
+    "calls": [
+      ".at",
+      "this.byId.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

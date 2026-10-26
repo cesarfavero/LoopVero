@@ -1,0 +1,2120 @@
+[
+  {
+    "id": "host:732618:27824265",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildDraftCallArgs",
+    "qualified_name": "buildDraftCallArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732618,
+    "end_line": 732628,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spec"
+    ],
+    "body_sha256": "362169225ad4f2b9727457d33ee6ca8036ca57690c878043f0737ff0bc344c10",
+    "calls": [
+      ".map",
+      "Object.entries",
+      "Object.fromEntries",
+      "new McpArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732630:27824707",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "boundDraftCallError",
+    "qualified_name": "boundDraftCallError",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732630,
+    "end_line": 732632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "ec1e6387903a5e0b3e03bd6f7ddd6db2b1da08fdb6a2974a1caaa75fffb1f736",
+    "calls": [
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732633:27824863",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "describeDraftCallFailure",
+    "qualified_name": "describeDraftCallFailure",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732633,
+    "end_line": 732656,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "9f56537a5880af4d0c9e989c9e8a19e0f087fb5ce874f919eeed0e7f87db6705",
+    "calls": [
+      ".join",
+      ".trim",
+      "boundDraftCallError",
+      "inner.value.content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732657:27825887",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallResultText",
+    "qualified_name": "draftCallResultText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732657,
+    "end_line": 732661,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "5722e96b9dbb31edc3cf0394af76b4e44ae502e440ff51754fb7085e16fe5b46",
+    "calls": [
+      ".join",
+      ".trim",
+      "inner.value.content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732662:27826124",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftConnectorJson",
+    "qualified_name": "parseDraftConnectorJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732662,
+    "end_line": 732668,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "852cf2772bdd57d147ed5ee01e162650623f987393dd6d19457d2f7493560ba2",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:732669:27826269",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallResultJsonText",
+    "qualified_name": "draftCallResultJsonText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732669,
+    "end_line": 732680,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "d146b4cfa193062c4034986f8f171a525ce9b7795b4e7bba3727a103fe2da3a7",
+    "calls": [
+      "JSON.stringify",
+      "draftCallResultText",
+      "item.content.value.text.trim",
+      "parseDraftConnectorJson",
+      "structured.toJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732681:27826751",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftConnectorRecord",
+    "qualified_name": "parseDraftConnectorRecord",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732681,
+    "end_line": 732685,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "79f6df484547e6858410f27016e612d1edddb7c207f3c02d4578bb03ba3c546b",
+    "calls": [
+      "Object.entries",
+      "Object.fromEntries",
+      "parseDraftConnectorJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732686:27827001",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "bareEmailAddress",
+    "qualified_name": "bareEmailAddress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732686,
+    "end_line": 732691,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sender"
+    ],
+    "body_sha256": "847d49ed136fd5322731dc86098062d22b743d0f9b06bcf1f5cefd68e11e6659",
+    "calls": [
+      "/<([^\\s<>]+@[^\\s<>]+)>/.exec",
+      "/^[^\\s@<>]+@[^\\s@<>]+$/.test",
+      "sender.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732692:27827234",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "finishingOutcome",
+    "qualified_name": "finishingOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732692,
+    "end_line": 732702,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "finish"
+    ],
+    "body_sha256": "2806792aeb384058f4b92866df0c60a639de8601d2dfe52dfad89e996d9bbac7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732703:27827526",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sendStagedDraft",
+    "qualified_name": "sendStagedDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732703,
+    "end_line": 732719,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "61c5533bd499f6a693cf8938565ecac107c78ff5d326d09827f9d8eb3b9322cc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732720:27828030",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftSender",
+    "qualified_name": "parseDraftSender",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732720,
+    "end_line": 732723,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resultText"
+    ],
+    "body_sha256": "5bd945348dafe7439b44af28d931fb309a578c7b20620bd0c52739b230ed2fa7",
+    "calls": [
+      "bareEmailAddress",
+      "parseDraftConnectorRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732724:27828207",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "discardStagedGmailDraft",
+    "qualified_name": "discardStagedGmailDraft",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732724,
+    "end_line": 732727,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "execute",
+      "draftId"
+    ],
+    "body_sha256": "8328868b6459658d6c27f8e906bd55a10d8afece6388c9704ea74eddd6c2579c",
+    "calls": [
+      "execute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732728:27828558",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sendGmailDraftFromVerifiedSender",
+    "qualified_name": "sendGmailDraftFromVerifiedSender",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732728,
+    "end_line": 732783,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verifiedSender",
+      "isReply"
+    ],
+    "body_sha256": "8f5f6e19d3e07c667977c7fee44da659040bdb74bcc801f9bfb9df243d30d850",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732785:27831096",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "isGrokGmailProviderIdentifier",
+    "qualified_name": "isGrokGmailProviderIdentifier",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732785,
+    "end_line": 732787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "9ee0bb9c07c2238099fe4e8afbf663187bceab3d98afbe14b46e051794748fc9",
+    "calls": [
+      "GROK_GMAIL_PROVIDER_IDENTIFIER.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732788:27831225",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "isGrokGmailRoute",
+    "qualified_name": "isGrokGmailRoute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732788,
+    "end_line": 732790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route"
+    ],
+    "body_sha256": "234f0cd6c3fa9c4c7621558b700a418c1829e9c88d5cff7c484d6dc1e93c664c",
+    "calls": [
+      "isGrokGmailProviderIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732791:27831400",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "agentInboxSendCall",
+    "qualified_name": "agentInboxSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732791,
+    "end_line": 732817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "sendingAddress"
+    ],
+    "body_sha256": "375044047d834a54908c219959b531fd4b14689dfb06c3a48a53223a7958b937",
+    "calls": [
+      ".join",
+      "attachments.map",
+      "draft.to.join",
+      "emailHtmlNonTextTag",
+      "inertDraftText",
+      "sameBodyText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732818:27832724",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseCreatedDraftId",
+    "qualified_name": "parseCreatedDraftId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732818,
+    "end_line": 732828,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resultText"
+    ],
+    "body_sha256": "74dc0409d704f9a995901f2005e20a70376e9cea0ef7328262482954cd529779",
+    "calls": [
+      "parseDraftConnectorJson",
+      "resultText.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732829:27833143",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "cardHtmlBody",
+    "qualified_name": "cardHtmlBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732829,
+    "end_line": 732832,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "options2"
+    ],
+    "body_sha256": "9720c9c329415a56c3c2ecebfd8885af3426ae803889462d2ed9e2515c006f09",
+    "calls": [
+      "emailDraftHtmlBody",
+      "emailHtmlNonTextTag",
+      "sameBodyText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732833:27833407",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sameBodyText",
+    "qualified_name": "sameBodyText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732833,
+    "end_line": 732836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "58a3c686a526f12910a5497493ee4a9a6f3b94084ab2451445d277a89a539025",
+    "calls": [
+      "normalize6"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732834:27833465",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "normalize6",
+    "qualified_name": "sameBodyText/normalize6",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732834,
+    "end_line": 732834,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c6d3f1c0a066d74e730cf79309a29e7bc32a3ca142e2ff47d95e362ec5295a51",
+    "calls": [
+      ".trim",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732837:27833565",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "restGmailSendCall",
+    "qualified_name": "restGmailSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732837,
+    "end_line": 732854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "{ recipients, sendingAddress }"
+    ],
+    "body_sha256": "e066bde2e12bfd0fdf51c98978e7463dae85b1d59237a97a47957decb2c2a672",
+    "calls": [
+      "draft.cc.join",
+      "draft.to.join",
+      "inertDraftText",
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732855:27834385",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "signatureText",
+    "qualified_name": "signatureText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732855,
+    "end_line": 732857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "116d8eec8cbda8961fa558998a387e1c724bbf2693d4a9cbd1d682598b422567",
+    "calls": [
+      ".filter",
+      ".join",
+      ".map",
+      ".replace",
+      ".split",
+      "html.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732858:27834728",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "signedGmailBodies",
+    "qualified_name": "signedGmailBodies",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732858,
+    "end_line": 732868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "options2"
+    ],
+    "body_sha256": "fa5954f4c7a243dd3f457211f32095fb1352921e342731177eddfd413fd5cc15",
+    "calls": [
+      "cardHtmlBody",
+      "signatureText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732869:27835132",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "grokGmailSendCall",
+    "qualified_name": "grokGmailSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732869,
+    "end_line": 732888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "{\n  account,\n  recipients,\n  cc\n}"
+    ],
+    "body_sha256": "d340095cb7837b1feffe31a8e268a855cb8f8c4da9a69513380c5ad70fff1a64",
+    "calls": [
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732889:27835741",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildEmailSendCall",
+    "qualified_name": "buildEmailSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732889,
+    "end_line": 732957,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "sendingAddress"
+    ],
+    "body_sha256": "4182edb211d9274e502e5b0f002cbee8d4a3a13e7431cb35d2259f2a15a1a1e5",
+    "calls": [
+      "agentInboxSendCall",
+      "cardHtmlBody",
+      "draft.to.join",
+      "grokGmailSendCall",
+      "inertDraftText",
+      "isAgentInboxRoute",
+      "isGrokGmailRoute",
+      "restGmailSendCall",
+      "sendGmailDraftFromVerifiedSender",
+      "sendStagedDraft",
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732958:27838564",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildDraftSendCall",
+    "qualified_name": "buildDraftSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732958,
+    "end_line": 732976,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "payload",
+      "verified"
+    ],
+    "body_sha256": "95f0433d6c669500d138e6a93eb428eaacf352f508cac8bc025f52581f78dc8e",
+    "calls": [
+      "buildEmailSendCall",
+      "inertDraftText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732981:27839483",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "serverRefusedBeforeDispatch",
+    "qualified_name": "serverRefusedBeforeDispatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732981,
+    "end_line": 732990,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "c665435c9e12f048ca33fafa3134ae388ef2318f997f24cd6be306aa87e898ec",
+    "calls": [
+      "answer.indexOf",
+      "answer.slice",
+      "error64.error.indexOf",
+      "error64.error.slice",
+      "parseDraftConnectorRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:732991:27840034",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallRateLimit",
+    "qualified_name": "draftCallRateLimit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 732991,
+    "end_line": 733000,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "9f20c750e4a60a67b623dce8dcb558c9a470975c9ae1469324c84cb83dde936f",
+    "calls": [
+      "serverRefusedBeforeDispatch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733001:27840407",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "createDraftRateLimitRetry",
+    "qualified_name": "createDraftRateLimitRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733001,
+    "end_line": 733014,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "clock = realClock"
+    ],
+    "body_sha256": "2fddfb8b4d96b3f604d6c0487bd9a5138e438c230589c65f2255aa97f9d0cf63",
+    "calls": [
+      "createRetryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733011:27840738",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "now",
+    "qualified_name": "createDraftRateLimitRetry/now",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733011,
+    "end_line": 733011,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c9002da4a79102c86c1dae611bb27f0411ba68bbae531c2fefd0a10150c3da92",
+    "calls": [
+      "clock.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733012:27840767",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "wait",
+    "qualified_name": "createDraftRateLimitRetry/wait",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733012,
+    "end_line": 733012,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ attempt, minimumMs, signal }"
+    ],
+    "body_sha256": "56e630fc09f1b248b85358fa04300b24b9e3d49f35bad2e0ab46f8de8e01d442",
+    "calls": [
+      "policy.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:733015:27840884",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "retryWhileDraftRateLimited",
+    "qualified_name": "retryWhileDraftRateLimited",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 733015,
+    "end_line": 733038,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4caef311847df1f340b32be2d5565ea170e38d20c466e3790449e9069612bda4",
+    "calls": [
+      "args.onRetry",
+      "args.rateLimitOf",
+      "args.run",
+      "delay5.dispose",
+      "retry2.now",
+      "retry2.wait"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540140:19925706",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildDraftCallArgs",
+    "qualified_name": "buildDraftCallArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540140,
+    "end_line": 540150,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "spec"
+    ],
+    "body_sha256": "a9430c56292089757625007800702e1685f657853248f58ed919f2c7d0531cdf",
+    "calls": [
+      ".map",
+      "Object.entries",
+      "Object.fromEntries",
+      "new McpArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540152:19926148",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "boundDraftCallError",
+    "qualified_name": "boundDraftCallError",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540152,
+    "end_line": 540154,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "ec1e6387903a5e0b3e03bd6f7ddd6db2b1da08fdb6a2974a1caaa75fffb1f736",
+    "calls": [
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540155:19926304",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "describeDraftCallFailure",
+    "qualified_name": "describeDraftCallFailure",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540155,
+    "end_line": 540178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "9f56537a5880af4d0c9e989c9e8a19e0f087fb5ce874f919eeed0e7f87db6705",
+    "calls": [
+      ".join",
+      ".trim",
+      "boundDraftCallError",
+      "inner.value.content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540179:19927328",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallResultText",
+    "qualified_name": "draftCallResultText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540179,
+    "end_line": 540183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "5722e96b9dbb31edc3cf0394af76b4e44ae502e440ff51754fb7085e16fe5b46",
+    "calls": [
+      ".join",
+      ".trim",
+      "inner.value.content.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540184:19927565",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftConnectorJson",
+    "qualified_name": "parseDraftConnectorJson",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540184,
+    "end_line": 540190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "852cf2772bdd57d147ed5ee01e162650623f987393dd6d19457d2f7493560ba2",
+    "calls": [
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:540191:19927710",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallResultJsonText",
+    "qualified_name": "draftCallResultJsonText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540191,
+    "end_line": 540202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "d146b4cfa193062c4034986f8f171a525ce9b7795b4e7bba3727a103fe2da3a7",
+    "calls": [
+      "JSON.stringify",
+      "draftCallResultText",
+      "item.content.value.text.trim",
+      "parseDraftConnectorJson",
+      "structured.toJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540203:19928192",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftConnectorRecord",
+    "qualified_name": "parseDraftConnectorRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540203,
+    "end_line": 540207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "4a77b066efe7bd142c5f0525b3d22304d9db68a50b7adcf2a3d28b81d03d03d9",
+    "calls": [
+      "Object.entries",
+      "Object.fromEntries",
+      "parseDraftConnectorJson"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540208:19928437",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "bareEmailAddress",
+    "qualified_name": "bareEmailAddress",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540208,
+    "end_line": 540213,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sender"
+    ],
+    "body_sha256": "847d49ed136fd5322731dc86098062d22b743d0f9b06bcf1f5cefd68e11e6659",
+    "calls": [
+      "/<([^\\s<>]+@[^\\s<>]+)>/.exec",
+      "/^[^\\s@<>]+@[^\\s@<>]+$/.test",
+      "sender.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540214:19928670",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "finishingOutcome",
+    "qualified_name": "finishingOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540214,
+    "end_line": 540224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "finish"
+    ],
+    "body_sha256": "2806792aeb384058f4b92866df0c60a639de8601d2dfe52dfad89e996d9bbac7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540225:19928962",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sendStagedDraft",
+    "qualified_name": "sendStagedDraft",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540225,
+    "end_line": 540241,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "61c5533bd499f6a693cf8938565ecac107c78ff5d326d09827f9d8eb3b9322cc",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540242:19929466",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseDraftSender",
+    "qualified_name": "parseDraftSender",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540242,
+    "end_line": 540245,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resultText"
+    ],
+    "body_sha256": "5bd945348dafe7439b44af28d931fb309a578c7b20620bd0c52739b230ed2fa7",
+    "calls": [
+      "bareEmailAddress",
+      "parseDraftConnectorRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540246:19929643",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "discardStagedGmailDraft",
+    "qualified_name": "discardStagedGmailDraft",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540246,
+    "end_line": 540249,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "execute",
+      "draftId"
+    ],
+    "body_sha256": "8328868b6459658d6c27f8e906bd55a10d8afece6388c9704ea74eddd6c2579c",
+    "calls": [
+      "execute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540250:19929994",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sendGmailDraftFromVerifiedSender",
+    "qualified_name": "sendGmailDraftFromVerifiedSender",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540250,
+    "end_line": 540305,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verifiedSender",
+      "isReply"
+    ],
+    "body_sha256": "8f5f6e19d3e07c667977c7fee44da659040bdb74bcc801f9bfb9df243d30d850",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540307:19932532",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "isGrokGmailProviderIdentifier",
+    "qualified_name": "isGrokGmailProviderIdentifier",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540307,
+    "end_line": 540309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "9ee0bb9c07c2238099fe4e8afbf663187bceab3d98afbe14b46e051794748fc9",
+    "calls": [
+      "GROK_GMAIL_PROVIDER_IDENTIFIER.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540310:19932661",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "isGrokGmailRoute",
+    "qualified_name": "isGrokGmailRoute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540310,
+    "end_line": 540312,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route"
+    ],
+    "body_sha256": "234f0cd6c3fa9c4c7621558b700a418c1829e9c88d5cff7c484d6dc1e93c664c",
+    "calls": [
+      "isGrokGmailProviderIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540313:19932836",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "agentInboxSendCall",
+    "qualified_name": "agentInboxSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540313,
+    "end_line": 540339,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "sendingAddress"
+    ],
+    "body_sha256": "375044047d834a54908c219959b531fd4b14689dfb06c3a48a53223a7958b937",
+    "calls": [
+      ".join",
+      "attachments.map",
+      "draft.to.join",
+      "emailHtmlNonTextTag",
+      "inertDraftText",
+      "sameBodyText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540340:19934160",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "parseCreatedDraftId",
+    "qualified_name": "parseCreatedDraftId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540340,
+    "end_line": 540350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resultText"
+    ],
+    "body_sha256": "f728ce55adf5633218d09a6fa733dac0bf3d072a47205e0202798d9e6f79e992",
+    "calls": [
+      "parseDraftConnectorJson",
+      "resultText.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540351:19934576",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "cardHtmlBody",
+    "qualified_name": "cardHtmlBody",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540351,
+    "end_line": 540354,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "options2"
+    ],
+    "body_sha256": "9720c9c329415a56c3c2ecebfd8885af3426ae803889462d2ed9e2515c006f09",
+    "calls": [
+      "emailDraftHtmlBody",
+      "emailHtmlNonTextTag",
+      "sameBodyText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540355:19934840",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "sameBodyText",
+    "qualified_name": "sameBodyText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540355,
+    "end_line": 540358,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "left",
+      "right"
+    ],
+    "body_sha256": "58a3c686a526f12910a5497493ee4a9a6f3b94084ab2451445d277a89a539025",
+    "calls": [
+      "normalize6"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540356:19934898",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "normalize6",
+    "qualified_name": "sameBodyText/normalize6",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540356,
+    "end_line": 540356,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "c6d3f1c0a066d74e730cf79309a29e7bc32a3ca142e2ff47d95e362ec5295a51",
+    "calls": [
+      ".trim",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540359:19934998",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "restGmailSendCall",
+    "qualified_name": "restGmailSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540359,
+    "end_line": 540376,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "{ recipients, sendingAddress }"
+    ],
+    "body_sha256": "e066bde2e12bfd0fdf51c98978e7463dae85b1d59237a97a47957decb2c2a672",
+    "calls": [
+      "draft.cc.join",
+      "draft.to.join",
+      "inertDraftText",
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540377:19935818",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "signatureText",
+    "qualified_name": "signatureText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540377,
+    "end_line": 540379,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "html"
+    ],
+    "body_sha256": "116d8eec8cbda8961fa558998a387e1c724bbf2693d4a9cbd1d682598b422567",
+    "calls": [
+      ".filter",
+      ".join",
+      ".map",
+      ".replace",
+      ".split",
+      "html.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540380:19936161",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "signedGmailBodies",
+    "qualified_name": "signedGmailBodies",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540380,
+    "end_line": 540390,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "options2"
+    ],
+    "body_sha256": "fa5954f4c7a243dd3f457211f32095fb1352921e342731177eddfd413fd5cc15",
+    "calls": [
+      "cardHtmlBody",
+      "signatureText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540391:19936565",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "grokGmailSendCall",
+    "qualified_name": "grokGmailSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540391,
+    "end_line": 540410,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "{\n  account,\n  recipients,\n  cc\n}"
+    ],
+    "body_sha256": "d340095cb7837b1feffe31a8e268a855cb8f8c4da9a69513380c5ad70fff1a64",
+    "calls": [
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540411:19937174",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildEmailSendCall",
+    "qualified_name": "buildEmailSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540411,
+    "end_line": 540479,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "draft",
+      "sendingAddress"
+    ],
+    "body_sha256": "4182edb211d9274e502e5b0f002cbee8d4a3a13e7431cb35d2259f2a15a1a1e5",
+    "calls": [
+      "agentInboxSendCall",
+      "cardHtmlBody",
+      "draft.to.join",
+      "grokGmailSendCall",
+      "inertDraftText",
+      "isAgentInboxRoute",
+      "isGrokGmailRoute",
+      "restGmailSendCall",
+      "sendGmailDraftFromVerifiedSender",
+      "sendStagedDraft",
+      "signedGmailBodies"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540480:19939997",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "buildDraftSendCall",
+    "qualified_name": "buildDraftSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540480,
+    "end_line": 540498,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "route",
+      "payload",
+      "verified"
+    ],
+    "body_sha256": "95f0433d6c669500d138e6a93eb428eaacf352f508cac8bc025f52581f78dc8e",
+    "calls": [
+      "buildEmailSendCall",
+      "inertDraftText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540503:19940916",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "serverRefusedBeforeDispatch",
+    "qualified_name": "serverRefusedBeforeDispatch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540503,
+    "end_line": 540512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error63"
+    ],
+    "body_sha256": "d4e6643039f5dd64c1a9a844a8f71ec6245ed5dd2a96ef31f45638a9547d208e",
+    "calls": [
+      "answer.indexOf",
+      "answer.slice",
+      "error63.error.indexOf",
+      "error63.error.slice",
+      "parseDraftConnectorRecord"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540513:19941467",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "draftCallRateLimit",
+    "qualified_name": "draftCallRateLimit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540513,
+    "end_line": 540522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "c14b730820a72dcc9cfbf85f4a71e1f5ea976583168e60c364ea8a4d6e1683cb",
+    "calls": [
+      "serverRefusedBeforeDispatch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540523:19941840",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "createDraftRateLimitRetry",
+    "qualified_name": "createDraftRateLimitRetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540523,
+    "end_line": 540536,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "clock = realClock"
+    ],
+    "body_sha256": "2fddfb8b4d96b3f604d6c0487bd9a5138e438c230589c65f2255aa97f9d0cf63",
+    "calls": [
+      "createRetryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540533:19942171",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "now",
+    "qualified_name": "createDraftRateLimitRetry/now",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540533,
+    "end_line": 540533,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c9002da4a79102c86c1dae611bb27f0411ba68bbae531c2fefd0a10150c3da92",
+    "calls": [
+      "clock.now"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540534:19942200",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "wait",
+    "qualified_name": "createDraftRateLimitRetry/wait",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540534,
+    "end_line": 540534,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ attempt, minimumMs, signal }"
+    ],
+    "body_sha256": "56e630fc09f1b248b85358fa04300b24b9e3d49f35bad2e0ab46f8de8e01d442",
+    "calls": [
+      "policy.schedule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:540537:19942317",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-connector-results.ts",
+    "name": "retryWhileDraftRateLimited",
+    "qualified_name": "retryWhileDraftRateLimited",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 540537,
+    "end_line": 540560,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0bf49d2242a8cac2718f205bf06a75eec34be67f798da3f27dc6c6ff59eef568",
+    "calls": [
+      "args.onRetry",
+      "args.rateLimitOf",
+      "args.run",
+      "delay3.dispose",
+      "retry2.now",
+      "retry2.wait"
+    ],
+    "writes": [
+      "attempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

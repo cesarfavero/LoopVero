@@ -1,0 +1,246 @@
+[
+  {
+    "id": "evaluation:586335:22067682",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "completionIdOf",
+    "qualified_name": "completionIdOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586335,
+    "end_line": 586338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "1e55213da0ed029b503ec6b25bce1743d679eb91c39dfadacf2e54ea06d4d855",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586339:22067862",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "createAutomationCompletionPromptMessage",
+    "qualified_name": "createAutomationCompletionPromptMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586339,
+    "end_line": 586350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "completion",
+      "isRenamedSpelling"
+    ],
+    "body_sha256": "1caf18a12b7f27b2443303f727ef5d1611ce89b7d76810be52ce5d4a018c4f34",
+    "calls": [
+      "hiddenPromptMarker",
+      "isSandAutomationHandoffId",
+      "renderAutomationHandoffInboxPrompt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586351:22068313",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "isAutomationCompletionPromptMessage",
+    "qualified_name": "isAutomationCompletionPromptMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586351,
+    "end_line": 586353,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "2a34292cac62716bf2ada779bd58799787e71f6d89612f0d839ad2e3de9de8f0",
+    "calls": [
+      "completionIdOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586355:22068497",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "AutomationCompletionMiddleware.constructor",
+    "qualified_name": "AutomationCompletionMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586355,
+    "end_line": 586359,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "source",
+      "isRenamedSpelling"
+    ],
+    "body_sha256": "581018d1ca582bd09e17b25c761f07f0813f0ce318fe2f17afc356e3b4177db5",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.isRenamedSpelling",
+      "this.source"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586364:22068766",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "AutomationCompletionMiddleware.injectPending",
+    "qualified_name": "AutomationCompletionMiddleware.injectPending",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586364,
+    "end_line": 586411,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx"
+    ],
+    "body_sha256": "15564fd3f6f8813926e96ca0ef1b3982a93338bc12a72d96a84f584905344b9f",
+    "calls": [
+      "completionIdOf",
+      "completionMessages.push",
+      "createAutomationCompletionPromptMessage",
+      "errorLogTag",
+      "existingMessages.slice",
+      "isAutomationCompletionPromptMessage",
+      "logger100.warn",
+      "this.injectedIds.add",
+      "this.injectedIds.has",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.clearMessages",
+      "this.innerExecutor.getMessages",
+      "this.isRenamedSpelling",
+      "this.source.drain",
+      "this.source.stageForCheckpoint"
+    ],
+    "writes": [
+      "completions",
+      "this.restoredInjectedIds",
+      "trailingUserStart"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 3,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:586412:22070516",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "AutomationCompletionMiddleware.stream",
+    "qualified_name": "AutomationCompletionMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586412,
+    "end_line": 586415,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "f9c2d51d9796a8738a172aba3c85fedb1d8b43128a685b6ae86c1d971426785d",
+    "calls": [
+      "this.injectPending",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:586417:22070665",
+    "artifact": "evaluation",
+    "module": "core/runner/automation-completion-middleware.ts",
+    "name": "createAutomationCompletionMiddleware",
+    "qualified_name": "createAutomationCompletionMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586417,
+    "end_line": 586419,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "source",
+      "isRenamedSpelling"
+    ],
+    "body_sha256": "b75eb7b4d18748a1bd18d771ca4cff604b16013d4ff743c72b17f293fe3032a7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

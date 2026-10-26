@@ -1,0 +1,2346 @@
+[
+  {
+    "id": "host:756011:28871024",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftToolAvailableForTurn",
+    "qualified_name": "draftToolAvailableForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756011,
+    "end_line": 756013,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions"
+    ],
+    "body_sha256": "07999290631fbbd2f1f8d8e671f2abec5be732cf1341b2ef83db47d5338246bf",
+    "calls": [
+      "decisions.offers",
+      "host.gates.draftExternalMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756014:28871168",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "agentEmailDraftsForTurn",
+    "qualified_name": "agentEmailDraftsForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756014,
+    "end_line": 756016,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "a859a802834d33b54f05f7c72022f62fd99057147ae2d8444d89b158532f3232",
+    "calls": [
+      "host.gates.agentEmailDrafts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756020:28871455",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "emailConnectorOf",
+    "qualified_name": "emailConnectorOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756020,
+    "end_line": 756026,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c15362e190ae6cf2b263eb31d32edabd758754c76e69050516fc8efde9af8892",
+    "calls": [
+      "TRANSLATOR_PROVIDER_OF_RESOLVED_HOST.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756027:28871795",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftSendRouteCandidates",
+    "qualified_name": "draftSendRouteCandidates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756027,
+    "end_line": 756062,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "mcp",
+      "mcpConfigJson",
+      "route"
+    ],
+    "body_sha256": "e9b87ad67b37ec2775e5ad3c34aab7625969d55c92e70b73e967f8182bdf4ebc",
+    "calls": [
+      ".map",
+      "emailConnectorOf",
+      "hostOf2",
+      "isGrokGmailRoute",
+      "mcp.getTools",
+      "new Set",
+      "tools.filter",
+      "tools.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756029:28871981",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "hostOf2",
+    "qualified_name": "draftSendRouteCandidates/hostOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756029,
+    "end_line": 756029,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "9a03c5c6707ccf79ad45ad317a1e20cecfc7137f0433dd596a3aab4b2cbb94af",
+    "calls": [
+      ".toLowerCase",
+      "mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756063:28873524",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onHostedGmailConnection",
+    "qualified_name": "onHostedGmailConnection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756063,
+    "end_line": 756065,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcp",
+      "route"
+    ],
+    "body_sha256": "e7e4b42b07b5179964d250855e9b5639e686ffd9022bb4560ff20613b3c8deec",
+    "calls": [
+      ".toLowerCase",
+      "emailConnectorOf",
+      "isHostedGmailRoute",
+      "mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756066:28873770",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "cardHiddenFromChannelForTurn",
+    "qualified_name": "cardHiddenFromChannelForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756066,
+    "end_line": 756068,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "aa7ea333881eab34e4ab022fa9c401abc2454916074b916f8be7aa48e138c4d3",
+    "calls": [
+      "host.activeTurnRequestSource",
+      "host.gates.channelCardVisibilityNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756070:28873979",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftDestinations",
+    "qualified_name": "draftDestinations",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756070,
+    "end_line": 756078,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  message,\n  route,\n  verification\n}"
+    ],
+    "body_sha256": "2054f62e224ef394e178f8d33f3bc14c0fe3053c8b0b02b85268960b15038caa",
+    "calls": [
+      "SLACK_CHANNEL_NOT_DM_ID.test",
+      "slackChannelLabel",
+      "verification.workspace.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756079:28874403",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "slackChannelLabel",
+    "qualified_name": "slackChannelLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756079,
+    "end_line": 756081,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verification"
+    ],
+    "body_sha256": "8085f1e75a973b94df388a2aa0d6a3736044dc64dcf6b1d60777a7bba249de4c",
+    "calls": [
+      "verification.channelName.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756082:28874603",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "reviewedDraftSendCall",
+    "qualified_name": "reviewedDraftSendCall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756082,
+    "end_line": 756085,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission"
+    ],
+    "body_sha256": "89dad2047b4c4c4cd65c897b2fd184be83186ed5e38bbe1cf2faf5c6d79917a6",
+    "calls": [
+      "buildDraftSendCall",
+      "isHostedGmailRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756086:28874895",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "createDraftToolForTurn",
+    "qualified_name": "createDraftToolForTurn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756086,
+    "end_line": 756258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions",
+      "turn",
+      "review",
+      "recordDelivery"
+    ],
+    "body_sha256": "1675d609cadcad702b47226538d39299d1fa4b238f367bb808832f8fcf0ddbab",
+    "calls": [
+      "agentEmailDraftsForTurn",
+      "createDraftExternalMessageTool",
+      "createDraftRateLimitRetry",
+      "decisions.offers",
+      "draftToolAvailableForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756092:28875370",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "hostedSendAs",
+    "qualified_name": "createDraftToolForTurn/hostedSendAs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756092,
+    "end_line": 756092,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "route"
+    ],
+    "body_sha256": "66f49ac7cd27f6876d8c65c82ff464062718476a341d45c45a9f4efc43529e31",
+    "calls": [
+      "host.gates.gmailSendAsSignature",
+      "isHostedGmailRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756093:28875480",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "reviewOptions",
+    "qualified_name": "createDraftToolForTurn/reviewOptions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756093,
+    "end_line": 756103,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6bec3b1732fac9402d428ca3eed54287761595a0f347ad53238a3cbdf8af38a8",
+    "calls": [
+      "host.getAutoReviewInstructions",
+      "host.getConversationId",
+      "turn.getAutoReviewUserInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756102:28875923",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "gmailSendAsSignature",
+    "qualified_name": "createDraftToolForTurn/reviewOptions/gmailSendAsSignature",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756102,
+    "end_line": 756102,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "592e1b2d17e80b7b346c59a57566f99d9d567572dde70798f831b9d7e30e0693",
+    "calls": [
+      "host.gates.gmailSendAsSignature"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756111:28876258",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "getAgentDir",
+    "qualified_name": "createDraftToolForTurn/getAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756111,
+    "end_line": 756111,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b35a5da9cc26a2a674bc90228312d806ad301605c1118022b8892cc5e1eba97d",
+    "calls": [
+      "host.getAgentDirImpl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756115:28876398",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "cardHiddenFromChannel",
+    "qualified_name": "createDraftToolForTurn/cardHiddenFromChannel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756115,
+    "end_line": 756115,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2747e561261c8da4d642a0857f33888990fd8ee1e6f2d6108fc40950cadaeb57",
+    "calls": [
+      "cardHiddenFromChannelForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756117:28876523",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "getSendBlockReason",
+    "qualified_name": "createDraftToolForTurn/getSendBlockReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756117,
+    "end_line": 756117,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "deliverTo"
+    ],
+    "body_sha256": "c640435305ec5f918a68216ede84eae0d2b6f4c8759694e5e5aa6ae650c30e04",
+    "calls": [
+      "host.transport.sendMessageBlockReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756118:28876626",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "proposeRule",
+    "qualified_name": "createDraftToolForTurn/proposeRule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756118,
+    "end_line": 756130,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "emission",
+      "toolCallId"
+    ],
+    "body_sha256": "2230740de200d65fbb5e39fc3eb28a29abb5570930f4f4c5c2a8f12b421eac75",
+    "calls": [
+      "host.ruleProposalsPermitted",
+      "proposeDraftAllowRule",
+      "reviewOptions",
+      "reviewedDraftSendCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756131:28877054",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onDraftMessage",
+    "qualified_name": "createDraftToolForTurn/onDraftMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756131,
+    "end_line": 756162,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "emission",
+      "timestampMs",
+      "deliverTo",
+      "ruleProposal"
+    ],
+    "body_sha256": "fb8c79dae4d1d87efaa22f0c95c114cb34d7562605a8b25aceb551c388ff54a4",
+    "calls": [
+      "draftAgentRuleCheck",
+      "host.emitUpdate",
+      "host.getAutoReviewInstructions",
+      "host.transport.lastSentMessageId",
+      "meetings.recordChatDraft",
+      "offeredRule",
+      "turn.getAutoReviewUserInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756163:28878261",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "resolveRouteVerification",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756163,
+    "end_line": 756256,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "{ route, toolCallId, sendingAddress }"
+    ],
+    "body_sha256": "89ede4562656dbb40c09893b8a21aaa4ed34ae3e1b736e8434b308fb40d46745",
+    "calls": [
+      "canSendAs",
+      "candidates.at",
+      "candidates.slice",
+      "draftSendRouteCandidates",
+      "host.assertNoPendingAutoReviewApproval",
+      "hostedSendAs",
+      "mcp.resolveGmailDefaultSendAs.bind",
+      "mcp.resolveNeedsAuthSlot",
+      "onHostedGmailConnection",
+      "readGmailDefaultSendAs",
+      "verify"
+    ],
+    "writes": [
+      "target"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 5,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756172:28878666",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "guarded",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/guarded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756172,
+    "end_line": 756175,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "e9cf721c3be0ae061912a48c9889afa8f1a037467286501896c81aed887a780d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756176:28878869",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "verify",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756176,
+    "end_line": 756223,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate",
+      "from2"
+    ],
+    "body_sha256": "53dd18e7ef57a882e68f09482e3b2c8e258d975b6ce3564c5bce59b3937abc9d",
+    "calls": [
+      "canSendAs",
+      "gmailSendAsSignatureHtml",
+      "host.assertNoPendingAutoReviewApproval",
+      "hostedSendAs",
+      "resolveGmailSignature",
+      "retryWhileDraftRateLimited",
+      "reviewOptions",
+      "reviewSandDraftRouteVerification"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756189:28879427",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "run",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756189,
+    "end_line": 756193,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "66c3b173ffc52d4c112094d5b79b71ab74bfde51f9c3a02d2324a0452c473676",
+    "calls": [
+      "guarded",
+      "host.getConversationId",
+      "hostedSendAs",
+      "resolveDraftRouteVerification"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756194:28879805",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "rateLimitOf",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/rateLimitOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756194,
+    "end_line": 756194,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "cc91895a629f05c06b976c6230ad654219eeacd0981f9abf8442453cc52abcee",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756195:28879881",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onRetry",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/onRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756195,
+    "end_line": 756198,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dbc28ff49244b94814bdcf65444ad8c972aaa756e06454c3d5807a62bd19188b",
+    "calls": [
+      "ctx.signal.throwIfAborted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756259:28882769",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "listOf2",
+    "qualified_name": "listOf2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756259,
+    "end_line": 756262,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items"
+    ],
+    "body_sha256": "8044dc0b9438b00161a89d70106997ecf173eb328a2792032d844a1902c0d98a",
+    "calls": [
+      ".join",
+      "items.at",
+      "items.join",
+      "items.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756263:28882914",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "recipientRule",
+    "qualified_name": "recipientRule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756263,
+    "end_line": 756269,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission"
+    ],
+    "body_sha256": "0c8f7475c93cdbbf27173df685902d559edd71a6d9ba6a4f10c6ef83de41aa04",
+    "calls": [
+      "listOf2",
+      "slackChannelLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756270:28883290",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftAgentRuleCheck",
+    "qualified_name": "draftAgentRuleCheck",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756270,
+    "end_line": 756289,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "07bc7ad5f36b705384bc8266d72887b8a6780ca24ec88c94f27080a4467304d1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756290:28884066",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "agentProposedRule",
+    "qualified_name": "agentProposedRule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756290,
+    "end_line": 756299,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "proposed",
+      "saved",
+      "allowed"
+    ],
+    "body_sha256": "0802597177c7a245a10dab2d33e06e970818c28e957060d18980e15fab5b50a5",
+    "calls": [
+      "allowed",
+      "isInsertionOnlyRuleEdit",
+      "offerable",
+      "saved.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756300:28884606",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "offerable",
+    "qualified_name": "offerable",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756300,
+    "end_line": 756303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rule"
+    ],
+    "body_sha256": "ee5cc8177a49fc310ce4fa4db7a8b726eb93c3be43959c4ee5423410e3904458",
+    "calls": [
+      "rule.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:756304:28884788",
+    "artifact": "host",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "offeredRule",
+    "qualified_name": "offeredRule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 756304,
+    "end_line": 756316,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission",
+      "instructions",
+      "ruleProposal",
+      "agentRuleAllowed"
+    ],
+    "body_sha256": "3c545315f601b71243da4dbb5727991bdc288fda78cd1e8720bd04e435cdbb63",
+    "calls": [
+      ".find",
+      "agentProposedRule",
+      "draftDestinations",
+      "offerable",
+      "recipientRule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541886:20004826",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftToolAvailableForTurn",
+    "qualified_name": "draftToolAvailableForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541886,
+    "end_line": 541888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions"
+    ],
+    "body_sha256": "07999290631fbbd2f1f8d8e671f2abec5be732cf1341b2ef83db47d5338246bf",
+    "calls": [
+      "decisions.offers",
+      "host.gates.draftExternalMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541889:20004970",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftByDefaultForTurn",
+    "qualified_name": "draftByDefaultForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541889,
+    "end_line": 541891,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions"
+    ],
+    "body_sha256": "c2b20201b33a27957f0901262a08917715068876816cb25840b1cba28a7ace2f",
+    "calls": [
+      "draftToolAvailableForTurn",
+      "host.gates.draftExternalMessageByDefault"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541892:20005121",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "agentEmailDraftsForTurn",
+    "qualified_name": "agentEmailDraftsForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541892,
+    "end_line": 541894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "a859a802834d33b54f05f7c72022f62fd99057147ae2d8444d89b158532f3232",
+    "calls": [
+      "host.gates.agentEmailDrafts"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541895:20005237",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "heldSendForTurn",
+    "qualified_name": "heldSendForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541895,
+    "end_line": 541897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions"
+    ],
+    "body_sha256": "ed84accdda9119b11996e6f26014a1720096c539b127e474fe5b8148e822597d",
+    "calls": [
+      "draftByDefaultForTurn",
+      "host.gates.autoReviewSelector"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541898:20005378",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "ownerTypedTurn",
+    "qualified_name": "ownerTypedTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541898,
+    "end_line": 541900,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "ba629781435a94a511afb34cb1af13200b8fc2e59f9650f5cf2369355c96d07b",
+    "calls": [
+      "host.activeTurnRequestSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541905:20005699",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "emailConnectorOf",
+    "qualified_name": "emailConnectorOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541905,
+    "end_line": 541911,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "c15362e190ae6cf2b263eb31d32edabd758754c76e69050516fc8efde9af8892",
+    "calls": [
+      "TRANSLATOR_PROVIDER_OF_RESOLVED_HOST.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541912:20006039",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "isDraftRouteVerifiableHost",
+    "qualified_name": "isDraftRouteVerifiableHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541912,
+    "end_line": 541914,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "ca0d3e222fab50453d48473abd97fc99471fa8a12cf4c3743896161e91121eb5",
+    "calls": [
+      "emailConnectorOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541915:20006159",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftSendRouteCandidates",
+    "qualified_name": "draftSendRouteCandidates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541915,
+    "end_line": 541950,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "mcp",
+      "mcpConfigJson",
+      "route"
+    ],
+    "body_sha256": "e9b87ad67b37ec2775e5ad3c34aab7625969d55c92e70b73e967f8182bdf4ebc",
+    "calls": [
+      ".map",
+      "emailConnectorOf",
+      "hostOf2",
+      "isGrokGmailRoute",
+      "mcp.getTools",
+      "new Set",
+      "tools.filter",
+      "tools.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541917:20006345",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "hostOf2",
+    "qualified_name": "draftSendRouteCandidates/hostOf2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541917,
+    "end_line": 541917,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "providerIdentifier"
+    ],
+    "body_sha256": "9a03c5c6707ccf79ad45ad317a1e20cecfc7137f0433dd596a3aab4b2cbb94af",
+    "calls": [
+      ".toLowerCase",
+      "mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541951:20007888",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onHostedGmailConnection",
+    "qualified_name": "onHostedGmailConnection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541951,
+    "end_line": 541953,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "mcp",
+      "route"
+    ],
+    "body_sha256": "e7e4b42b07b5179964d250855e9b5639e686ffd9022bb4560ff20613b3c8deec",
+    "calls": [
+      ".toLowerCase",
+      "emailConnectorOf",
+      "isHostedGmailRoute",
+      "mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541954:20008134",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "isDraftableSend",
+    "qualified_name": "isDraftableSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541954,
+    "end_line": 541958,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "target"
+    ],
+    "body_sha256": "afcdc37da6eb98689d6be1f44f740f7990ed542001f19da1d4f3e6fa17705b16",
+    "calls": [
+      ".toLowerCase",
+      "deps.connectors",
+      "deps.draftToolAvailable",
+      "deps.resolveServerHost",
+      "findExternalSendConnector",
+      "isDraftRouteVerifiableHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541959:20008472",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "createBlockedSendDraftReminder",
+    "qualified_name": "createBlockedSendDraftReminder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541959,
+    "end_line": 541961,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "78787d8eb98869f854ea19b466a7a774ee3e6e1dca76e3f0b3a9d2f1c4b4ad01",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541963:20008759",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "uncoveredSendHoldScopeForTurn",
+    "qualified_name": "uncoveredSendHoldScopeForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541963,
+    "end_line": 541966,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "eedaa3cbf95b1b2ad7608d270adf0874b25682c7e35f1af7752654c1c1431e80",
+    "calls": [
+      "host.gates.uncoveredSendHoldNonOwnerTurns",
+      "host.gates.uncoveredSendHoldRemoved"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541967:20008956",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "cardHiddenFromChannelForTurn",
+    "qualified_name": "cardHiddenFromChannelForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541967,
+    "end_line": 541969,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "aa7ea333881eab34e4ab022fa9c401abc2454916074b916f8be7aa48e138c4d3",
+    "calls": [
+      "host.activeTurnRequestSource",
+      "host.gates.channelCardVisibilityNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541970:20009116",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "createUncoveredSendHold",
+    "qualified_name": "createUncoveredSendHold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541970,
+    "end_line": 541989,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "b2d32f02b7aa44618d1a9e425d79121eee0cf42ff116e605e7aa9bcd7fdc66a3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541979:20009676",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "reason",
+    "qualified_name": "createUncoveredSendHold/<callback>/reason",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541979,
+    "end_line": 541979,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e6a591d673b591cbbdeca752a8734a0ce3328d418662310676a04cf8b9121e91",
+    "calls": [
+      "deps.cardHiddenFromChannel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:541991:20010099",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftDestinations",
+    "qualified_name": "draftDestinations",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 541991,
+    "end_line": 541999,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  message,\n  route,\n  verification\n}"
+    ],
+    "body_sha256": "2054f62e224ef394e178f8d33f3bc14c0fe3053c8b0b02b85268960b15038caa",
+    "calls": [
+      "SLACK_CHANNEL_NOT_DM_ID.test",
+      "slackChannelLabel",
+      "verification.workspace.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542000:20010523",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "slackChannelLabel",
+    "qualified_name": "slackChannelLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542000,
+    "end_line": 542002,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "verification"
+    ],
+    "body_sha256": "8085f1e75a973b94df388a2aa0d6a3736044dc64dcf6b1d60777a7bba249de4c",
+    "calls": [
+      "verification.channelName.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542003:20010723",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "reviewedDraftSendCall",
+    "qualified_name": "reviewedDraftSendCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542003,
+    "end_line": 542006,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission"
+    ],
+    "body_sha256": "89dad2047b4c4c4cd65c897b2fd184be83186ed5e38bbe1cf2faf5c6d79917a6",
+    "calls": [
+      "buildDraftSendCall",
+      "isHostedGmailRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542007:20011015",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "createDraftToolForTurn",
+    "qualified_name": "createDraftToolForTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542007,
+    "end_line": 542179,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "decisions",
+      "turn",
+      "review",
+      "recordDelivery"
+    ],
+    "body_sha256": "4fa0e80bc6b221913004a43a1577d09feb4d0e85bfc3d1235f4e55152c925b01",
+    "calls": [
+      "agentEmailDraftsForTurn",
+      "createDraftExternalMessageTool",
+      "createDraftRateLimitRetry",
+      "decisions.offers",
+      "draftToolAvailableForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542013:20011490",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "hostedSendAs",
+    "qualified_name": "createDraftToolForTurn/hostedSendAs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542013,
+    "end_line": 542013,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "route"
+    ],
+    "body_sha256": "66f49ac7cd27f6876d8c65c82ff464062718476a341d45c45a9f4efc43529e31",
+    "calls": [
+      "host.gates.gmailSendAsSignature",
+      "isHostedGmailRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542014:20011600",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "reviewOptions",
+    "qualified_name": "createDraftToolForTurn/reviewOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542014,
+    "end_line": 542024,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6bec3b1732fac9402d428ca3eed54287761595a0f347ad53238a3cbdf8af38a8",
+    "calls": [
+      "host.getAutoReviewInstructions",
+      "host.getConversationId",
+      "turn.getAutoReviewUserInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542023:20012043",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "gmailSendAsSignature",
+    "qualified_name": "createDraftToolForTurn/reviewOptions/gmailSendAsSignature",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542023,
+    "end_line": 542023,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "592e1b2d17e80b7b346c59a57566f99d9d567572dde70798f831b9d7e30e0693",
+    "calls": [
+      "host.gates.gmailSendAsSignature"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542032:20012378",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "getAgentDir",
+    "qualified_name": "createDraftToolForTurn/getAgentDir",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542032,
+    "end_line": 542032,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "b35a5da9cc26a2a674bc90228312d806ad301605c1118022b8892cc5e1eba97d",
+    "calls": [
+      "host.getAgentDirImpl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542036:20012518",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "cardHiddenFromChannel",
+    "qualified_name": "createDraftToolForTurn/cardHiddenFromChannel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542036,
+    "end_line": 542036,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2747e561261c8da4d642a0857f33888990fd8ee1e6f2d6108fc40950cadaeb57",
+    "calls": [
+      "cardHiddenFromChannelForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542038:20012643",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "getSendBlockReason",
+    "qualified_name": "createDraftToolForTurn/getSendBlockReason",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542038,
+    "end_line": 542038,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "deliverTo"
+    ],
+    "body_sha256": "c640435305ec5f918a68216ede84eae0d2b6f4c8759694e5e5aa6ae650c30e04",
+    "calls": [
+      "host.transport.sendMessageBlockReason"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542039:20012746",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "proposeRule",
+    "qualified_name": "createDraftToolForTurn/proposeRule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542039,
+    "end_line": 542051,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "emission",
+      "toolCallId"
+    ],
+    "body_sha256": "2230740de200d65fbb5e39fc3eb28a29abb5570930f4f4c5c2a8f12b421eac75",
+    "calls": [
+      "host.ruleProposalsPermitted",
+      "proposeDraftAllowRule",
+      "reviewOptions",
+      "reviewedDraftSendCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542052:20013174",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onDraftMessage",
+    "qualified_name": "createDraftToolForTurn/onDraftMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542052,
+    "end_line": 542083,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "emission",
+      "timestampMs",
+      "deliverTo",
+      "ruleProposal"
+    ],
+    "body_sha256": "fb8c79dae4d1d87efaa22f0c95c114cb34d7562605a8b25aceb551c388ff54a4",
+    "calls": [
+      "draftAgentRuleCheck",
+      "host.emitUpdate",
+      "host.getAutoReviewInstructions",
+      "host.transport.lastSentMessageId",
+      "meetings.recordChatDraft",
+      "offeredRule",
+      "turn.getAutoReviewUserInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542084:20014381",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "resolveRouteVerification",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542084,
+    "end_line": 542177,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "{ route, toolCallId, sendingAddress }"
+    ],
+    "body_sha256": "389cef72a4951dcf15226777f693b077af5f8af5baae6e615d6b0e9a394e6e92",
+    "calls": [
+      "canSendAs",
+      "candidates.at",
+      "candidates.slice",
+      "draftSendRouteCandidates",
+      "host.assertNoPendingAutoReviewApproval",
+      "hostedSendAs",
+      "mcp.resolveGmailDefaultSendAs.bind",
+      "mcp.resolveNeedsAuthSlot",
+      "onHostedGmailConnection",
+      "readGmailDefaultSendAs",
+      "verify"
+    ],
+    "writes": [
+      "target"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 10,
+      "loops": 1,
+      "awaits": 5,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542093:20014786",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "guarded",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/guarded",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542093,
+    "end_line": 542096,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "e9cf721c3be0ae061912a48c9889afa8f1a037467286501896c81aed887a780d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542097:20014989",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "verify",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542097,
+    "end_line": 542144,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate",
+      "from2"
+    ],
+    "body_sha256": "cb5b37522ec13af0736e7cdbf1c61908a3bbdad7c1dffb7bd174d890feecfa89",
+    "calls": [
+      "canSendAs",
+      "gmailSendAsSignatureHtml",
+      "host.assertNoPendingAutoReviewApproval",
+      "hostedSendAs",
+      "resolveGmailSignature",
+      "retryWhileDraftRateLimited",
+      "reviewOptions",
+      "reviewSandDraftRouteVerification"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542110:20015547",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "run",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/run",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542110,
+    "end_line": 542114,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "66c3b173ffc52d4c112094d5b79b71ab74bfde51f9c3a02d2324a0452c473676",
+    "calls": [
+      "guarded",
+      "host.getConversationId",
+      "hostedSendAs",
+      "resolveDraftRouteVerification"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542115:20015925",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "rateLimitOf",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/rateLimitOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542115,
+    "end_line": 542115,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "cc91895a629f05c06b976c6230ad654219eeacd0981f9abf8442453cc52abcee",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542116:20016001",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "onRetry",
+    "qualified_name": "createDraftToolForTurn/resolveRouteVerification/verify/onRetry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542116,
+    "end_line": 542119,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "dbc28ff49244b94814bdcf65444ad8c972aaa756e06454c3d5807a62bd19188b",
+    "calls": [
+      "ctx.signal.throwIfAborted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542180:20018890",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "listOf2",
+    "qualified_name": "listOf2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542180,
+    "end_line": 542183,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "items"
+    ],
+    "body_sha256": "8044dc0b9438b00161a89d70106997ecf173eb328a2792032d844a1902c0d98a",
+    "calls": [
+      ".join",
+      "items.at",
+      "items.join",
+      "items.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542184:20019035",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "recipientRule",
+    "qualified_name": "recipientRule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542184,
+    "end_line": 542190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission"
+    ],
+    "body_sha256": "0c8f7475c93cdbbf27173df685902d559edd71a6d9ba6a4f10c6ef83de41aa04",
+    "calls": [
+      "listOf2",
+      "slackChannelLabel"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542191:20019411",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "draftAgentRuleCheck",
+    "qualified_name": "draftAgentRuleCheck",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542191,
+    "end_line": 542210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "07bc7ad5f36b705384bc8266d72887b8a6780ca24ec88c94f27080a4467304d1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542211:20020187",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "agentProposedRule",
+    "qualified_name": "agentProposedRule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542211,
+    "end_line": 542220,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "proposed",
+      "saved",
+      "allowed"
+    ],
+    "body_sha256": "0802597177c7a245a10dab2d33e06e970818c28e957060d18980e15fab5b50a5",
+    "calls": [
+      "allowed",
+      "isInsertionOnlyRuleEdit",
+      "offerable",
+      "saved.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542221:20020727",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "offerable",
+    "qualified_name": "offerable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542221,
+    "end_line": 542224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rule"
+    ],
+    "body_sha256": "ee5cc8177a49fc310ce4fa4db7a8b726eb93c3be43959c4ee5423410e3904458",
+    "calls": [
+      "rule.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:542225:20020909",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/draft-tool-registration.ts",
+    "name": "offeredRule",
+    "qualified_name": "offeredRule",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 542225,
+    "end_line": 542237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "emission",
+      "instructions",
+      "ruleProposal",
+      "agentRuleAllowed"
+    ],
+    "body_sha256": "3c545315f601b71243da4dbb5727991bdc288fda78cd1e8720bd04e435cdbb63",
+    "calls": [
+      ".find",
+      "agentProposedRule",
+      "draftDestinations",
+      "offerable",
+      "recipientRule"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

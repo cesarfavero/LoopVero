@@ -1,0 +1,782 @@
+[
+  {
+    "id": "host:777595:29889558",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "auditedBoxTransfer",
+    "qualified_name": "auditedBoxTransfer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777595,
+    "end_line": 777608,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "controller",
+      "call",
+      "transfer"
+    ],
+    "body_sha256": "2ff1f66c41eb05a6dd804ef4bf9241c3e9bedf5b0f47c63129825ba894d1e49e",
+    "calls": [
+      "bindFileTransferAudit",
+      "failedFileTransferResult",
+      "record3",
+      "transferFileBetweenBoxes"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:777609:29889988",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "formatBytes3",
+    "qualified_name": "formatBytes3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777609,
+    "end_line": 777619,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "d06305fb65e1c7359a45b7a55fc29a3fb4b372a1f2ee12af9252a86f0bf5adbc",
+    "calls": [
+      "Number.isInteger",
+      "value.toFixed"
+    ],
+    "writes": [
+      "unitIndex",
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777620:29890349",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "resolveComputerOrThrow",
+    "qualified_name": "resolveComputerOrThrow",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777620,
+    "end_line": 777631,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller",
+      "machineId"
+    ],
+    "body_sha256": "5ebada0a9834a92235d1556404668a84bbdb484ee3d87ac213e3915597ba0a54",
+    "calls": [
+      "String",
+      "controller.getComputerAgentId",
+      "new BoxTransferError",
+      "resolveSandUserComputer"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxTransferError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:777632:29890706",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "assertBoxReady",
+    "qualified_name": "assertBoxReady",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777632,
+    "end_line": 777636,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller"
+    ],
+    "body_sha256": "60503ecc06858660f78deb0abc99fa833ca13d68225f26e00bb7a52e2b447124",
+    "calls": [
+      "controller.isBoxPreparing",
+      "new BoxTransferError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxTransferError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777637:29890864",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "copyFileToBox",
+    "qualified_name": "copyFileToBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777637,
+    "end_line": 777663,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "controller"
+    ],
+    "body_sha256": "b83395aa7af1501514255139cd2d68c6e48797610f5defe9536b5135d361834e",
+    "calls": [
+      "assertBoxReady",
+      "auditedBoxTransfer",
+      "controller.getBoxId",
+      "controller.getComputerAgentId",
+      "formatBytes3",
+      "import_node_path169.posix.basename",
+      "import_node_path169.posix.join",
+      "resolveBoxWorkspacePath",
+      "resolveComputerOrThrow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777664:29891805",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "copyFileFromBox",
+    "qualified_name": "copyFileFromBox",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777664,
+    "end_line": 777689,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "controller"
+    ],
+    "body_sha256": "2347c511c859552cbb7eee11a122a8f27ed114806bf2eefb0625ab3ca0758f83",
+    "calls": [
+      "assertBoxReady",
+      "auditedBoxTransfer",
+      "controller.getBoxId",
+      "controller.getComputerAgentId",
+      "formatBytes3",
+      "import_node_path169.posix.basename",
+      "resolveBoxWorkspacePath",
+      "resolveComputerOrThrow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777716:29894396",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "createFileTransferTools",
+    "qualified_name": "createFileTransferTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777716,
+    "end_line": 777767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller",
+      "machineIds"
+    ],
+    "body_sha256": "9b5bba5ca8664e33d9a09175154f1ad45d6d234ca517c65108858aa10c0ad296",
+    "calls": [
+      "defineCommunicateTool",
+      "extendRequiredMachineIdParameter",
+      "withGatedArgumentAlias"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777737:29896008",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFileTransferTools/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777737,
+    "end_line": 777739,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b9b02b54f40076da48bae75c79f730581b8c0f00b865bedd3b2bd7659769e3dc",
+    "calls": [
+      "fileBasename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777740:29896095",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "execute",
+    "qualified_name": "createFileTransferTools/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777740,
+    "end_line": 777748,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "f52432cb50e8c76fa72969686f432cf3e20e8bc219f37d0fe6672aafd5eb161d",
+    "calls": [
+      "copyFileToBox",
+      "resolveMachineIdArgument"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777755:29897255",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFileTransferTools/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777755,
+    "end_line": 777755,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9482926ef12d01cea4c4bfae829a3ef5ea0f948a2af8df13fa78315dc6f78728",
+    "calls": [
+      "fileBasename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:777756:29897323",
+    "artifact": "host",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "execute",
+    "qualified_name": "createFileTransferTools/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 777756,
+    "end_line": 777764,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "e1b3c8ca0437ddc5d2c634487459ededc58f3cbc2e7ddb5316fe8a812b7836a6",
+    "calls": [
+      "copyFileFromBox",
+      "resolveMachineIdArgument"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577290:21617951",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "auditedBoxTransfer",
+    "qualified_name": "auditedBoxTransfer",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577290,
+    "end_line": 577303,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "controller",
+      "call",
+      "transfer"
+    ],
+    "body_sha256": "91374f74f302857083891f067fae23685192817099f0af863ec0e457f71127cb",
+    "calls": [
+      "bindFileTransferAudit",
+      "failedFileTransferResult",
+      "record4",
+      "transferFileBetweenBoxes"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:577304:21618381",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "formatBytes3",
+    "qualified_name": "formatBytes3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577304,
+    "end_line": 577314,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "d06305fb65e1c7359a45b7a55fc29a3fb4b372a1f2ee12af9252a86f0bf5adbc",
+    "calls": [
+      "Number.isInteger",
+      "value.toFixed"
+    ],
+    "writes": [
+      "unitIndex",
+      "value"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577315:21618742",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "resolveComputerOrThrow",
+    "qualified_name": "resolveComputerOrThrow",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577315,
+    "end_line": 577326,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller",
+      "machineId"
+    ],
+    "body_sha256": "ddfa0e10f877a386c3b28bbfcfaab028da7deef72299cb1572da618b6c8badfc",
+    "calls": [
+      "String",
+      "controller.getComputerAgentId",
+      "new BoxTransferError",
+      "resolveSandUserComputer"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxTransferError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:577327:21619099",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "assertBoxReady",
+    "qualified_name": "assertBoxReady",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577327,
+    "end_line": 577331,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller"
+    ],
+    "body_sha256": "60503ecc06858660f78deb0abc99fa833ca13d68225f26e00bb7a52e2b447124",
+    "calls": [
+      "controller.isBoxPreparing",
+      "new BoxTransferError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "BoxTransferError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577332:21619257",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "copyFileToBox",
+    "qualified_name": "copyFileToBox",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577332,
+    "end_line": 577358,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "controller"
+    ],
+    "body_sha256": "f65fe47704037c1c8d6144da0bb4769d54868fd57e2970ef7d6e7d247893a44b",
+    "calls": [
+      "assertBoxReady",
+      "auditedBoxTransfer",
+      "controller.getBoxId",
+      "controller.getComputerAgentId",
+      "formatBytes3",
+      "import_node_path40.posix.basename",
+      "import_node_path40.posix.join",
+      "resolveBoxWorkspacePath",
+      "resolveComputerOrThrow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577359:21620196",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "copyFileFromBox",
+    "qualified_name": "copyFileFromBox",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577359,
+    "end_line": 577384,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "args",
+      "controller"
+    ],
+    "body_sha256": "7c9afb916afb4d0252749ad721bc955cd438f413edd4bbd199ac7f1fe1856d7e",
+    "calls": [
+      "assertBoxReady",
+      "auditedBoxTransfer",
+      "controller.getBoxId",
+      "controller.getComputerAgentId",
+      "formatBytes3",
+      "import_node_path40.posix.basename",
+      "resolveBoxWorkspacePath",
+      "resolveComputerOrThrow"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577411:21622783",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "createFileTransferTools",
+    "qualified_name": "createFileTransferTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577411,
+    "end_line": 577462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "controller",
+      "machineIds"
+    ],
+    "body_sha256": "ce90940a70dec9446353bf303e96632a7a79384798a57d5ee9577f60dea612b8",
+    "calls": [
+      "defineCommunicateTool",
+      "extendRequiredMachineIdParameter",
+      "withGatedArgumentAlias"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577432:21624394",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFileTransferTools/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577432,
+    "end_line": 577434,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b9b02b54f40076da48bae75c79f730581b8c0f00b865bedd3b2bd7659769e3dc",
+    "calls": [
+      "fileBasename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577435:21624481",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "execute",
+    "qualified_name": "createFileTransferTools/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577435,
+    "end_line": 577443,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "f52432cb50e8c76fa72969686f432cf3e20e8bc219f37d0fe6672aafd5eb161d",
+    "calls": [
+      "copyFileToBox",
+      "resolveMachineIdArgument"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577450:21625640",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "createFileTransferTools/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577450,
+    "end_line": 577450,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "9482926ef12d01cea4c4bfae829a3ef5ea0f948a2af8df13fa78315dc6f78728",
+    "calls": [
+      "fileBasename"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:577451:21625708",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/sand-file-transfer-tools.ts",
+    "name": "execute",
+    "qualified_name": "createFileTransferTools/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 577451,
+    "end_line": 577459,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "deps"
+    ],
+    "body_sha256": "e1b3c8ca0437ddc5d2c634487459ededc58f3cbc2e7ddb5316fe8a812b7836a6",
+    "calls": [
+      "copyFileFromBox",
+      "resolveMachineIdArgument"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

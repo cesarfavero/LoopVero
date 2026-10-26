@@ -1,0 +1,260 @@
+[
+  {
+    "id": "host:617930:22916239",
+    "artifact": "host",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "isEmptyAssistantMessage2",
+    "qualified_name": "isEmptyAssistantMessage2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617930,
+    "end_line": 617938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "9f5dfc16397ac7b76e67fa17ccbe688309437c7af1b3da166110d9afb1079049",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617939:22916475",
+    "artifact": "host",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "removeTrailingEmptyAssistantMessages",
+    "qualified_name": "removeTrailingEmptyAssistantMessages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617939,
+    "end_line": 617947,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages2"
+    ],
+    "body_sha256": "032dc9564bc824a45a49177ad5ba5c8d6f227bab8aea6d3a4dc0a9df5ac58327",
+    "calls": [
+      "cleanedMessages.pop",
+      "isEmptyAssistantMessage2"
+    ],
+    "writes": [
+      "removedMessageCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617949:22916915",
+    "artifact": "host",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "TrailingEmptyAssistantRemovalMiddleware.stream",
+    "qualified_name": "TrailingEmptyAssistantRemovalMiddleware.stream",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617949,
+    "end_line": 617963,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "fbb943b1ef3165ee472278d366ff5d6b122f28818328c41faebb31123e966d9a",
+    "calls": [
+      "logger36.info",
+      "removeTrailingEmptyAssistantMessages",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.clearMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:617965:22917629",
+    "artifact": "host",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "createTrailingEmptyAssistantRemovalMiddleware",
+    "qualified_name": "createTrailingEmptyAssistantRemovalMiddleware",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 617965,
+    "end_line": 617967,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "38fc56b22a74960494fc6e2c88d8a7965a0b88cde3936f77fbc6a254ac500b26",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287301:9280389",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "isEmptyAssistantMessage2",
+    "qualified_name": "isEmptyAssistantMessage2",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287301,
+    "end_line": 287309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "9f5dfc16397ac7b76e67fa17ccbe688309437c7af1b3da166110d9afb1079049",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287310:9280625",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "removeTrailingEmptyAssistantMessages",
+    "qualified_name": "removeTrailingEmptyAssistantMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287310,
+    "end_line": 287318,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "293372c4d9f8ed6899f8376a852b7d947488cc6e446fd4b85d165f9b614a2b16",
+    "calls": [
+      "cleanedMessages.pop",
+      "isEmptyAssistantMessage2"
+    ],
+    "writes": [
+      "removedMessageCount"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287320:9281063",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "TrailingEmptyAssistantRemovalMiddleware.stream",
+    "qualified_name": "TrailingEmptyAssistantRemovalMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287320,
+    "end_line": 287334,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "7d57b1ade318f14f3ff8cfd5a7a020686189be9d2e4d8550f37db0f9b59aef80",
+    "calls": [
+      "logger11.info",
+      "removeTrailingEmptyAssistantMessages",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.clearMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:287336:9281774",
+    "artifact": "evaluation",
+    "module": "chat-inference/middleware/trailing-empty-assistant-removal-middleware.js",
+    "name": "createTrailingEmptyAssistantRemovalMiddleware",
+    "qualified_name": "createTrailingEmptyAssistantRemovalMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 287336,
+    "end_line": 287338,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "38fc56b22a74960494fc6e2c88d8a7965a0b88cde3936f77fbc6a254ac500b26",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

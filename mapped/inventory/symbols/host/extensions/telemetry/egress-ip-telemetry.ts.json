@@ -1,0 +1,138 @@
+[
+  {
+    "id": "host:729893:27730426",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/egress-ip-telemetry.ts",
+    "name": "parseTraceIp",
+    "qualified_name": "parseTraceIp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729893,
+    "end_line": 729901,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "0669c61ded6ff0e7428ece3fd9422aa7b9ff791df3b262d6efba31e6e16f9193",
+    "calls": [
+      ".trim",
+      "body.split",
+      "line.trim",
+      "trimmed.slice",
+      "trimmed.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729902:27730684",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/egress-ip-telemetry.ts",
+    "name": "pseudonymizeEgressIp",
+    "qualified_name": "pseudonymizeEgressIp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729902,
+    "end_line": 729904,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ip"
+    ],
+    "body_sha256": "b6641aedee9697d577c7c6ec43f44483da316e96db1b4aff48bca4984b75ec8d",
+    "calls": [
+      ".digest",
+      ".update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729906:27730874",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/egress-ip-telemetry.ts",
+    "name": "EgressIpProbeError.constructor",
+    "qualified_name": "EgressIpProbeError.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729906,
+    "end_line": 729909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "code"
+    ],
+    "body_sha256": "e67d1ca16e3e399f2df4d12a6fbc36e0fcc79914bfd8f19c3d60eeb406ccb70e",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.code"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729913:27730997",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/egress-ip-telemetry.ts",
+    "name": "probeEgressIpHash",
+    "qualified_name": "probeEgressIpHash",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729913,
+    "end_line": 729923,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "9968f53ec196012b351336604eeffac0ba5837d8c8ee2bda93032d83336fa8f1",
+    "calls": [
+      "new EgressIpProbeError",
+      "options2.deadline.run",
+      "parseTraceIp",
+      "pseudonymizeEgressIp"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "EgressIpProbeError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

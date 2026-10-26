@@ -1,0 +1,784 @@
+[
+  {
+    "id": "host:509698:18707642",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "toHex",
+    "qualified_name": "toHex",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509698,
+    "end_line": 509700,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "5802668904b415d3eec7c5d367e8a163d4433ce8ec74fb48f5c6baa2fdefe5a8",
+    "calls": [
+      ".join",
+      ".map",
+      "Array.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509701:18707751",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "jsonReplacer",
+    "qualified_name": "jsonReplacer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509701,
+    "end_line": 509712,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "_key",
+      "value"
+    ],
+    "body_sha256": "068ad71bf9907878f8e0a1f2535aa01a5a5b344fb7e19fbb8f1dfd267e10217b",
+    "calls": [
+      "toHex",
+      "value.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509713:18707987",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "createTranscriptBinaryPlaceholder",
+    "qualified_name": "createTranscriptBinaryPlaceholder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509713,
+    "end_line": 509715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "byteLength"
+    ],
+    "body_sha256": "d8fd2dcc2cf2bd86bf6ce785277e1d7e2a52680ba417b6d73780014b29a40072",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509716:18708117",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "jsonReviver",
+    "qualified_name": "jsonReviver",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509716,
+    "end_line": 509722,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "_key",
+      "value"
+    ],
+    "body_sha256": "ea2f578a7a83d5f53c3ade6cdcb5c04bf484d9d8e4cee38470362d4ce760addb",
+    "calls": [
+      "createTranscriptBinaryPlaceholder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509727:18708559",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "formatBlobSizeMegabytes",
+    "qualified_name": "formatBlobSizeMegabytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509727,
+    "end_line": 509729,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "962ebad43de2b8ab96f2ca323188521499402fac34bf61603ed57f5663afdaa3",
+    "calls": [
+      ".toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509730:18708646",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "createOversizeBlobOmittedMessage",
+    "qualified_name": "createOversizeBlobOmittedMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509730,
+    "end_line": 509735,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "blobSizeBytes"
+    ],
+    "body_sha256": "83a2f56b5655ea374affbb51f994863e1c9076862bc853a6f16244bc0b257406",
+    "calls": [
+      "formatBlobSizeMegabytes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509736:18708839",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "createEmptyBlobHydrationStats",
+    "qualified_name": "createEmptyBlobHydrationStats",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509736,
+    "end_line": 509746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ed39d39e70fcfba5b5082e3b2a56a6f2c200f2f0314eda19a17e3b1e21abf46a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509747:18709125",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "createEmptyHydratedBlobIdsResult",
+    "qualified_name": "createEmptyHydratedBlobIdsResult",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509747,
+    "end_line": 509749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "286a0628b178f2fae6f745b92becf48603ec64750db912c2a0b3a2fb8131ade2",
+    "calls": [
+      "createEmptyBlobHydrationStats"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509751:18709278",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "CoreMessageSerde.serialize",
+    "qualified_name": "CoreMessageSerde.serialize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509751,
+    "end_line": 509754,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "12dc4b654f615b16ee76a68136e7419f4f9b8ce39e3727c609297295f27f21fb",
+    "calls": [
+      "JSON.stringify",
+      "textEncoder.encode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509755:18709398",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "CoreMessageSerde.deserialize",
+    "qualified_name": "CoreMessageSerde.deserialize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509755,
+    "end_line": 509761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blob"
+    ],
+    "body_sha256": "61e89e0130c1904c4039f40b059d8e6b005309b54995d376240cf2b8852395ca",
+    "calls": [
+      "JSON.parse",
+      "json3.includes",
+      "textDecoder.decode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:509764:18709643",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "hydrateBlob",
+    "qualified_name": "hydrateBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509764,
+    "end_line": 509786,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "blobId",
+      "stats"
+    ],
+    "body_sha256": "d90674fec635a1ad85d07c6a1cc663462dd980190c51409087d5311543e5a5a5",
+    "calls": [
+      "Math.max",
+      "blobStore.getBlob",
+      "coreMessageSerde.deserialize",
+      "createOversizeBlobOmittedMessage",
+      "performance.now"
+    ],
+    "writes": [
+      "stats.hydratedBlobBytes",
+      "stats.hydratedBlobCount",
+      "stats.largestHydratedBlobBytes",
+      "stats.largestOmittedOversizeBlobBytes",
+      "stats.omittedOversizeBlobBytes",
+      "stats.omittedOversizeBlobCount",
+      "stats.totalDeserializeDurationMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:509787:18710529",
+    "artifact": "host",
+    "module": "agent-transcript/index.js",
+    "name": "hydrateBlobIds",
+    "qualified_name": "hydrateBlobIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 509787,
+    "end_line": 509796,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "blobIds"
+    ],
+    "body_sha256": "82b1f7b7f5c72730a3740f5c4529690cb018e95094c7ebde562c36bac8c700af",
+    "calls": [
+      "createEmptyHydratedBlobIdsResult",
+      "hydrateBlob",
+      "result.messages.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304073:9876302",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "toHex3",
+    "qualified_name": "toHex3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304073,
+    "end_line": 304075,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "c4ca7626b3cbcc6bfaf847a3d64a761207d196fa4184d7d3634b97c3afc2e9e6",
+    "calls": [
+      ".join",
+      ".map",
+      "Array.from"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304076:9876412",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "jsonReplacer",
+    "qualified_name": "jsonReplacer",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304076,
+    "end_line": 304087,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "_key",
+      "value"
+    ],
+    "body_sha256": "d32e5480808aa10da307e4db56e76ff977946978648f20588281446e35192108",
+    "calls": [
+      "toHex3",
+      "value.toString"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304088:9876649",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "createTranscriptBinaryPlaceholder",
+    "qualified_name": "createTranscriptBinaryPlaceholder",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304088,
+    "end_line": 304090,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "byteLength"
+    ],
+    "body_sha256": "d8fd2dcc2cf2bd86bf6ce785277e1d7e2a52680ba417b6d73780014b29a40072",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304091:9876779",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "jsonReviver",
+    "qualified_name": "jsonReviver",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304091,
+    "end_line": 304097,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "_key",
+      "value"
+    ],
+    "body_sha256": "ea2f578a7a83d5f53c3ade6cdcb5c04bf484d9d8e4cee38470362d4ce760addb",
+    "calls": [
+      "createTranscriptBinaryPlaceholder"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304102:9877221",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "formatBlobSizeMegabytes",
+    "qualified_name": "formatBlobSizeMegabytes",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304102,
+    "end_line": 304104,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bytes"
+    ],
+    "body_sha256": "962ebad43de2b8ab96f2ca323188521499402fac34bf61603ed57f5663afdaa3",
+    "calls": [
+      ".toFixed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304105:9877308",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "createOversizeBlobOmittedMessage",
+    "qualified_name": "createOversizeBlobOmittedMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304105,
+    "end_line": 304110,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "blobSizeBytes"
+    ],
+    "body_sha256": "83a2f56b5655ea374affbb51f994863e1c9076862bc853a6f16244bc0b257406",
+    "calls": [
+      "formatBlobSizeMegabytes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304111:9877501",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "createEmptyBlobHydrationStats",
+    "qualified_name": "createEmptyBlobHydrationStats",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304111,
+    "end_line": 304121,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "ed39d39e70fcfba5b5082e3b2a56a6f2c200f2f0314eda19a17e3b1e21abf46a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304122:9877787",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "createEmptyHydratedBlobIdsResult",
+    "qualified_name": "createEmptyHydratedBlobIdsResult",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304122,
+    "end_line": 304124,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "286a0628b178f2fae6f745b92becf48603ec64750db912c2a0b3a2fb8131ade2",
+    "calls": [
+      "createEmptyBlobHydrationStats"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304126:9877940",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "CoreMessageSerde.serialize",
+    "qualified_name": "CoreMessageSerde.serialize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304126,
+    "end_line": 304129,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "12dc4b654f615b16ee76a68136e7419f4f9b8ce39e3727c609297295f27f21fb",
+    "calls": [
+      "JSON.stringify",
+      "textEncoder.encode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304130:9878060",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "CoreMessageSerde.deserialize",
+    "qualified_name": "CoreMessageSerde.deserialize",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304130,
+    "end_line": 304136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "blob"
+    ],
+    "body_sha256": "61e89e0130c1904c4039f40b059d8e6b005309b54995d376240cf2b8852395ca",
+    "calls": [
+      "JSON.parse",
+      "json3.includes",
+      "textDecoder.decode"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304139:9878305",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "hydrateBlob",
+    "qualified_name": "hydrateBlob",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304139,
+    "end_line": 304161,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "blobId",
+      "stats"
+    ],
+    "body_sha256": "d90674fec635a1ad85d07c6a1cc663462dd980190c51409087d5311543e5a5a5",
+    "calls": [
+      "Math.max",
+      "blobStore.getBlob",
+      "coreMessageSerde.deserialize",
+      "createOversizeBlobOmittedMessage",
+      "performance.now"
+    ],
+    "writes": [
+      "stats.hydratedBlobBytes",
+      "stats.hydratedBlobCount",
+      "stats.largestHydratedBlobBytes",
+      "stats.largestOmittedOversizeBlobBytes",
+      "stats.omittedOversizeBlobBytes",
+      "stats.omittedOversizeBlobCount",
+      "stats.totalDeserializeDurationMs"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:304162:9879191",
+    "artifact": "evaluation",
+    "module": "agent-transcript/index.js",
+    "name": "hydrateBlobIds",
+    "qualified_name": "hydrateBlobIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304162,
+    "end_line": 304171,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "blobStore",
+      "blobIds"
+    ],
+    "body_sha256": "82b1f7b7f5c72730a3740f5c4529690cb018e95094c7ebde562c36bac8c700af",
+    "calls": [
+      "createEmptyHydratedBlobIdsResult",
+      "hydrateBlob",
+      "result.messages.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

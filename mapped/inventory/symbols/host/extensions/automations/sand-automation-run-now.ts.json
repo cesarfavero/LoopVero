@@ -1,0 +1,77 @@
+[
+  {
+    "id": "host:505722:18560490",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-run-now.ts",
+    "name": "isScheduleOnlyTrigger",
+    "qualified_name": "isScheduleOnlyTrigger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505722,
+    "end_line": 505724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "trigger2"
+    ],
+    "body_sha256": "e220a792cba015ee844ea8139f9140267fe3063f3e695b31b9c97cc60fe8c0c8",
+    "calls": [
+      "triggerCronSchedules",
+      "triggerEventTriggers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:505725:18560634",
+    "artifact": "host",
+    "module": "host/extensions/automations/sand-automation-run-now.ts",
+    "name": "runSandAutomationNowInSession",
+    "qualified_name": "runSandAutomationNowInSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 505725,
+    "end_line": 505746,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "463e02bbf840cf8a46438803b66ac665a4f6bcc062e1e8d3c92d48ab51663f35",
+    "calls": [
+      ".find",
+      "deps.client.testAutomation",
+      "deps.listAutomations",
+      "isConnectRefusal",
+      "isScheduleOnlyTrigger",
+      "new CronSamplePayload",
+      "new SandAutomationRunNowRefusedError",
+      "new TestAutomationRequest",
+      "stableAutomationId"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAutomationRunNowRefusedError",
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 3,
+      "catches": 1
+    }
+  }
+]

@@ -1,0 +1,344 @@
+[
+  {
+    "id": "host:719856:27315649",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "outlineTurnRequestIds",
+    "qualified_name": "outlineTurnRequestIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719856,
+    "end_line": 719863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "f8a0228568d1d06eb2e4c5e9cfa73c39266aaa34cbf5f653cdb32b02bc7899a6",
+    "calls": [
+      "requestIds.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719864:27315944",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "durableTimeMs",
+    "qualified_name": "durableTimeMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719864,
+    "end_line": 719870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "...candidates"
+    ],
+    "body_sha256": "e72e39c756ae5be284608fc166b47d9839731fd3c0f9b593e85158bd9e8bf1b4",
+    "calls": [
+      "Number",
+      "isValidTimestampMs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719871:27316165",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "outlineItemTimes",
+    "qualified_name": "outlineItemTimes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719871,
+    "end_line": 719885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "46754f4b7aa8da6d4d455ed9af09a5560dfc63c3b24110af64238f06d06e722e",
+    "calls": [
+      "durableTimeMs",
+      "new Map",
+      "state.turns.entries",
+      "steps.entries",
+      "times.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719886:27316923",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "rebuildTranscriptEntriesFromState",
+    "qualified_name": "rebuildTranscriptEntriesFromState",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719886,
+    "end_line": 719892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "9cba42c732fece91061c71d8c6c6789864bd8a1eb3a39705b5933c0b4bf1d5de",
+    "calls": [
+      "deriveOutlineTurnsFromConversationState",
+      "outlineItemTimes",
+      "outlineTurnRequestIds",
+      "rebuildTranscriptEntriesFromOutline"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719893:27317142",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "rebuildTranscriptEntriesFromOutline",
+    "qualified_name": "rebuildTranscriptEntriesFromOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719893,
+    "end_line": 719938,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outlineTurns",
+      "requestIds",
+      "itemTimes"
+    ],
+    "body_sha256": "97c1d97ed8ebc237cc4bea5212bf14c91adf743ad6ec43dc6780c8f5e8fc0f78",
+    "calls": [
+      "entries.push",
+      "isGroupTurnPromptText",
+      "isOffRecordMessageId",
+      "originalOf",
+      "outlineTurns.entries",
+      "rebuiltEntryId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719901:27317621",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "originalOf",
+    "qualified_name": "rebuildTranscriptEntriesFromOutline/originalOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719901,
+    "end_line": 719905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "itemId"
+    ],
+    "body_sha256": "a43a9746e5e970e0f11225d35c81acabef56ecc7d21e272c5c0843bf2cb894e7",
+    "calls": [
+      "itemTimes.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719939:27318817",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "selectHiddenArtifactEntryIds",
+    "qualified_name": "selectHiddenArtifactEntryIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719939,
+    "end_line": 719951,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries",
+      "outline"
+    ],
+    "body_sha256": "e2a7c2db803674cc2e6e22fdb4d2c4b7baa7e3f1229736c3e85595a994ff76c9",
+    "calls": [
+      "entry.id.slice",
+      "ids.push",
+      "isRebuiltEntry",
+      "new Map",
+      "outline.map",
+      "outlineById.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719952:27319338",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "readDurableTurnRequestIds",
+    "qualified_name": "readDurableTurnRequestIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719952,
+    "end_line": 719992,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "94ea6a49c4b46c1cd6e3db444dc8a4ef493621f6ba7b3b4d789f2bab2415cc58",
+    "calls": [
+      "ConversationTurnStructure.fromBinary",
+      "blobStore.getBlob",
+      "requestIds.push"
+    ],
+    "writes": [
+      "turnStructure"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 12,
+      "loops": 3,
+      "awaits": 7,
+      "returns": 11,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:719993:27320804",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "conversationStructureFullyResolves",
+    "qualified_name": "conversationStructureFullyResolves",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719993,
+    "end_line": 719995,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "structure",
+      "blobStore"
+    ],
+    "body_sha256": "14d5b9da46f0171b4e7885b6f5be41817b369d8aa666b661d43a3c8bd8963eb9",
+    "calls": [
+      "readDurableTurnRequestIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:719996:27320962",
+    "artifact": "host",
+    "module": "host/extensions/session/conversation-recovery.ts",
+    "name": "applyTurnRequestIds",
+    "qualified_name": "applyTurnRequestIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 719996,
+    "end_line": 720004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "state",
+      "requestIds"
+    ],
+    "body_sha256": "d09942a6f6be998441c7ad31eb4bb5422d3f165da26a2e5615161cfc1e03dda4",
+    "calls": [
+      "requestIds.entries"
+    ],
+    "writes": [
+      "turn.value.requestId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,965 @@
+[
+  {
+    "id": "host:474113:17358782",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "createAgentStoreClient",
+    "qualified_name": "createAgentStoreClient",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474113,
+    "end_line": 474128,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "efb9c6b3ae5071f72b4b19a7df13b8df9b1b6061e187e23b344d4c277820e15f",
+    "calls": [
+      "createSandBackendTransport",
+      "new BcsAgentStoreTransport",
+      "new TokenCachingAgentStoreClient"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474129:17359336",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "sandAgentStorePresignedUrlValidatorFor",
+    "qualified_name": "sandAgentStorePresignedUrlValidatorFor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474129,
+    "end_line": 474131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend"
+    ],
+    "body_sha256": "70cf6bda05a00e3525df83ac0c8a89b5e58bede35f9656b71f3c7fc820f9c6b4",
+    "calls": [
+      "createAgentStorePresignedUrlValidatorForBackend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474134:17359559",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "AgentStoreMutableWriteEtags.get",
+    "qualified_name": "AgentStoreMutableWriteEtags.get",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474134,
+    "end_line": 474136,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sourceId",
+      "relPath"
+    ],
+    "body_sha256": "a45cdc9da48497c293cb6e03271ef3775d76a672b18114c928d5c2efc9ee4681",
+    "calls": [
+      "this.etags.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474137:17359644",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "AgentStoreMutableWriteEtags.set",
+    "qualified_name": "AgentStoreMutableWriteEtags.set",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474137,
+    "end_line": 474139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sourceId",
+      "relPath",
+      "etag"
+    ],
+    "body_sha256": "dbed5009768577e05ee2cd689b973e8c8ca3160154e5be011602da89898faf26",
+    "calls": [
+      "this.etags.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474140:17359737",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "AgentStoreMutableWriteEtags.delete",
+    "qualified_name": "AgentStoreMutableWriteEtags.delete",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474140,
+    "end_line": 474142,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "sourceId",
+      "relPath"
+    ],
+    "body_sha256": "f6a5545dffe24023ac4e3afebd7f9070b03dcf6eb7c1d9741e54774b72bdaea7",
+    "calls": [
+      "this.etags.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474144:17359816",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "presignSingleWrite",
+    "qualified_name": "presignSingleWrite",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474144,
+    "end_line": 474153,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "file2",
+      "precondition"
+    ],
+    "body_sha256": "4e30b27811ea112d9a9c255b006f28dd4be63544d3e298349a61aa5b51617ca0",
+    "calls": [
+      "client.presignWrites",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474154:17360166",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "presignHasConditionalHeaders2",
+    "qualified_name": "presignHasConditionalHeaders2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474154,
+    "end_line": 474159,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "presigned"
+    ],
+    "body_sha256": "cd863dacbbea4b250f595a8fc6b0ba997041699a2e219e5c938bdafc00c3a8e0",
+    "calls": [
+      ".some",
+      "Object.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474160:17360387",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "warnIfConflictProtectionDowngraded",
+    "qualified_name": "warnIfConflictProtectionDowngraded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474160,
+    "end_line": 474164,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "presigned",
+      "_relPath"
+    ],
+    "body_sha256": "58d05738dc42fc1fc20da41d3f25fb9340cbc4ebec0e443905060ac6abefd143",
+    "calls": [
+      "presignHasConditionalHeaders2",
+      "reportBoxStoreDiagnostic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474165:17360650",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "primaryPutHeaders",
+    "qualified_name": "primaryPutHeaders",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474165,
+    "end_line": 474167,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "presigned"
+    ],
+    "body_sha256": "e36a1c189a4bd24bc1eff865e7e4d690207b65fa1e95f2fef7e85fa94cb4d7fb",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474168:17360804",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "isConditionalWriteRejection",
+    "qualified_name": "isConditionalWriteRejection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474168,
+    "end_line": 474170,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "status"
+    ],
+    "body_sha256": "f6ad63bc0e238fd8594157365981d74f3e7401fdaaf27157bc373c146e72d7e5",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474171:17360896",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "resolveMutableWriteBaseline",
+    "qualified_name": "resolveMutableWriteBaseline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474171,
+    "end_line": 474187,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "backend",
+      "client",
+      "sourceId",
+      "relPath",
+      "etags"
+    ],
+    "body_sha256": "c2f445b45db492125f5ff7055672ac028966e97681dfc7698f29a494a01ac0c4",
+    "calls": [
+      "etags.get",
+      "probeAgentStoreObject",
+      "sandAgentStorePresignedUrlValidatorFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474188:17361505",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "putConflictObject",
+    "qualified_name": "putConflictObject",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474188,
+    "end_line": 474215,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "file2",
+      "precondition",
+      "conflict",
+      "data2"
+    ],
+    "body_sha256": "cad1460d7d40ebd260e4a3caad04fda338920fdc69ac699a7cfc9c8fd493ebd9",
+    "calls": [
+      "Buffer.from",
+      "fetch",
+      "isConditionalWriteRejection",
+      "new SandBoxStoreSyncError",
+      "presignSingleWrite"
+    ],
+    "writes": [
+      "response",
+      "target"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474216:17362486",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "putAgentStoreObject",
+    "qualified_name": "putAgentStoreObject",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474216,
+    "end_line": 474281,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "affcb25363d7b81db5079924d058a83c4c041b361a47e6f7f39c4974572aa804",
+    "calls": [
+      "client.invalidateListCache",
+      "etags.delete",
+      "etags.set",
+      "isConditionalWriteRejection",
+      "new SandBoxStoreSyncError",
+      "normalizeS3Etag",
+      "presignHasConditionalHeaders2",
+      "presignSingleWrite",
+      "put",
+      "putConflictObject",
+      "reportBoxStoreDiagnostic",
+      "resolveMutableWriteBaseline",
+      "response.headers.get",
+      "sha256Hex",
+      "warnIfConflictProtectionDowngraded"
+    ],
+    "writes": [
+      "response"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 2,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474237:17363232",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "put",
+    "qualified_name": "putAgentStoreObject/put",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474237,
+    "end_line": 474241,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "101849a5c760f4d7e82a6b681d98e4c3175f22b343d7eee7398032fdb9b91149",
+    "calls": [
+      "Buffer.from",
+      "fetch",
+      "primaryPutHeaders"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474282:17364593",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "putAgentStoreObjectContentAddressed",
+    "qualified_name": "putAgentStoreObjectContentAddressed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474282,
+    "end_line": 474306,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "40363776f9cda969807a4fe3f1e51a7384070fd2b3ec2672d83acdcf30c6f631",
+    "calls": [
+      "classifyConditionalPutStatus",
+      "new SandBoxStoreSyncError",
+      "presignSingleWrite",
+      "put",
+      "sha256Hex",
+      "warnIfConflictProtectionDowngraded"
+    ],
+    "writes": [
+      "response"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474291:17364951",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "put",
+    "qualified_name": "putAgentStoreObjectContentAddressed/put",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474291,
+    "end_line": 474295,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "101849a5c760f4d7e82a6b681d98e4c3175f22b343d7eee7398032fdb9b91149",
+    "calls": [
+      "Buffer.from",
+      "fetch",
+      "primaryPutHeaders"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474307:17365437",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "getAgentStoreObject",
+    "qualified_name": "getAgentStoreObject",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474307,
+    "end_line": 474314,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "relPath"
+    ],
+    "body_sha256": "82605903ab25bce2c6335132802b2736a1608f3e416a3f1c932a04692596326b",
+    "calls": [
+      "client.presignReads",
+      "fetchAgentStoreObjectFromUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474315:17365707",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "fetchAgentStoreObjectFromUrl",
+    "qualified_name": "fetchAgentStoreObjectFromUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474315,
+    "end_line": 474324,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "label"
+    ],
+    "body_sha256": "e4be835328ba0a2c9dbac39241f30a0c3a352a9de4b6b9189dc668710404cb18",
+    "calls": [
+      "fetch",
+      "new SandBoxStoreSyncError",
+      "new Uint8Array",
+      "response.arrayBuffer"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474326:17366163",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "presignAgentStoreReadBatch",
+    "qualified_name": "presignAgentStoreReadBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474326,
+    "end_line": 474342,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "relPaths"
+    ],
+    "body_sha256": "6e7648f5e076f8330c6f1d1f11617d930376ed46c0252778430c58291166eda3",
+    "calls": [
+      "byRelPath.set",
+      "client.presignReads",
+      "new Map",
+      "relPaths.slice"
+    ],
+    "writes": [
+      "i"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 2,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474343:17366730",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "streamPutFromFile",
+    "qualified_name": "streamPutFromFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474343,
+    "end_line": 474370,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "headers",
+      "srcPath"
+    ],
+    "body_sha256": "b0539d9c54a16cf255e451298ab05df84ba45bbabe86f423289b4cba17692200",
+    "calls": [
+      "body.destroy",
+      "new Promise",
+      "new URL"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:474350:17367107",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "settle3",
+    "qualified_name": "streamPutFromFile/<callback>/settle3",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474350,
+    "end_line": 474355,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "error64",
+      "status"
+    ],
+    "body_sha256": "c5535293f765c186d3e3efc18fe858fdcfa59b2316da82fc24ee9f5f391ca169",
+    "calls": [
+      "reject2",
+      "resolve31"
+    ],
+    "writes": [
+      "settled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474371:17367801",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "putAgentStoreObjectFromFile",
+    "qualified_name": "putAgentStoreObjectFromFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474371,
+    "end_line": 474394,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "43aaa8bc2ad34740e90498c7a90f14c8e81a8e5c2c63abd8dba613dd6748b6a0",
+    "calls": [
+      "String",
+      "new SandBoxStoreSyncError",
+      "presignSingleWrite",
+      "primaryPutHeaders",
+      "streamPutFromFile",
+      "warnIfConflictProtectionDowngraded"
+    ],
+    "writes": [
+      "status"
+    ],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474395:17368553",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "getAgentStoreObjectToFile",
+    "qualified_name": "getAgentStoreObjectToFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474395,
+    "end_line": 474402,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "relPath",
+      "destPath",
+      "maxBytes"
+    ],
+    "body_sha256": "23e3e9491329a69b6e6ce80e42c64376366bd4c580fdc3f40e574fa35a697c14",
+    "calls": [
+      "client.presignReads",
+      "fetchAgentStoreObjectToFileFromUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474403:17368875",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "fetchAgentStoreObjectToFileFromUrl",
+    "qualified_name": "fetchAgentStoreObjectToFileFromUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474403,
+    "end_line": 474451,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "url2",
+      "label",
+      "destPath",
+      "maxBytes"
+    ],
+    "body_sha256": "594509e9377ee8193a99e2e6b37d6a3879e788eb40ef4bde4ee675b2d413b36e",
+    "calls": [
+      ".catch",
+      "destination.createWriteStream",
+      "fetch",
+      "import_node_stream3.Readable.fromWeb",
+      "new SandBoxStoreSyncError",
+      "new import_node_stream3.Transform",
+      "openFreshDestination"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474424:17369767",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "transform",
+    "qualified_name": "fetchAgentStoreObjectToFileFromUrl/transform",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474424,
+    "end_line": 474436,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "chunk",
+      "_encoding",
+      "callback"
+    ],
+    "body_sha256": "10cda1ae885964eb2379fffd4c89e889f7b536fef80df55a5d6e9aa3c1d1a430",
+    "calls": [
+      "Buffer.from",
+      "Buffer.isBuffer",
+      "callback",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [
+      "written"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474452:17370820",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "openFreshDestination",
+    "qualified_name": "openFreshDestination",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474452,
+    "end_line": 474471,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "destPath"
+    ],
+    "body_sha256": "676964915a0abd8e17f021038562f559e79e3d8216e484a6f468d17f7323bb0d",
+    "calls": [
+      "handle.close",
+      "handle.stat",
+      "handle.truncate",
+      "info2.isFile",
+      "new SandBoxStoreSyncError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError",
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 1,
+      "throws": 2,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:474472:17371480",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/agent-store-sand-files.ts",
+    "name": "listAgentStoreObjects",
+    "qualified_name": "listAgentStoreObjects",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474472,
+    "end_line": 474475,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "client",
+      "sourceId",
+      "prefix"
+    ],
+    "body_sha256": "07ccbf432cdfc8e174ea28e8acb8891b13a060fe29930335c4649288f80ef36d",
+    "calls": [
+      "client.listFiles",
+      "response.files.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

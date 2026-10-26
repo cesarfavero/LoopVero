@@ -1,0 +1,275 @@
+[
+  {
+    "id": "host:699189:26568883",
+    "artifact": "host",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "noteToolTargetHost",
+    "qualified_name": "noteToolTargetHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 699189,
+    "end_line": 699191,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "toolCallId",
+      "target"
+    ],
+    "body_sha256": "f6ad04bcba286decf402fe7b5737505e4a05dffe5c70c4c3dbd94c21bbf642a5",
+    "calls": [
+      ".note",
+      "ctx.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489692:17777621",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "toolResultOutcome",
+    "qualified_name": "toolResultOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489692,
+    "end_line": 489699,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "5aece87cb15c9296f0fe9c2adaa477fef58ff9a59104031e17ccff5762014998",
+    "calls": [
+      "CANCELLED_CLASSIFICATIONS.has",
+      "DENIED_CLASSIFICATIONS.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489700:17777954",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "toolCallAuditEnvelope",
+    "qualified_name": "toolCallAuditEnvelope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489700,
+    "end_line": 489710,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event",
+      "identity2"
+    ],
+    "body_sha256": "d0e661eec1f8506b9eb04c3d3cd35727f226151738e1d884997610f88c74485d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489711:17778371",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "toolResultAuditRecord",
+    "qualified_name": "toolResultAuditRecord",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489711,
+    "end_line": 489725,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event",
+      "identity2",
+      "targetHost"
+    ],
+    "body_sha256": "28a10b3531cbb667ebd901490b0b085f4171d18cec14740cb7a95cb1f5da46c1",
+    "calls": [
+      "Math.max",
+      "event.toolIdentifier.toLowerCase",
+      "toolCallAuditEnvelope",
+      "toolResultOutcome"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489729:17779105",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "toolTargetHostOf",
+    "qualified_name": "toolTargetHostOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489729,
+    "end_line": 489743,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "target"
+    ],
+    "body_sha256": "3909908eb1077708e69377583b77c08e054993cb1972148b624eb49a79e95468",
+    "calls": [
+      ".replace",
+      "BARE_HOSTNAME.test",
+      "HTTP_URL.test",
+      "OTHER_SCHEME_OR_LOGIN.test",
+      "hostname3.toLowerCase",
+      "new URL",
+      "target.trim"
+    ],
+    "writes": [
+      "hostname3"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:489747:17779690",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "ToolTargetLedger.note",
+    "qualified_name": "ToolTargetLedger.note",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489747,
+    "end_line": 489756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "toolCallId",
+      "target"
+    ],
+    "body_sha256": "2def61a26664ac981c00981a8be536f2e48270b77dafebfbe63e347ffba4bf4d",
+    "calls": [
+      ".next",
+      "this.hosts.delete",
+      "this.hosts.keys",
+      "this.hosts.set",
+      "toolTargetHostOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489757:17780068",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "ToolTargetLedger.take",
+    "qualified_name": "ToolTargetLedger.take",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489757,
+    "end_line": 489761,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "toolCallId"
+    ],
+    "body_sha256": "4bc55b78a17772b7d4565bd0b1e70fddb660dba78dbdfcf4006a0dc25b5d0906",
+    "calls": [
+      "this.hosts.delete",
+      "this.hosts.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:489764:17780295",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/tool-result-audit.ts",
+    "name": "noteToolTargetHost",
+    "qualified_name": "noteToolTargetHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 489764,
+    "end_line": 489766,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "toolCallId",
+      "target"
+    ],
+    "body_sha256": "f6ad04bcba286decf402fe7b5737505e4a05dffe5c70c4c3dbd94c21bbf642a5",
+    "calls": [
+      ".note",
+      "ctx.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

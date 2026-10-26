@@ -1,0 +1,177 @@
+[
+  {
+    "id": "host:474567:17375036",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/request-coalescer.ts",
+    "name": "createRequestCoalescer",
+    "qualified_name": "createRequestCoalescer",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474567,
+    "end_line": 474639,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "a8958c985880a5bfd7bd12c2c8bc322a05cfe7d70a6e63fb9b19d5ecba0a155b",
+    "calls": [
+      "Math.floor",
+      "Math.max"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474571:17375197",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/request-coalescer.ts",
+    "name": "takeBatch",
+    "qualified_name": "createRequestCoalescer/takeBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474571,
+    "end_line": 474588,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "94845d30327ddbc8c4fb54b72b657ece8c6356c7fb051f38352ce5ee5007427b",
+    "calls": [
+      "batch.push",
+      "claimed.add",
+      "claimed.has",
+      "deferred.push",
+      "new Set",
+      "options2.conflictKey",
+      "queue.shift",
+      "queue.unshift"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:474589:17375728",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/request-coalescer.ts",
+    "name": "runBatch",
+    "qualified_name": "createRequestCoalescer/runBatch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474589,
+    "end_line": 474607,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "batch"
+    ],
+    "body_sha256": "c4cc9cc59ef6526cdbae975bfdcfb67544f5b085935c77fe870f3d8945cced03",
+    "calls": [
+      "batch.forEach",
+      "batch.map",
+      "new SandBoxStoreSyncError",
+      "options2.run",
+      "options2.shouldSplitOnError",
+      "pending.reject",
+      "runIndividually"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:474608:17376385",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/request-coalescer.ts",
+    "name": "runIndividually",
+    "qualified_name": "createRequestCoalescer/runIndividually",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474608,
+    "end_line": 474621,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "batch"
+    ],
+    "body_sha256": "82b5ac46d3108bff687ddec9d5bb6d1f456ee42e8835c529841a78c7137a7320",
+    "calls": [
+      "new SandBoxStoreSyncError",
+      "options2.run",
+      "pending.reject",
+      "pending.resolve"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandBoxStoreSyncError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:474622:17376822",
+    "artifact": "host",
+    "module": "host/extensions/box-store-sync/request-coalescer.ts",
+    "name": "drain",
+    "qualified_name": "createRequestCoalescer/drain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 474622,
+    "end_line": 474634,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "96483cd38e22f553ab442bfb574b81045aecda6e633c29e48f08289ca960fbbf",
+    "calls": [
+      "runBatch",
+      "takeBatch"
+    ],
+    "writes": [
+      "draining"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

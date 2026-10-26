@@ -1,0 +1,682 @@
+[
+  {
+    "id": "host:775116:29780059",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "normalizeCookieOriginApprovalOrigins",
+    "qualified_name": "normalizeCookieOriginApprovalOrigins",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775116,
+    "end_line": 775131,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2c2e91c40b6693610fb119b317b40d6cca455916f7c8c9e7c1663e8421cf4549",
+    "calls": [
+      ".toLowerCase",
+      "JSON.stringify",
+      "cookieOriginRequestEntryFromWire",
+      "entry.origin.trim",
+      "entry.profileId.trim",
+      "new Set",
+      "origins.push",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775132:29780650",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeCookieOriginRequestEntry",
+    "qualified_name": "describeCookieOriginRequestEntry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775132,
+    "end_line": 775134,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "5cf29ff08cb5669d8411a7d8be0e77132eebe005202285c55d8d0af64c092661",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775135:29780794",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "pinnedProfileIds",
+    "qualified_name": "pinnedProfileIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775135,
+    "end_line": 775139,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "origins"
+    ],
+    "body_sha256": "0aa923e33d05965202bbea5f93678cda36b79260292c8021711b379f9e7609fc",
+    "calls": [
+      "new Set",
+      "origins.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775140:29780943",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "rejectUnknownCookieProfileIds",
+    "qualified_name": "rejectUnknownCookieProfileIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775140,
+    "end_line": 775152,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requestedIds",
+      "items"
+    ],
+    "body_sha256": "a3d9eca92fec8bf79e6b944a19b909fd35801c41349fa55de6aafb12456517fd",
+    "calls": [
+      ".join",
+      ".map",
+      "complaints.join",
+      "complaints.push",
+      "items.map",
+      "new Map",
+      "new Set",
+      "requestedIds.filter",
+      "unknown3.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775158:29782149",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "formatCookieOriginApprovalOutcome",
+    "qualified_name": "formatCookieOriginApprovalOutcome",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775158,
+    "end_line": 775186,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "5f561fe505b433d8bb472e7eb3182946a9d8db13948440717db0d96a1806c4a7",
+    "calls": [
+      ".join",
+      "describeGrants",
+      "outcome.items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775187:29783868",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeGrants",
+    "qualified_name": "describeGrants",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775187,
+    "end_line": 775190,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "grants"
+    ],
+    "body_sha256": "5f8af84beddbb8a52cf9a957e2ffcde66cd35b5cc9f90aa18acfa90aef85eb33",
+    "calls": [
+      ".join",
+      "grants.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775191:29784036",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "createRequestCookieOriginApprovalTool",
+    "qualified_name": "createRequestCookieOriginApprovalTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775191,
+    "end_line": 775231,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "8d3acf51eafa3f76bd4b1328e9d630f3047b67dbb6d7bffb97525ba0e189f232",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "cookieImportSkipToolNote",
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775201:29784753",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRequestCookieOriginApprovalTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775201,
+    "end_line": 775207,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ba0908c9a29b03054776bbafd1cb992b25ad768decafc2fe822024095c0bd8f1",
+    "calls": [
+      ".join",
+      "normalizeCookieOriginApprovalOrigins",
+      "origins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775208:29785068",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRequestCookieOriginApprovalTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775208,
+    "end_line": 775229,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "toolDeps"
+    ],
+    "body_sha256": "c090f2d634dea8103709c5fac584e8a55a124481e37892f5a53ee364e6d624c1",
+    "calls": [
+      "formatCookieOriginApprovalOutcome",
+      "normalizeCookieOriginApprovalOrigins",
+      "pinnedProfileIds",
+      "rejectUnknownCookieProfileIds",
+      "request5",
+      "resolveCardTaskThread",
+      "toolDeps.request",
+      "withToolExecutionTimeoutSuspended"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:775211:29785310",
+    "artifact": "host",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "request5",
+    "qualified_name": "createRequestCookieOriginApprovalTool/execute/request5",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 775211,
+    "end_line": 775216,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1a16de4ca9cc099ce9b318d99d6d773d91424fa4ab5ba3df4a0394ae483d8423",
+    "calls": [
+      "toolDeps.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574763:21506398",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "normalizeCookieOriginApprovalOrigins",
+    "qualified_name": "normalizeCookieOriginApprovalOrigins",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574763,
+    "end_line": 574778,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "2c2e91c40b6693610fb119b317b40d6cca455916f7c8c9e7c1663e8421cf4549",
+    "calls": [
+      ".toLowerCase",
+      "JSON.stringify",
+      "cookieOriginRequestEntryFromWire",
+      "entry.origin.trim",
+      "entry.profileId.trim",
+      "new Set",
+      "origins.push",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574779:21506989",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeCookieOriginRequestEntry",
+    "qualified_name": "describeCookieOriginRequestEntry",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574779,
+    "end_line": 574781,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "5cf29ff08cb5669d8411a7d8be0e77132eebe005202285c55d8d0af64c092661",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574782:21507133",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "pinnedProfileIds",
+    "qualified_name": "pinnedProfileIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574782,
+    "end_line": 574786,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "origins"
+    ],
+    "body_sha256": "0aa923e33d05965202bbea5f93678cda36b79260292c8021711b379f9e7609fc",
+    "calls": [
+      "new Set",
+      "origins.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574787:21507282",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "rejectUnknownCookieProfileIds",
+    "qualified_name": "rejectUnknownCookieProfileIds",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574787,
+    "end_line": 574799,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requestedIds",
+      "items"
+    ],
+    "body_sha256": "07ae171884a3a952afa300380b0d0f2c4eafad9fb2d09477a4bf98e751efbcf9",
+    "calls": [
+      ".join",
+      ".map",
+      "complaints.join",
+      "complaints.push",
+      "items.map",
+      "new Map",
+      "new Set",
+      "requestedIds.filter",
+      "unknown2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574805:21508488",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "formatCookieOriginApprovalOutcome",
+    "qualified_name": "formatCookieOriginApprovalOutcome",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574805,
+    "end_line": 574833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "5f561fe505b433d8bb472e7eb3182946a9d8db13948440717db0d96a1806c4a7",
+    "calls": [
+      ".join",
+      "describeGrants",
+      "outcome.items.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 8,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574834:21510207",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeGrants",
+    "qualified_name": "describeGrants",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574834,
+    "end_line": 574837,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "grants"
+    ],
+    "body_sha256": "5f8af84beddbb8a52cf9a957e2ffcde66cd35b5cc9f90aa18acfa90aef85eb33",
+    "calls": [
+      ".join",
+      "grants.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574838:21510375",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "createRequestCookieOriginApprovalTool",
+    "qualified_name": "createRequestCookieOriginApprovalTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574838,
+    "end_line": 574878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "25317ad95721d2962b02589e0b2e3db79dd4ddfc5f5e3bff831539886b4d0d99",
+    "calls": [
+      "advertisedCardTaskIdSchema",
+      "cookieImportSkipToolNote",
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574848:21511092",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRequestCookieOriginApprovalTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574848,
+    "end_line": 574854,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "ba0908c9a29b03054776bbafd1cb992b25ad768decafc2fe822024095c0bd8f1",
+    "calls": [
+      ".join",
+      "normalizeCookieOriginApprovalOrigins",
+      "origins.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574855:21511407",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRequestCookieOriginApprovalTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574855,
+    "end_line": 574876,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "toolDeps"
+    ],
+    "body_sha256": "0895ede185bf4276f24de4fb947cd3a15a9d25ae3178a50d132099e489e92579",
+    "calls": [
+      "formatCookieOriginApprovalOutcome",
+      "normalizeCookieOriginApprovalOrigins",
+      "pinnedProfileIds",
+      "rejectUnknownCookieProfileIds",
+      "request3",
+      "resolveCardTaskThread",
+      "toolDeps.request",
+      "withToolExecutionTimeoutSuspended"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574858:21511649",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/request-cookie-origin-approval-tool.ts",
+    "name": "request3",
+    "qualified_name": "createRequestCookieOriginApprovalTool/execute/request3",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574858,
+    "end_line": 574863,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1a16de4ca9cc099ce9b318d99d6d773d91424fa4ab5ba3df4a0394ae483d8423",
+    "calls": [
+      "toolDeps.request"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

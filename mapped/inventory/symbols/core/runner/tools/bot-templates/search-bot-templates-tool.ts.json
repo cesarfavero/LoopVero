@@ -1,0 +1,900 @@
+[
+  {
+    "id": "host:770771:29567999",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "queryTerms",
+    "qualified_name": "queryTerms",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770771,
+    "end_line": 770777,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "5ff2063c62a9fe2b80e29e360b586b166d7495c4332b5b7e474d67d9a0b9a6b4",
+    "calls": [
+      ".filter",
+      ".split",
+      "new Set",
+      "query2.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770778:29568165",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "scoreTemplate",
+    "qualified_name": "scoreTemplate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770778,
+    "end_line": 770787,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "template",
+      "terms"
+    ],
+    "body_sha256": "52c147ea0b5cabc1f3ee585b85fa22af5f1875baa08172874cbed8c2f387b668",
+    "calls": [
+      ".join",
+      ".toLowerCase",
+      "body.includes",
+      "name18.includes",
+      "template.name.toLowerCase"
+    ],
+    "writes": [
+      "score"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770788:29568514",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "searchBotTemplates",
+    "qualified_name": "searchBotTemplates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770788,
+    "end_line": 770792,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "templates",
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "d98b2141a65a43eb8fcf531cc6954096c7d34600b2415d8cf267ed6bbb674c42",
+    "calls": [
+      ".filter",
+      ".map",
+      ".slice",
+      ".sort",
+      "queryTerms",
+      "templates.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770793:29568913",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "plainMarketplaceText",
+    "qualified_name": "plainMarketplaceText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770793,
+    "end_line": 770797,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "b5977ced5199a52b8dfff6307f2853a8d76853ef9035d255f8613a13911c5733",
+    "calls": [
+      ".replace",
+      ".trim",
+      ".trimEnd",
+      "plain.slice",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770798:29569243",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "nameKey",
+    "qualified_name": "nameKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770798,
+    "end_line": 770800,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "c8a16ad0d51542b3fb262acba91261009ec3f7bc54428b9d40cc43484cc515f3",
+    "calls": [
+      ".toLowerCase",
+      "name18.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770801:29569310",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "mergeBotTemplateCatalogs",
+    "qualified_name": "mergeBotTemplateCatalogs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770801,
+    "end_line": 770830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "starters",
+      "marketplace"
+    ],
+    "body_sha256": "893443f57abcd8c4e28800db65c9541ab3b1b0ebfde1631e5af8665ea4fc95a4",
+    "calls": [
+      "listing.categories.map",
+      "merged.push",
+      "nameKey",
+      "names3.add",
+      "names3.has",
+      "new Set",
+      "plainMarketplaceText",
+      "shareIds.add",
+      "shareIds.has",
+      "starterNames.has",
+      "starterShareIds.has",
+      "starters.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770831:29570617",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "templateLink",
+    "qualified_name": "templateLink",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770831,
+    "end_line": 770834,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "template"
+    ],
+    "body_sha256": "2ad2c57b8cc038ebace51a1d1635d05c216aa6895d52230b31fdbd1f9e50023f",
+    "calls": [
+      "buildSandBotTemplateDeepLinkUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770836:29570936",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "renderBotTemplateSearch",
+    "qualified_name": "renderBotTemplateSearch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770836,
+    "end_line": 770871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "templates",
+      "args",
+      "options2 = {}"
+    ],
+    "body_sha256": "467d2e8e47400bc2c72ddf22076f6437eec499dfde8cbfe3d57a18d7fa0326ca",
+    "calls": [
+      ".join",
+      ".slice",
+      "Math.min",
+      "listed.map",
+      "matches.map",
+      "searchBotTemplates",
+      "templates.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770840:29571187",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "alwaysListed",
+    "qualified_name": "renderBotTemplateSearch/alwaysListed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770840,
+    "end_line": 770840,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "template"
+    ],
+    "body_sha256": "767ab6dab8c4ce58ed5b152e264fefad37ad09c31552b871a1393a177cbb4819",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770872:29572516",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "loadBotTemplateCatalog",
+    "qualified_name": "loadBotTemplateCatalog",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770872,
+    "end_line": 770885,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "marketplace"
+    ],
+    "body_sha256": "99d97ae8ba5bcfc36ac220af3b65617c20d106126b5764cc2cfbf59be0214d91",
+    "calls": [
+      "listBotTemplateUseCases",
+      "marketplace.listListings",
+      "mergeBotTemplateCatalogs"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:770887:29573156",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "createSearchBotTemplatesTool",
+    "qualified_name": "createSearchBotTemplatesTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770887,
+    "end_line": 770909,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps = {}"
+    ],
+    "body_sha256": "4f06ff8521a0c2360cc3c328b4a8ab8bae4b48766f2de1dd391a879cba85e76c",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770895:29573442",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSearchBotTemplatesTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770895,
+    "end_line": 770895,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f900eaa83661e76c6865d555c7c3bd149d951b8cc064f42f82a4d07515e8b766",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:770896:29573521",
+    "artifact": "host",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSearchBotTemplatesTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 770896,
+    "end_line": 770901,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "64773a346276978d12a4d1bf57542e45e5e928f076a691d265bad5f98db576e0",
+    "calls": [
+      "loadBotTemplateCatalog",
+      "renderBotTemplateSearch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569866:21273539",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "queryTerms",
+    "qualified_name": "queryTerms",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569866,
+    "end_line": 569872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "5ff2063c62a9fe2b80e29e360b586b166d7495c4332b5b7e474d67d9a0b9a6b4",
+    "calls": [
+      ".filter",
+      ".split",
+      "new Set",
+      "query2.toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569873:21273705",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "scoreTemplate",
+    "qualified_name": "scoreTemplate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569873,
+    "end_line": 569882,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "template",
+      "terms"
+    ],
+    "body_sha256": "52c147ea0b5cabc1f3ee585b85fa22af5f1875baa08172874cbed8c2f387b668",
+    "calls": [
+      ".join",
+      ".toLowerCase",
+      "body.includes",
+      "name18.includes",
+      "template.name.toLowerCase"
+    ],
+    "writes": [
+      "score"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569883:21274054",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "searchBotTemplates",
+    "qualified_name": "searchBotTemplates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569883,
+    "end_line": 569887,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "templates",
+      "query2",
+      "limit3"
+    ],
+    "body_sha256": "d98b2141a65a43eb8fcf531cc6954096c7d34600b2415d8cf267ed6bbb674c42",
+    "calls": [
+      ".filter",
+      ".map",
+      ".slice",
+      ".sort",
+      "queryTerms",
+      "templates.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569888:21274453",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "plainMarketplaceText",
+    "qualified_name": "plainMarketplaceText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569888,
+    "end_line": 569892,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "b5977ced5199a52b8dfff6307f2853a8d76853ef9035d255f8613a13911c5733",
+    "calls": [
+      ".replace",
+      ".trim",
+      ".trimEnd",
+      "plain.slice",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569893:21274783",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "nameKey",
+    "qualified_name": "nameKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569893,
+    "end_line": 569895,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "c8a16ad0d51542b3fb262acba91261009ec3f7bc54428b9d40cc43484cc515f3",
+    "calls": [
+      ".toLowerCase",
+      "name18.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569896:21274850",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "mergeBotTemplateCatalogs",
+    "qualified_name": "mergeBotTemplateCatalogs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569896,
+    "end_line": 569925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "starters",
+      "marketplace"
+    ],
+    "body_sha256": "893443f57abcd8c4e28800db65c9541ab3b1b0ebfde1631e5af8665ea4fc95a4",
+    "calls": [
+      "listing.categories.map",
+      "merged.push",
+      "nameKey",
+      "names3.add",
+      "names3.has",
+      "new Set",
+      "plainMarketplaceText",
+      "shareIds.add",
+      "shareIds.has",
+      "starterNames.has",
+      "starterShareIds.has",
+      "starters.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569926:21276157",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "templateLink",
+    "qualified_name": "templateLink",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569926,
+    "end_line": 569929,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "template"
+    ],
+    "body_sha256": "2ad2c57b8cc038ebace51a1d1635d05c216aa6895d52230b31fdbd1f9e50023f",
+    "calls": [
+      "buildSandBotTemplateDeepLinkUrl"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569931:21276476",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "renderBotTemplateSearch",
+    "qualified_name": "renderBotTemplateSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569931,
+    "end_line": 569966,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "templates",
+      "args",
+      "options2 = {}"
+    ],
+    "body_sha256": "467d2e8e47400bc2c72ddf22076f6437eec499dfde8cbfe3d57a18d7fa0326ca",
+    "calls": [
+      ".join",
+      ".slice",
+      "Math.min",
+      "listed.map",
+      "matches.map",
+      "searchBotTemplates",
+      "templates.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569935:21276727",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "alwaysListed",
+    "qualified_name": "renderBotTemplateSearch/alwaysListed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569935,
+    "end_line": 569935,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "template"
+    ],
+    "body_sha256": "767ab6dab8c4ce58ed5b152e264fefad37ad09c31552b871a1393a177cbb4819",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569967:21278056",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "loadBotTemplateCatalog",
+    "qualified_name": "loadBotTemplateCatalog",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569967,
+    "end_line": 569980,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "marketplace"
+    ],
+    "body_sha256": "fef1200895189fcdd0f6ed0c65a281fcc54d2096a1514c9107f4d0cddbf1180b",
+    "calls": [
+      "listBotTemplateUseCases",
+      "marketplace.listListings",
+      "mergeBotTemplateCatalogs"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:569982:21278696",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "createSearchBotTemplatesTool",
+    "qualified_name": "createSearchBotTemplatesTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569982,
+    "end_line": 570004,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps = {}"
+    ],
+    "body_sha256": "4f06ff8521a0c2360cc3c328b4a8ab8bae4b48766f2de1dd391a879cba85e76c",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569990:21278982",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSearchBotTemplatesTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569990,
+    "end_line": 569990,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f900eaa83661e76c6865d555c7c3bd149d951b8cc064f42f82a4d07515e8b766",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:569991:21279061",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/bot-templates/search-bot-templates-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSearchBotTemplatesTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 569991,
+    "end_line": 569996,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "64773a346276978d12a4d1bf57542e45e5e928f076a691d265bad5f98db576e0",
+    "calls": [
+      "loadBotTemplateCatalog",
+      "renderBotTemplateSearch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

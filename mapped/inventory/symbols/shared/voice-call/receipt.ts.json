@@ -1,0 +1,242 @@
+[
+  {
+    "id": "host:714446:27119629",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "_SandVoiceCallReceipt.isNoOp",
+    "qualified_name": "_SandVoiceCallReceipt.isNoOp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714446,
+    "end_line": 714448,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "9f2d689fe669da384a53bbac38408cfa30576ccbde9d651cb976604f5f55c475",
+    "calls": [
+      "SandVoiceCallRecords.hasNoDuration",
+      "SandVoiceCallRecords.summarize"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714449:27119763",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "_SandVoiceCallReceipt.hasNothingToSummarize",
+    "qualified_name": "_SandVoiceCallReceipt.hasNothingToSummarize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714449,
+    "end_line": 714453,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "e3d09fabe3aa5ba84e7275889e3ff205783cfaaa345cec2eccbc6c8ca6097bab",
+    "calls": [
+      "_SandVoiceCallReceipt.isNoOp",
+      "record3.turns.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714454:27120050",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "_SandVoiceCallReceipt.isScannableDescription",
+    "qualified_name": "_SandVoiceCallReceipt.isScannableDescription",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714454,
+    "end_line": 714457,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "81f7b5b01647c68d550f897240547a7c7c5f5e0b69d61462f9f1edafce841618",
+    "calls": [
+      "/[?？]/u.test",
+      "words"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714458:27120158",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "_SandVoiceCallReceipt.prompt",
+    "qualified_name": "_SandVoiceCallReceipt.prompt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714458,
+    "end_line": 714469,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "record3"
+    ],
+    "body_sha256": "ce33d106ddf45cdcc1b29e665fa537a85003f119991e3eb41abc29f210cb9e8b",
+    "calls": [
+      ".map",
+      "JSON.stringify",
+      "_SandVoiceCallReceipt.hasNothingToSummarize",
+      "record3.nudges.flatMap",
+      "record3.turns.filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714470:27120779",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "_SandVoiceCallReceipt.parse",
+    "qualified_name": "_SandVoiceCallReceipt.parse",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714470,
+    "end_line": 714477,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "a94b04ddd2c24a01b3cafb9a91d8d95b98cdbc9bd75e58b34dabb9314ed6a5a9",
+    "calls": [
+      ".find",
+      ".map",
+      ".replace",
+      ".trim",
+      "_SandVoiceCallReceipt.isScannableDescription",
+      "clampLine2",
+      "firstLine.replace",
+      "raw.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714482:27121325",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "words",
+    "qualified_name": "words",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714482,
+    "end_line": 714486,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "9193580f9ce183e7b9a2d06ede9c7427985abc289ff7be3d074777ad85ec87e6",
+    "calls": [
+      ".filter",
+      ".map",
+      ".segment",
+      ".trim",
+      "text3.replace",
+      "wordSegmenter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:714487:27121580",
+    "artifact": "host",
+    "module": "shared/voice-call/receipt.ts",
+    "name": "clampLine2",
+    "qualified_name": "clampLine2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 714487,
+    "end_line": 714493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "843fba5028273c2849b1a2ca36cc795381c4a21c8817534df19083fd5713ed1d",
+    "calls": [
+      ".trimEnd",
+      "Math.floor",
+      "slice.lastIndexOf",
+      "slice.slice",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

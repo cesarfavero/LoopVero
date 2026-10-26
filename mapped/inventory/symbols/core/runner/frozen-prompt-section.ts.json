@@ -1,0 +1,592 @@
+[
+  {
+    "id": "host:717035:27214715",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "isFrozenPromptSectionName",
+    "qualified_name": "isFrozenPromptSectionName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717035,
+    "end_line": 717037,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "11c66e404d5fae8a54425196f6d35cb7046ad865045e5f15b13e595198d95c3a",
+    "calls": [
+      "SAND_FROZEN_PROMPT_SECTIONS.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717038:27214834",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "isFiniteNumber2",
+    "qualified_name": "isFiniteNumber2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717038,
+    "end_line": 717040,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "7995450426be211289ac0e9ad0897b8995773cc03a23564892f2273bd9a1172c",
+    "calls": [
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717041:27214932",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "parsePromptSectionSnapshot",
+    "qualified_name": "parsePromptSectionSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717041,
+    "end_line": 717066,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "c60541825e4c9b7d72acccb9787380df52032470b0184e45845b74227e73c283",
+    "calls": [
+      "/^[0-9a-f]{64}$/u.test",
+      "isFiniteNumber2",
+      "isUnknownRecord2",
+      "parseAutomationStatusSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717067:27216259",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "parseAutomationStatusSnapshot",
+    "qualified_name": "parseAutomationStatusSnapshot",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717067,
+    "end_line": 717074,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "71ce855169ce75d7c31066d4199771d64e394b3f4f471ab1c9312fe811666b4b",
+    "calls": [
+      "isFiniteNumber2",
+      "isUnknownRecord2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717075:27216568",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "parsePromptSectionSnapshots",
+    "qualified_name": "parsePromptSectionSnapshots",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717075,
+    "end_line": 717084,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "281e47991c3ec167ca9ae5b43fe4668ac69bde222a50cf45dfc3bb4e2efa6ce6",
+    "calls": [
+      "Object.entries",
+      "isFrozenPromptSectionName",
+      "isUnknownRecord2",
+      "parsePromptSectionSnapshot"
+    ],
+    "writes": [
+      "snapshots[computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:717085:27216932",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "parsePromptSectionSnapshotsJson",
+    "qualified_name": "parsePromptSectionSnapshotsJson",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717085,
+    "end_line": 717094,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "ee8399a8e69951521eb4cd9af99d7b3eb2d5549d0fbf23d11ef325853d75727b",
+    "calls": [
+      "JSON.parse",
+      "parsePromptSectionSnapshots"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:717100:27217382",
+    "artifact": "host",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "stripInstructionsUpdates",
+    "qualified_name": "stripInstructionsUpdates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 717100,
+    "end_line": 717105,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fba97662958da661b317e3c7c63abe370e2ee91fd8202177aa0fccd50db71bd7",
+    "calls": [
+      ".trim",
+      "stripped.replace",
+      "text3.includes",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530548:19399398",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "isFrozenPromptSectionAbsenceUnresolved",
+    "qualified_name": "isFrozenPromptSectionAbsenceUnresolved",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530548,
+    "end_line": 530550,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "name18"
+    ],
+    "body_sha256": "9aab3c2e256f8e8c6171fb262cc84498ea18907bbc25973fd74679ebadc7d216",
+    "calls": [
+      "SAND_FROZEN_PROMPT_SECTIONS_ABSENT_IS_UNRESOLVED.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530551:19399551",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "resolveFrozenPromptSection",
+    "qualified_name": "resolveFrozenPromptSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530551,
+    "end_line": 530569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "dc531708e489f1736f4eab996f8f5e90a2aace462163fa4996bfe6b2cef228b9",
+    "calls": [
+      "renderLive"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530570:19400379",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "resolvePinnedLinkItems",
+    "qualified_name": "resolvePinnedLinkItems",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530570,
+    "end_line": 530582,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "31dc0d94336bd6425f2b731c8184b76e02ad070c3155d349d461a01f792771c3",
+    "calls": [
+      "args.live",
+      "resolveFrozenPromptSection",
+      "store.getPromptSectionSnapshot",
+      "store.setPromptSectionSnapshot"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530576:19400651",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "renderLive",
+    "qualified_name": "resolvePinnedLinkItems/renderLive",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530576,
+    "end_line": 530576,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "913e9f10ba32c1494a64e9e037848426bb8c8fe4910edf240d9e701d0aa8448b",
+    "calls": [
+      "args.live"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530583:19400855",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "resolveUserBotNotesPrompt",
+    "qualified_name": "resolveUserBotNotesPrompt",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530583,
+    "end_line": 530596,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "4724084ab6a2cbcf9b749b355b42852ab804e33b50a3e86c308277c75fc4b75a",
+    "calls": [
+      "args.renderLive"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530597:19401411",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "resolveOtherAgentMemoryPromptUpdate",
+    "qualified_name": "resolveOtherAgentMemoryPromptUpdate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530597,
+    "end_line": 530617,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "55d1e2d6684e1633affa5721a991f793a1b94bd8cf637042a74d30e42a6a263c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530618:19402289",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "resolveFrozenPromptSectionUpdate",
+    "qualified_name": "resolveFrozenPromptSectionUpdate",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530618,
+    "end_line": 530632,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0b2559f04131c32bd67a873834843f97d3f2dc60006997a4543e216ca7669b62",
+    "calls": [
+      "isFrozenPromptSectionAbsenceUnresolved"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530651:19403514",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "lineEdits",
+    "qualified_name": "lineEdits",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530651,
+    "end_line": 530679,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "before",
+      "after"
+    ],
+    "body_sha256": "dde15b2cbd49d18b08822471c38ce470c9e1ca33857820d1ea38fde5a37325a6",
+    "calls": [
+      "Array.from",
+      "Math.max",
+      "edits.push"
+    ],
+    "writes": [
+      "i",
+      "i2",
+      "j2",
+      "j3",
+      "lcs[computed][computed]"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 5,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530681:19404485",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "renderSectionUpdateBlock",
+    "qualified_name": "renderSectionUpdateBlock",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530681,
+    "end_line": 530697,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "update"
+    ],
+    "body_sha256": "08181fba6b1aae1c01bebdf92a2ec2d7ba3872e5bf20cc48be7026cb8d42468a",
+    "calls": [
+      ".join",
+      "edits.map",
+      "lineEdits",
+      "update.lastSeen.split",
+      "update.live.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530703:19405300",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "stripInstructionsUpdates",
+    "qualified_name": "stripInstructionsUpdates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530703,
+    "end_line": 530708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3"
+    ],
+    "body_sha256": "fba97662958da661b317e3c7c63abe370e2ee91fd8202177aa0fccd50db71bd7",
+    "calls": [
+      ".trim",
+      "stripped.replace",
+      "text3.includes",
+      "text3.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:530709:19405580",
+    "artifact": "evaluation",
+    "module": "core/runner/frozen-prompt-section.ts",
+    "name": "renderFrozenPromptSectionUpdates",
+    "qualified_name": "renderFrozenPromptSectionUpdates",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 530709,
+    "end_line": 530718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "updates"
+    ],
+    "body_sha256": "5201e77a14aa7e95e77bf899b6159fc0b70bd0c0639698e1602aa2ed16967515",
+    "calls": [
+      ".join",
+      "CHANGED_LINES_SUFFIX.trim",
+      "updates.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

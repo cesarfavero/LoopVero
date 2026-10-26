@@ -1,0 +1,1855 @@
+[
+  {
+    "id": "evaluation:587985:22137989",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "SandSelfSummaryPromptToolExecutor.executeToolStream",
+    "qualified_name": "SandSelfSummaryPromptToolExecutor.executeToolStream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587985,
+    "end_line": 588008,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "6e8275548e619c394909a03a73a4ad1ce9df276c602e0db3a203aa30f183e6dd",
+    "calls": [
+      ".then",
+      "Promise.all",
+      "this.executeModelStreamOnly"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588012:22138750",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "listLoadableSkills",
+    "qualified_name": "listLoadableSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588012,
+    "end_line": 588015,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "listedSkills"
+    ],
+    "body_sha256": "3a2d43e6322187de27700c4362faefe2719ef4cdc35fab435dffdbaaeaf2af68",
+    "calls": [
+      "listedSkills.store",
+      "store.list",
+      "store.listLoadable"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588016:22138891",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "createSandBackgroundSummarizationProps",
+    "qualified_name": "createSandBackgroundSummarizationProps",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588016,
+    "end_line": 588036,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "session",
+      "canUseSelfSummary",
+      "isSubagent",
+      "override"
+    ],
+    "body_sha256": "4c2143bc7dcf01ed5d60df29ea616104a8eacf9134dafc5e4de59cc7f623e913",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588017:22139016",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "inputThreshold",
+    "qualified_name": "createSandBackgroundSummarizationProps/inputThreshold",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588017,
+    "end_line": 588021,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "412039c0b0e1c07c4b59edd3813fa7bf4705f503c9e7a6dcf727e5567b759b2f",
+    "calls": [
+      "canUseSelfSummary",
+      "session.getEarlyCompaction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588023:22139328",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "usedTokensThresholdToStartBackgroundSummarization",
+    "qualified_name": "createSandBackgroundSummarizationProps/usedTokensThresholdToStartBackgroundSummarization",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588023,
+    "end_line": 588025,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "c80728614b427d2fea28cf3ff99e027cdf9ef23331bfa169a12a0e8884e25c7c",
+    "calls": [
+      "inputThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588026:22139430",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "usedTokensThresholdToPersistBackgroundSummarization",
+    "qualified_name": "createSandBackgroundSummarizationProps/usedTokensThresholdToPersistBackgroundSummarization",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588026,
+    "end_line": 588028,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "c80728614b427d2fea28cf3ff99e027cdf9ef23331bfa169a12a0e8884e25c7c",
+    "calls": [
+      "inputThreshold"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588037:22139823",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "createSandPromptModelInfo",
+    "qualified_name": "createSandPromptModelInfo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588037,
+    "end_line": 588060,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "modelName"
+    ],
+    "body_sha256": "52a3dd911836567fff3e72ef545dd757c0a738936c88932b7649bd11c6249901",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588061:22140349",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "createTurnAgentComposition",
+    "qualified_name": "createTurnAgentComposition",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588061,
+    "end_line": 588521,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "9da056755e1f6d3feb10b972c7d394b7f71f6ea06fa5a8849f709fabd845f593",
+    "calls": [
+      "answeredByFirstPartyToolMock",
+      "createAutomationSubagentDispatch",
+      "createSubagentRunnerFactory",
+      "new Set",
+      "resolveSandTurnToolDecisions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588067:22140798",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "draftToolAvailable",
+    "qualified_name": "createTurnAgentComposition/draftToolAvailable",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588067,
+    "end_line": 588067,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "de031de985ce1095dca1a816fdc6ac6dceeff3a348502431c99c66d88edcd25e",
+    "calls": [
+      "draftToolAvailableForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588074:22141095",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "buildAgentForRun",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588074,
+    "end_line": 588509,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sessions",
+      "boxConnection",
+      "turnScope"
+    ],
+    "body_sha256": "277d9e336b8298da32b19898ed7e4520e069c61ac3fa84edafc2f306b0caf9f5",
+    "calls": [
+      ".includes",
+      ".map",
+      ".some",
+      "Object.values",
+      "buildTurnSubagentRoster",
+      "createExternalSendCheck",
+      "createParentConversationCallMiddleware",
+      "createRenderCardRegistry",
+      "createSandBackgroundSummarizationProps",
+      "createSandPromptModelInfo",
+      "createSandSummarizationHandler",
+      "createSentLinkChecks",
+      "createSubagentExecutor",
+      "createTurnApprovalProviders",
+      "createTurnConnectorCards",
+      "createTurnMcpAppEmitter",
+      "createTurnMcpExecutorEntries",
+      "createTurnPromptExecutor",
+      "createTurnShellExecutorEntries",
+      "createTurnSubagentLaunch",
+      "executorProfiles.profiles.map",
+      "host.autoReviewGate.currentModes",
+      "host.createRemoteBoxResourceAccessor",
+      "host.getBlobStore",
+      "host.inference.getGeminiVideoAttachedMediaUrlProvider",
+      "host.systemPromptAssembly.createSystemPromptGeneratorForRun",
+      "host.userComputers.list",
+      "isMediaReviewSubagent",
+      "lastReportedContextWindow",
+      "listedSkills.access",
+      "localEntries.push",
+      "new AnysphereAgent",
+      "new CombinedResourceAccessor",
+      "new ForwardingInteractionListener",
+      "new McpRepairsThisTurn",
+      "new NoopConversationActionReceiver",
+      "new NoopDocumentationHydrationService",
+      "new NoopWebScraperService",
+      "new RequestContext",
+      "new RequestContextEnv",
+      "new SandRequestContextExecutor",
+      "new Set",
+      "new SubagentRegistry",
+      "resourceEntry",
+      "sandWidgetShownReporter",
+      "scopeAttachedMediaToConversation",
+      "session.getModelId",
+      "toRedactedInteractionListener",
+      "turnToolHost.activeTurnRequestSource",
+      "turnToolHost.gates.generalizedSelfSummaryPrompt",
+      "turnToolHost.gates.prependDedupeMaxTurns",
+      "turnToolHost.getConversationId",
+      "turnToolHost.getTranscriptId",
+      "turnToolHost.requestContext.resolve"
+    ],
+    "writes": [
+      "executorProfileNamesForRun"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 18,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588110:22142323",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "offerSendToUserEndTurn",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/offerSendToUserEndTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588110,
+    "end_line": 588110,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7a0415c817643728bb7b8ab3855a475e0d97b57279b30ab622160a38b13919ea",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588126:22143159",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getAutoReviewUserInstructions",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getAutoReviewUserInstructions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588126,
+    "end_line": 588126,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "08cf9f73ed3bafa3526559fa2c9e486669d00ec4e26ccf3c3fe0dd48712c1d32",
+    "calls": [
+      "host.autoReviewGate.userInstructions"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588127:22143241",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getApprovalExpiryPolicy",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getApprovalExpiryPolicy",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588127,
+    "end_line": 588127,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6f516137d27f98ac745b108f113705572ed5c0a8782e1b2e1e38d9330c290a87",
+    "calls": [
+      "turnToolHost.activeTurnApprovalExpiryPolicy"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588132:22143539",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "holdUncoveredSends",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/holdUncoveredSends",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588132,
+    "end_line": 588132,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3fe102158d1306978e611a02f37f9ef262e8da54627907c7d9e71938a7fcc003",
+    "calls": [
+      "heldSendForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588134:22143698",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "ownerTypedTurn",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/ownerTypedTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588134,
+    "end_line": 588134,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e6e4e31cc9aef7044050ac87e7c91d95b94a2a3b2194756e5bfea3f3be895588",
+    "calls": [
+      "ownerTypedTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588135:22143751",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "holdScope",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/holdScope",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588135,
+    "end_line": 588135,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f6f2c91a87c5f64fef2288fae1df6eaf12eb91325972031316ae95a72c26aa54",
+    "calls": [
+      "uncoveredSendHoldScopeForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588136:22143831",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "cardHiddenFromChannel",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/cardHiddenFromChannel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588136,
+    "end_line": 588136,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6de17b407e78b6790a552b2e3fc065c3bfcd7414c0e30f52decf1d74aa99895f",
+    "calls": [
+      "cardHiddenFromChannelForTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588141:22144118",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getExecutor",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getExecutor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588141,
+    "end_line": 588141,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "a7430dcb3751957b453f648721e8492036d333e07a053a7d6052530afa912c42",
+    "calls": [
+      "applyParentConversationCall",
+      "summarizationSession.getExecutor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588142:22144217",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getModelId",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getModelId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588142,
+    "end_line": 588142,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "037a2997ef62a627f8be4ee25ca2ed60e6a06763a419a25c18ec132351a8c879",
+    "calls": [
+      "summarizationSession.getModelId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588152:22144626",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "check",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/check",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588152,
+    "end_line": 588152,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "8d8752554ab30d121bf8518944ffebc0d610f5fc16ed17918882c571b69f531a",
+    "calls": [
+      "host.inference.checkExternalSendBeforeSend"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588153:22144736",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "fallback",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/fallback",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588153,
+    "end_line": 588157,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "efb3c1d02f4b7b89515ff9af7c73e62fc663271f440cca33927f49577074ddd6",
+    "calls": [
+      "draftToolAvailable",
+      "heldSendFallback",
+      "turnToolDecisions.offers"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588158:22144945",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "connectors",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/connectors",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588158,
+    "end_line": 588158,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "545bd1432d3bbd245b00816b159ddb25cbb12ef339f2fb2400daf717036c0cc9",
+    "calls": [
+      "host.inference.allExternalSendConnectors"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588159:22145028",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "resolveServerHost",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/resolveServerHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588159,
+    "end_line": 588159,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "server"
+    ],
+    "body_sha256": "517398b34193bb9b19f8578e71f9eb2e18b40b7f650317b9f7527017a561288b",
+    "calls": [
+      "turnToolHost.mcp.resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588160:22145103",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "messages",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/messages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588160,
+    "end_line": 588160,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f9b1580f8e57601b8149d251cc2e7e5c3be54b7d08d9a30fc56cde9c5c27c6a8",
+    "calls": [
+      "parentPromptMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588161:22145204",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "parentMessages",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/parentMessages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588161,
+    "end_line": 588161,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9d00a2544945a09ac632e80624e90adbdd935d839d851ab389df944387104361",
+    "calls": [
+      "host.parentPromptMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588171:22145732",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "executorProfileNames",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/executorProfileNames",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588171,
+    "end_line": 588171,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "0724018f5741de4f3d5dd9d688e815840365d4793196b01f409a995c68137dbd",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588173:22145819",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "isSkillServedRead",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/isSkillServedRead",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588173,
+    "end_line": 588173,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "21ebb25f12187e05b168469d1b60987d7bb83a2409a5c19903233aa2ea63ab07",
+    "calls": [
+      "skillServedReadPaths.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588199:22147048",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "onSkillServedRead",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/onSkillServedRead",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588199,
+    "end_line": 588199,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "2cdb830f4bc2a8e6ec8cea7c20d4482bb214054eed425e72dc5b6b53b2775d6d",
+    "calls": [
+      "skillServedReadPaths.add"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588209:22147466",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "uploadFileOffered",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/uploadFileOffered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588209,
+    "end_line": 588209,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "499757297a4bb16e9ecb8f7f89607a1e57eb87a133a5d55d1202099b30a264c1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588213:22147624",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "skills",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/skills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588213,
+    "end_line": 588213,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9abaff61962aa2b704d8377c663e636dac6476102c82221e5037fd139f0e0dae",
+    "calls": [
+      ".list",
+      "listedSkills.store"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588214:22147692",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "loadableSkills",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/loadableSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588214,
+    "end_line": 588214,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "6c07097f2c321f1b326acae0a4449339fe0e7e7b977b270afd371847b1b0454f",
+    "calls": [
+      "listLoadableSkills",
+      "turnToolHost.gates.skillSearch"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588216:22147819",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "messages",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/messages",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588216,
+    "end_line": 588216,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f9b1580f8e57601b8149d251cc2e7e5c3be54b7d08d9a30fc56cde9c5c27c6a8",
+    "calls": [
+      "parentPromptMessages"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588242:22149067",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getExecutor",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getExecutor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588242,
+    "end_line": 588250,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "state"
+    ],
+    "body_sha256": "83380a368527d35be77236b3df99eb1da70e54da86aac6b4e43a18e7c33e65d6",
+    "calls": [
+      "applyFrozenToolDescriptions",
+      "applyParentConversationCall",
+      "frozenPromptTools.middleware",
+      "new SandSelfSummaryPromptToolExecutor",
+      "session.getExecutorWithoutResolvedModelTracking"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588258:22149926",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "isTurnEndRequested",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/isTurnEndRequested",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588258,
+    "end_line": 588258,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "8be57d8b153847bedb7908d7554df497c54b26e259cf33a5cdd313d54ebdcc2d",
+    "calls": [
+      "isRunCompletionRequested"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588260:22150111",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "linesHandedAgainNextTurn",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/linesHandedAgainNextTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588260,
+    "end_line": 588260,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "25c5cfc522840fba4f22dccef43929cc3cbd5ae14439aed8078ceafb18384dfa",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588266:22150435",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "keepToolResultsCompletedBeforeCancel",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/keepToolResultsCompletedBeforeCancel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588266,
+    "end_line": 588266,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolName"
+    ],
+    "body_sha256": "f54f8da87744fe3f90aabd56b802269663c1f609d1fbc7a0cc786f021df34606",
+    "calls": [
+      "linesHandedAgainNextTurn"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588317:22153001",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoTeammatesContext",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoTeammatesContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588317,
+    "end_line": 588317,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d21ec8eaa030a04d01e080be53bd8c26a0030816ef82e2608d8a3187e6f50dc6",
+    "calls": [
+      "host.systemPromptAssembly.getTeammatesContextForUserInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588318:22153093",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoSecrets",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoSecrets",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588318,
+    "end_line": 588321,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "eb75a7ba99bd3a7c28d984c87d15fb46a6c12e8254cddeec01b6589d731e7f4b",
+    "calls": [
+      "renderAvailableSecrets"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588322:22153249",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoMemoryContext",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoMemoryContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588322,
+    "end_line": 588322,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "287c214dbf27fe74dac0da8cb88debe8924d6293ed2e338e0f9fd7fb374d604c",
+    "calls": [
+      "host.systemPromptAssembly.getMemoryContextForUserInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588323:22153352",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoMemoryContextResolved",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoMemoryContextResolved",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588323,
+    "end_line": 588323,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "11d46c606e47e2addf69dd714fc2a32a6d95d1ed271f41003bdf117eb3fa50bd",
+    "calls": [
+      "host.systemPromptAssembly.getMemoryContextResolvedForUserInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588324:22153456",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoMemoryWithheld",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoMemoryWithheld",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588324,
+    "end_line": 588324,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "30ac9efee8cfdef7dd11854dafa703f4d9fc03bb87e344d5056f0318d56a8517",
+    "calls": [
+      "host.systemPromptAssembly.getMemoryWithheldForUserInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588330:22153798",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "toolsGenerator",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588330,
+    "end_line": 588444,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "props"
+    ],
+    "body_sha256": "565a010778405cdd4aacab36bd2146fd945ab8e8efacd447ffcf65f0a1ae4b60",
+    "calls": [
+      ".some",
+      "bindFirstPartyToolMocks",
+      "createSandSummarizationHandler",
+      "createSkillTool",
+      "host.buildTurnTools",
+      "host.mcpConfigJsonForTurn",
+      "host.promptGlue.createToolResultTextWriter",
+      "lastReportedContextWindow",
+      "new Set",
+      "session.getModelId",
+      "subagentLaunch.registerReviewer",
+      "toolSetHandle.getDynamicTools",
+      "toolSetHandle.transformToolsInPlace",
+      "turnToolHost.gates.hackySymbolicToolCalls",
+      "turnToolHost.gates.skillSearch",
+      "turnTools.getAllTools"
+    ],
+    "writes": [
+      "uploadFileListed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588361:22155220",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "symbolicPathArgumentsUnavailableFor",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/symbolicPathArgumentsUnavailableFor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588361,
+    "end_line": 588366,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "providerIdentifier"
+    ],
+    "body_sha256": "5740ae6a3a95d418e04ef9365c29758ac09fd285f9b2506f2caf4788490d8fd3",
+    "calls": [
+      "mcpForTurn.resolveToolTransport",
+      "mcpForTurn.symbolicPathArgumentsUnavailableFor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588367:22155670",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "symbolicPathReadExecutor",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/symbolicPathReadExecutor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588367,
+    "end_line": 588367,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "61e1d7aeb710f306c2b8a2b768d8f9ad7a57013f4b9f869a59d458a5b60b960d",
+    "calls": [
+      "boxSymbolicPathReadExecutor"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588385:22156318",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "sendToUserPolicyHeadings",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/sendToUserPolicyHeadings",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588385,
+    "end_line": 588385,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "18cb2d0995cb578244fde2869ffdb8ed495031c7a13e92d3ab3f8353978d15f8",
+    "calls": [
+      "host.systemPromptAssembly.sendToUserPolicyHeadings"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588386:22156408",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "linkItemsOffered",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/linkItemsOffered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588386,
+    "end_line": 588386,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "70c1c203a60a30e2b26a15b22084fbf49fd0432cf552f50a60ffc746122c323a",
+    "calls": [
+      "host.systemPromptAssembly.linkItemsOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588399:22156919",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "skills",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/skills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588399,
+    "end_line": 588399,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9abaff61962aa2b704d8377c663e636dac6476102c82221e5037fd139f0e0dae",
+    "calls": [
+      ".list",
+      "listedSkills.store"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588406:22157321",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "loadableSkills",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/loadableSkills",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588406,
+    "end_line": 588406,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f46a8b507f0c91569d070256e5811274d72d2092d28d938ef3ea0ecc84125f7e",
+    "calls": [
+      "listLoadableSkills"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588408:22157448",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "agentId",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/agentId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588408,
+    "end_line": 588408,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7bbabe77f9e31f74dc20989dedc642e20a77387c3a9ac59f36bc9aea4855a55d",
+    "calls": [
+      "turnToolHost.getConversationId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588413:22157624",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "recordFailedBrowserToolCall",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/toolsGenerator/recordFailedBrowserToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588413,
+    "end_line": 588413,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "504d261f5fefdd75bd3cc1b1d35844f703d984e847509f9cb061f4f801d469a1",
+    "calls": [
+      "host.computerUse.recordFailedBrowserToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588457:22159894",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "getUserInfoPromptVariant",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/getUserInfoPromptVariant",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588457,
+    "end_line": 588457,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c809ab41d16673fc1aac7cafe5063ace048b846ef60d8ec38e65987624ad4121",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588465:22160438",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "afterStepCheckpoint",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/afterStepCheckpoint",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588465,
+    "end_line": 588465,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "persisted"
+    ],
+    "body_sha256": "f9dbdd9359b08f96341a357b78de177bf1568d8119cd727ea0362c9d92a7eac4",
+    "calls": [
+      "afterStepCheckpoint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588477:22160831",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "onToolCall",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/onToolCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588477,
+    "end_line": 588493,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event",
+      "callId",
+      "toolCall2"
+    ],
+    "body_sha256": "2997e141e4ea1faea67e9876b5357fffdb993cf0ce637003a4b0991ad82c1379",
+    "calls": [
+      "host.observation.noteToolCallModelName",
+      "host.observation.observeAwaitToolCall",
+      "isThisRunAwaitingUser",
+      "mcpAppEmitter.observeToolCall",
+      "noteToolCallEffect",
+      "performanceObservation.toolCall",
+      "sentLinkChecks.noteToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588494:22161622",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "resolveToolName",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/resolveToolName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588494,
+    "end_line": 588494,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "event",
+      "callId",
+      "outlineName"
+    ],
+    "body_sha256": "d2f37f999e1f4f8ed6344b2ef6344101ed2ea715371f410de1f4a79b41e91639",
+    "calls": [
+      "host.toolCallIdentity.resolveModelToolName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588495:22161766",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "onSurfaceUnresolvedPending",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/onSurfaceUnresolvedPending",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588495,
+    "end_line": 588495,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "callId",
+      "update"
+    ],
+    "body_sha256": "43b80bbb6c3abae180ef090106f30b166109617ec1d5e738abf74f500c3413f7",
+    "calls": [
+      "host.toolCallIdentity.stashSurfaceUnresolvedPending"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588496:22161887",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "onSummaryLifecycle",
+    "qualified_name": "createTurnAgentComposition/buildAgentForRun/onSummaryLifecycle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588496,
+    "end_line": 588496,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d47ed341d59cefd73e6d77a5c131543a992a096d56d3218c343488baebe1fd0e",
+    "calls": [
+      "streamWatchdog.resetDeadline"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588510:22162319",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "personApprovedCard",
+    "qualified_name": "createTurnAgentComposition/personApprovedCard",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588510,
+    "end_line": 588510,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolCallId"
+    ],
+    "body_sha256": "a66f0df96457379595f39af437688d55e135cfd8058aea27ddeb43fb49bc209e",
+    "calls": [
+      "turnToolHost.toolDecisionAudit.personApprovedCard"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588511:22162433",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "reviewedCommit",
+    "qualified_name": "createTurnAgentComposition/reviewedCommit",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588511,
+    "end_line": 588511,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolCallId"
+    ],
+    "body_sha256": "9308d5c7b546c3ae509527e789c3cac390e249caa88c4dd550bd5251716eab8a",
+    "calls": [
+      "turnToolHost.toolDecisionAudit.reviewedCommit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:588512:22162535",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-agent-composition.ts",
+    "name": "autoReviewRoute",
+    "qualified_name": "createTurnAgentComposition/autoReviewRoute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 588512,
+    "end_line": 588512,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "toolCallId"
+    ],
+    "body_sha256": "e7c002c4a4c24919c8920a25cb0385d0f7f9590c306a4b951e0623e525e28110",
+    "calls": [
+      "turnToolHost.toolDecisionAudit.autoReviewRoute"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

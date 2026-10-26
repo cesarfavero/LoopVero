@@ -1,0 +1,430 @@
+[
+  {
+    "id": "host:681239:25880615",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "readLocalHostVersion",
+    "qualified_name": "readLocalHostVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681239,
+    "end_line": 681247,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "versionPath = SAND_BOX_HOST_VERSION_PATH"
+    ],
+    "body_sha256": "bb150bfc2f81380601d77282840426cf71fbe3d112ae2908beae6a2f91c74bfe",
+    "calls": [
+      ".trim",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681248:25880937",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "stageHostBundleUpgrade",
+    "qualified_name": "stageHostBundleUpgrade",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681248,
+    "end_line": 681267,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "1f2e4882a4bc6b13c45143b3f153a70e3258dec625d813d014d3206f726fd43c",
+    "calls": [
+      "Date.now",
+      "buildSandSupervisorCommand",
+      "serializeSandSupervisorCommand",
+      "writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681268:25881713",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "fetchStageAndReportHostBundle",
+    "qualified_name": "fetchStageAndReportHostBundle",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681268,
+    "end_line": 681305,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "8e94f79bbbec5d8b65454ad617d4af6cceb03de55f17f16a6ef1f7c733384f49",
+    "calls": [
+      "brandedErrorClass",
+      "brandedId",
+      "deps.log",
+      "deps.reportUpgrade",
+      "deps.stage",
+      "errorLogTag",
+      "logFields",
+      "source.loadBundle"
+    ],
+    "writes": [
+      "phase",
+      "state.lastFailedVersion",
+      "state.stagedVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681308:25883037",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "hostUpgradeAckFilename",
+    "qualified_name": "hostUpgradeAckFilename",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681308,
+    "end_line": 681310,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "id"
+    ],
+    "body_sha256": "881952bca766ecf84a55ad0de056d7113d34051fb86787241f7c9ef61025c337",
+    "calls": [
+      "id.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681311:25883123",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "isHostVersionSwapVetoed",
+    "qualified_name": "isHostVersionSwapVetoed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681311,
+    "end_line": 681323,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "feafd51ec01842421c19d57e678a5761ecb64ccd4160beff4b77e2169ba00c64",
+    "calls": [
+      "hostUpgradeAckFilename",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:681324:25883644",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "noteFailedSwapMarkerForRetry",
+    "qualified_name": "noteFailedSwapMarkerForRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681324,
+    "end_line": 681335,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "state",
+      "marker17",
+      "maxRetries = MAX_FAILED_SWAP_RESTAGE_RETRIES"
+    ],
+    "body_sha256": "62fa96dd123ca136406e6efa3f7335e0c53a9a28c2deb92c699bfa9b28757f88",
+    "calls": [
+      "state.swapRetryAttempts.get",
+      "state.swapRetryAttempts.set"
+    ],
+    "writes": [
+      "state.stagedVersion"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681336:25884279",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "describeHostBundleErrorNode",
+    "qualified_name": "describeHostBundleErrorNode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681336,
+    "end_line": 681352,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "err",
+      "seen"
+    ],
+    "body_sha256": "2b06f9c417e713c242d38993a5e90fdf454595b13f306fabdc28e9efdfee4cf1",
+    "calls": [
+      ".join",
+      ".map",
+      "Array.isArray",
+      "aggregate.filter",
+      "err.message.includes"
+    ],
+    "writes": [
+      "node2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681353:25884931",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "describeHostBundleErrorDetail",
+    "qualified_name": "describeHostBundleErrorDetail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681353,
+    "end_line": 681369,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64",
+      "phase"
+    ],
+    "body_sha256": "951de67c6fbfc10c2994f1284d9ffb7124dc19e69bfa82f5eb51aa871d57c2b8",
+    "calls": [
+      "String",
+      "describeHostBundleErrorNode",
+      "new Set",
+      "parts.join",
+      "parts.push",
+      "seen.add",
+      "seen.has"
+    ],
+    "writes": [
+      "current2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681374:25885721",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "resolveHostBundleWatchIntervalMs",
+    "qualified_name": "resolveHostBundleWatchIntervalMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681374,
+    "end_line": 681386,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "liveConfiguredMs",
+      "singleBoxDevOverride"
+    ],
+    "body_sha256": "e3f7c14ff2a0440b98d20d9530097325fa5e700dbdc1913617ad8a9a9fbc00f9",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Math.round",
+      "Number.isFinite",
+      "Number.isInteger",
+      "Number.parseInt"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681387:25886330",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "clampWatchValue",
+    "qualified_name": "clampWatchValue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681387,
+    "end_line": 681390,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value",
+      "lo2",
+      "hi2"
+    ],
+    "body_sha256": "b611175c9853916ce536eced136af180355001c75a9b97d186519b73b3190a45",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681391:25886465",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "hostBundleWatchInitialDelayMs",
+    "qualified_name": "hostBundleWatchInitialDelayMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681391,
+    "end_line": 681394,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "baseMs",
+      "jitterRatio2",
+      "random = Math.random"
+    ],
+    "body_sha256": "c53b0bb6376f5a52b3dcdef5bb243eef522ad1ac92ec70c70f04bb9c04d4e383",
+    "calls": [
+      "Math.round",
+      "clampWatchValue",
+      "random"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:681395:25886669",
+    "artifact": "host",
+    "module": "host/extensions/host-upgrade/host-bundle-upgrade.ts",
+    "name": "hostBundleWatchNextDelayMs",
+    "qualified_name": "hostBundleWatchNextDelayMs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 681395,
+    "end_line": 681401,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "baseMs",
+      "jitterRatio2",
+      "random = Math.random"
+    ],
+    "body_sha256": "3274018c92beec0d18275dfa06f6c274d01e32664c6f0fba28a19525a0f00bb1",
+    "calls": [
+      "Math.max",
+      "Math.round",
+      "clampWatchValue",
+      "random"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

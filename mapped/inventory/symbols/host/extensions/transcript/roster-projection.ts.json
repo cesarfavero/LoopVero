@@ -1,0 +1,983 @@
+[
+  {
+    "id": "host:739204:28081412",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.constructor",
+    "qualified_name": "RosterProjection.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739204,
+    "end_line": 739210,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "tm"
+    ],
+    "body_sha256": "005a752561c4f1ad0a037ecdb879e9c24dc35ee409eb960d70359797082ac925",
+    "calls": [
+      "new ProfileWatch",
+      "new RosterEmit",
+      "new RosterSearch"
+    ],
+    "writes": [
+      "this.lastKnownAgentNames",
+      "this.profileWatch",
+      "this.rosterEmit",
+      "this.search",
+      "this.tm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739221:28081923",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.listAgents",
+    "qualified_name": "RosterProjection.listAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739221,
+    "end_line": 739231,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "54077a571baa295d30e3254b093876d49e3bb506286ba2ed48dcda49d6aef185",
+    "calls": [
+      "this.rosterEmit.applySnapshotStamp",
+      "this.rosterEmit.reserveSnapshotStamp",
+      "this.rosterEmit.seedRosterCache",
+      "this.tm.runLifecycle.withRunStates",
+      "this.tm.sessionStore.listAgents",
+      "this.tm.sessions.getAnnouncedActiveAgentId",
+      "this.tm.sessions.restoreSession"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739232:28082425",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.countAgentsOnDisk",
+    "qualified_name": "RosterProjection.countAgentsOnDisk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739232,
+    "end_line": 739234,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "822240298c8cde13f0019cf2f5e3fb130aaa41b225879f6f6cc1a8f4ec46b255",
+    "calls": [
+      "this.tm.sessionStore.listAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739235:28082509",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.searchAgents",
+    "qualified_name": "RosterProjection.searchAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739235,
+    "end_line": 739237,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "81cf0108a2d41c83786f069b5538939cded26b849e8d26dee0d14d1dece7c392",
+    "calls": [
+      "this.search.searchAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739238:28082584",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.searchMedia",
+    "qualified_name": "RosterProjection.searchMedia",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739238,
+    "end_line": 739240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "d24b039571024a2856c55ec2d2a3d6cb82740e992a02f9cfba1532b68c76546c",
+    "calls": [
+      "this.search.searchMedia"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739241:28082661",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.listAgentsSync",
+    "qualified_name": "RosterProjection.listAgentsSync",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739241,
+    "end_line": 739243,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "8ea8e57f673ddbfcc7b8fa162a8f315c2019d7457292805743869daefcfc553b",
+    "calls": [
+      "this.rosterEmit.listAgentsSync"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739244:28082742",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.replaceRosterCacheForTest",
+    "qualified_name": "RosterProjection.replaceRosterCacheForTest",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739244,
+    "end_line": 739246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "43777d43c888902cc9ae8330c453697bf2938537cbb5aa6993dbb9c855502820",
+    "calls": [
+      "this.rosterEmit.replaceRosterCacheForTest"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739247:28082838",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.subscribeAgents",
+    "qualified_name": "RosterProjection.subscribeAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739247,
+    "end_line": 739252,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "afb4f7e698798aa12dbfc0da7b27e10f4525c937c988606fd30c3289c0756910",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739253:28082990",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.subscribeAgentUpserted",
+    "qualified_name": "RosterProjection.subscribeAgentUpserted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739253,
+    "end_line": 739258,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "4f089e91ca768137e83689299c365a9bd12ba2adef966496436020684e74e643",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739259:28083154",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emitProfileChanged",
+    "qualified_name": "RosterProjection.emitProfileChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739259,
+    "end_line": 739261,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "b5cc29b7d0664f617e988119f4e50ac85d23d3cc3d3d68deddf7d8dd9938ff82",
+    "calls": [
+      "this.profileWatch.emitProfileChanged"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739262:28083254",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.noteAgentIdentityRenamed",
+    "qualified_name": "RosterProjection.noteAgentIdentityRenamed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739262,
+    "end_line": 739264,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "4c6a3bc8d191f09cc7236a6baff1ad895774bd1c226983fc8423281cf851a080",
+    "calls": [
+      "this.profileWatch.noteAgentIdentityRenamed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739265:28083364",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.noteHostWrittenAvatarVersion",
+    "qualified_name": "RosterProjection.noteHostWrittenAvatarVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739265,
+    "end_line": 739267,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "19b506350dc869a3513388664e1bbb9bff3756c1023312e53f1f104297e421ad",
+    "calls": [
+      "this.profileWatch.noteHostWrittenAvatarVersion"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739268:28083473",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.subscribeProfileChanged",
+    "qualified_name": "RosterProjection.subscribeProfileChanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739268,
+    "end_line": 739270,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "876d7be19e1a39df0fc0aba841b635e648093cae3cea4f0a66355883a005602b",
+    "calls": [
+      "this.profileWatch.subscribeProfileChanged"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739271:28083573",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.watchSessionProfile",
+    "qualified_name": "RosterProjection.watchSessionProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739271,
+    "end_line": 739273,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "830014424f6e81be844b66bbfc417c8aee3bc834e7610d96e3aca18b36ea8b36",
+    "calls": [
+      "this.profileWatch.watchSessionProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739274:28083669",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.stopWatchingProfile",
+    "qualified_name": "RosterProjection.stopWatchingProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739274,
+    "end_line": 739276,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "624c5cc54ac3950aa198cc7bbe2dcd5acf8f932326b0070a489387e7419c6bc2",
+    "calls": [
+      "this.profileWatch.stopWatchingProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739277:28083768",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.getAgentDisplayProfile",
+    "qualified_name": "RosterProjection.getAgentDisplayProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739277,
+    "end_line": 739279,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "82f8ac06a6575d7ccdc901c41ab87e748b8cd8b5e3d7cacf07d70f2cf41d2db7",
+    "calls": [
+      "this.profileWatch.getAgentDisplayProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739280:28083867",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.resolveAgentProfile",
+    "qualified_name": "RosterProjection.resolveAgentProfile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739280,
+    "end_line": 739282,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "3a0d5f993951146786a8ecb97693b12b76acbb6c6588585a0801dff2003a39c4",
+    "calls": [
+      "this.profileWatch.resolveAgentProfile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739283:28083954",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emitAgents",
+    "qualified_name": "RosterProjection.emitAgents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739283,
+    "end_line": 739285,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "6b3da7ff11bed0674e7ea6316c074f4a6257a3b40e3416d28e8153b5c0818cbf",
+    "calls": [
+      "this.rosterEmit.emitAgents"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739286:28084035",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emitAgentUpdate",
+    "qualified_name": "RosterProjection.emitAgentUpdate",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739286,
+    "end_line": 739288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "764595eb70abb318a4d47bc06e68e0a114670b88a4aa9678fa422919c6f436fe",
+    "calls": [
+      "this.rosterEmit.emitAgentUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739289:28084118",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emitsSettled",
+    "qualified_name": "RosterProjection.emitsSettled",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739289,
+    "end_line": 739291,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "0a468cc53bcdbd125c885946d33970bcdf38319d9906c0879b5b07b899e5c051",
+    "calls": [
+      "this.rosterEmit.settled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739292:28084187",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.reserveSnapshotStamp",
+    "qualified_name": "RosterProjection.reserveSnapshotStamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739292,
+    "end_line": 739294,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "d22fb3d9dc689f5139296f18579393648680a1b0c00d378288d1c8f1860de5ab",
+    "calls": [
+      "this.rosterEmit.reserveSnapshotStamp"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739295:28084284",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.finalizeSummaryForRpc",
+    "qualified_name": "RosterProjection.finalizeSummaryForRpc",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739295,
+    "end_line": 739297,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "...args"
+    ],
+    "body_sha256": "08156a2160bf257454eb46e17d729e995fdb4b3601ef8bf7bc253df98d2aa8ad",
+    "calls": [
+      "this.rosterEmit.finalizeSummaryForRpc"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739298:28084370",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.subscribe",
+    "qualified_name": "RosterProjection.subscribe",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739298,
+    "end_line": 739303,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "1a2e79cab379c3adbdf95afd6f3ef8fb7bd9f78d33fc863f2bab1f26f40bc9c5",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739304:28084514",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.subscribeOutline",
+    "qualified_name": "RosterProjection.subscribeOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739304,
+    "end_line": 739309,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "listener"
+    ],
+    "body_sha256": "927255ac616feced9a5e89d7f69ed39d1d584a453a94258e2a6ec4550c21bcc3",
+    "calls": [
+      "this.emitter.on"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739310:28084674",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.getConversationOutline",
+    "qualified_name": "RosterProjection.getConversationOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739310,
+    "end_line": 739334,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "cbef1fd8d9bfb8fe450d0269c07e234cb959286ac1fcc38e782eb0b3f3d2dd2e",
+    "calls": [
+      "isSandSubagentId",
+      "parseAgentId",
+      "reportFallback",
+      "this.emitOutline",
+      "this.loadActiveOutline",
+      "this.tm.sessionStore.getAgentOutline",
+      "this.tm.sessions.restoreSession"
+    ],
+    "writes": [
+      "items"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:739335:28085594",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.loadActiveOutline",
+    "qualified_name": "RosterProjection.loadActiveOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739335,
+    "end_line": 739357,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "session"
+    ],
+    "body_sha256": "4b7bd0b1ccb10632553f04d18c63315f2cc3c38638e9c3284b5f0ee924b3bd2b",
+    "calls": [],
+    "writes": [
+      "this.activeOutlineLoad",
+      "this.outline",
+      "this.outlineAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739358:28086499",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.invalidateActiveOutline",
+    "qualified_name": "RosterProjection.invalidateActiveOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739358,
+    "end_line": 739363,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "57e3f825bd47a632fe8c46e659b64a05b1a65a8a49f417a7c12e6c504f08e1f2",
+    "calls": [],
+    "writes": [
+      "this.activeOutlineGeneration",
+      "this.activeOutlineLoad",
+      "this.outline",
+      "this.outlineAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739364:28086643",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emit",
+    "qualified_name": "RosterProjection.emit",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739364,
+    "end_line": 739366,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event",
+      "owningAgentId"
+    ],
+    "body_sha256": "104157544e4074e4de0c50a9e468647e5c20e3e4e777d4dc1d7c9d96e6a5f024",
+    "calls": [
+      "this.emitter.emit",
+      "this.withOrderedStamp",
+      "this.withOwningAgentId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739367:28086791",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.withOrderedStamp",
+    "qualified_name": "RosterProjection.withOrderedStamp",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739367,
+    "end_line": 739381,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "9183a4adaf12fe4d21ec75d0a697890921eaf76522008a6a7bd41236089ff831",
+    "calls": [
+      "this.rosterEmit.replicaWriter.nextStamp",
+      "transcriptReplicaKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739382:28087312",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.withOwningAgentId",
+    "qualified_name": "RosterProjection.withOwningAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739382,
+    "end_line": 739387,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event",
+      "owningAgentId"
+    ],
+    "body_sha256": "1140d787b2a2cb2530de66fcbe4b196c651611f073efe87d371142534b60e617",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:739388:28087581",
+    "artifact": "host",
+    "module": "host/extensions/transcript/roster-projection.ts",
+    "name": "RosterProjection.emitOutline",
+    "qualified_name": "RosterProjection.emitOutline",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 739388,
+    "end_line": 739390,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "bca34a99f510a2efb225d342317d951fc56ea647ec65af6d771c95463afddac9",
+    "calls": [
+      "this.emitter.emit"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

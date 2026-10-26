@@ -1,0 +1,446 @@
+[
+  {
+    "id": "host:540987:19852801",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "createCodebaseTelemetryService",
+    "qualified_name": "createCodebaseTelemetryService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 540987,
+    "end_line": 541088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  auth: auth2,\n  createAdapter,\n  privacyMode,\n  policies: policies2,\n  logger: logger132\n}"
+    ],
+    "body_sha256": "a61d95b6a18f5f72f7d2e2464c54cdd6c30761a9491404975981619e603a5152",
+    "calls": [
+      "createSandCodebaseTelemetryHost",
+      "new CodebaseSnapshotTrigger",
+      "new CodebaseTelemetryController"
+    ],
+    "writes": [
+      "controller"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541002:19853146",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "createAdapter",
+    "qualified_name": "createCodebaseTelemetryService/createAdapter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541002,
+    "end_line": 541007,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "d50e6180023c67f8c64e6f52003a0d580fb650c31986c61cb226925148055657",
+    "calls": [
+      "adapter.terminalFailure.then",
+      "createAdapter"
+    ],
+    "writes": [
+      "currentAdapter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541012:19853514",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "getSession",
+    "qualified_name": "createCodebaseTelemetryService/getSession",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541012,
+    "end_line": 541012,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e15bbcf0074fb1a0f853b10056474c94a6ef52692e58131363471c1ec5376640",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541015:19853570",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "scheduleRestart",
+    "qualified_name": "createCodebaseTelemetryService/scheduleRestart",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541015,
+    "end_line": 541049,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "failedAdapter"
+    ],
+    "body_sha256": "5dcfcd9a91208fc50d48e9697e462e915523b1ce7f84a5fa2db9cbb0ca387889",
+    "calls": [
+      ".finally",
+      "restartPromise.catch"
+    ],
+    "writes": [
+      "restartPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541053:19854741",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "flushPendingUploads",
+    "qualified_name": "createCodebaseTelemetryService/flushPendingUploads",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541053,
+    "end_line": 541058,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "fb719ea8bf69e2670fb0e725888cdb2b1b59dc5062c0400af786473db36b22da",
+    "calls": [
+      "currentAdapter.flushPendingUploads"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541059:19854910",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "markAgentRequestStarted",
+    "qualified_name": "createCodebaseTelemetryService/markAgentRequestStarted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541059,
+    "end_line": 541063,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "5cd89f3b0fa55f2a0b29f905deb0cd30b0e4e21e13e1a6c7442a417ea10a775c",
+    "calls": [
+      "snapshotTrigger.handle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541064:19855087",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "markAgentRequestEnded",
+    "qualified_name": "createCodebaseTelemetryService/markAgentRequestEnded",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541064,
+    "end_line": 541068,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "requestId2"
+    ],
+    "body_sha256": "e99110528c338ec197aa40f0a667afb4e23c373da0dc4f251424fda5486959bb",
+    "calls": [
+      "snapshotTrigger.handle"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541070:19855252",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "dispose",
+    "qualified_name": "createCodebaseTelemetryService/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541070,
+    "end_line": 541086,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "fdfbb092d9a051b7fece63cf2c19b4794354f930cab3e4e7e41a72a8bf57352c",
+    "calls": [
+      "restartDelay.dispose"
+    ],
+    "writes": [
+      "disposePromise",
+      "stopping"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541089:19855760",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "createSandCodebaseTelemetryLogger",
+    "qualified_name": "createSandCodebaseTelemetryLogger",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541089,
+    "end_line": 541099,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "log5"
+    ],
+    "body_sha256": "d0f11e247b5a39677a47974fa32c0689f5bc75c7bac7608ff8dfb26da36652e7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541090:19855828",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "write4",
+    "qualified_name": "createSandCodebaseTelemetryLogger/write4",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541090,
+    "end_line": 541092,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "level",
+      "message",
+      "error64"
+    ],
+    "body_sha256": "4db9f1d4127dec3c931bb914a379000a6986e07cf584aa4ca10810beb92c6e20",
+    "calls": [
+      "formatLogMessage",
+      "log5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541094:19855968",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "error",
+    "qualified_name": "createSandCodebaseTelemetryLogger/error",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541094,
+    "end_line": 541094,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "4a5df34f5a4e47ee322abdc5bd0656abdf9de3063378698157097cc44f1c3792",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541095:19856035",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "warn",
+    "qualified_name": "createSandCodebaseTelemetryLogger/warn",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541095,
+    "end_line": 541095,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "f3c6bbfb23e589fbaec1729cf57b3343639851806c57258d43d1dbe3b22bd775",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541096:19856101",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "info",
+    "qualified_name": "createSandCodebaseTelemetryLogger/info",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541096,
+    "end_line": 541096,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "936a62d8b7fdcba8395c10cabd0ef10d27ee4067b53fc0941c842cf03fa6c195",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:541097:19856168",
+    "artifact": "host",
+    "module": "host/extensions/codebase-telemetry/codebase-telemetry-service.ts",
+    "name": "debug",
+    "qualified_name": "createSandCodebaseTelemetryLogger/debug",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 541097,
+    "end_line": 541097,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message",
+      "error64"
+    ],
+    "body_sha256": "e6641e5c0a2badab1ab2e70485fe2cb937d63c38a57eee7eb472bc82d0a6d88c",
+    "calls": [
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

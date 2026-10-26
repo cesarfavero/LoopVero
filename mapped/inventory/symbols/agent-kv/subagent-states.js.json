@@ -1,0 +1,108 @@
+[
+  {
+    "id": "host:615965:22840952",
+    "artifact": "host",
+    "module": "agent-kv/subagent-states.js",
+    "name": "recordMissingSubagentStateBlob",
+    "qualified_name": "recordMissingSubagentStateBlob",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 615965,
+    "end_line": 615971,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "miss"
+    ],
+    "body_sha256": "133151f2d33f604f3c83f0f0c6aabbe3589ca6eb5bd52c3d379b170dbd855372",
+    "calls": [
+      "logger27.warn",
+      "subagentStateRefMissingBlob.increment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:615972:22841215",
+    "artifact": "host",
+    "module": "agent-kv/subagent-states.js",
+    "name": "resolveSubagentPersistedStates",
+    "qualified_name": "resolveSubagentPersistedStates",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 615972,
+    "end_line": 616013,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "state",
+      "blobStore"
+    ],
+    "body_sha256": "373ec08c87d39295d49224402913483422896f787b742f6e1a976c0047e7e6d4",
+    "calls": [
+      "Object.entries",
+      "asyncMapValues",
+      "loads.find",
+      "recordMissingSubagentStateBlob"
+    ],
+    "writes": [
+      "resolved[computed]"
+    ],
+    "throw_targets": [
+      "firstFailedLoad.error"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:284778:9185542",
+    "artifact": "evaluation",
+    "module": "agent-kv/subagent-states.js",
+    "name": "recordMissingSubagentStateBlob",
+    "qualified_name": "recordMissingSubagentStateBlob",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 284778,
+    "end_line": 284784,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "miss"
+    ],
+    "body_sha256": "39c0ee9339d9a77fcdc9f0cd8fca89a60b6ca3bc1e2e6657129b846335e49aa6",
+    "calls": [
+      "logger2.warn",
+      "subagentStateRefMissingBlob.increment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

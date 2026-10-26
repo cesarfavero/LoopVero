@@ -1,0 +1,293 @@
+[
+  {
+    "id": "evaluation:584190:21971841",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "isSearchThreads",
+    "qualified_name": "isSearchThreads",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584190,
+    "end_line": 584193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "34ecd582ecadddb8b5a1408314649073fc558247966ef7f9766a0b862d6fdb38",
+    "calls": [
+      "args.name.endsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584194:21972047",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "isGrokGmailSearch",
+    "qualified_name": "isGrokGmailSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584194,
+    "end_line": 584198,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "17bfce0b96e5c3dbe2777906fb5fae483c302f4653fdaa8f9bd4524334b48a60",
+    "calls": [
+      "isGrokGmailProviderIdentifier"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584199:21972321",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "isSpamBlindGmailSearch",
+    "qualified_name": "isSpamBlindGmailSearch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584199,
+    "end_line": 584202,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args",
+      "resolveServerHost"
+    ],
+    "body_sha256": "43b94a9b1cb8fe82bd26f872f94577e04392a9d344d9d98432b04051524331f9",
+    "calls": [
+      ".toLowerCase",
+      "isGrokGmailSearch",
+      "isSearchThreads",
+      "resolveServerHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584203:21972542",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "searchesGmailSpam",
+    "qualified_name": "searchesGmailSpam",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584203,
+    "end_line": 584205,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "cbdde527d6a106381b65cb375e25006635cd99770086ae0c1d6efec97aa7d4f0",
+    "calls": [
+      "SPAM_SCOPE.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584206:21972615",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "isSpamIncludedNote",
+    "qualified_name": "isSpamIncludedNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584206,
+    "end_line": 584208,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "item"
+    ],
+    "body_sha256": "4974dbac5d0500ab2b9392caca6ccd2b23572242836b8955e1f3345e53d45ff6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584209:21972755",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "withNote",
+    "qualified_name": "withNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584209,
+    "end_line": 584219,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result"
+    ],
+    "body_sha256": "7a85ef1a84551c29ad9aff71f1519a19ff09e8d657c94ae1b5d8e87f0fb02a25",
+    "calls": [
+      "new McpResult",
+      "new McpTextContent",
+      "new McpToolResultContentItem",
+      "result.result.value.clone",
+      "result.result.value.content.some",
+      "success2.content.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584220:21973238",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "withGmailSpamSearchNote",
+    "qualified_name": "withGmailSpamSearchNote",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584220,
+    "end_line": 584234,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "executor",
+      "resolveServerHost"
+    ],
+    "body_sha256": "af78f5b0d7e47c64839f5a50b1852067ea6ef5f1f5b6a4ee75c347a0b80d0def",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584222:21973334",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "isBackendRouted",
+    "qualified_name": "withGmailSpamSearchNote/isBackendRouted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584222,
+    "end_line": 584222,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "provider"
+    ],
+    "body_sha256": "3326bf8889fdcbf666497666616b86468b240ccef3beb8400ba95d08005cbc08",
+    "calls": [
+      "executor.isBackendRouted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:584223:21973412",
+    "artifact": "evaluation",
+    "module": "core/mcp/gmail-spam-visibility.ts",
+    "name": "execute",
+    "qualified_name": "withGmailSpamSearchNote/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 584223,
+    "end_line": 584232,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "options2"
+    ],
+    "body_sha256": "1fbd07a8ab2d964c8ba32383177bb821035e28a53ad2bcb9c463a11f35514206",
+    "calls": [
+      "executor.execute",
+      "isSpamBlindGmailSearch",
+      "noted.increment",
+      "searchesGmailSpam",
+      "withNote"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

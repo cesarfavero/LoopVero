@@ -1,0 +1,73 @@
+[
+  {
+    "id": "host:690656:26242490",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-image-assets.ts",
+    "name": "describeSavedImage",
+    "qualified_name": "describeSavedImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690656,
+    "end_line": 690659,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "image2"
+    ],
+    "body_sha256": "fed14d4298b34b0f60538cb7e7ec8fce689265af6b4acde913b65a79221098e7",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:690660:26242801",
+    "artifact": "host",
+    "module": "shared/node/mcp/mcp-image-assets.ts",
+    "name": "augmentMcpResultWithSavedImages",
+    "qualified_name": "augmentMcpResultWithSavedImages",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 690660,
+    "end_line": 690699,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "result",
+      "persistImage"
+    ],
+    "body_sha256": "40eb7814bb404a55982a11a796daa3e48c7623082222d9d1492b1616321baaa6",
+    "calls": [
+      "augmented.push",
+      "describeSavedImage",
+      "new McpResult",
+      "new McpSuccess",
+      "new McpTextContent",
+      "new McpToolResultContentItem",
+      "persistImage",
+      "reportMcpHostEdgeFailure",
+      "success2.content.some"
+    ],
+    "writes": [
+      "saved"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

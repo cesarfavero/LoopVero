@@ -1,0 +1,1466 @@
+[
+  {
+    "id": "host:769709:29509925",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemoryDescription",
+    "qualified_name": "recallMemoryDescription",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769709,
+    "end_line": 769715,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "offersMemoryUpdate",
+      "library"
+    ],
+    "body_sha256": "f5f00cbcbb2cf9e4558dba42c46c61963a1b64da38e32f78d017bd1eac2dc1f7",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769716:29510322",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "searchedLabel",
+    "qualified_name": "searchedLabel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769716,
+    "end_line": 769718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userBotOffered2"
+    ],
+    "body_sha256": "4ccd0e5146188779947d59bb9707f09bcba8716830fd5897e874c9f89d96857a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769719:29510517",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "renderRecallMemoryLines",
+    "qualified_name": "renderRecallMemoryLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769719,
+    "end_line": 769741,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "87e69acc62f376ac699d0800713e80485cb3eb44add3df9673106e5053353bd1",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "searchedLabel"
+    ],
+    "writes": [
+      "budget",
+      "shown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769742:29511412",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userBotOffered",
+    "qualified_name": "userBotOffered",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769742,
+    "end_line": 769744,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "e3f0fe8d42a7a114cbb516d66ea319eb14df4b0a712fabf252ab273ed9a6c3d7",
+    "calls": [
+      "deps.memoryStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769745:29511514",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemory",
+    "qualified_name": "recallMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769745,
+    "end_line": 769760,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "args"
+    ],
+    "body_sha256": "39e9f014d4a8c6404574f7da1c7527ad9f1627888c0e3803ddceb3b5d5bfbd77",
+    "calls": [
+      ".search",
+      "Math.min",
+      "args.query.trim",
+      "createMemoryVirtualMount",
+      "recordMemoryRecall",
+      "renderRecallMemoryLines",
+      "result.hits.map",
+      "userBotOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769761:29512163",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "normalizedMemoryFilePath",
+    "qualified_name": "normalizedMemoryFilePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769761,
+    "end_line": 769767,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "6287ab49d71c2d5bda0e2da905450de017e9355a298e62214f281ccc036da0f7",
+    "calls": [
+      ".replace",
+      "file2.endsWith",
+      "file2.slice",
+      "file2.startsWith",
+      "raw.trim"
+    ],
+    "writes": [
+      "file2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769768:29512438",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryFileLines",
+    "qualified_name": "memoryFileLines",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769768,
+    "end_line": 769778,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "facts"
+    ],
+    "body_sha256": "c1667701ac25ba190b4b204645475a9aeb9b872b2d0800616f3dccbeac28b570",
+    "calls": [
+      ".reverse",
+      "formatMemoryDate",
+      "kept.push",
+      "kept.reverse"
+    ],
+    "writes": [
+      "budget"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769779:29512849",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "openMemoryFile",
+    "qualified_name": "openMemoryFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769779,
+    "end_line": 769806,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "requested"
+    ],
+    "body_sha256": "d11c008b6f13613cb3fb383694a8403454308c118019720d0ca1fe3175a99116",
+    "calls": [
+      ".join",
+      ".map",
+      "facts.filter",
+      "inFile.map",
+      "memoryFileLines",
+      "memoryFolderFactsOf",
+      "new Set",
+      "normalizedMemoryFilePath",
+      "paths.join",
+      "recordMemoryRecall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769808:29514134",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "createRecallMemoryTool",
+    "qualified_name": "createRecallMemoryTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769808,
+    "end_line": 769836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "offersMemoryUpdate = true",
+      "library = false"
+    ],
+    "body_sha256": "b071780683f296f9969dae414bf7930a917afda2323bcae13d6772bae6ee25cf",
+    "calls": [
+      "defineCommunicateTool",
+      "recallMemoryDescription"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769816:29514524",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769816,
+    "end_line": 769816,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769817:29514575",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRecallMemoryTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769817,
+    "end_line": 769817,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "bdb51c1c162246e2167afe24380c35d2e4ece1b309a610274d492f95f3592a80",
+    "calls": [
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769825:29514844",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769825,
+    "end_line": 769827,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e168da3b30a40a082be3f271475620f20e55feee8568daabe24b04cc2b895f33",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769828:29514968",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRecallMemoryTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769828,
+    "end_line": 769834,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "67483510bb500606eaa9901ca3eddc42bc42c5955fc71b682dc31dcb8aa964d4",
+    "calls": [
+      "openMemoryFile",
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769841:29515528",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "createLookupRecallMemoryTool",
+    "qualified_name": "createLookupRecallMemoryTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769841,
+    "end_line": 769861,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lookup3"
+    ],
+    "body_sha256": "dde97fa248bc0167a26d34b5dd6c18e5325f2d55597a14db0e2b1a8c151e6c13",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769847:29515799",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createLookupRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769847,
+    "end_line": 769847,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769848:29515848",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createLookupRecallMemoryTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769848,
+    "end_line": 769859,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "9a291dd388c67d4f9e626eea0336ec7429ad6df546d658404f378032d359c66d",
+    "calls": [
+      "lookup3.load",
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769854:29516052",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryStore",
+    "qualified_name": "createLookupRecallMemoryTool/execute/memoryStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769854,
+    "end_line": 769854,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "56c1a9df5267a94d88a6403a52615f5cc39b689240f4af6d122999b243bfa31e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769855:29516100",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userMemory",
+    "qualified_name": "createLookupRecallMemoryTool/execute/userMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769855,
+    "end_line": 769855,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "336a990c51846453283fb311f3cb3632f78883942312e3405cfa2f55c10aadb3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769862:29516171",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemoryTools",
+    "qualified_name": "recallMemoryTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769862,
+    "end_line": 769875,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "options2 = {}"
+    ],
+    "body_sha256": "a6fd8ea9f7ef91a3be65da003097d43060f5106aa4329f06c1ead1a007330893",
+    "calls": [
+      "createRecallMemoryTool",
+      "offersMemoryLibrary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769867:29516332",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryStore",
+    "qualified_name": "recallMemoryTools/memoryStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769867,
+    "end_line": 769867,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "416313652fbb8f7df7363ea7eb4b7696a2e0a7eb20b7fcbf750fe8ad6a3bfe2b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769868:29516376",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userMemory",
+    "qualified_name": "recallMemoryTools/userMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769868,
+    "end_line": 769868,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2f82324ac3d1a2f2c0260b81f3f038a562bf99756ce5b700152212b8a70f7ae1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769869:29516422",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryFolders",
+    "qualified_name": "recallMemoryTools/memoryFolders",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769869,
+    "end_line": 769869,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5a9a8e427db88c4f01f85dff3a2c57ed6f81693641e8ad15ac813453cae09891",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:769876:29516589",
+    "artifact": "host",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "selectStateToolStores",
+    "qualified_name": "selectStateToolStores",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 769876,
+    "end_line": 769888,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "5d32c8e06aa7929f4f05625f06e64f6baa9ee7a8471a38fa09b87415342fd93b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565378:21047263",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemoryDescription",
+    "qualified_name": "recallMemoryDescription",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565378,
+    "end_line": 565384,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "offersMemoryUpdate",
+      "library"
+    ],
+    "body_sha256": "f5f00cbcbb2cf9e4558dba42c46c61963a1b64da38e32f78d017bd1eac2dc1f7",
+    "calls": [
+      ".join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565385:21047660",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "searchedLabel",
+    "qualified_name": "searchedLabel",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565385,
+    "end_line": 565387,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userBotOffered2"
+    ],
+    "body_sha256": "4ccd0e5146188779947d59bb9707f09bcba8716830fd5897e874c9f89d96857a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565388:21047855",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "renderRecallMemoryLines",
+    "qualified_name": "renderRecallMemoryLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565388,
+    "end_line": 565410,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "87e69acc62f376ac699d0800713e80485cb3eb44add3df9673106e5053353bd1",
+    "calls": [
+      "lines2.join",
+      "lines2.push",
+      "searchedLabel"
+    ],
+    "writes": [
+      "budget",
+      "shown"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565411:21048750",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userBotOffered",
+    "qualified_name": "userBotOffered",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565411,
+    "end_line": 565413,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "e3f0fe8d42a7a114cbb516d66ea319eb14df4b0a712fabf252ab273ed9a6c3d7",
+    "calls": [
+      "deps.memoryStore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565414:21048852",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemory",
+    "qualified_name": "recallMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565414,
+    "end_line": 565429,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "args"
+    ],
+    "body_sha256": "39e9f014d4a8c6404574f7da1c7527ad9f1627888c0e3803ddceb3b5d5bfbd77",
+    "calls": [
+      ".search",
+      "Math.min",
+      "args.query.trim",
+      "createMemoryVirtualMount",
+      "recordMemoryRecall",
+      "renderRecallMemoryLines",
+      "result.hits.map",
+      "userBotOffered"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565430:21049501",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "normalizedMemoryFilePath",
+    "qualified_name": "normalizedMemoryFilePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565430,
+    "end_line": 565436,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f94a058a9fb7eeb4bd50856976ce50d7a8f69d3b02cd68e37d3a877a6e082311",
+    "calls": [
+      ".replace",
+      "file2.endsWith",
+      "file2.slice",
+      "file2.startsWith",
+      "raw.trim"
+    ],
+    "writes": [
+      "file2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565437:21049776",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryFileLines",
+    "qualified_name": "memoryFileLines",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565437,
+    "end_line": 565447,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "facts"
+    ],
+    "body_sha256": "c1667701ac25ba190b4b204645475a9aeb9b872b2d0800616f3dccbeac28b570",
+    "calls": [
+      ".reverse",
+      "formatMemoryDate",
+      "kept.push",
+      "kept.reverse"
+    ],
+    "writes": [
+      "budget"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565448:21050187",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "openMemoryFile",
+    "qualified_name": "openMemoryFile",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565448,
+    "end_line": 565475,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "ctx",
+      "deps",
+      "requested"
+    ],
+    "body_sha256": "d11c008b6f13613cb3fb383694a8403454308c118019720d0ca1fe3175a99116",
+    "calls": [
+      ".join",
+      ".map",
+      "facts.filter",
+      "inFile.map",
+      "memoryFileLines",
+      "memoryFolderFactsOf",
+      "new Set",
+      "normalizedMemoryFilePath",
+      "paths.join",
+      "recordMemoryRecall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565477:21051472",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "createRecallMemoryTool",
+    "qualified_name": "createRecallMemoryTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565477,
+    "end_line": 565505,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "offersMemoryUpdate = true",
+      "library = false"
+    ],
+    "body_sha256": "b071780683f296f9969dae414bf7930a917afda2323bcae13d6772bae6ee25cf",
+    "calls": [
+      "defineCommunicateTool",
+      "recallMemoryDescription"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565485:21051862",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565485,
+    "end_line": 565485,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565486:21051913",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRecallMemoryTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565486,
+    "end_line": 565486,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "bdb51c1c162246e2167afe24380c35d2e4ece1b309a610274d492f95f3592a80",
+    "calls": [
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565494:21052182",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565494,
+    "end_line": 565496,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e168da3b30a40a082be3f271475620f20e55feee8568daabe24b04cc2b895f33",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565497:21052306",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createRecallMemoryTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565497,
+    "end_line": 565503,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "67483510bb500606eaa9901ca3eddc42bc42c5955fc71b682dc31dcb8aa964d4",
+    "calls": [
+      "openMemoryFile",
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565510:21052866",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "createLookupRecallMemoryTool",
+    "qualified_name": "createLookupRecallMemoryTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565510,
+    "end_line": 565530,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "lookup3"
+    ],
+    "body_sha256": "dde97fa248bc0167a26d34b5dd6c18e5325f2d55597a14db0e2b1a8c151e6c13",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565516:21053137",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createLookupRecallMemoryTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565516,
+    "end_line": 565516,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "09818bc94a43dc4f547c4087a0f23659738ef5a5afda89743af2ac86699cd09d",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565517:21053186",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "execute",
+    "qualified_name": "createLookupRecallMemoryTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565517,
+    "end_line": 565528,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args"
+    ],
+    "body_sha256": "9a291dd388c67d4f9e626eea0336ec7429ad6df546d658404f378032d359c66d",
+    "calls": [
+      "lookup3.load",
+      "recallMemory"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565523:21053390",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryStore",
+    "qualified_name": "createLookupRecallMemoryTool/execute/memoryStore",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565523,
+    "end_line": 565523,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "56c1a9df5267a94d88a6403a52615f5cc39b689240f4af6d122999b243bfa31e",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565524:21053438",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userMemory",
+    "qualified_name": "createLookupRecallMemoryTool/execute/userMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565524,
+    "end_line": 565524,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "336a990c51846453283fb311f3cb3632f78883942312e3405cfa2f55c10aadb3",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565531:21053509",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "recallMemoryTools",
+    "qualified_name": "recallMemoryTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565531,
+    "end_line": 565544,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "options2 = {}"
+    ],
+    "body_sha256": "a6fd8ea9f7ef91a3be65da003097d43060f5106aa4329f06c1ead1a007330893",
+    "calls": [
+      "createRecallMemoryTool",
+      "offersMemoryLibrary"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565536:21053670",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryStore",
+    "qualified_name": "recallMemoryTools/memoryStore",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565536,
+    "end_line": 565536,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "416313652fbb8f7df7363ea7eb4b7696a2e0a7eb20b7fcbf750fe8ad6a3bfe2b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565537:21053714",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "userMemory",
+    "qualified_name": "recallMemoryTools/userMemory",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565537,
+    "end_line": 565537,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "2f82324ac3d1a2f2c0260b81f3f038a562bf99756ce5b700152212b8a70f7ae1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565538:21053760",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "memoryFolders",
+    "qualified_name": "recallMemoryTools/memoryFolders",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565538,
+    "end_line": 565538,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "5a9a8e427db88c4f01f85dff3a2c57ed6f81693641e8ad15ac813453cae09891",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:565545:21053927",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/recall-memory-tool.ts",
+    "name": "selectStateToolStores",
+    "qualified_name": "selectStateToolStores",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 565545,
+    "end_line": 565557,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "5d32c8e06aa7929f4f05625f06e64f6baa9ee7a8471a38fa09b87415342fd93b",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

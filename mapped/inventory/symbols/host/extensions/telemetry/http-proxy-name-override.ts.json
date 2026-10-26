@@ -1,0 +1,196 @@
+[
+  {
+    "id": "host:731728:27791815",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "normalizeHttpProxyName",
+    "qualified_name": "normalizeHttpProxyName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731728,
+    "end_line": 731734,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "5401d06e2036cd1ed021cdadac27f4ec733ff7fd8140ec7cfc13aa69c4db6dca",
+    "calls": [
+      "VISIBLE_ASCII.test",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731735:27792080",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "parseOverride",
+    "qualified_name": "parseOverride",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731735,
+    "end_line": 731749,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "95c0b9f2fab73f6968ea2fbe0ffa249010505b354e4e0ea992a14622807a532f",
+    "calls": [
+      "Number.isFinite",
+      "isUnknownRecord2",
+      "normalizeHttpProxyName",
+      "parseJsonOrUndefined"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731750:27792753",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "createHttpProxyNameOverrideStore",
+    "qualified_name": "createHttpProxyNameOverrideStore",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731750,
+    "end_line": 731775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33 = getHttpProxyNameOverridePath()"
+    ],
+    "body_sha256": "341d2c7f4ef7560b98419d4395dd32949d305a45d0fa688237102d52d248cec8",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:731752:27792859",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "read",
+    "qualified_name": "createHttpProxyNameOverrideStore/read",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731752,
+    "end_line": 731764,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "bootId"
+    ],
+    "body_sha256": "d9f3b027831026d804b9a335c06d9c601805b4d74f373f9db554ef972afa4e74",
+    "calls": [
+      "errorLogTag",
+      "parseOverride",
+      "readSandDataFileIfPresentSync"
+    ],
+    "writes": [
+      "raw"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731765:27793403",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "write",
+    "qualified_name": "createHttpProxyNameOverrideStore/write",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731765,
+    "end_line": 731773,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "override"
+    ],
+    "body_sha256": "71f06874740b7319ed7220b461077d7634c7a1b345facfea0241f355426eb5e1",
+    "calls": [
+      "JSON.stringify",
+      "errorLogTag",
+      "writeSandDataFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:731776:27793713",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/http-proxy-name-override.ts",
+    "name": "resolveStartupHttpProxyName",
+    "qualified_name": "resolveStartupHttpProxyName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 731776,
+    "end_line": 731783,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "5577967e96e19be7f19e6e229aa029c5502670f5151a53e9f16bccd633e190e5",
+    "calls": [
+      "args.store.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

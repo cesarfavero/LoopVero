@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "host:498545:18289474",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "reanchorHostPath",
+    "qualified_name": "reanchorHostPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498545,
+    "end_line": 498545,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "43c44a7a8b70a7881eb3aba81db0bd535363666f7df9411087d64fe8177cf59e",
+    "calls": [
+      "reanchorSandPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498552:18289768",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "isAgentOnHost",
+    "qualified_name": "isAgentOnHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498552,
+    "end_line": 498560,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "cbb8e8b6f1a892bc4bd94a473973f542600f23a3d17cee57927270ea53a6372d",
+    "calls": [
+      ".isDirectory",
+      "import_node_fs43.promises.stat",
+      "reportFallbackUnlessAbsent",
+      "resolveSandAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498561:18290050",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "refuseUnlessAgentOnHost",
+    "qualified_name": "refuseUnlessAgentOnHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498561,
+    "end_line": 498564,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "4023e73569126e89b1aaec0bcfaf19ab257b6268570ddfe140376de3875be13b",
+    "calls": [
+      "isAgentOnHost",
+      "new SandAttachmentAgentNotOpenError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAttachmentAgentNotOpenError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498566:18290328",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "sha256OfFd",
+    "qualified_name": "sha256OfFd",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498566,
+    "end_line": 498572,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "fd"
+    ],
+    "body_sha256": "ef0414ec069423999438dcf2af621eced5397e4d7bdded982464a22324b7a42d",
+    "calls": [
+      "hash2.digest",
+      "hash2.update"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498573:18290595",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "contentAddressedPath",
+    "qualified_name": "contentAddressedPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498573,
+    "end_line": 498576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachmentsDir",
+      "content"
+    ],
+    "body_sha256": "ee9bd010c28fde6f851658b5ceef51bfc977508ed3691b3ceac2f82095f00b27",
+    "calls": [
+      ".toLowerCase"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498577:18290857",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "writeContentAddressedFile",
+    "qualified_name": "writeContentAddressedFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498577,
+    "end_line": 498585,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dir",
+      "targetPath",
+      "buffer"
+    ],
+    "body_sha256": "0c6ec339c54f957175f2b3b91c34b535daca458541d05cfb33dff892d327df5b",
+    "calls": [
+      ".isFile",
+      "ensureSandDataDirSync",
+      "findSystemErrno",
+      "import_node_fs43.promises.lstat",
+      "writeSandDataFile"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498586:18291178",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "ingestAttachment",
+    "qualified_name": "ingestAttachment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498586,
+    "end_line": 498615,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "sourcePath2"
+    ],
+    "body_sha256": "c85cdd73060edbff129fcf9eca928e0f3d73ac2fc2e234ff082e0811a4c79cf0",
+    "calls": [
+      "attachmentByteLimitForName",
+      "contentAddressedPath",
+      "getAgentAttachmentsDir",
+      "import_node_fs43.promises.readFile",
+      "import_node_fs43.promises.stat",
+      "isPathWithin",
+      "new AttachmentTooLargeError",
+      "new SandAttachmentError",
+      "sha256Hex",
+      "sourcePath2.trim",
+      "stat26.isFile",
+      "writeContentAddressedFile"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentTooLargeError",
+      "SandAttachmentError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498616:18292532",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "ingestAttachmentBytes",
+    "qualified_name": "ingestAttachmentBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498616,
+    "end_line": 498633,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "filename",
+      "data2",
+      "storeSized = false"
+    ],
+    "body_sha256": "60bf48e9a5cbeb2fe3bc7a5c0d08c424626c35e2c5cb21d3a489dfe42deeac44",
+    "calls": [
+      "Buffer.from",
+      "attachmentByteLimitForName",
+      "contentAddressedPath",
+      "filename.trim",
+      "getAgentAttachmentsDir",
+      "new AttachmentTooLargeError",
+      "new SandAttachmentError",
+      "sha256Hex",
+      "storeAttachmentByteLimitForName",
+      "writeContentAddressedFile"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentTooLargeError",
+      "SandAttachmentError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498637:18293551",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "sweepStaleUploadParts",
+    "qualified_name": "sweepStaleUploadParts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498637,
+    "end_line": 498648,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "partsDir"
+    ],
+    "body_sha256": "422e4f3ad567e831b05bcb95d31d81c6dc5d6509f5eb1fc97b1c755d00ca3604",
+    "calls": [
+      "Date.now",
+      "findSystemErrno",
+      "import_node_fs43.promises.lstat",
+      "import_node_fs43.promises.readdir",
+      "removeSandDataFileSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498649:18294046",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "ingestAttachmentChunk",
+    "qualified_name": "ingestAttachmentChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498649,
+    "end_line": 498690,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "chunk"
+    ],
+    "body_sha256": "4b9366dd1601d8351385a10c6fa7aefc3c6e079b0702c99bee23902f08c82151",
+    "calls": [
+      "Number.isInteger",
+      "UPLOAD_ID.test",
+      "attachmentByteLimitForName",
+      "contentAddressedPath",
+      "ensureSandDataDirSync",
+      "filename.trim",
+      "getAgentAttachmentsDir",
+      "new AttachmentTooLargeError",
+      "new SandAttachmentError",
+      "openSandDataFileSync",
+      "renameSandDataFileSync",
+      "sha256OfFd",
+      "storeAttachmentByteLimitForName",
+      "sweepStaleUploadParts",
+      "writeAt"
+    ],
+    "writes": [
+      "hash2"
+    ],
+    "throw_targets": [
+      "AttachmentTooLargeError",
+      "SandAttachmentError"
+    ],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 2,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498691:18295920",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "isCloudAgentArtifactPath",
+    "qualified_name": "isCloudAgentArtifactPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498691,
+    "end_line": 498693,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolved"
+    ],
+    "body_sha256": "90d0527c3df4001eab99848ac3869dea5f868139a9a5f028bd58f81753185af3",
+    "calls": [
+      "containWithin"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498694:18296061",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "previewClaimsCloudAgentArtifact",
+    "qualified_name": "previewClaimsCloudAgentArtifact",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498694,
+    "end_line": 498701,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolved"
+    ],
+    "body_sha256": "871e266bcdbe956b4df4963061a4ffce011f0fa81ffafd26e330dab10aa924b1",
+    "calls": [
+      "isCloudAgentArtifactPath",
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498702:18296290",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "claimedAttachmentFolder",
+    "qualified_name": "claimedAttachmentFolder",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498702,
+    "end_line": 498717,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolved"
+    ],
+    "body_sha256": "50e7f64057cc69d951c1f4cee0275508f0686486a6d13cc8395961be54e54523",
+    "calls": [
+      ".split",
+      "folder.split",
+      "getSandRootDir",
+      "isPathWithin",
+      "resolveAttachmentOwnerDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498718:18297085",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "realRootFromUnswappableParent",
+    "qualified_name": "realRootFromUnswappableParent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498718,
+    "end_line": 498720,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "root"
+    ],
+    "body_sha256": "b8d97a545e11b7911945f8957b3d59e26645c0e0cab516472aced14681aba5c7",
+    "calls": [
+      "import_node_fs43.promises.realpath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498721:18297300",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "realHostAttachmentPath",
+    "qualified_name": "realHostAttachmentPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498721,
+    "end_line": 498748,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "eec0d066d5d38b5d7c7bdfd952f12cddaf077f8bb10f492faed7a5eba6ed012f",
+    "calls": [
+      "Promise.all",
+      "claimedAttachmentFolder",
+      "findSystemErrno",
+      "import_node_fs43.promises.realpath",
+      "isPathWithin",
+      "new AttachmentOutsideRootError",
+      "realRootFromUnswappableParent",
+      "reanchorHostPath"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentOutsideRootError",
+      "error64"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 3,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498749:18298209",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "changedAfterCheck",
+    "qualified_name": "changedAfterCheck",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498749,
+    "end_line": 498753,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "realPath"
+    ],
+    "body_sha256": "f9d5a647c61484918c33957c8252be1beeed782bc0ceea79d60df7ae0b5df660",
+    "calls": [
+      "new AttachmentOutsideRootError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498754:18298360",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "hardLinkedElsewhere",
+    "qualified_name": "hardLinkedElsewhere",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498754,
+    "end_line": 498756,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "realPath"
+    ],
+    "body_sha256": "7e59b00f937ee93eae87badcc6a27998927dd3084f13842b6b3aa85ae4b52a43",
+    "calls": [
+      "new AttachmentOutsideRootError"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498757:18298498",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "heldDescriptorName",
+    "qualified_name": "heldDescriptorName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498757,
+    "end_line": 498761,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "readHeldName",
+      "ioPath",
+      "realPath"
+    ],
+    "body_sha256": "defe35f5092d77938238ec73770f8473abad8ac6d3a647c1a8c52273b397ea6e",
+    "calls": [
+      "readHeldName"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498762:18298751",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "createHoldAttachmentFile",
+    "qualified_name": "createHoldAttachmentFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498762,
+    "end_line": 498790,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "readHeldName = (ioPath) => import_node_fs43.promises.readlink(ioPath)"
+    ],
+    "body_sha256": "d7b37ba754b60dfd56d479592ef105d6254075249745eab134c71b514256ac55",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498792:18300077",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "rethrowRefusal",
+    "qualified_name": "rethrowRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498792,
+    "end_line": 498795,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "error64"
+    ],
+    "body_sha256": "28374dea4c107412f671c3a6bd18355395796cb75ad15d50ab67a98bad2e17fb",
+    "calls": [
+      "reportFallbackUnlessAbsent"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498796:18300244",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readHostAttachmentImage",
+    "qualified_name": "readHostAttachmentImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498796,
+    "end_line": 498815,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath",
+      "rendition",
+      "reportRenditionFailure = () => {\n}",
+      "hold = holdAttachmentFile"
+    ],
+    "body_sha256": "31c58dafa938a896cb737aabe1730dccdefcdbbe6df8a4ad2eb224110ceb2695",
+    "calls": [
+      "hold",
+      "previewClaimsCloudAgentArtifact",
+      "realHostAttachmentPath",
+      "reanchorHostPath",
+      "resolvePreviewBoxFile",
+      "rethrowRefusal",
+      "servableImageMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 6,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498817:18301111",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readHostAttachmentChunk",
+    "qualified_name": "readHostAttachmentChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498817,
+    "end_line": 498850,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "filePath",
+      "offset2",
+      "length",
+      "videoPlayback = false",
+      "reportRenditionFailure = () => {\n}",
+      "hold = holdAttachmentFile"
+    ],
+    "body_sha256": "a9aa53297fec55863813a8c97c2254a8c3494b40aedbf0703878c7248439097e",
+    "calls": [
+      "getAgentAssetsDir",
+      "getAgentAttachmentsDir",
+      "hold",
+      "isCloudAgentArtifactPath",
+      "isPathWithin",
+      "new AttachmentOutsideRootError",
+      "realHostAttachmentPath",
+      "reanchorHostPath",
+      "resolvePreviewBoxFile",
+      "rethrowRefusal",
+      "videoMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentOutsideRootError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 5,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498851:18302506",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readHeldAttachmentChunk",
+    "qualified_name": "readHeldAttachmentChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498851,
+    "end_line": 498887,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2",
+      "resolvedName",
+      "offset2",
+      "length",
+      "videoPlayback",
+      "reportRenditionFailure"
+    ],
+    "body_sha256": "5c4da351a17787d78b3c3227521887a13f613d4ceb0ceeabd3b6f19ea8ca5f52",
+    "calls": [
+      "readFrom",
+      "withVideoPlaybackSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498852:18302643",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readFrom",
+    "qualified_name": "readHeldAttachmentChunk/readFrom",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498852,
+    "end_line": 498872,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "handle",
+      "named2"
+    ],
+    "body_sha256": "147d3d6e0a23440a35d6f124eaec0a9ba0211e662138bcb501c9bf8297976239",
+    "calls": [
+      ".toString",
+      "Buffer.alloc",
+      "Math.floor",
+      "Math.max",
+      "Math.min",
+      "Number.isFinite",
+      "audioMimeFromPath",
+      "buffer.subarray",
+      "handle.read",
+      "handle.stat",
+      "imageMimeFromPath",
+      "stat26.isFile",
+      "videoMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498888:18304047",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readImageSize",
+    "qualified_name": "readImageSize",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498888,
+    "end_line": 498895,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "buffer"
+    ],
+    "body_sha256": "d2babe39734514ee68ffe78ec41dfe2d3ff7119dcff0fa38c3e8e47d5610f4f0",
+    "calls": [
+      "readDisplayedImageDimensions"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498896:18304242",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readSourceOrRendition",
+    "qualified_name": "readSourceOrRendition",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498896,
+    "end_line": 498904,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2",
+      "path33"
+    ],
+    "body_sha256": "88ff709652c4e04eb8c7daa7d905f9c3c8db8f954c1af44109d429785152a355",
+    "calls": [
+      "file2.handle.readFile",
+      "openNoFollow",
+      "rendition.close",
+      "rendition.readFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498905:18304543",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readHeldImageAttachment",
+    "qualified_name": "readHeldImageAttachment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498905,
+    "end_line": 498940,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "file2",
+      "rendition",
+      "reportRenditionFailure"
+    ],
+    "body_sha256": "45d2447343ee4e9d6d183ca1bdc3786bd9792ff9fc06183dc55ddd400e995336",
+    "calls": [
+      "servableImageMimeFromPath",
+      "withDisplayableImageSource"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498908:18304744",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "sourceOf",
+    "qualified_name": "readHeldImageAttachment/sourceOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498908,
+    "end_line": 498908,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "resolved"
+    ],
+    "body_sha256": "083b17d99522c8d55175981cb09335df738e1f7753ca900556aeeb086007d4ce",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498909:18304855",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "attachmentOf",
+    "qualified_name": "readHeldImageAttachment/attachmentOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498909,
+    "end_line": 498918,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "renditionPath",
+      "data2",
+      "size",
+      "isRendition"
+    ],
+    "body_sha256": "f0f772f443a225ca7245f1761b4fd54dce20a6e889755deca72529f3866e6aca",
+    "calls": [
+      "data2.toString",
+      "readImageSize",
+      "servableImageMimeFromPath",
+      "sourceOf"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498941:18306126",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "realSandDataFile",
+    "qualified_name": "realSandDataFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498941,
+    "end_line": 498947,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "resolved"
+    ],
+    "body_sha256": "d0905d04750af41e1f68176d6928b1094e57daad925215f11979902377996df2",
+    "calls": [
+      "Promise.all",
+      "getSandRootDir",
+      "import_node_fs43.promises.realpath",
+      "isPathWithin",
+      "realRootFromUnswappableParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:498948:18306380",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readImageDimensions",
+    "qualified_name": "readImageDimensions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498948,
+    "end_line": 498964,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "0c306f539a785cddaf014ea0b24e5a9fd7a1a541986599f289568ea00589d82d",
+    "calls": [
+      "getSandRootDir",
+      "holdAttachmentFile",
+      "isPathWithin",
+      "realSandDataFile",
+      "reanchorHostPath",
+      "reportFallbackUnlessAbsent",
+      "servableImageMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498967:18307053",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readVideoDimensions",
+    "qualified_name": "readVideoDimensions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498967,
+    "end_line": 498993,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "66ddbdf9eca0b5780d5b88b473e757bb1ad11973886027a90b259001c0d82dff",
+    "calls": [
+      "getSandRootDir",
+      "holdAttachmentFile",
+      "isPathWithin",
+      "realSandDataFile",
+      "reanchorHostPath",
+      "reportFallbackUnlessAbsent",
+      "videoMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 5,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:498994:18308116",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readMediaDimensions",
+    "qualified_name": "readMediaDimensions",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 498994,
+    "end_line": 499000,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "77c69c971ce44cfff8d88fecee7f797485ed6f2d3d8b277dc21be2aeca18622d",
+    "calls": [
+      "getSandRootDir",
+      "isPathWithin",
+      "readImageDimensions",
+      "readVideoDimensions",
+      "reanchorHostPath",
+      "servableImageMimeFromPath",
+      "videoMimeFromPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499002:18308512",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "resolveAttachmentOwnerDir",
+    "qualified_name": "resolveAttachmentOwnerDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499002,
+    "end_line": 499014,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "3965b820800bc5e047f21108da13a3c9c2613240fc076ca072d6d3f2534118c8",
+    "calls": [
+      "getSandRootDir",
+      "isPathWithin",
+      "isSafeFolderId",
+      "reanchorHostPath",
+      "rel.split"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 6,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499015:18309204",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "resolveScopedAttachmentPath",
+    "qualified_name": "resolveScopedAttachmentPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499015,
+    "end_line": 499020,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "filePath"
+    ],
+    "body_sha256": "c5aa765d6a861b9d6c263878506af6ea7d93819b775c1537f28f46d64127f1f6",
+    "calls": [
+      "getAgentAssetsDir",
+      "getAgentAttachmentsDir",
+      "isPathWithin",
+      "reanchorHostPath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499021:18309563",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "resolvePreviewBoxFile",
+    "qualified_name": "resolvePreviewBoxFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499021,
+    "end_line": 499040,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "filePath"
+    ],
+    "body_sha256": "75eb709bb620bb2b509e4c41a5217d0270688bc9bf60887689063ffa13a5d573",
+    "calls": [
+      "import_node_fs43.promises.realpath",
+      "import_node_fs43.promises.stat",
+      "lexicalBoxFilePath",
+      "reanchorHostPath",
+      "reportFallbackUnlessAbsent",
+      "resolvedBoxFilePath",
+      "stat26.isFile"
+    ],
+    "writes": [
+      "real"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 6,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:499041:18310191",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "realAttachmentTextPath",
+    "qualified_name": "realAttachmentTextPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499041,
+    "end_line": 499056,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "filePath"
+    ],
+    "body_sha256": "7753b21e8376947aadd14162fcb1d92d7bc80e4833f3c2855f4c9955da681d46",
+    "calls": [
+      "lexicalBoxFilePath",
+      "new AttachmentOutsideRootError",
+      "previewClaimsCloudAgentArtifact",
+      "realHostAttachmentPath",
+      "reanchorHostPath",
+      "resolvePreviewBoxFile",
+      "resolveScopedAttachmentPath"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "AttachmentOutsideRootError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499057:18310924",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readAttachmentText",
+    "qualified_name": "readAttachmentText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499057,
+    "end_line": 499084,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentDir",
+      "filePath",
+      "hold = holdAttachmentFile"
+    ],
+    "body_sha256": "c8c8486c0c9fc942ddeb8547fc6767266374b5c1dbc502cf626c8165e92dff6d",
+    "calls": [
+      "hold",
+      "realAttachmentTextPath",
+      "rethrowRefusal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499085:18311976",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "createAttachmentsService",
+    "qualified_name": "createAttachmentsService",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499085,
+    "end_line": 499169,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "d47876283d5107a4325b8ae6be764f31dc7813b5d8eb238737e19d13c26baf1f",
+    "calls": [
+      "createSandAvatarImageService"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499087:18312083",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "resolveRequestedAgentDir",
+    "qualified_name": "createAttachmentsService/resolveRequestedAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499087,
+    "end_line": 499093,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "4ce405ad2b951f0660deecccdc9a1b5fb6c51ade996a1ee38e166ba04064c400",
+    "calls": [
+      "new SandAttachmentError",
+      "resolveSandAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandAttachmentError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499094:18312369",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "tryResolveRequestedAgentDir",
+    "qualified_name": "createAttachmentsService/tryResolveRequestedAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499094,
+    "end_line": 499100,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "c280d3502eea0c205024515904731ad80f68e273379a2124af54c9ed182d23ac",
+    "calls": [
+      "resolveRequestedAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:499101:18312516",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "resolveReadAgentDir",
+    "qualified_name": "createAttachmentsService/resolveReadAgentDir",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499101,
+    "end_line": 499101,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "path33",
+      "agentId"
+    ],
+    "body_sha256": "230d0f271c7c71a110c22f8fc3ed759dc55216fef42e7dd92f74f683d176ad63",
+    "calls": [
+      "resolveAttachmentOwnerDir",
+      "tryResolveRequestedAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499103:18312645",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "setFallbackAgentId",
+    "qualified_name": "createAttachmentsService/setFallbackAgentId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499103,
+    "end_line": 499105,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "006065b4c5a22f7414eaf055f3d31b9f4bfe18b31e24dfd3484f9862ad05aeba",
+    "calls": [],
+    "writes": [
+      "fallbackAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499106:18312713",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "upload",
+    "qualified_name": "createAttachmentsService/upload",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499106,
+    "end_line": 499117,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "f3aa62116a1200912169271dc43fdcacc2eb6e511625a136ae65bf339d012a39",
+    "calls": [
+      "Buffer.from",
+      "ingestAttachmentBytes",
+      "new Uint8Array",
+      "resolveRequestedAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499118:18313100",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "uploadChunk",
+    "qualified_name": "createAttachmentsService/uploadChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499118,
+    "end_line": 499128,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "2d30d36ecd91908c3cf3601b215be35d85e1287ceb87a78146b741b16c19d007",
+    "calls": [
+      "Buffer.from",
+      "ingestAttachmentChunk",
+      "resolveRequestedAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499129:18313516",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readImage",
+    "qualified_name": "createAttachmentsService/readImage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499129,
+    "end_line": 499129,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "e5debac40252d88505ae88fe68dae27d84ae58233015456d25f55660bdd0702a",
+    "calls": [
+      "readHostAttachmentImage",
+      "renditionOfArgs"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499130:18313632",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readText",
+    "qualified_name": "createAttachmentsService/readText",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499130,
+    "end_line": 499142,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b0aa560db270947b8cac865195257af4b7fcb68f20510c5d872d316a11a0827d",
+    "calls": [
+      "deps.report",
+      "readAttachmentText",
+      "refuseUnlessAgentOnHost",
+      "resolveReadAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:499143:18314054",
+    "artifact": "host",
+    "module": "host/extensions/attachments/attachments-service.ts",
+    "name": "readChunk",
+    "qualified_name": "createAttachmentsService/readChunk",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 499143,
+    "end_line": 499162,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b6b8d012f7efdbe131f3c14624a6d008f27d149e19ffe0b9fec35d0f6af1e743",
+    "calls": [
+      "deps.report",
+      "readHostAttachmentChunk",
+      "refuseUnlessAgentOnHost",
+      "resolveReadAgentDir"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

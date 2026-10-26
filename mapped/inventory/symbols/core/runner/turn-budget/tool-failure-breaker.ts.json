@@ -1,0 +1,222 @@
+[
+  {
+    "id": "evaluation:590440:22233368",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "isRefusedOrCancelled",
+    "qualified_name": "isRefusedOrCancelled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590440,
+    "end_line": 590442,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "955a68e05f407ee3ef26ef10a913a1b1de4c67324cc1ca9085d4371ef707dc56",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590443:22233449",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "failureClassOf",
+    "qualified_name": "failureClassOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590443,
+    "end_line": 590445,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "event"
+    ],
+    "body_sha256": "369377c14dd48cbef610d773a5980d4432a5f1c733e26486735abae98016aa7a",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590446:22233553",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "describeFailureClasses",
+    "qualified_name": "describeFailureClasses",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590446,
+    "end_line": 590453,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "failures2"
+    ],
+    "body_sha256": "45b1b9e672592489b268a4cf37ca36bbc78458fb83b401850987d92d52ca6a41",
+    "calls": [
+      ".join",
+      ".map",
+      "counts.get",
+      "counts.set",
+      "failureClassOf",
+      "new Map"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590454:22233934",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "createSandToolFailureBreaker",
+    "qualified_name": "createSandToolFailureBreaker",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590454,
+    "end_line": 590490,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "maxConsecutiveFailures"
+    ],
+    "body_sha256": "449be6a64dfd0254db2512927f1aad78119672f811ffffb8a181ab0bcb993f32",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590460:22234138",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "tripped",
+    "qualified_name": "createSandToolFailureBreaker/tripped",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590460,
+    "end_line": 590462,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "4179a7b748c719747edfdaa1cdfad5b4252eadf9352012cf020c29ebc967a469",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590463:22234196",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "observe",
+    "qualified_name": "createSandToolFailureBreaker/observe",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590463,
+    "end_line": 590477,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "events"
+    ],
+    "body_sha256": "16504754bdea39d4b66a8bc71bb7d615efb96137d66112396454cfd358a4d056",
+    "calls": [
+      "isRefusedOrCancelled",
+      "streak.push"
+    ],
+    "writes": [
+      "streak",
+      "trippedOn"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:590478:22234582",
+    "artifact": "evaluation",
+    "module": "core/runner/turn-budget/tool-failure-breaker.ts",
+    "name": "report",
+    "qualified_name": "createSandToolFailureBreaker/report",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 590478,
+    "end_line": 590488,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "4c509d06484d16495c10765c5ab453f4708e881f1f1660eb017aa0f24598f124",
+    "calls": [
+      ".join",
+      "describeFailureClasses",
+      "latestHelperUpdate"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

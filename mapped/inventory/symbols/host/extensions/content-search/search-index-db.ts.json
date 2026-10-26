@@ -1,0 +1,268 @@
+[
+  {
+    "id": "host:542024:19887166",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "isFts5Available",
+    "qualified_name": "isFts5Available",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542024,
+    "end_line": 542036,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "23ef5e8fb7ccbffb6f09d73ad795559896201d2cf77d64340eecf3004dad8a5e",
+    "calls": [
+      "db.close",
+      "db.exec",
+      "new import_node_sqlite3.DatabaseSync",
+      "reportFallback"
+    ],
+    "writes": [
+      "db"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:542037:19887476",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "openSearchIndexDb",
+    "qualified_name": "openSearchIndexDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542037,
+    "end_line": 542051,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dbPath"
+    ],
+    "body_sha256": "9bb4c4879711de26fe849d14a79f12cc5c02f5e3e9cde1a244597e21ce246612",
+    "calls": [
+      "applyStorePragmas",
+      "checkSandDataDatabaseSync",
+      "db.close",
+      "new import_node_sqlite3.DatabaseSync",
+      "refuseSandDataDatabaseLinksSync"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:542052:19887836",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "ensureSearchIndexSchema",
+    "qualified_name": "ensureSearchIndexSchema",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542052,
+    "end_line": 542055,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "isFtsEnabled"
+    ],
+    "body_sha256": "8a413aaf3f9bdc053076c77554d05af5dc1ceaaf6155a8e6290a980282df3395",
+    "calls": [
+      "db.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542056:19887956",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "readSearchIndexFileMode",
+    "qualified_name": "readSearchIndexFileMode",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542056,
+    "end_line": 542062,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "022bd0f0d0b7c2975ed59f8a38ea4ebf4a997ccbe1778201679b36cad457220c",
+    "calls": [
+      ".all",
+      ".map",
+      "db.prepare",
+      "names3.has",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542063:19888243",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "readSearchIndexSchemaVersion",
+    "qualified_name": "readSearchIndexSchemaVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542063,
+    "end_line": 542066,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "b00ad48be1df9b872f5776ccdf2403e4f7cc936050acf82330321c746fe6e408",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542067:19888415",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "stampSearchIndexSchemaVersion",
+    "qualified_name": "stampSearchIndexSchemaVersion",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542067,
+    "end_line": 542069,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "221726c0b488743763584f658de17161986a7b1fb35ac8bb7ab2a0b77a91d0ef",
+    "calls": [
+      "db.exec"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542070:19888529",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "readReconcileDone",
+    "qualified_name": "readReconcileDone",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542070,
+    "end_line": 542073,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db"
+    ],
+    "body_sha256": "3f8e760f1e3f3afca7093512171e8fc90574a91bdf091a2eb678c8af4e2bf35e",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:542074:19888684",
+    "artifact": "host",
+    "module": "host/extensions/content-search/search-index-db.ts",
+    "name": "readServerCursor",
+    "qualified_name": "readServerCursor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 542074,
+    "end_line": 542088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "db",
+      "agentId"
+    ],
+    "body_sha256": "e43d43c35bd92111f8a6625b5c59d870d892d2b40526dd1cac288f86f08f52f6",
+    "calls": [
+      ".get",
+      "db.prepare"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

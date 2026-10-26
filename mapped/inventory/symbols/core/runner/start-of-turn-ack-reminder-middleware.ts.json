@@ -1,0 +1,295 @@
+[
+  {
+    "id": "evaluation:586995:22092865",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "chatSilenceRemindersCoverThisTurn",
+    "qualified_name": "chatSilenceRemindersCoverThisTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 586995,
+    "end_line": 587003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  isSubagentRunner,\n  isSilenceAllowed,\n  isGroupMemberTurn,\n  requestSource\n}"
+    ],
+    "body_sha256": "8cb1a661b27ea0e8210fb36d9de7d06fe4d58f030694530563dedd11323d7420",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587009:22093968",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "buildReminderMessage",
+    "qualified_name": "buildReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587009,
+    "end_line": 587019,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "content"
+    ],
+    "body_sha256": "b6f9d1c42517ca5a89a2ffb0a6ff41fff8c8c2fa044b240558a4ef3981d0b952",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587020:22094152",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "isStartOfTurnAckReminderMessage",
+    "qualified_name": "isStartOfTurnAckReminderMessage",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587020,
+    "end_line": 587022,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "fbfe2f7f113167ca0aaeb8dd2b9be1dea85fba7041e5f4375536bc4385187b04",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587023:22094285",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "isTextSendMessageArgs",
+    "qualified_name": "isTextSendMessageArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587023,
+    "end_line": 587027,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "0aab53ea9c90e821dd6f081ac3f5c4171b88b528e0c3633898e5adf0fc933b52",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587028:22094512",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "hasTextSendMessageCall",
+    "qualified_name": "hasTextSendMessageCall",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587028,
+    "end_line": 587038,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "fb7683db5274a150eac4d4f4a6c7262c4be42d45e60419042c77dd27f0d90a22",
+    "calls": [
+      "message.content.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587039:22094870",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "hasTextSendMessageSinceTurnStart",
+    "qualified_name": "hasTextSendMessageSinceTurnStart",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587039,
+    "end_line": 587053,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "messages"
+    ],
+    "body_sha256": "55fddd8ffcb9853a75c374ea9c77c0cac234c660ee1b2d0fafc3f0587f0832cb",
+    "calls": [
+      "hasTextSendMessageCall",
+      "isInjectedReminderMessage"
+    ],
+    "writes": [
+      "index"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587055:22095355",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "StartOfTurnAckReminderMiddleware.constructor",
+    "qualified_name": "StartOfTurnAckReminderMiddleware.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587055,
+    "end_line": 587060,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "innerExecutor",
+      "threshold",
+      "message",
+      "reactionAcknowledged"
+    ],
+    "body_sha256": "354e75c202ecb73d193b06c23174a93e314df4013a557d07b941ffe51bf162c8",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.message",
+      "this.reactionAcknowledged",
+      "this.threshold"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587064:22095615",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "StartOfTurnAckReminderMiddleware.stream",
+    "qualified_name": "StartOfTurnAckReminderMiddleware.stream",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587064,
+    "end_line": 587088,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "ctx",
+      "invocationId",
+      "tools",
+      "options2"
+    ],
+    "body_sha256": "e6051d967598243942d755e40abce6ce31a061328e6257e07f02da7bef4cc9ff",
+    "calls": [
+      "countToolCallsSinceLastSendMessage",
+      "hasTextSendMessageSinceTurnStart",
+      "isStartOfTurnAckReminderMessage",
+      "logReminderShimOnSettle",
+      "logger102.info",
+      "messages.at",
+      "this.innerExecutor.appendMessages",
+      "this.innerExecutor.getMessages",
+      "this.innerExecutor.stream",
+      "this.reactionAcknowledged"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587090:22096788",
+    "artifact": "evaluation",
+    "module": "core/runner/start-of-turn-ack-reminder-middleware.ts",
+    "name": "createStartOfTurnAckReminderMiddleware",
+    "qualified_name": "createStartOfTurnAckReminderMiddleware",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587090,
+    "end_line": 587095,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "5c743282244035075c711e77ecff83ad24c9a6d6bb6ea2b47e7f0d7557d97035",
+    "calls": [
+      "buildReminderMessage"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

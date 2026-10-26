@@ -1,0 +1,151 @@
+[
+  {
+    "id": "host:722735:27419894",
+    "artifact": "host",
+    "module": "host/extensions/session/session-mutations.ts",
+    "name": "setAgentAvatarBytes",
+    "qualified_name": "setAgentAvatarBytes",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722735,
+    "end_line": 722761,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "db",
+      "dbPath",
+      "agentId",
+      "pngBytes",
+      "activeAgentId"
+    ],
+    "body_sha256": "be6085971b2d2bc05a70602fe20edcb554d78c87e1024296923d4d559da9ff99",
+    "calls": [
+      "Buffer.from",
+      "buildSummary",
+      "db.getSandProfile",
+      "db.setSandProfile",
+      "dropLegacyProfileAvatar",
+      "ensureSandDataDirSync",
+      "invalidateAvatarDataUrlCache",
+      "listConventionalAvatarFilenames",
+      "loadAgentDbExtras",
+      "removeSandDataFileSync",
+      "statIfExists",
+      "writeSandDataFile"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722759:27420888",
+    "artifact": "host",
+    "module": "host/extensions/session/session-mutations.ts",
+    "name": "agentHasMemory",
+    "qualified_name": "setAgentAvatarBytes/agentHasMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722759,
+    "end_line": 722759,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "95e7e8ec5b373f6e4bc67cbe57dd6738bc076d7030b9f556be1caf37258d63ad",
+    "calls": [
+      "host.memory.agentHasContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722762:27420950",
+    "artifact": "host",
+    "module": "host/extensions/session/session-mutations.ts",
+    "name": "recoverAgentWithMissingDb",
+    "qualified_name": "recoverAgentWithMissingDb",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722762,
+    "end_line": 722786,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host",
+      "args"
+    ],
+    "body_sha256": "4ca8aa2b335e59c89c0c075e63017cfe4f14905a09d16057d12384c630289df9",
+    "calls": [
+      "agentHasDurableFootprint",
+      "buildSummary",
+      "getSandProfilePath",
+      "hasLiveSandAgentDbHandle",
+      "host.isAgentBeingDeleted",
+      "host.reseedMinimalStoreDbIfMissing",
+      "statIfExists"
+    ],
+    "writes": [
+      "dbStats"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 3,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:722784:27421752",
+    "artifact": "host",
+    "module": "host/extensions/session/session-mutations.ts",
+    "name": "agentHasMemory",
+    "qualified_name": "recoverAgentWithMissingDb/agentHasMemory",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 722784,
+    "end_line": 722784,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "candidate"
+    ],
+    "body_sha256": "95e7e8ec5b373f6e4bc67cbe57dd6738bc076d7030b9f556be1caf37258d63ad",
+    "calls": [
+      "host.memory.agentHasContent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,217 @@
+[
+  {
+    "id": "host:684742:26012593",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "isLiveReferencePointerBody",
+    "qualified_name": "isLiveReferencePointerBody",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684742,
+    "end_line": 684744,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "body"
+    ],
+    "body_sha256": "2874e70c6dd01cc5be80d9f5838e186a15fbe0ed2ad1ebed5dafea4d788a9be9",
+    "calls": [
+      "body.includes"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684745:26012702",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "normalizePluginSkillSourceUrl",
+    "qualified_name": "normalizePluginSkillSourceUrl",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684745,
+    "end_line": 684758,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "98aa8958cb83a3dec67ec0f2170e816126d046ea58d78de4752e782310f4b14b",
+    "calls": [
+      ".filter",
+      "new URL",
+      "parsed2.hostname.toLowerCase",
+      "parsed2.pathname.split",
+      "path33.join"
+    ],
+    "writes": [
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:684759:26013180",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "removeSkillLiveReferences",
+    "qualified_name": "removeSkillLiveReferences",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684759,
+    "end_line": 684770,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "sandRootDir",
+      "sourceUrls"
+    ],
+    "body_sha256": "d0e0c7fa7aa1331dc8193466fe5f8b64465da37f3b5e486c0638377139ed7986",
+    "calls": [
+      "getGlobalSkillsDir",
+      "isLiveReferencePointerBody",
+      "library.list",
+      "library.remove",
+      "new GlobalSkillLibrary",
+      "new Set",
+      "normalizePluginSkillSourceUrl",
+      "refs.has",
+      "sourceUrls.map"
+    ],
+    "writes": [
+      "removed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684771:26013713",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "skillPathTail",
+    "qualified_name": "skillPathTail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684771,
+    "end_line": 684775,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "b5a56ab9810ae5da3f148cfb7af35d4acbf6c487248dd033632b399a2e0e7096",
+    "calls": [
+      "normalized.lastIndexOf",
+      "normalized.slice",
+      "path33.replaceAll"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684776:26013911",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "collectMaterializedSkillSourceUrls",
+    "qualified_name": "collectMaterializedSkillSourceUrls",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684776,
+    "end_line": 684790,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "catalog",
+      "records2"
+    ],
+    "body_sha256": "d4b464be37422033ed39b2d95611df17ddcdc5ee3b1c9d1398dce27b199aae76",
+    "calls": [
+      "catalog.flatMap",
+      "new Set",
+      "records2.flatMap"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:684791:26014468",
+    "artifact": "host",
+    "module": "host/extensions/mcp/legacy-live-references.ts",
+    "name": "sweepLegacyPluginSkillReferences",
+    "qualified_name": "sweepLegacyPluginSkillReferences",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 684791,
+    "end_line": 684817,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "07c6c7d4901ceb65d192e5089aaa26ecb219c8b24e263623d8dec0de50a9739a",
+    "calls": [
+      "collectMaterializedSkillSourceUrls",
+      "deps.log",
+      "errorLogTag",
+      "fetchMarketplaceMcpPlugins",
+      "getPluginSkillsDir",
+      "marketplaceDashboardClientFor",
+      "readPluginSkillsCache",
+      "removeSkillLiveReferences"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  }
+]

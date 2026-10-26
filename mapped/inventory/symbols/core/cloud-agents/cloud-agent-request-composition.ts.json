@@ -1,0 +1,495 @@
+[
+  {
+    "id": "host:510105:18722078",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "buildCloudAgentRequestedModel",
+    "qualified_name": "buildCloudAgentRequestedModel",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510105,
+    "end_line": 510123,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "47f19e14f6f982aa482c08dffceadc795f3b62f45127009c4a19be3098b97310",
+    "calls": [
+      "Array.from",
+      "Object.entries",
+      "args.modelId.trim",
+      "new Map",
+      "new RequestedModel",
+      "new SandCloudAgentLaunchError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510124:18722725",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "buildCloudAgentUserMessage",
+    "qualified_name": "buildCloudAgentUserMessage",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510124,
+    "end_line": 510166,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "fa15fa29ee6319cb63fb7fd5e1fde64662fb479649e8a9c8820b59b6afce7b39",
+    "calls": [
+      ".map",
+      "crypto.randomUUID",
+      "files.filter",
+      "images.map",
+      "new SelectedContext",
+      "new UserMessage",
+      "new UserMessage_SimulatedMessageMetadata"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510167:18724308",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "buildCloudAgentConversationAction",
+    "qualified_name": "buildCloudAgentConversationAction",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510167,
+    "end_line": 510177,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "userMessage2"
+    ],
+    "body_sha256": "f620d752b2b9e26f2cd110cae107870ee6afc4aca46f069752e0c306741bb1f9",
+    "calls": [
+      "new ConversationAction",
+      "new UserMessageAction"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510178:18724583",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "trimRemotePath2",
+    "qualified_name": "trimRemotePath2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510178,
+    "end_line": 510184,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "pathname"
+    ],
+    "body_sha256": "c98c32acc4cdc9a12a09d257ce0c245f9310401f434310695a517bd5f71c86eb",
+    "calls": [
+      ".replace",
+      "normalizedPath.startsWith",
+      "pathname.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510185:18724851",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "toSanitizationCandidate2",
+    "qualified_name": "toSanitizationCandidate2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510185,
+    "end_line": 510204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "rawUrl"
+    ],
+    "body_sha256": "62d183c289780b84bb2cb687ab6a6ea6ae8249c6f29773b4c1afe62abd2f3886",
+    "calls": [
+      "/^[a-z][a-z0-9+.-]*:\\/\\//i.test",
+      "new URL",
+      "rawUrl.match"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:510205:18725431",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "sanitizeRemoteUrl2",
+    "qualified_name": "sanitizeRemoteUrl2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510205,
+    "end_line": 510216,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "57dd142d6a3fa202c895ae67fc48fcdc7228d082ccdff96a36bc09a3687d65b4",
+    "calls": [
+      ".toLowerCase",
+      "new URL",
+      "raw.trim",
+      "toSanitizationCandidate2",
+      "trimRemotePath2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:510217:18725719",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "sanitizeRemoteUrlForHttpUrl2",
+    "qualified_name": "sanitizeRemoteUrlForHttpUrl2",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510217,
+    "end_line": 510230,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "42d7e0c64c858aee7da9339a72b111eb13df65ecd47c3b809c7e5ebbde3b4b22",
+    "calls": [
+      "new URL",
+      "parsed2.host.toLowerCase",
+      "raw.trim",
+      "sanitizeRemoteUrl2",
+      "toSanitizationCandidate2",
+      "trimRemotePath2"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:510231:18726230",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "buildRepoFromRemote",
+    "qualified_name": "buildRepoFromRemote",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510231,
+    "end_line": 510240,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "remote",
+      "baseBranch"
+    ],
+    "body_sha256": "a0ecdab4afaa74ab9ab655a298b15d8dab3f31b0e2eee1ff0dfba341c5cce7ef",
+    "calls": [
+      "new SandCloudAgentLaunchError",
+      "sanitizeRemoteUrl2",
+      "sanitizeRemoteUrlForHttpUrl2"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510241:18726618",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "rejectBareRepoSlug",
+    "qualified_name": "rejectBareRepoSlug",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510241,
+    "end_line": 510246,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "requested"
+    ],
+    "body_sha256": "4fd5aa1a4326277d051b7061f68e1b71db672175c111bd4ac6f7fec920e4ba50",
+    "calls": [
+      "isRepoShorthand",
+      "new SandCloudAgentLaunchError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510247:18727014",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "isRepoShorthand",
+    "qualified_name": "isRepoShorthand",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510247,
+    "end_line": 510249,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "76270210447e82a56ae9b969999595b3d2b8546b82e33547fe8ec3422623bc95",
+    "calls": [
+      "/^[A-Za-z0-9][A-Za-z0-9._-]*\\/[A-Za-z0-9][A-Za-z0-9._-]*$/.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510250:18727131",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "describeSavedEnvironment",
+    "qualified_name": "describeSavedEnvironment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510250,
+    "end_line": 510253,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "environment"
+    ],
+    "body_sha256": "6972742f9c4f266f781fd65870891041b4792d65f2fe1de7099525fcc31b5458",
+    "calls": [
+      "environment.name.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510254:18727284",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "resolveLaunchRepoReference",
+    "qualified_name": "resolveLaunchRepoReference",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510254,
+    "end_line": 510292,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl",
+      "savedEnvironment",
+      "readOriginPrIdentityHosts"
+    ],
+    "body_sha256": "0e561819bf42544b76c9813028e0767ceab55d00ef0e810daaac4d884577dd43",
+    "calls": [
+      ".join",
+      ".some",
+      "describeSavedEnvironment",
+      "new SandCloudAgentLaunchError",
+      "normalizeLaunchRepoReference",
+      "originPrIdentityHostsFor",
+      "rejectBareRepoSlug",
+      "repoIdentityKey",
+      "repoIdentityKeysEqual",
+      "repoUrl.trim",
+      "repos.map",
+      "repos.slice",
+      "repos[computed].repoUrl.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 7,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510293:18729069",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "toStartRepoConfig",
+    "qualified_name": "toStartRepoConfig",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510293,
+    "end_line": 510304,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "config2"
+    ],
+    "body_sha256": "78238b4a5731e89b0b9d35cfdbd17b3124398553ede66e76d266cac4fb61a596",
+    "calls": [
+      "config2.repos.map",
+      "new EnvironmentRepoConfig"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:510306:18729506",
+    "artifact": "host",
+    "module": "core/cloud-agents/cloud-agent-request-composition.ts",
+    "name": "resolveCloudAgentEnvironmentFields",
+    "qualified_name": "resolveCloudAgentEnvironmentFields",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 510306,
+    "end_line": 510350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "repoUrl",
+      "environment"
+    ],
+    "body_sha256": "e44f784653da043b08b175ee2a8a6fb14965bce4a5986472f30205efeb0669ba",
+    "calls": [
+      "deriveRepoLabelValueFromUrl",
+      "environment.name.trim",
+      "labels.push",
+      "new PrivateWorkerLabel",
+      "new SandCloudAgentLaunchError"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandCloudAgentLaunchError"
+    ],
+    "control": {
+      "branches": 8,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 5,
+      "throws": 2,
+      "catches": 0
+    }
+  }
+]

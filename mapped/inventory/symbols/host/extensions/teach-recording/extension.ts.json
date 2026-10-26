@@ -1,0 +1,556 @@
+[
+  {
+    "id": "host:729562:27719022",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "createLearningPromptSender",
+    "qualified_name": "createLearningPromptSender",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729562,
+    "end_line": 729586,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  client\n}"
+    ],
+    "body_sha256": "6c52b30ecc99dd5e3690defb5b120021540b7b51c82285e95c8cf26b895c1c20",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729587:27719778",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "parseTeachQueueKey",
+    "qualified_name": "parseTeachQueueKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729587,
+    "end_line": 729597,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "f79c1567a5c0898dab1e0aa09847ddd9e6b600d8ec09e37bc6e63f31313a89f0",
+    "calls": [
+      "/^[0-9a-f]{64}$/.test",
+      "Buffer.from",
+      "JSON.parse"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:729598:27720172",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "logTeachQueueKeyRefusal",
+    "qualified_name": "logTeachQueueKeyRefusal",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729598,
+    "end_line": 729602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "log5",
+      "operation",
+      "error64"
+    ],
+    "body_sha256": "6ec164c68d1f1d1635cfb9a89b6093c62a807832af8e8c1409654e6564691cf3",
+    "calls": [
+      "log5"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729603:27720361",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "readTeachQueueKeyFile",
+    "qualified_name": "readTeachQueueKeyFile",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729603,
+    "end_line": 729620,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "keyPath",
+      "noFollow",
+      "log5"
+    ],
+    "body_sha256": "eaabdcdaa3c9b29731b498aee4c8dd5725f4dcfbf073c2389aac430c2ac8e488",
+    "calls": [
+      "file2.close",
+      "file2.readFile",
+      "file2.stat",
+      "log5",
+      "logTeachQueueKeyRefusal",
+      "openNoFollow",
+      "reportFallbackUnlessAbsent",
+      "untrustedFileReason"
+    ],
+    "writes": [
+      "file2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:729621:27720927",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "loadTeachQueueKey",
+    "qualified_name": "loadTeachQueueKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729621,
+    "end_line": 729637,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "keyPath",
+      "log5",
+      "write4 = writeFileAtomic"
+    ],
+    "body_sha256": "fda746a446696cb5faf8d8f3a4c4a17704b9ce45f63f4b9c15eeb38d3e05cc89",
+    "calls": [
+      "JSON.stringify",
+      "hostNoFollowRoot",
+      "key.toString",
+      "logTeachQueueKeyRefusal",
+      "parseTeachQueueKey",
+      "readTeachQueueKeyFile",
+      "write4"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:729647:27721833",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "start",
+    "qualified_name": "start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729647,
+    "end_line": 729701,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "context2"
+    ],
+    "body_sha256": "8b342d141588fc6d3e9b2e87dcffb567539c9d6973693a13a7b5bcb07bfc1f98",
+    "calls": [
+      "context2.onStop",
+      "createDebouncePolicy",
+      "createLearningPromptSender",
+      "createSandCursorBackendClient",
+      "createTeachRecordingService",
+      "new AbortController",
+      "schedulePendingRecovery"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729663:27722525",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "listAgentIds",
+    "qualified_name": "start/listAgentIds",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729663,
+    "end_line": 729663,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "7fac2da329e48130a1b622831b4a19d7d1ba038d2db61a1ba1dd0a96a10c043b",
+    "calls": [
+      "context2.deps[computed].listAgentIds"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729664:27722600",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "queueSignatureKey",
+    "qualified_name": "start/queueSignatureKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729664,
+    "end_line": 729667,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d57c05c3f1700325bcd63db1c5b8a79cb53c47110bc326ddfed1cc10e0ec622e",
+    "calls": [
+      "getSandRootDir",
+      "loadTeachQueueKey"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729668:27722792",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "ensureLearningSkill",
+    "qualified_name": "start/ensureLearningSkill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729668,
+    "end_line": 729668,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "c483ac8744c48dff1de3085e01062bb3bb73d2c11b560dfe407067ccc10b594b",
+    "calls": [
+      "context2.deps[computed].ensureManagedSkill"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729669:27722913",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "trackRecordingStarted",
+    "qualified_name": "start/trackRecordingStarted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729669,
+    "end_line": 729672,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agent_id, entry_point }"
+    ],
+    "body_sha256": "ac160e0c1825619ee06bc812690327d5851f5e0d6955a94b9c88c4504f0d302f",
+    "calls": [
+      "analytics.trackEvent",
+      "brandedId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729673:27723110",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "trackRecordingStopped",
+    "qualified_name": "start/trackRecordingStopped",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729673,
+    "end_line": 729677,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ agent_id, outcome, duration_seconds }"
+    ],
+    "body_sha256": "d89e44fb401ee7c5ec0b317ae059b8a6acd2875aebd13ecdc3872dd2cb6e5a4d",
+    "calls": [
+      "analytics.trackEvent",
+      "brandedId"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729678:27723341",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "reportCapStopFailed",
+    "qualified_name": "start/reportCapStopFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729678,
+    "end_line": 729680,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ errorClass }"
+    ],
+    "body_sha256": "da74d397fc2e769ec4868ea22556d46bcf1c7a7c36184b802911cb3c0cc4313c",
+    "calls": [
+      "context2.deps[computed].logs.reportTeachRecordingCapStopFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729681:27723483",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "reportStartFailed",
+    "qualified_name": "start/reportStartFailed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729681,
+    "end_line": 729686,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "{ kind, errorClass, windowIndex, entryPoint }"
+    ],
+    "body_sha256": "33c4bb63ba45024c9541823b14bbbc0c8cd0e7df851e429ade6208db6a1fb945",
+    "calls": [
+      "context2.deps[computed].logs.reportTeachRecordingStartFailed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729692:27723850",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "recover",
+    "qualified_name": "start/recover",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729692,
+    "end_line": 729692,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "f7fc7045e1c98928f6038bdc8aa33f5ca56fad4b830b9bcefdc2987f73377e3f",
+    "calls": [
+      "service.recoverPending"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729696:27724040",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "log",
+    "qualified_name": "start/log",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729696,
+    "end_line": 729696,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "365ba132e52c16cd084268687673f78e2d8db45f8a122a4fbd2b074d580f2d78",
+    "calls": [
+      "context2.host.log"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729703:27724174",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "schedulePendingRecovery",
+    "qualified_name": "schedulePendingRecovery",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729703,
+    "end_line": 729746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "{\n  recover,\n  whenReady,\n  subscribeToRenewal,\n  signal,\n  log: log5\n}"
+    ],
+    "body_sha256": "17962f60e63625478316bb9c6367fb51081bbbe719b2da19090f26d618e3093a",
+    "calls": [
+      "attempt",
+      "subscribeToRenewal"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:729713:27724377",
+    "artifact": "host",
+    "module": "host/extensions/teach-recording/extension.ts",
+    "name": "attempt",
+    "qualified_name": "schedulePendingRecovery/attempt",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 729713,
+    "end_line": 729740,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "db73d3b0f307739407aa43d9e65e0481bb1ac05c921b771a83e15d82121d7f16",
+    "calls": [
+      ".finally",
+      "Promise.resolve"
+    ],
+    "writes": [
+      "inFlight",
+      "renewedDuringAttempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

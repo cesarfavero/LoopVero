@@ -1,0 +1,29 @@
+# `isStoredFeatureFlagOverride`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../../guide/architecture/README.md).
+
+**Módulo:** `shared/node/experiments/feature-flag-overrides.ts` · [README do módulo](../../../../../../modules/shared/node/experiments/feature-flag-overrides-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:552121-552123](../../../../../../../reference/runtime/host-main.cjs#L552121-L552123) | `FunctionDeclaration` | não | `entry` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:552121-552123](../../../../../../../reference/runtime/host-main.cjs#L552121-L552123) | 0 | 0 | 0 | 1 | 0 | 0 |
+
+### host:552121
+
+Chamadas escritas diretamente neste corpo: nenhuma chamada identificável por nome.
+
+SHA-256 do trecho: `80c2139a95bb98d710f5a46aa09ee332668ffbe2f0c4d6021452a37a1845a6f0`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../../guide/methodology/README.md).

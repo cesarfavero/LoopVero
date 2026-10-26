@@ -1,0 +1,106 @@
+[
+  {
+    "id": "host:471548:17270276",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-crash-marker-forward.ts",
+    "name": "hostCrashMarkerMetadata",
+    "qualified_name": "hostCrashMarkerMetadata",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 471548,
+    "end_line": 471569,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "marker17"
+    ],
+    "body_sha256": "91ae6688901612f3107895fae25c66579724280c40cf6b58903ead4192f4d362",
+    "calls": [
+      "Math.round",
+      "brandedErrorTag",
+      "brandedId",
+      "logFields"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:471570:17270966",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-crash-marker-forward.ts",
+    "name": "deleteIfUnchanged",
+    "qualified_name": "deleteIfUnchanged",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 471570,
+    "end_line": 471576,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "store",
+      "raw"
+    ],
+    "body_sha256": "4254d4a4d0364dc59ff2699f6071cf9fda702a0998abc135df0e86f80a205dbd",
+    "calls": [
+      "store.delete",
+      "store.read"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:471577:17271276",
+    "artifact": "host",
+    "module": "host/extensions/telemetry/host-crash-marker-forward.ts",
+    "name": "forwardHostCrashMarkerWith",
+    "qualified_name": "forwardHostCrashMarkerWith",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 471577,
+    "end_line": 471600,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "forwarder"
+    ],
+    "body_sha256": "c9a246cdfee9f04d306d09d649724f977f3c8f717ac8ee44957180f51b436bb9",
+    "calls": [
+      "deleteIfUnchanged",
+      "forwarder.emit",
+      "forwarder.emitUnparseable",
+      "forwarder.markForwarded",
+      "forwarder.store.read",
+      "forwarder.wasForwarded",
+      "parseHostCrashMarker"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 11,
+      "loops": 0,
+      "awaits": 6,
+      "returns": 9,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

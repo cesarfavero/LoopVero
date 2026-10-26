@@ -1,0 +1,37 @@
+# `cloudAgentConfirmDescription`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../guide/architecture/README.md).
+
+**Módulo:** `core/cloud-agents/cloud-agent-confirm-policy.ts` · [README do módulo](../../../../../modules/core/cloud-agents/cloud-agent-confirm-policy-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:770054-770066](../../../../../../reference/runtime/host-main.cjs#L770054-L770066) | `FunctionDeclaration` | não | `{   durableWatch,   publishRepository = false,   agentScope = "launched" }` |
+| [evaluation:566864-566876](../../../../../../reference/runtime/sand-eval-runner.cjs#L566864-L566876) | `FunctionDeclaration` | não | `{   durableWatch,   publishRepository = false,   agentScope = "launched" }` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:770054-770066](../../../../../../reference/runtime/host-main.cjs#L770054-L770066) | 4 | 0 | 0 | 2 | 0 | 0 |
+| [evaluation:566864-566876](../../../../../../reference/runtime/sand-eval-runner.cjs#L566864-L566876) | 4 | 0 | 0 | 2 | 0 | 0 |
+
+### host:770054
+
+Chamadas escritas diretamente neste corpo: nenhuma chamada identificável por nome.
+
+SHA-256 do trecho: `07a9c9c49db18136a25255a949621b52e50dbb6889e90a3d2248164503dde374`.
+
+### evaluation:566864
+
+Chamadas escritas diretamente neste corpo: nenhuma chamada identificável por nome.
+
+SHA-256 do trecho: `07a9c9c49db18136a25255a949621b52e50dbb6889e90a3d2248164503dde374`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../guide/methodology/README.md).

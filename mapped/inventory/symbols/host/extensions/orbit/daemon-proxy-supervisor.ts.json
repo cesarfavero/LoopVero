@@ -1,0 +1,163 @@
+[
+  {
+    "id": "host:705568:26802023",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy-supervisor.ts",
+    "name": "createOrbitDaemonProxySupervisor",
+    "qualified_name": "createOrbitDaemonProxySupervisor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705568,
+    "end_line": 705615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "0a1200c0f4afeee3253798d832ee129262c6f2a9e2d604ce20a61d1fea252daa",
+    "calls": [
+      "new AbortController"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705574:26802239",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy-supervisor.ts",
+    "name": "startProxyWithRetry",
+    "qualified_name": "createOrbitDaemonProxySupervisor/startProxyWithRetry",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705574,
+    "end_line": 705595,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "bc3ea6c42744f356a3752bb332c00a9800236bd0521f24222ba95cdcef6d94c3",
+    "calls": [
+      "deps.log",
+      "deps.policies.startRetry.schedule",
+      "deps.startProxy",
+      "errorLogTag"
+    ],
+    "writes": [
+      "activeProxy",
+      "attempt"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 2,
+      "returns": 3,
+      "throws": 0,
+      "catches": 2
+    }
+  },
+  {
+    "id": "host:705596:26802993",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy-supervisor.ts",
+    "name": "start",
+    "qualified_name": "createOrbitDaemonProxySupervisor/start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705596,
+    "end_line": 705601,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "e3d8c50b29718c9e84251b32f496c4785ad8a21f3b1e68e6108d00e4882bf253",
+    "calls": [
+      "startProxyWithRetry"
+    ],
+    "writes": [
+      "startupPromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705602:26803117",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy-supervisor.ts",
+    "name": "performDispose",
+    "qualified_name": "createOrbitDaemonProxySupervisor/performDispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705602,
+    "end_line": 705609,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "3a8630a64bcc2a0c118c9b3ba98bb85a23f2062130f1672d54b145b2785adb5e",
+    "calls": [
+      "abortController.abort",
+      "proxy.stop"
+    ],
+    "writes": [
+      "activeProxy",
+      "disposed"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:705610:26803312",
+    "artifact": "host",
+    "module": "host/extensions/orbit/daemon-proxy-supervisor.ts",
+    "name": "dispose",
+    "qualified_name": "createOrbitDaemonProxySupervisor/dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 705610,
+    "end_line": 705613,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ea438c13c555c4a2e230c7196d1ac9c226e519a44c939739c9cea53d12269b35",
+    "calls": [
+      "performDispose"
+    ],
+    "writes": [
+      "disposePromise"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

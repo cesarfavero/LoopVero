@@ -1,0 +1,204 @@
+[
+  {
+    "id": "evaluation:587554:22117686",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "clampExecutorForkTurns",
+    "qualified_name": "clampExecutorForkTurns",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587554,
+    "end_line": 587558,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "f3e944d7e341a6004fad371104aeeef686546b4fd236f4365daf8536fd590101",
+    "calls": [
+      "Math.max",
+      "Math.min",
+      "Math.round",
+      "Number.isFinite"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587559:22117929",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "deliveredText",
+    "qualified_name": "deliveredText",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587559,
+    "end_line": 587568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "toolName",
+      "rawArgs"
+    ],
+    "body_sha256": "bbf45bc57c7d1a90516ebe5bc6132ca0f4d46d98ab918104a3ca5194c1a88dcb",
+    "calls": [
+      "isSandUserDeliveryToolName",
+      "resolveEffectiveToolCall"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587569:22118444",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "clipMiddle",
+    "qualified_name": "clipMiddle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587569,
+    "end_line": 587577,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "text3",
+      "maxChars"
+    ],
+    "body_sha256": "3f05b5b1423808bc57ab04a9db7a4711ed3f2567dc249134e26efce34bc90010",
+    "calls": [
+      "Math.ceil",
+      "text3.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587578:22118762",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "budgetForkedEntries",
+    "qualified_name": "budgetForkedEntries",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587578,
+    "end_line": 587590,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entries"
+    ],
+    "body_sha256": "0d10e8e10f2aed3e6d4de342c905981dd19afbbfed953c145bcea8b0a05f060b",
+    "calls": [
+      "clipMiddle",
+      "kept.push",
+      "kept.reverse"
+    ],
+    "writes": [
+      "index",
+      "used"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587591:22119230",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "forkedExecutorContext",
+    "qualified_name": "forkedExecutorContext",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587591,
+    "end_line": 587602,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "parentMessages",
+      "forkTurns"
+    ],
+    "body_sha256": "579f9b210bfe67f8ad4a300bcd6ad571a1b4b9db154f8bde2f4e8bab40de4e1f",
+    "calls": [
+      "budgetForkedEntries",
+      "clampExecutorForkTurns",
+      "renderForkedConversation",
+      "selectForkedConversation"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:587598:22119581",
+    "artifact": "evaluation",
+    "module": "core/runner/subagents/executor-fork.ts",
+    "name": "isRelayedUserQuery",
+    "qualified_name": "forkedExecutorContext/isRelayedUserQuery",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 587598,
+    "end_line": 587598,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "query2"
+    ],
+    "body_sha256": "f8361b8be26601326fb82dbfbd3436618e7cfa560c5f61ee936edf482ab65098",
+    "calls": [
+      "RELAYED_PRINCIPAL_CUES.some"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

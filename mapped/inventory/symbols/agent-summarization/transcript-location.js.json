@@ -1,0 +1,394 @@
+[
+  {
+    "id": "host:619822:22975961",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatTranscriptLocation",
+    "qualified_name": "formatTranscriptLocation",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619822,
+    "end_line": 619824,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentTranscriptsFolder",
+      "options2"
+    ],
+    "body_sha256": "fd9fa340a9482d08a5f82f92cb68917f2a0fe2e57db427162689e362fbc92df1",
+    "calls": [
+      "formatTranscriptLocationMarkdownSection",
+      "ownTranscriptRelativePath",
+      "wrapTranscriptSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:619825:22976225",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatCloudTranscriptFetch",
+    "qualified_name": "formatCloudTranscriptFetch",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619825,
+    "end_line": 619839,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bcId",
+      "options2"
+    ],
+    "body_sha256": "983f77a429f1b20258385120692a226e77bac4b1408006306fddb0bd0cba762d",
+    "calls": [
+      "JSON.stringify",
+      "wrapTranscriptSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:619840:22977174",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "wrapTranscriptSection",
+    "qualified_name": "wrapTranscriptSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619840,
+    "end_line": 619850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdownSection",
+      "useXml"
+    ],
+    "body_sha256": "6448e23464fc26f3d8422e04b41d5b7ddab2c377acd74e711af26b07c128a2cf",
+    "calls": [
+      ".replace",
+      ".trimEnd",
+      "markdownSection.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:619851:22977473",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "ownTranscriptRelativePath",
+    "qualified_name": "ownTranscriptRelativePath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619851,
+    "end_line": 619870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "42c133034927e52fe89e295e97e65959ebd79230a4ebee0922f57ab9acedccb6",
+    "calls": [
+      "getTranscriptRelativePath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:619871:22978050",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatTranscriptLocationMarkdownSection",
+    "qualified_name": "formatTranscriptLocationMarkdownSection",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619871,
+    "end_line": 619893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentTranscriptsFolder",
+      "transcriptRelativePath"
+    ],
+    "body_sha256": "b03b04af194534b95d109ccd5a7cd5c8a7759aa22f760dbaad18844e03625b2a",
+    "calls": [
+      "stripTranscriptsDirPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:619894:22979179",
+    "artifact": "host",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "stripTranscriptsDirPrefix",
+    "qualified_name": "stripTranscriptsDirPrefix",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 619894,
+    "end_line": 619897,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "relativePath"
+    ],
+    "body_sha256": "15d04b536a94dd4b0aa731570bff847a436f9ad88249d438408a08836a8c7d77",
+    "calls": [
+      "relativePath.slice",
+      "relativePath.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304176:9879849",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatTranscriptLocation",
+    "qualified_name": "formatTranscriptLocation",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304176,
+    "end_line": 304178,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentTranscriptsFolder",
+      "options2"
+    ],
+    "body_sha256": "fd9fa340a9482d08a5f82f92cb68917f2a0fe2e57db427162689e362fbc92df1",
+    "calls": [
+      "formatTranscriptLocationMarkdownSection",
+      "ownTranscriptRelativePath",
+      "wrapTranscriptSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304179:9880113",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatCloudTranscriptFetch",
+    "qualified_name": "formatCloudTranscriptFetch",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304179,
+    "end_line": 304193,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "bcId",
+      "options2"
+    ],
+    "body_sha256": "983f77a429f1b20258385120692a226e77bac4b1408006306fddb0bd0cba762d",
+    "calls": [
+      "JSON.stringify",
+      "wrapTranscriptSection"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304194:9881062",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "wrapTranscriptSection",
+    "qualified_name": "wrapTranscriptSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304194,
+    "end_line": 304204,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "markdownSection",
+      "useXml"
+    ],
+    "body_sha256": "6448e23464fc26f3d8422e04b41d5b7ddab2c377acd74e711af26b07c128a2cf",
+    "calls": [
+      ".replace",
+      ".trimEnd",
+      "markdownSection.replace"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304205:9881361",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "ownTranscriptRelativePath",
+    "qualified_name": "ownTranscriptRelativePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304205,
+    "end_line": 304224,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "42c133034927e52fe89e295e97e65959ebd79230a4ebee0922f57ab9acedccb6",
+    "calls": [
+      "getTranscriptRelativePath"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304225:9881938",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "formatTranscriptLocationMarkdownSection",
+    "qualified_name": "formatTranscriptLocationMarkdownSection",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304225,
+    "end_line": 304247,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "agentTranscriptsFolder",
+      "transcriptRelativePath"
+    ],
+    "body_sha256": "ab435c23acb0803db6a73491abca38824f12f0f81c6376d3a7369ab0c4ab2056",
+    "calls": [
+      "stripTranscriptsDirPrefix"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:304248:9883066",
+    "artifact": "evaluation",
+    "module": "agent-summarization/transcript-location.js",
+    "name": "stripTranscriptsDirPrefix",
+    "qualified_name": "stripTranscriptsDirPrefix",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 304248,
+    "end_line": 304251,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "relativePath"
+    ],
+    "body_sha256": "15d04b536a94dd4b0aa731570bff847a436f9ad88249d438408a08836a8c7d77",
+    "calls": [
+      "relativePath.slice",
+      "relativePath.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

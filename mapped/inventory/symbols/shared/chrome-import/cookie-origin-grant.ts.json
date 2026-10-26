@@ -1,0 +1,323 @@
+[
+  {
+    "id": "host:485853:17791346",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseChromeProfileId",
+    "qualified_name": "parseChromeProfileId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485853,
+    "end_line": 485857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "743f5177b70ad58b654f7cae0fd146cf5ab243aab9988aac5e3b2904de86f8dd",
+    "calls": [
+      "brandParsedString",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:485858:17791526",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "isNormalizedCookieHost",
+    "qualified_name": "isNormalizedCookieHost",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485858,
+    "end_line": 485860,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "74dcf6665d9c4edabf4f8810b5de1685deb60917c2fd78dc1a4486cdb90eced3",
+    "calls": [
+      "chromeCookieAllowHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:485861:17791634",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseCookieOrigin",
+    "qualified_name": "parseCookieOrigin",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485861,
+    "end_line": 485865,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "38a180cf2b1de4e343a2a355e9a5e8dd059c09df8b398fd1adac8c909b642bbd",
+    "calls": [
+      "brandParsedString",
+      "chromeCookieAllowHost",
+      "isNormalizedCookieHost",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:485866:17791836",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseCookieOriginGrant",
+    "qualified_name": "parseCookieOriginGrant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485866,
+    "end_line": 485872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "692a4859cad06ab0e63ee39e73d9c67c60e4ae54a07b797d7d2a087b10b13efe",
+    "calls": [
+      "isUnknownRecord2",
+      "parseChromeProfileId",
+      "parseCookieOrigin"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:485873:17792115",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseCookieOriginGrants",
+    "qualified_name": "parseCookieOriginGrants",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485873,
+    "end_line": 485880,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "d9665560bacca81dd16a8f4cfacd94b40349dcadbc4d4929f1a2d82d6d74592f",
+    "calls": [
+      "grants.push",
+      "parseCookieOriginGrant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:485881:17792321",
+    "artifact": "host",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "cookieOriginGrantKey",
+    "qualified_name": "cookieOriginGrantKey",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 485881,
+    "end_line": 485883,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "grant"
+    ],
+    "body_sha256": "8bf1ee736715a1dd794d6395ac6410ebf398a5e839ff76777ff0831a21d518ca",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574553:21498105",
+    "artifact": "evaluation",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseChromeProfileId",
+    "qualified_name": "parseChromeProfileId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574553,
+    "end_line": 574557,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "743f5177b70ad58b654f7cae0fd146cf5ab243aab9988aac5e3b2904de86f8dd",
+    "calls": [
+      "brandParsedString",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574558:21498285",
+    "artifact": "evaluation",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "isNormalizedCookieHost",
+    "qualified_name": "isNormalizedCookieHost",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574558,
+    "end_line": 574560,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "74dcf6665d9c4edabf4f8810b5de1685deb60917c2fd78dc1a4486cdb90eced3",
+    "calls": [
+      "chromeCookieAllowHost"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574561:21498393",
+    "artifact": "evaluation",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "parseCookieOrigin",
+    "qualified_name": "parseCookieOrigin",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574561,
+    "end_line": 574565,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "38a180cf2b1de4e343a2a355e9a5e8dd059c09df8b398fd1adac8c909b642bbd",
+    "calls": [
+      "brandParsedString",
+      "chromeCookieAllowHost",
+      "isNormalizedCookieHost",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:574566:21498595",
+    "artifact": "evaluation",
+    "module": "shared/chrome-import/cookie-origin-grant.ts",
+    "name": "cookieOriginGrantKey",
+    "qualified_name": "cookieOriginGrantKey",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 574566,
+    "end_line": 574568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "grant"
+    ],
+    "body_sha256": "8bf1ee736715a1dd794d6395ac6410ebf398a5e839ff76777ff0831a21d518ca",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

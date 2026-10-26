@@ -1,0 +1,139 @@
+[
+  {
+    "id": "host:490562:17967205",
+    "artifact": "host",
+    "module": "shared/voice-call/written-messages.ts",
+    "name": "typedInTheChat",
+    "qualified_name": "typedInTheChat",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490562,
+    "end_line": 490568,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "entry"
+    ],
+    "body_sha256": "82f03e659a855bbb217228c920beeea434240de24a24126d521a47ac5d83a5b2",
+    "calls": [
+      "entry.content.trim"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490570:17967516",
+    "artifact": "host",
+    "module": "shared/voice-call/written-messages.ts",
+    "name": "_VoiceCallWrittenMessages.ofTranscript",
+    "qualified_name": "_VoiceCallWrittenMessages.ofTranscript",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490570,
+    "end_line": 490583,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entries",
+      "limit3 = VOICE_CALL_SENT_MESSAGE_LIMIT"
+    ],
+    "body_sha256": "a1ed56d745508c26365128c1647edd70cb281fd487fb5ea33a66364d9f37fa52",
+    "calls": [
+      "getChatTranscriptEntries",
+      "outlineSendMessageText",
+      "typedInTheChat",
+      "written.push",
+      "written.slice"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490584:17968106",
+    "artifact": "host",
+    "module": "shared/voice-call/written-messages.ts",
+    "name": "_VoiceCallWrittenMessages.fills",
+    "qualified_name": "_VoiceCallWrittenMessages.fills",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490584,
+    "end_line": 490586,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "entries",
+      "limit3"
+    ],
+    "body_sha256": "ec32d8bf914613274797989078676fe2bc410889109f5048b6291972fb6d696e",
+    "calls": [
+      "_VoiceCallWrittenMessages.ofTranscript"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:490587:17968236",
+    "artifact": "host",
+    "module": "shared/voice-call/written-messages.ts",
+    "name": "_VoiceCallWrittenMessages.recall",
+    "qualified_name": "_VoiceCallWrittenMessages.recall",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 490587,
+    "end_line": 490600,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "readTail",
+      "limit3 = VOICE_CALL_SENT_MESSAGE_LIMIT"
+    ],
+    "body_sha256": "c44a7df84b698363e3c109acf457b561419e9b0296db032eac67f4f214f2eae5",
+    "calls": [
+      "_VoiceCallWrittenMessages.fills",
+      "_VoiceCallWrittenMessages.ofTranscript",
+      "collected.unshift",
+      "readTail"
+    ],
+    "writes": [
+      "beforeSeq",
+      "page"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

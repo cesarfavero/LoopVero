@@ -1,0 +1,31 @@
+# `start/createPublishSoon`
+
+Ficha estática do código original. O fluxo completo e suas condições são explicados no [guia do componente](../../../../../../../guide/components/transcripts/README.md).
+
+**Módulo:** `host/extensions/transcript-publish/extension.ts` · [README do módulo](../../../../../../modules/host/extensions/transcript-publish/extension-ts/README.md)
+
+## Implementação e entradas
+
+| Artefato e linhas | Forma | Assíncrona | Parâmetros recuperados |
+| --- | --- | --- | --- |
+| [host:784342-784342](../../../../../../../reference/runtime/host-main.cjs#L784342-L784342) | `ArrowFunctionExpression` | não | `name18, delayMs, scope` |
+
+## Fluxo observado no corpo
+
+| Artefato | Decisões sintáticas | Laços | await | return explícito | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:784342-784342](../../../../../../../reference/runtime/host-main.cjs#L784342-L784342) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+A ocorrência em host:784342 usa retorno implícito de arrow function.
+
+### host:784342
+
+Chamadas escritas diretamente neste corpo: `.wrap`, `createDebouncePolicy`.
+
+SHA-256 do trecho: `d81d62734ed96983c55835881a7fb068e0c91c42ac3f7b9e685e1283468ee3a3`.
+
+## Como interpretar
+
+Os links abrem a implementação completa, incluindo condições, valores de retorno e tratamento de falhas. Contagens excluem corpos de funções internas. Chamadas são referências sintáticas: não resolvem despacho dinâmico, aliases, permissões nem provam execução em produção. Atribuições não cobrem todas as mutações realizadas por métodos chamados. Nomes repetidos no mesmo escopo agrupam ocorrências; diferenças entre os bundles não são substituídas por uma versão presumida.
+
+[Método e limites do catálogo](../../../../../../../guide/methodology/README.md).

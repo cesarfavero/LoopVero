@@ -1,0 +1,1098 @@
+[
+  {
+    "id": "host:763345:29220749",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "QueuedPostCancelled.constructor",
+    "qualified_name": "QueuedPostCancelled.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763345,
+    "end_line": 763348,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "b7e94f97b101e7a95eef0103b5ed8320a6cc9673d3469bbf8cfecb2d3d575534",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763353:29222138",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "readLinesTool",
+    "qualified_name": "readLinesTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763353,
+    "end_line": 763375,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "928de635d4b9c41dedef169414d9fe2db28f5e623032acb1c61e81cfada13e7a",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports2.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763359:29222383",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "readLinesTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763359,
+    "end_line": 763373,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "_args",
+      "d"
+    ],
+    "body_sha256": "ee2ca8f516372ad01747f9cc565bf6a303343fff3244d29943798d867559d16f",
+    "calls": [
+      ".join",
+      "Date.now",
+      "MeetingRequestPrompt.postOutcomes",
+      "d.request.mark",
+      "d.request.readMore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763376:29223040",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "respondTool",
+    "qualified_name": "respondTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763376,
+    "end_line": 763434,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "928f58d73dd3bb5783a48f86ec1bc10fb963ac75a263bb5ed1d2e643aba60ff0",
+    "calls": [
+      ".describe",
+      ".min",
+      ".trim",
+      "defineCommunicateTool",
+      "external_exports2.object",
+      "external_exports2.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763384:29223400",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "respondTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763384,
+    "end_line": 763384,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ee95b755d6ee9a0ec070e1b1f501c343dcb8cf5f8edd6b22165c43c7c1401e26",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763385:29223455",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "respondTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763385,
+    "end_line": 763432,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "544692ade4a85c0cef262f0cb7167c93b55f04b7daf09529d0e9e6e548144cc1",
+    "calls": [
+      ".then",
+      "Date.now",
+      "d.request.queuePost",
+      "new AbortController",
+      "new MeetingChatSender",
+      "realClock.schedule",
+      "sender.send"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763392:29223785",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "mark",
+    "qualified_name": "respondTool/execute/mark",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763392,
+    "end_line": 763392,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "mark"
+    ],
+    "body_sha256": "46b39225093e38107aa25f26ae8b6ee7a0dfd489062c36aa8f8af00d7dd663eb",
+    "calls": [
+      "queued.mark"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763393:29223832",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "reviewed",
+    "qualified_name": "respondTool/execute/reviewed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763393,
+    "end_line": 763393,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "review"
+    ],
+    "body_sha256": "ac051550eb42bbdcac587ccc6d6d539b157b5e55f0c345bc2556944ef5ac0f9a",
+    "calls": [
+      "queued.reviewed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763407:29224322",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "seen",
+    "qualified_name": "respondTool/execute/seen",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763407,
+    "end_line": 763407,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79402ec61d98135246920c1ea991885634abfd83efafe8f46d870ff0364da4cc",
+    "calls": [
+      "posts.seen"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763408:29224382",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "claim",
+    "qualified_name": "respondTool/execute/claim",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763408,
+    "end_line": 763416,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ba367da69f90f0b024c61238b4796187b7f9a79c64ab11e59ecac2f292aaa173",
+    "calls": [
+      "Date.now",
+      "new QueuedPostCancelled",
+      "posts.claim",
+      "posts.ready",
+      "queued.mark"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "QueuedPostCancelled"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763417:29224957",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "release",
+    "qualified_name": "respondTool/execute/release",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763417,
+    "end_line": 763417,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d145ea9ff68165c190d4aafd352acfb060927111f77920fed4c044e65c53cf47",
+    "calls": [
+      "posts.release"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763418:29225010",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "posted",
+    "qualified_name": "respondTool/execute/posted",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763418,
+    "end_line": 763418,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "19fd30bd239a4c54381684b68f419b496fde0cfcc6e6b150dab421f2b0185a3a",
+    "calls": [
+      "posts.posted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763435:29225654",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "wakeParentTool",
+    "qualified_name": "wakeParentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763435,
+    "end_line": 763449,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "ed52b684684d056e87bf911c172888c8a1a9c42a523e6028c3e380b2b7cec2a8",
+    "calls": [
+      ".describe",
+      ".max",
+      ".min",
+      ".trim",
+      "defineCommunicateTool",
+      "external_exports2.object",
+      "external_exports2.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763443:29226057",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "wakeParentTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763443,
+    "end_line": 763443,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "739494242e90c77883473a6216ff602b2d0b26537cd8d764296043a66e5852b1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763444:29226116",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "wakeParentTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763444,
+    "end_line": 763447,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "9bc783da54875c2da78b186174fdcffd2bde123c51e8c4fa104541e64b9533a7",
+    "calls": [
+      "d.request.wakeParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763450:29226490",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "meetingRequestTools",
+    "qualified_name": "meetingRequestTools",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763450,
+    "end_line": 763452,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "f445493b7e5d18a7b4aa9f35ad82073aa79e5a0f8971346b94bd1781dfc6a497",
+    "calls": [
+      "readLinesTool",
+      "respondTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:763453:29226580",
+    "artifact": "host",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "meetingRequestWakeParentTool",
+    "qualified_name": "meetingRequestWakeParentTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 763453,
+    "end_line": 763455,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "b2e571bb6b05b7faaffd63869ba34cd16bc0f363b6230850775db71320543ead",
+    "calls": [
+      "wakeParentTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556310:20622901",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "QueuedPostCancelled.constructor",
+    "qualified_name": "QueuedPostCancelled.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556310,
+    "end_line": 556313,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "outcome"
+    ],
+    "body_sha256": "b7e94f97b101e7a95eef0103b5ed8320a6cc9673d3469bbf8cfecb2d3d575534",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.outcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556318:20624290",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "readLinesTool",
+    "qualified_name": "readLinesTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556318,
+    "end_line": 556340,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "f8362a84f13d20236a700fb0f05d0ac076a48eb261c6e8fd945be3f29833a246",
+    "calls": [
+      "defineCommunicateTool",
+      "external_exports3.object"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556324:20624535",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "readLinesTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556324,
+    "end_line": 556338,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "_args",
+      "d"
+    ],
+    "body_sha256": "ee2ca8f516372ad01747f9cc565bf6a303343fff3244d29943798d867559d16f",
+    "calls": [
+      ".join",
+      "Date.now",
+      "MeetingRequestPrompt.postOutcomes",
+      "d.request.mark",
+      "d.request.readMore"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556341:20625192",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "respondTool",
+    "qualified_name": "respondTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556341,
+    "end_line": 556399,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "bb1b390ec75e8868dd83795c990bc728f002ecc6ec39c07c9f82183d23511693",
+    "calls": [
+      ".describe",
+      ".min",
+      ".trim",
+      "defineCommunicateTool",
+      "external_exports3.object",
+      "external_exports3.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556349:20625552",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "respondTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556349,
+    "end_line": 556349,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ee95b755d6ee9a0ec070e1b1f501c343dcb8cf5f8edd6b22165c43c7c1401e26",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556350:20625607",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "respondTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556350,
+    "end_line": 556397,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "2df700770d1688d918c2e5b97cd5efdf09d4887212c439099d8a03113f688432",
+    "calls": [
+      ".then",
+      "Date.now",
+      "d.request.queuePost",
+      "new AbortController",
+      "new MeetingChatSender",
+      "realClock.schedule",
+      "sender.send"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556357:20625937",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "mark",
+    "qualified_name": "respondTool/execute/mark",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556357,
+    "end_line": 556357,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "mark"
+    ],
+    "body_sha256": "46b39225093e38107aa25f26ae8b6ee7a0dfd489062c36aa8f8af00d7dd663eb",
+    "calls": [
+      "queued.mark"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556358:20625984",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "reviewed",
+    "qualified_name": "respondTool/execute/reviewed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556358,
+    "end_line": 556358,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "review"
+    ],
+    "body_sha256": "ac051550eb42bbdcac587ccc6d6d539b157b5e55f0c345bc2556944ef5ac0f9a",
+    "calls": [
+      "queued.reviewed"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556372:20626474",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "seen",
+    "qualified_name": "respondTool/execute/seen",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556372,
+    "end_line": 556372,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79402ec61d98135246920c1ea991885634abfd83efafe8f46d870ff0364da4cc",
+    "calls": [
+      "posts.seen"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556373:20626534",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "claim",
+    "qualified_name": "respondTool/execute/claim",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556373,
+    "end_line": 556381,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "ba367da69f90f0b024c61238b4796187b7f9a79c64ab11e59ecac2f292aaa173",
+    "calls": [
+      "Date.now",
+      "new QueuedPostCancelled",
+      "posts.claim",
+      "posts.ready",
+      "queued.mark"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "QueuedPostCancelled"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 1,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556382:20627109",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "release",
+    "qualified_name": "respondTool/execute/release",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556382,
+    "end_line": 556382,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d145ea9ff68165c190d4aafd352acfb060927111f77920fed4c044e65c53cf47",
+    "calls": [
+      "posts.release"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556383:20627162",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "posted",
+    "qualified_name": "respondTool/execute/posted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556383,
+    "end_line": 556383,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "19fd30bd239a4c54381684b68f419b496fde0cfcc6e6b150dab421f2b0185a3a",
+    "calls": [
+      "posts.posted"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556400:20627806",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "wakeParentTool",
+    "qualified_name": "wakeParentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556400,
+    "end_line": 556414,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "f2d89a9999f21b3e21bc4bc9ee130ecab60767733f50084259d72ca6d5342ec3",
+    "calls": [
+      ".describe",
+      ".max",
+      ".min",
+      ".trim",
+      "defineCommunicateTool",
+      "external_exports3.object",
+      "external_exports3.string"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556408:20628209",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "describeActivity",
+    "qualified_name": "wakeParentTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556408,
+    "end_line": 556408,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "739494242e90c77883473a6216ff602b2d0b26537cd8d764296043a66e5852b1",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556409:20628268",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "execute",
+    "qualified_name": "wakeParentTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556409,
+    "end_line": 556412,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "_ctx",
+      "args",
+      "d"
+    ],
+    "body_sha256": "9bc783da54875c2da78b186174fdcffd2bde123c51e8c4fa104541e64b9533a7",
+    "calls": [
+      "d.request.wakeParent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556415:20628642",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "meetingRequestTools",
+    "qualified_name": "meetingRequestTools",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556415,
+    "end_line": 556417,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "f445493b7e5d18a7b4aa9f35ad82073aa79e5a0f8971346b94bd1781dfc6a497",
+    "calls": [
+      "readLinesTool",
+      "respondTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:556418:20628732",
+    "artifact": "evaluation",
+    "module": "core/meetings/meeting-request-tools.ts",
+    "name": "meetingRequestWakeParentTool",
+    "qualified_name": "meetingRequestWakeParentTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 556418,
+    "end_line": 556420,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "b2e571bb6b05b7faaffd63869ba34cd16bc0f363b6230850775db71320543ead",
+    "calls": [
+      "wakeParentTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

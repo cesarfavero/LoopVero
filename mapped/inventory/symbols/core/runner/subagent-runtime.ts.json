@@ -1,0 +1,858 @@
+[
+  {
+    "id": "evaluation:535221:19653312",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "subagentSteerRunOptions",
+    "qualified_name": "subagentSteerRunOptions",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535221,
+    "end_line": 535228,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "meta3"
+    ],
+    "body_sha256": "2be84082e5efdb35259fb6bb180d7b2ac4552aa33e5f770ff2fc75f366c77cb6",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535229:19653667",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "createSubagentRuntime",
+    "qualified_name": "createSubagentRuntime",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535229,
+    "end_line": 535642,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "host"
+    ],
+    "body_sha256": "5e12e442824df8f56db46ede21851ab6d8bb7c764a41b5aa0072b735c2cb6e55",
+    "calls": [
+      "new Map",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535239:19654192",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "dispatchBackgroundSubagent",
+    "qualified_name": "createSubagentRuntime/dispatchBackgroundSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535239,
+    "end_line": 535288,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "0da8087825615383bb0764db40ac183b8bd362288c064989e214faf90c2a6c30",
+    "calls": [
+      "Date.now",
+      "backgroundSubagentRuns.get",
+      "computeSubagentRequestId",
+      "computerUseSessions.set",
+      "definedProvenance",
+      "deriveBackgroundSubagentTitleFields",
+      "host.activeTurnRequestSource",
+      "host.getCombinedComputerUseDecision",
+      "host.getConversationId",
+      "host.onPendingWakeArmed",
+      "host.subagentOwnership.assertOpen",
+      "isComputerUseSubagentType",
+      "logSubagentLifecycle",
+      "startBackgroundSubagentTurn",
+      "subagentMeta.set",
+      "subagentRegistry.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 9,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535289:19656423",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "startBackgroundSubagentTurn",
+    "qualified_name": "createSubagentRuntime/startBackgroundSubagentTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535289,
+    "end_line": 535347,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentAgentId",
+      "runTurn"
+    ],
+    "body_sha256": "481bf52ac5447ebbecc90f5bc44676acf416c89f57e3c1bb7daa4161b53e2951",
+    "calls": [
+      "Promise.reject",
+      "backgroundSubagentRuns.set",
+      "computerUseSessions.get",
+      "host.subagentOwnership.join",
+      "promise2.then",
+      "runTurn",
+      "turn.then"
+    ],
+    "writes": [
+      "computerUseSession.turns",
+      "turn"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:535348:19658331",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "settleBackgroundSubagentTurn",
+    "qualified_name": "createSubagentRuntime/settleBackgroundSubagentTurn",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535348,
+    "end_line": 535491,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentAgentId",
+      "outcome"
+    ],
+    "body_sha256": "686c2ca920be3d3db7e6c638c263554bbd418cdbe5431fdcb98b767eed3e13aa",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "abortCleanups.delete",
+      "abortCleanups.get",
+      "abortingSubagents.delete",
+      "abortingSubagents.has",
+      "browserReportStatusOf",
+      "computerUseSessionAuditRecord",
+      "computerUseSessionMetadata",
+      "computerUseSessions.delete",
+      "computerUseSessions.get",
+      "console.warn",
+      "definedProvenance",
+      "host.actionAuditor.record",
+      "host.computerUse.freeWindow",
+      "host.computerUse.recordSessionMetrics",
+      "host.getConversationId",
+      "host.resolveBoxId",
+      "isComputerUseSubagentType",
+      "logSubagentLifecycle",
+      "pendingSubagentSteers.delete",
+      "pendingSubagentSteers.get",
+      "runner.getComputerUseAuditActionCounts",
+      "runner.getComputerUseUsageSnapshot",
+      "runner.getObservedToolCallCount",
+      "settled",
+      "startBackgroundSubagentTurn",
+      "subagentMeta.delete",
+      "subagentMeta.get",
+      "subagentRegistry.get",
+      "subagentSessions.delete",
+      "subagentSessions.get",
+      "telemetry.reportComputerUseSession"
+    ],
+    "writes": [
+      "record4.status",
+      "usageOutcome"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 21,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535492:19664269",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "buildRunningSubagentInfo",
+    "qualified_name": "createSubagentRuntime/buildRunningSubagentInfo",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535492,
+    "end_line": 535508,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "87b56780ad3df48485620eaf8aff0ee9b637bb1302b216540fd255b3566ff448",
+    "calls": [
+      "Date.now",
+      "Math.max",
+      "backgroundSubagentRuns.has",
+      "runner.getActivitySnapshot",
+      "runner.getObservedToolCallCount",
+      "runner.getTranscriptPath",
+      "subagentMeta.get",
+      "subagentRegistry.get",
+      "subagentSessions.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535509:19664981",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "logSubagentLifecycle",
+    "qualified_name": "createSubagentRuntime/logSubagentLifecycle",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535509,
+    "end_line": 535514,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "phase",
+      "subagentAgentId",
+      "status"
+    ],
+    "body_sha256": "2ab4f7144dd819b8c611d39d0a2641d8bec16e62011d6e940e6b3c0934b025f4",
+    "calls": [
+      "console.log",
+      "subagentRegistry.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535515:19665344",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "listRunningSubagents",
+    "qualified_name": "createSubagentRuntime/listRunningSubagents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535515,
+    "end_line": 535522,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "77d123236d4d8a8e1782b0af04be0587de7d674a7518bec20b1c586b279f4709",
+    "calls": [
+      "backgroundSubagentRuns.keys",
+      "buildRunningSubagentInfo",
+      "infos.push"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535523:19665604",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "getRunningSubagent",
+    "qualified_name": "createSubagentRuntime/getRunningSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535523,
+    "end_line": 535525,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "91100681e87c22233a1661cc789c551e4936d4a963bd25a7b87090bcb8ab2bb0",
+    "calls": [
+      "buildRunningSubagentInfo"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535526:19665711",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "steerSubagent",
+    "qualified_name": "createSubagentRuntime/steerSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535526,
+    "end_line": 535546,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "subagentAgentId",
+      "message"
+    ],
+    "body_sha256": "dcba116dde405430ae71d853a2f2731eb5b3d17ffae74f17dc9124a806c09ed4",
+    "calls": [
+      "abortingSubagents.has",
+      "backgroundSubagentRuns.has",
+      "host.connectorScopeForTurn",
+      "narrowestConnectorScope",
+      "pendingSubagentSteers.set",
+      "runner.interrupt",
+      "subagentMeta.get",
+      "subagentMeta.set",
+      "subagentRegistry.get",
+      "subagentSessions.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535547:19666557",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "abortSubagent",
+    "qualified_name": "createSubagentRuntime/abortSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535547,
+    "end_line": 535580,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "params"
+    ],
+    "body_sha256": "15b639c895bbf3e27eaf2fb75f2650742a1adf5be1557fd3f6b57a30713560a8",
+    "calls": [
+      "abortCleanups.set",
+      "abortingSubagents.add",
+      "abortingSubagents.has",
+      "backgroundSubagentRuns.has",
+      "host.onPendingWakeDisarmed",
+      "pendingSubagentSteers.delete",
+      "subagentMeta.get",
+      "subagentRegistry.get",
+      "subagentSessions.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535581:19667782",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "listSubagents",
+    "qualified_name": "createSubagentRuntime/listSubagents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535581,
+    "end_line": 535589,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "9d376aee0e21a77afd4e25e49aba58d9aa43c8af14f16ee95741c181a1a65392",
+    "calls": [
+      ".map",
+      ".sort",
+      "subagentRegistry.entries"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535590:19668106",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "hasRunningSubagents",
+    "qualified_name": "createSubagentRuntime/hasRunningSubagents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535590,
+    "end_line": 535595,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "d63c51d8826df40c9832cb9319598b350717c9b91750685f08d84ff381b10a5c",
+    "calls": [
+      "subagentRegistry.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535596:19668277",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "drainBackgroundSubagents",
+    "qualified_name": "createSubagentRuntime/drainBackgroundSubagents",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535596,
+    "end_line": 535600,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "6f594977a804696651f6b35c79ae2596885893f25825a0f21e8e88347840efff",
+    "calls": [
+      "Promise.allSettled",
+      "backgroundSubagentRuns.values"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535601:19668449",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "setBackgroundSubagentHandler",
+    "qualified_name": "createSubagentRuntime/setBackgroundSubagentHandler",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535601,
+    "end_line": 535603,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "handler"
+    ],
+    "body_sha256": "932f5df0dcf49a65d6a17c4350cd4304a2fbf911b04b80d7bf0a2bbcf618cab9",
+    "calls": [],
+    "writes": [
+      "onBackgroundSubagentSettled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535608:19668651",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "abortSubagent",
+    "qualified_name": "createSubagentRuntime/abortSubagent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535608,
+    "end_line": 535608,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "ad8f9e15722d562169735472d8b25c9cb771297438f4ea3ab2b7c917d303bd05",
+    "calls": [
+      "abortSubagent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535609:19668723",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "isRunning",
+    "qualified_name": "createSubagentRuntime/isRunning",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535609,
+    "end_line": 535609,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "685998e8ca2abdfc64ea5bf64e7f75805a87f1f2ac74b11fbeb0cd2dcf24990e",
+    "calls": [
+      "backgroundSubagentRuns.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535610:19668809",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "hasPendingWork",
+    "qualified_name": "createSubagentRuntime/hasPendingWork",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535610,
+    "end_line": 535610,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "9872f15ba7df2892767baba007eb8efa8086afae09b13dfdbe5b4877d2bc4a18",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535611:19668862",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "abortAll",
+    "qualified_name": "createSubagentRuntime/abortAll",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535611,
+    "end_line": 535615,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "0006acb7ad564a665386839fb9f9288bcb6544d0e61c4d4840f135b7ad9293ee",
+    "calls": [
+      "abortSubagent",
+      "backgroundSubagentRuns.keys"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535619:19669100",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "getCombinedComputerUseDecision",
+    "qualified_name": "createSubagentRuntime/getCombinedComputerUseDecision",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535619,
+    "end_line": 535619,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "fecb585ba9c9052c7098e2a3d11dfb89faa0d97d8c59993d823f634889c48108",
+    "calls": [
+      "host.getCombinedComputerUseDecision"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535621:19669212",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "notifyBackgroundWorkSettled",
+    "qualified_name": "createSubagentRuntime/notifyBackgroundWorkSettled",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535621,
+    "end_line": 535623,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "completion"
+    ],
+    "body_sha256": "1ce042cf2e78a710f5a8ce5ff3e2a7d803afdeb96e72650eb5fe45d710145b47",
+    "calls": [
+      "onBackgroundSubagentSettled"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535624:19669302",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "reset",
+    "qualified_name": "createSubagentRuntime/reset",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535624,
+    "end_line": 535627,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "79aad0b1667617955072b487d8fec7b7dbcb7b84232f50d7cfd08fa0180b4c2b",
+    "calls": [
+      "subagentRegistry.clear",
+      "subagentSessions.clear"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535628:19669397",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "isAborting",
+    "qualified_name": "createSubagentRuntime/isAborting",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535628,
+    "end_line": 535628,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "b6f06f5d8b4148f22fd0b910269bcc0c1b732bce06196003dc1eb201611c780a",
+    "calls": [
+      "abortingSubagents.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535629:19669474",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "wasAborted",
+    "qualified_name": "createSubagentRuntime/wasAborted",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535629,
+    "end_line": 535629,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "ec364aa525587deb1ff2bf8b48e880c9cfbcea938b5a47ae6d70fa0c7436f43e",
+    "calls": [
+      "abortingSubagents.has",
+      "subagentRegistry.get"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:535630:19669613",
+    "artifact": "evaluation",
+    "module": "core/runner/subagent-runtime.ts",
+    "name": "isRunning",
+    "qualified_name": "createSubagentRuntime/isRunning",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 535630,
+    "end_line": 535630,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "subagentAgentId"
+    ],
+    "body_sha256": "685998e8ca2abdfc64ea5bf64e7f75805a87f1f2ac74b11fbeb0cd2dcf24990e",
+    "calls": [
+      "backgroundSubagentRuns.has"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

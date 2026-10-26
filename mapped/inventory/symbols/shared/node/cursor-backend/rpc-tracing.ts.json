@@ -1,0 +1,356 @@
+[
+  {
+    "id": "host:224801:9600821",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "resolveTraceDecision",
+    "qualified_name": "resolveTraceDecision",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224801,
+    "end_line": 224817,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7737c49cde218ccf93b892d9092700625bebbcb50e6c18de6afb15904e2b2480",
+    "calls": [
+      "Math.random",
+      "configured.getPolicy",
+      "configured.getTracer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:224818:9601487",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "pinRequestId",
+    "qualified_name": "pinRequestId",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224818,
+    "end_line": 224824,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "header"
+    ],
+    "body_sha256": "7ffe72bd9114991850001dfe395db059097e77f5a60abd8433d5da818db662d2",
+    "calls": [
+      "globalThis.crypto.randomUUID",
+      "header.get",
+      "header.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:224825:9601724",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "spanTraceparent",
+    "qualified_name": "spanTraceparent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224825,
+    "end_line": 224830,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span"
+    ],
+    "body_sha256": "c0d6832859f49807ff89de8ebe2d5eb44c865dbf24cef1debf3b148a96b27caf",
+    "calls": [
+      "span.spanContext",
+      "trace.isSpanContextValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:224831:9601997",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "injectTraceparent",
+    "qualified_name": "injectTraceparent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224831,
+    "end_line": 224835,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "header",
+      "span"
+    ],
+    "body_sha256": "4bae9ae94397f0e70d1eed752a2ae57b9f6b3910611a3db3d3e66613d9eb565c",
+    "calls": [
+      "header.set",
+      "spanTraceparent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:224836:9602167",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "createSandRpcTracingInterceptor",
+    "qualified_name": "createSandRpcTracingInterceptor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224836,
+    "end_line": 224884,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7843f059cb12a7260acb5593bfa99fc45f52f90fbf6571155151242df1112d8c",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:224887:9604013",
+    "artifact": "host",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "src/shared/node/cursor-backend/rpc-tracing.ts",
+    "qualified_name": "src/shared/node/cursor-backend/rpc-tracing.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 224887,
+    "end_line": 224900,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "39b124a2b3d9c22ca6afd58940078103107c6570c6a515d97ab7da591e7e5d8b",
+    "calls": [
+      "__toESM",
+      "createExpiryPolicy",
+      "init_esm2",
+      "init_esm4",
+      "init_scheduling",
+      "new Set",
+      "new import_sdk_trace_node.AlwaysOnSampler",
+      "require_src5"
+    ],
+    "writes": [
+      "RPC_ROOT_SAMPLER",
+      "SAND_RPC_TRACE_WINDOW_DURATION_MS",
+      "UNTRACED_SERVICE_TYPE_NAMES",
+      "import_sdk_trace_node",
+      "traceWindowExpiry"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511834:18587907",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "resolveTraceDecision",
+    "qualified_name": "resolveTraceDecision",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511834,
+    "end_line": 511850,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "7737c49cde218ccf93b892d9092700625bebbcb50e6c18de6afb15904e2b2480",
+    "calls": [
+      "Math.random",
+      "configured.getPolicy",
+      "configured.getTracer"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 7,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:511851:18588573",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "pinRequestId",
+    "qualified_name": "pinRequestId",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511851,
+    "end_line": 511857,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "header"
+    ],
+    "body_sha256": "7ffe72bd9114991850001dfe395db059097e77f5a60abd8433d5da818db662d2",
+    "calls": [
+      "globalThis.crypto.randomUUID",
+      "header.get",
+      "header.set"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511858:18588810",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "spanTraceparent",
+    "qualified_name": "spanTraceparent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511858,
+    "end_line": 511863,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "span"
+    ],
+    "body_sha256": "c0d6832859f49807ff89de8ebe2d5eb44c865dbf24cef1debf3b148a96b27caf",
+    "calls": [
+      "span.spanContext",
+      "trace.isSpanContextValid"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511864:18589083",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "injectTraceparent",
+    "qualified_name": "injectTraceparent",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511864,
+    "end_line": 511868,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "header",
+      "span"
+    ],
+    "body_sha256": "4bae9ae94397f0e70d1eed752a2ae57b9f6b3910611a3db3d3e66613d9eb565c",
+    "calls": [
+      "header.set",
+      "spanTraceparent"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:511869:18589253",
+    "artifact": "evaluation",
+    "module": "shared/node/cursor-backend/rpc-tracing.ts",
+    "name": "createSandRpcTracingInterceptor",
+    "qualified_name": "createSandRpcTracingInterceptor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 511869,
+    "end_line": 511917,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "56424ac88c0776d6e4150a06c9973f6a57bb6f9ffddde1a510a2bbd6c4421b97",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "id": "host:785899:30288186",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.constructor",
+    "qualified_name": "WorkingStateWarmer.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785899,
+    "end_line": 785905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "6915d36eeb930867854efed37268d22c50ae9cb37a8b45c4e2e24dca1df39503",
+    "calls": [
+      "deps.debounce.wrap"
+    ],
+    "writes": [
+      "this.deps",
+      "this.drainSoon"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785917:30288575",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.schedule",
+    "qualified_name": "WorkingStateWarmer.schedule",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785917,
+    "end_line": 785921,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "d707f0b060a5476cb653e6c47c49b9456ccdca86118de94b35a4d56c53080a6b",
+    "calls": [
+      "this.enqueue",
+      "this.startBackfill",
+      "this.warmed.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785922:30288709",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.forgetAgent",
+    "qualified_name": "WorkingStateWarmer.forgetAgent",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785922,
+    "end_line": 785925,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "a4aadc5b8d702abfb9987fbfd09ac7a5105abfa529a7f35b83f99cd7c676b39a",
+    "calls": [
+      "this.pending.delete",
+      "this.warmed.delete"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785926:30288807",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.dispose",
+    "qualified_name": "WorkingStateWarmer.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785926,
+    "end_line": 785933,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "f6bfba6f65ce897d3af95e6452f16ae215d92a1f59709798c0e858987a3c55d9",
+    "calls": [
+      "Promise.all",
+      "new WorkingStateWarmCancelledError",
+      "this.cancelActiveWarm",
+      "this.drainSoon.dispose",
+      "this.pending.clear"
+    ],
+    "writes": [
+      "this.disposed",
+      "this.drainScheduled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785934:30289063",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.drain",
+    "qualified_name": "WorkingStateWarmer.drain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785934,
+    "end_line": 785946,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "7c4917d07c5dbff9e63f8cbeeaa82425646a9834cb69a7d11281a4c1707300f5",
+    "calls": [
+      ".finally",
+      "Promise.resolve",
+      "this.drainPending"
+    ],
+    "writes": [
+      "this.activeDrain",
+      "this.drainScheduled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785947:30289482",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.drainPending",
+    "qualified_name": "WorkingStateWarmer.drainPending",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785947,
+    "end_line": 785968,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "661062a3651832098af6dc830e6f60b56f150833a43a682092baec649dc02783",
+    "calls": [
+      "errorLogTag",
+      "this.deps.isEligible",
+      "this.deps.log",
+      "this.pending.delete",
+      "this.runWarm",
+      "this.warmed.add"
+    ],
+    "writes": [
+      "this.activeAgentId"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 6,
+      "loops": 1,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:785969:30290237",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.enqueue",
+    "qualified_name": "WorkingStateWarmer.enqueue",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785969,
+    "end_line": 785974,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId",
+      "logExposure"
+    ],
+    "body_sha256": "bd2806f7457b8895af8525176159b359899a40290fa1209ccf38c8318b3486ec",
+    "calls": [
+      "this.deps.isEligible",
+      "this.pending.add",
+      "this.scheduleDrain"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785975:30290439",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.startBackfill",
+    "qualified_name": "WorkingStateWarmer.startBackfill",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785975,
+    "end_line": 785996,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e08334d05583d1439e20331f199325be4c934894227c7d104c679763036d450e",
+    "calls": [
+      ".catch",
+      ".finally",
+      ".then",
+      "this.deps.listAgentPopulation"
+    ],
+    "writes": [
+      "this.backfill"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:785997:30291225",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.scheduleDrain",
+    "qualified_name": "WorkingStateWarmer.scheduleDrain",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 785997,
+    "end_line": 786003,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "4c963510f8867d284cc0b91109b26355bccecf109303304a1814b7f36263540d",
+    "calls": [
+      "this.drainSoon"
+    ],
+    "writes": [
+      "this.drainScheduled"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786004:30291429",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "WorkingStateWarmer.runWarm",
+    "qualified_name": "WorkingStateWarmer.runWarm",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786004,
+    "end_line": 786035,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "agentId"
+    ],
+    "body_sha256": "4fdf35487ab189d8003c56e64de700df5617ce6ea6a188e8b87cbdecef5dc5a6",
+    "calls": [
+      "Promise.race",
+      "new AbortController",
+      "new Promise",
+      "this.deps.config",
+      "this.deps.operationTimeout.arm",
+      "this.deps.warmAgent",
+      "timeout2.dispose"
+    ],
+    "writes": [
+      "this.cancelActiveWarm"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786006:30291511",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "rejectStopped",
+    "qualified_name": "WorkingStateWarmer.runWarm/rejectStopped",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786006,
+    "end_line": 786007,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "d8c7ff76b38a6ba1f0dfd0cae507faf3b110de37901ad7d18c725ff3358b6176",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786011:30291640",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "stop",
+    "qualified_name": "WorkingStateWarmer.runWarm/stop",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786011,
+    "end_line": 786015,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "da7c41609c095b8265791af97f862a6d9a3ca9a2e15c4a86572af4bfc794fac0",
+    "calls": [
+      "controller.abort",
+      "rejectStopped"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:786025:30292124",
+    "artifact": "host",
+    "module": "host/extensions/working-state-export/working-state-warmer.ts",
+    "name": "onProgress",
+    "qualified_name": "WorkingStateWarmer.runWarm/onProgress",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 786025,
+    "end_line": 786025,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "a30a45edb6ce680f57b640880cdb90a5dd21272d387f4e5da6795851a313ea98",
+    "calls": [
+      "timeout2.kick"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

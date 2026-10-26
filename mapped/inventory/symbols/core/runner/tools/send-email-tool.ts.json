@@ -1,0 +1,926 @@
+[
+  {
+    "id": "host:764273:29269617",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "nonEmptyList",
+    "qualified_name": "nonEmptyList",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764273,
+    "end_line": 764275,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "e7c796d54948a42210ecb00197c0c57009c935cf61cf6c4de5eeae75f8f55532",
+    "calls": [
+      ".filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764276:29269712",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "normalizeSendEmailArgs",
+    "qualified_name": "normalizeSendEmailArgs",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764276,
+    "end_line": 764322,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a0167dcf84e36888dfdd4ab79343b213e3f3d9defbf633d672b6d6eca2101f1a",
+    "calls": [
+      ".map",
+      "args.body.trim",
+      "args.from.toLowerCase",
+      "args.html_body.trim",
+      "new SandToolInputError",
+      "new Set",
+      "nonEmptyList",
+      "normalizeDisplayName"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764323:29271538",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "normalizeDisplayName",
+    "qualified_name": "normalizeDisplayName",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764323,
+    "end_line": 764333,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "field"
+    ],
+    "body_sha256": "fa29adeb91d5b4c6c5c1a28077f043d00571d08b848ab11f6e4e1b6d70e8e191",
+    "calls": [
+      "mailboxDisplayNameError",
+      "new SandToolInputError",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764334:29271829",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "resolveAttachmentPaths",
+    "qualified_name": "resolveAttachmentPaths",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764334,
+    "end_line": 764350,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachments",
+      "agentDir"
+    ],
+    "body_sha256": "1caef00c14a339bc1ab1c3b78598e63e2c3c1c4f46282af8d58eee0ea4d3b5fa",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError",
+      "resolveSandEmailAttachmentPath",
+      "resolved.includes",
+      "resolved.push"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764351:29272479",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeRecipients",
+    "qualified_name": "describeRecipients",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764351,
+    "end_line": 764356,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "to3",
+      "cc",
+      "bcc"
+    ],
+    "body_sha256": "8afecb414b912ddb91ec032bdae89a7cabb51822e8810ea96db12d74ae335078",
+    "calls": [
+      "bcc.join",
+      "cc.join",
+      "parts.join",
+      "parts.push",
+      "to3.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764357:29272709",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeAttachments",
+    "qualified_name": "describeAttachments",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764357,
+    "end_line": 764360,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "described2"
+    ],
+    "body_sha256": "a7cf6964920f1cfc964d6f141ab36a8438fe97f9e985440f82ac621a1a669c63",
+    "calls": [
+      ".join",
+      "described2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764361:29272920",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeSuppressionReason",
+    "qualified_name": "describeSuppressionReason",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764361,
+    "end_line": 764373,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "4eeaa867332db34cbd512c1317a97df99b89959886ad502c7fc211296da6b2b4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764374:29273289",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeSuppressed",
+    "qualified_name": "describeSuppressed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764374,
+    "end_line": 764378,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "suppressed"
+    ],
+    "body_sha256": "fb0c1cab9abc276c98c0f08dbd493e23feb2fc5a36d96feb9ce8acc1c0688b1d",
+    "calls": [
+      ".join",
+      "suppressed.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764379:29273620",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "sendEmail",
+    "qualified_name": "sendEmail",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764379,
+    "end_line": 764392,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "c4fce2e93f6a6cb644c2e10297c32acb84a32b842c1d3c34473e317a4a9a8530",
+    "calls": [
+      "attemptEmailSend",
+      "deps.reportDelivery.failed",
+      "deps.reportDelivery.settled",
+      "errorClassOf"
+    ],
+    "writes": [
+      "outcome"
+    ],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:764393:29273993",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "attemptEmailSend",
+    "qualified_name": "attemptEmailSend",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764393,
+    "end_line": 764483,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "340c413473f91f307b3819aa5c31d74116e2327732fd387e06d9c45f8a67d1a0",
+    "calls": [
+      ".join",
+      "JSON.stringify",
+      "deps.email.describeAttachments",
+      "deps.email.listInboxes",
+      "deps.email.send",
+      "deps.getAgentDir",
+      "deps.reviewSend",
+      "describeAttachments",
+      "describeRecipients",
+      "describeSuppressed",
+      "described2.map",
+      "grokBotStoreAttachmentAliases",
+      "inboxes.map",
+      "input2.replyTo.map",
+      "new SandToolInputError",
+      "normalizeSendEmailArgs",
+      "owned.join",
+      "resolveAttachmentPaths",
+      "sendingAddressOwnership"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 3,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764484:29278541",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "createSendEmailTool",
+    "qualified_name": "createSendEmailTool",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764484,
+    "end_line": 764504,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "38097c1a9d36f85c32e06b1a257676a79c8e9baf9a2e9b1a2c5cd970c87e4a09",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764490:29278771",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSendEmailTool/describeActivity",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764490,
+    "end_line": 764492,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "05dcaaec1916505f272d688e84b9253d75e940af24cdfe189d297963cdabd3e9",
+    "calls": [
+      "args.to.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:764493:29279011",
+    "artifact": "host",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSendEmailTool/execute",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 764493,
+    "end_line": 764502,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "{ recordDelivery, ...d }"
+    ],
+    "body_sha256": "b20b51df5d04b0dd4f9e68ac1aac5a0cd4214320ea1e53f0672daaf8e4c392cb",
+    "calls": [
+      "bindMessageDeliveryReport",
+      "sendEmail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557641:20689804",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "nonEmptyList",
+    "qualified_name": "nonEmptyList",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557641,
+    "end_line": 557643,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "values"
+    ],
+    "body_sha256": "e7c796d54948a42210ecb00197c0c57009c935cf61cf6c4de5eeae75f8f55532",
+    "calls": [
+      ".filter"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557644:20689899",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "normalizeSendEmailArgs",
+    "qualified_name": "normalizeSendEmailArgs",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557644,
+    "end_line": 557690,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "a0167dcf84e36888dfdd4ab79343b213e3f3d9defbf633d672b6d6eca2101f1a",
+    "calls": [
+      ".map",
+      "args.body.trim",
+      "args.from.toLowerCase",
+      "args.html_body.trim",
+      "new SandToolInputError",
+      "new Set",
+      "nonEmptyList",
+      "normalizeDisplayName"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 6,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 4,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557691:20691725",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "normalizeDisplayName",
+    "qualified_name": "normalizeDisplayName",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557691,
+    "end_line": 557701,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw",
+      "field"
+    ],
+    "body_sha256": "4cc8726f8063c9706bffb42fc2240a086523cfc25d2d516e3f7e02d2ddf3b2e0",
+    "calls": [
+      "mailboxDisplayNameError",
+      "new SandToolInputError",
+      "raw.trim"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557702:20692016",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "resolveAttachmentPaths",
+    "qualified_name": "resolveAttachmentPaths",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557702,
+    "end_line": 557718,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "attachments",
+      "agentDir"
+    ],
+    "body_sha256": "1caef00c14a339bc1ab1c3b78598e63e2c3c1c4f46282af8d58eee0ea4d3b5fa",
+    "calls": [
+      "JSON.stringify",
+      "new SandToolInputError",
+      "resolveSandEmailAttachmentPath",
+      "resolved.includes",
+      "resolved.push"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 2,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557719:20692666",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeRecipients",
+    "qualified_name": "describeRecipients",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557719,
+    "end_line": 557724,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "to3",
+      "cc",
+      "bcc"
+    ],
+    "body_sha256": "8afecb414b912ddb91ec032bdae89a7cabb51822e8810ea96db12d74ae335078",
+    "calls": [
+      "bcc.join",
+      "cc.join",
+      "parts.join",
+      "parts.push",
+      "to3.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557725:20692896",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeAttachments",
+    "qualified_name": "describeAttachments",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557725,
+    "end_line": 557728,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "described2"
+    ],
+    "body_sha256": "a7cf6964920f1cfc964d6f141ab36a8438fe97f9e985440f82ac621a1a669c63",
+    "calls": [
+      ".join",
+      "described2.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557729:20693107",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeSuppressionReason",
+    "qualified_name": "describeSuppressionReason",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557729,
+    "end_line": 557741,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reason"
+    ],
+    "body_sha256": "4eeaa867332db34cbd512c1317a97df99b89959886ad502c7fc211296da6b2b4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557742:20693476",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeSuppressed",
+    "qualified_name": "describeSuppressed",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557742,
+    "end_line": 557746,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "suppressed"
+    ],
+    "body_sha256": "fb0c1cab9abc276c98c0f08dbd493e23feb2fc5a36d96feb9ce8acc1c0688b1d",
+    "calls": [
+      ".join",
+      "suppressed.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557747:20693807",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "sendEmail",
+    "qualified_name": "sendEmail",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557747,
+    "end_line": 557760,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "1051ff84f9ddb86e65dedc09b893947ef9df5c61d6e9c1a5f1d53d6106904008",
+    "calls": [
+      "attemptEmailSend",
+      "deps.reportDelivery.failed",
+      "deps.reportDelivery.settled",
+      "errorClassOf"
+    ],
+    "writes": [
+      "outcome"
+    ],
+    "throw_targets": [
+      "error63"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 1,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "evaluation:557761:20694180",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "attemptEmailSend",
+    "qualified_name": "attemptEmailSend",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557761,
+    "end_line": 557851,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps",
+      "args"
+    ],
+    "body_sha256": "340c413473f91f307b3819aa5c31d74116e2327732fd387e06d9c45f8a67d1a0",
+    "calls": [
+      ".join",
+      "JSON.stringify",
+      "deps.email.describeAttachments",
+      "deps.email.listInboxes",
+      "deps.email.send",
+      "deps.getAgentDir",
+      "deps.reviewSend",
+      "describeAttachments",
+      "describeRecipients",
+      "describeSuppressed",
+      "described2.map",
+      "grokBotStoreAttachmentAliases",
+      "inboxes.map",
+      "input2.replyTo.map",
+      "new SandToolInputError",
+      "normalizeSendEmailArgs",
+      "owned.join",
+      "resolveAttachmentPaths",
+      "sendingAddressOwnership"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandToolInputError"
+    ],
+    "control": {
+      "branches": 19,
+      "loops": 0,
+      "awaits": 5,
+      "returns": 3,
+      "throws": 3,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557852:20698728",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "createSendEmailTool",
+    "qualified_name": "createSendEmailTool",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557852,
+    "end_line": 557872,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "deps"
+    ],
+    "body_sha256": "38097c1a9d36f85c32e06b1a257676a79c8e9baf9a2e9b1a2c5cd970c87e4a09",
+    "calls": [
+      "defineCommunicateTool"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557858:20698958",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "describeActivity",
+    "qualified_name": "createSendEmailTool/describeActivity",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557858,
+    "end_line": 557860,
+    "async": false,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "05dcaaec1916505f272d688e84b9253d75e940af24cdfe189d297963cdabd3e9",
+    "calls": [
+      "args.to.join"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:557861:20699198",
+    "artifact": "evaluation",
+    "module": "core/runner/tools/send-email-tool.ts",
+    "name": "execute",
+    "qualified_name": "createSendEmailTool/execute",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 557861,
+    "end_line": 557870,
+    "async": true,
+    "generator": false,
+    "implicit_return": true,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [
+      "ctx",
+      "args",
+      "{ recordDelivery, ...d }"
+    ],
+    "body_sha256": "b20b51df5d04b0dd4f9e68ac1aac5a0cd4214320ea1e53f0672daaf8e4c392cb",
+    "calls": [
+      "bindMessageDeliveryReport",
+      "sendEmail"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

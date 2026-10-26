@@ -1,0 +1,193 @@
+[
+  {
+    "id": "evaluation:534876:19640018",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "skillActivationTrigger",
+    "qualified_name": "skillActivationTrigger",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534876,
+    "end_line": 534878,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "58ba77bb2310630e7d2cad9f17c30cbfbcef95619c17a52ca4bfc5bf7f0b16b4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534879:19640204",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "catalogSource",
+    "qualified_name": "catalogSource",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534879,
+    "end_line": 534893,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "skill"
+    ],
+    "body_sha256": "d360d0d46c39cc992a00efe88a8a52b86b0cd4d54518459711b2d9dc7b527078",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 5,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534894:19640506",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "collapsedModelVisiblePath",
+    "qualified_name": "collapsedModelVisiblePath",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534894,
+    "end_line": 534896,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33"
+    ],
+    "body_sha256": "d9edce427b043b460d3ce0d99dbedbb5bca8cfb25ecdbf352727acfc1a2e5c5e",
+    "calls": [
+      "import_node_path29.posix.normalize",
+      "toModelVisibleText"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534900:19640885",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "sourceFromDataRootTree",
+    "qualified_name": "sourceFromDataRootTree",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534900,
+    "end_line": 534905,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "collapsedPath"
+    ],
+    "body_sha256": "4320215b1d770a033e62ec6a422bc928a9673b2dfce75961a52d0b12d2782536",
+    "calls": [
+      "collapsedPath.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534906:19641158",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "skillActivationSource",
+    "qualified_name": "skillActivationSource",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534906,
+    "end_line": 534918,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2",
+      "catalog"
+    ],
+    "body_sha256": "64ab802ee7f1556710db9ddee57298f63e841c62880e5d0e353f1cb9d17afe5e",
+    "calls": [
+      "catalog.find",
+      "catalogSource",
+      "collapsedModelVisiblePath",
+      "import_node_path29.posix.isAbsolute",
+      "sourceFromDataRootTree"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:534919:19641728",
+    "artifact": "evaluation",
+    "module": "core/runner/action-audit/skill-activation-audit.ts",
+    "name": "skillActivatedAction",
+    "qualified_name": "skillActivatedAction",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 534919,
+    "end_line": 534928,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2",
+      "catalog"
+    ],
+    "body_sha256": "ff264983c584303a28467dceba7396815959ee45d9c077b5c47efcb51cd58f5c",
+    "calls": [
+      "options2.skillId.trim",
+      "skillActivationSource",
+      "skillActivationTrigger"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]

@@ -1,0 +1,664 @@
+[
+  {
+    "id": "host:822:26394",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "installInvariantReporter",
+    "qualified_name": "installInvariantReporter",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 822,
+    "end_line": 833,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "reporter"
+    ],
+    "body_sha256": "7b18d7428c219cac3bda09bf038e7e61d4c6077ffb15dab2c8ffdb6862cd31cd",
+    "calls": [
+      "failInvariant"
+    ],
+    "writes": [
+      "installedReporter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:834:26726",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "messagesStripped",
+    "qualified_name": "messagesStripped",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 834,
+    "end_line": 836,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "848328c327e8c963172b7262e4b6438ffb8322a784be3941caefffc20ae4f182",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:837:26774",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "topApplicationFrame",
+    "qualified_name": "topApplicationFrame",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 837,
+    "end_line": 846,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "5812e62274c454dffd5b90e9bb20feb5b2c96778fdd17dafc91da1074d30f88d",
+    "calls": [
+      ".split",
+      "FRAME_LINE.test",
+      "headerOf",
+      "raw.trim",
+      "stack.slice",
+      "stack.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:847:27124",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "headerOf",
+    "qualified_name": "headerOf",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 847,
+    "end_line": 849,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "c56ca6983f51317c9f79becc9b4582259c0e917c1785afd52294f6b2ade3afe4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:850:27253",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "invariant",
+    "qualified_name": "invariant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 850,
+    "end_line": 853,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "condition",
+      "message"
+    ],
+    "body_sha256": "bf05d9dedc2467f0475b1851f16b4acf9464da66e910f9fa5abf5d95cb264046",
+    "calls": [
+      "failInvariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:854:27358",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "failInvariant",
+    "qualified_name": "failInvariant",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 854,
+    "end_line": 871,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "boundary"
+    ],
+    "body_sha256": "71a8447d740ebbf37f661038b4a8afd540b96a153cb785647a370089d8473835",
+    "calls": [
+      "Error.captureStackTrace",
+      "installedReporter",
+      "message",
+      "messagesStripped",
+      "new SandInvariantViolation",
+      "topApplicationFrame"
+    ],
+    "writes": [
+      "frame",
+      "violationMessage"
+    ],
+    "throw_targets": [
+      "violation"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:874:28135",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "src/shared/invariant.ts",
+    "qualified_name": "src/shared/invariant.ts",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 874,
+    "end_line": 885,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionExpression",
+    "parameters": [],
+    "body_sha256": "c5cf00d23099246e4ed3d0a34fb81167f1cecf25843b3bd72366ee09403f9a03",
+    "calls": [],
+    "writes": [
+      "FRAME_LINE",
+      "STRIPPED_MESSAGE",
+      "SandInvariantViolation",
+      "installedReporter"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:877:28226",
+    "artifact": "host",
+    "module": "shared/invariant.ts",
+    "name": "<class>.constructor",
+    "qualified_name": "src/shared/invariant.ts/<class>.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 877,
+    "end_line": 880,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "3e745a3744523daf228ef9588c87a5d655de5132431aaf33398bb7304f37d466",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474307:17187758",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "SandInvariantViolation.constructor",
+    "qualified_name": "SandInvariantViolation.constructor",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474307,
+    "end_line": 474310,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6cabc5d08ccd6f8fbff9cf7233597dd8e02bd9beb17d62ffebaf0b93f8f05e8a",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474314:17187984",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "messagesStripped",
+    "qualified_name": "messagesStripped",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474314,
+    "end_line": 474316,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "848328c327e8c963172b7262e4b6438ffb8322a784be3941caefffc20ae4f182",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474318:17188057",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "topApplicationFrame",
+    "qualified_name": "topApplicationFrame",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474318,
+    "end_line": 474327,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "5812e62274c454dffd5b90e9bb20feb5b2c96778fdd17dafc91da1074d30f88d",
+    "calls": [
+      ".split",
+      "FRAME_LINE.test",
+      "headerOf",
+      "raw.trim",
+      "stack.slice",
+      "stack.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474328:17188407",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "headerOf",
+    "qualified_name": "headerOf",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474328,
+    "end_line": 474330,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "c56ca6983f51317c9f79becc9b4582259c0e917c1785afd52294f6b2ade3afe4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474331:17188536",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "invariant",
+    "qualified_name": "invariant",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474331,
+    "end_line": 474334,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "condition",
+      "message"
+    ],
+    "body_sha256": "bf05d9dedc2467f0475b1851f16b4acf9464da66e910f9fa5abf5d95cb264046",
+    "calls": [
+      "failInvariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "evaluation:474335:17188641",
+    "artifact": "evaluation",
+    "module": "shared/invariant.ts",
+    "name": "failInvariant",
+    "qualified_name": "failInvariant",
+    "path": "reference/runtime/sand-eval-runner.cjs",
+    "start_line": 474335,
+    "end_line": 474352,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "boundary"
+    ],
+    "body_sha256": "71a8447d740ebbf37f661038b4a8afd540b96a153cb785647a370089d8473835",
+    "calls": [
+      "Error.captureStackTrace",
+      "installedReporter",
+      "message",
+      "messagesStripped",
+      "new SandInvariantViolation",
+      "topApplicationFrame"
+    ],
+    "writes": [
+      "frame",
+      "violationMessage"
+    ],
+    "throw_targets": [
+      "violation"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:31:1695",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "SandInvariantViolation.constructor",
+    "qualified_name": "SandInvariantViolation.constructor",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 31,
+    "end_line": 34,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "message"
+    ],
+    "body_sha256": "6cabc5d08ccd6f8fbff9cf7233597dd8e02bd9beb17d62ffebaf0b93f8f05e8a",
+    "calls": [
+      "super"
+    ],
+    "writes": [
+      "this.name"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:38:1921",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "messagesStripped",
+    "qualified_name": "messagesStripped",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 38,
+    "end_line": 40,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "848328c327e8c963172b7262e4b6438ffb8322a784be3941caefffc20ae4f182",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:42:1994",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "topApplicationFrame",
+    "qualified_name": "topApplicationFrame",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 42,
+    "end_line": 51,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "5812e62274c454dffd5b90e9bb20feb5b2c96778fdd17dafc91da1074d30f88d",
+    "calls": [
+      ".split",
+      "FRAME_LINE.test",
+      "headerOf",
+      "raw.trim",
+      "stack.slice",
+      "stack.startsWith"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 1,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:52:2344",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "headerOf",
+    "qualified_name": "headerOf",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 52,
+    "end_line": 54,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "violation"
+    ],
+    "body_sha256": "c56ca6983f51317c9f79becc9b4582259c0e917c1785afd52294f6b2ade3afe4",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:55:2473",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "invariant",
+    "qualified_name": "invariant",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 55,
+    "end_line": 58,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "condition",
+      "message"
+    ],
+    "body_sha256": "bf05d9dedc2467f0475b1851f16b4acf9464da66e910f9fa5abf5d95cb264046",
+    "calls": [
+      "failInvariant"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "state-worker:59:2578",
+    "artifact": "state-worker",
+    "module": "shared/invariant.ts",
+    "name": "failInvariant",
+    "qualified_name": "failInvariant",
+    "path": "reference/runtime/workers/state/agent-store-worker.cjs",
+    "start_line": 59,
+    "end_line": 76,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "message",
+      "boundary"
+    ],
+    "body_sha256": "71a8447d740ebbf37f661038b4a8afd540b96a153cb785647a370089d8473835",
+    "calls": [
+      "Error.captureStackTrace",
+      "installedReporter",
+      "message",
+      "messagesStripped",
+      "new SandInvariantViolation",
+      "topApplicationFrame"
+    ],
+    "writes": [
+      "frame",
+      "violationMessage"
+    ],
+    "throw_targets": [
+      "violation"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  }
+]

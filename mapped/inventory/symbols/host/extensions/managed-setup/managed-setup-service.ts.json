@@ -1,0 +1,969 @@
+[
+  {
+    "id": "host:683471:25968282",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.constructor",
+    "qualified_name": "ManagedSetupService.constructor",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683471,
+    "end_line": 683478,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "8925daeb57dd89050ab094ae1b957f300df6cbca7c70613c5ef6fccdd10de0e9",
+    "calls": [],
+    "writes": [
+      "this.launchConverge",
+      "this.log",
+      "this.options",
+      "this.publish",
+      "this.readStatus"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683491:25968832",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.start",
+    "qualified_name": "ManagedSetupService.start",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683491,
+    "end_line": 683503,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "1f7ec753c56f6609ed861f9fbfa41da101943a5337b60ccbbb5ee730fde540b5",
+    "calls": [
+      "this.options.polling.start"
+    ],
+    "writes": [
+      "this.pollingHandle"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683504:25969184",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.dispose",
+    "qualified_name": "ManagedSetupService.dispose",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683504,
+    "end_line": 683512,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "71d1aac4f314c4ada7e389a726e988386b974cad60bb5794d838182f78535634",
+    "calls": [
+      "this.abort.abort",
+      "this.pollingHandle.dispose"
+    ],
+    "writes": [
+      "this.pollingHandle",
+      "this.refreshForceQueued",
+      "this.refreshQueued",
+      "this.stopped"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683513:25969436",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.refreshManagedSetup",
+    "qualified_name": "ManagedSetupService.refreshManagedSetup",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683513,
+    "end_line": 683516,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "args"
+    ],
+    "body_sha256": "b3c960566abf1e47458a56957c2b9c8a82d2a349a2761caa2355a9434e64c62a",
+    "calls": [
+      "this.refresh"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "outcome.failure.error"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683517:25969585",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.seed",
+    "qualified_name": "ManagedSetupService.seed",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683517,
+    "end_line": 683526,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [],
+    "body_sha256": "e02633015000c1cb3c0b98a12d81a40d77bd1a0df5660575d297e7d0c4b2d820",
+    "calls": [
+      "errorLogTag",
+      "this.log",
+      "this.options.retry.runWithRetry"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683527:25969955",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.refresh",
+    "qualified_name": "ManagedSetupService.refresh",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683527,
+    "end_line": 683576,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "force = false"
+    ],
+    "body_sha256": "837eb3cdaae0e05237e992a764271a3196b7b330c1e861029e8287ff0d83d357",
+    "calls": [
+      ".finally",
+      "Promise.resolve",
+      "run"
+    ],
+    "writes": [
+      "this.refreshForceQueued",
+      "this.refreshInFlight",
+      "this.refreshQueued"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683534:25970249",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "run",
+    "qualified_name": "ManagedSetupService.refresh/run",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683534,
+    "end_line": 683568,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "ArrowFunctionExpression",
+    "parameters": [],
+    "body_sha256": "1953a90ba2abef16ba4f54e5344ad4f08ab6e72d1f4a170659e5595b3a72842d",
+    "calls": [
+      "errorLogTag",
+      "this.converge",
+      "this.log",
+      "this.options.client.fetchSetupManifests",
+      "this.publish",
+      "this.scopeToGoverningTeam",
+      "validateTeamSecrets"
+    ],
+    "writes": [
+      "failure3",
+      "refreshed",
+      "this.refreshForceQueued",
+      "this.refreshQueued"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 1,
+      "awaits": 3,
+      "returns": 3,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683577:25971787",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.converge",
+    "qualified_name": "ManagedSetupService.converge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683577,
+    "end_line": 683611,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "force",
+      "teamSecrets",
+      "manifests"
+    ],
+    "body_sha256": "f10e3f2d39f8bd542daf539e37e3f6ae4579c73914121e3d3c1b18a60f6c7415",
+    "calls": [
+      ".catch",
+      "Date.now",
+      "Math.min",
+      "errorLogTag",
+      "manifests.reduce",
+      "sandSetupAssignmentHash",
+      "this.launchConverge",
+      "this.readStatus",
+      "this.reportConverge"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 4,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683612:25973047",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.reportConverge",
+    "qualified_name": "ManagedSetupService.reportConverge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683612,
+    "end_line": 683619,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fields3"
+    ],
+    "body_sha256": "737171f8dd5012fc3e2cc828078b01a6122493fb9232a0f1b20a1334817f8bb7",
+    "calls": [
+      "this.options.report"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683620:25973247",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "ManagedSetupService.scopeToGoverningTeam",
+    "qualified_name": "ManagedSetupService.scopeToGoverningTeam",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683620,
+    "end_line": 683641,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "method",
+    "parameters": [
+      "fetched"
+    ],
+    "body_sha256": "c8c8e3d7a82124df8f4054d8c8eac6b20f7a9b8b638230824af8773c42244d39",
+    "calls": [
+      "fetched.manifests.filter",
+      "fetched.teamSecrets.filter",
+      "new SandManagedSetupError",
+      "this.log"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandManagedSetupError"
+    ],
+    "control": {
+      "branches": 3,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683643:25974063",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "publishSandSetupManifests",
+    "qualified_name": "publishSandSetupManifests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683643,
+    "end_line": 683651,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifests",
+      "paths = defaultPaths"
+    ],
+    "body_sha256": "ff8bd30805cf0745f957de4109187f995e6cd35bbd374b7d06e4662c879b7a09",
+    "calls": [
+      "manifestPath",
+      "pruneUnreferencedManifests",
+      "sandSetupAssignment",
+      "validateManifests",
+      "writeJsonAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 1,
+      "awaits": 4,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683652:25974533",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "sandSetupAssignment",
+    "qualified_name": "sandSetupAssignment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683652,
+    "end_line": 683657,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifests"
+    ],
+    "body_sha256": "41d4536335c75115fb8602cc4e18749090f7b541ffaacce2c24b9998c7e68989",
+    "calls": [
+      "manifests.map"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683658:25974681",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "sandSetupAssignmentHash",
+    "qualified_name": "sandSetupAssignmentHash",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683658,
+    "end_line": 683660,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifests"
+    ],
+    "body_sha256": "6a9d7d7505fd32344429c7bf230e2426d6d6e3e456b262631585d65fdd52ffba",
+    "calls": [
+      ".digest",
+      ".update",
+      "jsonFileContents",
+      "sandSetupAssignment"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683661:25974857",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "readdirOrEmpty",
+    "qualified_name": "readdirOrEmpty",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683661,
+    "end_line": 683668,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "dir"
+    ],
+    "body_sha256": "f424c20ce8a6e6d0a014fb66662796c13f7c5424e18cd24dfa29d705a7e74840",
+    "calls": [
+      "findSystemErrno"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "error64"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 2,
+      "throws": 1,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683669:25975061",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "pruneUnreferencedManifests",
+    "qualified_name": "pruneUnreferencedManifests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683669,
+    "end_line": 683695,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifestsRoot",
+      "manifests"
+    ],
+    "body_sha256": "f667e2c8ab54a1f7eebbda003cacf6643f5b8d153accd758e54705e4a52dea15",
+    "calls": [
+      ".join",
+      "keptRevisionByIdentity.get",
+      "keptRevisionByIdentity.set",
+      "new Map",
+      "readdirOrEmpty"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 5,
+      "awaits": 6,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683696:25976331",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "sandSetupConvergeCommand",
+    "qualified_name": "sandSetupConvergeCommand",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683696,
+    "end_line": 683708,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2"
+    ],
+    "body_sha256": "bf6f85e3edebd2453c63b4cade7d70a83729793dad7ada5ec804688505dd9689",
+    "calls": [
+      "args.push",
+      "resolveConvergeEntrypoint"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 4,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 2,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683709:25976899",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "assertManagedRootIsHostOwned",
+    "qualified_name": "assertManagedRootIsHostOwned",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683709,
+    "end_line": 683717,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "managedRoot"
+    ],
+    "body_sha256": "3232ec7c1d9e412d348b0a3ac5c583dba1142f7baf7a31e7c84e107f81f21ab1",
+    "calls": [
+      "info2.isDirectory",
+      "new SandManagedSetupError",
+      "process.getuid"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandManagedSetupError"
+    ],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 1,
+      "returns": 0,
+      "throws": 1,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683718:25977298",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "launchSandSetupConverge",
+    "qualified_name": "launchSandSetupConverge",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683718,
+    "end_line": 683762,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "options2 = {}"
+    ],
+    "body_sha256": "f5a580e524916390e33923087d10fa62e57e102709686b7150ceb157008431d0",
+    "calls": [
+      "Promise.all",
+      "assertManagedRootIsHostOwned",
+      "child.unref",
+      "new Promise",
+      "resetChildOomScoreAdj",
+      "sandSetupConvergeCommand"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683770:25979301",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "parseSandSetupConvergeStatus",
+    "qualified_name": "parseSandSetupConvergeStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683770,
+    "end_line": 683793,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "raw"
+    ],
+    "body_sha256": "b8ca5e717704f94ccccbc5064d34976029287c5bc0805481a9eba987407405c0",
+    "calls": [
+      "Date.parse",
+      "JSON.parse",
+      "Math.min",
+      "Number.isNaN",
+      "convergeStatusSchema.safeParse"
+    ],
+    "writes": [
+      "failedEntries",
+      "parsed2"
+    ],
+    "throw_targets": [],
+    "control": {
+      "branches": 3,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 4,
+      "throws": 0,
+      "catches": 1
+    }
+  },
+  {
+    "id": "host:683794:25980053",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "readSandSetupConvergeStatus",
+    "qualified_name": "readSandSetupConvergeStatus",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683794,
+    "end_line": 683809,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "runAs",
+      "statusPath = SAND_SETUP_STATUS_PATH"
+    ],
+    "body_sha256": "eebcceab1a8953abe7d997789541d0fe7c3c6b1a7fa93402fc06d33a107adefc",
+    "calls": [
+      "Buffer.alloc",
+      "buffer.toString",
+      "handle.close",
+      "handle.read",
+      "handle.stat",
+      "info2.isFile",
+      "parseSandSetupConvergeStatus"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 2,
+      "loops": 0,
+      "awaits": 4,
+      "returns": 3,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683810:25980762",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "resolveConvergeEntrypoint",
+    "qualified_name": "resolveConvergeEntrypoint",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683810,
+    "end_line": 683813,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [],
+    "body_sha256": "e0ff62aa6b36be2c17161d49df35018c285048c25848cdf8c5c5fa9ef3c18524",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 1,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683814:25981040",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "validateManifests",
+    "qualified_name": "validateManifests",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683814,
+    "end_line": 683841,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifests"
+    ],
+    "body_sha256": "95455a04a796e79af0cfc8690ac7d4abfa5d7ece0cb696998646ad962a565dba",
+    "calls": [
+      ".join",
+      "entryIds.add",
+      "entryIds.has",
+      "identities.add",
+      "identities.has",
+      "isSafePathSegment",
+      "new SandManagedSetupError",
+      "new Set"
+    ],
+    "writes": [],
+    "throw_targets": [
+      "SandManagedSetupError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683842:25982382",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "validateTeamSecrets",
+    "qualified_name": "validateTeamSecrets",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683842,
+    "end_line": 683870,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifests",
+      "bundles"
+    ],
+    "body_sha256": "57be572ece97e5911a2cc21353616e3a213dc7973632484aa4d9f595fc0611b5",
+    "calls": [
+      "Buffer.byteLength",
+      "assignedTeamIds.has",
+      "manifests.map",
+      "new SandManagedSetupError",
+      "new Set",
+      "seenNames.add",
+      "seenNames.has",
+      "seenTeams.add",
+      "seenTeams.has",
+      "validateBoxSecretKey"
+    ],
+    "writes": [
+      "totalBytes"
+    ],
+    "throw_targets": [
+      "SandManagedSetupError"
+    ],
+    "control": {
+      "branches": 5,
+      "loops": 2,
+      "awaits": 0,
+      "returns": 0,
+      "throws": 5,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683871:25983753",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "manifestRef",
+    "qualified_name": "manifestRef",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683871,
+    "end_line": 683877,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifest"
+    ],
+    "body_sha256": "7a7da0d88f57e574fdfde19bf73acf38d10ec7c60f284ce4ce6b1cf6fbc082d2",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683878:25983900",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "manifestPath",
+    "qualified_name": "manifestPath",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683878,
+    "end_line": 683887,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "manifestsRoot",
+      "manifest"
+    ],
+    "body_sha256": "489c1c50af7164e244191b13267860bb42daef30f3c978741da502ff98a165ca",
+    "calls": [],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683888:25984131",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "isSafePathSegment",
+    "qualified_name": "isSafePathSegment",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683888,
+    "end_line": 683890,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "5cee9e6460c6c832ae286f40cda5c5d7a261009cb37822323660e732587e4b6d",
+    "calls": [
+      "SAFE_PATH_SEGMENT.test"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683891:25984209",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "jsonFileContents",
+    "qualified_name": "jsonFileContents",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683891,
+    "end_line": 683894,
+    "async": false,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "value"
+    ],
+    "body_sha256": "77b6c03499594b3fa82fb773fc3492589fbbcd682140339e16fbf691e21c92e6",
+    "calls": [
+      "JSON.stringify"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 0,
+      "returns": 1,
+      "throws": 0,
+      "catches": 0
+    }
+  },
+  {
+    "id": "host:683895:25984293",
+    "artifact": "host",
+    "module": "host/extensions/managed-setup/managed-setup-service.ts",
+    "name": "writeJsonAtomic",
+    "qualified_name": "writeJsonAtomic",
+    "path": "reference/runtime/host-main.cjs",
+    "start_line": 683895,
+    "end_line": 683898,
+    "async": true,
+    "generator": false,
+    "implicit_return": false,
+    "kind": "FunctionDeclaration",
+    "parameters": [
+      "path33",
+      "value"
+    ],
+    "body_sha256": "d239307cab3d1cd79375118cb9e73d2497ea7241b0cb4fdebe21c621f45e9a36",
+    "calls": [
+      "jsonFileContents",
+      "writeFileAtomic"
+    ],
+    "writes": [],
+    "throw_targets": [],
+    "control": {
+      "branches": 0,
+      "loops": 0,
+      "awaits": 2,
+      "returns": 0,
+      "throws": 0,
+      "catches": 0
+    }
+  }
+]
