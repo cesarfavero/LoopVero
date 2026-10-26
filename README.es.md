@@ -14,6 +14,12 @@ Este es un análisis estático de los artefactos disponibles, no un agente insta
 
 Se han retirado la aplicación reconstruida, el frontend y sus pruebas. La estructura utiliza nombres propios en inglés y no incluye instrucciones para obtener los archivos ni reproducir una extracción.
 
+## Más allá de las respuestas: la mecánica de los agentes proactivos
+
+**¿Qué ocurre cuando un agente trabaja antes de tu próximo mensaje?** Empieza por la [guía de proactividad](guide/components/proactivity/README.md): despacho de automatizaciones, trabajo silencioso en segundo plano, handoffs con `WakeParent`, reanudación y tratamiento de resultados tardíos, con referencias al código.
+
+**El límite importa:** no se encontraron el algoritmo inicial de selección de oportunidades ni el planificador remoto completo. El repositorio explica los mecanismos presentes, no un motor completo de proactividad recuperado.
+
 ## Empieza aquí
 
 1. [Guía completa](guide/README.md): itinerario de lectura, responsabilidades y contratos.
