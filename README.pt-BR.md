@@ -14,6 +14,12 @@ Este é um estudo estático dos artefatos disponíveis, não um agente instaláv
 
 O aplicativo reconstruído, o frontend e seus testes foram retirados. A estrutura usa nomes próprios em inglês, sem instruções de obtenção dos arquivos ou de reprodução de uma extração.
 
+## Além das respostas: a mecânica dos agentes proativos
+
+**O que acontece quando um agente trabalha antes da sua próxima mensagem?** Comece pelo [guia de proatividade](guide/components/proactivity/README.md): disparo de automações, trabalho silencioso em segundo plano, handoffs com `WakeParent`, retomada e tratamento de resultados atrasados, com referências ao código.
+
+**O limite importa:** o algoritmo inicial de seleção de oportunidades e o agendador remoto completo não foram encontrados nesses artefatos. O repositório explica os mecanismos presentes, não um motor completo de proatividade recuperado.
+
 ## Comece aqui
 
 1. [Guia completo](guide/README.md): percurso de leitura, responsabilidades e contratos.
