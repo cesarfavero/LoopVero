@@ -45,10 +45,19 @@ for item in analysis['artifacts']:
     if line_counts[file.resolve()] != item['lines']:
         errors.append('LF line count differs: ' + item['path'])
 
-docs = [ROOT / 'README.md', ROOT / 'AGENTS.md', ROOT / 'reference/README.md']
+docs = [ROOT / 'README.md', ROOT / 'AGENTS.md']
+docs += [doc for doc in ROOT.glob('README*.md') if doc.name != 'README.md']
+docs += list((ROOT / 'reference').glob('README*.md'))
 docs += list((ROOT / 'guide').rglob('*.md'))
 docs += list((ROOT / 'mapped').rglob('*.md'))
-docs += list((ROOT / 'tools/research').glob('README.md'))
+docs += list((ROOT / 'tools/research').glob('README*.md'))
+portuguese_pages = [ROOT / 'reference/README.md', ROOT / 'tools/research/README.md']
+portuguese_pages += list((ROOT / 'guide').rglob('README.md'))
+portuguese_pages += list((ROOT / 'mapped').rglob('README.md'))
+for original in portuguese_pages:
+    translated = original.with_name('README.en.md')
+    if not translated.is_file():
+        errors.append('English companion missing: ' + str(translated.relative_to(ROOT)))
 links = 0
 source_anchors = 0
 known_dirs = {str(Path(name).parent) for name in originals}
@@ -57,6 +66,12 @@ for doc in docs:
         errors.append('Documentation missing: ' + str(doc.relative_to(ROOT)))
         continue
     text = doc.read_text()
+    english = doc.name == 'README.en.md' or doc == ROOT / 'README.md'
+    if doc.name == 'README.en.md':
+        if '[English](README.en.md) · [Português (Brasil)](README.md)' not in text:
+            errors.append('Language navigation missing: ' + str(doc.relative_to(ROOT)))
+        if not doc.with_name('README.md').is_file():
+            errors.append('Portuguese original missing: ' + str(doc.relative_to(ROOT)))
     if text.count('```') % 2:
         errors.append('Unclosed code fence: ' + str(doc.relative_to(ROOT)))
     link_text = re.sub(r'(?ms)^```[^\n]*\n.*?^```[ \t]*$', '', text)
@@ -74,6 +89,9 @@ for doc in docs:
             continue
         if not target.exists() and relative_path not in originals and relative_path not in known_dirs:
             errors.append('Broken link: ' + str(doc.relative_to(ROOT)) + ' -> ' + link)
+        if english and target.name == 'README.md' and target != ROOT / 'README.md':
+            if not (doc.name == 'README.en.md' and link == 'README.md'):
+                errors.append('English reading path links to Portuguese: ' + str(doc.relative_to(ROOT)) + ' -> ' + link)
         m = re.fullmatch(r'L(\d+)(?:-L(\d+))?', anchor)
         if m:
             source_anchors += 1
@@ -99,6 +117,8 @@ report = {
     'originals_not_downloaded': len(missing),
     'analysis_artifacts_verified': len(line_counts),
     'documentation_files': len(docs),
+    'bilingual_page_pairs': len(portuguese_pages),
+    'english_companions': sum(doc.name == 'README.en.md' for doc in docs),
     'relative_links_checked': links,
     'source_anchors_checked': source_anchors,
     'module_readmes': len(module_pages),

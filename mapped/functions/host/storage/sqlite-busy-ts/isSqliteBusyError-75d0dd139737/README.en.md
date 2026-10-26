@@ -1,0 +1,31 @@
+# `isSqliteBusyError`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/architecture/README.en.md).
+
+**Module:** `host/storage/sqlite-busy.ts` · [Module README](../../../../../modules/host/storage/sqlite-busy-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:480282-480285](../../../../../../reference/runtime/host-main.cjs#L480282-L480285) | `FunctionDeclaration` | no | `error64` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:480282-480285](../../../../../../reference/runtime/host-main.cjs#L480282-L480285) | 0 | 0 | 0 | 1 | 0 | 0 |
+
+### host:480282
+
+Calls written directly in this body: `sqlitePrimaryCode`.
+
+SHA-256 of the source span: `0cf1b82bbefd8eb0424b5862184bae85bd8adb483ec64ea51005a734d383d6f1`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

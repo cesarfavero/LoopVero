@@ -1,0 +1,31 @@
+# `GroupChatGlue.sealGroup`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/transcripts/README.en.md).
+
+**Module:** `host/extensions/transcript/group-chat-glue.ts` · [Module README](../../../../../../modules/host/extensions/transcript/group-chat-glue-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:738455-738464](../../../../../../../reference/runtime/host-main.cjs#L738455-L738464) | `method` | no | `groupId, memberIds` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:738455-738464](../../../../../../../reference/runtime/host-main.cjs#L738455-L738464) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+### host:738455
+
+Calls written directly in this body: `brandedId`, `this.tm.productAnalytics.trackEvent`, `this.tm.sessionStore.getAgentDir`, `writeSandGroupConfig`.
+
+SHA-256 of the source span: `e1b8e5446b4c2814708b5d13deac3879928f31fdec8059c51f92f794468ae1ca`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

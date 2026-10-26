@@ -1,0 +1,31 @@
+# `isManagedSkill`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/components/skills/README.en.md).
+
+**Module:** `host/skills/managed-skills-cache.ts` · [Module README](../../../../../modules/host/skills/managed-skills-cache-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:683287-683290](../../../../../../reference/runtime/host-main.cjs#L683287-L683290) | `FunctionDeclaration` | no | `value` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:683287-683290](../../../../../../reference/runtime/host-main.cjs#L683287-L683290) | 1 | 0 | 0 | 2 | 0 | 0 |
+
+### host:683287
+
+Calls written directly in this body: `isUnknownRecord2`.
+
+SHA-256 of the source span: `caf83a6fcaa9d9f21ea328edc7114bf6ea96dd5d73858451bc4a842bf793517d`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

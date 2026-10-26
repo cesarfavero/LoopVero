@@ -1,0 +1,33 @@
+# `createTeamAdminPolicyService/runFetch`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/architecture/README.en.md).
+
+**Module:** `host/extensions/team-admin-policy/team-admin-policy-service.ts` · [Module README](../../../../../../modules/host/extensions/team-admin-policy/team-admin-policy-service-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:729795-729819](../../../../../../../reference/runtime/host-main.cjs#L729795-L729819) | `ArrowFunctionExpression` | no | `(none)` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:729795-729819](../../../../../../../reference/runtime/host-main.cjs#L729795-L729819) | 2 | 0 | 0 | 3 | 0 | 0 |
+
+### host:729795
+
+Calls written directly in this body: `.finally`, `Promise.resolve`.
+
+Assignment or increment targets: `cache3.inFlight`.
+
+SHA-256 of the source span: `0ce9550558b81c4931ce5ad693de57b70d593ad2f974694cc622aa5daf638840`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

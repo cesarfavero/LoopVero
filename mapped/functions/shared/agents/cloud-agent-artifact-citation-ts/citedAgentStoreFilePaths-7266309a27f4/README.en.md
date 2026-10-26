@@ -1,0 +1,31 @@
+# `citedAgentStoreFilePaths`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/architecture/README.en.md).
+
+**Module:** `shared/agents/cloud-agent-artifact-citation.ts` · [Module README](../../../../../modules/shared/agents/cloud-agent-artifact-citation-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:508198-508209](../../../../../../reference/runtime/host-main.cjs#L508198-L508209) | `FunctionDeclaration` | no | `text3` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:508198-508209](../../../../../../reference/runtime/host-main.cjs#L508198-L508209) | 2 | 1 | 0 | 1 | 0 | 0 |
+
+### host:508198
+
+Calls written directly in this body: `cited.push`, `decodedTokenOrNull`, `isAgentStoreFileCitation`, `new Set`, `raw.includes`, `seen.add`, `seen.has`, `text3.split`, `token.replace`.
+
+SHA-256 of the source span: `59728e92a6ae99d75952f6b9c50b73c7cfdfcb905267ded28f574bf07ecef34c`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

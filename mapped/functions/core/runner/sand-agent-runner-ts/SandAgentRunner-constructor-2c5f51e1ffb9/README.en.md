@@ -1,0 +1,35 @@
+# `_SandAgentRunner.constructor`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/components/turns/README.en.md).
+
+**Module:** `core/runner/sand-agent-runner.ts` · [Module README](../../../../../modules/core/runner/sand-agent-runner-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [evaluation:592805-593790](../../../../../../reference/runtime/sand-eval-runner.cjs#L592805-L593790) | `method` | no | `options2` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [evaluation:592805-593790](../../../../../../reference/runtime/sand-eval-runner.cjs#L592805-L593790) | 17 | 0 | 0 | 0 | 1 | 0 |
+
+### evaluation:592805
+
+Calls written directly in this body: `.offers`, `.with`, `artifactsHostSlice`, `assertSubagentTypeNotRetired`, `audit.withLedgers`, `automationSubagentPromptOptions`, `browserOperationHarnessOf`, `cardsCompositionSlice`, `composeRunnerActionAudit`, `createAuditedDetectors`, `createAutoReviewGate`, `createBackgroundWatches`, `createCombinedComputerUseSelection`, `createComputerUseCoordination`, `createContext`, `createPromptCollectorGlue`, `createRunnerPendingSummaryStore`, `createSandAgentEventTracker`, `createSingleUserComputer`, `createSubagentRuntime`, `createSubagentTransport`, `createSystemPromptAssembly`, `createToolCallIdentity`, `createTurnObservation`, `detectors.loopDetection`, `enabledMemoryTypes`, `getAgentEventTracker`, `grokBotSessionKindWithholdsBoxHandoff`, `leanExecutorPromptDeps`, `metricsCtx.with`, `mockOfferedFirstPartyToolNames`, `new Error`, `new Set`, `options2.currentSession`, `pinEpochGates`, `remoteBoxServerReads`, `resolveSandAgentKind`, `resolveSandChannelPorts`, `resolveSandExecutorLeanPrompt`, `resolveSandRunnerListedSkills`, `resolveSandTurnToolDecisions`, `systemPromptOptions`, `this.ctx.get`, `turnToolTelemetryHost`.
+
+Assignment or increment targets: `metricsCtx`, `this.actionAuditSequencer`, `this.actionAuditor`, `this.activeSessionsDigest`, `this.agentActivity`, `this.agentDirectory`, `this.agentGroups`, `this.agentKind`, `this.agentManagement`, `this.agentProfileProvider`, `this.agentState`, `this.agentStore`, `this.agentsRootDir`, `this.allowStateToolWithSystemPromptOverride`, `this.appHome`, `this.attachBoxServers`, `this.autoReviewClassifierExecutor`, `this.autoReviewController`, `this.autoReviewGate`, `this.autoReviewModes`, `this.automationCompletions`, `this.automationStore`, `this.backgroundSummarizationPropsOverride`, `this.backgroundWatches`, `this.botSecrets`, `this.botTemplateShare`, `this.box`, `this.boxHandoff`, `this.canvasCursorAgentIds`, `this.carryOver`, `this.channelManagement`, `this.channelStore`, `this.channels`, `this.chunkedStepWrites`, `this.cloudAgentWatcher`, `this.cloudCanvas`, `this.combinedComputerUse`, `this.computerUse`, `this.confirmedUserTurnWatermarkStore`, `this.connectedActivity`, `this.connectorFiles`, `this.connectorManifests`, `this.conversationSizeGuard`, `this.cookieOriginApproval`, `this.createCloudAgentTool`, `this.credentialAccess`, `this.credentialFillLease`, `this.credentialProviderStatus`, `this.ctx`, `this.detachedSubagents`, `this.diskPressureReminder`, `this.email`, `this.enforceReadonlyTools`, `this.executorLeanPrompt`, `this.fireAndForgetCheckpoints`, `this.frozenPrompt`, `this.gates`, `this.generateImageResourceAccessor`, `this.generateImageService`, `this.generateVideoService`, `this.getAgentDirImpl`, `this.getAgentIdImpl`, `this.getAutoReviewInstructions`, `this.getAutoReviewModes`, `this.getAutoReviewParentConversationState`, `this.getBoxIdImpl`, `this.getCombinedComputerUseDecision`, `this.getCycleUsage`, `this.getRemoteBoxAvailable`, `this.getSourceAvatar`, `this.hiddenCursorAgentCardIds`, `this.inference`, `this.inferenceReason`, `this.ingestAttachment`, `this.inheritedAutomationId`, `this.inheritedDirectionEpoch`, `this.inheritedRequestSource`, `this.isListenerPlatformConnected`, `this.isParentMediatedAutomationSubagent`, `this.isSubagentRunner`, `this.isSystemPromptOverridden`, `this.listedSkills`, `this.localToolPermission`, `this.loopDetection`, `this.mcp`, `this.mcpAppHosts`, `this.mcpAppPages`, `this.mcpManagement`, `this.memoryFolders`, `this.memoryRecallLookup`, `this.memorySnapshots`, `this.memoryStore`, `this.memoryTypes`, `this.messages`, `this.messagesGrants`, `this.metricsBackend`, `this.metricsClientPlatform`, `this.metricsClock`, `this.metricsHarness`, `this.metricsSessionKind`, `this.metricsTurn`, `this.observation`, `this.onComputerAction`, `this.onMessagesGrantsAsk`, `this.onMessagesToolUse`, `this.onRunLifecycle`, `this.onToolCallEvents`, `this.outboundCall`, `this.parentPromptMessages`, `this.pendingMemoryExchanges`, `this.persistImage`, `this.persistMediaBytes`, `this.personalSecrets`, `this.preparedRemoteBoxConnection`, `this.profilePromptSnapshots`, `this.promptGlue`, `this.promptPrefixSnapshots`, `this.promptSectionSnapshots`, `this.readMediaDimensions`, `this.readStoreImageAttachment`, `this.readVideoAttachmentBytes`, `this.readonlyDispatch`, `this.registerMcpAuthWait`, `this.registerScmConnectWait`, `this.remoteBox`, `this.remoteBoxHasDesktop`, `this.requestContext`, `this.resolveCloudAgentTitle`, `this.runShell`, `this.secretScopeId`, `this.sendToAgentImpl`, `this.serverReads`, `this.skillStore`, `this.skills`, `this.sortMemoriesProposal`, `this.steerReach`, `this.storeAttachmentSources`, `this.streamDeadlineClock`, `this.streamDeadlineConfig`, `this.streamTuning`, `this.subagentDynamicTools`, `this.subagentModelId`, `this.subagentOwnership`, `this.subagentTranscriptId`, `this.subagentType`, `this.subagents`, `this.submitProductFeedback`, `this.systemPromptAssembly`, `this.teamPublish`, `this.toolCallIdentity`, `this.toolDecisionAudit`, `this.toolDescriptionSnapshots`, `this.toolTargets`, `this.transcriptReader`, `this.transport`, `this.turnAgentComposition`, `this.turnToolHost`, `this.userAttributes`, `this.userComputers`, `this.userForm`, `this.userMemory`, `this.virtualCard`, `this.webFetchService`, `this.webSearchService`.
+
+Explicit throw targets: `Error`.
+
+SHA-256 of the source span: `926e881697b160d8bd7406e7efdb8789a15ccfe3a2f56473f2b592b3717f427a`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

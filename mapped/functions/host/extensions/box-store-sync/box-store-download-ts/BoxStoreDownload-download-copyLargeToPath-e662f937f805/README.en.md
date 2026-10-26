@@ -1,0 +1,33 @@
+# `BoxStoreDownload.download/copyLargeToPath`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/architecture/README.en.md).
+
+**Module:** `host/extensions/box-store-sync/box-store-download.ts` · [Module README](../../../../../../modules/host/extensions/box-store-sync/box-store-download-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:478041-478059](../../../../../../../reference/runtime/host-main.cjs#L478041-L478059) | `ArrowFunctionExpression` | yes | `sourcePath2, group, relPath` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:478041-478059](../../../../../../../reference/runtime/host-main.cjs#L478041-L478059) | 1 | 0 | 3 | 2 | 0 | 1 |
+
+### host:478041
+
+Calls written directly in this body: `copyInFailureOf`, `copyLargeInto`, `destinationPaths.get`, `errorMessage`, `openRestoreParent`, `parent.handle.close`, `recordFailure`.
+
+Assignment or increment targets: `parent`.
+
+SHA-256 of the source span: `52e6739f41d2edf4ae8e62016206bde9b547779091b8fa19469944ed8b0f7d7c`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).
