@@ -1,0 +1,39 @@
+# `serializeMemoryFactLine`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/components/memory/README.en.md).
+
+**Module:** `core/runner/memory-file-format.ts` · [Module README](../../../../../modules/core/runner/memory-file-format-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:702780-702784](../../../../../../reference/runtime/host-main.cjs#L702780-L702784) | `FunctionDeclaration` | no | `content, createdAt, provenance` |
+| [evaluation:536524-536528](../../../../../../reference/runtime/sand-eval-runner.cjs#L536524-L536528) | `FunctionDeclaration` | no | `content, createdAt, provenance` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:702780-702784](../../../../../../reference/runtime/host-main.cjs#L702780-L702784) | 1 | 0 | 0 | 1 | 0 | 0 |
+| [evaluation:536524-536528](../../../../../../reference/runtime/sand-eval-runner.cjs#L536524-L536528) | 1 | 0 | 0 | 1 | 0 | 0 |
+
+### host:702780
+
+Calls written directly in this body: `formatMemoryDate`, `serializeMemoryProvenanceLine`.
+
+SHA-256 of the source span: `8a2019c276624c804bb3f2591608011cf6bf457f309a75c14c24e0d4133e1838`.
+
+### evaluation:536524
+
+Calls written directly in this body: `formatMemoryDate`, `serializeMemoryProvenanceLine`.
+
+SHA-256 of the source span: `8a2019c276624c804bb3f2591608011cf6bf457f309a75c14c24e0d4133e1838`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

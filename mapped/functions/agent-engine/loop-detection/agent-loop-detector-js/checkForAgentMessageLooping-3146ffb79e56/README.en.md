@@ -1,0 +1,33 @@
+# `checkForAgentMessageLooping`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/architecture/README.en.md).
+
+**Module:** `agent-engine/loop-detection/agent-loop-detector.js` · [Module README](../../../../../modules/agent-engine/loop-detection/agent-loop-detector-js/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [evaluation:311237-311396](../../../../../../reference/runtime/sand-eval-runner.cjs#L311237-L311396) | `FunctionDeclaration` | no | `params, reporting` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [evaluation:311237-311396](../../../../../../reference/runtime/sand-eval-runner.cjs#L311237-L311396) | 23 | 2 | 0 | 8 | 0 | 0 |
+
+### evaluation:311237
+
+Calls written directly in this body: `Math.max`, `assistantMessageKeys.push`, `assistantMessageKeys.slice`, `assistantMessagesForKeys.push`, `convertCoreMessagesToLoopFormat`, `createMessageKey`, `createRetrySkipper`, `currentMessageForLoopDetection`, `detectPatternInMessages`, `eventTracker.trackLoopDetected`, `findLastUserMessageIndex`, `fingerprintAgentLoopEvidence`, `getAgentEventTracker`, `hasPatternAnywhereInMessages`, `logger16.warn`, `loopDetectionCounter.increment`, `loopDetectionLatency.histogram`, `params.ctx.get`, `patternKeys[computed].slice`, `performance.now`, `previousAssistantKeys.push`, `reportLoopObservation`, `runOf`, `shouldIncludeMessage`, `skipsPreviousRetry`, `skipsRetry`, `smallestRotation`.
+
+Assignment or increment targets: `currentPattern`, `i`, `isLoopReoccurrence`, `noProgress`, `requiredRepetitions`.
+
+SHA-256 of the source span: `4b8c0634749eabcb3b62e2b34d483a5170953172f3dc79a74a8ebb5f26c02878`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

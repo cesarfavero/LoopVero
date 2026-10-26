@@ -1,0 +1,33 @@
+# `buildRemapOfferLines`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/tools/README.en.md).
+
+**Module:** `core/runner/tools/sand-user-form.ts` · [Module README](../../../../../../modules/core/runner/tools/sand-user-form-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:725758-725773](../../../../../../../reference/runtime/host-main.cjs#L725758-L725773) | `FunctionDeclaration` | no | `heldFieldIds, consentedHost, remap, pageMoved` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:725758-725773](../../../../../../../reference/runtime/host-main.cjs#L725758-L725773) | 3 | 0 | 0 | 1 | 0 | 0 |
+
+### host:725758
+
+Calls written directly in this body: `.join`, `.map`.
+
+Assignment or increment targets: `snapshotWhere`.
+
+SHA-256 of the source span: `a01bacb2f6e8f0d188cfdc8083e83e9e4263200814240099b22060039762d3c8`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

@@ -1,0 +1,39 @@
+# `createDraftToolForTurn/onDraftMessage`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/tools/README.en.md).
+
+**Module:** `core/runner/tools/draft-tool-registration.ts` · [Module README](../../../../../../modules/core/runner/tools/draft-tool-registration-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:756131-756162](../../../../../../../reference/runtime/host-main.cjs#L756131-L756162) | `ArrowFunctionExpression` | no | `emission, timestampMs, deliverTo, ruleProposal` |
+| [evaluation:542052-542083](../../../../../../../reference/runtime/sand-eval-runner.cjs#L542052-L542083) | `ArrowFunctionExpression` | no | `emission, timestampMs, deliverTo, ruleProposal` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:756131-756162](../../../../../../../reference/runtime/host-main.cjs#L756131-L756162) | 4 | 0 | 0 | 1 | 0 | 0 |
+| [evaluation:542052-542083](../../../../../../../reference/runtime/sand-eval-runner.cjs#L542052-L542083) | 4 | 0 | 0 | 1 | 0 | 0 |
+
+### host:756131
+
+Calls written directly in this body: `draftAgentRuleCheck`, `host.emitUpdate`, `host.getAutoReviewInstructions`, `host.transport.lastSentMessageId`, `meetings.recordChatDraft`, `offeredRule`, `turn.getAutoReviewUserInstructions`.
+
+SHA-256 of the source span: `fb8c79dae4d1d87efaa22f0c95c114cb34d7562605a8b25aceb551c388ff54a4`.
+
+### evaluation:542052
+
+Calls written directly in this body: `draftAgentRuleCheck`, `host.emitUpdate`, `host.getAutoReviewInstructions`, `host.transport.lastSentMessageId`, `meetings.recordChatDraft`, `offeredRule`, `turn.getAutoReviewUserInstructions`.
+
+SHA-256 of the source span: `fb8c79dae4d1d87efaa22f0c95c114cb34d7562605a8b25aceb551c388ff54a4`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

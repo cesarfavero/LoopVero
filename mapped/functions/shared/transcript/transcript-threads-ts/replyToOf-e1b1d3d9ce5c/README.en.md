@@ -1,0 +1,31 @@
+# `replyToOf`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/components/transcripts/README.en.md).
+
+**Module:** `shared/transcript/transcript-threads.ts` · [Module README](../../../../../modules/shared/transcript/transcript-threads-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:490374-490376](../../../../../../reference/runtime/host-main.cjs#L490374-L490376) | `FunctionDeclaration` | no | `entry` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:490374-490376](../../../../../../reference/runtime/host-main.cjs#L490374-L490376) | 1 | 0 | 0 | 1 | 0 | 0 |
+
+### host:490374
+
+Calls written directly in this body: no calls identifiable by name.
+
+SHA-256 of the source span: `febe3515a09e0f89edafaaf71ffe1bc9e1131cd29b881fb15530d57ae9b1943e`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

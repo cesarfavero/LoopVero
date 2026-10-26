@@ -1,0 +1,39 @@
+# `formatUsage`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/tools/README.en.md).
+
+**Module:** `core/runner/tools/sand-connected-activity-tool.ts` · [Module README](../../../../../../modules/core/runner/tools/sand-connected-activity-tool-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:763705-763711](../../../../../../../reference/runtime/host-main.cjs#L763705-L763711) | `FunctionDeclaration` | no | `usage` |
+| [evaluation:556753-556759](../../../../../../../reference/runtime/sand-eval-runner.cjs#L556753-L556759) | `FunctionDeclaration` | no | `usage` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:763705-763711](../../../../../../../reference/runtime/host-main.cjs#L763705-L763711) | 1 | 0 | 0 | 1 | 0 | 0 |
+| [evaluation:556753-556759](../../../../../../../reference/runtime/sand-eval-runner.cjs#L556753-L556759) | 1 | 0 | 0 | 1 | 0 | 0 |
+
+### host:763705
+
+Calls written directly in this body: `isoTimeOf`.
+
+SHA-256 of the source span: `832e6b4ad7ff8f96072d3d090481c022195efc1c55cee34a1045dfe93d624f68`.
+
+### evaluation:556753
+
+Calls written directly in this body: `isoTimeOf`.
+
+SHA-256 of the source span: `832e6b4ad7ff8f96072d3d090481c022195efc1c55cee34a1045dfe93d624f68`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

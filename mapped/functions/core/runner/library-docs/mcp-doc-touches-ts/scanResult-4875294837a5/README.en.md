@@ -1,0 +1,33 @@
+# `scanResult`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/integrations/README.en.md).
+
+**Module:** `core/runner/library-docs/mcp-doc-touches.ts` · [Module README](../../../../../../modules/core/runner/library-docs/mcp-doc-touches-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [evaluation:574019-574044](../../../../../../../reference/runtime/sand-eval-runner.cjs#L574019-L574044) | `FunctionDeclaration` | no | `result, resolver` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [evaluation:574019-574044](../../../../../../../reference/runtime/sand-eval-runner.cjs#L574019-L574044) | 5 | 1 | 0 | 2 | 0 | 0 |
+
+### evaluation:574019
+
+Calls written directly in this body: `emptyScan`, `item.content.value.text.slice`, `merge4`, `parseJson`, `refsInText`, `scan2.textRefs.push`, `scanJson`, `structured.toBinary`, `structured.toJson`.
+
+Assignment or increment targets: `budget`.
+
+SHA-256 of the source span: `204785d93796c248dd540d6deeef447c0c46d5dd83c0f164b98f5c0b53685b9e`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

@@ -1,0 +1,39 @@
+# `draftCallResultJsonText`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/tools/README.en.md).
+
+**Module:** `core/runner/tools/draft-connector-results.ts` · [Module README](../../../../../../modules/core/runner/tools/draft-connector-results-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:732669-732680](../../../../../../../reference/runtime/host-main.cjs#L732669-L732680) | `FunctionDeclaration` | no | `result` |
+| [evaluation:540191-540202](../../../../../../../reference/runtime/sand-eval-runner.cjs#L540191-L540202) | `FunctionDeclaration` | no | `result` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:732669-732680](../../../../../../../reference/runtime/host-main.cjs#L732669-L732680) | 4 | 1 | 0 | 4 | 0 | 0 |
+| [evaluation:540191-540202](../../../../../../../reference/runtime/sand-eval-runner.cjs#L540191-L540202) | 4 | 1 | 0 | 4 | 0 | 0 |
+
+### host:732669
+
+Calls written directly in this body: `JSON.stringify`, `draftCallResultText`, `item.content.value.text.trim`, `parseDraftConnectorJson`, `structured.toJson`.
+
+SHA-256 of the source span: `d146b4cfa193062c4034986f8f171a525ce9b7795b4e7bba3727a103fe2da3a7`.
+
+### evaluation:540191
+
+Calls written directly in this body: `JSON.stringify`, `draftCallResultText`, `item.content.value.text.trim`, `parseDraftConnectorJson`, `structured.toJson`.
+
+SHA-256 of the source span: `d146b4cfa193062c4034986f8f171a525ce9b7795b4e7bba3727a103fe2da3a7`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

@@ -1,0 +1,33 @@
+# `SandAgentIdentityService.dispose`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/architecture/README.en.md).
+
+**Module:** `host/extensions/agent-identity/agent-identity-service.ts` · [Module README](../../../../../../modules/host/extensions/agent-identity/agent-identity-service-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:495238-495241](../../../../../../../reference/runtime/host-main.cjs#L495238-L495241) | `method` | no | `(none)` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:495238-495241](../../../../../../../reference/runtime/host-main.cjs#L495238-L495241) | 0 | 0 | 0 | 0 | 0 | 0 |
+
+### host:495238
+
+Calls written directly in this body: `this.syncDownRetry.dispose`.
+
+Assignment or increment targets: `this.isDisposed`.
+
+SHA-256 of the source span: `c2876d91b44a130f4bed985b422a87bd89b335b8f426f40a2a9791e96c3a3807`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).

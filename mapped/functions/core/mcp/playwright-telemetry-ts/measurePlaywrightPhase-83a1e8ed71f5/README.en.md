@@ -1,0 +1,47 @@
+# `measurePlaywrightPhase`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/components/browser-computer/README.en.md).
+
+**Module:** `core/mcp/playwright-telemetry.ts` · [Module README](../../../../../modules/core/mcp/playwright-telemetry-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:700619-700630](../../../../../../reference/runtime/host-main.cjs#L700619-L700630) | `FunctionDeclaration` | yes | `observe, run` |
+| [evaluation:514411-514422](../../../../../../reference/runtime/sand-eval-runner.cjs#L514411-L514422) | `FunctionDeclaration` | yes | `observe, run` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:700619-700630](../../../../../../reference/runtime/host-main.cjs#L700619-L700630) | 0 | 0 | 1 | 1 | 1 | 1 |
+| [evaluation:514411-514422](../../../../../../reference/runtime/sand-eval-runner.cjs#L514411-L514422) | 0 | 0 | 1 | 1 | 1 | 1 |
+
+### host:700619
+
+Calls written directly in this body: `observePlaywrightPhaseSafely`, `performance.now`, `playwrightPhaseOutcome`, `run`.
+
+Assignment or increment targets: `outcome`.
+
+Explicit throw targets: `error64`.
+
+SHA-256 of the source span: `c3590d1b58a60be61fea1d6cab11e1a1378ccaca09bbacd8c9217dc9e7c083f4`.
+
+### evaluation:514411
+
+Calls written directly in this body: `observePlaywrightPhaseSafely`, `performance.now`, `playwrightPhaseOutcome`, `run`.
+
+Assignment or increment targets: `outcome`.
+
+Explicit throw targets: `error63`.
+
+SHA-256 of the source span: `3354f73313a2d478fd0b4666fa4258b555559186bfc6518b5ba326c837c0e51c`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

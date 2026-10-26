@@ -1,0 +1,31 @@
+# `SharedDesktopSandBox.freeDeletedSeatsOf`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../guide/architecture/README.en.md).
+
+**Module:** `core/box/shared-desktop-sand-box.ts` · [Module README](../../../../../modules/core/box/shared-desktop-sand-box-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:554529-554554](../../../../../../reference/runtime/host-main.cjs#L554529-L554554) | `method` | yes | `ctx, candidates, table` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:554529-554554](../../../../../../reference/runtime/host-main.cjs#L554529-L554554) | 5 | 3 | 2 | 1 | 0 | 0 |
+
+### host:554529
+
+Calls written directly in this body: `asyncMapValues`, `candidates.map`, `deleted.has`, `freed.map`, `seats.filter`, `seats.push`, `table.assignments.get`, `table.tokens.get`, `this.agentWindowTokens.get`, `this.agentWindows.get`, `this.deletedAgents.add`, `this.dropCachedSeat`, `this.findDeletedAgents`, `this.queueSeatChanges`.
+
+SHA-256 of the source span: `c1bbd06b1c9d58495daaa1de2bb5821f4316d448fad4e0ad1eba27e0b8778509`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../guide/methodology/README.en.md).

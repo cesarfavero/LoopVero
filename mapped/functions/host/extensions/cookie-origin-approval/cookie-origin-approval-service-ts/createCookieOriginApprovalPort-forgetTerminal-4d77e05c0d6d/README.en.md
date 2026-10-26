@@ -1,0 +1,31 @@
+# `createCookieOriginApprovalPort/forgetTerminal`
+
+[English](README.en.md) · [Português (Brasil)](README.md)
+
+Static reference for the original code. The complete flow and its conditions are explained in the [component guide](../../../../../../../guide/components/approvals/README.en.md).
+
+**Module:** `host/extensions/cookie-origin-approval/cookie-origin-approval-service.ts` · [Module README](../../../../../../modules/host/extensions/cookie-origin-approval/cookie-origin-approval-service-ts/README.en.md)
+
+## Implementation and inputs
+
+| Artifact and lines | Form | Async | Recovered parameters |
+| --- | --- | --- | --- |
+| [host:542912-542914](../../../../../../../reference/runtime/host-main.cjs#L542912-L542914) | `ArrowFunctionExpression` | no | `requestId2, own3` |
+
+## Flow observed in the body
+
+| Artifact | Syntactic branches | Loops | await | Explicit return | throw | catch |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| [host:542912-542914](../../../../../../../reference/runtime/host-main.cjs#L542912-L542914) | 1 | 0 | 0 | 0 | 0 | 0 |
+
+### host:542912
+
+Calls written directly in this body: `terminalByRequestId.delete`, `terminalByRequestId.get`.
+
+SHA-256 of the source span: `ff798fbae61f139b94ac8ce146bdd5936e28b2695c8a9d4b04340d9d8a00828f`.
+
+## How to interpret this page
+
+The links open the complete implementation, including conditions, return values, and failure handling. Counts exclude nested function bodies. Calls are syntactic references: they do not resolve dynamic dispatch, aliases, or permissions, and they do not prove execution in production. Assignments do not cover every mutation performed by called methods. Repeated names in the same scope group occurrences together; differences between bundles are not replaced with an assumed version.
+
+[Catalog method and limitations](../../../../../../../guide/methodology/README.en.md).
