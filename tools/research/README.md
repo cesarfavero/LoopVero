@@ -1,4 +1,4 @@
-# Static research tools
+# LoopVero · Static research tools
 
 Estas ferramentas geram e verificam o mapa a partir dos arquivos de referência que já estão no repositório. Não contêm etapas de obtenção das referências, não importam os bundles e não inicializam serviços do harness.
 
