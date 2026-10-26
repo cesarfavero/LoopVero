@@ -1,4 +1,4 @@
-# Complete harness guide
+# LoopVero · Complete harness guide
 
 O objetivo deste guia é explicar o harness a partir dos arquivos originais: como uma solicitação entra, onde é roteada, como o executor monta contexto e ferramentas, como uma execução progride e como os efeitos chegam ao transcript, à memória e ao agente pai de uma delegação. Esse pai não é necessariamente o primary bot configurado pelo usuário.
 
