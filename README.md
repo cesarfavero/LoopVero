@@ -1,4 +1,4 @@
-# TheGrok · Harness Reference
+# LoopVero · Harness Reference
 
 Este repositório é um estudo do harness original. Os arquivos de referência são a fonte de verdade; o guia explica o que eles implementam, as fichas mapeiam suas funções e cada conclusão aponta para o código que a sustenta.
 
