@@ -14,6 +14,12 @@ This is static analysis of the available artifacts, not an installable agent or 
 
 The reconstructed application, frontend, and their tests have been removed. The structure uses its own English names and provides no instructions for obtaining the files or reproducing an extraction.
 
+## Beyond replies: the mechanics of proactive agents
+
+**What happens when an agent works before your next message?** Start with LoopVero’s [proactivity deep dive](guide/components/proactivity/README.md): automation dispatch, quiet background work, `WakeParent` handoffs, revival, and handling stale results—all linked to reference code.
+
+**The boundary matters:** the initial opportunity-selection algorithm and the complete remote scheduler were not found in these artifacts. This repository explains the mechanisms that are present, not a recovered end-to-end proactivity engine.
+
 ## Start here
 
 1. [Complete guide](guide/README.md): reading path, responsibilities, and contracts.
